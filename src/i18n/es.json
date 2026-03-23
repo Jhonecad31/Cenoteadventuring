@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "experiences": "Experiencias",
+    "destinations": "Destinos",
+    "contact": "Contacto",
+    "blog": "Blog"
+  },
+  "ACCESSIBILITY": {
+    "GO_TO_HOME": "Ir al inicio",
+    "BUTTON": {
+      "BOOK_NOW": "Reservar Ahora",
+      "VIEW_DETAILS": "Ver Detalles"
+    },
+    "MENU": {
+      "OPEN_MENU": "Abrir menú",
+      "CLOSE_MENU": "Cerrar menú",
+      "FOLLOW": "Síguenos"
+    },
+    "SOCIAL_MEDIA": {
+      "GO_TO_FACEBOOK": "Ir a Facebook",
+      "GO_TO_INSTAGRAM": "Ir a Instagram",
+      "GO_TO_TIKTOK": "Ir a TikTok",
+      "GO_TO_YOUTUBE": "Ir a YouTube"
+    }
+  },
+  "HOME_PAGE": {
+    "HERO": {
+      "TITLE": "Describe qué hace a tu compañía",
+      "SUBTITLE": "única",
+      "BUTTON": "Descubre el Viaje"
+    }
+  },
+  "Header": {
+  "nav.home": "Inicio",
+  "nav.contact": "Contacto",
+  "footer.design": "Diseño por...",
+  "home.hero.title": "Describe lo que hace a tu empresa única",
+  "home.hero.button": "Descubre nuestros viajes"
+  }
+}

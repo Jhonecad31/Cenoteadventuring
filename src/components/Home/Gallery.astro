@@ -1,0 +1,85 @@
+---
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+const images = {
+  // Fila Superior (Nuevas)
+  top1: 'Gallery.9_amkmkc', 
+  top2: 'Gallery.1_w0aaof',
+  top3: 'gallery.Princ_ayeycx',
+  // Bloque Central (Tus fotos actuales)
+  leftTop: 'Gallery.9_amkmkc',
+  leftBottom: 'Gallery.1_w0aaof',
+  center: 'gallery.Princ_ayeycx', 
+  rightTop: 'Gallery.3_i9hia8',
+  rightBottom: 'Gallery.7_mhzqtt',
+  // Fila Inferior (Nuevas)
+  bottom1: 'Gallery.7_mhzqtt',
+  bottom2: 'Gallery.1_w0aaof',
+  bottom3: 'gallery.Princ_ayeycx',
+};
+
+const getUrl = (id: string, w = 1000) => 
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+---
+
+<section class="py-12 bg-[#F8FAFC]">
+  <div class="max-w-[1400px] mx-auto px-4 space-y-4 md:space-y-6">
+    
+    <div class="grid grid-cols-3 gap-2 md:gap-6">
+       <div class="aspect-video md:aspect-[21/9] col-span-1 rounded-sm overflow-hidden shadow-sm cursor-pointer" data-fancybox="gallery" data-src={getUrl(images.top1, 2000)}>
+          <img src={getUrl(images.top1)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+       </div>
+       <div class="aspect-video md:aspect-[21/9] col-span-1 rounded-sm overflow-hidden shadow-sm cursor-pointer" data-fancybox="gallery" data-src={getUrl(images.top2, 2000)}>
+          <img src={getUrl(images.top2)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+       </div>
+       <div class="aspect-video md:aspect-[21/9] col-span-1 rounded-sm overflow-hidden shadow-sm cursor-pointer" data-fancybox="gallery" data-src={getUrl(images.top3, 2000)}>
+          <img src={getUrl(images.top3)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+       </div>
+    </div>
+
+    <div class="grid grid-cols-4 items-center gap-2 md:flex md:justify-center md:gap-6">
+      <div class="flex flex-col gap-2 w-full md:w-64">
+        <div class="aspect-[4/5] md:aspect-square rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftTop, 2000)}>
+          <img src={getUrl(images.leftTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+        </div>
+        <div class="aspect-[4/5] md:aspect-square rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftBottom, 2000)}>
+          <img src={getUrl(images.leftBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+        </div>
+      </div>
+
+      <div class="col-span-2 w-full md:w-[450px] lg:w-[500px] aspect-[1/2.2] md:aspect-[3/5] z-10 rounded-sm overflow-hidden shadow-xl ring-2 md:ring-8 ring-white" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
+        <img src={getUrl(images.center)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Main View" />
+      </div>
+
+      <div class="flex flex-col gap-2 w-full md:w-64">
+        <div class="aspect-[4/5] md:aspect-square rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightTop, 2000)}>
+          <img src={getUrl(images.rightTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+        </div>
+        <div class="aspect-[4/5] md:aspect-square rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightBottom, 2000)}>
+          <img src={getUrl(images.rightBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-2 md:gap-6">
+       <div class="aspect-square rounded-sm overflow-hidden shadow-sm cursor-pointer" data-fancybox="gallery" data-src={getUrl(images.bottom1, 2000)}>
+          <img src={getUrl(images.bottom1)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+       </div>
+       <div class="aspect-square rounded-sm overflow-hidden shadow-sm cursor-pointer" data-fancybox="gallery" data-src={getUrl(images.bottom2, 2000)}>
+          <img src={getUrl(images.bottom2)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+       </div>
+       <div class="aspect-square rounded-sm overflow-hidden shadow-sm cursor-pointer" data-fancybox="gallery" data-src={getUrl(images.bottom3, 2000)}>
+          <img src={getUrl(images.bottom3)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+       </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui";
+  Fancybox.bind("[data-fancybox]", {
+    infinite: true,
+  });
+</script>

@@ -1,17 +1,28 @@
 ---
-
+import Footer from "@/components/Home/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Header from "@/components/Home/Header.astro";
+import HeroVideo from "@/components/Home/Hero.astro";
+import Footer from "@/components/Home/Footer.astro"
+import Awars from "@/components/Home/Awars.astro";
+import PricingCards from "@/components/Home/PricingCards.astro";
+import Gallery from "@/components/Home/Gallery.astro";
+import Questions from "@/components/Home/Questions.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>	Hola, hola</title>
-	</head>
-	<body>
-		<h1>Hola hola</h1>
-	</body>
-</html>
+<Layout>
+  <Header />
+  
+  <main>
+    <HeroVideo />
+    <Awars />
+    <PricingCards/>
+    <Gallery/>
+    <Questions/>
+    <section class="bg-[#EDF4FC] py-24">
+       <div class="max-w-[1800px] mx-auto px-8 text-center">
+         </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

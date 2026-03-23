@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Home",
+    "experiences": "Experiences",
+    "destinations": "Destinations",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "ACCESSIBILITY": {
+    "GO_TO_HOME": "Go to home",
+    "BUTTON": {
+      "BOOK_NOW": "Book Now",
+      "VIEW_DETAILS": "View Details"
+    }
+  },
+  "HOME_PAGE": {
+    "HERO": {
+      "TITLE": "Describe what makes your company",
+      "SUBTITLE": "unique",
+      "BUTTON": "Discover the Journey"
+    }
+  },
+  "footer": {
+    "design": "Design By..."
+  }
+}

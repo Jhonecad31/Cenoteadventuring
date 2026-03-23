@@ -3,6 +3,14 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+@theme {
+  --font-serif: "Rosarivo", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-brand-blue: #006684;
+  --color-brand-cream: #f8f9fa;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
