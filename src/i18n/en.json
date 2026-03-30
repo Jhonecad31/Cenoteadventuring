@@ -1,10 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "experiences": "Experiences",
-    "destinations": "Destinations",
-    "contact": "Contact",
-    "blog": "Blog"
+    "Activities": "Activities",
+    "Contact": "Contact",
+    "Blog": "Blog",
+    "AboutUs": "About us"
   },
   "ACCESSIBILITY": {
     "GO_TO_HOME": "Go to home",

@@ -1,10 +1,10 @@
 {
   "nav": {
-    "home": "Inicio",
-    "experiences": "Experiencias",
-    "destinations": "Destinos",
-    "contact": "Contacto",
-    "blog": "Blog"
+    "home": "Home",
+    "Activities": "Actividades",
+    "Contact": "Contacto",
+    "Blog": "Blog",
+    "AboutUs": "Sobre nosotros"
   },
   "ACCESSIBILITY": {
     "GO_TO_HOME": "Ir al inicio",

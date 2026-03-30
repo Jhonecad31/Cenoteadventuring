@@ -18,9 +18,10 @@ const translatePath = useTranslatedPath(lang);
 
 const navigation = [
   { title: t("nav.home"), link: translatePath("/") },
-  { title: "Experiences", link: translatePath("/experiences/") },
-  { title: "Destinations", link: translatePath("/destinations/") },
-  { title: t("nav.contact"), link: translatePath("/contact/") },
+  { title: t("nav.activities"), link: translatePath("/activities/") },
+  { title: t("nav.blog"), link: translatePath("/blog/")},
+  { title: t("nav.about"), link:translatePath("/about/")},
+  { title: t("nav.contact"), link: translatePath("/Contact/contact/") }
 ];
 ---
 
@@ -76,42 +77,24 @@ const navigation = [
 
     <div class="flex-1 flex items-center justify-end gap-5">
       <div
-        class="flex items-center gap-5 text-white transition-colors duration-500"
+        class="flex items-center gap-5 text-withe transition-colors duration-500"
         id="icon-group"
       >
         <a href="tel:+123456789" class="lg:hidden">
           <Phone size={22} strokeWidth={1.2} />
         </a>
-
-        <Search
-          size={19}
-          strokeWidth={1.2}
-          className="hidden lg:block cursor-pointer hover:scale-110 transition-transform"
-        />
         <User
           size={19}
           strokeWidth={1.2}
           className="hidden lg:block cursor-pointer hover:scale-110 transition-transform"
         />
       </div>
-
-      <div class="flex items-center gap-4">
-        <Button
-          variant="outline"
-          className="hidden md:flex border-white/30 text-white bg-transparent hover:bg-white hover:text-[#006684] rounded-none uppercase tracking-[0.2em] text-[10px] px-8 h-11 transition-all duration-300"
-          id="btn-reserve"
-        >
-          {i18n.ACCESSIBILITY?.BUTTON?.BOOK_NOW || "BOOK NOW"}
-        </Button>
-
-        <LanguageSelector />
-      </div>
     </div>
   </div>
 
   <div
     id="mobile-drawer"
-    class="fixed inset-0 bg-[#002B49] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
+    class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
   >
     <div class="flex justify-end"> <button id="close-menu" ...>
     <X size={35} strokeWidth={1} />

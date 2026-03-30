@@ -1,0 +1,92 @@
+---
+---
+
+<section class="bg-[#EDF4FC]">
+  <div
+    id="map"
+    class="max-w-6xl mx-auto h-[600px] rounded-2xl"
+  >
+  </div>
+</section>
+
+<link
+  href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css"
+  rel="stylesheet"
+/>
+
+<script>
+  import maplibregl from "maplibre-gl";
+
+  function initMap() {
+    const container = document.getElementById("map");
+    if (!container || container.children.length > 0) return;
+
+    const API_KEY = "f7d260a6-b7fc-4b60-84ee-e5dc4d2a2965";
+
+    const locations = [
+      {
+        name: "Extreme adventuring Cancún",
+        coords: [-87.07884217116445, 20.87510691491851],
+        address: "Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R.",
+        googleMapsUrl: "https://maps.app.goo.gl/3jQ1H9oXXwuXwxcv6",
+      },
+    ];
+
+    const map = new maplibregl.Map({
+      container: "map",
+      style: `https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=${API_KEY}`,
+      center: [-87.07884217116445, 20.87510691491851],
+      zoom: 10,
+      alpha: true,
+    });
+
+    map.on("load", () => {
+      if (map.getLayer("background")) {
+        map.setPaintProperty("background", "background-opacity", 0);
+      }
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), "top-right");
+    map.on("load", () => {
+      if (map.getLayer("background")) {
+        map.setPaintProperty("background", "background-opacity", 0);
+      }
+    });
+
+    locations.forEach((loc) => {
+      const popup = new maplibregl.Popup({ offset: 35, closeButton: false })
+        .setHTML(`
+            <div class="p-3 text-center min-w-[150px]">
+              <h4 class="font-serif font-bold text-[#006083] text-lg mb-1">${loc.name}</h4>
+              <p class="text-[11px] text-gray-500 leading-tight mb-3 italic">${loc.address}</p>
+              <a href="${loc.googleMapsUrl}" 
+                 target="_blank" 
+                 class="inline-block bg-[#006083] text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all">
+                 Cómo llegar →
+              </a>
+            </div>
+          `);
+
+      const marker = new maplibregl.Marker({ color: "#006083" })
+        .setLngLat(loc.coords)
+        .setPopup(popup)
+        .addTo(map);
+    });
+  }
+  initMap();
+  document.addEventListener("astro:page-load", initMap);
+  document.addEventListener("astro:after-swap", initMap);
+</script>
+
+<style is:global>
+  #map canvas {
+    mix-blend-mode: multiply; 
+    background-color: transparent !important;
+  }
+  .maplibregl-canvas-container {
+    background-color: transparent !important;
+  }
+  #map canvas {
+    filter: brightness(1.02) contrast(0.9);
+  }
+</style>

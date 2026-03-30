@@ -1,0 +1,80 @@
+---
+import AboutSection from "@/components/Home/About.astro";
+import { getI18N } from "@/i18n";
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "../ui/button";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
+
+const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774544286/video_cenote_web_nzoauf.mp4`;
+const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
+---
+
+<Layout title="About Us | Cenote Adventuring">
+  <main class="bg-[#EDF4FC] overflow-x-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        poster={posterUrl}
+        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100"
+        id="hero-video-player"
+      >
+        <source src={videoUrl} type="video/mp4" />
+      </video>
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-serif italic text-6xl md:text-9xl mb-6 tracking-tight drop-shadow-lg"
+        >
+          Mística & Naturaleza
+        </h1>
+        <p
+          class="uppercase tracking-[0.5em] text-xs md:text-sm font-light opacity-90"
+        >
+          Explorando el alma de Quintana Roo
+        </p>
+      </div>
+    </section>
+
+    <!-- <AboutSection /> -->
+
+    <section class="max-w-[1500px] mx-auto py-32 px-6">
+      <div class="mb-20 space-y-4">
+        <h2 class="font-serif italic text-5xl text-[#006083] text-center">
+          Nuestra Visión
+        </h2>
+        <div class="w-12 h-[2px] bg-[#006083] mx-auto opacity-30"></div>
+        <p
+          class="text-center uppercase tracking-[0.3em] text-[10px] text-slate-500 font-bold"
+        >
+          Un viaje visual por lo inexplorado
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Efecto Parallax suave para el Hero
+    window.addEventListener("scroll", () => {
+      const heroImg = document.getElementById("hero-img");
+      if (heroImg) {
+        const scrollValue = window.scrollY;
+        heroImg.style.transform = `translateY(${scrollValue * 0.3}px) scale(1.05)`;
+      }
+    });
+  </script>
+
+  <style>
+    /* Personalización extra para el scroll de la página */
+    main {
+      scroll-behavior: smooth;
+    }
+  </style></Layout
+>

@@ -17,20 +17,17 @@ export const showDefaultLang = false;
 export const ui = {
     en: {
         'nav.home': 'Home',
-        'nav.mayanReef': 'Mayan Reef',
-        'nav.puertoMorelos': 'Puerto Morelos',
+        'nav.activities': 'Activities',
         'nav.contact': 'Contact',
-        'footer.regularSnorkel': 'Snorkeling Adventure',
-        'footer.privateSnorkel': 'Private Snorkeling',
-        'footer.design': 'Design by Grupo Extreme',
+        'nav.blog': 'Blog',
+        'nav.about': 'About us'
+
     },
     es: {
         'nav.home': 'Inicio',
-        'nav.mayanReef': 'Arrecife Maya',
-        'nav.puertoMorelos': 'Puerto Morelos',
-        'nav.contact': 'Contacto',
-        'footer.regularSnorkel': 'Snorkeling Adventure',
-        'footer.privateSnorkel': 'Snorkel Privado',
-        'footer.design': 'Diseñado por Grupo Extreme',
+        'nav.activities': 'Actividades',
+        'nav.contacto': 'Contacto',
+        'nav.blog': 'Blog',
+        'nav.nosotros': 'Nosotros'
     }
 } as const;

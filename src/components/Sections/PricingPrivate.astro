@@ -1,0 +1,384 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import {
+  Star,
+  Clock,
+  Users,
+  Calendar,
+  Truck,
+  Check,
+  X,
+  ChevronRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const tour = {
+  title: "Private Cenote Rental In Cancun",
+  tagline:
+    "Exclusive Experience at 3 Private Cenotes with a Mayan Show and Snacks",
+  rating: 4.8,
+  reviews: 1982,
+  description:
+    "Cenote Adventuring® is part of Grupo Extreme®, which offers five of Mexico's most award-winning and highly rated culinary and adventure experiences.",
+  inclusions: [
+    { text: "Conservation Fee (Included)", inc: true },
+    { text: "Round-trip transportation", inc: true },
+    { text: "3 Cenotes (Waterfall, Zipline, Cavern)", inc: true },
+    { text: "Tequila Tasting", inc: true },
+    { text: "Mayan Snack", inc: true },
+    { text: "Mayan Performance", inc: false },
+    { text: "Professional Photography", inc: false },
+  ],
+};
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
+
+const carouselImages = [
+  "CenoteA.1_ntnmsp",
+  "CenoteA.2_njvbos",
+  "CenoteA.3_pzncr9",
+  "CenoteA.4_tevpif",
+  "CenoteA.5_tdhqvl",
+  "CenoteA.6_ikzdny",
+  "CenoteA.7_rpyhjn",
+  "CenoteA.8_jx4f49",
+];
+const relatedActivities = [
+  {
+    name: "Taco Tour",
+    image: "taco_taco_ud62mv",
+    slug: "beach-taco-tour",
+  },
+  {
+    name: "Extreme Adventuring",
+    image: "moto_moto_jxf9jy",
+    slug: "extreme-adventuring",
+  },
+  {
+    name: "Snorkel Adventuring",
+    image: "snorkel_snorkel_iqkdev",
+    slug: "snorkel-adventuring",
+  },
+];
+
+const imagesDetails = {
+  imgDetails1: "Card.2.2_eik10v",
+  imgDetails2: "Card.1.2_x0xkn2",
+};
+
+const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774544286/video_cenote_web_nzoauf.mp4`;
+const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
+
+const getUrl = (id: string, w = 1200) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+---
+
+<Layout title={tour.title}>
+  <main class="bg-[#F4F7FA] pb-20 overflow-x-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        poster={posterUrl}
+        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100"
+        id="hero-video-player"
+      >
+        <source src={videoUrl} type="video/mp4" />
+      </video>
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-serif italic text-6xl md:text-9xl mb-6 tracking-tight drop-shadow-lg"
+        >
+          Private Cenote Rental In Cancún
+        </h1>
+        <p
+          class="uppercase tracking-[0.5em] text-xs md:text-sm font-light opacity-90"
+        >
+          {tour.tagline}
+        </p>
+        <div
+          class="flex items-center justify-center tracking-[0.5em] md:text-sm relative h-[5vh]"
+        >
+          <Star className="text-yellow-400 fill-yellow-400" size={20} />
+          <span class="font-bold text-[#ffffff]"> {tour.rating}</span>
+          <span class="text-white text-sm">({tour.reviews} reviews)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16 max-w-7xl mx-auto px-6 relative h-[70vh]">
+      <div class="relative h-[550px] w-full">
+        <div
+          class="absolute top-0 left-0 w-[65%] h-[85%] overflow-hidden z-0"
+        >
+          <img
+            src={getUrl(imagesDetails.imgDetails1, 800)}
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            alt="Adventure detail 1"
+          />
+        </div>
+
+        <div
+          class="absolute top-[15%] left-[35%] w-[65%] h-[85%] overflow-hidden z-10 border-white/10 backdrop-blur-sm"
+        >
+          <img
+            src={getUrl(imagesDetails.imgDetails2, 800)}
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            alt="Adventure detail 2"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col justify-center py-10 px-4">
+        <hr class="border-black w-full mb-8" />
+        <h2
+          class="font-serif text-4xl italic text-[#001524] mb-8 leading-tight tracking-tight"
+        >
+          Mexico's Most Awarded <br /> Adventure Company
+        </h2>
+
+        <div class="space-y-6">
+          <p class="text-gray-600 leading-relaxed text-lg font-light italic">
+            "{tour.description}"
+          </p>
+        </div>
+
+        <hr class="border-black w-full mt-8" />
+      </div>
+    </section> -->
+
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-24">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center"
+      >
+        <div class="relative h-[400px] md:h-[550px] w-full">
+          <div
+            class="absolute top-0 left-0 w-[70%] md:w-[65%] h-[80%] md:h-[85%] overflow-hidden shadow-lg"
+          >
+            <img
+              src={getUrl(imagesDetails.imgDetails1, 800)}
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-200"
+              alt="Adventure 1"
+            />
+          </div>
+
+          <div
+            class="absolute bottom-0 right-0 w-[70%] md:w-[65%] h-[80%] md:h-[85%] overflow-hidden shadow-2xl"
+          >
+            <img
+              src={getUrl(imagesDetails.imgDetails2, 800)}
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              alt="Adventure 2"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center text-center md:text-left">
+          <hr class="border-black/50 w-full mb-6 md:mb-8" />
+          <h2
+            class="font-serif text-3xl md:text-5xl italic text-[#001524] mb-6 md:mb-8 leading-tight"
+          >
+            Mexico's Most Awarded <br class="hidden md:block" /> Adventure Company
+          </h2>
+          <p
+            class="text-gray-600 leading-relaxed text-base md:text-lg font-light italic"
+          >
+            "{tour.description}"
+          </p>
+          <hr class="border-black/50 w-full mt-6 md:mt-8" />
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-screen-2xl mx-auto px-4 md:px-10 mb-20">
+      <div
+        class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
+      >
+        <div
+          class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
+        >
+          <Clock size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Duration</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >4 hours approx</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
+        >
+          <Users size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Min. Age</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >5 years+</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
+        >
+          <Calendar size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Schedule</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >09:00 | 13:00</span
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center text-center gap-3 px-2">
+          <Truck size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Transport</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >Included</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-screen-2xl mx-auto px-4 md:px-10 mb-20">
+        <h3
+          class="font-bold text-[#001524] mb-6 underline decoration-cyan-500 underline-offset-12"
+        >
+          Inclusions:
+        </h3>
+        <div class="center grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+          {
+            tour.inclusions.map((item) => (
+              <div class="flex items-start gap-3">
+                {item.inc ? (
+                  <Check
+                    size={18}
+                    className="text-emerald-500 shrink-0 mt-0.5"
+                  />
+                ) : (
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                )}
+                <span
+                  class={`text-sm ${item.inc ? "text-gray-700" : "text-gray-400"}`}
+                >
+                  {item.text}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Recomendaciones de otros productos -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="font-serif text-3xl text-[#001524] mb-4">
+        More Activities for you to enjoy
+      </h2>
+      <p class="text-gray-500 max-w-2xl mx-auto mb-12">
+        Discover more exciting activities and tours to enhance your experience
+        in Puerto Morelos and the Riviera Maya.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {
+          relatedActivities.map((activity) => (
+            <a
+              href={`/activities/${activity.slug}/`}
+              class="group cursor-pointer block"
+            >
+              <div class="aspect-square overflow-hidden mb-4 shadow-md bg-gray-100">
+                <img
+                  src={getUrl(activity.image, 500)}
+                  alt={activity.name}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <h4 class="  text-[#001524] text-sm tracking-tight">
+                {activity.name}
+              </h4>
+              <div class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mt-2 group-hover:text-[#005B71] transition-colors">
+                Discover more <ChevronRight size={12} />
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Estilos para el efecto de carrusel enfocado */
+  .swiper-slide {
+    opacity: 0.5;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+  }
+  .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Keyboard } from "swiper/modules";
+  import "swiper/css";
+
+  const swiper = new Swiper(".tourSwiper", {
+    modules: [Autoplay, Keyboard],
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1.8,
+        spaceBetween: 40,
+      },
+    },
+  });
+</script>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, FreeMode } from "swiper/modules";
+  import "swiper/css";
+
+  new Swiper(".tourSwiper", {
+    modules: [Autoplay, FreeMode],
+    slidesPerView: "auto", // Importante: ahora "auto" para que quepan más en el ancho extra
+    spaceBetween: 30,
+    loop: true,
+    freeMode: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+  });
+</script>
