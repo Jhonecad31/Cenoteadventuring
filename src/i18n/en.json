@@ -1,26 +1,399 @@
 {
-  "nav": {
-    "home": "Home",
-    "Activities": "Activities",
-    "Contact": "Contact",
-    "Blog": "Blog",
-    "AboutUs": "About us"
-  },
-  "ACCESSIBILITY": {
-    "GO_TO_HOME": "Go to home",
-    "BUTTON": {
-      "BOOK_NOW": "Book Now",
-      "VIEW_DETAILS": "View Details"
+  "SEO": {
+    "HOME_PAGE": {
+      "TITLE": "Cenote Adventuring in puerto morelos: Private Tour Through the Best Hidden Cenotes",
+      "DESCRIPTION": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
+      "META_TITLE": "Cenote Adventures: Private and Exclusive Tours in Puerto Morelos"
+    },
+    "CENOTE_TRAIL_PAGE": {
+      "TITLE": "Cenote Adventuring: Private Jungle Experience in Puerto Morelos",
+      "DESCRIPTION": "Escape into the heart of the jungle and discover the most exclusive cenotes Puerto Morelos experience.",
+      "META_TITLE": "Cenote Adventuring: Exclusive Private Jungle Tours"
+    },
+    "CENOTE_ADVENTURING_PAGE": {
+      "TITLE": "Cenote Adventuring: Our Storys",
+      "DESCRIPTION": "Cenote Adventuring was created a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle.",
+      "META_TITLE": "Cenote Adventuring: Passion for the Maya Jungle"
+    },
+    "CONTACT_PAGE": {
+      "TITLE": "Contact Us for Your Cenote Adventure",
+      "DESCRIPTION": "Contact us to book your unforgettable Cenote Adventuring tour along the Cenote Trail and discover the wonders of the Mexican Caribbean.",
+      "META_TITLE": "The Best Cenotes in Puerto Morelos: Contac Us"
+    },
+    "ABOUT_US_PAGE": {
+      "TITLE": "About Us: Our Story - Extreme Adventuring Cancun",
+      "DESCRIPTION": "We are a Mexican company with more than 18 years of experience, a leader in ecological adventure parks on the iconic Cenote Route in Puerto Morelos."
+    },
+    "DETAIL_PAGE": {
+      "REGULAR_CENOTE": {
+        "TITLE": "Cenote Adventuring",
+        "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must.",
+        "META_TITLE": "Cenote Adventuring Cancun - Extreme Adventuring cancun"
+      },
+      "PRIVATE_CENOTE": {
+        "TITLE": "",
+        "DESCRIPTION": "",
+        "META_TITLE": ""
+      }
+    },
+    "NOT_FOUND_PAGE": {
+      "TITLE": "Page Not Found",
+      "DESCRIPTION": "The page you are looking for does not exist. Please return to the home page."
+    },
+    "ERROR_SERVER_PAGE": {
+      "TITLE": "Error 500 - Server Error",
+      "DESCRIPTION": "An error occurred on the server. Please try again later."
     }
   },
+  "ACCESSIBILITY": {},
   "HOME_PAGE": {
     "HERO": {
-      "TITLE": "Describe what makes your company",
-      "SUBTITLE": "unique",
-      "BUTTON": "Discover the Journey"
+      "TITLE": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
+      "DESCRIPTION": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion."
+    },
+    "AWARDS": {
+      "TITLE": "Awards & Recognitions",
+      "DESCRIPTION": "We take pride in our dedication to offering meaningful and sustainable adventures, connecting travelers with the authentic essence of the Puerto Morelos cenotes.",
+      "TRIPADVISOR": {
+        "TITLE": "Travelers’ Choice Best of the Best",
+        "DESCRIPTION": "Proudly ranked among the top 1% of attractions worldwide, recognized for our exceptional private cenote experiences and commitment to excellence."
+      },
+      "WORLD_TRAVEL_AWARDS": {
+        "TITLE": "World Travel Awards",
+        "DESCRIPTION": "Recognized as Mexico's Leading Adventure Tour Operator, celebrating our multi-year excellence and leadership in the global travel industry."
+      },
+      "NATIONAL_GEOGRAPHIC": {
+        "TITLE": "National Geographic Traveller",
+        "DESCRIPTION": "Mentioned as one of the top experiences in the Riviera Maya."
+      }
+    },
+    "GALLERY": {
+      "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+      "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+    },
+    "CHOOSE_PLAN": {
+      "TITLE": "Choose the Perfect Plan for Your Cenote Adventure",
+      "DESCRIPTION": "We offer flexible, tailored options to match your travel style. Whether you are seeking an exclusive private journey or a premium small-group experience, enjoy the most authentic cenote tour in Puerto Morelos.",
+      "PLANS": {
+        "PRIVATE": {
+          "TITLE": "Private Cenote Experience",
+          "DESCRIPTION": "Experience an exclusive snorkeling adventure with a private boat, personalized service, and more amenities.",
+          "FEATURES": [
+            "Unlimited drinks included on the boat",
+            "Vip meal: 4 tacos and 2 drinks (during lunch)",
+            "Fresh ceviche served on board",
+            "Welcome drink upon arrival",
+            "Tequila Tasting",
+            "Priority check-in",
+            "Private boat"
+          ]
+        },
+        "CENOTE": {
+          "TITLE": "Cenote adventuring",
+          "DESCRIPTION": "Explore Cenote Adventuring Cancun: Swim, zipline, and discover Mexico’s natural wonders on our exclusive tour.",
+          "FEATURES": [
+            "Round-trip transportation from your hotel",
+            "3 Cenotes (with Waterfall, Zipline and Cavern)",
+            "Lifejacket",
+            "Specialized and bilingual guides",
+            "Tequila Tasting (in the Cenote)",
+            "Mayan Snack",
+            "Mayan Performance",
+            "Round trip transportation from Cancun",
+            "Conservation Fee (Included)"
+          ]
+        }
+      }
+    },
+    "FAQS": {
+      "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
+      "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
+      "CARD_CONTACT": {
+        "TITLE": "Need More Information?",
+        "DESCRIPTION": "Whether it's a special request or a custom private itinerary, our team of experts is ready to help you plan the perfect experience.",
+        "BUTTON": "Contact us"
+      },
+      "FAQS": [
+        {
+          "question": "How many cenotes are included in the tour?",
+          "answer": "The experience typically includes visits to multiple cenotes along the Ruta de los Cenotes, depending on your selected package and preferences."
+        },
+        {
+          "question": "Is this tour suitable for beginners?",
+          "answer": "Yes! No prior experience is needed. The tour is designed for all levels, making it one of the best things to do in Puerto Morelos for beginners."
+        },
+        {
+          "question": "How far is Puerto Morelos from Cancun?",
+          "answer": "Puerto Morelos is located about 20–30 minutes from Cancun, making it an easy and convenient destination for a cenote tour Cancun."
+        },
+        {
+          "question": "What should I bring for the cenote tour?",
+          "answer": "Bring swimwear, biodegradable sunscreen, a towel, and comfortable clothing. Everything else will be provided for your cenote Puerto Morelos experience. "
+        }
+      ]
     }
   },
-  "footer": {
-    "design": "Design By..."
+  "CONTACT_PAGE": {
+    "HERO": {
+      "TITLE": "Get in touch with us",
+      "DESCRIPTION": "We would love to hear from you! Whether you have questions about our snorkeling tour, need assistance with booking, or want to share your feedback, our team is here to help."
+    },
+    "INFO": {
+      "TITLE": "Contact Us",
+      "DESCRIPTION": "Feel free to reach out to us through any of the following methods. We look forward to assisting you and ensuring you have an unforgettable snorkeling adventure in Puerto Morelos!",
+      "OPTIONS": {
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "LOCATION": "Visit Us"
+      }
+    },
+    "FORM": {
+      "CLOSE_MODAL": "Close",
+      "LABELS": {
+        "FULLNAME": "Full Name",
+        "EMAIL": "Email",
+        "PHONE": "Phone",
+        "SUBJECT": "Subject",
+        "MESSAGE": "Message"
+      },
+      "PLACEHOLDERS": {
+        "FULLNAME": "Enter your full name",
+        "EMAIL": "Enter your email",
+        "PHONE": "Enter your phone",
+        "SUBJECT": "Enter the subject",
+        "MESSAGE": "Leave your message here..."
+      },
+      "ERRORS": {
+        "FULLNAME": "Please enter your full name",
+        "EMAIL": "Please enter your email",
+        "PHONE": "Please enter your phone",
+        "SUBJECT": "Subject is required",
+        "MESSAGE": "Message is required"
+      },
+      "SUCCESS_FORM": {
+        "TITLE": "Thank you for contacting us",
+        "DESCRIPTION": "Your message has been sent and we will get back to you shortly. If you have any questions or need immediate assistance, please call us at +52 998 249 0003 or email us at info@snorkeladventuring.com."
+      },
+      "ERROR_FORM": {
+        "TITLE": "Oops! Something went wrong",
+        "DESCRIPTION": "We are sorry, but it seems there was a problem making your email. Please try again later or contact us directly at +52 998 249 0003. Thank you for your understanding!"
+      },
+      "BUTTONS": {
+        "SEND_MESSAGE": "Send Message",
+        "SENDING": "Sending..."
+      }
+    }
+  },
+  "CENOTE_TRAIL_PAGE": {
+    "WHAT_TO_EXPECT": {
+      "TITLE": "",
+      "LIST": [
+        {
+          "TITLE": "Guided Experience",
+          "DESCRIPTION": "Along the Ruta de los Cenotes, your guide will take you to carefully selected cenotes known for their beauty and tranquility. You’ll have time to swim in crystal-clear waters, snorkel through rock formations, and relax in nature. "
+        },
+        {
+          "TITLE": "Vibrant Equipment Provided",
+          "DESCRIPTION": "Snorkel, mask, and fins are usually included."
+        },
+        {
+          "TITLE": "Vibrant Safety Briefing",
+          "DESCRIPTION": "Learn about the reef and safety protocols."
+        },
+        {
+          "TITLE": "Vibrant Marine Life Encounters",
+          "DESCRIPTION": "See colorful fish, corals, and maybe even sea turtles."
+        }
+      ]
+    }
+  },
+  "ABOUT_US_PAGE": {
+    "INTRO": {
+      "TITLE": "About Us – Our Story",
+      "DESCRIPTION_1": "For over 18 years, Extreme Adventuring Cancun has been the leading ecological adventure park on the iconic Ruta de los Cenotes in Puerto Morelos. What began as a small project created to support the local community after port closures has grown into one of Mexico’s most celebrated adventure experiences.",
+      "DESCRIPTION_2": "Today, we welcome travelers from all over the world to discover the jungle, cenotes, culture, and spirit of the Mayan world through immersive, safe, and unforgettable activities.",
+      "DESCRIPTION_3": "We are a Mexican company with more than 18 years of experience, proudly recognized multiple times at an international level by the World Travel Awards, TripAdvisor, and National Geographic Traveller"
+    },
+    "OUR_STORY": {
+      "TITLE": "Our Story",
+      "DESCRIPTION_1": "Extreme Adventuring Cancun was founded with a single purpose: to give visitors a safe, natural, and unforgettable adventure inspired by the Mayan jungle.",
+      "DESCRIPTION_2": "For nearly two decades, we have designed experiences that blend ecotourism, entertainment, culture, and family-friendly adventure, always prioritizing safety, environmental respect, and the preservation of the Selva Maya.",
+      "TITLE_LIST": "What started with a single tour has grown into a full ecopark that includes:",
+      "SUBTITLE_LIST": "Our legacy is built on trust, innovation, and warm hospitality, serving tens of thousands of travelers every year.",
+      "LIST": [
+        "ATV circuits",
+        "Multiple zipline towers",
+        "Open cenotes",
+        "Snorkeling at protected marine areas",
+        "Horseback riding trails",
+        "Cultural and gastronomic experiences",
+        "Traditional Mayan elements and storytelling",
+        "A tequila tasting produced with regional heritage"
+      ]
+    },
+    "HUMAN_PHILOSOPHY": {
+      "TITLE": "“Me Hosting Me” – Our Human Philosophy",
+      "DESCRIPTION": "Our guiding principle is simple but powerful: <strong>“Me hosting me”</strong> — We treat you the way we’d like to be treated.",
+      "TITLE_LIST": "This philosophy shapes every interaction, ensuring:",
+      "SUBTITLE_LIST": "At Extreme Adventuring Cancun, every visitor is welcomed like family.",
+      "LIST": [
+        "Warm, respectful hospitality",
+        "Honest and clear communication",
+        "Safety as our top priority",
+        "Personalized attention",
+        "A genuine connection between visitors and staff"
+      ]
+    },
+    "OUR_VALUE_PROPOSITION": {
+      "TITLE": "Our Value Proposition",
+      "DESCRIPTION": "Extreme Adventuring Cancun is the ideal destination for travelers who want: Safe Adventures + Real Mayan Culture + Natural Immersion, We offer a unique combination of:",
+      "VALUES": [
+        {
+          "TITLE": "Adventure",
+          "DESCRIPTION": "ATVs, ziplines, cenotes, horseback riding, snorkeling, and more — all operated with strict safety standards, trained guides, and high-quality equipment. Our fleet includes 30 transportation units equipped with GPS, speed control systems, and onboard cameras, ensuring punctuality and protection from beginning to end."
+        },
+        {
+          "TITLE": "Culture",
+          "DESCRIPTION": "Our experiences integrate authentic Mayan heritage through: Narratives inspired by the Selva Maya, Traditional culinary tasting, Local art, history, and symbolic elements, Tequila tasting rooted in Mexican tradition."
+        },
+        {
+          "TITLE": "Nature",
+          "DESCRIPTION": "We operate in one of the most stunning ecosystems of the Yucatán Peninsula — the jungle and the cenotes — and promote its preservation, environmental education, and sustainable development."
+        },
+        {
+          "TITLE": "Gastronomy",
+          "DESCRIPTION": "Our tours include regional flavors, snacks, and traditional elements highlighting the richness of Mexican cuisine. This fusion of adventure, culture, and nature is what makes us one of the top-rated adventure parks in Mexico and the world."
+        }
+      ]
+    },
+    "EXTREME_PARTNERS": {
+      "TITLE": "Extreme Partners – Our Affiliate Program",
+      "DESCRIPTION": "Extreme Partners is our official Affiliate Program, designed for travel agencies, hotels, influencers, and tourism companies seeking to offer top-tier adventure experiences.",
+      "BENEFITS": {
+        "TITLE": "Benefits of Joining Extreme Partners",
+        "DESCRIPTION": "We currently collaborate with partners across Mexico, the United States, Canada, Europe, and South America, positioning Extreme Adventuring Cancun as one of the most widely sold adventure products in the region.",
+        "DESCRIPTION_2": "To become an affiliate, agencies can contact our commercial department or request onboarding materials.",
+        "LIST": [
+          "High commission rates",
+          "Dedicated booking support",
+          "Instant confirmation system",
+          "Priority access to availability",
+          "Co-branded marketing materials",
+          "Training for sales teams",
+          "Reliable transportation and operations",
+          "18+ years of reputation and international awards"
+        ]
+      }
+    },
+    "RECOGNITIONS": {
+      "TITLE": "Awards, Recognitions & Global Mentions",
+      "DESCRIPTION": "Extreme Adventuring Cancun is one of the most awarded adventure parks in Latin America, consistently recognized by global institutions for excellence, sustainability, and visitor experience.",
+      "DESCRIPTION_2": "These recognitions demonstrate our commitment to innovation, quality, sustainability, and world-class tourism.",
+      "WTA": {
+        "TITLE": "World Travel Awards",
+        "LIST": [
+          "Mexico’s Leading Adventure Tourist Attraction 2023",
+          "Mexico’s Leading Adventure Tourist Attraction 2024",
+          "Mexico’s Leading Adventure Tourist Attraction 2025",
+          "Mexico & Central America’s Leading Adventure Tourist Attraction 2025"
+        ]
+      },
+      "TRIPADVISOR": {
+        "TITLE": "TripAdvisor",
+        "LIST": [
+          "Traveler’s Choice Awards — 9 consecutive years",
+          "“Best of the Best” (three years running)"
+        ]
+      },
+      "WLTA": {
+        "TITLE": "World Luxury Travel Awards",
+        "LIST": [
+          "Awarded for excellence as an ecological adventure park",
+          "Highlighted for quality, sustainability, and outstanding guest experience"
+        ]
+      },
+      "NATGEO": {
+        "TITLE": "National Geographic Traveller",
+        "LIST": [
+          "Featured as a recommended Mexican adventure experience in their international edition (2025)"
+        ]
+      }
+    },
+    "SUSTAINABILITY": {
+      "TITLE": "Sustainability & Our Commitment to the Jungle",
+      "DESCRIPTION": "Extreme Adventuring Cancun operates under a sustainability model focused on:",
+      "DESCRIPTION_2": "We believe that preserving the Selva Maya is a shared responsibility and an essential part of our mission.",
+      "VALUES": [
+        {
+          "TITLE": "Environmental Conservation",
+          "LIST": [
+            "Protection of cenotes and aquifers",
+            "Zero single-use plastic policies",
+            "Waste management and recycling programs",
+            "Controlled impact on jungle flora and fauna"
+          ]
+        },
+        {
+          "TITLE": "Social Responsibility",
+          "LIST": [
+            "Employment opportunities for local families",
+            "Fair wages and continuous training",
+            "Programs supporting the Puerto Morelos community",
+            "Promotion of cultural heritage and identity"
+          ]
+        }
+      ]
+    },
+    "OUR_PROMISE": {
+      "TITLE": "Our Promise",
+      "DESCRIPTION": "We work every day with a clear purpose: “To make every day with us the best day of your vacation”, Adventure, culture, nature, and exceptional service — all in one place."
+    },
+    "WELCOME_TO_EXTREME_ADVENTURING": "Welcome to Extreme Adventuring Cancun.",
+    "WELCOME_FAMILY": "Welcome to the family."
+  },
+  "NOT_FOUND_PAGE": {
+    "TITLE": "Page not found!",
+    "DESCRIPTION": "We're sorry, but the page you're looking for has been moved or does not exist. Please check the URL and try again. If you think this is an error, please contact us.",
+    "BUTTON": "Go back to home"
+  },
+  "ERROR_SERVER_PAGE": {
+    "TITLE": "Oops! Something went wrong",
+    "DESCRIPTION": "We are sorry, but it seems there was a problem with the server. Please try again later. Thank you for your understanding!",
+    "BUTTON": "Go back to home"
+  },
+  "MAILING": {
+    "CONTACT_US": {
+      "SUBJECT": "Thank you for contacting us",
+      "BODY": {
+        "HELLO": "Hello",
+        "THANK_YOU": "Thank you for contacting us!",
+        "WE_WILL_GET_BACK": "We have received your message and will get back to you as soon as possible. If you have any urgent questions or need immediate assistance, please don't hesitate to call us at +52 998 249 0003.",
+        "INFORMATION": "*This email is for informational purposes only, and you do not need to reply to this message.*",
+        "COPYRIGHT": "All rights reserved."
+      }
+    }
+  },
+  "THANKS_PAGE": {
+    "TITLE": "Thanks for your reservation",
+    "DESCRIPTION": {
+      "TEXT_1": "We have received your message and will contact you shortly.",
+      "TEXT_2": "If you have any questions or need immediate assistance, please call us at +52 998 249 0003 or send us an email at    ."
+    }
+  },
+  "DETAIL_PAGE": {
+    "GENERAL": {
+      "DURATION": "Duration",
+      "APPROX": "approx.",
+      "SCHEDULE": "Schedules",
+      "HOURS": "hours",
+      "TRANSPORTATION": "Transportation",
+      "ROUNDTRIP_TRANSPORTATION": "Round trip transportation",
+      "OFFERED_IN": "Offered in",
+      "OFFERED_LANG": "English & Spanish",
+      "AGE_REQUIREMENT": "Minimum Age",
+      "YEARS_AND_OLDER": "years and older"
+    },
+    "REGULAR_CENOTE": {},
+    "PRIVATE_CENOTE": {}
   }
 }
