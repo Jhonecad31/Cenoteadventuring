@@ -1,28 +1,32 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@/layouts/BaseLayout.astro";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const contactInfo = [
   {
     icon: Phone,
-    title: "Phone",
+    title: i18n.CONTACT_PAGE.INFO.OPTIONS.PHONE,
     value: "+52 (998) 123 4567",
-    subtitle: "Mon - Sun / 9am - 6pm",
+    href: "tel:+529982490003",
   },
   {
     icon: Mail,
-    title: "Email",
+    title: i18n.CONTACT_PAGE.INFO.OPTIONS.EMAIL,
     value: "info@cenoteadventuring.com",
-    subtitle: "Online support 24/7",
+    href: "mailto:info@cenoteadventuring.com",
   },
-  {
-    icon: MapPin,
-    title: "Location",
-    value: "Puerto Morelos, Quintana Roo",
-    subtitle: "Riviera Maya, Mexico",
-  }
 ];
+
+const seoMetaData = {
+    title: i18n.SEO.CONTACT_PAGE.TITLE,
+    description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
+    metaTitle: i18n.SEO.CONTACT_PAGE.META_TITLE,
+};
 ---
 
 <Layout title="Contact Us | Cenote Adventuring">
@@ -53,7 +57,6 @@ const contactInfo = [
                   <div>
                     <p class="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">{item.title}</p>
                     <p class="text-lg font-medium">{item.value}</p>
-                    <p class="text-sm opacity-60">{item.subtitle}</p>
                   </div>
                 </div>
               ))}

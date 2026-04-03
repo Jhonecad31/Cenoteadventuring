@@ -1,0 +1,46 @@
+---
+import { getI18N } from "@/i18n";
+import { languages } from "@/i18n/ui";
+import { useTranslatedPath, getLangFromUrl } from "@/i18n/utils";
+
+const currentLocale = Astro.currentLocale;
+const i18n = getI18N({ currentLocale });
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const currentLanguage = languages[lang]
+const languageList = Object.values(languages);
+const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
+---
+
+<div class="relative inline-block text-left">
+    <div class="group">
+        <button
+            type="button"
+            class="cursor-pointer w-full p-2 hover:bg-gray-200/50 rounded-full flex items-center gap-1"
+            aria-expanded="true"
+            aria-haspopup="true"
+            aria-label={i18n.ACCESSIBILITY.CHANGE_LANGUAGE}
+
+            <span class="uppercase text-xs text-white">{currentLanguage.code}</span>
+        </button>
+        <ul class="absolute left-1/2 -translate-x-1/2 hidden group-hover:block w-fit bg-white rounded-lg shadow">
+            {
+                languageList.map((lang) => (
+                    <li class="py-1 px-2">
+                        <a
+                            class={`flex items-center p-2 text-sm hover:bg-gray-200 rounded-lg uppercase ${lang.code === currentLocale ? "font-semibold" : ""}`}
+                            href={translatePath(currentPath, lang.code)}
+                        >
+                            <lang.flag class="size-6 mr-2 inline-block" /> {lang.code}
+                            {lang.code === currentLocale && (
+                                <span class="ml-2 inline-flex size-2 rounded-full bg-emerald-400"></span>
+                            )}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>

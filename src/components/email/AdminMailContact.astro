@@ -1,0 +1,63 @@
+---
+const { fullName, subject, message, email, phone } = Astro.props;
+
+const nameWeb = "Snorkeling Adventure";
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="x-apple-disable-message-reformatting" />
+</head>
+<body style='background-color:#DFF2FE;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif'>
+    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:37.5em;padding:20px;border:1px solid rgb(0,0,0, 0.1);border-radius:10px;background-color:#ffffff;margin-top:20px;margin-bottom:20px;">
+        <tbody>
+            <tr>
+                <td>
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="overflow:hidden">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="padding:20px;padding-bottom:0">
+                                        <tbody style="width:100%">
+                                            <tr style="width:100%">
+                                                <td data-id="__react-email-column">
+                                                    <h1 style="font-size:32px;font-weight:bold;text-align:center;">
+                                                        Snorkeling Adventure - Web
+                                                    </h1>
+                                                    <h2 style="font-size:20px;font-weight:bold;text-align:center">
+                                                        Información del contacto
+                                                    </h2>
+                                                    <p style="font-size:16px;line-height:24px;margin:16px 0;margin-top:-5px">
+                                                        <b>Nombre:</b> {fullName}
+                                                    </p>
+                                                    <p style="font-size:16px;line-height:24px;margin:16px 0;margin-top:-5px">
+                                                        <b>Correo:</b> {email}
+                                                    </p>
+                                                    <p style="font-size:16px;line-height:24px;margin:16px 0;margin-top:-5px">
+                                                        <b>Número Telefónico:</b> {phone}
+                                                    </p>
+                                                    <p style="font-size:16px;line-height:24px;margin:16px 0;margin-top:-5px"> 
+                                                        <b>Asunto:</b> <br> {subject} 
+                                                    </p>
+                                                    <p style="font-size:16px;line-height:24px;margin:16px 0;margin-top:-5px"> 
+                                                        <b>Mensaje:</b> <br> {message} 
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size:12px;line-height:24px;margin:16px 0;text-align:center;color:rgb(0,0,0, 0.7)">
+                        © {new Date().getFullYear()} | {nameWeb} | Todos los derechos reservados.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

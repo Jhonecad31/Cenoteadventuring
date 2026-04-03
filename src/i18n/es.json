@@ -45,7 +45,19 @@
       "DESCRIPTION": "Ocurrió un error en el servidor. Por favor, inténtelo de nuevo más tarde."
     }
   },
-  "ACCESSIBILITY": {},
+  "ACCESSIBILITY": {
+    "LOGO": "Logo The Best Cenotes in Puerto Morelos",
+        "CHANGE_LANGUAGE": "Cambiar idioma",
+        "GO_TO_HOME": "Ir a inicio",
+        "COPYRIGHT": "Todos los derechos reservados a Cenote Adventuring",
+        "REVIEWS": "reseñas",
+        "PRICE_FROM": "Desde",
+        "PEOPLE_ENJOYED": "personas disfrutaron de esta experiencia",
+        "MENU": {
+            "OPEN_MENU": "Abrir menú",
+            "CLOSE_MENU": "Cerrar menú"
+        }
+  },
   "HOME_PAGE": {
     "HERO": {
       "TITLE": "Cenote Adventuring en Puerto Morelos: Tour Privado por los Mejores Cenotes Ocultos",
