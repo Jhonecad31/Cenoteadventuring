@@ -6,7 +6,7 @@ const i18n = getI18N({ currentLocale }) as any;
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 
 const images = {
-  awars: "Laureles_mivari",
+  awars: "Premios_laureles-07_vkvval",
 };
 
 const getUrl = (id: string, w = 1200) =>
@@ -38,22 +38,35 @@ const getUrl = (id: string, w = 1200) =>
           </a>
         </div>
       </div>
+      <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none mt-10 mb-20">
+                <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-white dark:from-gray-950 to-transparent"></div>
+                <div
+                    class="marquee-inner will-change-transform max-w-5xl mx-auto"
+                >
+                    <div class="flex">
+                        <img
+                          src={getUrl(images.awars)}
+                          alt="Awards"
+                          class="w-48 md:w-120 h-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                        />
+                    </div>
+                </div>
+
+                <div
+                    class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-linear-to-l from-white dark:from-gray-950 to-transparent"
+                >
+                </div>
+            </div>
     </div> 
     <div class="w-full flex justify-center mt-20 lg:mt-32 relative group">
   <!-- laureles -->
-  <!-- <div class="relative flex items-center justify-center">
+  <div class="relative flex items-center justify-center">
     <img
       src={getUrl(images.awars)}
       alt="Awards"
       class="w-48 md:w-120 h-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-500"
     />
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-      <p class="text-[#001524] uppercase tracking-[0.3em] text-10px] md:text-xs font-bold px-4">
-        World's Best <br class="md:hidden" /> Awards 2025
-      </p>
-    </div>
-
-  </div> -->
+  </div>
 
 </div>
   </div>

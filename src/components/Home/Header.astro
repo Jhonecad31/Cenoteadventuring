@@ -5,7 +5,7 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
-import { Menu, X, Search, User, Phone } from "lucide-react"; // Añadimos Phone
+import { Menu, X, Search, User, Phone, Facebook } from "lucide-react"; // Añadimos Phone
 import { Button } from "@/components/ui/button";
 import LanguageSelector from "./LanguageSelector.astro";
 import { CenoteAdventure } from "@/icons/allIcons";
@@ -24,6 +24,19 @@ const navigation = [
   { title: k("nav.blog"), link: translatePath("/blog/")},
   { title: k("nav.contact"), link: translatePath("/Contact/contact/") }
 ];
+
+const socialMedia = [
+  // {
+  //   alt: i18n.ACCESSIBILITY.SOCIAL_MEDIA.GO_TO_FACEBOOK,
+  //   icon: Facebook,
+  //   href: "https://www.facebook.com/snorkeladventuringcancun"
+  // }
+  // {
+  //   alt: i18n.ACCESSIBILITY.SOCIAL_MEDIA.GO_TO_INSTAGRAM,
+  //   icon: Instagram,
+  //   href: "https://www.instagram.com/snorkelingadventurecancun"
+  // }
+]
 ---
 
 <header

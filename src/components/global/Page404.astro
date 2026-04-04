@@ -3,6 +3,7 @@ import { getI18N } from "@/i18n";
 import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import BtnHome from "../others/BtnHome";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -25,7 +26,7 @@ const seoMetaDatos = {
             {i18n.NOT_FOUND_PAGE.TITLE}
             {i18n.NOT_FOUND_PAGE.DESCRIPTION}
             <div class="mt-10">
-                <BtnLinkCustom
+                <BtnHome
                     client:visible
                     text={i18n.ACCESSIBILITY.GO_TO_HOME}
                     url={translatePath("/")}
