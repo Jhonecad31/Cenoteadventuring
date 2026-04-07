@@ -1,4 +1,14 @@
 ---
+import { Button } from "@/components/ui/button";
+import { getI18N } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import TagH2 from "@/components/global/TagH2.astro";
+import TagH1 from "@/components/global/TagH1.astro"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const faqs = [
   {
     question: "Does the tour include transportation to the cenote in Puerto Morelos?",
@@ -23,9 +33,13 @@ const faqs = [
       </a>
     </div>
 
-    <h2 class="font-serif text-3xl md:text-4xl text-[#001524] mb-12">
-      Explore our FAQ section for answers on common questions
-    </h2>
+    <h1>
+      {i18n.ACCESSIBILITY.FAQS.TITLE}
+    </h1>
+
+    <TagH2>
+      {i18n.ACCESSIBILITY.FAQS.DESCRIPTION}
+    </TagH2>
 
     <div class="divide-y divide-gray-200">
       {faqs.map((faq) => (

@@ -1,13 +1,20 @@
 ---
 import { getI18N } from "@/i18n";
+import { Natgeo } from "@/icons/allIcons";
+import Swiper from "swiper";
+import {Autoplay} from 'swiper/modules';
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
-
-const images = {
-  awars: "Premios_laureles-07_vkvval",
+const premios = {
+  natgeo: "Premios_laureles-07_2_i2l2kl",
+  world: "Premios_laureles-05_1_e3pfdg",
+  TripA: "Premios_laureles-06_2_nvux3d",
 };
+
+const logosCloudinary = Object.values(premios);
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 
 const getUrl = (id: string, w = 1200) =>
   `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
@@ -18,57 +25,101 @@ const getUrl = (id: string, w = 1200) =>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
       <div class="max-w-md">
         <div class="w-12 h-[1px] bg-[#006083] mb-8"></div>
-        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#001524] leading-[1.1]">
-          {i18n.HOME_PAGE?.DESCRIPTION?.TITLE || "Mexico’s Most Awarded Adventure Company"}
+        <h2
+          class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#001524] leading-[1.1]"
+        >
+          {
+            i18n.HOME_PAGE?.DESCRIPTION?.TITLE ||
+              "Mexico’s Most Awarded Adventure Company"
+          }
         </h2>
       </div>
 
-     <div class="flex flex-col gap-8 lg:mt-4">
-        <p class="text-[#001524]/80 text-xl md:text-2xl leading-relaxed font-light font-serif regular">
-           {i18n.HOME_PAGE?.DESCRIPTION?.SUBTITLE || "Luxury meets the wilderness in the heart of the Riviera Maya."}
+      <div class="flex flex-col gap-8 lg:mt-4">
+        <p
+          class="text-[#001524]/80 text-xl md:text-2xl leading-relaxed font-light font-serif regular"
+        >
+          {
+            i18n.HOME_PAGE?.DESCRIPTION?.SUBTITLE ||
+              "Luxury meets the wilderness in the heart of the Riviera Maya."
+          }
         </p>
-        
-        <div class="space-y-6 text-[#001524]/70 text-lg leading-relaxed max-w-xl">
+
+        <div
+          class="space-y-6 text-[#001524]/70 text-lg leading-relaxed max-w-xl"
+        >
           <p>
-            {i18n.HOME_PAGE?.DESCRIPTION?.TEXT_1 || "Book your spot today to enjoy the highest-rated culinary and adventure experiences in the Mexican Caribbean. Paradise awaits."}
+            {
+              i18n.HOME_PAGE?.DESCRIPTION?.TEXT_1 ||
+                "Book your spot today to enjoy the highest-rated culinary and adventure experiences in the Mexican Caribbean. Paradise awaits."
+            }
           </p>
-          
-          <a href="/about" class="inline-block pt-4 text-[#005B71] uppercase tracking-[0.2em] text-xs font-bold border-b border-[#005B71]/20 hover:border-[#005B71] transition-all duration-300">
+
+          <a
+            href="/about"
+            class="inline-block pt-4 text-[#005B71] uppercase tracking-[0.2em] text-xs font-bold border-b border-[#005B71]/20 hover:border-[#005B71] transition-all duration-300"
+          >
             {i18n.HOME_PAGE?.DESCRIPTION?.LINK || "Discover our story"}
           </a>
         </div>
       </div>
-      <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none mt-10 mb-20">
-                <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-white dark:from-gray-950 to-transparent"></div>
-                <div
-                    class="marquee-inner will-change-transform max-w-5xl mx-auto"
-                >
-                    <div class="flex">
-                        <img
-                          src={getUrl(images.awars)}
-                          alt="Awards"
-                          class="w-48 md:w-120 h-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-                        />
-                    </div>
-                </div>
 
-                <div
-                    class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-linear-to-l from-white dark:from-gray-950 to-transparent"
-                >
+      <div
+        class="overflow-hidden w-full relative max-w-5xl mx-auto select-none mt-10 mb-20"
+      >
+        <div
+          class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-white dark:from-gray-950 to-transparent"
+        >
+        </div>
+       <div class="swiper myAwardsSwiper w-full max-w-5xl mx-auto py-10 overflow-hidden">
+    <div class="swiper-wrapper flex items-center justify-center">
+        {
+            logosCloudinary.map((premioId) => (
+                <div class="swiper-slide !w-auto flex items-center justify-center">
+                    <img
+                        class="mx-11 object-contain"
+                        src={`https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_200/${premioId}`}
+                        alt="Premio Laureles"
+                        width="150"
+                        height="150"
+                        draggable="false"
+                        loading="lazy"
+                    />
                 </div>
-            </div>
-    </div> 
-    <div class="w-full flex justify-center mt-20 lg:mt-32 relative group">
-  <!-- laureles -->
-  <div class="relative flex items-center justify-center">
-    <img
-      src={getUrl(images.awars)}
-      alt="Awards"
-      class="w-48 md:w-120 h-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-    />
-  </div>
-
+            ))
+        }
+    </div>
 </div>
+      </div>
+    </div>
   </div>
 </section>
+<style is:global>
+    /* Estilo para que el movimiento sea lineal y fluido (estilo Marquee) */
+    .myAwardsSwiper .swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+</style>
 
+<script>
+    import Swiper from 'swiper';
+    import { Autoplay } from 'swiper/modules';
+
+    function initSwiper() {
+        new Swiper('.myAwardsSwiper', {
+            modules: [Autoplay],
+            slidesPerView: 'auto', // Permite que los logos mantengan su ancho natural
+            loop: true,            // Bucle infinito
+            speed: 5000,           // Velocidad de la transición en ms
+            allowTouchMove: true,
+            autoplay: {
+                delay: 0,          // Delay 0 para que no se detenga
+                disableOnInteraction: false,
+            },
+        });
+    }
+
+    // Inicializar al cargar y en cambios de página de Astro
+    initSwiper();
+    document.addEventListener('astro:after-swap', initSwiper);
+</script>

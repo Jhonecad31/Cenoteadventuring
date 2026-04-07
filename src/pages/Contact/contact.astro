@@ -1,20 +1,15 @@
 ---
-import Header from "@/components/home/Header.astro";
-import Layout from "@/layouts/BaseLayout.astro";
-import Footer from "@/components/home/Footer.astro";
-import Maps from "@/components/sections/Maps.astro";
-import ContactComponent from "@/components/home/Contact.astro";
+import ContactPage from "@/components/home/Contact.astro";
+import Maps from "@/components/sections/Maps.astro"
+import Footer from "@/components/home/Footer.astro"
 ---
-
-<Layout>
-  <Header />
-  <main>
-    <ContactComponent/>
-    <Maps/>
-    <section class="bg-[#EDF4FC] py-24">
-       <div class=" w-full max-w-[1800px]  px-8 text-center">
-         </div>
-    </section>
-  </main>
-  <Footer />
-</Layout>
+<ContactPage />
+<Maps/>
+<section>
+  <div class="-mt-130">
+  <Maps/>
+</div>
+<section class="bg-[#EDF4FC]">
+  <Footer/>
+</section>
+</section

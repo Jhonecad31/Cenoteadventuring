@@ -47,16 +47,22 @@
   },
   "ACCESSIBILITY": {
     "LOGO": "Logo The Best Cenotes in Puerto Morelos",
-        "CHANGE_LANGUAGE": "Cambiar idioma",
-        "GO_TO_HOME": "Ir a inicio",
-        "COPYRIGHT": "Todos los derechos reservados a Cenote Adventuring",
-        "REVIEWS": "reseñas",
-        "PRICE_FROM": "Desde",
-        "PEOPLE_ENJOYED": "personas disfrutaron de esta experiencia",
-        "MENU": {
-            "OPEN_MENU": "Abrir menú",
-            "CLOSE_MENU": "Cerrar menú"
-        }
+    "CHANGE_LANGUAGE": "Cambiar idioma",
+    "GO_TO_HOME": "Ir a inicio",
+    "COPYRIGHT": "Todos los derechos reservados a Cenote Adventuring",
+    "REVIEWS": "reseñas",
+    "PRICE_FROM": "Desde",
+    "PEOPLE_ENJOYED": "personas disfrutaron de esta experiencia",
+    "MENU": {
+      "OPEN_MENU": "Abrir menú",
+      "CLOSE_MENU": "Cerrar menú"
+    },
+    "SOCIAL_MEDIA": {
+      "FOLLOW": "Follow us",
+      "GO_TO_FACEBOOK": "Follow us on Facebook",
+      "GO_TO_INSTAGRAM": "Follow us on Instagram",
+      "GO_TO_TRIPADVISOR": "Check our reviews on TripAdvisor"
+    }
   },
   "HOME_PAGE": {
     "HERO": {

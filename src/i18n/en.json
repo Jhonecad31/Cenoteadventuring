@@ -57,6 +57,12 @@
     "MENU": {
       "OPEN_MENU": "Open menu",
       "CLOSE_MENU": "Close menu"
+    },
+    "SOCIAL_MEDIA": {
+      "FOLLOW": "Follow us",
+      "GO_TO_FACEBOOK": "Follow us on Facebook",
+      "GO_TO_INSTAGRAM": "Follow us on Instagram",
+      "GO_TO_TRIPADVISOR": "Check our reviews on TripAdvisor"
     }
   },
   "HOME_PAGE": {
@@ -198,36 +204,33 @@
     }
   },
   "CENOTE_TRAIL_PAGE": {
-    "HERO": {
-      "TITLE": "Ruta de los Cenotes in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes ",
-      "DESCRIPTION": "Hidden just a short drive from Cancun, the Ruta de los Cenotes in Puerto Morelos is one of the most authentic experiences in the Mexican Caribbean."
+    "INTRO": {
+      "TITLE": "Ruta de los Cenotes in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
+      "DESCRIPTION 1": "Hidden just a short drive from Cancun, the Ruta de los Cenotes in Puerto Morelos is one of the most authentic природные experiences in the Mexican Caribbean. Surrounded by lush jungle, this scenic route is home to some of the most beautiful cenotes near Puerto Morelos, offering a unique connection with nature, culture, and adventure. ",
+      "DESCRIPTION 2": "If you're exploring things to do in Puerto Morelos or planning a day trip from Cancun, the ruta de los cenotes is a must-visit destination where crystal-clear freshwater pools, underground caves, and eco-adventures come together in one unforgettable experience. "
     },
     "WHAT_TO_EXPECT": {
-      "TITLE": "What to Expect: A Day in the Ruta de los Cenotes",
+      "TITLE": "What to Expect on the Ruta de los Cenotes",
       "LIST": [
         {
-          "TITLE": "Ruta de los Cenotes – A Guide to Nature, Adventure & Hidden Gems",
-          "DESCRIPTION": "Located just a short drive from Cancun, this peaceful jungle road offers an authentic escape into the heart of the Mexican Caribbean's natural wonders."
+          "TITLE": "Natural Diversity",
+          "DESCRIPTION": "Discover a variety of cenotes, from open-air pools surrounded by jungle to mystical caves with dramatic rock formations."
         },
         {
-          "TITLE": "Diverse Cenote Formations",
-          "DESCRIPTION": "Discover a variety of Puerto Morelos cenotes, from open-air pools surrounded by lush greenery to mystical cave cenotes with dramatic rock formations."
+          "TITLE": "Immersive Adventure",
+          "DESCRIPTION": "Enjoy activities like swimming in crystal-clear waters, zip-lining through the canopy, or exploring jungle trails on ATVs."
         },
         {
-          "TITLE": "Immersive Water Activities",
-          "DESCRIPTION": "Enjoy access to multiple cenotes where you can swim, snorkel, or simply relax in fresh, crystal-clear waters connected to the world’s largest underground river systems."
+          "TITLE": "Peaceful Atmosphere",
+          "DESCRIPTION": "Escape the crowds and connect with a calm, refreshing ecosystem that offers a perfect balance of tranquility and nature."
         },
         {
-          "TITLE": "The Charm of Puerto Morelos",
-          "DESCRIPTION": "Experience the laid-back atmosphere of this coastal town, serving as the gateway to the route with its local culture, traditional food, and relaxed Caribbean vibes."
+          "TITLE": "Authentic Culture",
+          "DESCRIPTION": "Experience the laid-back charm of Puerto Morelos, the gateway to the route, blending local flavors and Caribbean vibes."
         },
         {
-          "TITLE": "Adventure Beyond the Beach",
-          "DESCRIPTION": "Perfect for those seeking a balance of tranquility and adrenaline, with activities ranging from zip-lining and ATV rides to exploring freshwater sinkholes."
-        },
-        {
-          "TITLE": "Strategic & Easy Access",
-          "DESCRIPTION": "Conveniently located between Cancun and Playa del Carmen, making it one of the best and most accessible day trips for travelers in the region."
+          "TITLE": "Convenient Access",
+          "DESCRIPTION": "Located just 20–30 minutes from Cancun, making it an easy and enriching day trip to one of the world's largest underground river systems."
         }
       ]
     }

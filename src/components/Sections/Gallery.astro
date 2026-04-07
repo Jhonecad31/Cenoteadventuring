@@ -11,20 +11,20 @@ const i18n = getI18N({currentLocale});
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 
 const images = {
-  // Extremos (Imágenes únicas o bloques pequeños)
-  farRightOne:'Gallery.5_pn1kte',
-  farRightTow:'Gallery.4_lqavcm',
-  farLeftOne:'Gallery.10_cnhwsq',
-  farLeftTow:'Gallery.11_tyip25',
-  ultimateTow:'Gallery.2_ner16w',
-  ultimateOne:'Gallery.6_bhtzce',
+  // Extremos (bloques pequeños)
+  farRightOne:'CenoteA.7_rpyhjn',
+  farRightTow:'CenoteA.3_pzncr9',
+  farLeftOne:'CenoteA.8_jx4f49',
+  farLeftTow:'CenoteA.2_njvbos',
+  ultimateTow:'CenoteA.8_jx4f49',
+  ultimateOne:'CenoteA.7_rpyhjn',
   // Medias (Bloques dobles)
-  leftTop: 'Gallery.9_amkmkc',
-  leftBottom: 'Gallery.1_w0aaof',
-  rightTop: 'Gallery.3_i9hia8',
-  rightBottom: 'Gallery.7_mhzqtt',
+  leftTop: 'CenoteA.1_ntnmsp',
+  leftBottom: 'CenoteA.2_njvbos',
+  rightTop: 'CenoteA.3_pzncr9',
+  rightBottom: 'CenoteA.8_jx4f49',
   // Centro
-  center: 'gallery.Princ_ayeycx', 
+  center: 'CenoteA.5_tdhqvl', 
 };
 
 const getUrl = (id: string, w = 1200) => 
@@ -32,9 +32,8 @@ const getUrl = (id: string, w = 1200) =>
 ---
 
 <section class="py-12 bg-[#F8FAFC] w-full overflow-hidden">
-  <!-- se agregan titulos y sub titulos para gallery -->
-    <TagH1 class="pt-20 max-w-3xl mx-auto px-5">{i18n.HOME_PAGE.GALLERY.TITLE}</TagH1>
-    <TagP class="max-w-3xl mx-auto mb-20 text-center! px-5">
+    <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif italic">{i18n.HOME_PAGE.GALLERY.TITLE}</TagH1>
+    <TagP class="max-w-3xl mx-auto mb-20 text-center! px-5 font-serif">
         {i18n.HOME_PAGE.GALLERY.DESCRIPTION}
     </TagP>
     <div class="w-full px-2">
@@ -95,18 +94,9 @@ const getUrl = (id: string, w = 1200) =>
     </div>
   </div>
 </section>
-
-<!-- <script>
-  import { Fancybox } from "@fancyapps/ui";
-  Fancybox.bind("[data-fancybox]", {
-    infinite: true,
-  });
-</script> -->
-
-<!-- parte de la seccion para gallery -->
 <script>
     import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
     Fancybox.bind("[data-fancybox]", {});
 </script>
-<!-- se agrega nueva confic para el script -->
+
  
