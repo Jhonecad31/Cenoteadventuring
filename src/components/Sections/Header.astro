@@ -24,37 +24,18 @@ const navigation = [
   { title: k("nav.blog"), link: translatePath("/blog/")},
   { title: k("nav.contact"), link: translatePath("/Contact/contact/") }
 ];
-
-const socialMedia = [
-  // {
-  //   alt: i18n.ACCESSIBILITY.SOCIAL_MEDIA.GO_TO_FACEBOOK,
-  //   icon: Facebook,
-  //   href: "https://www.facebook.com/snorkeladventuringcancun"
-  // }
-  // {
-  //   alt: i18n.ACCESSIBILITY.SOCIAL_MEDIA.GO_TO_INSTAGRAM,
-  //   icon: Instagram,
-  //   href: "https://www.instagram.com/snorkelingadventurecancun"
-  // }
-]
 ---
 
 <header
-  class="fixed top-0 w-full z-50 transition-all duration-500 h-24 flex items-center border-b border-transparent"
-  id="main-header"
->
-  <div
-    class="max-w-[1800px] mx-auto px-6 md:px-8 w-full flex items-center justify-between h-full"
-  >
+  class="fixed top-0 w-full z-50 transition-all duration-500 h-24 flex items-center border-b border-transparent" id="main-header">
+  <div class="max-w-[1800px] mx-auto px-6 md:px-8 w-full flex items-center justify-between h-full">
     <div class="flex-1 lg:hidden">
       <button class="text-white transition-colors duration-500" id="open-menu">
         <Menu size={28} strokeWidth={1.2} />
       </button>
     </div>
 
-    <div
-      class="flex-[2] flex justify-center lg:flex-1 lg:justify-start lg:items-center"
-    >
+    <div class="flex-[2] flex justify-center lg:flex-1 lg:justify-start lg:items-center">
       <a
         href={translatePath("/")}
         aria-label={i18n.ACCESSIBILITY?.GO_TO_HOME}

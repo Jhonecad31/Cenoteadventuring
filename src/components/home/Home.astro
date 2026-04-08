@@ -1,0 +1,44 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Schema } from "astro-seo-schema";
+import { getI18N } from "@/i18n";
+import { getLangFromUrl } from "@/i18n/utils";
+import Hero from "@/components/sections/Hero.astro";
+import Awars from "@/components/sections/Awars.astro";
+import PricingCardsHome from "@/components/sections/PricingCardsHome.astro"
+import Gallery from "@/components/sections/Gallery.astro";
+import Questions from "@/components/sections/Questions.astro"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const lang = getLangFromUrl(Astro.url);
+
+const seoMetaData = { 
+    title: i18n.SEO.HOME_PAGE.TITLE,
+    description: i18n.SEO.HOME_PAGE.DESCRIPTION,
+    metaTitle: i18n.SEO.HOME_PAGE.META_TITLE, 
+}
+---
+<BaseLayout seo={seoMetaData}>
+   {i18n.HOME_PAGE.FAQS.FAQS && (
+        <Schema
+            slot="schema-jsonld"
+            item={{
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: i18n.HOME_PAGE.FAQS.FAQS.map((faq) => ({
+                    "@type": "Question",
+                    name: faq.question,
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: faq.answer,
+                    },
+                })),
+            }}
+        />
+    )}
+    <Hero />
+    <Awars />
+    <PricingCardsHome />
+    <Gallery />
+    <Questions />
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import { Button } from "@/components/ui/button";
+import { getI18N } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import TagH3 from "@/components/global/TagH3.astro";
+import TagH2 from "@/components/global/TagH2.astro";
+import TagH1 from "@/components/global/TagH1.astro";
+import TagP from "@/components/global/TagP.astro";
+import Schema from "node_modules/astro-seo-schema/dist/Schema.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const seoMetaData = {
+  title: i18n.HOME_PAGE.TITLE,
+  description: i18n.HOME_PAGE.DESCRIPTION,
+  metatitle: i18n.HOME_PAGE.META_TITLE,
+};
+---
+
+<section class="py-24 bg-[#EDF4FC]">
+  <div class="max-w-3xl mx-auto px-6">
+    <div
+      class="bg-white border border-gray-100 p-8 mb-20 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm"
+    >
+      <p class="text-gray-700 text-sm font-medium">
+        Do you have any questions or concerns? Our team is here to help.
+      </p>
+      <a
+        href="Contact/contact"
+        class="bg-[#006083] hover:bg-[#006083] text-white px-8 flex items-center justify-center uppercase text-[10px] tracking-widest h-11 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+    <TagH2 class="font-bold">{i18n.HOME_PAGE.FAQS.TITLE}</TagH2>
+    <TagP class="font-normal">
+      {i18n.HOME_PAGE.FAQS.DESCRIPTION}
+    </TagP>
+  </div>
+  <div class="max-w-3xl mx-auto px-6 bg-[#EDF4FC] -mt-2">
+    {
+    i18n.HOME_PAGE.FAQS.FAQS.map(
+      (faq: { question: unknown; answer: unknown }, index: any) => (
+        <details key={index} class="group py-4 outline-none">
+          <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
+            <span>{faq.question}</span>
+            <span class="text-2xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block">
+              +
+            </span>
+          </summary>
+          <p class="pb-6 pr-12 text-gray-600 leading-relaxed animate-fade-in">
+            {faq.answer}
+          </p>
+        </details>
+      ),
+    )
+  }
+  </div>
+</section>
+
+<style>
+  /* Oculta la flecha por defecto de la lista en todos los navegadores */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+</style>

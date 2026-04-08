@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import TagH1 from "../global/TagH1.astro";
 import { Button } from "@/components/ui/button";
@@ -30,7 +30,7 @@ const seoMetaData = {
 };
 ---
 
-<Layout title="Contact Us | Cenote Adventuring">
+<BaseLayout title="Contact Us | Cenote Adventuring">
   <main class="bg-[#EDF4FC] pt-32 pb-20">
     <div class="max-w-6xl mx-auto px-6">
       
@@ -112,4 +112,4 @@ const seoMetaData = {
       </div>
     </div>
   </main>
-</Layout>
+</BaseLayout>
