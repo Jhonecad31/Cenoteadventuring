@@ -1,7 +1,7 @@
 ---
 import AboutSection from "@/components/home/About.astro";
 import { getI18N } from "@/i18n";
-import Layout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Button } from "../ui/button";
 import TagH1 from "@/components/global/TagH1.astro";
 import TagH2 from "@/components/global/TagH2.astro";
@@ -13,11 +13,15 @@ import { ImageMissingAlt } from "node_modules/astro/dist/core/errors/errors-data
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
-const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
 
-const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774544286/video_cenote_web_nzoauf.mp4`;
-const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+
+const images = {
+  imgCenote: "Card.Priv_f5x4xo",
+};
+
+const getUrl = (id: string, w = 1200) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
 
 const seoMetaData = {
   title: i18n?.Selection?.ABOUT_US_PAGE?.TITLE || "Cenote Adventure",
@@ -25,22 +29,18 @@ const seoMetaData = {
 };
 ---
 
-<Layout seo={seoMetaData}>
+<BaseLayout seo={seoMetaData}>
   <main class="bg-[#EDF4FC] overflow-x-hidden">
     <section
       class="relative h-[80vh] flex items-center justify-center overflow-hidden"
     >
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        poster={posterUrl}
+       <img
+        src={getUrl(images.imgCenote)}
         class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100"
-        id="hero-video-player"
-      >
-        <source src={videoUrl} type="video/mp4" />
-      </video>
+        id="hero-video-payer"
+        alt=""
+        loading="lazy"
+      />
 
       <div class="relative z-10 text-center text-white px-6">
         <h1
@@ -48,7 +48,7 @@ const seoMetaData = {
         >
         </h1>
         <p
-          class="uppercase tracking-[0.5em] text-xs md:text-sm font-light opacity-90"
+          class="uppercase tracking-[0.5em] text-xs md:text-sm font-light opacity-90 mt-100"
         >
           Explorando el alma de Quintana Roo
         </p>

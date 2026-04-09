@@ -1,0 +1,156 @@
+---
+import { getI18N } from "@/i18n";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TagH1 from "@/components/global/TagH1.astro";
+import TagH2 from "@/components/global/TagH2.astro";
+import TagH3 from "@/components/global/TagH3.astro";
+import TagP from "@/components/global/TagP.astro";
+import BContainer from "@/components/global/BContainer.astro";
+import { ChevronRight } from "lucide-react";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+
+const images = {
+  imgCenote: "Card.Priv_f5x4xo",
+};
+
+const getUrl = (id: string, w = 1200) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+
+const seoMetaData = {
+  title: i18n?.Selection?.ABOUT_US_PAGE?.TITLE || "Cenote Adventure",
+  description: i18n?.SEO?.ABOUT_US_PAGE?.DESCRIPTION || "Default description",
+};
+
+const relatedActivities = [
+  {
+    name: "National Geography",
+    image: "Ilustración21_85d912fb-f05c-45bb-a396-ee24d4d8ef80-04_r10iz3",
+    slug: "beach-taco-tour",
+  },
+  {
+    name: "World Travel Awards",
+    image: "Ilustración21_85d912fb-f05c-45bb-a396-ee24d4d8ef80-02_butoz2",
+    slug: "extreme-adventuring",
+  },
+  {
+    name: "Trip Advisor",
+    image: "Ilustración21_85d912fb-f05c-45bb-a396-ee24d4d8ef80-03_xojrfd",
+    slug: "snorkel-adventuring",
+  },
+];
+---
+
+<BaseLayout seo={seoMetaData}>
+  <main class="bg-[#EDF4FC] overflow-x-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#EDF4FC]"
+    >
+      <img
+        src={getUrl(images.imgCenote)}
+        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100"
+        id="hero-video-payer"
+        alt=""
+        loading="lazy"
+      />
+    </section>
+
+    <section class="bg-[#F8FAFC] py-24 md:py-40 px-6 overflow-hidden">
+      <div class="max-w-[1200px] mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start"
+        >
+          <div class="max-w-md">
+            <div class="w-12 h-[1px] bg-[#006083] mb-10"></div>
+            <TagH1
+              class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#001524] leading-[1.1]"
+            >
+              {i18n.HOME_PAGE.AWARDS.TITLE}
+            </TagH1>
+          </div>
+
+          <div class="flex flex-col gap-12 lg:mt-4">
+            <TagP
+              class="text-[#001524]/80 text-xl md:text-2xl leading-relaxed font-light font-serif"
+            >
+              {i18n.HOME_PAGE.AWARDS.DESCRIPTION1}
+            </TagP>
+
+            <div
+              class="space-y-12 text-[#001524]/70 text-lg leading-relaxed max-w-xl -mt-20"
+            >
+              <TagP>
+                {i18n.HOME_PAGE.AWARDS.DESCRIPTION2}
+              </TagP>
+              <a
+                href="/about"
+                class="inline-block pt-4 text-[#005B71] uppercase tracking-[0.2em] text-xs font-bold border-b border-[#005B71]/20 hover:border-[#005B71] transition-all duration-300"
+              >
+                {i18n.HOME_PAGE.AWARDS.DESCRIP_LINK}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#EDF4FC] py-20 px-6">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="font-serif text-3xl text-[#001524] mb-4">{i18n.HOME_PAGE.AWARDS.TITLE_SECOND}</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mb-12">
+          {i18n.HOME_PAGE.AWARDS.SUBTITLE}
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  {
+    relatedActivities.map((activity) => (
+      <a
+        href="/activities/"
+        class="group cursor-pointer flex flex-col items-center text-center p-4 rounded-lg hover:bg-white transition"
+      >
+        <div class="h-16 flex items-center justify-center mb-2">
+          <img
+            src={getUrl(activity.image, 500)}
+            alt={activity.name}
+            class="h-16 w-auto object-contain group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+
+        <h4 class="text-[#001524] text-sm tracking-tight line-clamp-2 min-h-[2.5rem]">
+          {activity.name}
+        </h4>
+
+        <div class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mt-1 group-hover:text-[#005B71] transition-colors">
+          Discover more <ChevronRight size={14} />
+        </div>
+      </a>
+    ))
+  }
+</div>
+</div>
+    </section>
+
+  </main>
+  <div></div>
+
+  <script>
+    // Efecto Parallax suave para el Hero
+    window.addEventListener("scroll", () => {
+      const heroImg = document.getElementById("hero-img");
+      if (heroImg) {
+        const scrollValue = window.scrollY;
+        heroImg.style.transform = `translateY(${scrollValue * 0.3}px) scale(1.05)`;
+      }
+    });
+  </script>
+
+  <style>
+    /* Personalización extra para el scroll de la página */
+    main {
+      scroll-behavior: smooth;
+    }
+  </style></BaseLayout
+>

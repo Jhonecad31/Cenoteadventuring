@@ -1,14 +1,11 @@
 ---
-import AboutSection from "@/components/home/About.astro";
 import { getI18N } from "@/i18n";
 import Layout from "@/layouts/BaseLayout.astro";
-import { Button } from "../ui/button";
 import TagH1 from "@/components/global/TagH1.astro";
 import TagH2 from "@/components/global/TagH2.astro";
 import TagH3 from "@/components/global/TagH3.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
-import { ImageMissingAlt } from "node_modules/astro/dist/core/errors/errors-data";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
@@ -27,9 +24,7 @@ const seoMetaData = {
 
 <Layout seo={seoMetaData}>
   <main class="bg-[#EDF4FC] overflow-x-hidden">
-
     <section class="max-w-[1000px] mx-auto py-15 px-6 mt-25">
-
       <TagH2 class="font-serif italic text-5xl text-[#006083] text-center">{i18n.ABOUT_US_PAGE.INTRO.TITLE}</TagH2>
       <div class="w-12 h-[2px] bg-[#006083] mx-auto opacity-30"></div>
       <p class="text-center uppercase tracking-[0.3em] text-[10px] text-slate-500 font-bold">
@@ -60,7 +55,6 @@ const seoMetaData = {
             </div>
         </div>
       </BContainer>
-
     </section>
   </main>
 
