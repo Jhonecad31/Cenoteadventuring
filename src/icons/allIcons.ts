@@ -10,6 +10,7 @@ import Wordl from "@/icons/awards/world-travel-awards.svg"
 import Facebook from "@/icons/social-media/facebook.svg"
 import Instagram from "@/icons/social-media/instagram.svg"
 import Tripadvaisor from "@/icons/social-media/tripadvisor.svg"
+import WorldLanguaje from "@/icons/awards/world.svg"
 
 export {
     IconFlagMEX,
@@ -20,5 +21,6 @@ export {
     CenoteAdventure,
     Facebook,
     Instagram,
-    Tripadvaisor
+    Tripadvaisor,
+    WorldLanguaje
 }

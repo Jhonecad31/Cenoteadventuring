@@ -5,13 +5,14 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
-import { Menu, X, Search, User, Phone, Facebook } from "lucide-react"; // Añadimos Phone
+import { Menu, X, Search, User, Phone, Facebook, Link } from "lucide-react"; // Añadimos Phone
 import { Button } from "@/components/ui/button";
 import LanguageSelector from "./LanguageSelector.astro";
 import { CenoteAdventure } from "@/icons/allIcons";
 import { keyof } from "astro:schema";
 
 const { currentLocale } = Astro;
+const { offI18n } = Astro.props;
 const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 const k = useTranslations(lang);
@@ -19,23 +20,32 @@ const translatePath = useTranslatedPath(lang);
 
 const navigation = [
   { title: k("nav.home"), link: translatePath("/") },
-  { title: k("nav.cenoteTrail"), link: translatePath("sections/cenote-trail/")},
+  {
+    title: k("nav.cenoteTrail"),
+    link: translatePath("sections/cenote-trail/"),
+  },
   { title: k("nav.activities"), link: translatePath("/activities/") },
-  { title: k("nav.blog"), link: translatePath("/blog/")},
-  { title: k("nav.contact"), link: translatePath("/Contact/contact/") }
+  { title: k("nav.blog"), link: translatePath("/blog/") },
+  { title: k("nav.contact"), link: translatePath("/Contact/contact/") },
 ];
 ---
 
 <header
-  class="fixed top-0 w-full z-50 transition-all duration-500 h-24 flex items-center border-b border-transparent" id="main-header">
-  <div class="max-w-[1800px] mx-auto px-6 md:px-8 w-full flex items-center justify-between h-full">
+  class="fixed top-0 w-full z-50 transition-all duration-500 h-24 flex items-center border-b border-transparent"
+  id="main-header"
+>
+  <div
+    class="max-w-[1800px] mx-auto px-6 md:px-20 w-full flex items-center justify-between h-full"
+  >
     <div class="flex-1 lg:hidden">
       <button class="text-white transition-colors duration-500" id="open-menu">
         <Menu size={28} strokeWidth={1.2} />
       </button>
     </div>
 
-    <div class="flex-[2] flex justify-center lg:flex-1 lg:justify-start lg:items-center">
+    <div
+      class="flex-[2] flex justify-center lg:flex-1 lg:justify-start lg:items-center"
+    >
       <a
         href={translatePath("/")}
         aria-label={i18n.ACCESSIBILITY?.GO_TO_HOME}
@@ -60,7 +70,7 @@ const navigation = [
             <li>
               <a
                 href={item.link}
-                class="nav-link text-[11px] uppercase tracking-[0.2em] text-white hover:opacity-60 transition-all font-medium"
+                class="nav-link text-[13px] uppercase tracking-[0.2em] text-white hover:opacity-60 transition-all font-medium"
               >
                 {item.title}
               </a>
@@ -75,14 +85,7 @@ const navigation = [
         class="flex items-center gap-5 text-withe transition-colors duration-500"
         id="icon-group"
       >
-        <a href="tel:+123456789" class="lg:hidden">
-          <Phone size={22} strokeWidth={1.2} />
-        </a>
-        <User
-          size={19}
-          strokeWidth={1.2}
-          className="hidden lg:block cursor-pointer hover:scale-110 transition-transform"
-        />
+        {!offI18n && <LanguageSelector />}
       </div>
     </div>
   </div>
@@ -91,10 +94,11 @@ const navigation = [
     id="mobile-drawer"
     class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
   >
-    <div class="flex justify-end"> <button id="close-menu" ...>
-    <X size={35} strokeWidth={1} />
-  </button>
-</div>
+    <div class="flex justify-end">
+      <button id="close-menu" ...>
+        <X size={35} strokeWidth={1} />
+      </button>
+    </div>
     <nav class="mt-20 text-center">
       <ul class="flex flex-col gap-10">
         {
@@ -124,10 +128,13 @@ const navigation = [
   const openBtn = document.getElementById("open-menu");
   const closeBtn = document.getElementById("close-menu");
   const drawer = document.getElementById("mobile-drawer");
+  const langSelector = document.getElementById("language-selector-container");
 
   window.addEventListener("scroll", () => {
-    const isScrolled = window.scrollY > 50;
-    const marineColor = "#002B49";
+    const isScrolled = window.scrollY > 20;
+
+    langSelector?.classList.toggle("text-[#002B49]", isScrolled);
+    langSelector?.classList.toggle("text-white", !isScrolled);
 
     // Fondo y Altura
     header?.classList.toggle("bg-[#EDF4FC]", isScrolled);
