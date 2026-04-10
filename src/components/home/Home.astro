@@ -3,12 +3,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Schema } from "astro-seo-schema";
 import { getI18N } from "@/i18n";
 import { getLangFromUrl } from "@/i18n/utils";
-import Hero from "@/components/sections/Hero.astro";
-import Awars from "@/components/sections/Awards.astro";
-import PricingCardsHome from "@/components/sections/PricingCardsHome.astro"
-import Gallery from "@/components/sections/Gallery.astro";
-import Questions from "@/components/sections/Questions.astro"
-import IconAwards from "@/components/sections/IconAwards.astro";
+import Hero from "@/components/Sections/Hero.astro";
+import Awars from "@/components/Sections/Awards.astro";
+import PricingCardsHome from "@/components/Sections/PricingCardsHome.astro"
+import Gallery from "@/components/Sections/Gallery.astro";
+import Questions from "@/components/Sections/Questions.astro"
+import IconAwards from "@/components/Sections/IconAwards.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const lang = getLangFromUrl(Astro.url);
