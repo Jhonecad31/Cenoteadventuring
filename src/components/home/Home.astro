@@ -3,22 +3,19 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Schema } from "astro-seo-schema";
 import { getI18N } from "@/i18n";
 import { getLangFromUrl } from "@/i18n/utils";
-<<<<<<< HEAD
-import Hero from "@/components/sections/Hero.astro";
-import Awars from "@/components/sections/Awards.astro";
-import PricingCardsHome from "@/components/sections/PricingCardsHome.astro"
-import Gallery from "@/components/sections/Gallery.astro";
-import Questions from "@/components/sections/Questions.astro"
+import Hero from "@/components/segments/Hero.astro";
+import Awars from "@/components/segments/Awards.astro";
+import PricingCardsHome from "@/components/segments/PricingCardsHome.astro"
+import Gallery from "@/components/segments/Gallery.astro";
+import Questions from "@/components/segments/Questions.astro"
 import IconAwards from "../sections/IconAwards.astro";
 import Awards from "@/pages/awards.astro";
-=======
-import Hero from "@/components/Sections/Hero.astro";
-import Awars from "@/components/Sections/Awards.astro";
-import PricingCardsHome from "@/components/Sections/PricingCardsHome.astro"
-import Gallery from "@/components/Sections/Gallery.astro";
-import Questions from "@/components/Sections/Questions.astro"
-import IconAwards from "@/components/Sections/IconAwards.astro";
->>>>>>> 7e777ae9cf3ba4a2cd94b23a53d980c07aa1c756
+import Hero from "@/components/segments/Hero.astro";
+import Awars from "@/components/segments/Awards.astro";
+import PricingCardsHome from "@/components/segments/PricingCardsHome.astro"
+import Gallery from "@/components/segments/Gallery.astro";
+import Questions from "@/components/segments/Questions.astro"
+import IconAwards from "@/components/segments/IconAwards.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const lang = getLangFromUrl(Astro.url);
