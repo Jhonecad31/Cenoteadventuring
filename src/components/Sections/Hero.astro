@@ -6,6 +6,7 @@ import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import TagH2 from "@/components/global/TagH2.astro";
 import TagH1 from "@/components/global/TagH1.astro";
 import TagP from "@/components/global/TagP.astro";
+import { Natgeo, Tripadvaisor, Wordl } from "@/icons/allIcons";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
@@ -14,26 +15,20 @@ const t = useTranslations(lang);
 const relatedActivities = [
   {
     name: "National Geography",
-    image: "Ilustración21_85d912fb-f05c-45bb-a396-ee24d4d8ef80-04_r10iz3",
-    slug: "beach-taco-tour",
+    image: Natgeo,
   },
   {
     name: "World Travel Awards",
-    image: "Ilustración21_85d912fb-f05c-45bb-a396-ee24d4d8ef80-02_butoz2",
-    slug: "extreme-adventuring",
+    image: Wordl,
   },
   {
     name: "Trip Advisor",
-    image: "Ilustración21_85d912fb-f05c-45bb-a396-ee24d4d8ef80-03_xojrfd",
-    slug: "snorkel-adventuring",
+    image: Tripadvaisor,
   },
 ];
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
-
-const getUrl = (id: string, w = 1200) =>
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
 
 const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774279594/Video_Web_terwzs.mp4`;
 const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
@@ -42,38 +37,42 @@ const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q
 <section
   class="bg-[#F8FAFC] relative h-screen min-h-[100vh] w-full overflow-hidden flex items-end justify-center pb-10 md:pb-5"
 >
- <video
-  autoplay
-  loop
-  muted
-  playsinline
-  poster={posterUrl}
-  class="absolute z-0 w-full h-full object-cover opacity-100 scale-[1.01] brightness-[0.4]" 
-  id="hero-video-player"
->
-  <source src={videoUrl} type="video/mp4" />
-</video>
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    poster={posterUrl}
+    class="absolute z-0 w-full h-full object-cover opacity-100 scale-[1.01] brightness-[0.4]"
+    id="hero-video-player"
+  >
+    <source src={videoUrl} type="video/mp4" />
+  </video>
 
   <div
-  class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center gap-8 sm:gap-10"
->
-  <div class="flex flex-col gap-4 -mt-20 sm:-mt-150 md:-mt-200 lg:-mt-100">
-    <TagH1 class="font-serif regular text-3xl sm:text-7xl md:text-7xl lg:text-6xl leading-tight">
-      {i18n.HOME_PAGE.HERO.TITLE}
-      <span class="block not-regular italic text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
-        {i18n.HOME_PAGE?.SUBTITLE}
-      </span>
-    </TagH1>
-  </div>
+    class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center gap-8 sm:gap-10"
+  >
+    <div class="flex flex-col gap-4 -mt-20 sm:-mt-150 md:-mt-200 lg:-mt-100">
+      <TagH1
+        class="font-serif regular text-3xl sm:text-7xl md:text-7xl lg:text-6xl leading-tight"
+      >
+        {i18n.HOME_PAGE.HERO.TITLE}
+        <span
+          class="block not-regular italic text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2"
+        >
+          {i18n.HOME_PAGE?.SUBTITLE}
+        </span>
+      </TagH1>
+    </div>
 
-  <div class="flex flex-col items-center gap-6 sm:gap-8 mt-4 sm:-mt-5">
-    <Button
-      className="bg-[#006083] text-white rounded-none px-10 sm:px-12 h-14 sm:h-14 uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[13px] sm:text-[13px] font-medium border border-white/10 transition-all duration-500 shadow-xl"
-    >
-      {i18n.HOME_PAGE?.HERO?.BUTTON || "Discover Our Journeys"}
-    </Button>
+    <div class="flex flex-col items-center gap-6 sm:gap-8 mt-4 sm:-mt-5">
+      <Button
+        className="bg-[#006083] text-white rounded-md px-10 sm:px-12 h-14 sm:h-14 uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[13px] sm:text-[13px] font-medium border border-white/10 transition-all duration-500 shadow-xl"
+      >
+        {i18n.HOME_PAGE?.HERO?.BUTTON || "Discover Our Journeys"}
+      </Button>
+    </div>
   </div>
-</div>
 
   <div
     class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
@@ -84,71 +83,6 @@ const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q
     </div>
   </div>
 </section>
-
-<!-- Se agrega sections para awards -->
-<section class="bg-[#F8FAFC] py-24 md:py-40 px-6 overflow-hidden -mt-6">
-  <div class="max-w-[1200px] mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-      <div class="max-w-md">
-        <div class="w-12 h-[1px] bg-[#006083] mb-10"></div>
-        <TagH1
-          class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#001524] leading-[1.1]"
-        >
-          {i18n.HOME_PAGE.AWARDS.TITLE}
-        </TagH1>
-      </div>
-
-      <div class="flex flex-col gap-12 lg:mt-4">
-        <TagP
-          class="text-[#001524]/80 text-xl md:text-2xl leading-relaxed font-light font-serif"
-        >
-          {i18n.HOME_PAGE.AWARDS.DESCRIPTION1}
-        </TagP>
-
-        <div
-          class="space-y-12 text-[#001524]/70 text-lg leading-relaxed max-w-xl -mt-20"
-        >
-          <TagP>
-            {i18n.HOME_PAGE.AWARDS.DESCRIPTION2}
-          </TagP>
-          <a
-            href="/about"
-            class="inline-block pt-4 text-[#005B71] uppercase tracking-[0.2em] text-xs font-bold border-b border-[#005B71]/20 hover:border-[#005B71] transition-all duration-300"
-          >
-            {i18n.HOME_PAGE.AWARDS.DESCRIP_LINK}
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-15">
-      {
-        relatedActivities.map((activity) => (
-          <a
-            href="/activities/"
-            class="group cursor-pointer flex flex-col items-center text-center p-4 rounded-lg hover:bg-white transition"
-          >
-            <div class="h-16 flex items-center justify-center mb-2">
-              <img
-                src={getUrl(activity.image, 500)}
-                alt={activity.name}
-                class="h-16 w-auto object-contain group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-
-            <h4 class="text-[#001524] text-sm tracking-tight line-clamp-2 min-h-[2.5rem] font">
-              {activity.name}
-            </h4>
-
-            <div class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mt-1 group-hover:text-[#005B71] transition-colors">
-              Discover more <ChevronRight size={16} />
-            </div>
-          </a>
-        ))
-      }
-    </div>
-  </div>
-</section>
-
 <script>
   const video = document.getElementById(
     "hero-video-player",
@@ -162,8 +96,6 @@ const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q
   }
 </script>
 <style is:global>
-  /* Convierte cualquier logo colorido en un laurel minimalista azul petróleo (#005B71) */
-  /* Replicando el contraste suave de tu imagen de referencia */
   .awards-img {
     filter: brightness(0) saturate(100%) invert(24%) sepia(91%) saturate(441%)
       hue-rotate(149deg) brightness(93%) contrast(101%);

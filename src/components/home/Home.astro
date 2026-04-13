@@ -9,6 +9,7 @@ import PricingCardsHome from "@/components/sections/PricingCardsHome.astro"
 import Gallery from "@/components/sections/Gallery.astro";
 import Questions from "@/components/sections/Questions.astro"
 import IconAwards from "../sections/IconAwards.astro";
+import Awards from "@/pages/awards.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const lang = getLangFromUrl(Astro.url);
@@ -38,6 +39,7 @@ const seoMetaData = {
         />
     )}
     <Hero />
+    <Awards/>
     <PricingCardsHome />
     <Gallery />
     <Questions />

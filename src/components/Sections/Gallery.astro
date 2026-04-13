@@ -32,61 +32,61 @@ const getUrl = (id: string, w = 1200) =>
 ---
 
 <section class="py-12 bg-[#F8FAFC] w-full overflow-hidden">
-    <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center!">{i18n.HOME_PAGE.GALLERY.TITLE}</TagH1>
-    <TagP class="max-w-3xl mx-auto mb-20 text-center! px-5">
+    <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text- md:text-4xl">{i18n.HOME_PAGE.GALLERY.TITLE}</TagH1>
+    <TagP class="max-w-4xl mx-auto mb-20 text-center! px-5 md:text-2xl">
         {i18n.HOME_PAGE.GALLERY.DESCRIPTION}
     </TagP>
     <div class="w-full px-2">
     <div class="flex flex-row items-center justify-center gap-2 md:gap-4 lg:gap-5 w-full">
 
       <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-sm overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.ultimateOne, 2000)}>
+        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.ultimateOne, 2000)}>
           <img src={getUrl(images.ultimateOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
       </div>
 
       <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-sm overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farLeftOne, 2000)}>
+        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farLeftOne, 2000)}>
           <img src={getUrl(images.farLeftOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
-        <div class="aspect-square rounded-sm overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farLeftTow, 2000)}>
+        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farLeftTow, 2000)}>
           <img src={getUrl(images.farLeftTow)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
       </div>
 
       <div class="hidden md:flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0">
-        <div class="aspect-[4/5] rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftTop, 2000)}>
+        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftTop, 2000)}>
           <img src={getUrl(images.leftTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
-        <div class="aspect-[4/5] rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftBottom, 2000)}>
+        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftBottom, 2000)}>
           <img src={getUrl(images.leftBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
       </div>
 
-      <div class="w-[280px] md:w-[400px] lg:w-[500px] aspect-[4/5] rounded-sm overflow-hidden shadow-xl z-10 shrink-0" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
+      <div class="w-[280px] md:w-[400px] lg:w-[500px] aspect-[4/5] rounded-md overflow-hidden shadow-xl z-10 shrink-0" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
         <img src={getUrl(images.center)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Main View" />
       </div>
 
       <div class="hidden md:flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0">
-        <div class="aspect-[4/5] rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightTop, 2000)}>
+        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightTop, 2000)}>
           <img src={getUrl(images.rightTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
-        <div class="aspect-[4/5] rounded-sm overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightBottom, 2000)}>
+        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightBottom, 2000)}>
           <img src={getUrl(images.rightBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
       </div>
 
       <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-sm overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farRightOne, 2000)}>
+        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farRightOne, 2000)}>
           <img src={getUrl(images.farRightOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
-        <div class="aspect-square rounded-sm overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farRightTow, 2000)}>
+        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farRightTow, 2000)}>
           <img src={getUrl(images.farRightTow)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
       </div>
 
       <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-sm overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.ultimateTow, 2000)}>
+        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.ultimateTow, 2000)}>
           <img src={getUrl(images.ultimateTow)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
         </div>
       </div>

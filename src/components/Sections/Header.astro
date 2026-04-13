@@ -31,64 +31,46 @@ const navigation = [
 ---
 
 <header
-  class="fixed top-0 w-full z-50 transition-all duration-500 h-24 flex items-center border-b border-transparent"
+  class="fixed top-0 w-full z-50 transition-all duration-500 md:h-45 lg:h-25  flex items-center border-b border-transparent"
   id="main-header"
 >
   <div
-    class="max-w-[1800px] mx-auto px-6 md:px-20 w-full flex items-center justify-between h-full"
+    class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full"
   >
-    <div class="flex-1 lg:hidden">
-      <button class="text-white transition-colors duration-500" id="open-menu">
-        <Menu size={28} strokeWidth={1.2} />
-      </button>
-    </div>
+    <div class="flex-none w-14 lg:hidden"> 
+  <button class="text-white p-2" id="open-menu">
+    <Menu size={30} strokeWidth={1.5} />
+  </button>
+</div>
 
-    <div
-      class="flex-[2] flex justify-center lg:flex-1 lg:justify-start lg:items-center"
-    >
-      <a
-        href={translatePath("/")}
-        aria-label={i18n.ACCESSIBILITY?.GO_TO_HOME}
-        class="group block w-fit hover:scale-95 transition-transform duration-300"
-      >
-        <div
-          id="logo-container"
-          class="text-white transition-colors duration-500"
-        >
-          <CenoteAdventure
-            class="h-16 md:h-20 p-1 transition-all duration-500"
-            id="main-logo-svg"
-          />
-        </div>
-      </a>
+<div class="flex-1 flex justify-center lg:flex-none lg:justify-start">
+  <a href={translatePath("/")} class="group block w-fit hover:scale-95 transition-transform duration-300">
+    <div id="logo-container" class="text-white transition-colors duration-500">
+      <CenoteAdventure
+        class="h-12 md:h-30 lg:h-20 p-1 transition-all duration-500" 
+        id="main-logo-svg"
+      />
     </div>
+  </a>
+</div>
 
-    <nav class="hidden lg:block">
-      <ul class="flex gap-10">
-        {
-          navigation.map((item) => (
-            <li>
-              <a
-                href={item.link}
-                class="nav-link text-[13px] uppercase tracking-[0.2em] text-white hover:opacity-60 transition-all font-medium"
-              >
-                {item.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+<nav class="hidden lg:flex flex-1 justify-center">
+  <ul class="flex gap-10">
+    {navigation.map((item) => (
+      <li>
+        <a href={item.link} class="nav-link text-[13px] uppercase tracking-[0.2em] text-white hover:opacity-60 transition-all font-medium">
+          {item.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
 
-    <div class="flex-1 flex items-center justify-end gap-5">
-      <div
-        class="flex items-center gap-5 text-withe transition-colors duration-500"
-        id="icon-group"
-      >
-        {!offI18n && <LanguageSelector />}
-      </div>
-    </div>
+<div class="flex-none w-14 lg:flex-none lg:w-auto">
+  <div class="flex items-center gap-5 text-white" id="icon-group">
+    {!offI18n && <LanguageSelector />}
   </div>
+</div>
 
   <div
     id="mobile-drawer"
@@ -133,6 +115,7 @@ const navigation = [
   window.addEventListener("scroll", () => {
     const isScrolled = window.scrollY > 20;
 
+
     langSelector?.classList.toggle("text-[#002B49]", isScrolled);
     langSelector?.classList.toggle("text-white", !isScrolled);
 
@@ -145,13 +128,6 @@ const navigation = [
     // Color del Logo y Contenedor
     logoContainer?.classList.toggle("text-[#002B49]", isScrolled);
     logoContainer?.classList.toggle("text-white", !isScrolled);
-
-    // Reducir tamaño del logo al hacer scroll
-    if (isScrolled) {
-      logoSvg?.classList.replace("md:h-20", "md:h-14");
-    } else {
-      logoSvg?.classList.replace("md:h-14", "md:h-20");
-    }
 
     // Iconos y Links
     iconGroup?.classList.toggle("text-[#002B49]", isScrolled);
@@ -172,12 +148,12 @@ const navigation = [
 
   // En tu script
   openBtn?.addEventListener("click", () => {
-    drawer?.classList.remove("-translate-x-full"); // Quita el negativo
+    drawer?.classList.remove("translate-x-full"); 
     document.body.style.overflow = "hidden";
   });
 
   closeBtn?.addEventListener("click", () => {
-    drawer?.classList.add("-translate-x-full"); // Vuelve a esconder a la izquierda
+    drawer?.classList.add("-translate-x-full"); 
     document.body.style.overflow = "";
   });
 </script>
