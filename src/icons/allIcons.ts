@@ -11,6 +11,8 @@ import Facebook from "@/icons/social-media/facebook.svg"
 import Instagram from "@/icons/social-media/instagram.svg"
 import Tripadvaisor from "@/icons/social-media/tripadvisor.svg"
 import WorldLanguaje from "@/icons/awards/world.svg"
+import CenoteAdventure02 from "@/icons/logos/cenoteadventuring 2026-02.svg"
+import CenoteAdventuringH from "@/icons/logos/cenoteadventuring 2026-H.svg"
 
 export {
     IconFlagMEX,
@@ -22,5 +24,7 @@ export {
     Facebook,
     Instagram,
     Tripadvaisor,
-    WorldLanguaje
+    WorldLanguaje,
+    CenoteAdventure02,
+    CenoteAdventuringH
 }

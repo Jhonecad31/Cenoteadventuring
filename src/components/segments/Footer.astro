@@ -6,7 +6,8 @@ import {
   useTranslatedPath,
 } from "@/i18n/utils";
 import { Facebook, Instagram, Tripadvaisor} from "@/icons/allIcons";
-import { CenoteAdventure } from "@/icons/allIcons";
+import { CenoteAdventuringH} from "@/icons/allIcons";
+
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
@@ -105,47 +106,50 @@ const socialMedia = [
       </div>
     </div>
 
-    <div class="flex flex-col gap-6 lg:items-center">
-      <div class="w-full lg:w-fit">
-        <h3 class="font-serif text-xl md:text-3xl lg:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit">
-          About
-        </h3>
-        <nav class="mt-6 md:mt-10">
-          <ul class="flex flex-col gap-4 md:gap-6 text-[11px] md:text-2xl lg:text-[11px] uppercase tracking-[0.3em] font-light">
-            {navFooter.map((item) => (
-              <li><a href={item.link} class="hover:opacity-60 transition-opacity">{item.title}</a></li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-6 lg:items-end relative md:relative lg:relative">
-      <div class="w-full lg:w-fit flex flex-col lg:items-end">
-        <h3 class="font-serif text-xl md:text-3xl lg:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit">
-          Follow Us
-        </h3>
-        <ul class="flex flex-col gap-6 md:gap-10 mt-6 md:mt-10 text-[11px] md:text-2xl lg:text-[11px] uppercase tracking-[0.2em] font-medium lg:items-end z-10 relative">
+    <div class="relative flex flex-row flex-wrap lg:flex-nowrap items-start justify-between lg:justify-start gap-6 lg:gap-32 w-full max-w-screen-2xl mx-auto px-4">
+  
+  <div class="flex flex-col gap-4 w-[45%] lg:w-auto">
+    <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+      About
+    </h3>
+    <nav class="mt-4 md:mt-8">
+      <ul class="flex flex-col gap-3 md:gap-5 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.2em] font-light">
+        {navFooter.map((item) => (
           <li>
-            <a href="#" class="flex items-center gap-4 group">
-              Facebook <Facebook size={24} className="md:w-8 md:h-8 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform" />
+            <a href={item.link} class="hover:opacity-60 transition-opacity">
+              {item.title}
             </a>
           </li>
-          <li>
-            <a href="#" class="flex items-center gap-4 group">
-              Instagram <Instagram size={24} className="md:w-8 md:h-8 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform" />
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="absolute right-0 bottom-0 md:-bottom-4 lg:-right-4 lg:-bottom-4 opacity-90 z-0 pointer-events-none">
-        <CenoteAdventure class="h-20 md:h-35 lg:h-18 w-auto p-1" />
-      </div> 
-    </div>
+        ))}
+      </ul>
+    </nav>
   </div>
 
-  <div class="max-w-[1800px] mx-auto mt-20 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-10 md:gap-14">
+  <div class="flex flex-col gap-4 items-end lg:items-start w-[45%] lg:w-auto">
+    <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+      Follow Us
+    </h3>
+    <ul class="flex flex-col gap-4 md:gap-8 mt-4 md:mt-8 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.1em] font-medium items-end lg:items-start">
+      <li>
+        <a href="#" class="flex items-center gap-2 md:gap-4 group">
+          <span class="order-1">Facebook</span>
+          <Facebook size={16} className="md:w-8 md:h-8 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform order-2" />
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-2 md:gap-4 group">
+          <span class="order-1">Instagram</span>
+          <Instagram size={16} className="md:w-8 md:h-8 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform order-2" />
+        </a>
+      </li>
+    </ul>
+  </div> 
+
+  <CenoteAdventuringH class="block mx-auto h-20 md:h-35 lg:h-24 w-auto p-1 mt-5" />
+
+</div>
+
+  <div class="max-w-[1800px] mx-auto mt-2 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-10 md:gap-14">
     <div class="text-[9px] md:text-xl lg:text-[9px] uppercase tracking-[0.3em] text-white/50 text-center lg:text-left leading-loose order-2 lg:order-1">
       <p>© {currentYear} Cenote Adventuring Cancun. All Rights Reserved.</p>
       <p class="mt-3 md:mt-5 lg:mt-2 text-white/30">Design By Grupo Extreme</p>
