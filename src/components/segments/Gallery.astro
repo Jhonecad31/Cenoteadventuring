@@ -11,7 +11,6 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 const getUrl = (id: string, w = 1200) => 
   `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
 
-// Configuración de imágenes (reutilizadas para ambos diseños)
 const images = {
   center: 'CenoteA.5_tdhqvl',
   leftTop: 'CenoteA.1_ntnmsp',
@@ -24,11 +23,10 @@ const images = {
   farRightTwo: 'CenoteA.3_pzncr9',
 };
 
-// Datos para la versión móvil (Asimétrica)
 const mobileSections = [
   { id: images.leftBottom, size: "w-[75vw] h-[50vh]" },
   { id: images.leftTop, size: "w-[60vw] h-[60vh]" },
-  { id: images.center, size: "w-[85vw] h-[70vh]" },
+  { id: images.center, size: "w-[65vw] h-[50vh]" },
   { id: images.rightTop, size: "w-[65vw] h-[45vh]" },
   { id: images.rightBottom, size: "w-[70vw] h-[55vh]" },
 ];
