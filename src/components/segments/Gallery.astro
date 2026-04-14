@@ -1,102 +1,165 @@
 ---
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import TagH1 from "@/components/global/TagH1.astro";
-import TagH2 from "../global/TagH2.astro";
-import { getI18N } from "@/i18n";
 import TagP from "@/components/global/TagP.astro";
+import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
-const i18n = getI18N({currentLocale});
+const i18n = getI18N({ currentLocale });
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+const getUrl = (id: string, w = 1200) => 
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
 
+// Configuración de imágenes (reutilizadas para ambos diseños)
 const images = {
-  // Extremos (bloques pequeños)
-  farRightOne:'CenoteA.7_rpyhjn',
-  farRightTow:'CenoteA.3_pzncr9',
-  farLeftOne:'CenoteA.8_jx4f49',
-  farLeftTow:'CenoteA.2_njvbos',
-  ultimateTow:'CenoteA.8_jx4f49',
-  ultimateOne:'CenoteA.7_rpyhjn',
-  // Medias (Bloques dobles)
+  center: 'CenoteA.5_tdhqvl',
   leftTop: 'CenoteA.1_ntnmsp',
   leftBottom: 'CenoteA.2_njvbos',
   rightTop: 'CenoteA.3_pzncr9',
   rightBottom: 'CenoteA.8_jx4f49',
-  // Centro
-  center: 'CenoteA.5_tdhqvl', 
+  farLeftOne: 'CenoteA.8_jx4f49',
+  farLeftTwo: 'CenoteA.2_njvbos',
+  farRightOne: 'CenoteA.7_rpyhjn',
+  farRightTwo: 'CenoteA.3_pzncr9',
 };
 
-const getUrl = (id: string, w = 1200) => 
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+// Datos para la versión móvil (Asimétrica)
+const mobileSections = [
+  { id: images.leftBottom, size: "w-[75vw] h-[50vh]" },
+  { id: images.leftTop, size: "w-[60vw] h-[60vh]" },
+  { id: images.center, size: "w-[85vw] h-[70vh]" },
+  { id: images.rightTop, size: "w-[65vw] h-[45vh]" },
+  { id: images.rightBottom, size: "w-[70vw] h-[55vh]" },
+];
 ---
 
 <section class="py-12 bg-[#F8FAFC] w-full overflow-hidden">
-    <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text- md:text-4xl text-center!">{i18n.HOME_PAGE.GALLERY.TITLE}</TagH1>
-    <TagP class="max-w-4xl mx-auto mb-20 text-center! px-5 md:text-2xl">
-        {i18n.HOME_PAGE.GALLERY.DESCRIPTION}
-    </TagP>
-    <div class="w-full px-2">
-    <div class="flex flex-row items-center justify-center gap-2 md:gap-4 lg:gap-5 w-full">
+  <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
+    {i18n.HOME_PAGE.GALLERY.TITLE}
+  </TagH1>
+  <TagP class="max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 md:text-2xl">
+    {i18n.HOME_PAGE.GALLERY.DESCRIPTION}
+  </TagP>
 
-      <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.ultimateOne, 2000)}>
-          <img src={getUrl(images.ultimateOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
+  <div class="hidden md:flex flex-row items-center justify-center gap-2 md:gap-4 lg:gap-5 w-full px-4">
+    
+    <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
+      <div class="aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farLeftOne, 2000)}>
+        <img src={getUrl(images.farLeftOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
-
-      <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farLeftOne, 2000)}>
-          <img src={getUrl(images.farLeftOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
-        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farLeftTow, 2000)}>
-          <img src={getUrl(images.farLeftTow)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
+      <div class="aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farLeftTwo, 2000)}>
+        <img src={getUrl(images.farLeftTwo)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
+    </div>
 
-      <div class="hidden md:flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0">
-        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftTop, 2000)}>
-          <img src={getUrl(images.leftTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
-        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.leftBottom, 2000)}>
-          <img src={getUrl(images.leftBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
+    <div class="flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0">
+      <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.leftTop, 2000)}>
+        <img src={getUrl(images.leftTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
-
-      <div class="w-[280px] md:w-[400px] lg:w-[500px] aspect-[4/5] rounded-md overflow-hidden shadow-xl z-10 shrink-0" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
-        <img src={getUrl(images.center)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Main View" />
+      <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.leftBottom, 2000)}>
+        <img src={getUrl(images.leftBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
+    </div>
 
-      <div class="hidden md:flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0">
-        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightTop, 2000)}>
-          <img src={getUrl(images.rightTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
-        <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm" data-fancybox="gallery" data-src={getUrl(images.rightBottom, 2000)}>
-          <img src={getUrl(images.rightBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
+    <div class="w-[350px] lg:w-[500px] aspect-[4/5] rounded-md overflow-hidden shadow-xl z-10 shrink-0 cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
+      <img src={getUrl(images.center)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Main View" />
+    </div>
+
+    <div class="flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0">
+      <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.rightTop, 2000)}>
+        <img src={getUrl(images.rightTop)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
-
-      <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farRightOne, 2000)}>
-          <img src={getUrl(images.farRightOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
-        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.farRightTow, 2000)}>
-          <img src={getUrl(images.farRightTow)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
+      <div class="aspect-[4/5] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.rightBottom, 2000)}>
+        <img src={getUrl(images.rightBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
+    </div>
 
-      <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
-        <div class="aspect-square rounded-md overflow-hidden shadow-sm hover:opacity-100 transition-all" data-fancybox="gallery" data-src={getUrl(images.ultimateTow, 2000)}>
-          <img src={getUrl(images.ultimateTow)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
-        </div>
+    <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0">
+      <div class="aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farRightOne, 2000)}>
+        <img src={getUrl(images.farRightOne)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
       </div>
-
+      <div class="aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farRightTwo, 2000)}>
+        <img src={getUrl(images.farRightTwo)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+      </div>
     </div>
   </div>
-</section>
-<script>
-    import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
-    Fancybox.bind("[data-fancybox]", {});
-</script>
 
- 
+  <div class="md:hidden">
+    <div id="grid-gallery-scroll" class="flex gap-4 overflow-x-auto px-6 pb-10 hide-scrollbar snap-x snap-mandatory items-center h-[75vh]">
+      {mobileSections.map((section) => (
+        <div 
+          class={`flex-shrink-0 ${section.size} rounded-lg overflow-hidden shadow-lg snap-center cursor-pointer`}
+          data-fancybox="gallery-mobile"
+          data-src={getUrl(section.id, 2000)}
+        >
+          <img 
+            src={getUrl(section.id)} 
+            class="w-full h-full object-cover" 
+            alt="Cenote mobile view"
+            loading="lazy"
+          />
+        </div>
+      ))}
+      <div class="w-[10vw] flex-shrink-0"></div>
+    </div>
+    <p class="text-center text-gray-400 text-sm italic">Desliza para explorar →</p>
+  </div>
+</section>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+  /* Cursor para indicar que se puede arrastrar en desktop si se desea */
+  .md:hidden #grid-gallery-scroll {
+    cursor: grab;
+  }
+  .md:hidden #grid-gallery-scroll:active {
+    cursor: grabbing;
+  }
+</style>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui";
+
+  const initGallery = () => {
+    // Inicializar Fancybox
+    Fancybox.bind("[data-fancybox]", {
+      Hash: false,
+    });
+
+    // Lógica de arrastre para la versión móvil (cuando se ve en desktop/simulador)
+    const slider = document.getElementById("grid-gallery-scroll");
+    if (!slider) return;
+
+    let isDown = false;
+    let startX: number;
+    let scrollLeft: number;
+
+    slider.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      slider.style.scrollSnapType = "none"; // Desactivar snap durante el arrastre
+    });
+
+    slider.addEventListener("mouseleave", () => (isDown = false));
+    slider.addEventListener("mouseup", () => {
+      isDown = false;
+      slider.style.scrollSnapType = "x mandatory";
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  };
+
+  // Ejecutar al cargar y tras cambios en Astro (ViewTransitions)
+  initGallery();
+  document.addEventListener("astro:after-swap", initGallery);
+</script>

@@ -7,11 +7,11 @@ import Hero from "@/components/segments/Hero.astro";
 import Awars from "@/components/segments/Awards.astro";
 import PricingCardsHome from "@/components/segments/PricingCardsHome.astro"
 import Gallery from "@/components/segments/Gallery.astro";
-import Questions from "@/components/segments/Questions.astro"
-import IconAwards from "../sections/IconAwards.astro";
+import Questions from "@/components/segments/Questions.astro";
 import Awards from "@/pages/awards.astro";
+import GalleryMovil from "@/components/segments/GalleryMovil.astro"
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 
 const seoMetaData = { 
@@ -27,7 +27,7 @@ const seoMetaData = {
             item={{
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
-                mainEntity: i18n.HOME_PAGE.FAQS.FAQS.map((faq) => ({
+                mainEntity: i18n.HOME_PAGE.FAQS.FAQS.map((faq: { question: any; answer: any; }) => ({
                     "@type": "Question",
                     name: faq.question,
                     acceptedAnswer: {
