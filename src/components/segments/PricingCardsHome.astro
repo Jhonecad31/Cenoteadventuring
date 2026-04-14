@@ -9,10 +9,10 @@ const i18n = getI18N({ currentLocale }) as any;
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 
 const images = {
-  cenoteAdventuring: "TirolesaCenote_sqmoec", 
-  privateRental: "Card.Pricing1.2_tmxm0r", 
-  logoCenote: "logo-cenote_rscfb4", 
-  logoPrivate: "logo-private_wd8kxq"
+  cenoteAdventuring: "TirolesaCenote_sqmoec",
+  privateRental: "Card.Pricing1.2_tmxm0r",
+  logoCenote: "logo-cenote_rscfb4",
+  logoPrivate: "logo-private_wd8kxq",
 };
 
 const getUrl = (id: string, w = 800) =>
@@ -26,134 +26,205 @@ const features = [
   "Mayan performance",
 ];
 
-const img = {
-  
-}
+const img = {};
 ---
+
 <section class="bg-[#EDF4FC] py-24 px-6 -mt-20">
   <div class="max-w-5xl mx-auto">
     <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-20 justify-items-center">
-      
       {/* TARJETA 1: CENOTE ADVENTURING */}
-      <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[600px]">
+      <div
+        class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[600px]"
+      >
         <div class="relative h-64 md:h-72 lg:h-72">
           <img
             src={getUrl(images.cenoteAdventuring)}
             alt="Cenote Adventuring"
             class="w-full h-full object-cover"
           />
-          <div class="absolute bottom-4 left-4 bg-white/90 p-2 rounded-lg backdrop-blur-sm">
-            <img src={getUrl(images.logoCenote)} alt="Logo" class="h-10 w-auto" />
+          <div
+            class="absolute bottom-4 left-4 bg-white/90 p-2 rounded-lg backdrop-blur-sm"
+          >
+            <img
+              src={getUrl(images.logoCenote)}
+              alt="Logo"
+              class="h-10 w-auto"
+            />
           </div>
         </div>
 
-        <div class="p-6 lg:p-9 md:p-9 flex flex-col gap-6 justify-between flex-grow">
+        <div
+          class="p-6 lg:p-9 md:p-9 flex flex-col gap-6 justify-between flex-grow"
+        >
           <div class="flex-1">
-            <h3 class="font-serif text-2xl lg:text-3xl md:text-4xl text-[#001524] mb-2">
+            <h3
+              class="font-serif text-2xl lg:text-3xl md:text-4xl text-[#001524] mb-2"
+            >
               Cenote Adventuring:
             </h3>
-            <p class="text-gray-600 mb-1 lg:text-xl md:text-2xl">3 cenote boutique</p>
+            <p class="text-gray-600 mb-1 lg:text-xl md:text-2xl">
+              3 cenote boutique
+            </p>
             <p class="text-gray-600 mb-4 font-medium lg:text-xl md:text-2xl">
               Experience, Mayan Show with snack
             </p>
-            <p class="text-[#006083] font-bold mb-6 md:text-2xl lg:text-xl">4 hours</p>
+            <p class="text-[#006083] font-bold mb-6 md:text-2xl lg:text-xl">
+              4 hours
+            </p>
 
-            <ul class="space-y-3">
-              {features.map((item) => (
-                <li class="flex items-center gap-2 md:text-2xl lg:text-lx text-gray-700">
-                  <Check size={16} className="text-gray-400 shrink-0" /> {item}
-                </li>
-              ))}
+            {/* Solo agregamos 'hidden md:block' a la lista */}
+            <ul class="hidden md:block space-y-3">
+              {
+                features.map((item) => (
+                  <li class="flex items-center gap-2 md:text-2xl lg:text-lx text-gray-700">
+                    <Check size={16} className="text-gray-400 shrink-0" />{" "}
+                    {item}
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
-          <div class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center">
+          <div
+            class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center"
+          >
             <div class="mb-4">
-              <p class="text-[10px] text-gray-400 line-through md:text-2xl lg:text-xl">Price from $80 USD</p>
+              <p
+                class="text-[10px] text-gray-400 line-through md:text-2xl lg:text-xl"
+              >
+                Price from $80 USD
+              </p>
               <div class="text-3xl font-bold text-[#001524]">$70 USD</div>
               <p class="lg:text-xl md:text-2xl text-gray-500">per person</p>
             </div>
 
             <div class="grid grid-cols-2 gap-2 mb-10">
               <div class="bg-white p-2 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1">10%</span>
-                <p class="text-[9px] md:text-xl leading-tight text-black-400">Booking 15 days before</p>
-                <p class="text-[10px] md:text-xl font-bold">$77 USD</p>
+                <span
+                  class="inline-block text-[12px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                  >10%</span
+                >
+                <p class="text-[11px] md:text-xl leading-tight text-black-400">
+                  Booking 15 days before
+                </p>
+                <p class="lg:text-xl md:text-2xl font-bold">$77 USD</p>
               </div>
               <div class="bg-white p-2 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1">20%</span>
-                <p class="text-[9px] md:text-xl leading-tight text-black-400">Booking 30 days before</p>
-                <p class="text-[10px] md:text-xl font-bold">$60 USD</p>
+                <span
+                  class="inline-block text-[12px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                  >20%</span
+                >
+                <p class="text-[11px] md:text-xl leading-tight text-black-400">
+                  Booking 30 days before
+                </p>
+                <p class="lg:text-xl md:text-2xl font-bold">$60 USD</p>
               </div>
             </div>
 
-            <Button className="w-full bg-[#006083] hover:bg-[#006083] text-white rounded-full text-xs md:text-2xl lg:text-xl lg:h-10 md:h-15">
-              Check Availability
+            <Button
+              className="w-full bg-[#006083] hover:bg-[#006083] text-white rounded-full text-xs md:text-2xl lg:text-xl lg:h-10 md:h-15"
+            >
+              <a href="/pricing-private-page"> Check Availability </a>
             </Button>
           </div>
         </div>
       </div>
 
       {/* TARJETA 2: CENOTE PRIVATE */}
-      <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[600px]">
+      <div
+        class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[600px]"
+      >
         <div class="relative h-64 md:h-72">
           <img
             src={getUrl(images.privateRental)}
             alt="Private Rental"
             class="w-full h-full object-cover"
           />
-          <div class="absolute bottom-4 left-4 bg-white/90 p-2 rounded-lg backdrop-blur-sm">
-            <img src={getUrl(images.logoPrivate)} alt="Logo" class="h-10 w-auto" />
+          <div
+            class="absolute bottom-4 left-4 bg-white/90 p-2 rounded-lg backdrop-blur-sm"
+          >
+            <img
+              src={getUrl(images.logoPrivate)}
+              alt="Logo"
+              class="h-10 w-auto"
+            />
           </div>
         </div>
 
-        <div class="p-6 lg:p-9 md:p-9 flex flex-col gap-6 justify-between flex-grow">
+        <div
+          class="p-6 lg:p-9 md:p-9 flex flex-col gap-6 justify-between flex-grow"
+        >
           <div class="flex-1">
-            <h3 class="font-serif text-2xl lg:text-3xl md:text-4xl text-[#001524] mb-2">
+            <h3
+              class="font-serif text-2xl lg:text-3xl md:text-4xl text-[#001524] mb-2"
+            >
               Private Rental:
             </h3>
-            <p class="text-gray-600 mb-1 text-lx md:text-2xl">Exclusive access</p>
+            <p class="text-gray-600 mb-1 text-lx md:text-2xl">
+              Exclusive access
+            </p>
             <p class="text-gray-600 mb-4 font-medium text-lx md:text-2xl">
               Tailored experience for your group
             </p>
-            <p class="text-[#006083] font-bold mb-6 md:text-2xl lg:text-xl">4 hours</p>
+            <p class="text-[#006083] font-bold mb-6 md:text-2xl lg:text-xl">
+              4 hours
+            </p>
 
-            <ul class="space-y-3">
-              {features.map((item) => (
-                <li class="flex items-center gap-2 text-sm md:text-2xl  text-gray-700">
-                  <Check size={16} className="text-gray-400 shrink-0" /> {item}
-                </li>
-              ))}
+            {/* Solo agregamos 'hidden md:block' a la lista */}
+            <ul class="hidden md:block space-y-3">
+              {
+                features.map((item) => (
+                  <li class="flex items-center gap-2 md:text-2xl lg:text-lx text-gray-700">
+                    <Check size={16} className="text-gray-400 shrink-0" />{" "}
+                    {item}
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
-          <div class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center">
+          <div
+            class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center"
+          >
             <div class="mb-4">
-              <p class="text-[10px] md:text-2xl text-gray-400 line-through">Price from $80 USD</p>
+              <p class="text-[10px] md:text-2xl text-gray-400 line-through">
+                Price from $80 USD
+              </p>
               <div class="text-3xl font-bold text-[#001524]">$70 USD</div>
               <p class="text-[10px] md:text-2xl text-gray-500">per person</p>
             </div>
 
             <div class="grid grid-cols-2 gap-2 mb-10">
               <div class="bg-white p-2 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1">10%</span>
-                <p class="text-[9px] md:text-xl leading-tight text-black-400">Booking 15 days before</p>
-                <p class="text-[9px] md:text-2xl font-bold">$77 USD</p>
+                <span
+                  class="inline-block text-[12px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                  >10%</span
+                >
+                <p class="text-[11px] md:text-xl leading-tight text-black-400">
+                  Booking 15 days before
+                </p>
+                <p class="lg:text-xl md:text-2xl font-bold">$77 USD</p>
               </div>
               <div class="bg-white p-2 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1">20%</span>
-                <p class="text-[10px] md:text-xl leading-tight text-black-400">Booking 30 days before</p>
-                <p class="text-[10px] md:text-2xl font-bold">$60 USD</p>
+                <span
+                  class="inline-block text-[12px] md:text-2xl font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                  >20%</span
+                >
+                <p class="text-[11px] md:text-xl leading-tight text-black-400">
+                  Booking 30 days before
+                </p>
+                <p class="lg:text-xl md:text-3xl font-bold">$60 USD</p>
               </div>
             </div>
 
-            <Button className="w-full bg-[#006083] hover:bg-[#006083] text-white rounded-full lg:text-xl md:text-2xl lg:h-10 md:h-15">
-              Check Availability
+            <Button
+              className="w-full bg-[#006083] hover:bg-[#006083] text-white rounded-full lg:text-xl md:text-2xl lg:h-10 md:h-15"
+            >
+              <a href="/pricing-private-page"> Check Availability </a>
             </Button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
