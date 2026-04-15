@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Star } from "lucide-react";
 import { getI18N } from "@/i18n";
+import Questions from "@/components/segments/Questions.astro"
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const tour = {
@@ -59,9 +60,9 @@ const getUrl = (id: string, w = 1200) =>
 
 <BaseLayout>
   <main class="bg-[#EDF4FC] pb-20 overflow-x-hidden">
-    <section class="max-w-7xl mx-auto px-6 py-12">
+    <section class="max-w-7xl mx-auto px-0 md:px-6 py-0 md:py-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div class="lg:col-span-7 flex flex-col gap-4 mt-23">
+        <div class="lg:col-span-7 flex flex-col gap-4 mt-0 md:mt-23">
           <div
             class="relative group aspect-square md:aspect-[2/2] w-full overflow-hidden bg-gray-100 shadow-sm md:border md:border-gray-200 md:rounded-lg"
           >
@@ -132,7 +133,7 @@ const getUrl = (id: string, w = 1200) =>
           </div>
         </div>
 
-        <div class="lg:col-span-5 flex flex-col mt-25">
+        <div class="lg:col-span-5 flex flex-col">
           <nav
             class="text-xs uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2"
           >
@@ -219,11 +220,30 @@ const getUrl = (id: string, w = 1200) =>
               </span>
             </button>
           </section>
+          <div class="max-w-3xl mx-auto px-6 bg-[#EDF4FC] -mt-2">
+    {
+      i18n.HOME_PAGE.FAQS.FAQS.map(
+        (faq: { question: unknown; answer: unknown }, index: any) => (
+          <details
+            key={index}
+            class="group py-4 outline-none border-b border-gray-400 last:border-b-0"
+          >
+            <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
+              <span>{faq.question}</span>
+              <span class="text-2xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block">
+                +
+              </span>
+            </summary>
+            <p class="pb-6 pr-12 text-gray-600 leading-relaxed animate-fade-in">
+              {faq.answer}
+            </p>
+          </details>
+        ),
+      )
+    }
+  </div>
         </div>
       </div>
-    </section>
-    <section>
-      
     </section>
   </main>
 
