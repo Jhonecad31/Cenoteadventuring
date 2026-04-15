@@ -1,4 +1,5 @@
 ---
+import { getI18N } from "@/i18n";
 import Layout from "@/layouts/BaseLayout.astro";
 import {
   Star,
@@ -10,7 +11,6 @@ import {
   X,
   ChevronRight,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const tour = {
   title: "Private Cenote Rental In Cancun",
@@ -67,6 +67,9 @@ const imagesDetails = {
   imgDetails2: "Card.1.2_x0xkn2",
 };
 
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
 const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774544286/video_cenote_web_nzoauf.mp4`;
 const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
 
@@ -92,9 +95,9 @@ const getUrl = (id: string, w = 1200) =>
       </video>
       <div class="relative z-10 text-center text-white px-6">
         <h1
-          class="font-serif italic text-6xl md:text-9xl mb-6 tracking-tight drop-shadow-lg"
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
-          Private Cenote Rental In Cancún
+          Cenote private
         </h1>
         <p
           class="uppercase tracking-[0.5em] text-xs md:text-sm font-light opacity-90"
@@ -104,52 +107,12 @@ const getUrl = (id: string, w = 1200) =>
         <div
           class="flex items-center justify-center tracking-[0.5em] md:text-sm relative h-[5vh]"
         >
-          <Star className="text-yellow-400 fill-yellow-400" size={20} />
+          <Star className="text-yellow-400 fill-yellow-400" size={15} />
           <span class="font-bold text-[#ffffff]"> {tour.rating}</span>
-          <span class="text-white text-sm">({tour.reviews} reviews)</span>
+          <span class="text-white">({tour.reviews} reviews)</span>
         </div>
       </div>
     </section>
-
-    <!-- <section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16 max-w-7xl mx-auto px-6 relative h-[70vh]">
-      <div class="relative h-[550px] w-full">
-        <div
-          class="absolute top-0 left-0 w-[65%] h-[85%] overflow-hidden z-0"
-        >
-          <img
-            src={getUrl(imagesDetails.imgDetails1, 800)}
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            alt="Adventure detail 1"
-          />
-        </div>
-
-        <div
-          class="absolute top-[15%] left-[35%] w-[65%] h-[85%] overflow-hidden z-10 border-white/10 backdrop-blur-sm"
-        >
-          <img
-            src={getUrl(imagesDetails.imgDetails2, 800)}
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            alt="Adventure detail 2"
-          />
-        </div>
-      </div>
-      <div class="flex flex-col justify-center py-10 px-4">
-        <hr class="border-black w-full mb-8" />
-        <h2
-          class="font-serif text-4xl italic text-[#001524] mb-8 leading-tight tracking-tight"
-        >
-          Mexico's Most Awarded <br /> Adventure Company
-        </h2>
-
-        <div class="space-y-6">
-          <p class="text-gray-600 leading-relaxed text-lg font-light italic">
-            "{tour.description}"
-          </p>
-        </div>
-
-        <hr class="border-black w-full mt-8" />
-      </div>
-    </section> -->
 
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-24">
       <div
@@ -287,98 +250,98 @@ const getUrl = (id: string, w = 1200) =>
       </div>
     </section>
   </main>
-
   <!-- Recomendaciones de otros productos -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="font-serif text-3xl text-[#001524] mb-4">
-        More Activities for you to enjoy
-      </h2>
-      <p class="text-gray-500 max-w-2xl mx-auto mb-12">
-        Discover more exciting activities and tours to enhance your experience
-        in Puerto Morelos and the Riviera Maya.
-      </p>
+  <section class="bg-white py-20 px-6 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl text-[#001524] mb-4">
+          {i18n.REGULAR_CENOTE?.INTRO?.TITLE}
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          {i18n.REGULAR_CENOTE?.INTRO?.DESCRIPTION}
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {
-          relatedActivities.map((activity) => (
-            <a
-              href={`/activities/${activity.slug}/`}
-              class="group cursor-pointer block"
-            >
-              <div class="aspect-square overflow-hidden mb-4 shadow-md bg-gray-100">
-                <img
-                  src={getUrl(activity.image, 500)}
-                  alt={activity.name}
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+      <div class="swiper mySwiper pb-12">
+        <div class="swiper-wrapper">
+          {
+            relatedActivities.map((activity) => (
+              <div class="swiper-slide">
+                <a href={`/activities/${activity.slug}/`} class="group block">
+                  <div class="aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                    <img
+                      src={getUrl(activity.image, 600)}
+                      alt={activity.name}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <h3 class="font-serif text-xl text-[#001524] mb-2">
+                      {activity.name}
+                    </h3>
+
+                    <div class="text-[11px] font-bold tracking-widest lg:text-gray-400 md:text-[#001524] flex items-center gap-2">
+                      Discover more <ChevronRight size={14} />
+                    </div>
+                  </div>
+                </a>
               </div>
-              <h4 class="  text-[#001524] text-sm tracking-tight">
-                {activity.name}
-              </h4>
-              <div class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mt-2 group-hover:text-[#005B71] transition-colors">
-                Discover more <ChevronRight size={12} />
-              </div>
-            </a>
-          ))
-        }
+            ))
+          }
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  /* Estilos para el efecto de carrusel enfocado */
+  @import "swiper/css";
+  @import "swiper/css/pagination";
+  .swiper-pagination-bullet-active {
+    background: #005b71 !important;
+  }
+
   .swiper-slide {
-    opacity: 0.5;
-    transform: scale(0.8);
-    transition: all 0.5s ease;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+/* NUEVO: En desktop (min-width: 1024px), todos los slides visibles deben ser opacos */
+@media (min-width: 1024px) {
+  .swiper-slide {
+    opacity: 1 !important;
+    transform: scale(1) !important; /* Por si también se veían pequeños */
   }
-  .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 10;
-  }
+}
 </style>
 
 <script>
   import Swiper from "swiper";
-  import { Autoplay, Keyboard } from "swiper/modules";
-  import "swiper/css";
+  import { Autoplay, Keyboard, Pagination } from "swiper/modules";
 
-  const swiper = new Swiper(".tourSwiper", {
-    modules: [Autoplay, Keyboard],
-    slidesPerView: 1.2,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1.8,
-        spaceBetween: 40,
+  function initSwiper() {
+    new Swiper(".mySwiper", {
+      modules: [Pagination, Autoplay],
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: { delay: 4000 },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
-    },
-  });
-</script>
+      breakpoints: {
+        640: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 3, spaceBetween: 40 },
+      },
+    });
+  }
 
-<script>
-  import Swiper from "swiper";
-  import { Autoplay, FreeMode } from "swiper/modules";
-  import "swiper/css";
-
-  new Swiper(".tourSwiper", {
-    modules: [Autoplay, FreeMode],
-    slidesPerView: "auto", // Importante: ahora "auto" para que quepan más en el ancho extra
-    spaceBetween: 30,
-    loop: true,
-    freeMode: true,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-  });
+  initSwiper();
+  document.addEventListener("astro:page-load", initSwiper);
 </script>

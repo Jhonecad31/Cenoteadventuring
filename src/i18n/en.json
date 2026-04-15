@@ -24,11 +24,15 @@
       "TITLE": "Cenote Adventuring: Our Story ",
       "DESCRIPTION": "Cenote Adventuring was created מתוך a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle."
     },
-    "DETAIL_PAGE": {
       "REGULAR_CENOTE": {
-        "TITLE": "Cenote Adventuring",
-        "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must.",
-        "META_TITLE": "Cenote Adventuring Cancun - Extreme Adventuring cancun"
+        "HERO": {
+          "TITLE": "Cenote adventuring",
+          "DESCRIPTION": "3 cenote boutique experience, mayan Show with Snack"
+        },
+        "INTRO": {
+          "TITLE": "Uncover the Natural Wonders of Cancun",
+          "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
+        }
       },
       "PRIVATE_CENOTE": {
         "TITLE": "",
@@ -43,8 +47,7 @@
     "ERROR_SERVER_PAGE": {
       "TITLE": "Error 500 - Server Error",
       "DESCRIPTION": "An error occurred on the server. Please try again later."
-    }
-  },
+    },
   "ACCESSIBILITY": {
     "LOGO": "Logo of The Best Cenote In Puerto Morelos",
     "CHANGE_LANGUAGE": "Change language",
@@ -302,20 +305,131 @@
       "TEXT_2": "If you have any questions or need immediate assistance, please call us at +52 998 249 0003 or send us an email at    ."
     }
   },
-  "DETAIL_PAGE": {
-    "GENERAL": {
-      "DURATION": "Duration",
-      "APPROX": "approx.",
-      "SCHEDULE": "Schedules",
-      "HOURS": "hours",
-      "TRANSPORTATION": "Transportation",
-      "ROUNDTRIP_TRANSPORTATION": "Round trip transportation",
-      "OFFERED_IN": "Offered in",
-      "OFFERED_LANG": "English & Spanish",
-      "AGE_REQUIREMENT": "Minimum Age",
-      "YEARS_AND_OLDER": "years and older"
-    },
-    "REGULAR_CENOTE": {},
+  "REGULAR_CENOTE": {
+            "HERO": {
+                "TITLE": "Cenote adventuring",
+                "DESCRIPTION": "3 cenote boutique experience, mayan Show with Snack"
+            },
+            "INTRO": {
+              "TITLE": "Uncover the Natural Wonders of Cancun",
+              "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
+            },
+            "TEXTS": {               
+                "EXPLORE_PUERTO_MORELOS": {
+                    "TITLE": "Explore puerto morelos underwater paradise",
+                    "DESCRIPTION": "Discover one of the most breathtaking ecosystems in the Caribbean: the Mesoamerican Barrier Reef, the second‑largest reef system in the world. This marine sanctuary offers incredible biodiversity, including rays, sea turtles, colorful fish, and living coral gardens."
+                },
+                "SNORKELING_EXPERIENCE": {
+                    "TITLE": "Your unforgettable snorkeling experience",
+                    "DESCRIPTION": "Your Snorkeling Adventure starts with comfortable transportation from your hotel to Puerto Morelos. Once onboard the boat, expert guides will brief you on safety and marine preservation. Then, dive into crystal‑clear waters for a full hour of guided reef exploration. After snorkeling, enjoy a beachside snack and free time in town."
+                },
+                "DIVE_INTO_UNSEEN": {
+                    "TITLE": "Dive into the unseen beauty",
+                    "DESCRIPTION": "Prepare to awaken your inner adventurer as you dive into the crystalline waters of Puerto Morelos, home to some of the best snorkeling in Puerto Morelos. This section of the Mesoamerican Reef invites you to glide over colorful coral formations, observe tropical fish, and encounter marine life in its natural environment. Every moment reveals a new underwater marvel—rays, sea turtles, angelfish, and vibrant coral gardens thriving beneath the surface."
+                }
+            },
+            "GALLERY": {
+                "TITLE": "Discover the beauty of Puerto Morelos and the Great Mayan Reef",
+                "DESCRIPTION": "Explore the stunning underwater world of the Great Mayan Reef through our captivating gallery. Witness vibrant coral formations, diverse marine life, and unforgettable moments from our snorkeling tours in Puerto Morelos."
+            },
+            "SCHEDULES": {
+                "TITLE": "Available Schedules for the Snorkeling Adventure",
+                "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
+                "SCHEDULE_LIST": [
+                    "9:30 AM",
+                    "1:30 PM"
+                ],
+                "DURATION": "4 hours (approx.)"
+            },
+            "INCLUSIONS": {
+                "TITLE": "Inclusions & Exclusions",
+                "INCLUDES": [
+                    "Snack at beachside restaurant",
+                    "Security gear (lifejacket)",
+                    "Round trip air-conditioned transportation",
+                    "Specialized and bilingual guides",
+                    "Free time in Puerto Morelos",
+                    "Aprox 1hr. of snorkeling",
+                    "Snorkel gear (Mask, fins and snorkeltube)",
+                    "Tequila Tasting"
+                ],
+                "NOT_INCLUDES": [
+                    "Locker (deposit of $10.00 USD, refundable upon return of the key)",
+                    "Gratuities (optional)",
+                    "Photography service (optional)",
+                    "Reef Tax: A $15.00 USD per person",
+                    "Soda, alcoholic beverages, or additional food (optional, available for purchase)"
+                ]
+            },
+            "WHAT_TO_BRING": {
+                "TITLE": "What to bring for your snorkeling adventure",
+                "SWIMSUIT": {
+                    "TITLE": "Swimsuit",
+                    "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
+                },
+                "WATER_SANDALS": {
+                    "TITLE": "Water Sandals or Aqua Shoes",
+                    "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
+                },
+                "TOWEL": {
+                    "TITLE": "Towel",
+                    "DESCRIPTION": "To dry off after your snorkeling adventure."
+                },
+                "CASH": {
+                    "TITLE": "Additional Cash",
+                    "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
+                }
+            },
+            "WHAT_YOU_SHOULD_KNOW": {
+                "TITLE": "Information you should know for your snorkeling adventure",
+                "LIST": [
+                    "The use of any type of sunscreen is strictly prohibited during the snorkeling activity to protect the marine ecosystem.",
+                    "For conservation measures and to protect the reef, a shower is required before entering the water.",
+                    "Dock and reef fee of $15.00 USD per person (payable in cash)",
+                    "Pregnant women can’t participate",
+                    "The minimum age to participate in the snorkeling activity is 6 years old.",
+                    "Children under 6 years old may ride on the boat but are not allowed to participate in the snorkeling activity; they must be accompanied at all times by a responsible adult.",
+                    "The activity is allowed for individuals up to 65 years of age, as long as they do not have respiratory, heart, or mobility issues.",
+                    "Those with recent surgeries can’t participate",
+                    "We will reach out to you to confirm the exact pickup time shortly after receiving your booking."
+                ],
+                "SAFETY_STANDARDS": {
+                    "LIFEJACKET": "Lifejacket present at all time and snorkeling gear",
+                    "KICKING": "Be mindful of your kicking to avoid harming the reef"
+                }
+            },
+            "FAQS": {
+                "TITLE": "Frequently Asked Questions about the Snorkeling Adventure in Puerto Morelos",
+                "FAQS": [
+                    {
+                        "question": "What is the best time of year for snorkeling Puerto Morelos?",
+                        "answer": "Puerto Morelos offers excellent snorkeling conditions all year, with the best visibility from November to August."
+                    },
+                    {
+                        "question": "Is this Snorkeling Adventure suitable for beginners?",
+                        "answer": "Yes, the calm waters of Puerto Morelos make this Cancun snorkeling tour perfect for beginners."
+                    },
+                    {
+                        "question": "How long is the snorkeling portion of the tour?",
+                        "answer": "The guided snorkeling session lasts approximately 1 hour."
+                    },
+                    {
+                        "question": "Is transportation included in the tour?",
+                        "answer": "Yes, round‑trip air‑conditioned transportation from Cancun or Riviera Maya is included for your convenience."
+                    },
+                    {
+                        "question": "Why is the use of sunscreen not allowed during the snorkeling activity?",
+                        "answer": "The use of sunscreen is prohibited to protect the marine ecosystem and prevent damage to the corals and marine life. It is recommended to use protective clothing instead."
+                    }
+                ]
+            },
+            "FORM_FLOATER": {
+                "TITLE": "Ready to explore the Great Mayan Reef?",
+                "DESCRIPTION": "Book your snorkeling adventure today and discover the underwater wonders that await you in Puerto Morelos.",
+                "BUTTON_BOOK": "Check Availability",
+                "BUTTON_CLOSE": "Close"
+            }
+        },
     "PRIVATE_CENOTE": {}
   }
-}
+
