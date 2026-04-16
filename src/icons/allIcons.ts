@@ -14,6 +14,8 @@ import WorldLanguaje from "@/icons/awards/world.svg"
 import CenoteAdventure02 from "@/icons/logos/cenoteadventuring 2026-02.svg"
 import CenoteAdventuringH from "@/icons/logos/cenoteadventuring 2026-H.svg"
 import Logo_icono_cenote from "@/icons/logos/cenoteadventuring 2026-05.svg"
+import Logo_blanco from "@/icons/logos/cenoteadventuring 2026-04.svg"
+import LogoContainer from "@/icons/logos/cenoteadventuring 2026-02.svg"
 
 export {
     IconFlagMEX,
@@ -28,6 +30,8 @@ export {
     WorldLanguaje,
     CenoteAdventure02,
     CenoteAdventuringH,
-    Logo_icono_cenote
+    Logo_icono_cenote,
+    Logo_blanco,
+    LogoContainer
     
 }

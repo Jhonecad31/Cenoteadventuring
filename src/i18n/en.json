@@ -24,30 +24,30 @@
       "TITLE": "Cenote Adventuring: Our Story ",
       "DESCRIPTION": "Cenote Adventuring was created מתוך a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle."
     },
-      "REGULAR_CENOTE": {
-        "HERO": {
-          "TITLE": "Cenote adventuring",
-          "DESCRIPTION": "3 cenote boutique experience, mayan Show with Snack"
-        },
-        "INTRO": {
-          "TITLE": "Uncover the Natural Wonders of Cancun",
-          "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
-        }
+    "REGULAR_CENOTE": {
+      "HERO": {
+        "TITLE": "Cenote adventuring",
+        "DESCRIPTION": "3 cenote boutique experience, mayan Show with Snack"
       },
-      "PRIVATE_CENOTE": {
-        "TITLE": "",
-        "DESCRIPTION": "",
-        "META_TITLE": ""
+      "INTRO": {
+        "TITLE": "Uncover the Natural Wonders of Cancun",
+        "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
       }
     },
-    "NOT_FOUND_PAGE": {
-      "TITLE": "Page Not Found",
-      "DESCRIPTION": "The page you are looking for does not exist. Please return to the home page."
-    },
-    "ERROR_SERVER_PAGE": {
-      "TITLE": "Error 500 - Server Error",
-      "DESCRIPTION": "An error occurred on the server. Please try again later."
-    },
+    "PRIVATE_CENOTE": {
+      "TITLE": "",
+      "DESCRIPTION": "",
+      "META_TITLE": ""
+    }
+  },
+  "NOT_FOUND_PAGE": {
+    "TITLE": "Page Not Found",
+    "DESCRIPTION": "The page you are looking for does not exist. Please return to the home page."
+  },
+  "ERROR_SERVER_PAGE": {
+    "TITLE": "Error 500 - Server Error",
+    "DESCRIPTION": "An error occurred on the server. Please try again later."
+  },
   "ACCESSIBILITY": {
     "LOGO": "Logo of The Best Cenote In Puerto Morelos",
     "CHANGE_LANGUAGE": "Change language",
@@ -305,131 +305,253 @@
       "TEXT_2": "If you have any questions or need immediate assistance, please call us at +52 998 249 0003 or send us an email at    ."
     }
   },
-  "REGULAR_CENOTE": {
-            "HERO": {
-                "TITLE": "Cenote adventuring",
-                "DESCRIPTION": "3 cenote boutique experience, mayan Show with Snack"
-            },
-            "INTRO": {
-              "TITLE": "Uncover the Natural Wonders of Cancun",
-              "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
-            },
-            "TEXTS": {               
-                "EXPLORE_PUERTO_MORELOS": {
-                    "TITLE": "Explore puerto morelos underwater paradise",
-                    "DESCRIPTION": "Discover one of the most breathtaking ecosystems in the Caribbean: the Mesoamerican Barrier Reef, the second‑largest reef system in the world. This marine sanctuary offers incredible biodiversity, including rays, sea turtles, colorful fish, and living coral gardens."
-                },
-                "SNORKELING_EXPERIENCE": {
-                    "TITLE": "Your unforgettable snorkeling experience",
-                    "DESCRIPTION": "Your Snorkeling Adventure starts with comfortable transportation from your hotel to Puerto Morelos. Once onboard the boat, expert guides will brief you on safety and marine preservation. Then, dive into crystal‑clear waters for a full hour of guided reef exploration. After snorkeling, enjoy a beachside snack and free time in town."
-                },
-                "DIVE_INTO_UNSEEN": {
-                    "TITLE": "Dive into the unseen beauty",
-                    "DESCRIPTION": "Prepare to awaken your inner adventurer as you dive into the crystalline waters of Puerto Morelos, home to some of the best snorkeling in Puerto Morelos. This section of the Mesoamerican Reef invites you to glide over colorful coral formations, observe tropical fish, and encounter marine life in its natural environment. Every moment reveals a new underwater marvel—rays, sea turtles, angelfish, and vibrant coral gardens thriving beneath the surface."
-                }
-            },
-            "GALLERY": {
-                "TITLE": "Discover the beauty of Puerto Morelos and the Great Mayan Reef",
-                "DESCRIPTION": "Explore the stunning underwater world of the Great Mayan Reef through our captivating gallery. Witness vibrant coral formations, diverse marine life, and unforgettable moments from our snorkeling tours in Puerto Morelos."
-            },
-            "SCHEDULES": {
-                "TITLE": "Available Schedules for the Snorkeling Adventure",
-                "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
-                "SCHEDULE_LIST": [
-                    "9:30 AM",
-                    "1:30 PM"
-                ],
-                "DURATION": "4 hours (approx.)"
-            },
-            "INCLUSIONS": {
-                "TITLE": "Inclusions & Exclusions",
-                "INCLUDES": [
-                    "Snack at beachside restaurant",
-                    "Security gear (lifejacket)",
-                    "Round trip air-conditioned transportation",
-                    "Specialized and bilingual guides",
-                    "Free time in Puerto Morelos",
-                    "Aprox 1hr. of snorkeling",
-                    "Snorkel gear (Mask, fins and snorkeltube)",
-                    "Tequila Tasting"
-                ],
-                "NOT_INCLUDES": [
-                    "Locker (deposit of $10.00 USD, refundable upon return of the key)",
-                    "Gratuities (optional)",
-                    "Photography service (optional)",
-                    "Reef Tax: A $15.00 USD per person",
-                    "Soda, alcoholic beverages, or additional food (optional, available for purchase)"
-                ]
-            },
-            "WHAT_TO_BRING": {
-                "TITLE": "What to bring for your snorkeling adventure",
-                "SWIMSUIT": {
-                    "TITLE": "Swimsuit",
-                    "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
-                },
-                "WATER_SANDALS": {
-                    "TITLE": "Water Sandals or Aqua Shoes",
-                    "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
-                },
-                "TOWEL": {
-                    "TITLE": "Towel",
-                    "DESCRIPTION": "To dry off after your snorkeling adventure."
-                },
-                "CASH": {
-                    "TITLE": "Additional Cash",
-                    "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
-                }
-            },
-            "WHAT_YOU_SHOULD_KNOW": {
-                "TITLE": "Information you should know for your snorkeling adventure",
-                "LIST": [
-                    "The use of any type of sunscreen is strictly prohibited during the snorkeling activity to protect the marine ecosystem.",
-                    "For conservation measures and to protect the reef, a shower is required before entering the water.",
-                    "Dock and reef fee of $15.00 USD per person (payable in cash)",
-                    "Pregnant women can’t participate",
-                    "The minimum age to participate in the snorkeling activity is 6 years old.",
-                    "Children under 6 years old may ride on the boat but are not allowed to participate in the snorkeling activity; they must be accompanied at all times by a responsible adult.",
-                    "The activity is allowed for individuals up to 65 years of age, as long as they do not have respiratory, heart, or mobility issues.",
-                    "Those with recent surgeries can’t participate",
-                    "We will reach out to you to confirm the exact pickup time shortly after receiving your booking."
-                ],
-                "SAFETY_STANDARDS": {
-                    "LIFEJACKET": "Lifejacket present at all time and snorkeling gear",
-                    "KICKING": "Be mindful of your kicking to avoid harming the reef"
-                }
-            },
-            "FAQS": {
-                "TITLE": "Frequently Asked Questions about the Snorkeling Adventure in Puerto Morelos",
-                "FAQS": [
-                    {
-                        "question": "What is the best time of year for snorkeling Puerto Morelos?",
-                        "answer": "Puerto Morelos offers excellent snorkeling conditions all year, with the best visibility from November to August."
-                    },
-                    {
-                        "question": "Is this Snorkeling Adventure suitable for beginners?",
-                        "answer": "Yes, the calm waters of Puerto Morelos make this Cancun snorkeling tour perfect for beginners."
-                    },
-                    {
-                        "question": "How long is the snorkeling portion of the tour?",
-                        "answer": "The guided snorkeling session lasts approximately 1 hour."
-                    },
-                    {
-                        "question": "Is transportation included in the tour?",
-                        "answer": "Yes, round‑trip air‑conditioned transportation from Cancun or Riviera Maya is included for your convenience."
-                    },
-                    {
-                        "question": "Why is the use of sunscreen not allowed during the snorkeling activity?",
-                        "answer": "The use of sunscreen is prohibited to protect the marine ecosystem and prevent damage to the corals and marine life. It is recommended to use protective clothing instead."
-                    }
-                ]
-            },
-            "FORM_FLOATER": {
-                "TITLE": "Ready to explore the Great Mayan Reef?",
-                "DESCRIPTION": "Book your snorkeling adventure today and discover the underwater wonders that await you in Puerto Morelos.",
-                "BUTTON_BOOK": "Check Availability",
-                "BUTTON_CLOSE": "Close"
-            }
+  "DETAIL_PAGE": {
+    "GENERAL": {
+      "DURATION": "Duration",
+      "APPROX": "approx.",
+      "SCHEDULE": "Schedules",
+      "HOURS": "hours",
+      "TRANSPORTATION": "Transportation",
+      "ROUNDTRIP_TRANSPORTATION": "Round trip transportation",
+      "OFFERED_IN": "Offered in",
+      "OFFERED_LANG": "English & Spanish",
+      "AGE_REQUIREMENT": "Minimum Age",
+      "YEARS_AND_OLDER": "years and older"
+    },
+    "REGULAR_CENOTE": {
+      "HERO": {
+        "TITLE": "Cenote Adventuring",
+        "DESCRIPTION": "3 cenote boutique experience mayan show with snack"
+      },
+      "INTRO": {
+        "TITLE": "Uncover the natural wonders of Cancún",
+        "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
+      },
+      "INCLUSIONS": {
+        "TITLE": "Inclusions & Exclusions",
+        "INCLUDES": [
+          "Conservation Fee(Included)",
+          "Round-trip transportation from your hotel",
+          "3 Cenotes(with waterfall, zipline and cavern)",
+          "Lifejacket",
+          "Specialized and bilingual guides",
+          "Tequila tasting(in the cenote)",
+          "Mayan performance"
+        ],
+        "NOT_INCLUDES": [
+          "Professional photographs(available for purchase)",
+          "Tips or gratuites",
+          "Souvenirs"
+        ]
+      },
+      "OVERVIEW": {
+        "DESCRIPTION1": "Cenote Adventuring Cancun offers a unique opportunity to explore the breathtaking natural beauty hidden in the heart of the Mexican Caribbean. Our guided tour take you on a journey through the lush Mayan jungle, revealing three exclusive cenotes, each with its own unique features. Dive into crystal-clear waters, zip line over the cenote, and immerse yourself in the rich history and culture of the region.",
+        "DESCRIPTION2": "Furthermore, these natural sinkholes are scattered throughout the Mayan jungle and are truly one of nature’s hidden wonders. In brief, join us on our Cenotes tour in Cancun to discover the beauty of these crystal clear waters and the adventure that awaits you.",
+        "WHY_EXPLORE_CENOTES_CANCUN": {
+          "TITLE": "Why explore cenotes cancún",
+          "DESCRIPTION": "Exploring the cenotes in Cancun is a must for any nature lover or adventure enthusiast visiting the area. These natural sinkholes, formed over thousands of years, are filled with fresh, clear water and are surrounded by lush jungle vegetation. The cenotes are sacred to the ancient Mayans, who believed they were gateways to the underworld. Today, they offer a serene and mystical escape from the bustling beaches and resorts of Cancun."
+        }
+      },
+      "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
+        "TITLE": "Why choose our cenotes cancun tour?",
+        "DESCRIPTION": "Our Cenote Adventuring Tour offers a perfect blend of adventure, relaxation, and cultural immersion. With small groups and exclusive access to private cenotes, you’ll enjoy a personalized experience that larger tours can’t offer. Whether you’re looking to swim in crystal-clear waters, explore ancient caves, or simply relax in a stunning natural setting, our tour has something for everyone.",
+        "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
+          "TITLE": "The unique features of our cenote tour",
+          "DESCRIPTION": "Our Cenotes Cancun tour stands out by offering access to three private cenotes, each with its own unique characteristics:",
+          "THE_UNIQUE_FEATURES_LIST": [
+            "Waterfalls and Jumping Platforms: All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim.",
+            "Zip Line and Rustic Swings: One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience.",
+            "Exclusive Access: Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+          ],
+          "BOOK_CENOTE": {
+            "TITLE": "Book cenote adventuring today",
+            "DESCRIPTION": "Don’t miss out on exploring the best cenotes near Cancun. Book your Cenotes Cancun Tour today and immerse yourself in the natural beauty and rich history of the Riviera Maya."
+          }
+        }
+      },
+      "WHAT_YOU_SHOULD_KNOW": {
+        "TITLE": "What you should know?",
+        "LIST": [
+          "Not wheelchair accessible",
+          "Not stroller accessible",
+          "Not suitable for pets",
+          "No public transportation nearby",
+          "Infants must not sit on laps",
+          "Infant seats unavailable",
+          "Not recommended for people with back problems",
+          "Please contact us in advance to confirm your exact pickup time and location.",
+          "We will reach out to you to confirm the exact pickup time shortly after receiving your booking."
+        ]
+      },
+      "WHAT_TO_BRING": {
+        "TITLE": "What to bring?",
+        "LIST": [
+          "Biodegradable Sunscreen",
+          "Sandals or comfortable Shoes (No Flip Flops)",
+          "Towel",
+          "Bathing Suit",
+          " All insect repellent used in the park must be biodegradable",
+          "Change of clothes",
+          "Extra cash for souvenirs and tips"
+        ],
+        "SWIMSUIT": {
+          "TITLE": "Swimsuit",
+          "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
         },
-    "PRIVATE_CENOTE": {}
+        "WATER_SANDALS": {
+          "TITLE": "Water Sandals or Aqua Shoes",
+          "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
+        },
+        "TOWEL": {
+          "TITLE": "Towel",
+          "DESCRIPTION": "To dry off after your snorkeling adventure."
+        },
+        "CASH": {
+          "TITLE": "Additional Cash",
+          "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
+        }
+      },
+      "GALLERY": {
+      "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+      "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+    },
+      "SCHEDULES": {
+        "TITLE": "Available Schedules for the Snorkeling Adventure",
+        "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
+        "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
+        "DURATION": "4 hours (approx.)"
+      },
+      "FAQS": {
+        "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
+        "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
+        "CARD_CONTACT": {
+          "TITLE": "Need More Information?",
+          "DESCRIPTION": "Whether it's a special request or a custom private itinerary, our team of experts is ready to help you plan the perfect experience.",
+          "BUTTON": "Contact us"
+        },
+        "FAQS": [
+          {
+            "question": "How many cenotes are included in the tour?",
+            "answer": "The experience typically includes visits to multiple cenotes along the Ruta de los Cenotes, depending on your selected package and preferences."
+          },
+          {
+            "question": "Is this tour suitable for beginners?",
+            "answer": "Yes! No prior experience is needed. The tour is designed for all levels, making it one of the best things to do in Puerto Morelos for beginners."
+          },
+          {
+            "question": "How far is Puerto Morelos from Cancun?",
+            "answer": "Puerto Morelos is located about 20–30 minutes from Cancun, making it an easy and convenient destination for a cenote tour Cancun."
+          },
+          {
+            "question": "What should I bring for the cenote tour?",
+            "answer": "Bring swimwear, biodegradable sunscreen, a towel, and comfortable clothing. Everything else will be provided for your cenote Puerto Morelos experience. "
+          }
+        ]
+      }
+    },
+    "PRIVATE_CENOTE": {
+      "HERO": {
+        "TITLE": "Private Snorkeling Tour in Puerto Morelos",
+        "DESCRIPTION": "Experience an exclusive <span>Private snorkeling tour in Puerto Morelos</span>. Explore the Mesoamerican Reef by private boat with expert guides, drinks, and transportation included."
+      },
+      "TEXTS": {
+        "EXCLUSIVE_SNORKELING_EXPERIENCE": {
+          "TITLE": "Exclusive snorkeling experience in Puerto Morelos",
+          "DESCRIPTION": "Your <strong>private snorkeling adventure in Puerto Morelos</strong> begins with hotel pickup in a comfortable, air-conditioned vehicle. As you travel toward <strong>Puerto Morelos</strong>, a charming fishing village and the gateway to the <strong>Mesoamerican Barrier Reef</strong>, you’ll immediately notice the difference: no crowds, no fixed itineraries, and full attention to your comfort and preferences. This private tour offers an elevated snorkeling experience tailored to families, couples, or travelers seeking exclusivity."
+        },
+        "PRIVATE_BOAT": {
+          "TITLE": "Private boat for an unparalleled snorkeling experience",
+          "DESCRIPTION": "Upon arrival, you will board a private boat reserved exclusively for your group, ensuring an intimate, peaceful, and uninterrupted environment. Before entering the water, your expert guide will provide a detailed safety briefing, assist you in properly using the snorkeling equipment, and explain the marine species you are most likely to observe during the activity."
+        },
+        "RELAXING_RIDE": {
+          "TITLE": "Relaxing boat ride with unlimited drinks",
+          "DESCRIPTION": "After snorkeling, you can relax on your private boat with refreshing drinks before returning to shore. No rush, no waiting, and no large groups: just an elegant, exclusive, and unforgettable reef experience, designed entirely for you."
+        }
+      },
+      "GALLERY": {
+        "TITLE": "Discover the exclusive experience of our Private Snorkeling Tour",
+        "DESCRIPTION": "Explore the unique moments and personalized service of our Private Snorkeling Tour in Puerto Morelos through our captivating gallery. Witness the luxury, comfort, and unforgettable underwater experiences that await you."
+      },
+      "SCHEDULES": {
+        "TITLE": "Available Schedules for Your Private Snorkeling Tour",
+        "DESCRIPTION": "Choose the perfect time for your exclusive snorkeling adventure in Puerto Morelos. Our private tours are available at the following times:",
+        "SCHEDULE_LIST": ["10:00 AM", "2:00 PM"],
+        "DURATION": "4 hours (approx.)"
+      },
+      "INCLUSIONS": {
+        "TITLE": "Inclusions & Exclusions",
+        "INCLUDES": [
+          "Unlimited drinks included on the boat and during the walk (water, soft drinks, beer, tequila sunrise, rum punch)",
+          "Vip meal: 4 tacos and 2 drinks (during lunch)",
+          "Fresh ceviche served on board",
+          "Priority check-in",
+          "Welcome drink upon arrival",
+          "Private boat",
+          "2-hour boat ride plus 40 minutes of snorkeling with unlimited drinks",
+          "Bluetooth speakers available for your own music",
+          "Boat ride",
+          "Snorkeling gear (mask, fins, snorkel tube)",
+          "Tequila tasting guided town tour",
+          "Round trip transportation (shared)",
+          "Includes an optional 40-minute visit to the local town"
+        ],
+        "NOT_INCLUDES": [
+          "Reef Tax: A $15.00 USD per person",
+          "Gratuities (optional)",
+          "Professional photography services (optional, available for purchase)",
+          "Souvenirs"
+        ]
+      },
+      "WHAT_YOU_SHOULD_KNOW": {
+        "TITLE": "Information you should know for your private snorkeling tour",
+        "LIST": [
+          "The minimum number of participants for the booking is 6 people.",
+          "The use of any type of sunscreen is strictly prohibited during the snorkeling activity to protect the marine ecosystem.",
+          "For conservation measures and to protect the reef, a shower is required before entering the water.",
+          "Dock and reef fee of $15.00 USD per person (payable in cash)",
+          "Pregnant women can’t participate",
+          "The minimum age to participate in the snorkeling activity is 6 years old.",
+          "Children under 6 years old may ride on the boat but are not allowed to participate in the snorkeling activity; they must be accompanied at all times by a responsible adult.",
+          "The activity is allowed for individuals up to 65 years of age, as long as they do not have respiratory, heart, or mobility issues.",
+          "Those with recent surgeries can’t participate",
+          "We will reach out to you to confirm the exact pickup time shortly after receiving your booking."
+        ],
+        "SAFETY_STANDARDS": {
+          "LIFEJACKET": "Lifejacket present at all time and snorkeling gear",
+          "KICKING": "Be mindful of your kicking to avoid harming the reef"
+        }
+      },
+      "FAQS": {
+        "TITLE": "Frequently Asked Questions about the Private Snorkeling Tour in Puerto Morelos",
+        "FAQS": [
+          {
+            "question": "What marine life can I see during the tour?",
+            "answer": "You can expect tropical fish, coral reefs, rays, and occasionally sea turtles within Puerto Morelos’ protected marine park."
+          },
+          {
+            "question": "Does this private tour include transportation?",
+            "answer": "Yes, round trip shared air conditioned transportation from Cancun or Riviera Maya is included. If you prefer private transportation, please contact us."
+          },
+          {
+            "question": "How is this tour different from regular snorkeling tours in Puerto Morelos?",
+            "answer": "This private tour offers an exclusive experience with a private boat, personalized service, unlimited drinks, and a flexible schedule, unlike standard group tours. It’s designed for those seeking a more luxurious and intimate snorkeling adventure."
+          },
+          {
+            "question": "Can children or older adults join this tour?",
+            "answer": "Yes. The private nature of the tour allows the experience to be adjusted for all ages and comfort levels. However, please note that children under 6 years old cannot participate in the snorkeling activity and must be accompanied by a responsible adult."
+          },
+          {
+            "question": "Why is the use of sunscreen not allowed during the snorkeling activity?",
+            "answer": "The use of sunscreen is prohibited to protect the marine ecosystem and prevent damage to the corals and marine life. It is recommended to use protective clothing instead."
+          }
+        ]
+      },
+      "FORM_FLOATER": {
+        "TITLE": "Ready to explore the Great Mayan Reef?",
+        "DESCRIPTION": "Book your snorkeling adventure today and discover the underwater wonders that await you in Puerto Morelos.",
+        "BUTTON_BOOK": "Check Availability",
+        "BUTTON_CLOSE": "Close"
+      }
+    }
   }
-
+}

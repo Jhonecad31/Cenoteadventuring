@@ -7,7 +7,7 @@ import {
 } from "@/i18n/utils";
 import { Menu, X} from "lucide-react";
 import LanguageSelector from "./LanguageSelector.astro";
-import { Logo_icono_cenote, CenoteAdventuringH } from "@/icons/allIcons";
+import { Logo_icono_cenote, LogoContainer} from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -42,12 +42,12 @@ const navigation = [
 </div>
 
 <div id="logo-container" class="text-white transition-colors duration-500">
-  <CenoteAdventuringH
+  <LogoContainer
     class="h-15 lg:h-18 p-1 transition-all duration-500" 
     id="logo-completo" 
   />
   <Logo_icono_cenote
-  class="h-15 lg:h-20 p-1 transition-all duration-500 hidden opacity-0 !text-[#002B49]"
+  class="h-15 lg:h-20 p-1 transition-all duration-500 hidden opacity-0 !text-[#002B49] justify-center"
   id="logo-reducido" 
 />
 </div>
