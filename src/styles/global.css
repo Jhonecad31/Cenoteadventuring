@@ -8,14 +8,6 @@
   --font-sans: "Inter", sans-serif;
 }
 
-/* @font-face {
-  font-family: "Rosarivo";
-  src: url("/fonts/rosarivo-regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

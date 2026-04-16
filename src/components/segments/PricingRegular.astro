@@ -1,0 +1,431 @@
+---
+import { getI18N } from "@/i18n";
+import Layout from "@/layouts/BaseLayout.astro";
+import {
+  Star,
+  Clock,
+  Users,
+  Calendar,
+  Truck,
+  Check,
+  X,
+  ChevronRight,
+} from "lucide-react";
+
+const tour = {
+  title: "Private Cenote Rental In Cancun",
+  tagline:
+    "Exclusive Experience at 3 Private Cenotes with a Mayan Show and Snacks",
+  rating: 4.8,
+  reviews: 1982,
+  description:
+    "Cenote Adventuring® is part of Grupo Extreme®, which offers five of Mexico's most award-winning and highly rated culinary and adventure experiences.",
+  inclusions: [
+    { text: "Conservation Fee (Included)", inc: true },
+    { text: "Round-trip transportation", inc: true },
+    { text: "3 Cenotes (Waterfall, Zipline, Cavern)", inc: true },
+    { text: "Tequila Tasting", inc: true },
+    { text: "Mayan Snack", inc: true },
+    { text: "Mayan Performance", inc: false },
+    { text: "Professional Photography", inc: false },
+  ],
+};
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
+
+const carouselImages = [
+  "CenoteA.1_ntnmsp",
+  "CenoteA.2_njvbos",
+  "CenoteA.3_pzncr9",
+  "CenoteA.4_tevpif",
+  "CenoteA.5_tdhqvl",
+  "CenoteA.6_ikzdny",
+  "CenoteA.7_rpyhjn",
+  "CenoteA.8_jx4f49",
+];
+const relatedActivities = [
+  {
+    name: "Taco Tour",
+    image: "taco_taco_ud62mv",
+    slug: "beach-taco-tour",
+  },
+  {
+    name: "Extreme Adventuring",
+    image: "moto_moto_jxf9jy",
+    slug: "extreme-adventuring",
+  },
+  {
+    name: "Snorkel Adventuring",
+    image: "snorkel_snorkel_iqkdev",
+    slug: "snorkel-adventuring",
+  },
+];
+
+const imagesDetails = {
+  imgDetails1: "Card.2.2_eik10v",
+  imgDetails2: "Card.1.2_x0xkn2",
+};
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1776355586/cenote_web_2_zhi5vd.mp4`;
+const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
+
+const getUrl = (id: string, w = 1200) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+---
+
+<Layout title={tour.title}>
+  <main class="bg-[#EDF4FC] pb-20 overflow-x-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        poster={posterUrl}
+        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
+        id="hero-video-player"
+      >
+        <source src={videoUrl} type="video/mp4" />
+      </video>
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
+        >
+          {i18n.REGULAR_CENOTE.HERO.TITLE}
+        </h1>
+        <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
+          {i18n.REGULAR_CENOTE.HERO.DESCRIPTION}
+        </p>
+        <div
+          class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
+        >
+          <Star className="text-yellow-400 fill-yellow-300" size={15} />
+          <span class="font-bold text-[#ffffff]"> {tour.rating}</span>
+          <span class="text-white">({tour.reviews} reviews)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="relative h-[450px] md:h-[600px] w-full max-w-2xl mx-auto">
+          <div
+            class="absolute top-0 left-4 w-[60%] h-[75%] overflow-hidden shadow-lg z-10"
+          >
+            <img
+              src={getUrl(imagesDetails.imgDetails1, 800)}
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+              alt="Adventure 1"
+            />
+          </div>
+
+          <div
+            class="absolute bottom-4 right-4 w-[60%] h-[75%] overflow-hidden shadow-2xl z-20"
+          >
+            <img
+              src={getUrl(imagesDetails.imgDetails2, 800)}
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+              alt="Adventure 2"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center text-center md:text-left">
+          <hr class="border-black/50 w-full mb-6 md:mb-8" />
+          <h2
+            class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 md:mb-8 leading-tight"
+          >
+            {i18n.REGULAR_CENOTE.INTRO.TITLE}
+          </h2>
+          <p
+            class="text-gray-600 leading-relaxed text-base md:text-lg font-light"
+          >
+            {i18n.REGULAR_CENOTE.INTRO.DESCRIPTION}
+          </p>
+          <hr class="border-black/50 w-full mt-6 md:mt-8" />
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-screen-2xl mx-auto px-4 md:px-10 mb-20">
+      <div
+        class="rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
+      >
+        <div
+          class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
+        >
+          <Clock size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Duration</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >4 hours approx</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
+        >
+          <Users size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Min. Age</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >5 years+</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
+        >
+          <Calendar size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Schedule</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >09:00 | 13:00</span
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center text-center gap-3 px-2">
+          <Truck size={30} className="text-gray-400" />
+          <div class="flex flex-col">
+            <span
+              class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >Transport</span
+            >
+            <span class="text-xs md:text-sm font-semibold text-gray-800"
+              >Included</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+      <section class="max-w-screen-2xl mx-auto px-6 mb-20">
+        <div class="divide-y divide-gray-200 border-t border-b border-gray-200">
+          <details class="group py-6" open>
+            <summary
+              class="flex justify-between items-center cursor-pointer list-none"
+            >
+              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                >Inclusions</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+              >
+                <ChevronRight className="rotate-90 text-gray-500" size={20} />
+              </div>
+            </summary>
+            <div class="mt-4 text-gray-600 leading-relaxed font-light">
+              <p>{tour.description}</p>
+            </div>
+          </details>
+
+          <details class="group py-6">
+            <summary
+              class="flex justify-between items-center cursor-pointer list-none"
+            >
+              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                >Overview</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+              >
+                <ChevronRight className="rotate-90 text-gray-500" size={20} />
+              </div>
+            </summary>
+            <div class="mt-4 text-gray-600 leading-relaxed font-light">
+              <p>
+                Pickups are available from most hotels in Cancun and Riviera
+                Maya. Exact timing will be confirmed after booking based on your
+                location.
+              </p>
+            </div>
+          </details>
+
+          <details class="group py-6">
+            <summary
+              class="flex justify-between items-center cursor-pointer list-none"
+            >
+              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                >What you should know?</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+              >
+                <ChevronRight className="rotate-90 text-gray-500" size={20} />
+              </div>
+            </summary>
+            <div class="mt-4 text-gray-600 leading-relaxed font-light">
+              <p>
+                Need more help? Contact our support team via WhatsApp or email
+                for immediate assistance regarding your private cenote rental.
+              </p>
+            </div>
+          </details>
+
+          <details class="group py-6">
+            <summary
+              class="flex justify-between items-center cursor-pointer list-none"
+            >
+              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                >What to bring?</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+              >
+                <ChevronRight className="rotate-90 text-gray-500" size={20} />
+              </div>
+            </summary>
+            <div class="mt-4 text-gray-600 leading-relaxed font-light">
+              <p>
+                Need more help? Contact our support team via WhatsApp or email
+                for immediate assistance regarding your private cenote rental.
+              </p>
+            </div>
+          </details>
+
+          <details class="group py-6">
+            <summary
+              class="flex justify-between items-center cursor-pointer list-none"
+            >
+              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                >FAQs</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+              >
+                <ChevronRight className="rotate-90 text-gray-500" size={20} />
+              </div>
+            </summary>
+            <div class="mt-4 text-gray-600 leading-relaxed font-light">
+              <p>
+                Need more help? Contact our support team via WhatsApp or email
+                for immediate assistance regarding your private cenote rental.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+  </main>
+  <!-- Recomendaciones de otros productos -->
+  <section class="bg-white py-20 px-6 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl text-[#001524] mb-4">
+          {i18n.REGULAR_CENOTE?.INTRO?.TITLE}
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          {i18n.REGULAR_CENOTE?.INTRO?.DESCRIPTION}
+        </p>
+      </div>
+
+      <div class="swiper mySwiper pb-12">
+        <div class="swiper-wrapper">
+          {
+            relatedActivities.map((activity) => (
+              <div class="swiper-slide">
+                <a href={`/activities/${activity.slug}/`} class="group block">
+                  <div class="aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                    <img
+                      src={getUrl(activity.image, 600)}
+                      alt={activity.name}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <h3 class="font-serif text-xl text-[#001524] mb-2">
+                      {activity.name}
+                    </h3>
+
+                    <div class="text-[11px] font-bold tracking-widest lg:text-gray-400 md:text-[#001524] flex items-center gap-2">
+                      Discover more <ChevronRight size={14} />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import "swiper/css";
+  @import "swiper/css/pagination";
+  .swiper-pagination-bullet-active {
+    background: #005b71 !important;
+  }
+
+  .swiper-slide {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+  }
+
+  /* NUEVO: En desktop (min-width: 1024px), todos los slides visibles deben ser opacos */
+  @media (min-width: 1024px) {
+    .swiper-slide {
+      opacity: 1 !important;
+      transform: scale(1) !important; /* Por si también se veían pequeños */
+    }
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  let swiperInstance: Swiper | null = null;
+
+  function initSwiper() {
+    if (swiperInstance) {
+      swiperInstance.destroy(true, true);
+    }
+    const swiperEl = document.querySelector(".mySwiper");
+    if (!swiperEl) return;
+
+    swiperInstance = new Swiper(".mySwiper", {
+      modules: [Pagination, Autoplay],
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: { 
+        delay: 4000,
+        disableOnInteraction: false, 
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 3, spaceBetween: 40 },
+      },
+    });
+  }
+
+  initSwiper();
+  document.addEventListener("astro:page-load", initSwiper);
+</script>

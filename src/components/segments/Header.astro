@@ -5,11 +5,9 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
-import { Menu, X, Search, User, Phone, Facebook, Link } from "lucide-react"; // Añadimos Phone
-import { Button } from "@/components/ui/button";
+import { Menu, X} from "lucide-react";
 import LanguageSelector from "./LanguageSelector.astro";
-import { CenoteAdventure } from "@/icons/allIcons";
-import { keyof } from "astro:schema";
+import { Logo_icono_cenote, CenoteAdventuringH } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -43,15 +41,15 @@ const navigation = [
   </button>
 </div>
 
-<div class="flex-1 flex justify-center lg:flex-none lg:justify-start">
-  <a href={translatePath("/")} class="group block w-fit hover:scale-95 transition-transform duration-300">
-    <div id="logo-container" class="text-white transition-colors duration-500">
-      <CenoteAdventure
-        class="h-12 md:h-30 lg:h-20 p-1 transition-all duration-500" 
-        id="main-logo-svg"
-      />
-    </div>
-  </a>
+<div id="logo-container" class="text-white transition-colors duration-500">
+  <CenoteAdventuringH
+    class="h-15 lg:h-18 p-1 transition-all duration-500" 
+    id="logo-completo" 
+  />
+  <Logo_icono_cenote
+  class="h-15 lg:h-20 p-1 transition-all duration-500 hidden opacity-0 !text-[#002B49]"
+  id="logo-reducido" 
+/>
 </div>
 
 <nav class="hidden lg:flex flex-1 justify-center">
@@ -103,7 +101,11 @@ const navigation = [
 <script>
   const header = document.getElementById("main-header");
   const logoContainer = document.getElementById("logo-container");
-  const logoSvg = document.getElementById("main-logo-svg");
+  
+  // Referencias a los dos logos
+  const logoCompleto = document.getElementById("logo-completo");
+  const logoReducido = document.getElementById("logo-reducido");
+
   const iconGroup = document.getElementById("icon-group");
   const btnReserve = document.getElementById("btn-reserve");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -115,21 +117,27 @@ const navigation = [
   window.addEventListener("scroll", () => {
     const isScrolled = window.scrollY > 20;
 
+    // --- LÓGICA DE INTERCAMBIO DE LOGO ---
+    if (logoCompleto && logoReducido) {
+      logoCompleto.classList.toggle("hidden", isScrolled);
+      logoCompleto.classList.toggle("opacity-0", isScrolled);
+      
+      logoReducido.classList.toggle("hidden", !isScrolled);
+      logoReducido.classList.toggle("opacity-0", !isScrolled);
+    }
 
+    // --- TU LÓGICA EXISTENTE ---
     langSelector?.classList.toggle("text-[#002B49]", isScrolled);
     langSelector?.classList.toggle("text-white", !isScrolled);
 
-    // Fondo y Altura
     header?.classList.toggle("bg-[#EDF4FC]", isScrolled);
     header?.classList.toggle("shadow-sm", isScrolled);
     header?.classList.toggle("h-20", isScrolled);
     header?.classList.toggle("h-24", !isScrolled);
 
-    // Color del Logo y Contenedor
     logoContainer?.classList.toggle("text-[#002B49]", isScrolled);
     logoContainer?.classList.toggle("text-white", !isScrolled);
 
-    // Iconos y Links
     iconGroup?.classList.toggle("text-[#002B49]", isScrolled);
     iconGroup?.classList.toggle("text-white", !isScrolled);
     openBtn?.classList.toggle("text-[#002B49]", isScrolled);
@@ -146,14 +154,14 @@ const navigation = [
     });
   });
 
-  // En tu script
+  // Eventos del Drawer
   openBtn?.addEventListener("click", () => {
     drawer?.classList.remove("translate-x-full"); 
     document.body.style.overflow = "hidden";
   });
 
   closeBtn?.addEventListener("click", () => {
-    drawer?.classList.add("-translate-x-full"); 
+    drawer?.classList.add("translate-x-full"); 
     document.body.style.overflow = "";
   });
 </script>

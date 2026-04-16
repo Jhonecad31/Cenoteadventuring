@@ -13,6 +13,7 @@ import Tripadvaisor from "@/icons/social-media/tripadvisor.svg"
 import WorldLanguaje from "@/icons/awards/world.svg"
 import CenoteAdventure02 from "@/icons/logos/cenoteadventuring 2026-02.svg"
 import CenoteAdventuringH from "@/icons/logos/cenoteadventuring 2026-H.svg"
+import Logo_icono_cenote from "@/icons/logos/cenoteadventuring 2026-05.svg"
 
 export {
     IconFlagMEX,
@@ -26,5 +27,7 @@ export {
     Tripadvaisor,
     WorldLanguaje,
     CenoteAdventure02,
-    CenoteAdventuringH
+    CenoteAdventuringH,
+    Logo_icono_cenote
+    
 }
