@@ -11,6 +11,7 @@ import {
   X,
   ChevronRight,
 } from "lucide-react";
+import TagP from "@/components/global/TagP.astro";
 
 const tour = {
   title: "Private Cenote Rental In Cancun",
@@ -97,10 +98,10 @@ const getUrl = (id: string, w = 1200) =>
         <h1
           class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
-         
+          {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.TITLE}
         </h1>
         <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
-          
+          {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.DESCRIPTION}
         </p>
         <div
           class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
@@ -141,17 +142,19 @@ const getUrl = (id: string, w = 1200) =>
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 md:mb-8 leading-tight"
           >
+            {i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.TITLE}
           </h2>
           <p
             class="text-gray-600 leading-relaxed text-base md:text-lg font-light"
           >
+            {i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.DESCRIPTION}
           </p>
           <hr class="border-black/50 w-full mt-6 md:mt-8" />
         </div>
       </div>
     </section>
-
-    <section class="max-w-screen-2xl mx-auto px-4 md:px-10 mb-20">
+    <!-- SCHEDULES -->
+    <!-- <section class="max-w-screen-2xl mx-auto px-4 md:px-10 mb-20">
       <div
         class="rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
       >
@@ -162,10 +165,10 @@ const getUrl = (id: string, w = 1200) =>
           <div class="flex flex-col">
             <span
               class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-              >Duration</span
+              >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
             >
             <span class="text-xs md:text-sm font-semibold text-gray-800"
-              >4 hours approx</span
+              >{i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX})</span
             >
           </div>
         </div>
@@ -184,7 +187,6 @@ const getUrl = (id: string, w = 1200) =>
             >
           </div>
         </div>
-
         <div
           class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
         >
@@ -192,7 +194,7 @@ const getUrl = (id: string, w = 1200) =>
           <div class="flex flex-col">
             <span
               class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-              >Schedule</span
+              >{i18n.DETAIL_PAGE.GENERAL.SCHEDULE}</span
             >
             <span class="text-xs md:text-sm font-semibold text-gray-800"
               >09:00 | 13:00</span
@@ -205,7 +207,7 @@ const getUrl = (id: string, w = 1200) =>
           <div class="flex flex-col">
             <span
               class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-              >Transport</span
+              >{i18n.DETAIL_PAGE.GENERAL.ROUNDTRIP_TRANSPORTATION}</span
             >
             <span class="text-xs md:text-sm font-semibold text-gray-800"
               >Included</span
@@ -213,124 +215,121 @@ const getUrl = (id: string, w = 1200) =>
           </div>
         </div>
       </div>
+    </section> -->
+
+    <section class="max-w-screen-xl mx-auto px-6 mb-20">
+      <div class="divide-y divide-gray-200 border-t border-b border-gray-200">
+        <details class="group py-6" open>
+          <summary
+            class="flex justify-between items-center cursor-pointer list-none"
+          >
+            <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+              >{i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.TITLE}</span
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+            >
+              <ChevronRight className="rotate-90 text-gray-500" size={20} />
+            </div>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed font-light">
+            <p>{tour.description}</p>
+          </div>
+        </details>
+
+        <details class="group py-6">
+          <summary
+            class="flex justify-between items-center cursor-pointer list-none"
+          >
+            <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+              >Overview</span
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+            >
+              <ChevronRight className="rotate-90 text-gray-500" size={20} />
+            </div>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed font-light">
+            <p>
+              Pickups are available from most hotels in Cancun and Riviera Maya.
+              Exact timing will be confirmed after booking based on your
+              location.
+            </p>
+          </div>
+        </details>
+
+        <details class="group py-6">
+          <summary
+            class="flex justify-between items-center cursor-pointer list-none"
+          >
+            <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+              >What you should know?</span
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+            >
+              <ChevronRight className="rotate-90 text-gray-500" size={20} />
+            </div>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed font-light">
+            <p>
+              Need more help? Contact our support team via WhatsApp or email for
+              immediate assistance regarding your private cenote rental.
+            </p>
+          </div>
+        </details>
+
+        <details class="group py-6">
+          <summary
+            class="flex justify-between items-center cursor-pointer list-none"
+          >
+            <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+              >What to bring?</span
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+            >
+              <ChevronRight className="rotate-90 text-gray-500" size={20} />
+            </div>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed font-light">
+            <p>
+              Need more help? Contact our support team via WhatsApp or email for
+              immediate assistance regarding your private cenote rental.
+            </p>
+          </div>
+        </details>
+
+        <details class="group py-6">
+          <summary
+            class="flex justify-between items-center cursor-pointer list-none"
+          >
+            <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+              >FAQs</span
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+            >
+              <ChevronRight className="rotate-90 text-gray-500" size={20} />
+            </div>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed font-light">
+            <p>
+              Need more help? Contact our support team via WhatsApp or email for
+              immediate assistance regarding your private cenote rental.
+            </p>
+          </div>
+        </details>
+      </div>
     </section>
-      <section class="max-w-screen-xl mx-auto px-6 mb-20">
-        <div class="divide-y divide-gray-200 border-t border-b border-gray-200">
-          <details class="group py-6" open>
-            <summary
-              class="flex justify-between items-center cursor-pointer list-none"
-            >
-              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                >Inclusions</span
-              >
-              <div
-                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-              >
-                <ChevronRight className="rotate-90 text-gray-500" size={20} />
-              </div>
-            </summary>
-            <div class="mt-4 text-gray-600 leading-relaxed font-light">
-              <p>{tour.description}</p>
-            </div>
-          </details>
-
-          <details class="group py-6">
-            <summary
-              class="flex justify-between items-center cursor-pointer list-none"
-            >
-              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                >Overview</span
-              >
-              <div
-                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-              >
-                <ChevronRight className="rotate-90 text-gray-500" size={20} />
-              </div>
-            </summary>
-            <div class="mt-4 text-gray-600 leading-relaxed font-light">
-              <p>
-                Pickups are available from most hotels in Cancun and Riviera
-                Maya. Exact timing will be confirmed after booking based on your
-                location.
-              </p>
-            </div>
-          </details>
-
-          <details class="group py-6">
-            <summary
-              class="flex justify-between items-center cursor-pointer list-none"
-            >
-              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                >What you should know?</span
-              >
-              <div
-                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-              >
-                <ChevronRight className="rotate-90 text-gray-500" size={20} />
-              </div>
-            </summary>
-            <div class="mt-4 text-gray-600 leading-relaxed font-light">
-              <p>
-                Need more help? Contact our support team via WhatsApp or email
-                for immediate assistance regarding your private cenote rental.
-              </p>
-            </div>
-          </details>
-
-          <details class="group py-6">
-            <summary
-              class="flex justify-between items-center cursor-pointer list-none"
-            >
-              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                >What to bring?</span
-              >
-              <div
-                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-              >
-                <ChevronRight className="rotate-90 text-gray-500" size={20} />
-              </div>
-            </summary>
-            <div class="mt-4 text-gray-600 leading-relaxed font-light">
-              <p>
-                Need more help? Contact our support team via WhatsApp or email
-                for immediate assistance regarding your private cenote rental.
-              </p>
-            </div>
-          </details>
-
-          <details class="group py-6">
-            <summary
-              class="flex justify-between items-center cursor-pointer list-none"
-            >
-              <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                >FAQs</span
-              >
-              <div
-                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-              >
-                <ChevronRight className="rotate-90 text-gray-500" size={20} />
-              </div>
-            </summary>
-            <div class="mt-4 text-gray-600 leading-relaxed font-light">
-              <p>
-                Need more help? Contact our support team via WhatsApp or email
-                for immediate assistance regarding your private cenote rental.
-              </p>
-            </div>
-          </details>
-        </div>
-      </section>
   </main>
   <!-- Recomendaciones de otros productos -->
   <section class="bg-white py-20 px-6 overflow-hidden">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="font-serif text-3xl text-[#001524] mb-4">
-        
-        </h2>
-        <p class="text-gray-500 max-w-2xl mx-auto">
-
-        </p>
+        <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
+        <p class="text-gray-500 max-w-2xl mx-auto"></p>
       </div>
 
       <div class="swiper mySwiper pb-12">
@@ -409,9 +408,9 @@ const getUrl = (id: string, w = 1200) =>
       slidesPerView: 1.2,
       spaceBetween: 20,
       loop: true,
-      autoplay: { 
+      autoplay: {
         delay: 4000,
-        disableOnInteraction: false, 
+        disableOnInteraction: false,
       },
       pagination: {
         el: ".swiper-pagination",
