@@ -360,9 +360,18 @@
           "TITLE": "The unique features of our cenote tour",
           "DESCRIPTION": "Our Cenotes Cancun tour stands out by offering access to three private cenotes, each with its own unique characteristics:",
           "THE_UNIQUE_FEATURES_LIST": [
-            "Waterfalls and Jumping Platforms: All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim.",
-            "Zip Line and Rustic Swings: One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience.",
-            "Exclusive Access: Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+            {
+              "TITLE": "Waterfalls and Jumping Platforms",
+              "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+            },
+            {
+              "TITLE": "Zip Line and Rustic Swings",
+              "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+            },
+            {
+              "TITLE": "Exclusive Access",
+              "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+            }
           ],
           "BOOK_CENOTE": {
             "TITLE": "Book cenote adventuring today",
@@ -385,31 +394,34 @@
         ]
       },
       "WHAT_TO_BRING": {
-        "TITLE": "What to bring?",
-        "LIST": [
-          "Biodegradable Sunscreen",
-          "Sandals or comfortable Shoes (No Flip Flops)",
-          "Towel",
-          "Bathing Suit",
-          " All insect repellent used in the park must be biodegradable",
-          "Change of clothes",
-          "Extra cash for souvenirs and tips"
-        ],
-        "SWIMSUIT": {
-          "TITLE": "Swimsuit",
-          "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
+        "TITLE": "What to bring for your cenote adventure",
+        "SUNSCREEN": {
+          "TITLE": "Biodegradable Sunscreen",
+          "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
         },
-        "WATER_SANDALS": {
-          "TITLE": "Water Sandals or Aqua Shoes",
-          "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
+        "SHOES": {
+          "TITLE": "Comfortable Shoes",
+          "DESCRIPTION": "Sandals or closed shoes are recommended for walking on uneven terrain (No flip flops)."
         },
         "TOWEL": {
           "TITLE": "Towel",
-          "DESCRIPTION": "To dry off after your snorkeling adventure."
+          "DESCRIPTION": "Essential to dry off and stay comfortable after your refreshing swim."
+        },
+        "SWIMSUIT": {
+          "TITLE": "Bathing Suit",
+          "DESCRIPTION": "Wear it from the start to jump straight into the crystal clear waters."
+        },
+        "REPELLENT": {
+          "TITLE": "Biodegradable Repellent",
+          "DESCRIPTION": "All insect repellent used in the park must be eco-friendly to protect the environment."
+        },
+        "CLOTHES": {
+          "TITLE": "Change of clothes",
+          "DESCRIPTION": "To ensure you stay dry and comfortable for the return trip to your hotel."
         },
         "CASH": {
-          "TITLE": "Additional Cash",
-          "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
+          "TITLE": "Extra Cash",
+          "DESCRIPTION": "Useful for purchasing unique souvenirs, professional photos, or providing tips."
         }
       },
       "GALLERY": {
@@ -492,14 +504,19 @@
       "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
         "TITLE": "A True Private Group Tour, Not a Shared Experience.",
         "DESCRIPTION": "This is not a modified group excursion; it is a dedicated private tour where your group is the only one on-site. No waiting times, no fixed schedules, and no mixed groups.",
-        "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
-          "TITLE": "Exclusive Features & Flexibility",
-          "DESCRIPTION": "We adapt fully to your interests, whether you want a peaceful swim, a professional photo session, or a relaxed day in nature.",
-          "THE_UNIQUE_FEATURES_LIST": [
-            "100% Private Access: No external visitors or shared facilities during your visit.",
-            "Dedicated Local Guide: A professional guide dedicated exclusively to your group, providing insights into Mayan culture and cenote formation.",
-            "Premium Transportation: Private, comfortable, and direct transfers from your location in Cancun or Riviera Maya.",
-            "Personalized Pace: Whether it's high-energy jumping or serene snorkeling, you set the schedule."
+        "THE_UNIQUE_FEATURES_LIST": [
+            {
+              "TITLE": "Waterfalls and Jumping Platforms",
+              "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+            },
+            {
+              "TITLE": "Zip Line and Rustic Swings",
+              "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+            },
+            {
+              "TITLE": "Exclusive Access",
+              "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+            }
           ],
           "BOOK_CENOTE": {
             "TITLE": "Rent Your Private Cenote Today",
@@ -580,4 +597,4 @@
       }
     }
   }
-}
+
