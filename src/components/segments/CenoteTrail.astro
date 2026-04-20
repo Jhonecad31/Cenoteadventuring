@@ -4,22 +4,19 @@ import { getI18N } from "@/i18n";
 import TagH2 from "@/components/global/TagH2.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
-import TagH3 from "../global/TagH3.astro";
-import { ChevronRight } from "lucide-react";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 const images = {
   imgCenote: "Card.Cenote_bvtvzh",
   imgDetails1: "CenoteA.6_ikzdny",
   imgDetails2: "CenoteA.5_tdhqvl",
 };
 
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 const getUrl = (id: string, w = 1600) =>
   `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
-
 const descriptions = [i18n.RUTA_CENOTES_PAGE.HERO.DESCRIPTION];
 
 const seoMetaData = {
@@ -42,10 +39,6 @@ const seoMetaData = {
       />
 
       <div class="relative z-10 text-center text-white px-6">
-        <h1
-          class="font-serif italic text-6xl md:text-9xl mb-6 tracking-tight drop-shadow-lg"
-        >
-        </h1>
         <p
           class="uppercase tracking-[0.6em] font-light text-xs md:text-sm animate-fade-in opacity-90 mt-100 mx-auto max-w-4xl"
         >
@@ -114,7 +107,7 @@ const seoMetaData = {
             </div>
           </section>
 
-          <section class="py-24 bg-[#F8FAFC] -mt-30">
+          <section class="py-24 bg-[#F8FAFC] -mt-25">
             <BContainer>
               <div class="flex flex-col lg:flex-row-reverse gap-16 items-start">
                 <div class="w-full lg:w-5/12 lg:sticky lg:top-24">
@@ -124,24 +117,20 @@ const seoMetaData = {
                       class="w-full aspect-[3/4] object-cover rounded-md shadow-2xl transition-transform duration-700"
                       alt="Cenote Experience"
                     />
-                    <div
-                      class="absolute -bottom-4 -right-4 w-20 h-20 border-b border-r border-[#006083]/10 -z-10"
-                    >
-                    </div>
                   </div>
                 </div>
 
                 <div class="w-full lg:w-7/12">
-                  <header class="mb-16 mt-18">
+                  <header class="mb-16">
                     <h2
-                      class="text-3xl font-serif text-[#006083] leading-tight italic"
+                      class="text-3xl font-serif text-[#006083] leading-tight mt-10"
                     >
                       {i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.TITLE}
                     </h2>
                     <div class="h-[1px] w-12 bg-[#006083]/30 mt-8"></div>
                   </header>
 
-                  <div class="space-y-12 mt-15">
+                  <div class="space-y-12">
                     {
                       i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.LIST.map((item) => (
                         <div class="group border-l-2 border-[#006083]/10 pl-8 hover:border-[#006083] transition-colors duration-700">
@@ -159,139 +148,138 @@ const seoMetaData = {
               </div>
             </BContainer>
           </section>
+        </div>
 
-          <section class="py-24 bg-[#F8FAFC] -mt-45">
-            <BContainer>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div
-                  class="lg:col-span-2 bg-[#EDF4FC] p-10 md:p-14 rounded-sm text-black flex flex-col justify-center"
+        <section class="py-24 bg-[#F8FAFC] -mt-45">
+          <BContainer>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="lg:col-span-2 bg-[#EDF4FC] p-10 md:p-14 rounded-sm text-black flex flex-col justify-center"
+              >
+                <h2 class="text-3xl md:text-5xl font-serif mb-6 leading-tight">
+                  {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.EXPLORING_ROUTE.TITLE}
+                </h2>
+                <p
+                  class="text-black/80 font-light leading-relaxed text-lg max-w-2xl"
                 >
-                  <h2
-                    class="text-3xl md:text-5xl font-serif mb-6 leading-tight"
-                  >
-                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.EXPLORING_ROUTE.TITLE}
-                  </h2>
-                  <p
-                    class="text-black/80 font-light leading-relaxed text-lg max-w-2xl"
-                  >
-                    {
-                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.EXPLORING_ROUTE
-                        .DESCRIPTION
-                    }
-                  </p>
-                </div>
+                  {
+                    i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.EXPLORING_ROUTE
+                      .DESCRIPTION
+                  }
+                </p>
+              </div>
 
-                <div
-                  class="bg-slate-50 p-10 rounded-sm border border-slate-100"
+              <div class="bg-slate-50 p-10 rounded-sm border border-slate-100">
+                <h3
+                  class="text-xl font-serif text-[#006083] mb-8 uppercase tracking-wider"
                 >
-                  <h3
-                    class="text-xl font-serif text-[#006083] mb-8 uppercase tracking-wider"
-                  >
-                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.THINGS_TO_DO.TITLE}
-                  </h3>
-                  <ul class="space-y-8">
-                    {
-                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.THINGS_TO_DO.LIST.map(
-                        (item) => (
-                          <li class="group">
-                            <h4 class="font-bold text-xs uppercase tracking-widest text-slate-800 mb-1 group-hover:text-[#006083] transition-colors">
-                              {item.TITLE}
-                            </h4>
-                            <p class="text-sm text-slate-500 font-light leading-snug">
-                              {item.DESCRIPTION}
-                            </p>
-                          </li>
-                        ),
-                      )
-                    }
-                  </ul>
-                </div>
+                  {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.THINGS_TO_DO.TITLE}
+                </h3>
+                <ul class="space-y-8">
+                  {
+                    i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.THINGS_TO_DO.LIST.map(
+                      (item) => (
+                        <li class="group">
+                          <h4 class="font-bold text-xs uppercase tracking-widest text-slate-800 mb-1 group-hover:text-[#006083] transition-colors">
+                            {item.TITLE}
+                          </h4>
+                          <p class="text-sm text-slate-500 font-light leading-snug">
+                            {item.DESCRIPTION}
+                          </p>
+                        </li>
+                      ),
+                    )
+                  }
+                </ul>
+              </div>
 
-                <div
-                  class="bg-[#EDF4FC] p-10 rounded-sm flex flex-col justify-center"
-                >
+              <div
+                class="bg-[#EDF4FC] p-10 rounded-sm flex flex-col justify-center"
+              >
+                <h3 class="text-2xl font-serif text-[#006083] mb-4">
+                  {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.UNIQUE_CENOTES.TITLE}
+                </h3>
+                <p class="text-slate-600 font-light leading-relaxed">
+                  {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.UNIQUE_CENOTES.DESCRIPTION}
+                </p>
+              </div>
+
+              <div
+                class="lg:col-span-2 border border-slate-200 p-10 rounded-sm flex flex-col md:flex-row gap-10 items-center"
+              >
+                <div class="md:w-1/2">
                   <h3 class="text-2xl font-serif text-[#006083] mb-4">
-                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.UNIQUE_CENOTES.TITLE}
+                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO.TITLE}
                   </h3>
-                  <p class="text-slate-600 font-light leading-relaxed">
+                  <p class="text-slate-600 font-light mb-6">
                     {
-                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.UNIQUE_CENOTES
+                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO
                         .DESCRIPTION
                     }
                   </p>
                 </div>
-
-                <div
-                  class="lg:col-span-2 border border-slate-200 p-10 rounded-sm flex flex-col md:flex-row gap-10 items-center"
-                >
-                  <div class="md:w-1/2">
-                    <h3 class="text-2xl font-serif text-[#006083] mb-4">
-                      {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO.TITLE}
-                    </h3>
-                    <p class="text-slate-600 font-light mb-6">
-                      {
-                        i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO
-                          .DESCRIPTION
-                      }
-                    </p>
-                  </div>
-                  <div class="md:w-1/2 grid grid-cols-1 gap-4">
-                    {
-                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO.DETAILS.map(
-                        (detail) => (
-                          <div class="flex items-center gap-4 p-4 bg-white shadow-sm border-l-4 border-[#006083]">
-                            <p class="text-xs uppercase tracking-widest font-semibold text-slate-700">
-                              {detail}
-                            </p>
-                          </div>
-                        ),
-                      )
-                    }
-                  </div>
+                <div class="md:w-1/2 grid grid-cols-1 gap-4">
+                  {
+                    i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO.DETAILS.map(
+                      (detail) => (
+                        <div class="flex items-center gap-4 p-4 bg-white shadow-sm border-l-4 border-[#006083]">
+                          <p class="text-xs uppercase tracking-widest font-semibold text-slate-700">
+                            {detail}
+                          </p>
+                        </div>
+                      ),
+                    )
+                  }
                 </div>
               </div>
-            </BContainer>
-          </section>
-
-          <div class="group py-6">
-            <summary
-              class="flex justify-between items-center cursor-pointer list-none"
-            >
-              <span
-                class="text-2xl md:text-3xl font-serif text-[#001524] mt-10"
-              >
-                {i18n.RUTA_CENOTES_PAGE.FAQS.TITLE}
-              </span>
-            </summary>
-            <div class="mt-8 flex flex-col gap-4 mx-auto">
-              {
-                i18n.RUTA_CENOTES_PAGE.FAQS.LIST.map(
-                  (faq: { question: unknown; answer: unknown }, index: any) => (
-                    <details
-                      key={index}
-                      class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
-                    >
-                      <summary class="flex justify-between items-center cursor-pointer list-none p-6 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
-                        <span class="pr-4">{faq.question}</span>
-                        <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                          <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
-                            +
-                          </span>
-                        </div>
-                      </summary>
-
-                      <div class="px-6 pb-6 animate-fade-in">
-                        <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </details>
-                  ),
-                )
-              }
             </div>
-          </div>
-        </div>
+          </BContainer>
+        </section>
+        <section class="py-24 -mt-60">
+          <BContainer>
+            <div class="group py-6">
+              <summary
+                class="flex justify-between items-center cursor-pointer list-none"
+              >
+                <span
+                  class="text-2xl md:text-3xl font-serif text-[#001524] mt-10"
+                >
+                  {i18n.RUTA_CENOTES_PAGE.FAQS.TITLE}
+                </span>
+              </summary>
+              <div class="mt-8 flex flex-col gap-4 mx-auto">
+                {
+                  i18n.RUTA_CENOTES_PAGE.FAQS.LIST.map(
+                    (
+                      faq: { question: unknown; answer: unknown },
+                      index: any,
+                    ) => (
+                      <details
+                        key={index}
+                        class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
+                      >
+                        <summary class="flex justify-between items-center cursor-pointer list-none p-6 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
+                          <span class="pr-4">{faq.question}</span>
+                          <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                            <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
+                              +
+                            </span>
+                          </div>
+                        </summary>
+
+                        <div class="px-6 pb-6 animate-fade-in">
+                          <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </details>
+                    ),
+                  )
+                }
+              </div>
+            </div>
+          </BContainer>
+        </section>
       </BContainer>
     </section>
   </main>

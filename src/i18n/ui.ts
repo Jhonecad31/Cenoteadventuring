@@ -20,15 +20,15 @@ export const showDefaultLang = false;
 export const ui = {
     en: {
         'nav.home': 'Home',
-        'nav.cenoteTrail': 'Cenote Trail',
-        'nav.activities': 'Activities',
+        'nav.cenoteTrail': 'The cenote route',
+        'nav.about': 'About us',
         'nav.contact': 'Contact',
         'nav.blog': 'Blog',
     },
     es: {
         'nav.home': 'Inicio',
-        'nav.rutaDeLosCenotes': 'Ruta de los cenotes',
-        'nav.activities': 'Actividades',
+        'nav.rutaDeLosCenotes': 'Ruta de los Cenotes',
+        'nav.about': 'About us',
         'nav.contacto': 'Contacto',
         'nav.blog': 'Blog',
     }

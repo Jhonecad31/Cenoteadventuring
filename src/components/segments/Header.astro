@@ -5,9 +5,9 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
-import { Menu, X} from "lucide-react";
+import { Menu, X } from "lucide-react";
 import LanguageSelector from "./LanguageSelector.astro";
-import { Logo_icono_cenote, LogoContainer} from "@/icons/allIcons";
+import { Logo_icono_cenote, LogoContainer } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -18,150 +18,156 @@ const translatePath = useTranslatedPath(lang);
 
 const navigation = [
   { title: k("nav.home"), link: translatePath("/") },
-  {
-    title: k("nav.cenoteTrail"),
-    link: translatePath("/cenote-trail"),
-  },
-  { title: k("nav.activities"), link: translatePath("/activities") },
+  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail") },
   { title: k("nav.blog"), link: translatePath("/blog/") },
+  { title: k("nav.about"), link: translatePath("/about/") },
   { title: k("nav.contact"), link: translatePath("/contact/") },
 ];
 ---
 
 <header
-  class="fixed top-0 w-full z-50 transition-all duration-500 md:h-45 lg:h-25  flex items-center border-b border-transparent"
+  class="fixed top-0 w-full z-50 transition-all duration-500 flex items-center border-b border-transparent h-24"
   id="main-header"
 >
-  <div
-    class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full"
-  >
-    <div class="flex-none w-14 lg:hidden"> 
-  <button class="text-white p-2" id="open-menu">
-    <Menu size={30} strokeWidth={1.5} />
-  </button>
-</div>
-
-<div id="logo-container" class="text-white transition-colors duration-500">
-  <LogoContainer
-    class="h-15 lg:h-18 p-1 transition-all duration-500" 
-    id="logo-completo" 
-  />
-  <Logo_icono_cenote
-  class="h-15 lg:h-20 p-1 transition-all duration-500 hidden opacity-0 !text-[#002B49] justify-center"
-  id="logo-reducido" 
-/>
-</div>
-
-<nav class="hidden lg:flex flex-1 justify-center">
-  <ul class="flex gap-10">
-    {navigation.map((item) => (
-      <li>
-        <a href={item.link} class="nav-link text-[13px] uppercase tracking-[0.2em] text-white hover:opacity-60 transition-all font-medium">
-          {item.title}
-        </a>
-      </li>
-    ))}
-  </ul>
-</nav>
-
-<div class="flex-none w-14 lg:flex-none lg:w-auto">
-  <div class="flex items-center gap-5 text-white" id="icon-group">
-    {!offI18n && <LanguageSelector />}
-  </div>
-</div>
-
-  <div
-    id="mobile-drawer"
-    class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
-  >
-    <div class="flex justify-end">
-      <button id="close-menu" ...>
-        <X size={35} strokeWidth={1} />
+  <div class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full">
+    
+    <div class="flex-none w-14 lg:hidden">
+      <button class="text-white p-2 transition-colors duration-500" id="open-menu">
+        <Menu size={30} strokeWidth={1.5} />
       </button>
     </div>
-    <nav class="mt-20 text-center">
-      <ul class="flex flex-col gap-10">
-        {
-          navigation.map((item) => (
-            <li>
-              <a
-                href={item.link}
-                class="font-serif text-4xl italic text-white block"
-              >
-                {item.title}
-              </a>
-            </li>
-          ))
-        }
+
+    <div id="logo-container" class="text-white transition-colors duration-500">
+      <div id="logo-completo" class="transition-all duration-500 opacity-100 block">
+        <LogoContainer class="h-12 lg:h-16 p-1" />
+      </div>
+      <div id="logo-reducido" class="transition-all duration-500 opacity-0 hidden">
+        <Logo_icono_cenote class="h-12 lg:h-16 p-1" />
+      </div>
+    </div>
+
+    <nav class="hidden lg:flex flex-1 justify-center">
+      <ul class="flex gap-10">
+        {navigation.map((item) => (
+          <li>
+            <a 
+              href={item.link} 
+              class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium"
+            >
+              {item.title}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
+
+    <div class="flex-none w-14 lg:w-auto flex justify-end">
+      <div class="flex items-center gap-5 text-white transition-colors duration-500" id="icon-group">
+        {!offI18n && <LanguageSelector />}
+      </div>
+    </div>
   </div>
+
+  <div
+  id="mobile-drawer"
+  class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
+>
+  <div class="flex justify-end">
+    <button id="close-menu" class="text-white p-2">
+      <X size={35} strokeWidth={1} />
+    </button>
+  </div>
+  
+  <nav class="mt-20 text-center">
+    <ul class="flex flex-col gap-10">
+      {navigation.map((item) => (
+        <li>
+          <a
+            href={item.link}
+            class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity"
+          >
+            {item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
 </header>
 
 <script>
   const header = document.getElementById("main-header");
-  const logoContainer = document.getElementById("logo-container");
-  
-  // Referencias a los dos logos
   const logoCompleto = document.getElementById("logo-completo");
   const logoReducido = document.getElementById("logo-reducido");
-
+  const logoContainer = document.getElementById("logo-container");
   const iconGroup = document.getElementById("icon-group");
-  const btnReserve = document.getElementById("btn-reserve");
   const navLinks = document.querySelectorAll(".nav-link");
   const openBtn = document.getElementById("open-menu");
   const closeBtn = document.getElementById("close-menu");
   const drawer = document.getElementById("mobile-drawer");
-  const langSelector = document.getElementById("language-selector-container");
 
   window.addEventListener("scroll", () => {
-    const isScrolled = window.scrollY > 20;
+    const isScrolled = window.scrollY > 50;
 
-    // --- LÓGICA DE INTERCAMBIO DE LOGO ---
-    if (logoCompleto && logoReducido) {
-      logoCompleto.classList.toggle("hidden", isScrolled);
-      logoCompleto.classList.toggle("opacity-0", isScrolled);
-      
-      logoReducido.classList.toggle("hidden", !isScrolled);
-      logoReducido.classList.toggle("opacity-0", !isScrolled);
-    }
-
-    // --- TU LÓGICA EXISTENTE ---
-    langSelector?.classList.toggle("text-[#002B49]", isScrolled);
-    langSelector?.classList.toggle("text-white", !isScrolled);
-
+    // Estilos del Header
     header?.classList.toggle("bg-[#EDF4FC]", isScrolled);
     header?.classList.toggle("shadow-sm", isScrolled);
     header?.classList.toggle("h-20", isScrolled);
     header?.classList.toggle("h-24", !isScrolled);
+    header?.classList.toggle("border-slate-200", isScrolled);
 
-    logoContainer?.classList.toggle("text-[#002B49]", isScrolled);
-    logoContainer?.classList.toggle("text-white", !isScrolled);
+    // Intercambio de Logos (Opacidad y Visibilidad)
+    if (isScrolled) {
+      logoCompleto?.classList.add("hidden", "opacity-0");
+      logoReducido?.classList.remove("hidden");
+      setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
+    } else {
+      logoReducido?.classList.add("hidden", "opacity-0");
+      logoCompleto?.classList.remove("hidden");
+      setTimeout(() => logoCompleto?.classList.remove("opacity-0"), 10);
+    }
 
-    iconGroup?.classList.toggle("text-[#002B49]", isScrolled);
-    iconGroup?.classList.toggle("text-white", !isScrolled);
-    openBtn?.classList.toggle("text-[#002B49]", isScrolled);
-    openBtn?.classList.toggle("text-white", !isScrolled);
+    // Colores de elementos
+    const textColor = isScrolled ? "text-[#002B49]" : "text-white";
+    const oldColor = isScrolled ? "text-white" : "text-[#002B49]";
 
-    btnReserve?.classList.toggle("text-[#002B49]", isScrolled);
-    btnReserve?.classList.toggle("border-[#002B49]/30", isScrolled);
-    btnReserve?.classList.toggle("text-white", !isScrolled);
-    btnReserve?.classList.toggle("border-white/30", !isScrolled);
+    [logoContainer, iconGroup, openBtn].forEach(el => {
+      el?.classList.add(textColor);
+      el?.classList.remove(oldColor);
+    });
 
-    navLinks.forEach((link) => {
-      link.classList.toggle("text-[#002B49]", isScrolled);
-      link.classList.toggle("text-white", !isScrolled);
+    navLinks.forEach(link => {
+      link.classList.add(textColor);
+      link.classList.remove(oldColor);
     });
   });
 
-  // Eventos del Drawer
+  // Control del Menú Móvil
   openBtn?.addEventListener("click", () => {
-    drawer?.classList.remove("translate-x-full"); 
-    document.body.style.overflow = "hidden";
+    drawer?.classList.remove("-translate-x-full");
+    document.body.style.overflow = "hidden"; // Evita scroll al estar abierto
   });
 
   closeBtn?.addEventListener("click", () => {
-    drawer?.classList.add("translate-x-full"); 
-    document.body.style.overflow = "";
+    drawer?.classList.add("-translate-x-full");
+    document.body.style.overflow = ""; // Devuelve el scroll
+  });
+
+  // Cerrar al hacer click en un link (opcional pero recomendado)
+  const mobileLinks = drawer?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      drawer?.classList.add("-translate-x-full");
+      document.body.style.overflow = "";
+    });
   });
 </script>
+
+<style>
+  /* Tipografía Serif para el Menú Móvil */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap');
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+</style>

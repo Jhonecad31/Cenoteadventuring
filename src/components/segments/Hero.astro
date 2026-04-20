@@ -3,14 +3,11 @@ import { ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getI18N } from "@/i18n";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import TagH2 from "@/components/global/TagH2.astro";
 import TagH1 from "@/components/global/TagH1.astro";
-import TagP from "@/components/global/TagP.astro";
 import { Natgeo, Tripadvaisor, Wordl } from "@/icons/allIcons";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
 const relatedActivities = [
   {
