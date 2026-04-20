@@ -29,70 +29,93 @@ const navigation = [
   class="fixed top-0 w-full z-50 transition-all duration-500 flex items-center border-b border-transparent h-24"
   id="main-header"
 >
-  <div class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full">
-    
+  <div
+    class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full"
+  >
     <div class="flex-none w-14 lg:hidden">
-      <button class="text-white p-2 transition-colors duration-500" id="open-menu">
+      <button
+        class="text-white p-2 transition-colors duration-500"
+        id="open-menu"
+      >
         <Menu size={30} strokeWidth={1.5} />
       </button>
     </div>
 
     <div id="logo-container" class="text-white transition-colors duration-500">
-      <div id="logo-completo" class="transition-all duration-500 opacity-100 block">
-        <LogoContainer class="h-12 lg:h-16 p-1" />
-      </div>
-      <div id="logo-reducido" class="transition-all duration-500 opacity-0 hidden">
-        <Logo_icono_cenote class="h-12 lg:h-16 p-1" />
-      </div>
+      <a
+        href={translatePath("/")}
+        class="block hover:opacity-90 transition-opacity"
+      >
+        <div
+          id="logo-completo"
+          class="transition-all duration-500 opacity-100 block"
+        >
+          <LogoContainer class="h-12 lg:h-16 p-1" />
+        </div>
+
+        <div
+          id="logo-reducido"
+          class="transition-all duration-500 opacity-0 hidden"
+        >
+          <Logo_icono_cenote class="h-12 lg:h-16 p-1" />
+        </div>
+      </a>
     </div>
 
     <nav class="hidden lg:flex flex-1 justify-center">
       <ul class="flex gap-10">
-        {navigation.map((item) => (
-          <li>
-            <a 
-              href={item.link} 
-              class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium"
-            >
-              {item.title}
-            </a>
-          </li>
-        ))}
+        {
+          navigation.map((item) => (
+            <li>
+              <a
+                href={item.link}
+                class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
     <div class="flex-none w-14 lg:w-auto flex justify-end">
-      <div class="flex items-center gap-5 text-white transition-colors duration-500" id="icon-group">
+      <div
+        class="flex items-center gap-5 text-white transition-colors duration-500"
+        id="icon-group"
+      >
         {!offI18n && <LanguageSelector />}
       </div>
     </div>
   </div>
 
   <div
-  id="mobile-drawer"
-  class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
->
-  <div class="flex justify-end">
-    <button id="close-menu" class="text-white p-2">
-      <X size={35} strokeWidth={1} />
-    </button>
+    id="mobile-drawer"
+    class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10"
+  >
+    <div class="flex justify-end">
+      <button id="close-menu" class="text-white p-2">
+        <X size={35} strokeWidth={1} />
+      </button>
+    </div>
+
+    <nav class="mt-20 text-center">
+      <ul class="flex flex-col gap-10">
+        {
+          navigation.map((item) => (
+            <li>
+              <a
+                href={item.link}
+                class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
-  
-  <nav class="mt-20 text-center">
-    <ul class="flex flex-col gap-10">
-      {navigation.map((item) => (
-        <li>
-          <a
-            href={item.link}
-            class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity"
-          >
-            {item.title}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </nav>
-</div>
 </header>
 
 <script>
@@ -131,12 +154,12 @@ const navigation = [
     const textColor = isScrolled ? "text-[#002B49]" : "text-white";
     const oldColor = isScrolled ? "text-white" : "text-[#002B49]";
 
-    [logoContainer, iconGroup, openBtn].forEach(el => {
+    [logoContainer, iconGroup, openBtn].forEach((el) => {
       el?.classList.add(textColor);
       el?.classList.remove(oldColor);
     });
 
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       link.classList.add(textColor);
       link.classList.remove(oldColor);
     });
@@ -154,9 +177,9 @@ const navigation = [
   });
 
   // Cerrar al hacer click en un link (opcional pero recomendado)
-  const mobileLinks = drawer?.querySelectorAll('a');
-  mobileLinks?.forEach(link => {
-    link.addEventListener('click', () => {
+  const mobileLinks = drawer?.querySelectorAll("a");
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
       drawer?.classList.add("-translate-x-full");
       document.body.style.overflow = "";
     });
@@ -165,9 +188,9 @@ const navigation = [
 
 <style>
   /* Tipografía Serif para el Menú Móvil */
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap');
-  
+  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap");
+
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
   }
 </style>

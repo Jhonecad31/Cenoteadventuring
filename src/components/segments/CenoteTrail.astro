@@ -235,27 +235,28 @@ const seoMetaData = {
             </div>
           </BContainer>
         </section>
+        <!-- QUESTIONS THE RUTA CENOTE -->
         <section class="py-24 -mt-60">
           <BContainer>
             <div class="group py-6">
-              <summary
-                class="flex justify-between items-center cursor-pointer list-none"
-              >
+              <div class="flex justify-between items-center list-none">
                 <span
-                  class="text-2xl md:text-3xl font-serif text-[#001524] mt-10"
+                  class="text-2xl md:text-3xl font-serif text-[#001524] mt-10 mb-8"
                 >
                   {i18n.RUTA_CENOTES_PAGE.FAQS.TITLE}
                 </span>
-              </summary>
-              <div class="mt-8 flex flex-col gap-4 mx-auto">
+              </div>
+
+              <div class="flex flex-col gap-4 mx-auto">
                 {
                   i18n.RUTA_CENOTES_PAGE.FAQS.LIST.map(
                     (
-                      faq: { question: unknown; answer: unknown },
-                      index: any,
+                      faq: { question: string; answer: string },
+                      index: number,
                     ) => (
                       <details
-                        key={index}
+                        name="faq-accordion"
+                        open={index === 0}
                         class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
                       >
                         <summary class="flex justify-between items-center cursor-pointer list-none p-6 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
@@ -280,6 +281,7 @@ const seoMetaData = {
             </div>
           </BContainer>
         </section>
+        <!-- TERMINA QUESTION THE RUTA CENOTE -->
       </BContainer>
     </section>
   </main>

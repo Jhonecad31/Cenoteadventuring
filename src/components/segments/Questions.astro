@@ -1,13 +1,8 @@
 ---
-import { Button } from "@/components/ui/button";
 import { getI18N } from "@/i18n";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import TagH3 from "@/components/global/TagH3.astro";
 import TagH2 from "@/components/global/TagH2.astro";
-import TagH1 from "@/components/global/TagH1.astro";
 import TagP from "@/components/global/TagP.astro";
-import Schema from "node_modules/astro-seo-schema/dist/Schema.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
@@ -19,7 +14,6 @@ const seoMetaData = {
   metatitle: i18n.HOME_PAGE.META_TITLE,
 };
 ---
-
 <section class="py-24 bg-[#EDF4FC]">
   <div class="max-w-3xl mx-auto px-6">
     <div
@@ -47,6 +41,7 @@ const seoMetaData = {
           <details
             key={index}
             class="group py-4 outline-none border-b border-gray-400 last:border-b-0"
+            open={index === 0} 
           >
             <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
               <span>{faq.question}</span>
@@ -65,11 +60,9 @@ const seoMetaData = {
 </section>
 
 <style>
-  /* Oculta la flecha por defecto de la lista en todos los navegadores */
   summary::-webkit-details-marker {
     display: none;
   }
-
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -80,7 +73,6 @@ const seoMetaData = {
       transform: translateY(0);
     }
   }
-
   .animate-fade-in {
     animation: fadeIn 0.4s ease-out;
   }

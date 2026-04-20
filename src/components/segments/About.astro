@@ -1,19 +1,13 @@
 ---
-import AboutSection from "@/components/segments/About.astro";
 import { getI18N } from "@/i18n";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Button } from "../ui/button";
-import TagH1 from "@/components/global/TagH1.astro";
 import TagH2 from "@/components/global/TagH2.astro";
 import TagH3 from "@/components/global/TagH3.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
-import { ImageMissingAlt } from "node_modules/astro/dist/core/errors/errors-data";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
-
-
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 
 const images = {
@@ -30,7 +24,7 @@ const seoMetaData = {
 ---
 
 <BaseLayout seo={seoMetaData}>
-  <main class="bg-[#EDF4FC] overflow-x-hidden">
+  <main class="bg-[#050505] overflow-x-hidden">
     <section
       class="relative h-[80vh] flex items-center justify-center overflow-hidden"
     >
@@ -91,7 +85,6 @@ const seoMetaData = {
   </main>
 
   <script>
-    // Efecto Parallax suave para el Hero
     window.addEventListener("scroll", () => {
       const heroImg = document.getElementById("hero-img");
       if (heroImg) {
