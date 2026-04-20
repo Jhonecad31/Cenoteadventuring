@@ -42,9 +42,7 @@ const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
                         >
                             <lang.flag class="size-6 mr-2 inline-block" /> 
                             {lang.name || lang.code}
-                            {lang.code === currentLocale && (
-                                <span class="ml-2 inline-flex size-2 rounded-full bg-emerald-400"></span>
-                            )}
+                            
                         </a>
                     </li>
                 ))
