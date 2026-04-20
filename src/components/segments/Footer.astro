@@ -100,45 +100,45 @@ const socialMedia = [
       </div>
     </div>
 
-    <div class="lg:col-span-8 flex flex-row flex-wrap lg:flex-nowrap items-start justify-between gap-10 lg:pl-12">
-      
-      <div class="flex flex-col gap-4 w-[45%] lg:w-auto">
-        <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
-          About
-        </h3>
-        <nav class="mt-4 md:mt-8">
-          <ul class="flex flex-col gap-3 md:gap-5 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.2em] font-light">
-            {navFooter.map((item) => (
-              <li><a href={item.link} class="hover:opacity-60 transition-opacity">{item.title}</a></li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+    <div class="lg:col-span-8 flex flex-row flex-wrap items-start justify-between gap-y-10 lg:gap-10 lg:pl-12">
+  
+  <div class="flex flex-col gap-4 w-[50%] lg:w-auto">
+    <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+      About
+    </h3>
+    <nav class="mt-4 md:mt-8">
+      <ul class="flex flex-col gap-3 md:gap-5 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.2em] font-light">
+        {navFooter.map((item) => (
+          <li><a href={item.link} class="hover:opacity-60 transition-opacity">{item.title}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
 
-      <div class="flex flex-col gap-4 w-[45%] lg:w-auto lg:items-start">
-        <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
-          Follow Us                   
-        </h3>
-        <ul class="flex flex-col gap-4 md:gap-8 mt-4 md:mt-8 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.1em] font-medium items-start">
-          <li>
-            <a href="#" class="flex items-center gap-2 md:gap-4 group">
-              <Facebook size={18} className="group-hover:scale-110 transition-transform" />
-              <span>Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-2 md:gap-4 group">
-              <Instagram size={18} className="group-hover:scale-110 transition-transform" />
-              <span>Instagram</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <div class="flex flex-col gap-4 w-[40%] lg:w-auto items-end lg:items-start">
+    <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+      Follow Us                   
+    </h3>
+    <ul class="flex flex-col gap-4 md:gap-8 mt-4 md:mt-8 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.1em] font-medium items-end lg:items-start">
+      <li>
+        <a href="#" class="flex items-center gap-2 md:gap-4 group">
+          <Facebook size={18} className="group-hover:scale-110 transition-transform lg:order-none order-2" />
+          <span class="order-1 lg:order-none">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-2 md:gap-4 group">
+          <Instagram size={18} className="group-hover:scale-110 transition-transform lg:order-none order-2" />
+          <span class="order-1 lg:order-none">Instagram</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-      <div class="w-full lg:w-auto flex lg:block">
-        <Logo_blanco class="h-24 lg:h-32 w-auto opacity-90" />
-      </div>
-    </div>
+  <div class="w-full lg:w-auto flex justify-center lg:block pt-4 lg:pt-0">
+    <Logo_blanco class="h-20 lg:h-32 w-auto opacity-90" />
+  </div>
+</div>
 
     <div class="lg:col-span-12 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
       <div class="text-[9px] md:text-xl lg:text-[9px] uppercase tracking-[0.3em] text-white/50 text-center lg:text-left leading-loose">
@@ -152,6 +152,5 @@ const socialMedia = [
         <a href="#" class="hover:text-white transition-colors border-b border-transparent hover:border-white/20 pb-1">Cookies Settings</a>
       </div>
     </div>
-
   </div>
 </footer>
