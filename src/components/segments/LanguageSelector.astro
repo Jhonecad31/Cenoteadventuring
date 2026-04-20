@@ -29,25 +29,29 @@ const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
             <WorldLanguaje class="size-9 lg:size-8 stroke-1 text-current" />
         </button>
         
-        <ul 
-            id="lang-menu"
-            class="absolute left-1/2 -translate-x-1/2 lg:group-hover:visible lg:group-hover:opacity-100 invisible opacity-0 lg:block w-fit bg-white rounded-lg shadow-xl text-gray-800 transition-all duration-300 z-[100] mt-2 border border-gray-100"
-        >
-            {
-                languageList.map((lang) => (
-                    <li class="py-1 px-2">
-                        <a
-                            class={`flex items-center p-2 text-sm hover:bg-gray-200 rounded-lg uppercase ${lang.code === currentLocale ? "font-semibold text-[#006083]" : ""}`}
-                            href={translatePath(currentPath, lang.code)}
-                        >
-                            <lang.flag class="size-6 mr-2 inline-block" /> 
-                            {lang.name || lang.code}
-                            
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
+       <ul 
+    id="lang-menu"
+    class="absolute left-1/2 -translate-x-1/2 lg:group-hover:visible lg:group-hover:opacity-100 invisible opacity-0 lg:block w-fit bg-white rounded-lg shadow-xl text-gray-800 transition-all duration-300 z-[100] mt-2 border border-gray-100"
+>
+    {
+        languageList.map((lang) => (
+            <li class="py-1 px-2">
+                <a
+                    class={`flex items-center p-2 text-sm hover:bg-gray-200 rounded-lg uppercase ${lang.code === currentLocale ? "font-semibold text-[#006083]" : ""}`}
+                    href={translatePath(currentPath, lang.code)}
+                >
+                    <lang.flag class="size-5 mr-2 inline-block" /> 
+                    {/* CAMBIO: Solo mostramos el código (siglas) */}
+                    <span class="font-medium">{lang.code}</span>
+                    
+                    {lang.code === currentLocale && (
+                        <span class="ml-2 inline-flex size-1.5 rounded-full bg-emerald-400"></span>
+                    )}
+                </a>
+            </li>
+        ))
+    }
+</ul>
     </div>
 </div>
 
