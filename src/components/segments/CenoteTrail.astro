@@ -13,8 +13,8 @@ const i18n = getI18N({ currentLocale }) as any;
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 const images = {
   imgCenote: "Card.Cenote_bvtvzh",
-  imgDetails1: "Card.2.2_eik10v",
-  imgDetails2: "Card.1.2_x0xkn2",
+  imgDetails1: "CenoteA.6_ikzdny",
+  imgDetails2: "CenoteA.5_tdhqvl",
 };
 
 const getUrl = (id: string, w = 1600) =>
@@ -95,14 +95,14 @@ const seoMetaData = {
                 <div class="w-full lg:w-1/2 overflow-hidden">
                   <img
                     src={getUrl(images.imgDetails1, 800)}
-                    class="w-full h-auto object-cover transition-transform duration-700 hover:scale-110"
+                    class="w-full h-auto object-cover rounded-md transition-transform duration-700 hover:scale-110"
                     alt="Adventure 1"
                   />
                 </div>
 
                 <div class="w-full lg:w-1/2">
                   <div class="bg-[#EDF4FC] rounded-lg p-8 md:p-10">
-                    <h3 class="font-serif italic text-2xl text-[#006083] mb-4">
+                    <h3 class="font-serif text-2xl text-[#006083] mb-4">
                       {i18n.RUTA_CENOTES_PAGE.INTRO.TITLE}
                     </h3>
                     <p class="text-slate-700 leading-relaxed font-light">
@@ -112,6 +112,145 @@ const seoMetaData = {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section class="py-24 bg-[#F8FAFC] -mt-30">
+            <BContainer>
+              <div class="flex flex-col lg:flex-row-reverse gap-16 items-start">
+                <div class="w-full lg:w-5/12 lg:sticky lg:top-24">
+                  <div class="relative group">
+                    <img
+                      src={getUrl(images.imgDetails2)}
+                      class="w-full aspect-[3/4] object-cover rounded-md shadow-2xl transition-transform duration-700"
+                      alt="Cenote Experience"
+                    />
+                    <div
+                      class="absolute -bottom-4 -right-4 w-20 h-20 border-b border-r border-[#006083]/10 -z-10"
+                    >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full lg:w-7/12">
+                  <header class="mb-16 mt-18">
+                    <h2
+                      class="text-3xl font-serif text-[#006083] leading-tight italic"
+                    >
+                      {i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.TITLE}
+                    </h2>
+                    <div class="h-[1px] w-12 bg-[#006083]/30 mt-8"></div>
+                  </header>
+
+                  <div class="space-y-12 mt-15">
+                    {
+                      i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.LIST.map((item) => (
+                        <div class="group border-l-2 border-[#006083]/10 pl-8 hover:border-[#006083] transition-colors duration-700">
+                          <h3 class="text-2xl font-serif text-[#006083] mb-3">
+                            {item.TITLE}
+                          </h3>
+                          <p class="text-slate-600 font-light leading-relaxed max-w-xl">
+                            {item.DESCRIPTION}
+                          </p>
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+            </BContainer>
+          </section>
+
+          <section class="py-24 bg-[#F8FAFC] -mt-45">
+            <BContainer>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                  class="lg:col-span-2 bg-[#EDF4FC] p-10 md:p-14 rounded-sm text-black flex flex-col justify-center"
+                >
+                  <h2
+                    class="text-3xl md:text-5xl font-serif mb-6 leading-tight"
+                  >
+                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.EXPLORING_ROUTE.TITLE}
+                  </h2>
+                  <p
+                    class="text-black/80 font-light leading-relaxed text-lg max-w-2xl"
+                  >
+                    {
+                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.EXPLORING_ROUTE
+                        .DESCRIPTION
+                    }
+                  </p>
+                </div>
+
+                <div
+                  class="bg-slate-50 p-10 rounded-sm border border-slate-100"
+                >
+                  <h3
+                    class="text-xl font-serif text-[#006083] mb-8 uppercase tracking-wider"
+                  >
+                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.THINGS_TO_DO.TITLE}
+                  </h3>
+                  <ul class="space-y-8">
+                    {
+                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.THINGS_TO_DO.LIST.map(
+                        (item) => (
+                          <li class="group">
+                            <h4 class="font-bold text-xs uppercase tracking-widest text-slate-800 mb-1 group-hover:text-[#006083] transition-colors">
+                              {item.TITLE}
+                            </h4>
+                            <p class="text-sm text-slate-500 font-light leading-snug">
+                              {item.DESCRIPTION}
+                            </p>
+                          </li>
+                        ),
+                      )
+                    }
+                  </ul>
+                </div>
+
+                <div
+                  class="bg-[#EDF4FC] p-10 rounded-sm flex flex-col justify-center"
+                >
+                  <h3 class="text-2xl font-serif text-[#006083] mb-4">
+                    {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.UNIQUE_CENOTES.TITLE}
+                  </h3>
+                  <p class="text-slate-600 font-light leading-relaxed">
+                    {
+                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.UNIQUE_CENOTES
+                        .DESCRIPTION
+                    }
+                  </p>
+                </div>
+
+                <div
+                  class="lg:col-span-2 border border-slate-200 p-10 rounded-sm flex flex-col md:flex-row gap-10 items-center"
+                >
+                  <div class="md:w-1/2">
+                    <h3 class="text-2xl font-serif text-[#006083] mb-4">
+                      {i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO.TITLE}
+                    </h3>
+                    <p class="text-slate-600 font-light mb-6">
+                      {
+                        i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO
+                          .DESCRIPTION
+                      }
+                    </p>
+                  </div>
+                  <div class="md:w-1/2 grid grid-cols-1 gap-4">
+                    {
+                      i18n.RUTA_CENOTES_PAGE.GRID_TEXTS.LOCATION_INFO.DETAILS.map(
+                        (detail) => (
+                          <div class="flex items-center gap-4 p-4 bg-white shadow-sm border-l-4 border-[#006083]">
+                            <p class="text-xs uppercase tracking-widest font-semibold text-slate-700">
+                              {detail}
+                            </p>
+                          </div>
+                        ),
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
+            </BContainer>
           </section>
 
           <div class="group py-6">
@@ -152,16 +291,6 @@ const seoMetaData = {
               }
             </div>
           </div>
-
-          {
-            i18n.ABOUT_US_PAGE.INTRO.SUBTITLE_LIST && (
-              <div class="mt-20 pt-20 border-t border-slate-200 text-center">
-                <h3 class="font-serif italic text-3xl text-[#006083] mb-8">
-                  {i18n.ABOUT_US_PAGE.INTRO.SUBTITLE_LIST}
-                </h3>
-              </div>
-            )
-          }
         </div>
       </BContainer>
     </section>
