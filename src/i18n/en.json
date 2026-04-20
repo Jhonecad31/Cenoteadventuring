@@ -211,34 +211,93 @@
       }
     }
   },
-  "CENOTE_TRAIL_PAGE": {
-    "INTRO": {
+  "RUTA_CENOTES_PAGE": {
+    "HERO": {
       "TITLE": "Ruta de los Cenotes in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
-      "DESCRIPTION 1": "Hidden just a short drive from Cancun, the Ruta de los Cenotes in Puerto Morelos is one of the most authentic природные experiences in the Mexican Caribbean. Surrounded by lush jungle, this scenic route is home to some of the most beautiful cenotes near Puerto Morelos, offering a unique connection with nature, culture, and adventure. ",
-      "DESCRIPTION 2": "If you're exploring things to do in Puerto Morelos or planning a day trip from Cancun, the ruta de los cenotes is a must-visit destination where crystal-clear freshwater pools, underground caves, and eco-adventures come together in one unforgettable experience. "
+      "TITLE2": "Ruta de los Cenotes in Puerto Morelos",
+      "SUBTITLE": "A visual journey into the unknown",
+      "DESCRIPTION": "Hidden just a short drive from Cancun, the Ruta de los Cenotes in Puerto Morelos is one of the most authentic natural experiences in the Mexican Caribbean. Surrounded by lush jungle, this scenic route is home to some of the most beautiful cenotes near Puerto Morelos, offering a unique connection with nature, culture, and adventure."
+    },
+    "INTRO": {
+      "TITLE": "A Must-Visit Destination from Cancun",
+      "DESCRIPTION": "If you're exploring things to do in Puerto Morelos or planning a day trip from Cancun, the ruta de los cenotes is a must-visit destination where crystal-clear freshwater pools, underground caves, and eco-adventures come together in one unforgettable experience."
     },
     "WHAT_TO_EXPECT": {
-      "TITLE": "What to Expect on the Ruta de los Cenotes",
+      "TITLE": "What to Expect?",
+      "DESCRIPTION": "Visiting the ruta de los cenotes is unlike any other activity in the region. Instead of crowded beaches, you’ll find a peaceful jungle road filled with hidden natural treasures.",
       "LIST": [
         {
           "TITLE": "Natural Diversity",
-          "DESCRIPTION": "Discover a variety of cenotes, from open-air pools surrounded by jungle to mystical caves with dramatic rock formations."
+          "DESCRIPTION": "Expect to discover a variety of cenotes Puerto Morelos, from open-air pools to dramatic cave formations."
         },
         {
-          "TITLE": "Immersive Adventure",
-          "DESCRIPTION": "Enjoy activities like swimming in crystal-clear waters, zip-lining through the canopy, or exploring jungle trails on ATVs."
+          "TITLE": "Guided Tours",
+          "DESCRIPTION": "Most cenote tours Puerto Morelos include access to multiple cenotes, allowing you to swim, snorkel, or relax."
         },
         {
-          "TITLE": "Peaceful Atmosphere",
-          "DESCRIPTION": "Escape the crowds and connect with a calm, refreshing ecosystem that offers a perfect balance of tranquility and nature."
+          "TITLE": "Tranquil Environment",
+          "DESCRIPTION": "The environment is calm, refreshing, and deeply connected to the natural ecosystem."
+        }
+      ]
+    },
+    "GRID_TEXTS": {
+      "EXPLORING_ROUTE": {
+        "TITLE": "Exploring the Ruta de los Cenotes – Nature, Adventure and Culture",
+        "DESCRIPTION": "The ruta de los cenotes stretches along a jungle road just outside Puerto Morelos, offering access to dozens of cenotes and eco-parks. This area is part of one of the largest underground river systems in the world, making it a unique destination for those interested in nature and geology. Unlike traditional tourist attractions in Cancun, this region provides a more immersive experience."
+      },
+      "UNIQUE_CENOTES": {
+        "TITLE": "Why Cenotes in Puerto Morelos Are Unique",
+        "DESCRIPTION": "The Puerto Morelos cenotes stand out for their accessibility and diversity. Within a short distance, you can visit multiple cenotes with completely different environments. Because they are located slightly away from the main tourist zones, they tend to be less crowded, offering a more intimate and peaceful experience."
+      },
+      "THINGS_TO_DO": {
+        "TITLE": "Things to Do in la Ruta de los Cenotes",
+        "LIST": [
+          {
+            "TITLE": "Water Activities",
+            "DESCRIPTION": "Swimming in natural freshwater cenotes and snorkeling in underground waters."
+          },
+          {
+            "TITLE": "Adventure",
+            "DESCRIPTION": "Zip-lining through the jungle canopy and ATV rides along jungle trails."
+          },
+          {
+            "TITLE": "Exploration",
+            "DESCRIPTION": "Discovering cave cenotes with unique rock formations and relaxing in eco-parks."
+          }
+        ]
+      },
+      "LOCATION_INFO": {
+        "TITLE": "Location & Access",
+        "DESCRIPTION": "The ruta de los cenotes is located just off the main highway between Cancun and Playa del Carmen, near Puerto Morelos.",
+        "DETAILS": [
+          "Approx. 20–30 minutes from Cancun",
+          "Easy access from hotel zones and downtown areas",
+          "Well-connected for day trips"
+        ]
+      }
+    },
+    "FAQS": {
+      "TITLE": "Frequently Asked Questions",
+      "LIST": [
+        {
+          "question": "What is the Ruta de los Cenotes?",
+          "answer": "It is a scenic jungle route near Puerto Morelos that connects multiple cenotes and eco-parks, offering nature-based experiences and outdoor activities."
         },
         {
-          "TITLE": "Authentic Culture",
-          "DESCRIPTION": "Experience the laid-back charm of Puerto Morelos, the gateway to the route, blending local flavors and Caribbean vibes."
+          "question": "How far is the Ruta de los Cenotes from Cancun?",
+          "answer": "It is located about 20 to 30 minutes from Cancun, making it an easy and popular day trip for those exploring what to do in Cancun."
         },
         {
-          "TITLE": "Convenient Access",
-          "DESCRIPTION": "Located just 20–30 minutes from Cancun, making it an easy and enriching day trip to one of the world's largest underground river systems."
+          "question": "Are there different types of cenotes in Puerto Morelos?",
+          "answer": "Yes, you can find open cenotes, semi-open cenotes, and cave cenotes, each offering a different experience."
+        },
+        {
+          "question": "Is it worth visiting cenotes near Puerto Morelos instead of Cancun?",
+          "answer": "Absolutely. Puerto Morelos cenotes tend to be less crowded and provide a more natural and relaxed environment compared to more tourist-heavy areas."
+        },
+        {
+          "question": "What activities can I do there?",
+          "answer": "You can swim, snorkel, explore caves, zip-line, ride ATVs, and enjoy eco-adventure experiences depending on the location."
         }
       ]
     }
@@ -505,96 +564,95 @@
         "TITLE": "A True Private Group Tour, Not a Shared Experience.",
         "DESCRIPTION": "This is not a modified group excursion; it is a dedicated private tour where your group is the only one on-site. No waiting times, no fixed schedules, and no mixed groups.",
         "THE_UNIQUE_FEATURES_LIST": [
-            {
-              "TITLE": "Waterfalls and Jumping Platforms",
-              "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
-            },
-            {
-              "TITLE": "Zip Line and Rustic Swings",
-              "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
-            },
-            {
-              "TITLE": "Exclusive Access",
-              "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
-            }
-          ],
-          "BOOK_CENOTE": {
-            "TITLE": "Rent Your Private Cenote Today",
-            "DESCRIPTION": "Don’t settle for crowded tours. Book your Cancun private cenote experience today and enjoy the luxury of having a natural wonder all to yourself."
+          {
+            "TITLE": "Waterfalls and Jumping Platforms",
+            "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+          },
+          {
+            "TITLE": "Zip Line and Rustic Swings",
+            "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+          },
+          {
+            "TITLE": "Exclusive Access",
+            "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
           }
-        }
-      },
-      "WHAT_YOU_SHOULD_KNOW": {
-        "TITLE": "What you should know?",
-        "LIST": [
-          "This is a 100% private activity; only your group will participate.",
-          "Private transportation is included (direct from your hotel/Airbnb).",
-          "Not wheelchair accessible.",
-          "Not recommended for people with severe back problems.",
-          "Not suitable for pets.",
-          "Infants must not sit on laps (please request special seating if needed).",
-          "Please contact us in advance to coordinate your specific pickup time."
-        ]
-      },
-      "WHAT_TO_BRING": {
-        "TITLE": "What to bring?",
-        "LIST": [
-          "Biodegradable Sunscreen (mandatory for ecosystem protection).",
-          "Biodegradable Insect Repellent.",
-          "Sandals or comfortable water shoes (No flip-flops recommended for jungle paths).",
-          "Towel and Bathing Suit.",
-          "Change of clothes.",
-          "Camera (perfect for private photo sessions).",
-          "Extra cash for souvenirs or tips."
         ],
-        "SWIMSUIT": {
-          "TITLE": "Swimsuit",
-          "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
-        },
-        "WATER_SANDALS": {
-          "TITLE": "Water Sandals or Aqua Shoes",
-          "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
-        },
-        "TOWEL": {
-          "TITLE": "Towel",
-          "DESCRIPTION": "To dry off after your snorkeling adventure."
-        },
-        "CASH": {
-          "TITLE": "Additional Cash",
-          "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
+        "BOOK_CENOTE": {
+          "TITLE": "Rent Your Private Cenote Today",
+          "DESCRIPTION": "Don’t settle for crowded tours. Book your Cancun private cenote experience today and enjoy the luxury of having a natural wonder all to yourself."
         }
-      },
-      "GALLERY": {
-        "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
-        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
-      },
-      "SCHEDULES": {
-        "TITLE": "Available Schedules for the Snorkeling Adventure",
-        "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
-        "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
-        "DURATION": "4 hours (approx.)"
-      },
-      "FAQS": {
-        "TITLE": "Frequently Asked Questions",
-        "FAQS": [
-          {
-            "question": "What makes this a private cenote tour in Cancun?",
-            "answer": "This experience offers exclusive cenote access for your group only, along with private transportation and a dedicated guide. No other visitors or shared groups are included."
-          },
-          {
-            "question": "How many people can join the private group tour?",
-            "answer": "Private group tours are flexible and can accommodate small families or larger private groups. Group size can be adjusted based on your needs."
-          },
-          {
-            "question": "Is this tour suitable for families and special events?",
-            "answer": "Yes. This Cancun private cenote tour is ideal for families, couples, birthdays, proposals, corporate groups, and travelers seeking privacy and comfort."
-          },
-          {
-            "question": "Do I need prior swimming experience to enjoy the cenote?",
-            "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
-          }
-        ]
       }
+    },
+    "WHAT_YOU_SHOULD_KNOW": {
+      "TITLE": "What you should know?",
+      "LIST": [
+        "This is a 100% private activity; only your group will participate.",
+        "Private transportation is included (direct from your hotel/Airbnb).",
+        "Not wheelchair accessible.",
+        "Not recommended for people with severe back problems.",
+        "Not suitable for pets.",
+        "Infants must not sit on laps (please request special seating if needed).",
+        "Please contact us in advance to coordinate your specific pickup time."
+      ]
+    },
+    "WHAT_TO_BRING": {
+      "TITLE": "What to bring?",
+      "LIST": [
+        "Biodegradable Sunscreen (mandatory for ecosystem protection).",
+        "Biodegradable Insect Repellent.",
+        "Sandals or comfortable water shoes (No flip-flops recommended for jungle paths).",
+        "Towel and Bathing Suit.",
+        "Change of clothes.",
+        "Camera (perfect for private photo sessions).",
+        "Extra cash for souvenirs or tips."
+      ],
+      "SWIMSUIT": {
+        "TITLE": "Swimsuit",
+        "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
+      },
+      "WATER_SANDALS": {
+        "TITLE": "Water Sandals or Aqua Shoes",
+        "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
+      },
+      "TOWEL": {
+        "TITLE": "Towel",
+        "DESCRIPTION": "To dry off after your snorkeling adventure."
+      },
+      "CASH": {
+        "TITLE": "Additional Cash",
+        "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
+      }
+    },
+    "GALLERY": {
+      "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+      "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+    },
+    "SCHEDULES": {
+      "TITLE": "Available Schedules for the Snorkeling Adventure",
+      "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
+      "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
+      "DURATION": "4 hours (approx.)"
+    },
+    "FAQS": {
+      "TITLE": "Frequently Asked Questions",
+      "FAQS": [
+        {
+          "question": "What makes this a private cenote tour in Cancun?",
+          "answer": "This experience offers exclusive cenote access for your group only, along with private transportation and a dedicated guide. No other visitors or shared groups are included."
+        },
+        {
+          "question": "How many people can join the private group tour?",
+          "answer": "Private group tours are flexible and can accommodate small families or larger private groups. Group size can be adjusted based on your needs."
+        },
+        {
+          "question": "Is this tour suitable for families and special events?",
+          "answer": "Yes. This Cancun private cenote tour is ideal for families, couples, birthdays, proposals, corporate groups, and travelers seeking privacy and comfort."
+        },
+        {
+          "question": "Do I need prior swimming experience to enjoy the cenote?",
+          "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
+        }
+      ]
     }
   }
-
+}

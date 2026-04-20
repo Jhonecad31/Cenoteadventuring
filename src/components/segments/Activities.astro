@@ -1,0 +1,110 @@
+---
+import AboutSection from "@/components/segments/About.astro";
+import { getI18N } from "@/i18n";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Button } from "../ui/button";
+import TagH1 from "@/components/global/TagH1.astro";
+import TagH2 from "@/components/global/TagH2.astro";
+import TagH3 from "@/components/global/TagH3.astro";
+import TagP from "@/components/global/TagP.astro";
+import BContainer from "@/components/global/BContainer.astro";
+import { ImageMissingAlt } from "node_modules/astro/dist/core/errors/errors-data";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+
+const images = {
+  imgCenote: "Card.Priv_f5x4xo",
+};
+
+const getUrl = (id: string, w = 1200) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+
+const seoMetaData = {
+  title: i18n?.Selection?.ABOUT_US_PAGE?.TITLE || "Cenote Adventure",
+  description: i18n?.SEO?.ABOUT_US_PAGE?.DESCRIPTION || "Default description",
+};
+---
+
+<BaseLayout seo={seoMetaData}>
+  <main class="bg-[#EDF4FC] overflow-x-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
+       <img
+        src={getUrl(images.imgCenote)}
+        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100"
+        id="hero-video-payer"
+        alt=""
+        loading="lazy"
+      />
+
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-serif italic text-6xl md:text-9xl mb-6 tracking-tight drop-shadow-lg"
+        >
+        </h1>
+        <p
+          class="uppercase tracking-[0.5em] text-xs md:text-sm font-light opacity-90 mt-100"
+        >
+          Explorando el alma de Quintana Roo
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-[1000px] mx-auto py-15 px-6">
+
+      <TagH2 class="font-serif italic text-5xl text-[#006083] text-center">{i18n.ABOUT_US_PAGE.INTRO.TITLE}</TagH2>
+      <div class="w-12 h-[2px] bg-[#006083] mx-auto opacity-30"></div>
+      <p class="text-center uppercase tracking-[0.3em] text-[10px] text-slate-500 font-bold">
+        Un viaje visual por lo inexplorado
+      </p>
+      <!-- textos para our story cenotes -->
+      <BContainer>
+        <div class="mb-5 w-full lg:w-4/5 mx-auto">
+           <TagP class="text-center text-[10px] text-black-500">{i18n.ABOUT_US_PAGE.INTRO.DESCRIPTION_1}</TagP>
+                <TagP class="text-center text-[10px] text-black-500">{i18n.ABOUT_US_PAGE.INTRO.DESCRIPTION_2}</TagP>
+                 <TagP class="text-center text-[10px] text-black-500">{i18n.ABOUT_US_PAGE.INTRO.DESCRIPTION_3}</TagP>
+                  <TagP class="text-center text-[10px] text-black-500">{i18n.ABOUT_US_PAGE.INTRO.DESCRIPTION_4}</TagP>
+                   <TagP class="text-center text-[10px] text-black-500">{i18n.ABOUT_US_PAGE.INTRO.DESCRIPTION_5}</TagP>
+                <TagH3 class="text-center text-[10px] text-black-500">{i18n.ABOUT_US_PAGE.INTRO.SUBTITLE_LIST}</TagH3>
+                </TagH3>
+                <div class="grid lg:grid-cols-5 items-center gap-5">
+                    <div class="lg:col-span-3">
+                        <TagP>{i18n.ABOUT_US_PAGE.OUR_STORY.TITLE_LIST}</TagP>
+                        <ul
+                            class="list-disc list-inside space-y-2 mt-4 text-sm/relaxed md:text-base/relaxed"
+                        >
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <TagH3 class="text-center tracking-[0.3em] text-[10px] text-slate-500 font-bold"></TagH3>
+            </div>
+        </div>
+      </BContainer>
+
+    </section>
+  </main>
+
+  <script>
+    // Efecto Parallax suave para el Hero
+    window.addEventListener("scroll", () => {
+      const heroImg = document.getElementById("hero-img");
+      if (heroImg) {
+        const scrollValue = window.scrollY;
+        heroImg.style.transform = `translateY(${scrollValue * 0.3}px) scale(1.05)`;
+      }
+    });
+  </script>
+
+  <style>
+    /* Personalización extra para el scroll de la página */
+    main {
+      scroll-behavior: smooth;
+    }
+  </style></Layout
+>

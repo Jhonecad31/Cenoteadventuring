@@ -1,0 +1,210 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getI18N } from "@/i18n";
+import TagH2 from "@/components/global/TagH2.astro";
+import TagP from "@/components/global/TagP.astro";
+import BContainer from "@/components/global/BContainer.astro";
+import TagH3 from "../global/TagH3.astro";
+import { ChevronRight } from "lucide-react";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+const images = {
+  imgCenote: "Card.Cenote_bvtvzh",
+  imgDetails1: "Card.2.2_eik10v",
+  imgDetails2: "Card.1.2_x0xkn2",
+};
+
+const getUrl = (id: string, w = 1600) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+
+const descriptions = [i18n.RUTA_CENOTES_PAGE.HERO.DESCRIPTION];
+
+const seoMetaData = {
+  title: i18n.RUTA_CENOTES_PAGE.HERO.TITLE2,
+  description: i18n.RUTA_CENOTES_PAGE.HERO.SUBTITLE,
+};
+---
+
+<BaseLayout seo={seoMetaData}>
+  <main class="bg-[#F8FAFC] overflow-x-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
+      <img
+        src={getUrl(images.imgCenote)}
+        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
+        id="hero-video-payer"
+        alt=""
+        loading="lazy"
+      />
+
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-serif italic text-6xl md:text-9xl mb-6 tracking-tight drop-shadow-lg"
+        >
+        </h1>
+        <p
+          class="uppercase tracking-[0.6em] font-light text-xs md:text-sm animate-fade-in opacity-90 mt-100 mx-auto max-w-4xl"
+        >
+          {i18n.RUTA_CENOTES_PAGE.HERO.TITLE}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-24 md:py-32 -mt-20">
+      <BContainer>
+        <div class="max-w-7xl mx-auto">
+          <header class="text-center mb-20">
+            <TagH2
+              class="font-serif regular text-5xl md:text-7xl text-[#006083] mb-6"
+            >
+              {i18n.RUTA_CENOTES_PAGE.HERO.TITLE2}
+            </TagH2>
+
+            <div class="flex items-center justify-center gap-4 mb-6">
+              <div class="h-[1px] w-8 bg-[#006083]/30"></div>
+              <p
+                class="uppercase tracking-[0.4em] text-[11px] text-slate-400 font-semibold"
+              >
+                {i18n.RUTA_CENOTES_PAGE.HERO.SUBTITLE}
+              </p>
+              <div class="h-[1px] w-8 bg-[#006083]/30"></div>
+            </div>
+          </header>
+
+          <article class="space-y-8 mx-auto max-w-7xl">
+            {
+              descriptions.map((text) => (
+                <TagP class="text-center text-slate-700 text-lg leading-relaxed font-light mx-full max-w-screen-2xl ">
+                  {text}
+                </TagP>
+              ))
+            }
+          </article>
+
+          <section class="mx-auto px-6 py-12 md:py-24 space-y-16 -mt-15">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 items-start justify-center"
+            >
+              <div
+                class="lg:col-span-12 flex flex-col lg:flex-row gap-8 items-center border-y border-black/20 py-8"
+              >
+                <div class="w-full lg:w-1/2 overflow-hidden">
+                  <img
+                    src={getUrl(images.imgDetails1, 800)}
+                    class="w-full h-auto object-cover transition-transform duration-700 hover:scale-110"
+                    alt="Adventure 1"
+                  />
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                  <div class="bg-[#EDF4FC] rounded-lg p-8 md:p-10">
+                    <h3 class="font-serif italic text-2xl text-[#006083] mb-4">
+                      {i18n.RUTA_CENOTES_PAGE.INTRO.TITLE}
+                    </h3>
+                    <p class="text-slate-700 leading-relaxed font-light">
+                      {i18n.RUTA_CENOTES_PAGE.INTRO.DESCRIPTION}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="group py-6">
+            <summary
+              class="flex justify-between items-center cursor-pointer list-none"
+            >
+              <span
+                class="text-2xl md:text-3xl font-serif text-[#001524] mt-10"
+              >
+                {i18n.RUTA_CENOTES_PAGE.FAQS.TITLE}
+              </span>
+            </summary>
+            <div class="mt-8 flex flex-col gap-4 mx-auto">
+              {
+                i18n.RUTA_CENOTES_PAGE.FAQS.LIST.map(
+                  (faq: { question: unknown; answer: unknown }, index: any) => (
+                    <details
+                      key={index}
+                      class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
+                    >
+                      <summary class="flex justify-between items-center cursor-pointer list-none p-6 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
+                        <span class="pr-4">{faq.question}</span>
+                        <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                          <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
+                            +
+                          </span>
+                        </div>
+                      </summary>
+
+                      <div class="px-6 pb-6 animate-fade-in">
+                        <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
+                  ),
+                )
+              }
+            </div>
+          </div>
+
+          {
+            i18n.ABOUT_US_PAGE.INTRO.SUBTITLE_LIST && (
+              <div class="mt-20 pt-20 border-t border-slate-200 text-center">
+                <h3 class="font-serif italic text-3xl text-[#006083] mb-8">
+                  {i18n.ABOUT_US_PAGE.INTRO.SUBTITLE_LIST}
+                </h3>
+              </div>
+            )
+          }
+        </div>
+      </BContainer>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  // Parallax optimizado
+  const heroImg = document.getElementById("hero-img");
+  if (heroImg) {
+    window.addEventListener("scroll", () => {
+      const scrollValue = window.scrollY;
+      // Solo aplicar si está en el viewport para rendimiento
+      if (scrollValue < window.innerHeight) {
+        heroImg.style.transform = `translateY(${scrollValue * 0.35}px) scale(1.05)`;
+      }
+    });
+  }
+</script>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap");
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  main {
+    scroll-behavior: smooth;
+  }
+</style>

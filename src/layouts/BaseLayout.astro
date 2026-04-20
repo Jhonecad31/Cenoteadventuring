@@ -7,7 +7,7 @@ import { getLangFromUrl } from "@/i18n/utils";
 import '@/styles/global.css';
 
 const lang = getLangFromUrl(Astro.url);
-const { seo, offI18n } = Astro.props;
+const { seo, offI18n, showFooter = true} = Astro.props;
 ---
 
 <!doctype html>
@@ -38,7 +38,7 @@ const { seo, offI18n } = Astro.props;
             <slot />
         </main>
 
-        <Footer />
+        {showFooter && <Footer />} </body>
 
         <style is:global>
             html, body {

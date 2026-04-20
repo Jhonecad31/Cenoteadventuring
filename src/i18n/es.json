@@ -213,34 +213,91 @@
       }
     }
   },
-  "CENOTE_TRAIL_PAGE": {
+  "RUTA_CENOTES_PAGE": {
+    "HERO": {
+      "TITLE": "Ruta de los Cenotes en Puerto Morelos – Una Guía Completa de Naturaleza, Aventura y Cenotes Ocultos",
+      "DESCRIPTION": "Escondida a poca distancia de Cancún, la Ruta de los Cenotes en Puerto Morelos es una de las experiencias naturales más auténticas del Caribe Mexicano. Rodeada de una selva exuberante, esta ruta escénica alberga algunos de los cenotes más bellos cerca de Puerto Morelos, ofreciendo una conexión única con la naturaleza, la cultura y la aventura."
+    },
     "INTRO": {
-      "TITLE": "Ruta de los Cenotes en Puerto Morelos – Guía Completa de Naturaleza y Aventura",
-      "DESCRIPTION 1": "Oculta a poca distancia de Cancún, la Ruta de los Cenotes en Puerto Morelos es una de las experiencias naturales más auténticas del Caribe Mexicano. Rodeada de selva, esta ruta alberga algunos de los cenotes más bellos cerca de Puerto Morelos.",
-      "DESCRIPTION 2": "Si estás buscando qué hacer en Puerto Morelos o planeas un viaje de un día desde Cancún, la Ruta de los Cenotes es un destino obligado donde aguas cristalinas y cuevas subterráneas se unen."
+      "TITLE": "Un Destino Imperdible desde Cancún",
+      "DESCRIPTION": "Si estás explorando qué hacer en Puerto Morelos o planeando una excursión de un día desde Cancún, la ruta de los cenotes es un destino obligado donde piscinas de agua dulce cristalina, cuevas subterráneas y aventuras ecológicas se unen en una experiencia inolvidable."
     },
     "WHAT_TO_EXPECT": {
-      "TITLE": "Qué esperar en la Ruta de los Cenotes",
+      "TITLE": "¿Qué esperar?",
+      "DESCRIPTION": "Visitar la ruta de los cenotes es diferente a cualquier otra actividad en la región. En lugar de playas concurridas, encontrarás un tranquilo camino selvático lleno de tesoros naturales escondidos.",
       "LIST": [
         {
           "TITLE": "Diversidad Natural",
-          "DESCRIPTION": "Descubre desde cenotes abiertos rodeados de selva hasta cuevas místicas con formaciones rocosas."
+          "DESCRIPTION": "Prepárate para descubrir una variedad de cenotes en Puerto Morelos, desde piscinas al aire libre hasta dramáticas formaciones en cuevas."
         },
         {
-          "TITLE": "Aventura Inmersiva",
-          "DESCRIPTION": "Disfruta actividades como nadar en aguas cristalinas, lanzarte en tirolesas o explorar senderos en cuatrimotos."
+          "TITLE": "Tours Guiados",
+          "DESCRIPTION": "La mayoría de los tours de cenotes en Puerto Morelos incluyen el acceso a varios cenotes, lo que te permite nadar, hacer snorkel o simplemente relajarte."
         },
         {
-          "TITLE": "Atmósfera Pacífica",
-          "DESCRIPTION": "Escapa de las multitudes y conecta con un ecosistema refrescante que ofrece paz y naturaleza."
+          "TITLE": "Ambiente Tranquilo",
+          "DESCRIPTION": "El entorno es sereno, refrescante y está profundamente conectado con el ecosistema natural."
+        }
+      ]
+    },
+    "GRID_TEXTS": {
+      "EXPLORING_ROUTE": {
+        "TITLE": "Explorando la Ruta de los Cenotes – Naturaleza, Aventura y Cultura",
+        "DESCRIPTION": "La ruta de los cenotes se extiende a lo largo de un camino selvático a las afueras de Puerto Morelos, ofreciendo acceso a docenas de cenotes y parques ecológicos. Esta zona forma parte de uno de los sistemas de ríos subterráneos más grandes del mundo, lo que la convierte en un destino único para los interesados en la naturaleza y la geología. A diferencia de las atracciones turísticas tradicionales en Cancún, esta región ofrece una experiencia más inmersiva."
+      },
+      "UNIQUE_CENOTES": {
+        "TITLE": "Por qué los cenotes de Puerto Morelos son únicos",
+        "DESCRIPTION": "Los cenotes de Puerto Morelos destacan por su accesibilidad y diversidad. En una corta distancia, puedes visitar múltiples cenotes con entornos completamente diferentes. Debido a que se encuentran un poco alejados de las principales zonas turísticas, suelen estar menos concurridos, ofreciendo una experiencia más íntima y pacífica."
+      },
+      "THINGS_TO_DO": {
+        "TITLE": "Qué hacer en la Ruta de los Cenotes",
+        "LIST": [
+          {
+            "TITLE": "Actividades Acuáticas",
+            "DESCRIPTION": "Nadar en cenotes naturales de agua dulce y hacer snorkel en aguas subterráneas cristalinas."
+          },
+          {
+            "TITLE": "Aventura",
+            "DESCRIPTION": "Lanzarse en tirolesa a través de la selva y recorridos en cuatrimotos por senderos selváticos."
+          },
+          {
+            "TITLE": "Exploración",
+            "DESCRIPTION": "Descubrir cenotes en cuevas con formaciones rocosas únicas y relajarse en parques ecológicos."
+          }
+        ]
+      },
+      "LOCATION_INFO": {
+        "TITLE": "Ubicación y Acceso",
+        "DESCRIPTION": "La ruta de los cenotes se encuentra justo a la salida de la carretera principal entre Cancún y Playa del Carmen, cerca de Puerto Morelos.",
+        "DETAILS": [
+          "Aprox. 20–30 minutos desde Cancún",
+          "Fácil acceso desde las zonas hoteleras y el centro",
+          "Bien conectada para excursiones de un día"
+        ]
+      }
+    },
+    "FAQS": {
+      "TITLE": "Preguntas Frecuentes",
+      "LIST": [
+        {
+          "question": "¿Qué es la Ruta de los Cenotes?",
+          "answer": "Es una ruta selvática escénica cerca de Puerto Morelos que conecta múltiples cenotes y parques ecológicos, ofreciendo experiencias basadas en la naturaleza y actividades al aire libre."
         },
         {
-          "TITLE": "Cultura Auténtica",
-          "DESCRIPTION": "Vive el encanto relajado de Puerto Morelos, la puerta de entrada a la ruta."
+          "question": "¿Qué tan lejos está la Ruta de los Cenotes de Cancún?",
+          "answer": "Se encuentra a unos 20 o 30 minutos de Cancún, lo que la convierte en una excursión de un día fácil y popular para quienes exploran qué hacer en Cancún."
         },
         {
-          "TITLE": "Acceso Conveniente",
-          "DESCRIPTION": "Ubicado a solo 20–30 minutos de Cancún, ideal para un viaje de un día."
+          "question": "¿Hay diferentes tipos de cenotes en Puerto Morelos?",
+          "answer": "Sí, puedes encontrar cenotes abiertos, semiabiertos y de cueva, cada uno ofreciendo una experiencia diferente."
+        },
+        {
+          "question": "¿Vale la pena visitar los cenotes cerca de Puerto Morelos en lugar de los de Cancún?",
+          "answer": "Absolutamente. Los cenotes de Puerto Morelos suelen estar menos concurridos y ofrecen un entorno más natural y relajado en comparación con las zonas más turísticas."
+        },
+        {
+          "question": "¿Qué actividades puedo realizar allí?",
+          "answer": "Puedes nadar, hacer snorkel, explorar cuevas, lanzarte en tirolesa, manejar cuatrimotos y disfrutar de experiencias de eco-aventura dependiendo de la ubicación."
         }
       ]
     }
