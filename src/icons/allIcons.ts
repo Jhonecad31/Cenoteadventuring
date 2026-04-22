@@ -1,8 +1,8 @@
 //History
-import CenoteAdventure from "./brands/cenoteadventuring_2.svg";
+import CenoteAdventure from "@/icons/brands/cenoteadventuring_2.svg";
 //flags 
-import IconFlagUSA from "./flags/usa.svg";
-import IconFlagMEX from "./flags/mex.svg";
+import IconFlagUSA from "@/icons/flags/usa.svg";
+import IconFlagMEX from "@/icons/flags/mex.svg";
  //Awards
 import Tipadvisor from "@/icons/awards/tripadvisor-tbotb.svg"
 import Natgeo from "@/icons/awards/natgeo-traveller-black.svg"
@@ -16,6 +16,10 @@ import CenoteAdventuringH from "@/icons/logos/cenoteadventuring 2026-H.svg"
 import Logo_icono_cenote from "@/icons/logos/cenoteadventuring 2026-05.svg"
 import Logo_blanco from "@/icons/logos/cenoteadventuring 2026-04.svg"
 import LogoContainer from "@/icons/logos/cenoteadventuring 2026-02.svg"
+import Beach_taco from "@/icons/logos/beach-taco-tour-puerto-morelos.svg"
+import Cancun_horse from "@/icons/logos/cancun-horse-ride-extrem-adventuring.svg"
+import Extreme_adventuring from "@/icons/logos/extreme-adventuring-cancun.svg"
+import Snorkeling from "@/icons/logos/snorkeling-adventure.svg"
 
 export {
     IconFlagMEX,
@@ -32,6 +36,10 @@ export {
     CenoteAdventuringH,
     Logo_icono_cenote,
     Logo_blanco,
-    LogoContainer
+    LogoContainer,
+    Beach_taco,
+    Cancun_horse,
+    Extreme_adventuring,
+    Snorkeling
     
 }

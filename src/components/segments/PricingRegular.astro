@@ -18,8 +18,21 @@ import {
   Wallet,
   Waves,
   Wind,
+  ExternalLink,
 } from "lucide-react";
+import {
+  Beach_taco,
+  Extreme_adventuring,
+  Snorkeling,
+  Cancun_horse,
+} from "@/icons/allIcons";
 import TagH3 from "@/components/global/TagH3.astro";
+const iconMap: Record<string, any> = {
+  Beach_taco: Beach_taco,
+  Extreme_adventuring: Extreme_adventuring,
+  Snorkeling: Snorkeling,
+  Cancun_horse: Cancun_horse,
+};
 const tour = {
   title: "Private Cenote Rental In Cancun",
   tagline:
@@ -57,16 +70,29 @@ const relatedActivities = [
     name: "Taco Tour",
     image: "taco_taco_ud62mv",
     slug: "beach-taco-tour",
+    iconKey: "Beach_taco",
+    link: "https://extremeadventurecancun.com/city-taco-tour-puerto-morelos/",
   },
   {
     name: "Extreme Adventuring",
     image: "moto_moto_jxf9jy",
     slug: "extreme-adventuring",
+    iconKey: "Extreme_adventuring",
+    link: "https://extremeadventurecancun.com/extreme-adventuring-atv-in-cancun/",
   },
   {
     name: "Snorkel Adventuring",
     image: "snorkel_snorkel_iqkdev",
     slug: "snorkel-adventuring",
+    iconKey: "Snorkeling",
+    link: "https://extremeadventurecancun.com/extreme-snorkeling-cancun/",
+  },
+  {
+    name: "Extreme Horseback Riding",
+    image: "Horse_gegtwu",
+    slug: "extreme-adventuring-horse-back-riding",
+    iconKey: "Cancun_horse",
+    link: "https://extremeadventurecancun.com/extreme-adventuring-horse-back-riding/",
   },
 ];
 
@@ -470,13 +496,13 @@ const getUrl = (id: string, w = 1200) =>
           </div>
         </div>
 
+       <!-- to bring -->
         <div class="mt-8">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
             {
               Object.entries(i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING)
-                .filter(([key]) => key !== "TITLE") // Excluimos el título principal del loop
+                .filter(([key]) => key !== "TITLE")
                 .map(([key, value]) => {
-                  // Asignación de iconos basada en la KEY del objeto i18n
                   let Icon = Shirt;
                   if (key === "SUNSCREEN") Icon = Sun;
                   if (key === "TOWEL" || key === "CLOTHES") Icon = Wind;
@@ -486,22 +512,31 @@ const getUrl = (id: string, w = 1200) =>
                   if (key === "REPELLENT") Icon = Bug;
 
                   return (
-                    <div class="bg-[#EDF4FC] rounded-xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md border border-blue-50/50">
-                      <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                        <Icon className="text-[#006083]" size={28} />
+                    <div class="flex items-start gap-5 group p-2 transition-all">
+                      {/* Contenedor del Icono más compacto */}
+                      <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
+                        <Icon
+                          className="text-[#006083] group-hover:text-white transition-colors duration-300"
+                          size={24}
+                        />
                       </div>
-                      <h4 class="font-serif text-lg text-[#001524] mb-3 leading-tight">
-                        {value.TITLE}
-                      </h4>
-                      <p class="text-xs text-gray-500 font-light leading-relaxed">
-                        {value.DESCRIPTION}
-                      </p>
+
+                      {/* Contenedor de Información */}
+                      <div class="flex flex-col justify-center">
+                        <h2 class="font-serif text-lg text-[#001524] font-semibold mb-1">
+                          {value.TITLE}
+                        </h2>
+                        <p class="text-sm text-gray-500 leading-relaxed max-w-md">
+                          {value.DESCRIPTION}
+                        </p>
+                      </div>
                     </div>
                   );
                 })
             }
           </div>
         </div>
+        <!-- to bring fin -->
       </div>
       <div class="group py-6">
         <summary
@@ -555,28 +590,43 @@ const getUrl = (id: string, w = 1200) =>
       <div class="swiper mySwiper pb-12">
         <div class="swiper-wrapper">
           {
-            relatedActivities.map((activity) => (
-              <div class="swiper-slide">
-                <a href={`/activities/${activity.slug}/`} class="group block">
-                  <div class="aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                    <img
-                      src={getUrl(activity.image, 600)}
-                      alt={activity.name}
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div class="text-left">
-                    <h3 class="font-serif text-xl text-[#001524] mb-2">
-                      {activity.name}
-                    </h3>
-
-                    <div class="text-[11px] font-bold tracking-widest lg:text-gray-400 md:text-[#001524] flex items-center gap-2">
-                      Discover more <ChevronRight size={14} />
+            relatedActivities.map((activity) => {
+              const IconComponent = iconMap[(activity as any).iconKey];
+              return (
+                <div class="swiper-slide">
+                  <a href={`/activities/${activity.slug}/`} class="group block">
+                    <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                      <img
+                        src={getUrl(activity.image, 600)}
+                        alt={activity.name}
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      {IconComponent && (
+                        <div class="absolute bottom-4 left-4 p-2.5 rounded-lg flex items-center justify-center">
+                          <div class="w-25 h-25 lg:w-25 lg:h-25 flex items-center justify-center">
+                            <IconComponent className="w-full h-full" />
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                </a>
-              </div>
-            ))
+                    <div class="text-left">
+                      <h3 class="font-serif text-xl text-[#001524] mb-2">
+                        {activity.name}
+                      </h3>
+                      <a href={activity.link} target="_blank">
+                        <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
+                          Discover more{""}
+                          <ChevronRight
+                            size={14}
+                            className="group-hover:translate-x-1 transition-transform"
+                          />
+                        </div>
+                      </a>
+                    </div>
+                  </a>
+                </div>
+              );
+            })
           }
         </div>
         <div class="swiper-pagination"></div>
@@ -636,8 +686,18 @@ const getUrl = (id: string, w = 1200) =>
         clickable: true,
       },
       breakpoints: {
-        640: { slidesPerView: 2.2 },
-        1024: { slidesPerView: 3, spaceBetween: 40 },
+        // Móvil / Tablet pequeña
+        640: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        // Desktop (lg)
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          allowTouchMove: false,
+          loop: false,
+        },
       },
     });
   }

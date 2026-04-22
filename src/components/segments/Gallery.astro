@@ -87,7 +87,7 @@ const mobileSections = [
     <div id="grid-gallery-scroll" class="flex gap-4 overflow-x-auto px-6 pb-10 hide-scrollbar snap-x snap-mandatory items-center h-[75vh]">
       {mobileSections.map((section) => (
         <div 
-          class={`flex-shrink-0 ${section.size} rounded-lg overflow-hidden shadow-lg snap-center cursor-pointer`}
+          class={`flex-shrink-0 ${section.size} rounded-md overflow-hidden shadow-lg snap-center cursor-pointer`}
           data-fancybox="gallery-mobile"
           data-src={getUrl(section.id, 2000)}
         >
