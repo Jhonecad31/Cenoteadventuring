@@ -17,8 +17,7 @@ import {
   Sun,
   Wallet,
   Waves,
-  Wind,
-  ExternalLink,
+  Wind
 } from "lucide-react";
 import {
   Beach_taco,
@@ -55,16 +54,6 @@ const tour = {
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
 const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
 
-const carouselImages = [
-  "CenoteA.1_ntnmsp",
-  "CenoteA.2_njvbos",
-  "CenoteA.3_pzncr9",
-  "CenoteA.4_tevpif",
-  "CenoteA.5_tdhqvl",
-  "CenoteA.6_ikzdny",
-  "CenoteA.7_rpyhjn",
-  "CenoteA.8_jx4f49",
-];
 const relatedActivities = [
   {
     name: "Taco Tour",
@@ -97,14 +86,14 @@ const relatedActivities = [
 ];
 
 const imagesDetails = {
-  imgDetails1: "Card.2.2_eik10v",
-  imgDetails2: "Card.1.2_x0xkn2",
+  imgDetails1: "CenoteA.1_ntnmsp",
+  imgDetails2: "Card.2_ecrvcw",
 };
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
-const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1776355586/cenote_web_2_zhi5vd.mp4`;
+const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774544286/video_cenote_web_nzoauf.mp4`;
 const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
 
 const getUrl = (id: string, w = 1200) =>
@@ -131,10 +120,10 @@ const getUrl = (id: string, w = 1200) =>
         <h1
           class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
-          {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.TITLE}
+          {i18n.DETAIL_PAGE.PRIVATE_CENOTE.HERO.TITLE}
         </h1>
         <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
-          {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.DESCRIPTION}
+          {i18n.DETAIL_PAGE.PRIVATE_CENOTE.HERO.DESCRIPTION}
         </p>
         <div
           class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
@@ -179,13 +168,13 @@ const getUrl = (id: string, w = 1200) =>
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 leading-tight"
           >
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.TITLE}
+            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INTRO.TITLE}
           </h2>
 
           <p
             class="text-gray-600 leading-relaxed text-base md:text-lg font-light max-w-prose"
           >
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.DESCRIPTION}
+            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INTRO.DESCRIPTION}
           </p>
 
           <hr class="border-black/50 w-full mt-6" />
@@ -267,13 +256,13 @@ const getUrl = (id: string, w = 1200) =>
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
           >
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.TITLE}
+            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.OVERVIEW.TITLE}
           </h2>
           <div
             class="text-gray-600 leading-relaxed text-base md:text-lg font-light space-y-5"
           >
-            <p>{i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.DESCRIPTION1}</p>
-            <p>{i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.DESCRIPTION2}</p>
+            <p>{i18n.DETAIL_PAGE.PRIVATE_CENOTE.OVERVIEW.DESCRIPTION1}</p>
+            <p>{i18n.DETAIL_PAGE.PRIVATE_CENOTE.OVERVIEW.DESCRIPTION2}</p>
           </div>
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
@@ -353,7 +342,7 @@ const getUrl = (id: string, w = 1200) =>
             class="flex justify-between items-center cursor-pointer list-none"
           >
             <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-              {i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.TITLE}
+              {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.TITLE}
             </span>
             <div
               class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
@@ -364,7 +353,7 @@ const getUrl = (id: string, w = 1200) =>
           <div class="mt-8 rounded-lg lg:col-span-3">
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
               {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.INCLUDES.map(
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.INCLUDES.map(
                   (text) => (
                     <li class="flex items-start gap-3">
                       <Check
@@ -383,7 +372,7 @@ const getUrl = (id: string, w = 1200) =>
 
               {/* Renderizamos después los que NO incluye */}
               {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.NOT_INCLUDES.map(
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.NOT_INCLUDES.map(
                   (text) => (
                     <li class="flex items-start gap-3">
                       <X className="text-red-500 mt-1 shrink-0" size={20} />
@@ -404,7 +393,7 @@ const getUrl = (id: string, w = 1200) =>
           >
             <span class="text-2xl md:text-3xl font-serif text-[#001524]"
               >{
-                i18n.DETAIL_PAGE.REGULAR_CENOTE
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE
                   .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.TITLE
               }</span
             >
@@ -417,7 +406,7 @@ const getUrl = (id: string, w = 1200) =>
           <div class="mt-4 text-gray-600 leading-relaxed font-light">
             <p>
               {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE
                   .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.DESCRIPTION
               }
             </p>

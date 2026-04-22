@@ -303,37 +303,58 @@
     }
   },
   "ABOUT_US_PAGE": {
-    "INTRO": {
-      "TITLE": "Cenote Adventuring: Our Story ",
-      "DESCRIPTION_1": "Cenote Adventuring was created מתוך a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle. What started as a local initiative has evolved into a premium private experience designed for travelers who want more than traditional Cancun tours.",
-      "DESCRIPTION_2": "Our founders grew up exploring the ruta de los cenotes, discovering hidden cenotes and learning about their ecological and cultural importance. Over time, they realized that many visitors were missing the true essence of these природные wonders due to crowded group tours. ",
-      "DESCRIPTION_3": "That’s why Cenote Adventuring focuses on offering a private cenote tour Puerto Morelos, where guests can connect with nature at their own pace while enjoying personalized attention and authentic experiences.",
-      "DESCRIPTION_4": "Our mission is simple: to provide meaningful and sustainable experiences in nature. We aim to connect travelers with the beauty of the ruta de los cenotes while preserving the environment for future generations.",
-      "DESCRIPTION_5": "We believe that tourism should go beyond entertainment. It should educate, inspire, and create lasting memories. That’s why every cenote Puerto Morelos tour we offer is designed with respect for nature and local culture. "
+   "HERO": {
+      "H1": "CENOTE ADVENTURING: OUR STORY",
+      "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle. What started as a local initiative has evolved into a premium private experience designed for travelers who want more than traditional Cancun tours.",
+      "ORIGIN_STORY": "Our founders grew up exploring the Ruta de los Cenotes, discovering hidden treasures and learning about their ecological and cultural importance. Over time, they realized that many visitors were missing the true essence of these natural wonders due to crowded group tours.",
+      "VALUE_PROPOSITION": "That’s why Cenote Adventuring focuses on offering private cenote tours in Puerto Morelos, where guests can connect with nature at their own pace while enjoying personalized attention and authentic experiences."
     },
-    "OUR_STORY": {
-      "TITLE": "Our Story",
-      "DESCRIPTION_1": "Extreme Adventuring Cancun was founded with a single purpose: to give visitors a safe, natural, and unforgettable adventure inspired by the Mayan jungle.",
-      "DESCRIPTION_2": "For nearly two decades, we have designed experiences that blend ecotourism, entertainment, culture, and family-friendly adventure, always prioritizing safety, environmental respect, and the preservation of the Selva Maya.",
-      "TITLE_LIST": "What started with a single tour has grown into a full ecopark that includes:",
-      "SUBTITLE_LIST": "Our legacy is built on trust, innovation, and warm hospitality, serving tens of thousands of travelers every year.",
-      "LIST": [
-        "ATV circuits",
-        "Multiple zipline towers",
-        "Open cenotes",
-        "Snorkeling at protected marine areas",
-        "Horseback riding trails",
-        "Cultural and gastronomic experiences",
-        "Traditional Mayan elements and storytelling",
-        "A tequila tasting produced with regional heritage"
-      ]
+    "MISSION": {
+      "TITLE": "OUR MISSION AND PURPOSE",
+      "STATEMENT": "Our mission is simple: to provide meaningful and sustainable experiences in nature. We aim to connect travelers with the beauty of the Ruta de los Cenotes while preserving the environment for future generations.",
+      "PHILOSOPHY": "We believe that tourism should go beyond entertainment; it should educate, inspire, and create lasting memories. That’s why every tour we offer is designed with deep respect for nature and local culture."
     },
-    "OUR_PROMISE": {
-      "TITLE": "Our Promise",
-      "DESCRIPTION": "We work every day with a clear purpose: “To make every day with us the best day of your vacation”, Adventure, culture, nature, and exceptional service — all in one place."
+    "FEATURES": {
+      "H2": "WHY CHOOSE US?",
+      "INTRO": "Choosing Cenote Adventuring means choosing quality, authenticity, and exclusivity. Here is why travelers prefer us:",
+      "ITEMS": [
+        "PRIVATE AND PERSONALIZED EXPERIENCES",
+        "ACCESS TO CAREFULLY SELECTED CENOTES",
+        "LOCAL EXPERT GUIDES",
+        "SEAMLESS TRANSPORTATION FROM PUERTO MORELOS TO CANCUN",
+        "TOTAL FOCUS ON SUSTAINABILITY AND SAFETY"
+      ],
+      "CLOSING": "We don’t just offer tours; we create experiences that stay with you long after your trip ends."
     },
-    "WELCOME_TO_EXTREME_ADVENTURING": "Welcome to Cenote Adventuring.",
-    "WELCOME_FAMILY": "Welcome to the family."
+    "SAFETY": {
+      "H2": "SAFETY AND OUR TEAM",
+      "DESCRIPTION": "Your safety is our top priority. Our team is made up of trained professionals who are passionate about nature and dedicated to providing a secure experience.",
+      "INCLUDES": [
+        "CERTIFIED AND EXPERIENCED GUIDES",
+        "HIGH-QUALITY SAFETY EQUIPMENT",
+        "CLEAR INSTRUCTIONS AND PERSONALIZED ASSISTANCE",
+        "CONTINUOUS MONITORING THROUGHOUT THE TOUR"
+      ],
+      "ECO_COMMITMENT": "In addition, we follow strict eco-friendly practices to protect the cenotes and the surrounding environment.",
+      "TEAM_VALUE": "Our team does not just guide you: they enhance your experience by sharing knowledge, stories, and fascinating local insights about the region."
+    },
+    "DESTINATION_INFO": {
+      "H2": "EXPLORE THE BEST CENOTES NEAR PUERTO MORELOS",
+      "CONTENT": "When travelers search for cenotes near Puerto Morelos, they are looking for something authentic, peaceful, and visually stunning. This region is home to some of the most beautiful cenotes in the Riviera Maya, each offering a unique atmosphere.",
+      "DIFFERENTIATION": "Unlike many Cancun cenotes, those in Puerto Morelos remain less crowded and better preserved. This allows visitors to fully immerse themselves in nature without distractions.",
+      "EXPERIENCE": "Whether swimming in an open cenote or exploring a semi-hidden cave, every corner of Puerto Morelos offers a different perspective of this natural ecosystem."
+    },
+    "HIGHLIGHTS": {
+      "H3": "WHAT MAKES PUERTO MORELOS CENOTES SPECIAL?",
+      "LOCATION": "These cenotes stand out because of their privileged location. Hidden in the heart of the jungle, they provide a tranquil escape far from crowded tourist areas.",
+      "KEY_POINTS": [
+        "PRISTINE FRESHWATER WITH EXCELLENT VISIBILITY",
+        "RICH BIODIVERSITY AND UNIQUE NATURAL FORMATIONS",
+        "QUIET ENVIRONMENTS WITHOUT THE CROWDS",
+        "EASY ACCESS ON THE CANCUN - PUERTO MORELOS ROUTE"
+      ],
+      "SUMMARY": "These elements make us the best choice for those seeking unique tours in Cancun with a much more exclusive touch."
+    }
   },
   "NOT_FOUND_PAGE": {
     "TITLE": "Page not found!",

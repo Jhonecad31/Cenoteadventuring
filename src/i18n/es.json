@@ -303,38 +303,59 @@
     }
   },
   "ABOUT_US_PAGE": {
-    "INTRO": {
-      "TITLE": "Cenote Adventuring: Nuestra Historia",
-      "DESCRIPTION_1": "Cenote Adventuring nació de la pasión por compartir la belleza natural de Puerto Morelos. Lo que comenzó como una iniciativa local ha evolucionado hasta convertirse en una experiencia privada premium.",
-      "DESCRIPTION_2": "Nuestros fundadores crecieron explorando la Ruta de los Cenotes. Con el tiempo, se dieron cuenta de que muchos visitantes se perdían la verdadera esencia de estas maravillas debido a los tours grupales masivos.",
-      "DESCRIPTION_3": "Es por eso que nos enfocamos en ofrecer tours privados donde los huéspedes puedan conectar con la naturaleza a su propio ritmo con atención personalizada.",
-      "DESCRIPTION_4": "Nuestra misión es simple: proporcionar experiencias significativas y sostenibles, preservando el medio ambiente para las futuras generaciones.",
-      "DESCRIPTION_5": "Creemos que el turismo debe educar, inspirar y crear recuerdos duraderos, siempre con respeto por la cultura local."
+      "HERO": {
+      "H1": "CENOTE ADVENTURING: NUESTRA HISTORIA",
+      "DESCRIPTION": "Cenote Adventuring nació de la pasión por compartir la belleza natural de Puerto Morelos y la selva que lo rodea. Lo que comenzó como una iniciativa local ha evolucionado hasta convertirse en una experiencia privada de primer nivel, diseñada para viajeros que buscan algo más que los tours tradicionales en Cancún.",
+      "ORIGIN_STORY": "Nuestros fundadores crecieron explorando la Ruta de los Cenotes, descubriendo tesoros escondidos y aprendiendo sobre su importancia ecológica y cultural. Con el tiempo, se dieron cuenta de que muchos visitantes se perdían la verdadera esencia de estas maravillas naturales debido a los tours grupales masivos.",
+      "VALUE_PROPOSITION": "Es por eso que Cenote Adventuring se enfoca en ofrecer tours privados en Puerto Morelos, donde los huéspedes pueden conectar con la naturaleza a su propio ritmo, disfrutando de una atención personalizada y experiencias auténticas."
     },
-    "OUR_STORY": {
-      "TITLE": "Nuestra Historia",
-      "DESCRIPTION_1": "Extreme Adventuring Cancun fue fundada con un propósito: dar a los visitantes una aventura segura, natural e inolvidable inspirada en la selva maya.",
-      "DESCRIPTION_2": "Durante casi dos décadas, hemos diseñado experiencias que mezclan ecoturismo, cultura y aventura familiar, priorizando la seguridad y el respeto ambiental.",
-      "TITLE_LIST": "Lo que comenzó con un solo tour ha crecido hasta ser un ecoparque completo que incluye:",
-      "SUBTITLE_LIST": "Nuestro legado se basa en la confianza, la innovación y la hospitalidad cálida.",
-      "LIST": [
-        "Circuitos de ATVs (Cuatrimotos)",
-        "Múltiples torres de tirolesas",
-        "Cenotes abiertos",
-        "Snorkel en áreas marinas protegidas",
-        "Senderos para cabalgatas",
-        "Experiencias culturales y gastronómicas",
-        "Relatos y elementos tradicionales mayas",
-        "Degustación de tequila con herencia regional"
-      ]
+    "MISSION": {
+      "TITLE": "NUESTRA MISIÓN Y PROPÓSITO",
+      "STATEMENT": "Nuestra misión es sencilla: brindar experiencias significativas y sostenibles en la naturaleza. Buscamos conectar a los viajeros con la belleza de la Ruta de los Cenotes mientras preservamos el entorno para las futuras generaciones.",
+      "PHILOSOPHY": "Creemos que el turismo debe ir más allá del entretenimiento; debe educar, inspirar y crear memorias duraderas. Por ello, cada tour que ofrecemos está diseñado con profundo respeto por la naturaleza y la cultura local."
     },
-    "OUR_PROMISE": {
-      "TITLE": "Nuestra Promesa",
-      "DESCRIPTION": "Trabajamos cada día con un propósito claro: 'Hacer de cada día con nosotros el mejor día de tus vacaciones'. Aventura, cultura y naturaleza en un solo lugar."
+    "FEATURES": {
+      "H2": "¿POR QUÉ ELEGIRNOS?",
+      "INTRO": "Elegir Cenote Adventuring significa elegir calidad, autenticidad y exclusividad. Estas son las razones por las que los viajeros nos prefieren:",
+      "ITEMS": [
+        "EXPERIENCIAS PRIVADAS Y PERSONALIZADAS",
+        "ACCESO A CENOTES CUIDADOSAMENTE SELECCIONADOS",
+        "GUÍAS EXPERTOS LOCALES",
+        "TRANSPORTE SIN COMPLICACIONES DESDE PUERTO MORELOS HASTA CANCÚN",
+        "ENFOQUE TOTAL EN LA SOSTENIBILIDAD Y SEGURIDAD"
+      ],
+      "CLOSING": "No solo ofrecemos tours; creamos experiencias que permanecen contigo mucho después de que tu viaje termina."
     },
-    "WELCOME_TO_EXTREME_ADVENTURING": "Bienvenido a Cenote Adventuring.",
-    "WELCOME_FAMILY": "Bienvenido a la familia."
-  },
+    "SAFETY": {
+      "H2": "SEGURIDAD Y NUESTRO EQUIPO",
+      "DESCRIPTION": "Tu seguridad es nuestra máxima prioridad. Nuestro equipo está formado por profesionales capacitados, apasionados por la naturaleza y dedicados a brindar una experiencia segura.",
+      "INCLUDES": [
+        "GUÍAS CERTIFICADOS Y EXPERIMENTADOS",
+        "EQUIPO DE SEGURIDAD DE ALTA CALIDAD",
+        "INSTRUCCIONES CLARAS Y ASISTENCIA PERSONALIZADA",
+        "MONITOREO CONTINUO DURANTE TODO EL RECORRIDO"
+      ],
+      "ECO_COMMITMENT": "Además, seguimos prácticas ecológicas rigurosas para proteger los cenotes y el medio ambiente que los rodea.",
+      "TEAM_VALUE": "Nuestro equipo no solo te guía: enriquecen tu experiencia compartiendo conocimientos, historias y datos locales fascinantes sobre la región."
+    },
+    "DESTINATION_INFO": {
+      "H2": "EXPLORA LOS MEJORES CENOTES CERCA DE PUERTO MORELOS",
+      "CONTENT": "Cuando los viajeros buscan cenotes cerca de Puerto Morelos, buscan algo auténtico, pacífico y visualmente impactante. Esta región alberga algunos de los cenotes más bellos de la Riviera Maya, cada uno con una atmósfera única.",
+      "DIFFERENTIATION": "A diferencia de muchos cenotes en Cancún, los de Puerto Morelos se mantienen menos concurridos y mejor preservados. Esto permite a los visitantes sumergirse por completo en la naturaleza sin distracciones.",
+      "EXPERIENCE": "Ya sea nadando en un cenote abierto o explorando una cueva semi-oculta, cada rincón de Puerto Morelos ofrece una perspectiva diferente de este ecosistema natural."
+    },
+    "HIGHLIGHTS": {
+      "H3": "¿QUÉ HACE ESPECIALES A LOS CENOTES DE PUERTO MORELOS?",
+      "LOCATION": "Estos cenotes destacan por su ubicación privilegiada. Escondidos en el corazón de la selva, ofrecen un escape tranquilo lejos de las zonas turísticas saturadas.",
+      "KEY_POINTS": [
+        "AGUAS CRISTALINAS CON EXCELENTE VISIBILIDAD",
+        "RICA BIODIVERSIDAD Y FORMACIONES NATURALES ÚNICAS",
+        "AMBIENTES TRANQUILOS Y SIN MULTITUDES",
+        "FÁCIL ACCESO EN LA RUTA CANCÚN - PUERTO MORELOS"
+      ],
+      "SUMMARY": "Estos elementos nos convierten en la mejor opción para quienes buscan tours únicos en Cancún con un toque mucho más exclusivo."
+    }
+    },
   "MAILING": {
     "CONTACT_US": {
       "SUBJECT": "Gracias por contactarnos",

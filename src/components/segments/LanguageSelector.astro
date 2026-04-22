@@ -10,83 +10,82 @@ const i18n = getI18N({ currentLocale });
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
-const currentLanguage = languages[lang]
+const currentLanguage = languages[lang];
 const languageList = Object.values(languages);
 
 const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
 ---
 
 <div class="relative inline-block text-left" id="language-selector-container">
-    <div class="group">
-        <button
-            type="button"
-            id="lang-button"
-            class="cursor-pointer w-full p-2 hover:bg-gray-200/50 rounded-full flex items-center gap-1 transition-colors duration-500"
-            aria-expanded="false"
-            aria-haspopup="true"
-            aria-label={i18n.ACCESSIBILITY.CHANGE_LANGUAGE}
-        >
-            <WorldLanguaje class="size-9 lg:size-8 stroke-1 text-current" />
-        </button>
-        
-       <ul 
-    id="lang-menu"
-    class="absolute left-1/2 -translate-x-1/2 lg:group-hover:visible lg:group-hover:opacity-100 invisible opacity-0 lg:block w-fit bg-white rounded-lg shadow-xl text-gray-800 transition-all duration-300 z-[100] mt-2 border border-gray-100"
->
-    {
+  <div class="group">
+    <button
+      type="button"
+      id="lang-button"
+      class="cursor-pointer w-full p-2 hover:bg-gray-200/50 rounded-full flex items-center gap-1 transition-colors duration-500"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label={i18n.ACCESSIBILITY.CHANGE_LANGUAGE}
+    >
+      <WorldLanguaje class="size-9 lg:size-8 stroke-1 text-current" />
+    </button>
+
+    <ul
+      id="lang-menu"
+      class="absolute right-0 lg:left-auto mt-2 min-w-[120px] bg-white rounded-xl shadow-2xl text-gray-800 transition-all duration-300 z-[100] border border-gray-100 invisible opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+    >
+      {
         languageList.map((lang) => (
-            <li class="py-1 px-2">
-                <a
-                    class={`flex items-center p-2 text-sm hover:bg-gray-200 rounded-lg uppercase ${lang.code === currentLocale ? "font-semibold text-[#006083]" : ""}`}
-                    href={translatePath(currentPath, lang.code)}
-                >
-                    <lang.flag class="size-5 mr-2 inline-block" /> 
-                    {/* CAMBIO: Solo mostramos el código (siglas) */}
-                    <span class="font-medium">{lang.code}</span>
-                    
-                    {lang.code === currentLocale && (
-                        <span class="ml-2 inline-flex size-1.5 rounded-full bg-emerald-400"></span>
-                    )}
-                </a>
-            </li>
+          <li class="p-1">
+            <a
+              class={`flex items-center px-4 py-3 text-sm hover:bg-gray-50 rounded-lg uppercase transition-colors ${lang.code === currentLocale ? "font-bold text-[#006083] bg-gray-50/50" : "font-medium"}`}
+              href={translatePath(currentPath, lang.code)}
+            >
+              <lang.flag class="size-5 mr-3 shadow-sm rounded-sm" />
+              <span class="tracking-wide">{lang.code}</span>
+
+              {lang.code === currentLocale && (
+                <span class="ml-auto inline-flex size-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+              )}
+            </a>
+          </li>
         ))
-    }
-</ul>
-    </div>
+      }
+    </ul>
+  </div>
 </div>
 
 <script>
-    const btn = document.getElementById('lang-button');
-    const menu = document.getElementById('lang-menu');
+  const btn = document.getElementById("lang-button");
+  const menu = document.getElementById("lang-menu");
 
-    // Función para alternar el menú en móviles
-    btn?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isVisible = menu?.classList.contains('visible');
-        
-        if (isVisible) {
-            menu?.classList.add('invisible', 'opacity-0');
-            menu?.classList.remove('visible', 'opacity-100');
-            btn.setAttribute('aria-expanded', 'false');
-        } else {
-            menu?.classList.remove('invisible', 'opacity-0');
-            menu?.classList.add('visible', 'opacity-100');
-            btn.setAttribute('aria-expanded', 'true');
-        }
-    });
+  // Función para alternar el menú en móviles
+  btn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isVisible = menu?.classList.contains("visible");
 
-    // Cerrar el menú si se hace clic fuera de él
-    document.addEventListener('click', () => {
-        menu?.classList.add('invisible', 'opacity-0');
-        menu?.classList.remove('visible', 'opacity-100');
-        btn?.setAttribute('aria-expanded', 'false');
-    });
+    if (isVisible) {
+      menu?.classList.add("invisible", "opacity-0");
+      menu?.classList.remove("visible", "opacity-100");
+      btn.setAttribute("aria-expanded", "false");
+    } else {
+      menu?.classList.remove("invisible", "opacity-0");
+      menu?.classList.add("visible", "opacity-100");
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
+
+  // Cerrar el menú si se hace clic fuera de él
+  document.addEventListener("click", () => {
+    menu?.classList.add("invisible", "opacity-0");
+    menu?.classList.remove("visible", "opacity-100");
+    btn?.setAttribute("aria-expanded", "false");
+  });
 </script>
 
 <style>
-    /* Evita que el menú se cierre accidentalmente en móviles al intentar tocar una opción */
-    #lang-menu.visible {
-        visibility: visible;
-        opacity: 1;
-    }
+  /* Evita que el menú se cierre accidentalmente en móviles al intentar tocar una opción */
+  #lang-menu.visible {
+    visibility: visible;
+    opacity: 1;
+  }
 </style>
