@@ -5,8 +5,8 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
-import { Facebook, Instagram, Tripadvaisor } from "@/icons/allIcons";
-import { Logo_blanco } from "@/icons/allIcons";
+import { Facebook as FBIcon, Instagram as IGIcon, Logo_blanco } from "@/icons/allIcons";
+import { Phone, Mail, MessageSquare } from "lucide-react";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
@@ -16,137 +16,124 @@ const k = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const currentYear = new Date().getFullYear();
-const navFooter = [
-  {
-    title: k("nav.home"),
-    link: translatePath("/"),
-  },
-  {
-    title: "Blog",
-    link: "/blog/",
-  },
-  {
-    title: k("nav.cenoteTrail"),
-    link: translatePath("/cenote-trail/"),
-  },
-  {
-    title: k("nav.about"),
-    link: translatePath("/about/"),
-  },
-  {
-    title: k("nav.contact"),
-    link: translatePath("/Contact/contact/"),
-  },
-];
 
-import {
-  Phone,
-  Mail,
-  Tripadvisor,
-  Accessibility,
-} from "lucide-react";
+const navFooter = [
+  { title: k("nav.home"), link: translatePath("/") },
+  { title: "Blog", link: "/blog/" },
+  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail/") },
+  { title: k("nav.about"), link: translatePath("/about/") },
+  { title: k("nav.contact"), link: translatePath("/Contact/contact/") },
+];
 
 const socialMedia = [
   {
-    title: i18n.ACCESSIBILITY.SOCIAL_MEDIA.GO_TO_FACEBOOK,
-    icon: Facebook,
+    title: "Facebook",
+    icon: FBIcon,
     link: "https://www.facebook.com/cenoteadventuring/",
   },
   {
-    litle: i18n.ACCESSIBILITY.SOCIAL_MEDIA.GO_TO_FACEBOOK,
-    icon: Instagram,
+    title: "Instagram",
+    icon: IGIcon,
     link: "https://www.instagram.com/cenoteadventuring/",
   },
 ];
 ---
-<footer class="bg-[#006083] text-white py-16 px-8 mt-auto w-full border-t border-white/10">
-  <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
+
+<footer class="bg-[#006083] text-white py-12 md:py-16 px-6 md:px-8 mt-auto w-full border-t border-white/10">
+  <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
     
     <div class="flex flex-col gap-6 lg:col-span-4">
-      <h3 class="font-serif text-xl md:text-3xl lg:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit">
+      <h3 class="font-serif text-lg md:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit">
         Contact Us
       </h3>
 
-      <div class="space-y-4 w-full">
-        <div class="border border-white/20 p-5 lg:p-6 flex items-center gap-6 hover:bg-white/5 transition-all duration-300">
-          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0">
-            <Phone size={20} fill="currentColor" strokeWidth={0} />
+      <div class="space-y-3 md:space-y-4 w-full">
+        <div class="border border-white/20 p-4 md:p-5 flex items-center gap-4 md:gap-6 hover:bg-white/5 transition-all duration-300 group">
+          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+            <Phone size={18} strokeWidth={2.5} />
           </div>
-          <a href="tel:+529982998131" class="text-sm md:text-2xl lg:text-xs tracking-[0.15em] font-medium">
-            +52 9982 99 81 31
-          </a>
-        </div>
-
-        <div class="border border-white/20 p-5 lg:p-6 flex items-center gap-6 hover:bg-white/5 transition-all duration-300">
-          <div class="bg-white text-[#005B71] p-2.5 rounded-full shadow-lg shrink-0">
-            <Mail size={20} fill="currentColor" strokeWidth={0} />
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="text-[9px] uppercase opacity-60 tracking-[0.2em]">For reservations:</span>
-            <a href="mailto:reservas@grupo-extreme.com" class="text-xs md:text-2xl lg:text-[11px] hover:underline">reservas@grupo-extreme.com</a>
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase opacity-60 tracking-[0.2em]">Direct Line</span>
+            <a href="tel:+529982998131" class="text-xs md:text-sm lg:text-base tracking-[0.1em] font-medium">
+              +52 9982 99 81 31
+            </a>
           </div>
         </div>
 
-        <div class="border border-white/20 p-5 lg:p-6 flex items-center gap-6 hover:bg-white/5 transition-all duration-300">
-          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0">
-            <Mail size={20} fill="currentColor" strokeWidth={0} />
+        <div class="border border-white/20 p-4 md:p-5 flex items-center gap-4 md:gap-6 hover:bg-white/5 transition-all duration-300 group">
+          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+            <Mail size={18} strokeWidth={2.5} />
           </div>
-          <div class="flex flex-col gap-1">
-            <span class="text-[9px] uppercase opacity-60 tracking-[0.2em]">For corporate inquiries:</span>
-            <a href="mailto:info@extremeadventuringcancun.com" class="text-xs md:text-2xl lg:text-[11px] hover:underline">info@extremeadventuringcancun.com</a>
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase opacity-60 tracking-[0.2em]">Reservations</span>
+            <a href="mailto:reservas@grupo-extreme.com" class="text-xs md:text-sm lg:text-base hover:underline break-all">
+              reservas@grupo-extreme.com
+            </a>
+          </div>
+        </div>
+
+        <div class="border border-white/20 p-4 md:p-5 flex items-center gap-4 md:gap-6 hover:bg-white/5 transition-all duration-300 group">
+          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+            <MessageSquare size={18} strokeWidth={2.5} />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase opacity-60 tracking-[0.2em]">Corporate</span>
+            <a href="mailto:info@extremeadventuringcancun.com" class="text-xs md:text-sm lg:text-base hover:underline break-all">
+              info@extremeadventuringcancun.com
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="lg:col-span-8 flex flex-row flex-wrap items-start justify-between gap-y-10 lg:gap-10 lg:pl-12">
-   <div class="w-full lg:w-auto flex justify-center lg:block pt-4 lg:pt-0 -mt-6">
-    <Logo_blanco class="h-20 lg:h-32 w-auto opacity-90" />
-  </div>
-  <div class="flex flex-col gap-4 w-[50%] lg:w-auto">
-     
-    <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
-      About
-    </h3>
-    <nav class="mt-4 md:mt-8">
-      <ul class="flex flex-col gap-3 md:gap-5 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.2em] font-light">
-        {navFooter.map((item) => (
-          <li><a href={item.link} class="hover:opacity-60 transition-opacity">{item.title}</a></li>
-        ))}
-      </ul>
-    </nav>
-  </div>
-  <div class="flex flex-col gap-4 w-[40%] lg:w-auto items-end lg:items-start">
-    <h3 class="font-serif text-sm md:text-3xl lg:text-xl tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
-      Follow Us                   
-    </h3>
-    <ul class="flex flex-col gap-4 md:gap-8 mt-4 md:mt-8 text-[9px] md:text-2xl lg:text-[11px] uppercase tracking-[0.1em] font-medium items-end lg:items-start">
-      <li>
-        <a href="#" class="flex items-center gap-2 md:gap-4 group">
-          <Facebook size={18} className="group-hover:scale-110 transition-transform lg:order-none order-2" />
-          <span class="order-1 lg:order-none">Facebook</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="flex items-center gap-2 md:gap-4 group">
-          <Instagram size={18} className="group-hover:scale-110 transition-transform lg:order-none order-2" />
-          <span class="order-1 lg:order-none">Instagram</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-    <div class="lg:col-span-12 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
-      <div class="text-[9px] md:text-xl lg:text-[9px] uppercase tracking-[0.3em] text-white/50 text-center lg:text-left leading-loose">
-        <p>© {currentYear} Cenote Adventuring Cancun. All Rights Reserved.</p>
-        <p class="mt-3 lg:mt-2 text-white/30">Design By Grupo Extreme</p>
+    <div class="lg:col-span-8 flex flex-row flex-wrap items-start justify-between gap-y-10 lg:pl-12">
+      
+      <div class="w-full lg:w-auto flex justify-center lg:block lg:-mt-4">
+        <Logo_blanco class="h-20 lg:h-28 w-auto opacity-90" />
       </div>
 
-      <div class="flex flex-wrap justify-center gap-6 lg:gap-10 text-[10px] md:text-xl lg:text-[9px] uppercase tracking-[0.3em] text-white/50 font-medium">
-        <a href="#" class="hover:text-white transition-colors border-b border-transparent hover:border-white/20 pb-1">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition-colors border-b border-transparent hover:border-white/20 pb-1">Terms of Service</a>
-        <a href="#" class="hover:text-white transition-colors border-b border-transparent hover:border-white/20 pb-1">Cookies Settings</a>
+      <div class="flex flex-col gap-4 w-1/2 lg:w-auto">
+        <h3 class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+          About
+        </h3>
+        <nav class="mt-4">
+          <ul class="flex flex-col gap-3 text-[11px] md:text-sm uppercase tracking-[0.15em] font-light">
+            {navFooter.map((item) => (
+              <li><a href={item.link} class="hover:text-cyan-300 transition-colors">{item.title}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex flex-col gap-4 w-[40%] lg:w-auto items-end lg:items-start">
+        <h3 class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+          Follow Us
+        </h3>
+        <ul class="flex flex-col gap-4 mt-4 items-end lg:items-start">
+          {socialMedia.map(({ title, icon: Icon, link }) => (
+            <li>
+              <a href={link} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group">
+                <Icon size={20} className="group-hover:scale-110 transition-transform lg:order-none order-2" />
+                <span class="text-[11px] md:text-sm uppercase tracking-[0.1em] order-1 lg:order-none group-hover:opacity-70 transition-opacity">
+                  {title}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="lg:col-span-12 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
+      <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 text-center lg:text-left leading-relaxed">
+        <p>© {currentYear} Cenote Adventuring Cancun. All Rights Reserved.</p>
+        <p class="mt-1 text-white/20">Design By Grupo Extreme</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors">Cookies Settings</a>
       </div>
     </div>
   </div>
