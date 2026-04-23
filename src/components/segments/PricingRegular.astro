@@ -1,6 +1,7 @@
 ---
 import { getI18N } from "@/i18n";
 import Layout from "@/layouts/BaseLayout.astro";
+import { getIKUrl } from "@/lib/imagekit";
 import {
   Star,
   Clock,
@@ -54,43 +55,54 @@ const tour = {
 const relatedActivities = [
   {
     name: "Taco Tour",
-    image: "taco_taco_ud62mv",
+    image: "Cenote-Adventuring/tacotaco.webp",
     slug: "beach-taco-tour",
     iconKey: "Beach_taco",
     link: "https://extremeadventurecancun.com/city-taco-tour-puerto-morelos/",
   },
   {
     name: "Extreme Adventuring",
-    image: "moto_moto_jxf9jy",
+    image: "Cenote-Adventuring/motomoto.webp",
     slug: "extreme-adventuring",
     iconKey: "Extreme_adventuring",
     link: "https://extremeadventurecancun.com/extreme-adventuring-atv-in-cancun/",
   },
   {
     name: "Snorkel Adventuring",
-    image: "snorkel_snorkel_iqkdev",
+    image: "Cenote-Adventuring/snorkelsnorkel.webp",
     slug: "snorkel-adventuring",
     iconKey: "Snorkeling",
     link: "https://extremeadventurecancun.com/extreme-snorkeling-cancun/",
   },
   {
     name: "Extreme Horseback Riding",
-    image: "Horse_gegtwu",
+    image: "Cenote-Adventuring/Horse.webp",
     slug: "extreme-adventuring-horse-back-riding",
     iconKey: "Cancun_horse",
     link: "https://extremeadventurecancun.com/extreme-adventuring-horse-back-riding/",
   },
 ];
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 
+const images = {
+  card1: "Cenote-Adventuring/CenoteA.3.webp",
+  card2: "Cenote-Adventuring/Card.1.webp",
+};
+
+const getUrl = (id: string, w = 800) =>
+  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
+
+const { currentLocale } = Astro.props;
+const i18n = getI18N({ currentLocale });
 const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
 ---
 
 <Layout title={tour.title}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
-    <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
       <mux-player
         playback-id={Mux_playback_Id}
         autoplay
@@ -102,7 +114,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
         class="hero-video brightness-[0.2]"></mux-player>
       <div class="relative z-10 text-center text-white px-6">
         <h1
-          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg mt-100"
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
           {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.TITLE}
         </h1>
@@ -123,6 +135,31 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
       <div
         class="grid grid-cols-1 lg:grid-cols-12 lg:gap-24 items-center justify-center"
       >
+        <div
+          class="relative lg:col-span-7 relative h-[450px] md:h-[600px] w-full"
+        >
+          <div
+            class="absolute top-0 left-4 w-[60%] h-[80%] overflow-hidden shadow-lg z-10"
+          >
+            <img
+              src={getUrl(images.card1, 800)}
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+              alt="Tirolesa en Cenote Adventure"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="absolute bottom-4 right-4 w-[60%] h-[80%] overflow-hidden shadow-2xl z-20"
+          >
+            <img
+              src={getUrl(images.card2, 800)}
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+              alt="Private Rental Experience"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
         <div class="lg:col-span-5 flex flex-col">
           <hr class="border-black/50 w-full mb-6" />
 
@@ -546,6 +583,11 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                 <div class="swiper-slide">
                   <a href={`/activities/${activity.slug}/`} class="group block">
                     <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                    <img
+                        src={getUrl(activity.image, 600)}
+                        alt={activity.name}
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
                       {IconComponent && (
                         <div class="absolute bottom-4 left-4 p-2.5 rounded-lg flex items-center justify-center">
                           <div class="w-25 h-25 lg:w-25 lg:h-25 flex items-center justify-center">
@@ -596,6 +638,12 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
     opacity: 1;
   }
 
+  @media (min-width: 1024px) {
+    .swiper-slide {
+      opacity: 1 !important;
+      transform: scale(1) !important; /* Por si también se veían pequeños */
+    }
+  }
   mux-player {
     position: absolute;
     inset: 0;
@@ -614,10 +662,9 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
 </style>
 
 <script>
-  import "@mux/mux-player";
   import Swiper from "swiper";
   import { Autoplay, Pagination } from "swiper/modules";
-
+  import "@mux/mux-player";
   let swiperInstance: Swiper | null = null;
 
   function initSwiper() {

@@ -54,38 +54,43 @@ const tour = {
 const relatedActivities = [
   {
     name: "Taco Tour",
-    image: "taco_taco_ud62mv",
+    image: "Cenote-Adventuring/tacotaco.webp",
     slug: "beach-taco-tour",
     iconKey: "Beach_taco",
     link: "https://extremeadventurecancun.com/city-taco-tour-puerto-morelos/",
   },
   {
     name: "Extreme Adventuring",
-    image: "moto_moto_jxf9jy",
+    image: "Cenote-Adventuring/motomoto.webp",
     slug: "extreme-adventuring",
     iconKey: "Extreme_adventuring",
     link: "https://extremeadventurecancun.com/extreme-adventuring-atv-in-cancun/",
   },
   {
     name: "Snorkel Adventuring",
-    image: "snorkel_snorkel_iqkdev",
+    image: "Cenote-Adventuring/snorkelsnorkel.webp",
     slug: "snorkel-adventuring",
     iconKey: "Snorkeling",
     link: "https://extremeadventurecancun.com/extreme-snorkeling-cancun/",
   },
   {
     name: "Extreme Horseback Riding",
-    image: "Horse_gegtwu",
+    image: "Cenote-Adventuring/Horse.webp",
     slug: "extreme-adventuring-horse-back-riding",
     iconKey: "Cancun_horse",
     link: "https://extremeadventurecancun.com/extreme-adventuring-horse-back-riding/",
   },
 ];
 
-const imagesDetails = {
-  imgDetails1: "CenoteA.1_ntnmsp",
-  imgDetails2: "Card.2_ecrvcw",
+const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
+
+const images = {
+  card1: "Cenote-Adventuring/CenoteA.1.webp",
+  card2: "Cenote-Adventuring/Card.2.webp",
 };
+
+const getUrl = (id: string, w = 800) =>
+  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -137,18 +142,20 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
             class="absolute top-0 left-4 w-[60%] h-[80%] overflow-hidden shadow-lg z-10"
           >
             <img
-              
+              src={getUrl(images.card1, 800)}
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              alt="Adventure 1"
+              alt="Tirolesa en Cenote Adventure"
+              loading="lazy"
             />
           </div>
           <div
             class="absolute bottom-4 right-4 w-[60%] h-[80%] overflow-hidden shadow-2xl z-20"
           >
             <img
-
+              src={getUrl(images.card2, 800)}
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              alt="Adventure 2"
+              alt="Private Rental Experience"
+              loading="lazy"
             />
           </div>
         </div>
@@ -576,8 +583,8 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
                 <div class="swiper-slide">
                   <a href={`/activities/${activity.slug}/`} class="group block">
                     <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                      <img
-                        
+                    <img
+                        src={getUrl(activity.image, 600)}
                         alt={activity.name}
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />

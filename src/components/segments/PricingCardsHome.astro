@@ -5,18 +5,18 @@ import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
-
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
+const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 
 const images = {
-  cenoteAdventuring: "TirolesaCenote_sqmoec",
-  privateRental: "Card.Pricing1.2_tmxm0r",
-  logoCenote: "logo-cenote_rscfb4",
-  logoPrivate: "logo-private_wd8kxq",
+  cenoteAdventuring: "/Cenote-Adventuring/CenoteA.7.webp",
+  privateRental: "/Cenote-Adventuring/CenoteA.4.webp",
+  logoCenote: "/Cenote-Adventuring/Logo-cenote.svg",
+  logoPrivate: "/Cenote-Adventuring/Logo-cenote.svg",
 };
 
+
 const getUrl = (id: string, w = 800) =>
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
 
 const features = [
   "Cenote with Waterfall",
@@ -30,7 +30,7 @@ const img = {};
 ---
 
 <!-- se añade modificacion para textos de cards -->
- <section class="bg-[#F8FAFC] py-12 lg:py-24 px-6 -mt-20">
+ <section id="cards" class="bg-[#F8FAFC] py-12 lg:py-24 px-6 -mt-20">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 justify-items-center">
       
@@ -42,11 +42,11 @@ const img = {};
             alt="Cenote Adventuring"
             class="w-full h-full object-cover"
           />
-          <div class="absolute bottom-4 left-4 bg-white/90 p-2 rounded-lg backdrop-blur-sm">
+          <div class="absolute bottom-4 left-4 p-2">
             <img
               src={getUrl(images.logoCenote)}
               alt="Logo"
-              class="h-8 lg:h-10 w-auto"
+              class="h-12 w-auto"
             />
           </div>
         </div>
@@ -117,11 +117,11 @@ const img = {};
             alt="Private Rental"
             class="w-full h-full object-cover"
           />
-          <div class="absolute bottom-4 left-4 bg-white/90 p-2 rounded-lg backdrop-blur-sm">
+          <div class="absolute bottom-4 left-4  p-2 rounded-lg backdrop-blur-sm">
             <img
               src={getUrl(images.logoPrivate)}
               alt="Logo"
-              class="h-8 lg:h-10 w-auto"
+              class="h-12 w-auto"
             />
           </div>
         </div>

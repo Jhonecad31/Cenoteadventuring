@@ -21,7 +21,6 @@ export const ui = {
     en: {
         'nav.home': 'Home',
         'nav.cenoteTrail': 'The cenote route',
-        'nav.activities': 'Activities',
         'nav.about': 'About us',
         'nav.contact': 'Contact',
         'nav.blog': 'Blog',
@@ -29,7 +28,6 @@ export const ui = {
     es: {
         'nav.home': 'Inicio',
         'nav.rutaDeLosCenotes': 'Ruta de los Cenotes',
-        'nav.activities': 'Activities',
         'nav.about': 'About us',
         'nav.contacto': 'Contacto',
         'nav.blog': 'Blog',

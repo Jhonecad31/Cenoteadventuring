@@ -7,18 +7,19 @@ import BContainer from "@/components/global/BContainer.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
+const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
+
+const getUrl = (id: string, w = 800) =>
+  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
 
 const images = {
-  imgCenote: "Card.Cenote_bvtvzh",
-  imgDetails1: "CenoteA.6_ikzdny",
-  imgDetails2: "CenoteA.5_tdhqvl",
+  imgCenote: "/Cenote-Adventuring/Card.Cenote.webp",
+  imgDetails1: "/Cenote-Adventuring/CenoteA.4.webp",
+  imgDetails2: "/Cenote-Adventuring/CenoteA.5.webp",
 };
 
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
-const getUrl = (id: string, w = 1600) =>
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
-const descriptions = [i18n.RUTA_CENOTES_PAGE.HERO.DESCRIPTION];
 
+const descriptions = [i18n.RUTA_CENOTES_PAGE.HERO.DESCRIPTION];
 const seoMetaData = {
   title: i18n.RUTA_CENOTES_PAGE.HERO.TITLE2,
   description: i18n.RUTA_CENOTES_PAGE.HERO.SUBTITLE,
@@ -32,7 +33,7 @@ const seoMetaData = {
     >
       <img
         src={getUrl(images.imgCenote)}
-        class="absolute z-0 w-full h-full rounded-md object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
+        class="absolute z-0 w-full h-full rounded-md object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.2]"
         id="hero-video-payer"
         alt=""
         loading="lazy"
@@ -289,6 +290,7 @@ const seoMetaData = {
 
 <script>
   // Parallax optimizado
+  import "@mux/mux-player";
   const heroImg = document.getElementById("hero-img");
   if (heroImg) {
     window.addEventListener("scroll", () => {

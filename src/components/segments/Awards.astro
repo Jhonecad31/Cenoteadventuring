@@ -7,10 +7,6 @@ import { Natgeo, Tripadvaisor, Wordl } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
-
-const getUrl = (id: string, w = 1200) =>
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
 
 const seoMetaData = {
   title: i18n?.Selection?.ABOUT_US_PAGE?.TITLE || "Cenote Adventure",
@@ -69,28 +65,28 @@ const relatedActivities = [
         </div>
       </div>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-1 gap-4 mt-15 mx-auto md:max-w-4xl">
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mx-auto max-w-5xl">
   {
     relatedActivities.map((activity) => (
       <a
         href="/activities/"
-        class="group cursor-pointer flex flex-col items-center text-center p-4 rounded-lg hover:bg-white transition"
+        class="group cursor-pointer flex flex-col items-center text-center p-6 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
       >
-        {/* Contenedor del logo con tamaño fijo */}
-        <div class="lg:h-16 md:h-30 w-full flex items-center justify-center mb-4">
+        {/* Contenedor con altura controlada */}
+        <div class="h-16 md:h-20 w-full flex items-center justify-center mb-6">
           <img
             src={activity.image.src}
             alt={activity.name}
-            class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
+            class="h-full max-w-[150px] md:max-w-[180px] object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
           />
         </div>
 
-        <h4 class="text-[#001524] text-sm tracking-tight line-clamp-2 min-h-[2.5rem] font-medium">
+        <h4 class="text-[#001524] text-xs md:text-sm tracking-[0.1em] uppercase line-clamp-2 min-h-[2.5rem] font-semibold">
           {activity.name}
         </h4>
 
-        <div class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mt-1 group-hover:text-[#005B71] transition-colors">
-          Discover more <ChevronRight size={16}/>
+        <div class="text-[10px] uppercase tracking-widest text-gray-400 flex items-center justify-center gap-1 mt-2 group-hover:text-[#005B71] transition-colors">
+          {i18n.HOME_PAGE.AWARDS.DESCRIP_LINK} <ChevronRight size={14}/>
         </div>
       </a>
     ))
