@@ -1,104 +1,79 @@
 ---
 import { Button } from "@/components/ui/button";
 import { getI18N } from "@/i18n";
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
 import TagH1 from "@/components/global/TagH1.astro";
-import { Natgeo, Tripadvaisor, Wordl } from "@/icons/allIcons";
+
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
-
-const relatedActivities = [
-  {
-    name: "National Geography",
-    image: Natgeo,
-  },
-  {
-    name: "World Travel Awards",
-    image: Wordl,
-  },
-  {
-    name: "Trip Advisor",
-    image: Tripadvaisor,
-  },
-];
-
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
-const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
-
-const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774279594/Video_Web_terwzs.mp4`;
-const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
+const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
+const videoUrl = `https://stream.mux.com/{TU_PLAYBACK_ID}/high.mp4`;
+const posterUrl = `https://image.mux.com/${Mux_playback_Id}/thumbnail.jpg?time=1&width=1920`;
 ---
 
 <section
-  class="bg-[#F8FAFC] relative h-screen min-h-[100vh] w-full overflow-hidden flex items-end justify-center pb-10 md:pb-5"
+  class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden"
 >
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    poster={posterUrl}
-    class="absolute z-0 w-full h-full object-cover opacity-100 scale-[1.01] brightness-[0.2]"
-    id="hero-video-player"
-  >
-    <source src={videoUrl} type="video/mp4" />
-  </video>
+  <mux-player
+  playback-id={Mux_playback_Id}
+  autoplay
+  muted
+  loop
+  playsinline
+  no-controls
+  preload="auto"
+  class="hero-video brightness-[0.2]"
+></mux-player>
 
   <div
     class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center gap-8 sm:gap-10"
   >
-    <div class="flex flex-col gap-4 -mt-55 lg:-mt-100">
+    <div class="flex flex-col gap-4">
       <TagH1
-        class="font-serif regular text-3xl sm:text-7xl md:text-7xl lg:text-6xl leading-tight"
+        class="font-serif regular text-3xl sm:text-7xl md:text-7xl lg:text-6xl leading-tight mt-100"
       >
         {i18n.HOME_PAGE.HERO.TITLE}
         <span
-          class="block not-regular italic text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2"
+          class="block not-regular italic text-xl sm:text-2xl md:text-3xl lg:text-4xl lg:mt-25"
         >
           {i18n.HOME_PAGE?.SUBTITLE}
         </span>
       </TagH1>
     </div>
-
     <div class="flex flex-col items-center gap-8">
       <a href={translatePath("/activities/")} class="inline-block">
         <Button
-          className="-mt-5 bg-[#006083] text-white rounded-md px-12 h-14 uppercase tracking-[0.3em] text-[10px] md:text-xs border border-white/10 transition-all duration-500 shadow-xl"
+          className="bg-[#006083] text-white rounded-md px-12 h-14 uppercase tracking-[0.3em] text-[10px] md:text-xs border border-white/10 transition-all duration-500 shadow-xl"
         >
           {i18n.HOME_PAGE?.HERO?.BUTTON || "Discover Our Journeys"}
         </Button>
       </a>
     </div>
   </div>
-
-  <div
-    class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
-  >
-    <div
-      class="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white to-white/0 opacity-30"
-    >
-    </div>
-  </div>
+  
 </section>
+
 <script>
-  const video = document.getElementById(
-    "hero-video-player",
-  ) as HTMLVideoElement;
-  if (video) {
-    if (video.readyState >= 3) {
-      video.classList.remove("opacity-0");
-    } else {
-      video.oncanplay = () => video.classList.remove("opacity-0");
-    }
-  }
+  import "@mux/mux-player";
 </script>
-<style is:global>
-  .awards-img {
-    filter: brightness(0) saturate(100%) invert(24%) sepia(91%) saturate(441%)
-      hue-rotate(149deg) brightness(93%) contrast(101%);
-    opacity: 0.7;
-  }
+
+<style>
+  mux-player {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  --controls: none;
+  --media-object-fit: cover;
+}
+
+mux-player::part(video) {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover !important;
+}
 </style>

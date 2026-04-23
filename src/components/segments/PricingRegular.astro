@@ -18,7 +18,6 @@ import {
   Wallet,
   Waves,
   Wind,
-  ExternalLink,
 } from "lucide-react";
 import {
   Beach_taco,
@@ -52,19 +51,6 @@ const tour = {
   ],
 };
 
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
-const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
-
-const carouselImages = [
-  "CenoteA.1_ntnmsp",
-  "CenoteA.2_njvbos",
-  "CenoteA.3_pzncr9",
-  "CenoteA.4_tevpif",
-  "CenoteA.5_tdhqvl",
-  "CenoteA.6_ikzdny",
-  "CenoteA.7_rpyhjn",
-  "CenoteA.8_jx4f49",
-];
 const relatedActivities = [
   {
     name: "Taco Tour",
@@ -96,40 +82,27 @@ const relatedActivities = [
   },
 ];
 
-const imagesDetails = {
-  imgDetails1: "Card.2.2_eik10v",
-  imgDetails2: "Card.1.2_x0xkn2",
-};
-
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
-const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1776355586/cenote_web_2_zhi5vd.mp4`;
-const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
-
-const getUrl = (id: string, w = 1200) =>
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
+const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
 ---
 
 <Layout title={tour.title}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
-    <section
-      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
-    >
-      <video
+    <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
+      <mux-player
+        playback-id={Mux_playback_Id}
         autoplay
-        loop
         muted
+        loop
         playsinline
-        poster={posterUrl}
-        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
-        id="hero-video-player"
-      >
-        <source src={videoUrl} type="video/mp4" />
-      </video>
+        no-controls
+        preload="auto"
+        class="hero-video brightness-[0.2]"></mux-player>
       <div class="relative z-10 text-center text-white px-6">
         <h1
-          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg mt-100"
         >
           {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.TITLE}
         </h1>
@@ -150,29 +123,6 @@ const getUrl = (id: string, w = 1200) =>
       <div
         class="grid grid-cols-1 lg:grid-cols-12 lg:gap-24 items-center justify-center"
       >
-        <div
-          class="relative lg:col-span-7 relative h-[450px] md:h-[600px] w-full"
-        >
-          <div
-            class="absolute top-0 left-4 w-[60%] h-[80%] overflow-hidden shadow-lg z-10"
-          >
-            <img
-              src={getUrl(imagesDetails.imgDetails1, 800)}
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              alt="Adventure 1"
-            />
-          </div>
-          <div
-            class="absolute bottom-4 right-4 w-[60%] h-[80%] overflow-hidden shadow-2xl z-20"
-          >
-            <img
-              src={getUrl(imagesDetails.imgDetails2, 800)}
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              alt="Adventure 2"
-            />
-          </div>
-        </div>
-
         <div class="lg:col-span-5 flex flex-col">
           <hr class="border-black/50 w-full mb-6" />
 
@@ -496,7 +446,7 @@ const getUrl = (id: string, w = 1200) =>
           </div>
         </div>
 
-       <!-- to bring -->
+        <!-- to bring -->
         <div class="mt-8">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
             {
@@ -596,11 +546,6 @@ const getUrl = (id: string, w = 1200) =>
                 <div class="swiper-slide">
                   <a href={`/activities/${activity.slug}/`} class="group block">
                     <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                      <img
-                        src={getUrl(activity.image, 600)}
-                        alt={activity.name}
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
                       {IconComponent && (
                         <div class="absolute bottom-4 left-4 p-2.5 rounded-lg flex items-center justify-center">
                           <div class="w-25 h-25 lg:w-25 lg:h-25 flex items-center justify-center">
@@ -651,15 +596,25 @@ const getUrl = (id: string, w = 1200) =>
     opacity: 1;
   }
 
-  @media (min-width: 1024px) {
-    .swiper-slide {
-      opacity: 1 !important;
-      transform: scale(1) !important; /* Por si también se veían pequeños */
-    }
+  mux-player {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    --controls: none;
+    --media-object-fit: cover;
+  }
+
+  mux-player::part(video) {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
   }
 </style>
 
 <script>
+  import "@mux/mux-player";
   import Swiper from "swiper";
   import { Autoplay, Pagination } from "swiper/modules";
 

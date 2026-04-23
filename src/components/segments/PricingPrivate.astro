@@ -51,9 +51,6 @@ const tour = {
   ],
 };
 
-const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME || "depikrkrz";
-const videoId = import.meta.env.PUBLIC_CLOUDINARY_VIDEO_ID;
-
 const relatedActivities = [
   {
     name: "Taco Tour",
@@ -92,33 +89,27 @@ const imagesDetails = {
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
 
-const videoUrl = `https://res.cloudinary.com/depikrkrz/video/upload/v1774544286/video_cenote_web_nzoauf.mp4`;
-const posterUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${videoId}.jpg`;
-
-const getUrl = (id: string, w = 1200) =>
-  `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/${id}`;
 ---
 
 <Layout title={tour.title}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
     <section
-      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
-    >
-      <video
+      class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
+      <mux-player
+        playback-id={Mux_playback_Id}
         autoplay
-        loop
         muted
+        loop
         playsinline
-        poster={posterUrl}
-        class="absolute z-0 w-full h-full object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
-        id="hero-video-player"
-      >
-        <source src={videoUrl} type="video/mp4" />
-      </video>
+        no-controls
+        preload="auto"
+        class="hero-video brightness-[0.2]"></mux-player>
+
       <div class="relative z-10 text-center text-white px-6">
         <h1
-          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg mt-100"
         >
           {i18n.DETAIL_PAGE.PRIVATE_CENOTE.HERO.TITLE}
         </h1>
@@ -146,7 +137,7 @@ const getUrl = (id: string, w = 1200) =>
             class="absolute top-0 left-4 w-[60%] h-[80%] overflow-hidden shadow-lg z-10"
           >
             <img
-              src={getUrl(imagesDetails.imgDetails1, 800)}
+              
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               alt="Adventure 1"
             />
@@ -155,7 +146,7 @@ const getUrl = (id: string, w = 1200) =>
             class="absolute bottom-4 right-4 w-[60%] h-[80%] overflow-hidden shadow-2xl z-20"
           >
             <img
-              src={getUrl(imagesDetails.imgDetails2, 800)}
+
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               alt="Adventure 2"
             />
@@ -586,7 +577,7 @@ const getUrl = (id: string, w = 1200) =>
                   <a href={`/activities/${activity.slug}/`} class="group block">
                     <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
                       <img
-                        src={getUrl(activity.image, 600)}
+                        
                         alt={activity.name}
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -646,12 +637,27 @@ const getUrl = (id: string, w = 1200) =>
       transform: scale(1) !important; /* Por si también se veían pequeños */
     }
   }
+    mux-player {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    --controls: none;
+    --media-object-fit: cover;
+  }
+
+  mux-player::part(video) {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+  }
 </style>
 
 <script>
   import Swiper from "swiper";
   import { Autoplay, Pagination } from "swiper/modules";
-
+  import "@mux/mux-player";
   let swiperInstance: Swiper | null = null;
 
   function initSwiper() {

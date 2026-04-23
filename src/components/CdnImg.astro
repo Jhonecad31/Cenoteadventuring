@@ -1,0 +1,41 @@
+---
+interface Props {
+  path: string;       
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  priority?: boolean; 
+}
+
+const { 
+  path, 
+  alt, 
+  width = 1000, 
+  height, 
+  className = "", 
+  priority = false 
+} = Astro.props;
+
+const CDN_URL = "https://ik.imagekit.io/tu_usuario_identificador";
+
+/**
+ * Configuración de transformaciones:
+ * f-auto: Elige el mejor formato (AVIF o WebP) según el navegador.
+ * q-80: Comprime sin perder calidad visual.
+ * pr-true: Carga progresiva (se ve borroso antes de verse nítido).
+ */
+const transformations = `tr:w-${width}${height ? `,h-${height}` : ""},f-auto,q-80,pr-true`;
+
+const finalUrl = `${CDN_URL}${path}?${transformations}`;
+---
+
+<img
+  src={finalUrl}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={priority ? "eager" : "lazy"}
+  decoding={priority ? "sync" : "async"}
+  class={`max-w-full h-auto ${className}`}
+/>
