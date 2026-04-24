@@ -5,7 +5,11 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
-import { Facebook as FBIcon, Instagram as IGIcon, Logo_blanco } from "@/icons/allIcons";
+import {
+  Facebook as FBIcon,
+  Instagram as IGIcon,
+  Logo_blanco,
+} from "@/icons/allIcons";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 
 const { currentLocale } = Astro;
@@ -39,46 +43,85 @@ const socialMedia = [
 ];
 ---
 
-<footer class="bg-[#006083] text-white py-12 md:py-16 px-6 md:px-8 mt-auto w-full border-t border-white/10">
-  <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-    
+<footer
+  class="bg-[#006083] text-white py-12 md:py-16 px-6 md:px-8 mt-auto w-full border-t border-white/10"
+>
+  <div
+    class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8"
+  >
     <div class="flex flex-col gap-6 lg:col-span-4">
-      <h3 class="font-serif text-lg md:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit">
+      <h3
+        class="font-serif text-lg md:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit"
+      >
         Contact Us
       </h3>
 
-      <div class="space-y-3 md:space-y-4 w-full">
-        <div class="border border-white/20 p-4 md:p-5 flex items-center gap-4 md:gap-6 hover:bg-white/5 transition-all duration-300 group">
-          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+      <div class="space-y-3 w-full max-w-md mx-auto">
+        <div
+          class="border border-white/20 p-3 md:p-5 flex items-center gap-4 hover:bg-white/5 transition-all duration-300 group"
+        >
+          <div
+            class="bg-white text-[#006083] p-2 md:p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform"
+          >
             <Phone size={18} strokeWidth={2.5} />
           </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] uppercase opacity-60 tracking-[0.2em]">Direct Line</span>
-            <a href="tel:+529982998131" class="text-xs md:text-sm lg:text-base tracking-[0.1em] font-medium">
+
+          <div class="flex flex-col min-w-0">
+            <span
+              class="text-[11px] md:text-xs uppercase opacity-60 tracking-[0.15em] leading-tight"
+            >
+              Direct Line
+            </span>
+            <a
+              href="tel:+529982998131"
+              class="text-base md:text-lg tracking-wide font-medium truncate"
+            >
               +52 9982 99 81 31
             </a>
           </div>
         </div>
 
-        <div class="border border-white/20 p-4 md:p-5 flex items-center gap-4 md:gap-6 hover:bg-white/5 transition-all duration-300 group">
-          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+        <div
+          class="border border-white/20 p-3 md:p-5 flex items-center gap-4 hover:bg-white/5 transition-all duration-300 group"
+        >
+          <div
+            class="bg-white text-[#006083] p-2 md:p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform"
+          >
             <Mail size={18} strokeWidth={2.5} />
           </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] uppercase opacity-60 tracking-[0.2em]">Reservations</span>
-            <a href="mailto:reservas@grupo-extreme.com" class="text-xs md:text-sm lg:text-base hover:underline break-all">
+          <div class="flex flex-col min-w-0">
+            <span
+              class="text-[11px] md:text-xs uppercase opacity-60 tracking-[0.15em] leading-tight"
+            >
+              Reservations
+            </span>
+            <a
+              href="mailto:reservas@grupo-extreme.com"
+              class="text-sm md:text-base hover:underline break-all md:break-normal font-medium"
+            >
               reservas@grupo-extreme.com
             </a>
           </div>
         </div>
 
-        <div class="border border-white/20 p-4 md:p-5 flex items-center gap-4 md:gap-6 hover:bg-white/5 transition-all duration-300 group">
-          <div class="bg-white text-[#006083] p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+        <div
+          class="border border-white/20 p-3 md:p-5 flex items-center gap-4 hover:bg-white/5 transition-all duration-300 group"
+        >
+          <div
+            class="bg-white text-[#006083] p-2 md:p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform"
+          >
             <MessageSquare size={18} strokeWidth={2.5} />
           </div>
-          <div class="flex flex-col">
-            <span class="text-[10px] uppercase opacity-60 tracking-[0.2em]">Corporate</span>
-            <a href="mailto:info@extremeadventuringcancun.com" class="text-xs md:text-sm lg:text-base hover:underline break-all">
+          <div class="flex flex-col min-w-0">
+            <span
+              class="text-[11px] md:text-xs uppercase opacity-60 tracking-[0.15em] leading-tight"
+            >
+              Corporate
+            </span>
+            <a
+              href="mailto:info@extremeadventuringcancun.com"
+              class="text-sm md:text-base hover:underline break-all md:break-normal font-medium"
+            >
               info@extremeadventuringcancun.com
             </a>
           </div>
@@ -86,54 +129,93 @@ const socialMedia = [
       </div>
     </div>
 
-    <div class="lg:col-span-8 flex flex-row flex-wrap items-start justify-between gap-y-10 lg:pl-12">
-      
+    <div
+      class="lg:col-span-8 flex flex-row flex-wrap items-start justify-between gap-y-10 lg:pl-12"
+    >
       <div class="w-full lg:w-auto flex justify-center lg:block lg:-mt-4">
         <Logo_blanco class="h-20 lg:h-28 w-auto opacity-90" />
       </div>
 
       <div class="flex flex-col gap-4 w-1/2 lg:w-auto">
-        <h3 class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+        <h3
+          class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
+        >
           About
         </h3>
         <nav class="mt-4">
-          <ul class="flex flex-col gap-3 text-[11px] md:text-sm uppercase tracking-[0.15em] font-light">
-            {navFooter.map((item) => (
-              <li><a href={item.link} class="hover:text-cyan-300 transition-colors">{item.title}</a></li>
-            ))}
+          <ul
+            class="flex flex-col gap-3 text-[11px] md:text-sm uppercase tracking-[0.15em] font-light"
+          >
+            {
+              navFooter.map((item) => (
+                <li>
+                  <a
+                    href={item.link}
+                    class="hover:text-cyan-300 transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
       </div>
 
-      <div class="flex flex-col gap-4 w-[40%] lg:w-auto items-end lg:items-start">
-        <h3 class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit">
+      <div
+        class="flex flex-col gap-4 w-[40%] lg:w-auto items-end lg:items-start"
+      >
+        <h3
+          class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
+        >
           Follow Us
         </h3>
         <ul class="flex flex-col gap-4 mt-4 items-end lg:items-start">
-          {socialMedia.map(({ title, icon: Icon, link }) => (
-            <li>
-              <a href={link} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group">
-                <Icon size={20} className="group-hover:scale-110 transition-transform lg:order-none order-2" />
-                <span class="text-[11px] md:text-sm uppercase tracking-[0.1em] order-1 lg:order-none group-hover:opacity-70 transition-opacity">
-                  {title}
-                </span>
-              </a>
-            </li>
-          ))}
+          {
+            socialMedia.map(({ title, icon: Icon, link }) => (
+              <li>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-3 group"
+                >
+                  <Icon
+                    size={20}
+                    className="group-hover:scale-110 transition-transform lg:order-none order-2"
+                  />
+                  <span class="text-[11px] md:text-sm uppercase tracking-[0.1em] order-1 lg:order-none group-hover:opacity-70 transition-opacity">
+                    {title}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
 
-    <div class="lg:col-span-12 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
-      <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 text-center lg:text-left leading-relaxed">
+    <div
+      class="lg:col-span-12 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8"
+    >
+      <div
+        class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 text-center lg:text-left leading-relaxed"
+      >
         <p>© {currentYear} Cenote Adventuring Cancun. All Rights Reserved.</p>
         <p class="mt-1 text-white/20">Design By Grupo Extreme</p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium">
-        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-        <a href="#" class="hover:text-white transition-colors">Cookies Settings</a>
+      <div
+        class="flex flex-wrap justify-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium"
+      >
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a
+        >
+        <a href="#" class="hover:text-white transition-colors"
+          >Terms of Service</a
+        >
+        <a href="#" class="hover:text-white transition-colors"
+          >Cookies Settings</a
+        >
       </div>
     </div>
   </div>
