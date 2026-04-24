@@ -49,7 +49,9 @@ const socialMedia = [
   <div
     class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8"
   >
-    <div class="flex flex-col gap-6 lg:col-span-4">
+    <div
+      class="flex flex-col gap-6 lg:col-span-4 space-y-3 w-full max-w-md mx-auto"
+    >
       <h3
         class="font-serif text-lg md:text-xl tracking-[0.2em] uppercase border-b border-white/10 pb-4 w-fit"
       >
@@ -103,7 +105,6 @@ const socialMedia = [
             </a>
           </div>
         </div>
-
         <div
           class="border border-white/20 p-3 md:p-5 flex items-center gap-4 hover:bg-white/5 transition-all duration-300 group"
         >
@@ -130,13 +131,15 @@ const socialMedia = [
     </div>
 
     <div
-      class="lg:col-span-8 flex flex-row flex-wrap items-start justify-between gap-y-10 lg:pl-12"
+      class="lg:col-span-8 flex flex-row flex-wrap items-start gap-y-10 lg:pl-12"
     >
-      <div class="w-full lg:w-auto flex justify-center lg:block lg:-mt-4">
+      <div class="w-full lg:w-auto flex justify-center lg:block lg:mt-35">
         <Logo_blanco class="h-20 lg:h-28 w-auto opacity-90" />
       </div>
 
-      <div class="flex flex-col gap-4 w-1/2 lg:w-auto">
+      <div
+        class="flex flex-col gap-4 w-1/2 lg:w-auto lg:w-full lg:max-w-md lg:mx-auto"
+      >
         <h3
           class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
         >
@@ -163,8 +166,8 @@ const socialMedia = [
       </div>
 
       <div
-        class="flex flex-col gap-4 w-[40%] lg:w-auto items-end lg:items-start"
-      >
+        class="flex flex-col gap-4 items-end space-y-2 lg:w-5xl lg:-mt-80"
+      >   
         <h3
           class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
         >
@@ -195,28 +198,32 @@ const socialMedia = [
       </div>
     </div>
 
-    <div
-      class="lg:col-span-12 pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8"
-    >
-      <div
-        class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 text-center lg:text-left leading-relaxed"
-      >
-        <p>© {currentYear} Cenote Adventuring Cancun. All Rights Reserved.</p>
-        <p class="mt-1 text-white/20">Design By Grupo Extreme</p>
-      </div>
+<div class="lg:col-span-12 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+  
+  <div class="lg:col-span-4 flex flex-col gap-6">
+    
+    <div class="border-t border-white/10 w-full"></div>
 
-      <div
-        class="flex flex-wrap justify-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium"
-      >
-        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a
-        >
-        <a href="#" class="hover:text-white transition-colors"
-          >Terms of Service</a
-        >
-        <a href="#" class="hover:text-white transition-colors"
-          >Cookies Settings</a
-        >
-      </div>
+    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 text-center lg:text-left flex flex-col gap-2">
+      <p>© {currentYear} Cenote Adventuring Cancun. All Rights Reserved.</p>
+      <p class="text-white/20">Design By Grupo Extreme</p>
     </div>
+  </div>
+
+  <div class="lg:col-span-8 flex flex-col gap-6 lg:pl-12">
+    
+    <div class="border-t border-white/10 w-full"></div>
+
+    <div class="flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium h-full">
+      <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+      <a href="#" class="hover:text-white transition-colors">Cookies Settings</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</div>
   </div>
 </footer>
