@@ -54,20 +54,13 @@ const img = {};
         <div class="p-6 lg:p-8 flex flex-col gap-5 justify-between flex-grow">
           <div class="flex-1">
             <h3 class="font-serif text-2xl lg:text-3xl text-[#001524] mb-2">
-              Cenote Adventuring:
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.TITLE}
             </h3>
-            <p class="text-gray-600 mb-1 text-sm lg:text-base">
-              3 cenote boutique
-            </p>
             <p class="text-gray-600 mb-4 font-medium text-base lg:text-lg">
-              Experience, Mayan Show with snack
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.DESCRIPTION}
             </p>
-            <p class="text-[#006083] font-bold mb-6 text-lg lg:text-xl">
-              4 hours
-            </p>
-
             <ul class="hidden md:block space-y-3">
-              {features.map((item) => (
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.FEATURES.map((item) => (
                 <li class="flex items-center gap-2 text-sm lg:text-base text-gray-700">
                   <Check size={16} className="text-gray-400 shrink-0" />
                   {item}
@@ -129,20 +122,13 @@ const img = {};
         <div class="p-6 lg:p-8 flex flex-col gap-5 justify-between flex-grow">
           <div class="flex-1">
             <h3 class="font-serif text-2xl lg:text-3xl text-[#001524] mb-2">
-              Private Rental In Cancún:
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
             </h3>
-            <p class="text-gray-600 mb-1 text-sm lg:text-base">
-              Exclusive access
-            </p>
             <p class="text-gray-600 mb-4 font-medium text-base lg:text-lg">
-              Tailored experience for your group
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.DESCRIPTION}
             </p>
-            <p class="text-[#006083] font-bold mb-6 text-lg lg:text-xl">
-              4 hours
-            </p>
-
             <ul class="hidden md:block space-y-3">
-              {features.map((item) => (
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.FEATURES.map((item) => (
                 <li class="flex items-center gap-2 text-sm lg:text-base text-gray-700">
                   <Check size={16} className="text-gray-400 shrink-0" />
                   {item}

@@ -1,6 +1,7 @@
 ---
 import { getI18N } from "@/i18n";
 import Layout from "@/layouts/BaseLayout.astro";
+import BtnModalBokun from "@/components/others/BtnBokun";
 import { getIKUrl } from "@/lib/imagekit";
 import {
   Star,
@@ -88,6 +89,15 @@ const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const images = {
   card1: "Cenote-Adventuring/CenoteA.3.webp",
   card2: "Cenote-Adventuring/Card.1.webp",
+  logoCenote: "/Cenote-Adventuring/Logo-cenote.svg",
+};
+
+const dataForm = {
+  bookingChannel: "1e6b5f4a-008a-4afb-879f-7a26209e23e6",
+  idCalendar: "898507",
+  title: "Book your Experience",
+  btnBook: "Check Availability",
+  btnCloseText: "Close",
 };
 
 const getUrl = (id: string, w = 800) =>
@@ -283,9 +293,9 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
           <hr class="border-black/50 w-full" />
         </div>
 
-        <div class="lg:col-span-4 mt-20">
+       <div class="hidden lg:block lg:col-span-4 lg:mt-25">
           <div
-            class="bg-gray-50 p-5 border border-gray-200 shadow-sm text-center"
+            class="bg-gray-50 p-5 border border-gray-200 shadow-sm text-center sticky top-24"
           >
             <div class="mb-6">
               <p class="text-sm md:text-base text-gray-400 line-through">
@@ -323,12 +333,50 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                 <p class="text-lg font-bold text-[#001524]">$64 USD</p>
               </div>
             </div>
+            <BtnModalBokun client:visible data={dataForm} isSticky={false} />
+          </div>
+        </div>
+        <!-- terminacion de card pricing -->
 
-            <button
-              class="w-full mt-6 bg-[#006083] text-white py-3 rounded-lg font-semibold hover:bg-[#006083] transition-colors"
-            >
-              Check Availability
-            </button>
+        <!-- empieza funcionalidad para movil -->
+        <div class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
+          <div
+            class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5"
+          >
+            <div class="flex items-start gap-4 mb-1">
+              <div class="flex-shrink-0 w-20">
+                <img
+                  src={getUrl(images.logoCenote)}
+                  alt="Cenote Adventuring Logo"
+                  class="w-full h-auto object-contain"
+                />
+              </div>
+
+              <div class="flex flex-col flex-grow pt-1">
+                <p class="text-black font-normal text-xs mb-1">
+                  Cenote Adventuring
+                </p>
+
+                <p class="text-gray-300 text-xs font-light mb-1">Price from</p>
+
+                <div class="flex items-baseline gap-1 mb-1">
+                  <span class="text-black font-bold text-2xl tracking-tight">
+                    $56 USD
+                  </span>
+                  <span class="text-gray-300 text-[10px] font-light">
+                    per person
+                  </span>
+                </div>
+
+                <p class="text-gray-300 text-[10px] font-light">
+                  Booking 30 days before.
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full">
+              <BtnModalBokun client:load data={dataForm} variant="sticky" />
+            </div>
           </div>
         </div>
       </div>
