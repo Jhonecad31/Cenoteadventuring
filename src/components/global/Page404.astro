@@ -1,36 +1,76 @@
 ---
 import { getI18N } from "@/i18n";
 import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
-
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import BtnHome from "../others/BtnHome";
 
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const i18n = getI18N({ currentLocale }) as any;
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
 const seoMetaDatos = {
-    title: i18n.NOT_FOUND_PAGE.TITLE,
+    title: i18n.NOT_FOUND_PAGE?.TITLE || "404 - Page Not Found",
     robots: "noindex, nofollow",
 };
 ---
 
-<BaseLayout seo={seoMetaDatos}>
-    <section
-        class="container mx-auto flex flex-col items-center text-center my-5 lg:mb-24 lg:mt-10"
+<BaseLayout seo={seoMetaDatos} class="">
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#F8FAFC]">
+    
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
+        <span class="text-[30rem] font-bold">404</span>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-2xl mx-auto text-center">
+        
+        <span class="text-[#006083] font-serif italic text-8xl md:text-9xl block mb-4">
+          404
+        </span>
+
+        <h1 class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight mb-6">
+          {i18n.NOT_FOUND_PAGE?.TITLE}
+        </h1>
+
+        <div class="w-16 h-[1px] bg-[#006083]/30 mx-auto mb-8"></div>
+
+        <p class="text-[#001524]/60 text-lg md:text-xl leading-relaxed mb-12 max-w-md mx-auto">
+          {i18n.NOT_FOUND_PAGE?.DESCRIPTION}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href={translatePath("/")} class="group relative inline-flex items-center justify-center">
+    <button
+      class="bg-[#006083] text-white rounded-full px-10 h-14 uppercase tracking-[0.3em] text-[11px] font-bold transition-all duration-500 hover:bg-[#006083] hover:shadow-[0_10px_20px_rgba(0,96,131,0.2)] hover:-translate-y-1 active:scale-95"
     >
-        <div class="w-full md:w-3/5 my-20 px-6">
-            {i18n.NOT_FOUND_PAGE.TITLE}
-            {i18n.NOT_FOUND_PAGE.DESCRIPTION}
-            <div class="mt-10">
-                <BtnHome
-                    client:visible
-                    text={i18n.ACCESSIBILITY.GO_TO_HOME}
-                    url={translatePath("/")}
-                />
-            </div>
+      {i18n.ACCESSIBILITY?.GO_TO_HOME || "Back to Home"}
+    </button>
+    
+    <div class="absolute -inset-1 bg-gradient-to-r from-[#006083] to-[#00A3C4] rounded-full blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+  </a>
+          
+          <a 
+            href={translatePath("/contact")} 
+            class="text-[#006083] uppercase tracking-[0.2em] text-xs font-bold border-b border-[#006083]/20 pb-1 hover:border-[#006083] transition-all"
+          >
+            {i18n.nav?.contact || "Contact support"}
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  /* Animación suave para la entrada */
+  section {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
