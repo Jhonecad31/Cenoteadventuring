@@ -2,7 +2,6 @@
 import { getI18N } from "@/i18n";
 import Layout from "@/layouts/BaseLayout.astro";
 import BtnModalBokun from "@/components/others/BtnBokun";
-import { getIKUrl } from "@/lib/imagekit";
 import {
   Star,
   Clock,
@@ -28,20 +27,20 @@ import {
   Cancun_horse,
 } from "@/icons/allIcons";
 import TagH3 from "@/components/global/TagH3.astro";
+
 const iconMap: Record<string, any> = {
   Beach_taco: Beach_taco,
   Extreme_adventuring: Extreme_adventuring,
   Snorkeling: Snorkeling,
   Cancun_horse: Cancun_horse,
 };
+
 const tour = {
   title: "Private Cenote Rental In Cancun",
-  tagline:
-    "Exclusive Experience at 3 Private Cenotes with a Mayan Show and Snacks",
+  tagline: "Exclusive Experience at 3 Private Cenotes with a Mayan Show and Snacks",
   rating: 4.8,
   reviews: 1982,
-  description:
-    "Cenote Adventuring® is part of Grupo Extreme®, which offers five of Mexico's most award-winning and highly rated culinary and adventure experiences.",
+  description: "Cenote Adventuring® is part of Grupo Extreme®...",
   inclusions: [
     { text: "Conservation Fee (Included)", inc: true },
     { text: "Round-trip transportation", inc: true },
@@ -54,38 +53,13 @@ const tour = {
 };
 
 const relatedActivities = [
-  {
-    name: "Taco Tour",
-    image: "Cenote-Adventuring/tacotaco.webp",
-    slug: "beach-taco-tour",
-    iconKey: "Beach_taco",
-    link: "https://extremeadventurecancun.com/city-taco-tour-puerto-morelos/",
-  },
-  {
-    name: "Extreme Adventuring",
-    image: "Cenote-Adventuring/motomoto.webp",
-    slug: "extreme-adventuring",
-    iconKey: "Extreme_adventuring",
-    link: "https://extremeadventurecancun.com/extreme-adventuring-atv-in-cancun/",
-  },
-  {
-    name: "Snorkel Adventuring",
-    image: "Cenote-Adventuring/snorkelsnorkel.webp",
-    slug: "snorkel-adventuring",
-    iconKey: "Snorkeling",
-    link: "https://extremeadventurecancun.com/extreme-snorkeling-cancun/",
-  },
-  {
-    name: "Extreme Horseback Riding",
-    image: "Cenote-Adventuring/Horse.webp",
-    slug: "extreme-adventuring-horse-back-riding",
-    iconKey: "Cancun_horse",
-    link: "https://extremeadventurecancun.com/extreme-adventuring-horse-back-riding/",
-  },
+  { name: "Taco Tour", image: "Cenote-Adventuring/tacotaco.webp", slug: "beach-taco-tour", iconKey: "Beach_taco", link: "https://extremeadventurecancun.com/city-taco-tour-puerto-morelos/" },
+  { name: "Extreme Adventuring", image: "Cenote-Adventuring/motomoto.webp", slug: "extreme-adventuring", iconKey: "Extreme_adventuring", link: "https://extremeadventurecancun.com/extreme-adventuring-atv-in-cancun/" },
+  { name: "Snorkel Adventuring", image: "Cenote-Adventuring/snorkelsnorkel.webp", slug: "snorkel-adventuring", iconKey: "Snorkeling", link: "https://extremeadventurecancun.com/extreme-snorkeling-cancun/" },
+  { name: "Extreme Horseback Riding", image: "Cenote-Adventuring/Horse.webp", slug: "extreme-adventuring-horse-back-riding", iconKey: "Cancun_horse", link: "https://extremeadventurecancun.com/extreme-adventuring-horse-back-riding/" },
 ];
 
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
-
 const images = {
   card1: "Cenote-Adventuring/CenoteA.3.webp",
   card2: "Cenote-Adventuring/Card.1.webp",
@@ -100,9 +74,7 @@ const dataForm = {
   btnCloseText: "Close",
 };
 
-const getUrl = (id: string, w = 800) =>
-  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
-
+const getUrl = (id: string, w = 800) => `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
 const { currentLocale } = Astro.props;
 const i18n = getI18N({ currentLocale });
 const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
@@ -110,30 +82,19 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
 
 <Layout title={tour.title}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
-    <section
-      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
-    >
+    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
       <mux-player
         playback-id={Mux_playback_Id}
-        autoplay
-        muted
-        loop
-        playsinline
-        no-controls
-        preload="auto"
+        autoplay muted loop playsinline no-controls preload="auto"
         class="hero-video brightness-[0.2]"></mux-player>
       <div class="relative z-10 text-center text-white px-6">
-        <h1
-          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
-        >
+        <h1 class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg">
           {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.TITLE}
         </h1>
         <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
           {i18n.DETAIL_PAGE.REGULAR_CENOTE.HERO.DESCRIPTION}
         </p>
-        <div
-          class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
-        >
+        <div class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3">
           <Star className="text-yellow-400 fill-yellow-300" size={15} />
           <span class="font-bold text-[#ffffff]"> {tour.rating}</span>
           <span class="text-white">({tour.reviews} reviews)</span>
@@ -142,268 +103,83 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
     </section>
 
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
-      <div
-        class="grid grid-cols-1 lg:grid-cols-12 lg:gap-24 items-center justify-center"
-      >
-        <div
-          class="relative lg:col-span-7 relative h-[450px] md:h-[600px] w-full"
-        >
-          <div
-            class="absolute top-0 left-4 w-[60%] h-[80%] overflow-hidden shadow-lg z-10"
-          >
-            <img
-              src={getUrl(images.card1, 800)}
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              alt="Tirolesa en Cenote Adventure"
-              loading="lazy"
-            />
+      <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-24 items-center justify-center">
+        <div class="relative lg:col-span-7 h-[450px] md:h-[600px] w-full">
+          <div class="absolute top-0 left-4 w-[60%] h-[80%] overflow-hidden shadow-lg z-10">
+            <img src={getUrl(images.card1, 800)} class="w-full h-full object-cover" alt="Cenote" loading="lazy" />
           </div>
-          <div
-            class="absolute bottom-4 right-4 w-[60%] h-[80%] overflow-hidden shadow-2xl z-20"
-          >
-            <img
-              src={getUrl(images.card2, 800)}
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              alt="Private Rental Experience"
-              loading="lazy"
-            />
+          <div class="absolute bottom-4 right-4 w-[60%] h-[80%] overflow-hidden shadow-2xl z-20">
+            <img src={getUrl(images.card2, 800)} class="w-full h-full object-cover" alt="Private" loading="lazy" />
           </div>
         </div>
-
         <div class="lg:col-span-5 flex flex-col">
           <hr class="border-black/50 w-full mb-6" />
-
-          <h2
-            class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 leading-tight"
-          >
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.TITLE}
-          </h2>
-
-          <p
-            class="text-gray-600 leading-relaxed text-base md:text-lg font-light max-w-prose"
-          >
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.DESCRIPTION}
-          </p>
-
+          <h2 class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 leading-tight">{i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.TITLE}</h2>
+          <p class="text-gray-600 leading-relaxed text-base md:text-lg font-light max-w-prose">{i18n.DETAIL_PAGE.REGULAR_CENOTE.INTRO.DESCRIPTION}</p>
           <hr class="border-black/50 w-full mt-6" />
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto max-w-screen-2xl px-6">
-      <div class="grid grid-cols-1 gap-20 items-start">
-        <div class="lg:col-span-8 space-y-6">
-          <div
-            class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16"
-          >
-            <div
-              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
-            >
-              <Clock size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >{i18n.DETAIL_PAGE.GENERAL.HOURS} ({
-                    i18n.DETAIL_PAGE.GENERAL.APPROX
-                  })</span
-                >
-              </div>
-            </div>
-
-            <div
-              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
-            >
-              <Users size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >Min. Age</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >5 years+</span
-                >
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
-            >
-              <Calendar size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.SCHEDULE}</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >09:00 | 13:00</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col items-center text-center gap-3 px-2">
-              <Truck size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.ROUNDTRIP_TRANSPORTATION}</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >Included</span
-                >
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <section class="mx-auto max-w-screen-2xl px-6 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+        
         <div class="lg:col-span-8 space-y-6">
-          <h2
-            class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
-          >
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.TITLE}
-          </h2>
-          <div
-            class="text-gray-600 leading-relaxed text-base md:text-lg font-light space-y-5"
-          >
+          <div class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16">
+            <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2">
+              <Clock size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">{i18n.DETAIL_PAGE.GENERAL.DURATION}</span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800">{i18n.DETAIL_PAGE.GENERAL.HOURS}</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2">
+              <Users size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">Min. Age</span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800">5 years+</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2">
+              <Calendar size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">{i18n.DETAIL_PAGE.GENERAL.SCHEDULE}</span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800">09:00 | 13:00</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center text-center gap-3 px-2">
+              <Truck size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">Transport</span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800">Included</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight">{i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.TITLE}</h2>
+          <div class="text-gray-600 leading-relaxed text-base md:text-lg font-light space-y-5">
             <p>{i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.DESCRIPTION1}</p>
             <p>{i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW.DESCRIPTION2}</p>
           </div>
-          <h2
-            class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
-          >
-            {
-              i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW
-                .WHY_EXPLORE_CENOTES_CANCUN.TITLE
-            }
-          </h2>
-          <div
-            class="text-gray-600 leading-relaxed text-base md:text-lg font-light space-y-5"
-          >
-            <p>
-              {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW
-                  .WHY_EXPLORE_CENOTES_CANCUN.DESCRIPTION
-              }
-            </p>
-          </div>
+          
           <hr class="border-black/50 w-full" />
-        </div>
-
-       <div class="hidden lg:block lg:col-span-4 lg:mt-25">
-          <div
-            class="bg-gray-50 p-5 border border-gray-200 shadow-sm text-center sticky top-24"
-          >
-            <div class="mb-6">
-              <p class="text-sm md:text-base text-gray-400 line-through">
-                Price from $80 USD
-              </p>
-              <div class="text-4xl font-bold text-[#001524]">$70 USD</div>
-              <p class="text-sm text-gray-500">per person</p>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3">
-              <div
-                class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm"
-              >
-                <span
-                  class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2"
-                  >10% OFF</span
-                >
-                <p
-                  class="text-[10px] uppercase tracking-wider text-gray-500 mb-1"
-                >
-                  15 days before
-                </p>
-                <p class="text-lg font-bold text-[#001524]">$72 USD</p>
-              </div>
-              <div
-                class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm"
-              >
-                <span
-                  class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2"
-                  >20% OFF</span
-                >
-                <p class="text-[10px] tracking-wider text-gray-500 mb-1">
-                  30 days before
-                </p>
-                <p class="text-lg font-bold text-[#001524]">$64 USD</p>
-              </div>
-            </div>
-            <BtnModalBokun client:visible data={dataForm} isSticky={false} />
-          </div>
-        </div>
-        <!-- terminacion de card pricing -->
-
-        <!-- empieza funcionalidad para movil -->
-        <div class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
-          <div
-            class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5"
-          >
-            <div class="flex items-start gap-4 mb-1">
-              <div class="flex-shrink-0 w-20">
-                <img
-                  src={getUrl(images.logoCenote)}
-                  alt="Cenote Adventuring Logo"
-                  class="w-full h-auto object-contain"
-                />
-              </div>
-
-              <div class="flex flex-col flex-grow pt-1">
-                <p class="text-black font-normal text-xs mb-1">
-                  Cenote Adventuring
-                </p>
-
-                <p class="text-gray-300 text-xs font-light mb-1">Price from</p>
-
-                <div class="flex items-baseline gap-1 mb-1">
-                  <span class="text-black font-bold text-2xl tracking-tight">
-                    $56 USD
-                  </span>
-                  <span class="text-gray-300 text-[10px] font-light">
-                    per person
-                  </span>
-                </div>
-
-                <p class="text-gray-300 text-[10px] font-light">
-                  Booking 30 days before.
-                </p>
-              </div>
-            </div>
-
-            <div class="w-full">
-              <BtnModalBokun client:load data={dataForm} variant="sticky" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="max-w-screen-2xl mx-auto px-6 mt-8">
-      <div class="divide-y divide-gray-200 border-t border-b border-gray-200">
-        <details class="group py-6" open>
-          <summary
-            class="flex justify-between items-center cursor-pointer list-none"
-          >
-            <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-              {i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.TITLE}
-            </span>
-            <div
-              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-            >
-              <ChevronRight className="rotate-90 text-gray-500" size={20} />
-            </div>
-          </summary>
-          <div class="mt-8 rounded-lg lg:col-span-3">
+          
+          <div class="divide-y divide-gray-200">
+             <details class="group py-6" open>
+               <summary class="flex justify-between items-center cursor-pointer list-none">
+                 <span class="text-2xl md:text-3xl font-serif text-[#001524]">{i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.TITLE}</span>
+                 <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300">
+                   <ChevronRight className="rotate-90 text-gray-500" size={20} />
+                 </div>
+               </summary>
+               <div class="mt-8 rounded-lg lg:col-span-3">
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
               {
                 i18n.DETAIL_PAGE.REGULAR_CENOTE.INCLUSIONS.INCLUDES.map(
                   (text) => (
                     <li class="flex items-start gap-3">
                       <Check
-                        className="text-green-600 mt-1 shrink-0"
+                        className="text-[#006083] mt-1 shrink-0"
                         size={20}
                       />
                       <span
@@ -431,15 +207,14 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               }
             </ul>
           </div>
-        </details>
-
-        <details class="group py-6">
+             </details>
+             <details class="group py-6">
           <summary
             class="flex justify-between items-center cursor-pointer list-none"
           >
             <span class="text-2xl md:text-3xl font-serif text-[#001524]"
               >{
-                i18n.DETAIL_PAGE.REGULAR_CENOTE
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE
                   .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.TITLE
               }</span
             >
@@ -452,7 +227,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
           <div class="mt-4 text-gray-600 leading-relaxed font-light">
             <p>
               {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE
                   .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.DESCRIPTION
               }
             </p>
@@ -489,265 +264,104 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
             </div>
           </div>
         </details>
-
-        <details class="group py-6">
-          <summary
-            class="flex justify-between items-center cursor-pointer list-none"
-          >
-            <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-              {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_YOU_SHOULD_KNOW.TITLE}
-            </span>
-            <div
-              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-            >
-              <ChevronRight className="rotate-90 text-gray-500" size={20} />
+          </div>
+        </div>
+        <aside class="hidden lg:block lg:col-span-4 lg:mt-0">
+          <div class="bg-gray-50 p-5 border border-gray-200 shadow-sm text-center sticky top-24">
+            <div class="mb-6">
+              <p class="text-sm md:text-base text-gray-400 line-through">Price from $80 USD</p>
+              <div class="text-4xl font-bold text-[#001524]">$70 USD</div>
+              <p class="text-sm text-gray-500">per person</p>
             </div>
-          </summary>
-          <div class="mt-8">
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_YOU_SHOULD_KNOW.LIST.map(
-                  (item) => (
-                    <li class="flex items-start gap-3">
-                      <Info className="text-gray-400 mt-1 shrink-0" size={18} />
-                      <span class="text-gray-600 font-light text-sm md:text-base">
-                        {item}
-                      </span>
-                    </li>
-                  ),
-                )
-              }
-            </ul>
+
+            <div class="grid grid-cols-2 gap-3 mb-6">
+              <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                <span class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2">10% OFF</span>
+                <p class="text-lg font-bold text-[#001524]">$72 USD</p>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                <span class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2">20% OFF</span>
+                <p class="text-lg font-bold text-[#001524]">$64 USD</p>
+              </div>
+            </div>
+            <BtnModalBokun client:visible data={dataForm} isSticky={false} />
           </div>
-        </details>
-
-        <div class="group py-6">
-          <h2 class="text-2xl md:text-3xl font-serif mt-20">
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING.TITLE}
-          </h2>
-          <div
-            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-          >
-          </div>
-        </div>
-
-        <!-- to bring -->
-        <div class="mt-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-            {
-              Object.entries(i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING)
-                .filter(([key]) => key !== "TITLE")
-                .map(([key, value]) => {
-                  let Icon = Shirt;
-                  if (key === "SUNSCREEN") Icon = Sun;
-                  if (key === "TOWEL" || key === "CLOTHES") Icon = Wind;
-                  if (key === "SWIMSUIT") Icon = Waves;
-                  if (key === "SHOES") Icon = Footprints;
-                  if (key === "CASH") Icon = Wallet;
-                  if (key === "REPELLENT") Icon = Bug;
-
-                  return (
-                    <div class="flex items-start gap-5 group p-2 transition-all">
-                      {/* Contenedor del Icono más compacto */}
-                      <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
-                        <Icon
-                          className="text-[#006083] group-hover:text-white transition-colors duration-300"
-                          size={24}
-                        />
-                      </div>
-
-                      {/* Contenedor de Información */}
-                      <div class="flex flex-col justify-center">
-                        <h2 class="font-serif text-lg text-[#001524] font-semibold mb-1">
-                          {value.TITLE}
-                        </h2>
-                        <p class="text-sm text-gray-500 leading-relaxed max-w-md">
-                          {value.DESCRIPTION}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })
-            }
-          </div>
-        </div>
-        <!-- to bring fin -->
+        </aside>
       </div>
-      <div class="group py-6 mt-28">
-        <summary
-          class="flex justify-between items-center cursor-pointer list-none"
-        >
-          <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-            FAQs
-          </span>
-        </summary>
+    </section>
 
-        <div class="mt-8 flex flex-col gap-4 mx-auto">
-          {/* Contenedor con espacio entre tarjetas */}
-          {
-            i18n.HOME_PAGE.FAQS.FAQS.map(
-              (faq: { question: unknown; answer: unknown }, index: any) => (
-                <details
-                  key={index}
-                  class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
-                >
-                  <summary class="flex justify-between items-center cursor-pointer list-none p-10 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
-                    <span class="pr-4">{faq.question}</span>
-                    <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                      <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
-                        +
-                      </span>
-                    </div>
-                  </summary>
+    <div class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
+      <div class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5">
+        <div class="flex items-start gap-4 mb-1">
+          <div class="flex-shrink-0 w-20">
+            <img src={getUrl(images.logoCenote)} alt="Logo" class="w-full h-auto object-contain" />
+          </div>
+          <div class="flex flex-col flex-grow pt-1">
+            <p class="text-black font-normal text-xs mb-1">Cenote Adventuring</p>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="text-black font-bold text-2xl tracking-tight">$56 USD</span>
+              <span class="text-black/65 text-[10px] font-light">per person</span>
+            </div>
+          </div>
+        </div>
+        <BtnModalBokun client:load data={dataForm} variant="sticky" />
+      </div>
+    </div>
 
-                  <div class="px-6 pb-6 animate-fade-in">
-                    <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
-                      {faq.answer}
-                    </p>
+    <section class="bg-[#F8FAFC] py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="swiper mySwiper pb-12">
+          <div class="swiper-wrapper">
+            {relatedActivities.map((activity) => (
+              <div class="swiper-slide">
+                <a href={`/activities/${activity.slug}/`} class="group block">
+                  <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                    <img src={getUrl(activity.image, 600)} alt={activity.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
-                </details>
-              ),
-            )
-          }
+                  <h3 class="font-serif text-xl text-[#001524] mb-2">{activity.name}</h3>
+                </a>
+              </div>
+            ))}
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Recomendaciones de otros productos -->
-  <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
-        <p class="text-gray-500 max-w-2xl mx-auto"></p>
-      </div>
-
-      <div class="swiper mySwiper pb-12">
-        <div class="swiper-wrapper">
-          {
-            relatedActivities.map((activity) => {
-              const IconComponent = iconMap[(activity as any).iconKey];
-              return (
-                <div class="swiper-slide">
-                  <a href={`/activities/${activity.slug}/`} class="group block">
-                    <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                    <img
-                        src={getUrl(activity.image, 600)}
-                        alt={activity.name}
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      {IconComponent && (
-                        <div class="absolute bottom-4 left-4 p-2.5 rounded-lg flex items-center justify-center">
-                          <div class="w-25 h-25 lg:w-25 lg:h-25 flex items-center justify-center">
-                            <IconComponent className="w-full h-full" />
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <div class="text-left">
-                      <h3 class="font-serif text-xl text-[#001524] mb-2">
-                        {activity.name}
-                      </h3>
-                      <a href={activity.link} target="_blank">
-                        <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
-                          Discover more{""}
-                          <ChevronRight
-                            size={14}
-                            className="group-hover:translate-x-1 transition-transform"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  </a>
-                </div>
-              );
-            })
-          }
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
 </Layout>
 
 <style>
   @import "swiper/css";
   @import "swiper/css/pagination";
-  .swiper-pagination-bullet-active {
-    background: #005b71 !important;
-  }
-
-  .swiper-slide {
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .swiper-slide-active {
-    opacity: 1;
-  }
-
-  @media (min-width: 1024px) {
-    .swiper-slide {
-      opacity: 1 !important;
-      transform: scale(1) !important; /* Por si también se veían pequeños */
-    }
-  }
+  .swiper-pagination-bullet-active { background: #005b71 !important; }
+  .swiper-slide { opacity: 0.5; transition: opacity 0.3s ease; }
+  .swiper-slide-active { opacity: 1; }
+  @media (min-width: 1024px) { .swiper-slide { opacity: 1 !important; } }
+  
   mux-player {
     position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    --controls: none;
-    --media-object-fit: cover;
+    inset: 0; width: 100vw; height: 100vh;
+    z-index: 0; --controls: none; --media-object-fit: cover;
   }
-
-  mux-player::part(video) {
-    width: 100vw !important;
-    height: 100vh !important;
-    object-fit: cover !important;
-  }
+  mux-player::part(video) { width: 100vw !important; height: 100vh !important; object-fit: cover !important; }
 </style>
 
 <script>
   import Swiper from "swiper";
   import { Autoplay, Pagination } from "swiper/modules";
   import "@mux/mux-player";
-  let swiperInstance: Swiper | null = null;
 
   function initSwiper() {
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-    }
-    const swiperEl = document.querySelector(".mySwiper");
-    if (!swiperEl) return;
-
-    swiperInstance = new Swiper(".mySwiper", {
+    new Swiper(".mySwiper", {
       modules: [Pagination, Autoplay],
       slidesPerView: 1.2,
       spaceBetween: 20,
       loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", clickable: true },
       breakpoints: {
-        // Móvil / Tablet pequeña
-        640: {
-          slidesPerView: 2.2,
-          spaceBetween: 20,
-        },
-        // Desktop (lg)
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-          allowTouchMove: false,
-          loop: false,
-        },
+        640: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 4, allowTouchMove: false, loop: false },
       },
     });
   }
