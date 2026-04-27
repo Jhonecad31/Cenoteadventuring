@@ -85,6 +85,12 @@ const relatedActivities = [
 ];
 
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
+const priceFrom = 115;
+const countStars = 4.7;
+const duration = 4;
+const minimumAge = 5;
+const reviewsCount = "325";
+const reviewsNumber = 325;
 const images = {
   card1: "Cenote-Adventuring/CenoteA.3.webp",
   card2: "Cenote-Adventuring/Card.1.webp",
@@ -198,7 +204,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                   >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >{i18n.DETAIL_PAGE.GENERAL.HOURS}</span
+                  > {duration} {i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX}) </span
                 >
               </div>
             </div>
@@ -209,11 +215,9 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               <div class="flex flex-col">
                 <span
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >Min. Age</span
+                  >{i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}</span
                 >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >5 years+</span
-                >
+               {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
               </div>
             </div>
             <div
@@ -226,7 +230,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                   >{i18n.DETAIL_PAGE.GENERAL.SCHEDULE}</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >09:00 | 13:00</span
+                  >{i18n.DETAIL_PAGE.REGULAR_CENOTE.SCHEDULES.SCHEDULE_LIST}</span
                 >
               </div>
             </div>
@@ -235,10 +239,10 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               <div class="flex flex-col">
                 <span
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >Transport</span
+                  >{i18n.DETAIL_PAGE.GENERAL.TRANSPORTATION}</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >Included</span
+                  >{i18n.DETAIL_PAGE.GENERAL.ROUNDTRIP_TRANSPORTATION}</span
                 >
               </div>
             </div>

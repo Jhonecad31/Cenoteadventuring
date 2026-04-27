@@ -14,19 +14,16 @@ const videoUrl = `https://stream.mux.com/{TU_PLAYBACK_ID}/high.mp4`;
 const posterUrl = `https://image.mux.com/${Mux_playback_Id}/thumbnail.jpg?time=1&width=1920`;
 ---
 
-<section
-  class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden"
->
+<section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
   <mux-player
-  playback-id={Mux_playback_Id}
-  autoplay
-  muted
-  loop
-  playsinline
-  no-controls
-  preload="auto"
-  class="hero-video brightness-[0.2]"
-></mux-player>
+    playback-id={Mux_playback_Id}
+    autoplay
+    muted
+    loop
+    playsinline
+    no-controls
+    preload="auto"
+    class="hero-video brightness-[0.2]"></mux-player>
 
   <div
     class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center gap-8 sm:gap-10"
@@ -48,12 +45,11 @@ const posterUrl = `https://image.mux.com/${Mux_playback_Id}/thumbnail.jpg?time=1
         <Button
           className="bg-[#006083] text-white rounded-md px-12 h-14 uppercase tracking-[0.3em] text-[10px] md:text-xs border border-white/10 transition-all duration-500 shadow-xl"
         >
-          {i18n.HOME_PAGE?.HERO?.BUTTON || "Discover Our Journeys"}
+          {i18n.HOME_PAGE.HERO.DES}
         </Button>
       </a>
     </div>
   </div>
-  
 </section>
 
 <script>
@@ -62,18 +58,18 @@ const posterUrl = `https://image.mux.com/${Mux_playback_Id}/thumbnail.jpg?time=1
 
 <style>
   mux-player {
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  --controls: none;
-  --media-object-fit: cover;
-}
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    --controls: none;
+    --media-object-fit: cover;
+  }
 
-mux-player::part(video) {
-  width: 100vw !important;
-  height: 100vh !important;
-  object-fit: cover !important;
-}
+  mux-player::part(video) {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+  }
 </style>

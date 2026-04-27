@@ -71,8 +71,9 @@
   "HOME_PAGE": {
     "HERO": {
       "TITLE": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
-      "DESCRIPTION 1": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
-      "DESCRIPTION 2": ""
+       "TITLE2": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
+      "DESCRIPTION1": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
+      "DES": "Discover Our Journeys"
     },
     "AWARDS": {
       "TITLE": "Awards & Recognitions",
