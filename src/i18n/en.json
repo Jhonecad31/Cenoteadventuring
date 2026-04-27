@@ -517,27 +517,22 @@
       "FAQS": {
         "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
         "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
-        "CARD_CONTACT": {
-          "TITLE": "Need More Information?",
-          "DESCRIPTION": "Whether it's a special request or a custom private itinerary, our team of experts is ready to help you plan the perfect experience.",
-          "BUTTON": "Contact us"
-        },
         "FAQS": [
           {
-            "question": "How many cenotes are included in the tour?",
-            "answer": "The experience typically includes visits to multiple cenotes along the Ruta de los Cenotes, depending on your selected package and preferences."
+            "question": "What is a cenote and why is it special to explore in Cancun?",
+            "answer": "A cenote is a natural sinkhole filled with freshwater, formed by the collapse of limestone bedrock. In Cancun and the Riviera Maya, cenotes are unique because they connect to underground rivers and offer crystal-clear waters perfect for swimming, snorkeling, and diving. They also hold cultural significance in the ancient Mayan civilization."
           },
           {
-            "question": "Is this tour suitable for beginners?",
-            "answer": "Yes! No prior experience is needed. The tour is designed for all levels, making it one of the best things to do in Puerto Morelos for beginners."
+            "question": "Do I need to be an experienced swimmer to enjoy a cenote adventure?",
+            "answer": "No, you don’t need advanced swimming skills. Cenote adventures are suitable for all levels. Life jackets are provided, and shallow areas are available for beginners. Guides are always present to ensure safety and comfort for every visitor."
           },
           {
-            "question": "How far is Puerto Morelos from Cancun?",
-            "answer": "Puerto Morelos is located about 20–30 minutes from Cancun, making it an easy and convenient destination for a cenote tour Cancun."
+            "question": "What should I bring for a cenote adventure in Cancun?",
+            "answer": "We recommend bringing a swimsuit, biodegradable sunscreen, a towel, and water shoes for comfort. Since most tours provide helmets, life jackets, and snorkeling gear, you only need to pack essentials to enjoy your cenote experience."
           },
           {
-            "question": "What should I bring for the cenote tour?",
-            "answer": "Bring swimwear, biodegradable sunscreen, a towel, and comfortable clothing. Everything else will be provided for your cenote Puerto Morelos experience. "
+            "question": "Are cenote tours in Cancun family-friendly?",
+            "answer": "Yes, cenote adventures are family-friendly and suitable for children, teens, and adults. With guided tours, safe swimming areas, and kid-sized life jackets, families can explore these natural wonders together while enjoying a fun and educational experience. "
           }
         ]
       }
@@ -584,6 +579,9 @@
       "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
         "TITLE": "A True Private Group Tour, Not a Shared Experience.",
         "DESCRIPTION": "This is not a modified group excursion; it is a dedicated private tour where your group is the only one on-site. No waiting times, no fixed schedules, and no mixed groups.",
+        "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
+         "TITLE": "The unique features of our cenote tour",
+         "DESCRIPTION": "Our Private Cenote Rental stands out by offering a 100% exclusive experience, tailored entirely to your group's pace and preferences:",
         "THE_UNIQUE_FEATURES_LIST": [
           {
             "TITLE": "Waterfalls and Jumping Platforms",
@@ -616,34 +614,37 @@
         "Please contact us in advance to coordinate your specific pickup time."
       ]
     },
-    "WHAT_TO_BRING": {
-      "TITLE": "What to bring?",
-      "LIST": [
-        "Biodegradable Sunscreen (mandatory for ecosystem protection).",
-        "Biodegradable Insect Repellent.",
-        "Sandals or comfortable water shoes (No flip-flops recommended for jungle paths).",
-        "Towel and Bathing Suit.",
-        "Change of clothes.",
-        "Camera (perfect for private photo sessions).",
-        "Extra cash for souvenirs or tips."
-      ],
-      "SWIMSUIT": {
-        "TITLE": "Swimsuit",
-        "DESCRIPTION": "For your comfort and ease of movement while snorkeling."
+   "WHAT_TO_BRING": {
+        "TITLE": "What to bring for your cenote adventure",
+        "SUNSCREEN": {
+          "TITLE": "Biodegradable Sunscreen",
+          "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
+        },
+        "SHOES": {
+          "TITLE": "Comfortable Shoes",
+          "DESCRIPTION": "Sandals or closed shoes are recommended for walking on uneven terrain (No flip flops)."
+        },
+        "TOWEL": {
+          "TITLE": "Towel",
+          "DESCRIPTION": "Essential to dry off and stay comfortable after your refreshing swim."
+        },
+        "SWIMSUIT": {
+          "TITLE": "Bathing Suit",
+          "DESCRIPTION": "Wear it from the start to jump straight into the crystal clear waters."
+        },
+        "REPELLENT": {
+          "TITLE": "Biodegradable Repellent",
+          "DESCRIPTION": "All insect repellent used in the park must be eco-friendly to protect the environment."
+        },
+        "CLOTHES": {
+          "TITLE": "Change of clothes",
+          "DESCRIPTION": "To ensure you stay dry and comfortable for the return trip to your hotel."
+        },
+        "CASH": {
+          "TITLE": "Extra Cash",
+          "DESCRIPTION": "Useful for purchasing unique souvenirs, professional photos, or providing tips."
+        }
       },
-      "WATER_SANDALS": {
-        "TITLE": "Water Sandals or Aqua Shoes",
-        "DESCRIPTION": "To protect your feet while walking to the snorkeling point."
-      },
-      "TOWEL": {
-        "TITLE": "Towel",
-        "DESCRIPTION": "To dry off after your snorkeling adventure."
-      },
-      "CASH": {
-        "TITLE": "Additional Cash",
-        "DESCRIPTION": "For any extra expenses, tips, or taxes not included in the tour."
-      }
-    },
     "GALLERY": {
       "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
       "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
@@ -675,5 +676,6 @@
         }
       ]
     }
+  }
   }
 }

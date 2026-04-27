@@ -191,8 +191,8 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
       </div>
     </section>
 
-    <section class="mx-auto max-w-screen-2xl px-6" id="bookingWidget">
-      <div class="grid grid-cols-1 gap-20 items-start">
+    <section class="mx-auto max-w-screen-2xl px-6 mt-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
         <div class="lg:col-span-8 space-y-6">
           <div
             class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16"
@@ -207,13 +207,10 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
                   >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >{i18n.DETAIL_PAGE.GENERAL.HOURS} ({
-                    i18n.DETAIL_PAGE.GENERAL.APPROX
-                  })</span
+                  >{i18n.DETAIL_PAGE.GENERAL.HOURS}</span
                 >
               </div>
             </div>
-
             <div
               class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
             >
@@ -247,7 +244,7 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
               <div class="flex flex-col">
                 <span
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.ROUNDTRIP_TRANSPORTATION}</span
+                  >Transport</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
                   >Included</span
@@ -255,13 +252,7 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="mx-auto max-w-screen-2xl px-6 mt-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-        <div class="lg:col-span-8 space-y-6">
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
           >
@@ -273,28 +264,240 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
             <p>{i18n.DETAIL_PAGE.PRIVATE_CENOTE.OVERVIEW.DESCRIPTION1}</p>
             <p>{i18n.DETAIL_PAGE.PRIVATE_CENOTE.OVERVIEW.DESCRIPTION2}</p>
           </div>
-          <h2
-            class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
-          >
-            {
-              i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW
-                .WHY_EXPLORE_CENOTES_CANCUN.TITLE
-            }
-          </h2>
-          <div
-            class="text-gray-600 leading-relaxed text-base md:text-lg font-light space-y-5"
-          >
-            <p>
-              {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE.OVERVIEW
-                  .WHY_EXPLORE_CENOTES_CANCUN.DESCRIPTION
-              }
-            </p>
-          </div>
+
           <hr class="border-black/50 w-full" />
+
+          <div class="divide-y divide-gray-200">
+            <details class="group py-6" open>
+              <summary
+                class="flex justify-between items-center cursor-pointer list-none"
+              >
+                <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                  >{i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.TITLE}</span
+                >
+                <div
+                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+                >
+                  <ChevronRight className="rotate-90 text-gray-500" size={20} />
+                </div>
+              </summary>
+              <div class="mt-8 rounded-lg lg:col-span-3">
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                  {
+                    i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.INCLUDES.map(
+                      (text) => (
+                        <li class="flex items-start gap-3">
+                          <Check
+                            className="text-[#006083] mt-1 shrink-0"
+                            size={20}
+                          />
+                          <span
+                            class={`text-base md:text-lg font-light ${text.includes("Conservation Fee") ? "font-bold text-gray-900" : "text-gray-600"}`}
+                          >
+                            {text}
+                          </span>
+                        </li>
+                      ),
+                    )
+                  }
+
+                  {/* Renderizamos después los que NO incluye */}
+                  {
+                    i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.NOT_INCLUDES.map(
+                      (text) => (
+                        <li class="flex items-start gap-3">
+                          <X className="text-red-500 mt-1 shrink-0" size={20} />
+                          <span class="text-base md:text-lg font-light text-gray-600">
+                            {text}
+                          </span>
+                        </li>
+                      ),
+                    )
+                  }
+                </ul>
+              </div>
+            </details>
+            <details class="group py-6">
+              <summary
+                class="flex justify-between items-center cursor-pointer list-none"
+              >
+                <span class="text-2xl md:text-3xl font-serif text-[#001524]"
+                  >{
+                    i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                      .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.TITLE
+                  }</span
+                >
+                <div
+                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+                >
+                  <ChevronRight className="rotate-90 text-gray-500" size={20} />
+                </div>
+              </summary>
+              <div class="mt-4 text-gray-600 leading-relaxed font-light">
+                <p>
+                  {
+                    i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                      .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.DESCRIPTION
+                  }
+                </p>
+                <div class="bg-[#EDF4FC] rounded-lg lg:col-span-3 mt-5">
+                  <div class="p-10">
+                    <TagH3
+                      >{
+                        i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                          .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
+                          .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.TITLE
+                      }</TagH3
+                    >
+                    <p class="mt-2">
+                      {
+                        i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                          .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
+                          .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.DESCRIPTION
+                      }
+                    </p>
+                    <ul
+                      class="list-decimal list-inside mt-10 space-y-4 text-base/loose"
+                    >
+                      {
+                        i18n.DETAIL_PAGE.REGULAR_CENOTE.WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.THE_UNIQUE_FEATURES_LIST.map(
+                          (item) => (
+                            <li key={item.TITLE}>
+                              <strong>{item.TITLE}:</strong> {item.DESCRIPTION}
+                            </li>
+                          ),
+                        )
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <details class="group py-6">
+              <summary
+                class="flex justify-between items-center cursor-pointer list-none"
+              >
+                <span class="text-2xl md:text-3xl font-serif text-[#001524]">
+                  {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_YOU_SHOULD_KNOW.TITLE}
+                </span>
+                <div
+                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+                >
+                  <ChevronRight className="rotate-90 text-gray-500" size={20} />
+                </div>
+              </summary>
+              <div class="mt-8">
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {
+                    i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_YOU_SHOULD_KNOW.LIST.map(
+                      (item) => (
+                        <li class="flex items-start gap-3">
+                          <Info
+                            className="text-gray-400 mt-1 shrink-0"
+                            size={18}
+                          />
+                          <span class="text-gray-600 font-light text-sm md:text-base">
+                            {item}
+                          </span>
+                        </li>
+                      ),
+                    )
+                  }
+                </ul>
+              </div>
+            </details>
+            <div class="group py-6">
+              <h2 class="text-2xl md:text-3xl font-serif mt-20">
+                {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING.TITLE}
+              </h2>
+              <div
+                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
+              >
+              </div>
+            </div>
+            <div class="mt-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                {
+                  Object.entries(i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING)
+                    .filter(([key]) => key !== "TITLE")
+                    .map(([key, value]) => {
+                      let Icon = Shirt;
+                      if (key === "SUNSCREEN") Icon = Sun;
+                      if (key === "TOWEL" || key === "CLOTHES") Icon = Wind;
+                      if (key === "SWIMSUIT") Icon = Waves;
+                      if (key === "SHOES") Icon = Footprints;
+                      if (key === "CASH") Icon = Wallet;
+                      if (key === "REPELLENT") Icon = Bug;
+
+                      return (
+                        <div class="flex items-start gap-5 group p-2 transition-all">
+                          {/* Contenedor del Icono más compacto */}
+                          <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
+                            <Icon
+                              className="text-[#006083] group-hover:text-white transition-colors duration-300"
+                              size={24}
+                            />
+                          </div>
+
+                          {/* Contenedor de Información */}
+                          <div class="flex flex-col justify-center">
+                            <h2 class="font-serif text-lg text-[#001524] font-semibold mb-1">
+                              {value.TITLE}
+                            </h2>
+                            <p class="text-sm text-gray-500 leading-relaxed max-w-md">
+                              {value.DESCRIPTION}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })
+                }
+              </div>
+            </div>
+            <div class="group py-6 mt-28">
+              <summary
+                class="flex justify-between items-center cursor-pointer list-none"
+              >
+                <span class="text-2xl md:text-3xl font-serif text-[#001524]">
+                  FAQs
+                </span>
+              </summary>
+
+              <div class="mt-8 flex flex-col gap-4 mx-auto">
+                {/* Contenedor con espacio entre tarjetas */}
+                {
+                  i18n.HOME_PAGE.FAQS.FAQS.map(
+                    (
+                      faq: { question: unknown; answer: unknown },
+                      index: any,
+                    ) => (
+                      <details
+                        key={index}
+                        class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
+                      >
+                        <summary class="flex justify-between items-center cursor-pointer list-none p-10 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
+                          <span class="pr-4">{faq.question}</span>
+                          <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                            <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
+                              +
+                            </span>
+                          </div>
+                        </summary>
+
+                        <div class="px-6 pb-6 animate-fade-in">
+                          <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </details>
+                    ),
+                  )
+                }
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- aqui empieza card de princing cenote private -->
-        <div class="hidden lg:block lg:col-span-4 lg:mt-25">
+        <aside class="hidden lg:block lg:col-span-4 lg:mt-0">
           <div
             class="bg-gray-50 p-5 border border-gray-200 shadow-sm text-center sticky top-24"
           >
@@ -306,7 +509,7 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
               <p class="text-sm text-gray-500">per person</p>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-2 gap-3 mb-6">
               <div
                 class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm"
               >
@@ -314,11 +517,6 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
                   class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2"
                   >10% OFF</span
                 >
-                <p
-                  class="text-[10px] uppercase tracking-wider text-gray-500 mb-1"
-                >
-                  15 days before
-                </p>
                 <p class="text-lg font-bold text-[#001524]">$72 USD</p>
               </div>
               <div
@@ -328,284 +526,45 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
                   class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2"
                   >20% OFF</span
                 >
-                <p class="text-[10px] tracking-wider text-gray-500 mb-1">
-                  30 days before
-                </p>
                 <p class="text-lg font-bold text-[#001524]">$64 USD</p>
               </div>
             </div>
             <BtnModalBokun client:visible data={dataForm} isSticky={false} />
           </div>
-        </div>
-        <!-- terminacion de card pricing -->
-
-        <!-- empieza funcionalidad para movil -->
-        <div class="relative"> 
-  
-  <div class="fixed bottom-6 left-4 right-4 lg:hidden z-50 transition-all duration-300" id="sticky-mobile-card">
-    <div class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5">
-      <div class="flex items-start gap-4 mb-1">
-        <div class="flex-shrink-0 w-20">
-          <img
-            src={getUrl(images.logoCenote)}
-            alt="Cenote Adventuring Logo"
-            class="w-full h-auto object-contain"
-          />
-        </div>
-
-        <div class="flex flex-col flex-grow pt-1">
-          <p class="text-black font-normal text-xs mb-1">Cenote Adventuring</p>
-          <p class="text-black/65 text-xs font-light mb-1">Price from</p>
-          <div class="flex items-baseline gap-1 mb-1">
-            <span class="text-black font-bold text-2xl tracking-tight">$56 USD</span>
-            <span class="text-black/65 text-[10px] font-light">per person</span>
-          </div>
-          <p class="text-black/65 text-[10px] font-light">Booking 30 days before.</p>
-        </div>
+        </aside>
       </div>
+    </section>
 
-      <div class="w-full">
+    <div class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
+      <div
+        class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5"
+      >
+        <div class="flex items-start gap-4 mb-1">
+          <div class="flex-shrink-0 w-20">
+            <img
+              src={getUrl(images.logoCenote)}
+              alt="Logo"
+              class="w-full h-auto object-contain"
+            />
+          </div>
+          <div class="flex flex-col flex-grow pt-1">
+            <p class="text-black font-normal text-xs mb-1">
+              Cenote Adventuring
+            </p>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="text-black font-bold text-2xl tracking-tight"
+                >$56 USD</span
+              >
+              <span class="text-black/65 text-[10px] font-light"
+                >per person</span
+              >
+            </div>
+          </div>
+        </div>
         <BtnModalBokun client:load data={dataForm} variant="sticky" />
       </div>
     </div>
-  </div>
-</div>
-      </div>
-    </section>
-    <div class="hidden lg:block lg:col-span-4 lg:mt-25"></div>
-    <section class="max-w-screen-2xl mx-auto px-6 mt-8">
-      <div class="divide-y divide-gray-200 border-t border-b border-gray-200">
-        <details class="group py-6" open>
-          <summary
-            class="flex justify-between items-center cursor-pointer list-none"
-          >
-            <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-              {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.TITLE}
-            </span>
-            <div
-              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-            >
-              <ChevronRight className="rotate-90 text-gray-500" size={20} />
-            </div>
-          </summary>
-          <div class="mt-8 rounded-lg lg:col-span-3">
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-              {
-                i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.INCLUDES.map(
-                  (text) => (
-                    <li class="flex items-start gap-3">
-                      <Check
-                        className="text-[#006083] mt-1 shrink-0"
-                        size={20}
-                      />
-                      <span
-                        class={`text-base md:text-lg font-light ${text.includes("Conservation Fee") ? "font-bold text-gray-900" : "text-gray-600"}`}
-                      >
-                        {text}
-                      </span>
-                    </li>
-                  ),
-                )
-              }
 
-              {/* Renderizamos después los que NO incluye */}
-              {
-                i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.NOT_INCLUDES.map(
-                  (text) => (
-                    <li class="flex items-start gap-3">
-                      <X className="text-red-500 mt-1 shrink-0" size={20} />
-                      <span class="text-base md:text-lg font-light text-gray-600">
-                        {text}
-                      </span>
-                    </li>
-                  ),
-                )
-              }
-            </ul>
-          </div>
-        </details>
-
-        <details class="group py-6">
-          <summary
-            class="flex justify-between items-center cursor-pointer list-none"
-          >
-            <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-              >{
-                i18n.DETAIL_PAGE.PRIVATE_CENOTE
-                  .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.TITLE
-              }</span
-            >
-            <div
-              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-            >
-              <ChevronRight className="rotate-90 text-gray-500" size={20} />
-            </div>
-          </summary>
-          <div class="mt-4 text-gray-600 leading-relaxed font-light">
-            <p>
-              {
-                i18n.DETAIL_PAGE.PRIVATE_CENOTE
-                  .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.DESCRIPTION
-              }
-            </p>
-            <div class="bg-[#EDF4FC] rounded-lg lg:col-span-3 mt-5">
-              <div class="p-10">
-                <TagH3
-                  >{
-                    i18n.DETAIL_PAGE.REGULAR_CENOTE
-                      .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
-                      .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.TITLE
-                  }</TagH3
-                >
-                <p class="mt-2">
-                  {
-                    i18n.DETAIL_PAGE.REGULAR_CENOTE
-                      .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
-                      .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.DESCRIPTION
-                  }
-                </p>
-                <ul
-                  class="list-decimal list-inside mt-10 space-y-4 text-base/loose"
-                >
-                  {
-                    i18n.DETAIL_PAGE.REGULAR_CENOTE.WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.THE_UNIQUE_FEATURES_LIST.map(
-                      (item) => (
-                        <li key={item.TITLE}>
-                          <strong>{item.TITLE}:</strong> {item.DESCRIPTION}
-                        </li>
-                      ),
-                    )
-                  }
-                </ul>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <details class="group py-6">
-          <summary
-            class="flex justify-between items-center cursor-pointer list-none"
-          >
-            <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-              {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_YOU_SHOULD_KNOW.TITLE}
-            </span>
-            <div
-              class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-            >
-              <ChevronRight className="rotate-90 text-gray-500" size={20} />
-            </div>
-          </summary>
-          <div class="mt-8">
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {
-                i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_YOU_SHOULD_KNOW.LIST.map(
-                  (item) => (
-                    <li class="flex items-start gap-3">
-                      <Info className="text-gray-400 mt-1 shrink-0" size={18} />
-                      <span class="text-gray-600 font-light text-sm md:text-base">
-                        {item}
-                      </span>
-                    </li>
-                  ),
-                )
-              }
-            </ul>
-          </div>
-        </details>
-
-        <div class="group py-6">
-          <h2 class="text-2xl md:text-3xl font-serif mt-20">
-            {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING.TITLE}
-          </h2>
-          <div
-            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-          >
-          </div>
-        </div>
-
-        <!-- to bring -->
-        <div class="mt-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-            {
-              Object.entries(i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING)
-                .filter(([key]) => key !== "TITLE")
-                .map(([key, value]) => {
-                  let Icon = Shirt;
-                  if (key === "SUNSCREEN") Icon = Sun;
-                  if (key === "TOWEL" || key === "CLOTHES") Icon = Wind;
-                  if (key === "SWIMSUIT") Icon = Waves;
-                  if (key === "SHOES") Icon = Footprints;
-                  if (key === "CASH") Icon = Wallet;
-                  if (key === "REPELLENT") Icon = Bug;
-
-                  return (
-                    <div class="flex items-start gap-5 group p-2 transition-all">
-                      {/* Contenedor del Icono más compacto */}
-                      <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
-                        <Icon
-                          className="text-[#006083] group-hover:text-white transition-colors duration-300"
-                          size={24}
-                        />
-                      </div>
-
-                      {/* Contenedor de Información */}
-                      <div class="flex flex-col justify-center">
-                        <h2 class="font-serif text-lg text-[#001524] font-semibold mb-1">
-                          {value.TITLE}
-                        </h2>
-                        <p class="text-sm text-gray-500 leading-relaxed max-w-md">
-                          {value.DESCRIPTION}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })
-            }
-          </div>
-        </div>
-        <!-- to bring fin -->
-      </div>
-      <div class="group py-6 mt-28">
-        <summary
-          class="flex justify-between items-center cursor-pointer list-none"
-        >
-          <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-            FAQs
-          </span>
-        </summary>
-
-        <div class="mt-8 flex flex-col gap-4 mx-auto">
-          {/* Contenedor con espacio entre tarjetas */}
-          {
-            i18n.HOME_PAGE.FAQS.FAQS.map(
-              (faq: { question: unknown; answer: unknown }, index: any) => (
-                <details
-                  key={index}
-                  class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
-                >
-                  <summary class="flex justify-between items-center cursor-pointer list-none p-10 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
-                    <span class="pr-4">{faq.question}</span>
-                    <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                      <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
-                        +
-                      </span>
-                    </div>
-                  </summary>
-
-                  <div class="px-6 pb-6 animate-fade-in">
-                    <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </details>
-              ),
-            )
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Recomendaciones de otros productos -->
     <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -661,28 +620,26 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
     </section>
   </main>
 </Layout>
+
 <style>
   @import "swiper/css";
   @import "swiper/css/pagination";
   .swiper-pagination-bullet-active {
     background: #005b71 !important;
   }
-
   .swiper-slide {
     opacity: 0.5;
     transition: opacity 0.3s ease;
   }
-
   .swiper-slide-active {
     opacity: 1;
   }
-
   @media (min-width: 1024px) {
     .swiper-slide {
       opacity: 1 !important;
-      transform: scale(1) !important; /* Por si también se veían pequeños */
     }
   }
+
   mux-player {
     position: absolute;
     inset: 0;
@@ -692,7 +649,6 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
     --controls: none;
     --media-object-fit: cover;
   }
-
   mux-player::part(video) {
     width: 100vw !important;
     height: 100vh !important;
@@ -704,66 +660,20 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
   import Swiper from "swiper";
   import { Autoplay, Pagination } from "swiper/modules";
   import "@mux/mux-player";
-  let swiperInstance: Swiper | null = null;
 
   function initSwiper() {
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-    }
-    const swiperEl = document.querySelector(".mySwiper");
-    if (!swiperEl) return;
-
-    swiperInstance = new Swiper(".mySwiper", {
+    new Swiper(".mySwiper", {
       modules: [Pagination, Autoplay],
       slidesPerView: 1.2,
       spaceBetween: 20,
       loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", clickable: true },
       breakpoints: {
-        // Móvil / Tablet pequeña
-        640: {
-          slidesPerView: 2.2,
-          spaceBetween: 20,
-        },
-        // Desktop (lg)
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-          allowTouchMove: false,
-          loop: false,
-        },
+        640: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 4, allowTouchMove: false, loop: false },
       },
     });
-  }
-
-  // se agrega cod para sticky
-  const stickyCard = document.getElementById('sticky-mobile-card');
-  const footer = document.querySelector('footer'); // O usa el ID de tu footer
-
-  if (stickyCard && footer) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          stickyCard.classList.remove('fixed', 'bottom-6');
-          stickyCard.classList.add('absolute', 'bottom-4'); 
-        } else {
-          stickyCard.classList.add('fixed', 'bottom-6');
-          stickyCard.classList.remove('absolute', 'bottom-4');
-        }
-      });
-    }, {
-      rootMargin: '0px 0px 0px 0px',
-      threshold: 0
-    });
-
-    observer.observe(footer);
   }
 
   initSwiper();
