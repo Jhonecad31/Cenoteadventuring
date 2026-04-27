@@ -19,7 +19,7 @@ const translatePath = useTranslatedPath(lang);
 const navigation = [
   { title: k("nav.home"), link: translatePath("/") },
   { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail") },
-  { title: k("nav.blog"), link: translatePath("/blog/") },
+  { title: k("nav.blog"), link: translatePath("/404/") },
   { title: k("nav.about"), link: translatePath("/about/") },
   { title: k("nav.contact"), link: translatePath("/contact/") },
 ];
@@ -145,21 +145,29 @@ const navigation = [
   const iconGroup = document.getElementById("icon-group");
   const navLinks = document.querySelectorAll(".nav-link");
   const openBtn = document.getElementById("open-menu");
-  const closeBtn = document.getElementById("close-menu");
   const drawer = document.getElementById("mobile-drawer");
+  const closeBtn = document.getElementById("close-menu");
 
-  window.addEventListener("scroll", () => {
+  const updateStyles = () => {
     const isScrolled = window.scrollY > 50;
+    
+    // 1. Corregido: Una sola constante que revisa si la URL es de las páginas claras
+    const isSpecialPage = ['/contact', '/404'].some(path => 
+      window.location.pathname.includes(path)
+    );
+    
+    // Si hay scroll O estamos en una página especial, activar tema oscuro
+    const useDarkTheme = isScrolled || isSpecialPage;
 
     // Estilos del Header
-    header?.classList.toggle("bg-[#EDF4FC]", isScrolled);
-    header?.classList.toggle("shadow-sm", isScrolled);
-    header?.classList.toggle("h-20", isScrolled);
-    header?.classList.toggle("h-24", !isScrolled);
-    header?.classList.toggle("border-slate-200", isScrolled);
+    header?.classList.toggle("bg-[#EDF4FC]", useDarkTheme);
+    header?.classList.toggle("shadow-sm", useDarkTheme);
+    header?.classList.toggle("h-20", useDarkTheme);
+    header?.classList.toggle("h-24", !useDarkTheme);
+    header?.classList.toggle("border-slate-200", useDarkTheme);
 
-    // Intercambio de Logos (Opacidad y Visibilidad)
-    if (isScrolled) {
+    // Intercambio de Logos
+    if (useDarkTheme) {
       logoCompleto?.classList.add("hidden", "opacity-0");
       logoReducido?.classList.remove("hidden");
       setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
@@ -169,9 +177,9 @@ const navigation = [
       setTimeout(() => logoCompleto?.classList.remove("opacity-0"), 10);
     }
 
-    // Colores de elementos
-    const textColor = isScrolled ? "text-[#002B49]" : "text-white";
-    const oldColor = isScrolled ? "text-white" : "text-[#002B49]";
+    // Colores de elementos (Azul oscuro Cenote vs Blanco)
+    const textColor = useDarkTheme ? "text-[#002B49]" : "text-white";
+    const oldColor = useDarkTheme ? "text-white" : "text-[#002B49]";
 
     [logoContainer, iconGroup, openBtn].forEach((el) => {
       el?.classList.add(textColor);
@@ -182,26 +190,22 @@ const navigation = [
       link.classList.add(textColor);
       link.classList.remove(oldColor);
     });
-  });
+  };
 
-  // Control del Menú Móvil
+  // Eventos de ejecución
+  window.addEventListener("scroll", updateStyles);
+  document.addEventListener("DOMContentLoaded", updateStyles);
+  document.addEventListener("astro:after-swap", updateStyles);
+
+  // Lógica del Menú Móvil
   openBtn?.addEventListener("click", () => {
     drawer?.classList.remove("-translate-x-full");
-    document.body.style.overflow = "hidden"; // Evita scroll al estar abierto
+    document.body.style.overflow = "hidden";
   });
 
   closeBtn?.addEventListener("click", () => {
     drawer?.classList.add("-translate-x-full");
-    document.body.style.overflow = ""; // Devuelve el scroll
-  });
-
-  // Cerrar al hacer click en un link (opcional pero recomendado)
-  const mobileLinks = drawer?.querySelectorAll("a");
-  mobileLinks?.forEach((link) => {
-    link.addEventListener("click", () => {
-      drawer?.classList.add("-translate-x-full");
-      document.body.style.overflow = "";
-    });
+    document.body.style.overflow = "";
   });
 </script>
 

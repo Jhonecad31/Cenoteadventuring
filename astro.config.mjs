@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 import vercel from '@astrojs/vercel';
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://cenoteadventuring.vercel.app/",
   adapter: vercel(),

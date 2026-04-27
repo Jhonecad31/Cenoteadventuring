@@ -1,55 +1,63 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
+import { Mail, Phone, Send, MessageSquare, Instagram, Facebook, Compass } from "lucide-react";
 import TagH1 from "../global/TagH1.astro";
 import { Button } from "@/components/ui/button";
 import { getI18N } from "@/i18n";
+import TagP from "../global/TagP.astro";
+import FormContact from "../others/FromContact";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
+const { HERO, INFO, FORM } = i18n.CONTACT_PAGE;
+
 const contactInfo = [
   {
     icon: Phone,
-    title: i18n.CONTACT_PAGE.INFO.OPTIONS.PHONE,
-    value: "+52 (998) 123 4567",
+    title: INFO.OPTIONS.PHONE,
+    value: "+52 998 249 0003", 
     href: "tel:+529982490003",
   },
   {
     icon: Mail,
-    title: i18n.CONTACT_PAGE.INFO.OPTIONS.EMAIL,
-    value: "info@cenoteadventuring.com",
+    title: INFO.OPTIONS.EMAIL,
+    value: "info@cenoteadventuring.com", 
     href: "mailto:info@cenoteadventuring.com",
   },
 ];
 
+const socialMedia = [
+  { title: "Instagram", icon: Instagram, link: "https://www.instagram.com/cenoteadventuring/" },
+  { title: "Facebook", icon: Facebook, link: "https://www.facebook.com/cenoteadventuring/" },
+  { title: "TripAdvisor", icon: Compass, link: "#" }
+];
+
 const seoMetaData = {
-    title: i18n.SEO.CONTACT_PAGE.TITLE,
-    description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
-    metaTitle: i18n.SEO.CONTACT_PAGE.META_TITLE,
+  title: i18n.SEO.CONTACT_PAGE.TITLE,
+  description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
+  metaTitle: i18n.SEO.CONTACT_PAGE.META_TITLE,
 };
 ---
 
-<BaseLayout showFooter={false}>
+<BaseLayout showFooter={false} {...seoMetaData}>
   <main class="bg-[#EDF4FC] pt-32 pb-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
-        <TagH1>{i18n.SEO.CONTACT_PAGE.TITLE}</TagH1>
-        <TagH1>{i18n.CONTACT_PAGE.HERO.TITLE}</TagH1>
-
-        <h1 class="font-serif text-5xl md:text-6xl text-[#001524] mb-4">Get in <span class="italic">Touch</span></h1>
-        <p class="text-gray-500 max-w-2xl mx-auto">
-          Do you have any questions about our private tours, or do you need a special quote for groups? We're here to help you plan your perfect adventure.
-        </p>
+        <TagH1>{HERO.TITLE}</TagH1>
+        <TagP class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 lg:text-lg md:text-2xl">
+          {HERO.DESCRIPTION}
+        </TagP>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
         <div class="lg:col-span-5 space-y-8">
           <div class="bg-[#006083] text-white p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
             <MessageSquare className="absolute -right-10 -top-10 w-40 h-40 opacity-10" />
             
-            <h2 class="font-serif text-3xl mb-8 relative z-10">Contact Information</h2>
+            <h2 class="font-serif text-3xl mb-8 relative z-10 text-center">
+              {INFO.TITLE}
+            </h2>
             
             <div class="space-y-8 relative z-10">
               {contactInfo.map((item) => (
@@ -58,8 +66,12 @@ const seoMetaData = {
                     <item.icon size={24} className="text-cyan-400" />
                   </div>
                   <div>
-                    <p class="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">{item.title}</p>
-                    <p class="text-lg font-medium">{item.value}</p>
+                    <p class="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">
+                      {item.title}
+                    </p>
+                    <a href={item.href} class="text-lg font-medium hover:text-cyan-400 transition-colors">
+                      {item.value}
+                    </a>
                   </div>
                 </div>
               ))}
@@ -67,47 +79,31 @@ const seoMetaData = {
           </div>
 
           <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm flex items-center justify-between">
-            <p class="font-bold text-[#001524]">Follow our adventures:</p>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition-colors cursor-pointer">IG</div>
-              <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition-colors cursor-pointer">FB</div>
-            </div>
+            <p class="font-normal text-[#001524]">Follow our adventures:</p>
+            <ul class="flex gap-3">
+              {socialMedia.map(({ title, icon: Icon, link }) => (
+                <li key={title}>
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={title}
+                    class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-[#001524] hover:text-white transition-all duration-300"
+                  >
+                    <Icon size={18} strokeWidth={1.5} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div class="lg:col-span-7 bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-gray-100">
-          <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label class="text-[10px] font-bold uppercase text-gray-400 ml-1">Full Name</label>
-              <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0 transition-all outline-none" />
-            </div>
-            
-            <div class="space-y-2">
-              <label class="text-[10px] font-bold uppercase text-gray-400 ml-1">Email Address</label>
-              <input type="email" placeholder="john@example.com" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0 transition-all outline-none" />
-            </div>
-
-            <div class="space-y-2 md:col-span-2">
-              <label class="text-[10px] font-bold uppercase text-gray-400 ml-1">Subject</label>
-              <select class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0 transition-all outline-none appearance-none">
-                <option>General Inquiry</option>
-                <option>Private Tour Booking</option>
-                <option>Group Events</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div class="space-y-2 md:col-span-2">
-              <label class="text-[10px] font-bold uppercase text-gray-400 ml-1">Message</label>
-              <textarea rows="5" placeholder="How can we help you?" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0 transition-all outline-none resize-none"></textarea>
-            </div>
-
-            <div class="md:col-span-2 pt-4">
-              <Button className="w-full md:w-auto bg-[] text-white rounded-full px-12 h-14 uppercase tracking-widest text-xs shadow-lg hover:shadow-cyan-500/20 transition-all flex items-center gap-2">
-                Send Message <Send size={16} />
-              </Button>
-            </div>
-          </form>
+          <FormContact
+                client:visible
+                i18n={i18n.CONTACT_PAGE.FORM}
+                TITLE_FORM={i18n.CONTACT_PAGE.INFO.TITLE}
+            />
         </div>
       </div>
     </div>

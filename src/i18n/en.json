@@ -163,7 +163,7 @@
   "CONTACT_PAGE": {
     "HERO": {
       "TITLE": "Get in touch with us",
-      "DESCRIPTION": "We would love to hear from you! Whether you have questions about our snorkeling tour, need assistance with booking, or want to share your feedback, our team is here to help."
+      "DESCRIPTION": "We’d love to hear from you! If you have any questions about our cenote tours or need assistance planning your visit, just reach out. Your next great adventure is only a message away."
     },
     "INFO": {
       "TITLE": "Contact Us",
@@ -509,11 +509,14 @@
         "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
       },
       "SCHEDULES": {
-        "TITLE": "Available Schedules for the Snorkeling Adventure",
-        "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
-        "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
-        "DURATION": "4 hours (approx.)"
-      },
+                "TITLE": "Available Schedules for Your Private Snorkeling Tour",
+                "DESCRIPTION": "Choose the perfect time for your exclusive snorkeling adventure in Puerto Morelos. Our private tours are available at the following times:",
+                "SCHEDULE_LIST": [
+                    "09:30 AM",
+                    "13:30 PM"
+                ],
+                "DURATION": "4 hours (approx.)"
+            },
       "FAQS": {
         "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
         "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",

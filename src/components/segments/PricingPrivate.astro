@@ -20,6 +20,7 @@ import {
   Wallet,
   Waves,
   Wind,
+  Bus,
 } from "lucide-react";
 import {
   Beach_taco,
@@ -29,6 +30,7 @@ import {
   CenoteAdventure02,
 } from "@/icons/allIcons";
 import TagH3 from "@/components/global/TagH3.astro";
+import TagP from "../global/TagP.astro";
 const iconMap: Record<string, any> = {
   Beach_taco: Beach_taco,
   Extreme_adventuring: Extreme_adventuring,
@@ -87,7 +89,12 @@ const relatedActivities = [
 ];
 
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
-
+const priceFrom = 115;
+const countStars = 4.7;
+const duration = 4;
+const minimumAge = 5;
+const reviewsCount = "325";
+const reviewsNumber = 325;
 const images = {
   card1: "Cenote-Adventuring/CenoteA.1.webp",
   card2: "Cenote-Adventuring/Card.2.webp",
@@ -207,7 +214,7 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
                   >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >{i18n.DETAIL_PAGE.GENERAL.HOURS}</span
+                  > {duration} {i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX}) </span
                 >
               </div>
             </div>
@@ -218,11 +225,9 @@ const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
               <div class="flex flex-col">
                 <span
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >Min. Age</span
+                  >{i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}</span
                 >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >5 years+</span
-                >
+               {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
               </div>
             </div>
             <div
