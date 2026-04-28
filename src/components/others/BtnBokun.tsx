@@ -14,7 +14,7 @@ const LazyLoadBokunScript = lazy(() => import("@/utils/LoadBokun"));
 
 export default function BtnAccordionBokun({ 
   data, 
-  variant = "accordion" //acordeón de desktop
+  variant = "accordion" 
 }: { 
   data: BtnModalBokunProps, 
   variant?: "accordion" | "sticky" // variante 'sticky'

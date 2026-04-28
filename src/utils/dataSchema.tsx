@@ -1,2 +1,2 @@
-export const siteName = "The Best Cenotes in Puerto Morelos";
+export const siteName = "Cenote adventuring";
 export const siteURL = "https://cenoteadventuring.com";

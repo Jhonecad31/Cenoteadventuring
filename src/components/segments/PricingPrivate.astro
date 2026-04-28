@@ -87,7 +87,7 @@ const plans = [
     id: "PRIVATE",
     image: "/Cenote-Adventuring/CenoteA.4.webp",
     logo: "/Cenote-Adventuring/Logo-cenote.svg",
-    price: 70, 
+    price: 70,
     oldPrice: 80,
     href: translatePath("/pricing-private-page"),
     priority: true,
@@ -207,60 +207,81 @@ const seoMetaData = {
     <section class="mx-auto max-w-screen-2xl px-6 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
         <div class="lg:col-span-8 space-y-6">
-          <div class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16">
-  {/* DURACIÓN */}
-  <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2">
-    <Clock size={30} className="text-gray-400" />
-    <div class="flex flex-col">
-      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
-        {i18n.DETAIL_PAGE.GENERAL.DURATION}
-      </span>
-      <span class="text-xs md:text-sm font-semibold text-gray-800">
-        {duration} {i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX})
-      </span>
-    </div>
-  </div>
+          {/* GRID DE INFORMACIÓN RÁPIDA */}
+          <div
+            class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16"
+          >
+            {/* DURACIÓN */}
+            <div
+              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
+            >
+              <Clock size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span
+                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+                >
+                  {i18n.DETAIL_PAGE.GENERAL.DURATION}
+                </span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800">
+                  {duration}
+                  {i18n.DETAIL_PAGE.GENERAL.HOURS} ({
+                    i18n.DETAIL_PAGE.GENERAL.APPROX
+                  })
+                </span>
+              </div>
+            </div>
 
-  {/* EDAD - Aquí agregué el span que faltaba */}
-  <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2">
-    <Users size={30} className="text-gray-400" />
-    <div class="flex flex-col">
-      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
-        {i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}
-      </span>
-      <span class="text-xs md:text-sm font-semibold text-gray-800">
-        {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
-      </span>
-    </div>
-  </div>
+            {/* EDAD */}
+            <div
+              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
+            >
+              <Users size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span
+                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+                >
+                  {i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}
+                </span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800">
+                  {minimumAge}
+                  {i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
+                </span>
+              </div>
+            </div>
 
-  {/* HORARIO */}
-  <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2">
-    <Calendar size={30} className="text-gray-400" />
-    <div class="flex flex-col">
-      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
-        {i18n.DETAIL_PAGE.GENERAL.SCHEDULE}
-      </span>
-      <span class="text-xs md:text-sm font-semibold text-gray-800">
-        09:00 | 13:00
-      </span>
-    </div>
-  </div>
+            {/* HORARIO */}
+            <div
+              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
+            >
+              <Calendar size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span
+                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+                >
+                  {i18n.DETAIL_PAGE.GENERAL.SCHEDULE}
+                </span>
+                <span class="text-xs md:text-sm font-semibold text-gray-800"
+                  >09:00 | 13:00</span
+                >
+              </div>
+            </div>
 
-  {/* TRANSPORTE */}
-  <div class="flex flex-col items-center text-center gap-3 px-2">
-    <Truck size={30} className="text-gray-400" />
-    <div class="flex flex-col">
-      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
-        Transport
-      </span>
-      <span class="text-xs md:text-sm font-semibold text-gray-800">
-        Included
-      </span>
-    </div>
-  </div>
-</div>
+            {/* TRANSPORTE */}
+            <div class="flex flex-col items-center text-center gap-3 px-2">
+              <Truck size={30} className="text-gray-400" />
+              <div class="flex flex-col">
+                <span
+                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
+                  >Transport</span
+                >
+                <span class="text-xs md:text-sm font-semibold text-gray-800"
+                  >Included</span
+                >
+              </div>
+            </div>
+          </div>
 
+          {/* TÍTULO Y DESCRIPCIÓN */}
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
           >
@@ -275,32 +296,38 @@ const seoMetaData = {
 
           <hr class="border-black/50 w-full" />
 
+          {/* SECCIÓN DE ACORDEONES EXCLUSIVOS (Solo uno abierto a la vez) */}
           <div class="divide-y divide-gray-200">
-            <details class="group py-6" open>
+            {/* 1. INCLUSIONES (Abierto por defecto) */}
+            <details class="group py-6" name="tour-info" open>
               <summary
                 class="flex justify-between items-center cursor-pointer list-none"
               >
-                <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                  >{i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.TITLE}</span
-                >
+                <span class="text-2xl md:text-3xl font-serif text-[#001524]">
+                  {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.TITLE}
+                </span>
                 <div
                   class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
                 >
                   <ChevronRight className="rotate-90 text-gray-500" size={20} />
                 </div>
               </summary>
-              <div class="mt-8 rounded-lg lg:col-span-3">
+              <div class="mt-8">
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
                   {
                     i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.INCLUDES.map(
                       (text) => (
-                        <li class="flex items-start gap-3">
+                        <li class="flex items-start gap-3 text-base md:text-lg font-light text-gray-600">
                           <Check
                             className="text-[#006083] mt-1 shrink-0"
                             size={20}
                           />
                           <span
-                            class={`text-base md:text-lg font-light ${text.includes("Conservation Fee") ? "font-bold text-gray-900" : "text-gray-600"}`}
+                            class={
+                              text.includes("Conservation Fee")
+                                ? "font-bold text-gray-900"
+                                : ""
+                            }
                           >
                             {text}
                           </span>
@@ -308,16 +335,12 @@ const seoMetaData = {
                       ),
                     )
                   }
-
-                  {/* Renderizamos después los que NO incluye */}
                   {
                     i18n.DETAIL_PAGE.PRIVATE_CENOTE.INCLUSIONS.NOT_INCLUDES.map(
                       (text) => (
-                        <li class="flex items-start gap-3">
+                        <li class="flex items-start gap-3 text-base md:text-lg font-light text-gray-600">
                           <X className="text-red-500 mt-1 shrink-0" size={20} />
-                          <span class="text-base md:text-lg font-light text-gray-600">
-                            {text}
-                          </span>
+                          <span>{text}</span>
                         </li>
                       ),
                     )
@@ -325,16 +348,18 @@ const seoMetaData = {
                 </ul>
               </div>
             </details>
-            <details class="group py-6">
+
+            {/* 2. POR QUÉ ELEGIRNOS */}
+            <details class="group py-6" name="tour-info">
               <summary
                 class="flex justify-between items-center cursor-pointer list-none"
               >
-                <span class="text-2xl md:text-3xl font-serif text-[#001524]"
-                  >{
+                <span class="text-2xl md:text-3xl font-serif text-[#001524]">
+                  {
                     i18n.DETAIL_PAGE.PRIVATE_CENOTE
                       .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.TITLE
-                  }</span
-                >
+                  }
+                </span>
                 <div
                   class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
                 >
@@ -348,40 +373,40 @@ const seoMetaData = {
                       .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.DESCRIPTION
                   }
                 </p>
-                <div class="bg-[#EDF4FC] rounded-lg lg:col-span-3 mt-5">
-                  <div class="p-10">
-                    <TagH3
-                      >{
-                        i18n.DETAIL_PAGE.PRIVATE_CENOTE
-                          .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
-                          .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.TITLE
-                      }</TagH3
-                    >
-                    <p class="mt-2">
-                      {
-                        i18n.DETAIL_PAGE.PRIVATE_CENOTE
-                          .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
-                          .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.DESCRIPTION
-                      }
-                    </p>
-                    <ul
-                      class="list-decimal list-inside mt-10 space-y-4 text-base/loose"
-                    >
-                      {
-                        i18n.DETAIL_PAGE.REGULAR_CENOTE.WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.THE_UNIQUE_FEATURES_LIST.map(
-                          (item) => (
-                            <li key={item.TITLE}>
-                              <strong>{item.TITLE}:</strong> {item.DESCRIPTION}
-                            </li>
-                          ),
-                        )
-                      }
-                    </ul>
-                  </div>
+                <div class="bg-[#EDF4FC] rounded-lg mt-5 p-10">
+                  <TagH3
+                    >{
+                      i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                        .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
+                        .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.TITLE
+                    }</TagH3
+                  >
+                  <p class="mt-2">
+                    {
+                      i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                        .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR
+                        .THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.DESCRIPTION
+                    }
+                  </p>
+                  <ul
+                    class="list-decimal list-inside mt-10 space-y-4 text-base/loose"
+                  >
+                    {
+                      i18n.DETAIL_PAGE.REGULAR_CENOTE.WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR.THE_UNIQUE_FEATURES_LIST.map(
+                        (item) => (
+                          <li>
+                            <strong>{item.TITLE}:</strong> {item.DESCRIPTION}
+                          </li>
+                        ),
+                      )
+                    }
+                  </ul>
                 </div>
               </div>
             </details>
-            <details class="group py-6">
+
+            {/* 3. QUÉ DEBERÍAS SABER */}
+            <details class="group py-6" name="tour-info">
               <summary
                 class="flex justify-between items-center cursor-pointer list-none"
               >
@@ -414,151 +439,160 @@ const seoMetaData = {
                 </ul>
               </div>
             </details>
-            <div class="group py-6">
-              <h2 class="text-2xl md:text-3xl font-serif mt-20">
-                {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING.TITLE}
-              </h2>
-              <div
-                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-300"
-              >
-              </div>
-            </div>
-            <div class="mt-8">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                {
-                  Object.entries(i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING)
-                    .filter(([key]) => key !== "TITLE")
-                    .map(([key, value]) => {
-                      let Icon = Shirt;
-                      if (key === "SUNSCREEN") Icon = Sun;
-                      if (key === "TOWEL" || key === "CLOTHES") Icon = Wind;
-                      if (key === "SWIMSUIT") Icon = Waves;
-                      if (key === "SHOES") Icon = Footprints;
-                      if (key === "CASH") Icon = Wallet;
-                      if (key === "REPELLENT") Icon = Bug;
+          </div>
 
-                      return (
-                        <div class="flex items-start gap-5 group p-2 transition-all">
-                          {/* Contenedor del Icono más compacto */}
-                          <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
-                            <Icon
-                              className="text-[#006083] group-hover:text-white transition-colors duration-300"
-                              size={24}
-                            />
-                          </div>
+          {/* QUÉ TRAER (Sección estática fuera de los acordeones) */}
+          <div class="py-12">
+            <h2 class="text-2xl md:text-3xl font-serif mb-8 text-[#001524]">
+              {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING.TITLE}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+              {
+                Object.entries(i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING)
+                  .filter(([key]) => key !== "TITLE")
+                  .map(([key, value]) => {
+                    let Icon = Shirt;
+                    if (key === "SUNSCREEN") Icon = Sun;
+                    if (key === "TOWEL" || key === "CLOTHES") Icon = Wind;
+                    if (key === "SWIMSUIT") Icon = Waves;
+                    if (key === "SHOES") Icon = Footprints;
+                    if (key === "CASH") Icon = Wallet;
+                    if (key === "REPELLENT") Icon = Bug;
 
-                          {/* Contenedor de Información */}
-                          <div class="flex flex-col justify-center">
-                            <h2 class="font-serif text-lg text-[#001524] font-semibold mb-1">
-                              {value.TITLE}
-                            </h2>
-                            <p class="text-sm text-gray-500 leading-relaxed max-w-md">
-                              {value.DESCRIPTION}
-                            </p>
-                          </div>
+                    return (
+                      <div class="flex items-start gap-5 group transition-all">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
+                          <Icon
+                            className="text-[#006083] group-hover:text-white transition-colors duration-300"
+                            size={24}
+                          />
                         </div>
-                      );
-                    })
-                }
-              </div>
-            </div>
-            <div class="group py-6 mt-28">
-              <summary
-                class="flex justify-between items-center cursor-pointer list-none"
-              >
-                <span class="text-2xl md:text-3xl font-serif text-[#001524]">
-                  FAQs
-                </span>
-              </summary>
-
-              <div class="mt-8 flex flex-col gap-4 mx-auto">
-                {/* Contenedor con espacio entre tarjetas */}
-                {
-                  i18n.HOME_PAGE.FAQS.FAQS.map(
-                    (
-                      faq: { question: unknown; answer: unknown },
-                      index: any,
-                    ) => (
-                      <details
-                        key={index}
-                        class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
-                      >
-                        <summary class="flex justify-between items-center cursor-pointer list-none p-10 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
-                          <span class="pr-4">{faq.question}</span>
-                          <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                            <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
-                              +
-                            </span>
-                          </div>
-                        </summary>
-
-                        <div class="px-6 pb-6 animate-fade-in">
-                          <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
-                            {faq.answer}
+                        <div>
+                          <h3 class="font-serif text-lg text-[#001524] font-semibold mb-1">
+                            {value.TITLE}
+                          </h3>
+                          <p class="text-sm text-gray-500 leading-relaxed max-w-md">
+                            {value.DESCRIPTION}
                           </p>
                         </div>
-                      </details>
-                    ),
-                  )
-                }
-              </div>
+                      </div>
+                    );
+                  })
+              }
+            </div>
+          </div>
+
+          {/* SECCIÓN FAQS */}
+          <div class="mt-20">
+            <h2 class="text-2xl md:text-3xl font-serif mb-8 text-[#001524]">
+              FAQs
+            </h2>
+            <div class="flex flex-col gap-4">
+              {
+                i18n.DETAIL_PAGE.PRIVATE_CENOTE.FAQS.FAQS.map((faq, index) => (
+                  <details
+                    key={index}
+                    name="faq-group"
+                    class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
+                  >
+                    <summary class="flex justify-between items-center cursor-pointer list-none p-8 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
+                      <span class="pr-4">{faq.question}</span>
+                      <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                        <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
+                          +
+                        </span>
+                      </div>
+                    </summary>
+                    <div class="px-8 pb-8 animate-fade-in border-t border-blue-100 pt-4">
+                      <p class="text-gray-600 leading-relaxed font-light">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                ))
+              }
             </div>
           </div>
         </div>
         <aside class="hidden lg:block lg:col-span-4 lg:mt-0">
-  <div class="w-full border-2 border-gray-200 p-2 rounded-[22px]">
-    
-    <div class="w-full bg-gray-50/50 p-6 rounded-xl text-center border border-gray-100">
-        <div class="mb-4">
-          <p class="text-xs lg:text-sm text-gray-400 line-through">
-            {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} $80 USD
-          </p>
-          <div class="text-3xl lg:text-4xl font-bold text-[#001524]">
-            $70 USD
-          </div>
-          <p class="text-xs lg:text-sm text-gray-500">{i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}</p>
-        </div>
+          <div class="w-full border-2 border-gray-200 p-2 rounded-[22px]">
+            <div
+              class="w-full bg-gray-50/50 p-6 rounded-xl text-center border border-gray-100"
+            >
+              <div class="mb-4">
+                <p class="text-xs lg:text-sm text-gray-400 line-through">
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} $80 USD
+                </p>
+                <div class="text-3xl lg:text-4xl font-bold text-[#001524]">
+                  $70 USD
+                </div>
+                <p class="text-xs lg:text-sm text-gray-500">
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+                </p>
+              </div>
 
-        <div class="grid grid-cols-2 gap-3 mb-6">
-          <div class="bg-white p-3 rounded-lg border border-gray-100">
-            <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">10%</span>
-            <p class="text-[10px] lg:text-xs leading-tight text-gray-600">{i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_15_DAYS}</p>
-            <p class="text-sm lg:text-base font-bold">$66 USD</p>
-          </div>
-          <div class="bg-white p-3 rounded-lg border border-gray-100">
-            <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">20%</span>
-            <p class="text-[10px] lg:text-xs leading-tight text-gray-600">{i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_30_DAYS}</p>
-            <p class="text-sm lg:text-base font-bold">$60 USD</p>
-          </div>
-        </div>
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-white p-3 rounded-lg border border-gray-100">
+                  <span
+                    class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                    >10%</span
+                  >
+                  <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
+                    {
+                      i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD
+                        .BOOKING_15_DAYS
+                    }
+                  </p>
+                  <p class="text-sm lg:text-base font-bold">$66 USD</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-gray-100">
+                  <span
+                    class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                    >20%</span
+                  >
+                  <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
+                    {
+                      i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD
+                        .BOOKING_30_DAYS
+                    }
+                  </p>
+                  <p class="text-sm lg:text-base font-bold">$60 USD</p>
+                </div>
+              </div>
 
-        <BtnModalBokun client:visible data={dataForm} isSticky={false} />
-    </div>
-    
-  </div>
-</aside>
+              <BtnModalBokun client:visible data={dataForm} isSticky={false} />
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
-
-    <div id="sticky-product-card" class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
-  <div class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5">
-    <div class="flex items-start gap-4 mb-1">
-      <div class="flex-shrink-0 w-20">
+    <div
+  id="sticky-product-card"
+  class="fixed bottom-6 left-4 right-4 lg:hidden z-[9999]"
+  style="isolation: isolate;"
+>
+  <div
+    class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 backdrop-blur-sm"
+  >
+    <div class="flex items-center gap-4 mb-3"> {/* Cambié start por center para mejor alineación en mobile */}
+      <div class="flex-shrink-0 w-16 h-16 bg-white/50 rounded-xl overflow-hidden">
         <img
           src={getUrl(images.logoCenote)}
           alt="Logo"
-          class="w-full h-auto object-contain"
+          width="64"
+          height="64"
+          class="w-full h-full object-contain"
         />
       </div>
-      <div class="flex flex-col flex-grow pt-1">
-        <p class="text-black font-normal text-xs mb-1">
+      <div class="flex flex-col flex-grow">
+        <p class="text-black font-medium text-xs">
           {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
         </p>
-        <div class="flex items-baseline gap-1 mb-1">
-          <span class="text-black font-bold text-2xl tracking-tight">
+        <div class="flex items-baseline gap-1">
+          <span class="text-black font-bold text-xl tracking-tight">
             $70 USD
           </span>
-          <span class="text-black/65 text-[10px] font-light">
+          <span class="text-black/60 text-[10px] font-medium uppercase">
             {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
           </span>
         </div>
@@ -567,66 +601,61 @@ const seoMetaData = {
     <BtnModalBokun client:load data={dataForm} variant="sticky" />
   </div>
 </div>
-  
-</div>
-</div>
+  </main>
+  <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
+        <p class="text-gray-500 max-w-2xl mx-auto"></p>
+      </div>
+
+      <div class="swiper mySwiper pb-12">
+        <div class="swiper-wrapper">
+          {
+            relatedActivities.map((activity) => {
+              const IconComponent = iconMap[(activity as any).iconKey];
+              return (
+                <div class="swiper-slide">
+                  <a href={activity.link} class="group block">
+                    <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                      <img
+                        src={getUrl(activity.image, 600)}
+                        alt={activity.name}
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      {IconComponent && (
+                        <div class="absolute top-4 right-4 p-2.5 rounded-lg flex items-center justify-center z-10">
+                          <div class="w-20 h-20 lg:w-15 lg:h-15 flex items-center justify-center">
+                            <IconComponent className="w-full h-full object-contain" />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div class="text-left">
+                      <h3 class="font-serif text-xl text-[#001524] mb-2">
+                        {activity.name}
+                      </h3>
+                      <a href={activity.link} target="_blank">
+                        <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
+                          {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
+                          {""}
+                          <ChevronRight
+                            size={14}
+                            className="group-hover:translate-x-1 transition-transform"
+                          />
+                        </div>
+                      </a>
+                    </div>
+                  </a>
+                </div>
+              );
+            })
+          }
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
-
-    <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
-          <p class="text-gray-500 max-w-2xl mx-auto"></p>
-        </div>
-
-        <div class="swiper mySwiper pb-12">
-          <div class="swiper-wrapper">
-            {
-              relatedActivities.map((activity) => {
-                const IconComponent = iconMap[(activity as any).iconKey];
-                return (
-                  <div class="swiper-slide">
-                    <a href={activity.link} class="group block">
-                      <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                        <img
-                          src={getUrl(activity.image, 600)}
-                          alt={activity.name}
-                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        {IconComponent && (
-                          <div class="absolute top-4 right-4 p-2.5 rounded-lg flex items-center justify-center z-10">
-                            <div class="w-20 h-20 lg:w-15 lg:h-15 flex items-center justify-center">
-                              <IconComponent className="w-full h-full object-contain" />
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                      <div class="text-left">
-                        <h3 class="font-serif text-xl text-[#001524] mb-2">
-                          {activity.name}
-                        </h3>
-                        <a href={activity.link} target="_blank">
-                          <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
-                           {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}{""}
-                            <ChevronRight
-                              size={14}
-                              className="group-hover:translate-x-1 transition-transform"
-                            />
-                          </div>
-                        </a>
-                      </div>
-                    </a>
-                  </div>
-                );
-              })
-            }
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-  </main>
+  </section>
 </Layout>
 
 <style>
@@ -647,11 +676,11 @@ const seoMetaData = {
       opacity: 1 !important;
     }
   }
-.bokun-calendar-container {
+  .bokun-calendar-container {
     overflow: visible !important;
     z-index: 50 !important;
-}
-:global(body.menu-is-open) #sticky-product-card {
+  }
+  :global(body.menu-is-open) #sticky-product-card {
     display: none !important;
   }
 
@@ -663,6 +692,13 @@ const seoMetaData = {
     z-index: 0;
     --controls: none;
     --media-object-fit: cover;
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out forwards;
   }
   mux-player::part(video) {
     width: 100vw !important;
@@ -691,11 +727,11 @@ const seoMetaData = {
     });
   }
 
-  const menuButton = document.querySelector('button'); // O la clase de tu botón de menú
+  const menuButton = document.querySelector("button"); // O la clase de tu botón de menú
 
-menuButton?.addEventListener('click', () => {
-  document.body.classList.toggle('menu-is-open');
-});
+  menuButton?.addEventListener("click", () => {
+    document.body.classList.toggle("menu-is-open");
+  });
 
   initSwiper();
   document.addEventListener("astro:page-load", initSwiper);

@@ -9,7 +9,8 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: "https://cenoteadventuring.vercel.app/",
   adapter: vercel(),
-  output: 'static',
+  output: 'server',
+  trailingSlash: 'ignore',
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
