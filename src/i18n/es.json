@@ -410,7 +410,8 @@
             "PER_GROUP": "por grupo",
             "BUTTON": "Ver Disponibilidad",
             "NOT_AVAILABLE": "No Disponible",
-            "CLOSE": "Cerrar Modal"
+            "CLOSE": "Cerrar Modal",
+            "BOKUN": "Reserva tu experiencia"
     },
     "REGULAR_CENOTE": {
       "HERO": {

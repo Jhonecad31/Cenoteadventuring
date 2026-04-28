@@ -424,7 +424,8 @@
       "PER_GROUP": "per group",
       "BUTTON": "Check Availability",
       "NOT_AVAILABLE": "Not Available",
-      "CLOSE": "Close Modal"
+      "CLOSE": "Close Modal",
+      "BOKUN": "Book your experience"
     },
     "REGULAR_CENOTE": {
       "HERO": {
