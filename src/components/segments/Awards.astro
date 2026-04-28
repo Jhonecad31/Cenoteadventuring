@@ -28,7 +28,7 @@ const relatedActivities = [
   },
 ];
 ---
-  <section class="bg-[#F8FAFC] py-24 md:py-40 px-6 overflow-hidden -mt-6">
+  <section class="bg-[#EDF4FC] py-24 md:py-40 px-6 overflow-hidden -mt-6">
   <div class="max-w-[1200px] mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
       <div class="lg:max-w-md md:max-w-2xl px-4">
@@ -67,29 +67,25 @@ const relatedActivities = [
    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mx-auto max-w-5xl">
   {
     relatedActivities.map((activity) => (
-      <a
-        href="/activities/"
-        class="group cursor-pointer flex flex-col items-center text-center p-6 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
+      <div
+        class="flex flex-col items-center text-center p-6"
       >
         {/* Contenedor con altura controlada */}
         <div class="h-16 md:h-20 w-full flex items-center justify-center mb-6">
           <img
             src={activity.image.src}
             alt={activity.name}
-            class="h-full max-w-[150px] md:max-w-[180px] object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+            class="h-full max-w-[150px] md:max-w-[180px] object-contain opacity-80"
           />
         </div>
 
-        <h4 class="text-[#001524] text-xs md:text-sm tracking-[0.1em] uppercase line-clamp-2 min-h-[2.5rem] font-semibold">
+        <h4 class="text-[#001524] text-xs md:text-sm tracking-[0.1em] uppercase font-semibold">
           {activity.name}
         </h4>
-
-        <div class="text-[10px] uppercase tracking-widest text-gray-400 flex items-center justify-center gap-1 mt-2 group-hover:text-[#005B71] transition-colors">
-          {i18n.HOME_PAGE.AWARDS.DESCRIP_LINK} <ChevronRight size={14}/>
-        </div>
-      </a>
+      </div>
     ))
   }
+</div>
 </div>
   </div>
 </section>
