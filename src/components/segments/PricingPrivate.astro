@@ -207,62 +207,59 @@ const seoMetaData = {
     <section class="mx-auto max-w-screen-2xl px-6 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
         <div class="lg:col-span-8 space-y-6">
-          <div
-            class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16"
-          >
-            <div
-              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
-            >
-              <Clock size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  > {duration} {i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX}) </span
-                >
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
-            >
-              <Users size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}</span
-                >
-               {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
-            >
-              <Calendar size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.SCHEDULE}</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >09:00 | 13:00</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col items-center text-center gap-3 px-2">
-              <Truck size={30} className="text-gray-400" />
-              <div class="flex flex-col">
-                <span
-                  class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >Transport</span
-                >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >Included</span
-                >
-              </div>
-            </div>
-          </div>
+          <div class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16">
+  {/* DURACIÓN */}
+  <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2">
+    <Clock size={30} className="text-gray-400" />
+    <div class="flex flex-col">
+      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        {i18n.DETAIL_PAGE.GENERAL.DURATION}
+      </span>
+      <span class="text-xs md:text-sm font-semibold text-gray-800">
+        {duration} {i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX})
+      </span>
+    </div>
+  </div>
+
+  {/* EDAD - Aquí agregué el span que faltaba */}
+  <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2">
+    <Users size={30} className="text-gray-400" />
+    <div class="flex flex-col">
+      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        {i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}
+      </span>
+      <span class="text-xs md:text-sm font-semibold text-gray-800">
+        {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
+      </span>
+    </div>
+  </div>
+
+  {/* HORARIO */}
+  <div class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2">
+    <Calendar size={30} className="text-gray-400" />
+    <div class="flex flex-col">
+      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        {i18n.DETAIL_PAGE.GENERAL.SCHEDULE}
+      </span>
+      <span class="text-xs md:text-sm font-semibold text-gray-800">
+        09:00 | 13:00
+      </span>
+    </div>
+  </div>
+
+  {/* TRANSPORTE */}
+  <div class="flex flex-col items-center text-center gap-3 px-2">
+    <Truck size={30} className="text-gray-400" />
+    <div class="flex flex-col">
+      <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        Transport
+      </span>
+      <span class="text-xs md:text-sm font-semibold text-gray-800">
+        Included
+      </span>
+    </div>
+  </div>
+</div>
 
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
