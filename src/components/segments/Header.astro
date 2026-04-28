@@ -213,18 +213,17 @@ const navigation = [
   .font-serif {
     font-family: "Playfair Display", serif;
   }
- 
-  #sticky-product-card {
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 40; /* Por debajo del menú móvil */
-  }
-
- 
-  body.menu-is-open #sticky-product-card {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
+ /* se agrega para sticky de movil */
+ :global(body.is-nav-open) #sticky-product-card {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px); 
+    transition: all 0.3s ease-in-out;
+}
+#sticky-product-card {
+    transition: all 0.3s ease-in-out;
+    will-change: transform, opacity;
+}
   #mobile-drawer {
     z-index: 100;
   }
