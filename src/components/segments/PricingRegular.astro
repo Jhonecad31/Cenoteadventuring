@@ -592,11 +592,13 @@ const seoMetaData = {
             </div>
           </div>
         </div>
-        <BtnModalBokun client:load data={dataForm} variant="sticky" />
+       <div slot="sticky-button">
+    <BtnModalBokun client:load data={dataForm} variant="sticky" />
+  </div>
       </div>
     </div>
   </main>
-  <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden">
+  <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12">
       <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
@@ -656,42 +658,54 @@ const seoMetaData = {
 <style>
   @import "swiper/css";
   @import "swiper/css/pagination";
+
   .swiper-pagination-bullet-active {
     background: #005b71 !important;
   }
+
   .swiper-slide {
     opacity: 0.5;
     transition: opacity 0.3s ease;
   }
+
   .swiper-slide-active {
     opacity: 1;
   }
+
   @media (min-width: 1024px) {
     .swiper-slide {
       opacity: 1 !important;
     }
   }
+
   .bokun-calendar-container {
     overflow: visible !important;
-    z-index: 50 !important;
-  }
-  :global(body.menu-is-open) #sticky-product-card {
-    display: none !important;
+    z-index: 40 !important; 
   }
 
   mux-player {
     position: absolute;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%; 
+    height: 100%;
     z-index: 0;
     --controls: none;
     --media-object-fit: cover;
   }
+
   mux-player::part(video) {
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover !important;
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out forwards;
   }
 </style>
 
@@ -714,12 +728,6 @@ const seoMetaData = {
       },
     });
   }
-
-  const menuButton = document.querySelector("button");
-
-  menuButton?.addEventListener("click", () => {
-    document.body.classList.toggle("menu-is-open");
-  });
 
   initSwiper();
   document.addEventListener("astro:page-load", initSwiper);

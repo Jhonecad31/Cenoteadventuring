@@ -151,22 +151,18 @@ const navigation = [
   const updateStyles = () => {
     const isScrolled = window.scrollY > 50;
     
-    // 1. Corregido: Una sola constante que revisa si la URL es de las páginas claras
     const isSpecialPage = ['/contact', '/404'].some(path => 
       window.location.pathname.includes(path)
     );
     
-    // Si hay scroll O estamos en una página especial, activar tema oscuro
     const useDarkTheme = isScrolled || isSpecialPage;
 
-    // Estilos del Header
     header?.classList.toggle("bg-[#EDF4FC]", useDarkTheme);
     header?.classList.toggle("shadow-sm", useDarkTheme);
     header?.classList.toggle("h-20", useDarkTheme);
     header?.classList.toggle("h-24", !useDarkTheme);
     header?.classList.toggle("border-slate-200", useDarkTheme);
 
-    // Intercambio de Logos
     if (useDarkTheme) {
       logoCompleto?.classList.add("hidden", "opacity-0");
       logoReducido?.classList.remove("hidden");
@@ -177,7 +173,6 @@ const navigation = [
       setTimeout(() => logoCompleto?.classList.remove("opacity-0"), 10);
     }
 
-    // Colores de elementos (Azul oscuro Cenote vs Blanco)
     const textColor = useDarkTheme ? "text-[#002B49]" : "text-white";
     const oldColor = useDarkTheme ? "text-white" : "text-[#002B49]";
 
@@ -192,25 +187,22 @@ const navigation = [
     });
   };
 
-  // Eventos de ejecución
   window.addEventListener("scroll", updateStyles);
   document.addEventListener("DOMContentLoaded", updateStyles);
   document.addEventListener("astro:after-swap", updateStyles);
-  // Dentro del script de tu componente de Navegación
-document.body.classList.add('menu-is-open');
-
-// Y al cerrar
-document.body.classList.remove('menu-is-open');
-
-  // Lógica del Menú Móvil
+  
   openBtn?.addEventListener("click", () => {
     drawer?.classList.remove("-translate-x-full");
     document.body.style.overflow = "hidden";
+    // Añadimos la clase para ocultar el sticky
+    document.body.classList.add('menu-is-open');
   });
 
   closeBtn?.addEventListener("click", () => {
     drawer?.classList.add("-translate-x-full");
     document.body.style.overflow = "";
+    // Quitamos la clase para que el sticky vuelva a aparecer
+    document.body.classList.remove('menu-is-open');
   });
 </script>
 
@@ -220,5 +212,20 @@ document.body.classList.remove('menu-is-open');
 
   .font-serif {
     font-family: "Playfair Display", serif;
+  }
+ 
+  #sticky-product-card {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 40; /* Por debajo del menú móvil */
+  }
+
+ 
+  body.menu-is-open #sticky-product-card {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  #mobile-drawer {
+    z-index: 100;
   }
 </style>
