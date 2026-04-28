@@ -2,6 +2,8 @@
 import { getI18N } from "@/i18n";
 import Layout from "@/layouts/BaseLayout.astro";
 import BtnModalBokun from "@/components/others/BtnBokun";
+import TagH3 from "@/components/global/TagH3.astro";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
 import {
   Star,
   Clock,
@@ -19,43 +21,32 @@ import {
   Wallet,
   Waves,
   Wind,
+  Bus,
 } from "lucide-react";
 import {
   Beach_taco,
   Extreme_adventuring,
   Snorkeling,
   Cancun_horse,
+  CenoteAdventure02,
 } from "@/icons/allIcons";
-import TagH3 from "@/components/global/TagH3.astro";
 
 const iconMap: Record<string, any> = {
   Beach_taco: Beach_taco,
   Extreme_adventuring: Extreme_adventuring,
   Snorkeling: Snorkeling,
   Cancun_horse: Cancun_horse,
+  CenoteAdventuring: CenoteAdventure02,
 };
-
 const tour = {
-  title: "Private Cenote Rental In Cancun",
-  tagline:
-    "Exclusive Experience at 3 Private Cenotes with a Mayan Show and Snacks",
   rating: 4.8,
   reviews: 1982,
-  description: "Cenote Adventuring® is part of Grupo Extreme®...",
-  inclusions: [
-    { text: "Conservation Fee (Included)", inc: true },
-    { text: "Round-trip transportation", inc: true },
-    { text: "3 Cenotes (Waterfall, Zipline, Cavern)", inc: true },
-    { text: "Tequila Tasting", inc: true },
-    { text: "Mayan Snack", inc: true },
-    { text: "Mayan Performance", inc: false },
-    { text: "Professional Photography", inc: false },
-  ],
 };
-
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 const relatedActivities = [
   {
-    name: "Taco Tour",
+    name: "Beach Taco Tour",
     image: "Cenote-Adventuring/tacotaco.webp",
     slug: "beach-taco-tour",
     iconKey: "Beach_taco",
@@ -83,14 +74,29 @@ const relatedActivities = [
     link: "https://extremeadventurecancun.com/extreme-adventuring-horse-back-riding/",
   },
 ];
+const plans = [
+  {
+    id: "CENOTE",
+    image: "Cenote-Adventuring/CenoteA.3.webp",
+    logo: "/Cenote-Adventuring/Logo-cenote.svg",
+    price: 70,
+    oldPrice: 80,
+    href: translatePath("/pricing-regular-page"),
+  },
+  {
+    id: "PRIVATE",
+    image: "Cenote-Adventuring/Card.1.webp",
+    logo: "/Cenote-Adventuring/Logo-cenote.svg",
+    price: 70,
+    oldPrice: 80,
+    href: translatePath("/pricing-private-page"),
+    priority: true,
+  },
+];
 
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
-const priceFrom = 115;
-const countStars = 4.7;
 const duration = 4;
 const minimumAge = 5;
-const reviewsCount = "325";
-const reviewsNumber = 325;
 const images = {
   card1: "Cenote-Adventuring/CenoteA.3.webp",
   card2: "Cenote-Adventuring/Card.1.webp",
@@ -107,12 +113,18 @@ const dataForm = {
 
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
-const { currentLocale } = Astro.props;
+
+const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
+
+const seoMetaData = {
+  title: i18n.SEO.REGULAR_CENOTE.INTRO.TITLE,
+  description: i18n.SEO.REGULAR_CENOTE.INTRO.DESCRIPTION,
+};
 ---
 
-<Layout title={tour.title}>
+<Layout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
     <section
       class="relative h-[80vh] flex items-center justify-center overflow-hidden"
@@ -187,7 +199,6 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
         </div>
       </div>
     </section>
-
     <section class="mx-auto max-w-screen-2xl px-6 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
         <div class="lg:col-span-8 space-y-6">
@@ -203,9 +214,12 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
                   >{i18n.DETAIL_PAGE.GENERAL.DURATION}</span
                 >
-                <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  > {duration} {i18n.DETAIL_PAGE.GENERAL.HOURS} ({i18n.DETAIL_PAGE.GENERAL.APPROX}) </span
-                >
+                <span class="text-xs md:text-sm font-semibold text-gray-800">
+                  {duration}
+                  {i18n.DETAIL_PAGE.GENERAL.HOURS} ({
+                    i18n.DETAIL_PAGE.GENERAL.APPROX
+                  })
+                </span>
               </div>
             </div>
             <div
@@ -217,7 +231,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
                   >{i18n.DETAIL_PAGE.GENERAL.AGE_REQUIREMENT}</span
                 >
-               {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
+                {minimumAge + " " + i18n.DETAIL_PAGE.GENERAL.YEARS_AND_OLDER}
               </div>
             </div>
             <div
@@ -230,7 +244,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                   >{i18n.DETAIL_PAGE.GENERAL.SCHEDULE}</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >{i18n.DETAIL_PAGE.REGULAR_CENOTE.SCHEDULES.SCHEDULE_LIST}</span
+                  >09:00 | 13:00</span
                 >
               </div>
             </div>
@@ -239,10 +253,10 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               <div class="flex flex-col">
                 <span
                   class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                  >{i18n.DETAIL_PAGE.GENERAL.TRANSPORTATION}</span
+                  >Transport</span
                 >
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >{i18n.DETAIL_PAGE.GENERAL.ROUNDTRIP_TRANSPORTATION}</span
+                  >Included</span
                 >
               </div>
             </div>
@@ -318,7 +332,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               >
                 <span class="text-2xl md:text-3xl font-serif text-[#001524]"
                   >{
-                    i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                    i18n.DETAIL_PAGE.REGULAR_CENOTE
                       .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.TITLE
                   }</span
                 >
@@ -331,7 +345,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               <div class="mt-4 text-gray-600 leading-relaxed font-light">
                 <p>
                   {
-                    i18n.DETAIL_PAGE.PRIVATE_CENOTE
+                    i18n.DETAIL_PAGE.REGULAR_CENOTE
                       .WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR.DESCRIPTION
                   }
                 </p>
@@ -461,7 +475,7 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
               <div class="mt-8 flex flex-col gap-4 mx-auto">
                 {/* Contenedor con espacio entre tarjetas */}
                 {
-                  i18n.DETAIL_PAGE.REGULAR_CENOTE.FAQS.FAQS.map(
+                  i18n.HOME_PAGE.FAQS.FAQS.map(
                     (
                       faq: { question: unknown; answer: unknown },
                       index: any,
@@ -493,70 +507,93 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
           </div>
         </div>
         <aside class="hidden lg:block lg:col-span-4 lg:mt-0">
-          <div
-            class="bg-gray-50 p-5 border border-gray-200 shadow-sm text-center sticky top-24"
-          >
-            <div class="mb-6">
-              <p class="text-sm md:text-base text-gray-400 line-through">
-                Price from $80 USD
-              </p>
-              <div class="text-4xl font-bold text-[#001524]">$70 USD</div>
-              <p class="text-sm text-gray-500">per person</p>
-            </div>
+          <div class="w-full border-2 border-gray-200 p-2 rounded-[22px]">
+            <div
+              class="w-full bg-gray-50/50 p-6 rounded-xl text-center border border-gray-100"
+            >
+              <div class="mb-4">
+                <p class="text-xs lg:text-sm text-gray-400 line-through">
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} ${
+                    plans.oldPrice
+                  } USD
+                </p>
+                <div class="text-3xl lg:text-4xl font-bold text-[#001524]">
+                  ${plans.price} USD
+                </div>
+                <p class="text-xs lg:text-sm text-gray-500">
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+                </p>
+              </div>
 
-            <div class="grid grid-cols-2 gap-3 mb-6">
-              <div
-                class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm"
-              >
-                <span
-                  class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2"
-                  >10% OFF</span
-                >
-                <p class="text-lg font-bold text-[#001524]">$72 USD</p>
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-white p-3 rounded-lg border border-gray-100">
+                  <span
+                    class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                    >10%</span
+                  >
+                  <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
+                    {
+                      i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD
+                        .BOOKING_15_DAYS
+                    }
+                  </p>
+                  <p class="text-sm lg:text-base font-bold">
+                    ${Math.round(plans.price * 0.9)} USD
+                  </p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-gray-100">
+                  <span
+                    class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1"
+                    >20%</span
+                  >
+                  <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
+                    {
+                      i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD
+                        .BOOKING_30_DAYS
+                    }
+                  </p>
+                  <p class="text-sm lg:text-base font-bold">
+                    ${Math.round(plans.price * 0.85)} USD
+                  </p>
+                </div>
               </div>
-              <div
-                class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm"
-              >
-                <span
-                  class="inline-block text-xs font-bold text-white bg-[#006083] rounded-full px-2 py-0.5 mb-2"
-                  >20% OFF</span
-                >
-                <p class="text-lg font-bold text-[#001524]">$64 USD</p>
-              </div>
+
+              <BtnModalBokun client:visible data={dataForm} isSticky={false} />
             </div>
-            <BtnModalBokun client:visible data={dataForm} isSticky={false} />
           </div>
         </aside>
       </div>
     </section>
 
-    <div class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
-      <div
-        class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5"
-      >
-        <div class="flex items-start gap-4 mb-1">
-          <div class="flex-shrink-0 w-20">
-            <img
-              src={getUrl(images.logoCenote)}
-              alt="Logo"
-              class="w-full h-auto object-contain"
-            />
-          </div>
-          <div class="flex flex-col flex-grow pt-1">
-            <p class="text-black font-normal text-xs mb-1">
-              Cenote Adventuring
-            </p>
-            <div class="flex items-baseline gap-1 mb-1">
-              <span class="text-black font-bold text-2xl tracking-tight"
-                >$56 USD</span
-              >
-              <span class="text-black/65 text-[10px] font-light"
-                >per person</span
-              >
-            </div>
-          </div>
+   <div id="sticky-product-card" class="fixed bottom-6 left-4 right-4 lg:hidden z-50">
+  <div class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5">
+    <div class="flex items-start gap-4 mb-1">
+      <div class="flex-shrink-0 w-20">
+        <img
+          src={getUrl(images.logoCenote)}
+          alt="Logo"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+      <div class="flex flex-col flex-grow pt-1">
+        <p class="text-black font-normal text-xs mb-1">
+          {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
+        </p>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-black font-bold text-2xl tracking-tight">
+            ${Math.round(plans.price * 1.1)} USD
+          </span>
+          <span class="text-black/65 text-[10px] font-light">
+            {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+          </span>
         </div>
-        <BtnModalBokun client:load data={dataForm} variant="sticky" />
+      </div>
+    </div>
+    <BtnModalBokun client:load data={dataForm} variant="sticky" />
+  </div>
+</div>
+</div>
+</div>
       </div>
     </div>
 
@@ -595,7 +632,8 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
                         </h3>
                         <a href={activity.link} target="_blank">
                           <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
-                            Discover more{""}
+                            {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
+                            {""}
                             <ChevronRight
                               size={14}
                               className="group-hover:translate-x-1 transition-transform"
@@ -634,6 +672,13 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
       opacity: 1 !important;
     }
   }
+  .bokun-calendar-container {
+    overflow: visible !important;
+    z-index: 50 !important;
+  }
+  :global(body.menu-is-open) #sticky-product-card {
+    display: none !important;
+  }
 
   mux-player {
     position: absolute;
@@ -670,6 +715,12 @@ const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
       },
     });
   }
+
+  const menuButton = document.querySelector('button'); // O la clase de tu botón de menú
+
+menuButton?.addEventListener('click', () => {
+  document.body.classList.toggle('menu-is-open');
+});
 
   initSwiper();
   document.addEventListener("astro:page-load", initSwiper);

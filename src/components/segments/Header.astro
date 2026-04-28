@@ -18,10 +18,10 @@ const translatePath = useTranslatedPath(lang);
 
 const navigation = [
   { title: k("nav.home"), link: translatePath("/") },
-  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail") },
+  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail") }, // Llave primaria en inglés
   { title: k("nav.blog"), link: translatePath("/404/") },
   { title: k("nav.about"), link: translatePath("/about/") },
-  { title: k("nav.contact"), link: translatePath("/contact/") },
+  { title: k("nav.contact"), link: translatePath("/contact/") }, // Llave primaria en inglés
 ];
 ---
 
@@ -196,6 +196,11 @@ const navigation = [
   window.addEventListener("scroll", updateStyles);
   document.addEventListener("DOMContentLoaded", updateStyles);
   document.addEventListener("astro:after-swap", updateStyles);
+  // Dentro del script de tu componente de Navegación
+document.body.classList.add('menu-is-open');
+
+// Y al cerrar
+document.body.classList.remove('menu-is-open');
 
   // Lógica del Menú Móvil
   openBtn?.addEventListener("click", () => {

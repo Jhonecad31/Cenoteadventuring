@@ -35,9 +35,9 @@
       }
     },
     "PRIVATE_CENOTE": {
-      "TITLE": "",
-      "DESCRIPTION": "",
-      "META_TITLE": ""
+        "TITLE": "Renta de Cenote Privado",
+        "DESCRIPTION": "Renta de cenote privado en Cancún: Una experiencia 100% exclusiva para grupos.",
+        "META_TITLE": "Renta de Cenote Privado en Cancún | Experiencia 100% Exclusiva"
     }
   },
   "NOT_FOUND_PAGE": {
@@ -71,9 +71,9 @@
   "HOME_PAGE": {
     "HERO": {
       "TITLE": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
-       "TITLE2": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
+      "TITLE2": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
       "DESCRIPTION1": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
-      "DES": "Discover Our Journeys"
+      "DES": "View packages"
     },
     "AWARDS": {
       "TITLE": "Awards & Recognitions",
@@ -100,35 +100,38 @@
       "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
     },
     "CHOOSE_PLAN": {
-      "TITLE": "Choose the Perfect Plan for Your Cenote Adventure",
-      "DESCRIPTION": "We offer flexible, tailored options to match your travel style. Whether you are seeking an exclusive private journey or a premium small-group experience, enjoy the most authentic cenote tour in Puerto Morelos.",
+      "TITLE": "Find Your Ultimate Cenote Adventure",
+      "DESCRIPTION": "Tailored experiences for every journey. Whether you seek the exclusivity of a private tour or the quality of a premium small-group expedition, we ensure an authentic encounter with the region's most breathtaking landscapes.",
+      "BTNBOOK": "Check Availability",
       "PLANS": {
         "PRIVATE": {
           "TITLE": "Private Cenote Experience",
           "DESCRIPTION": "Experience an exclusive cenote adventure with a private boat, personalized service, and more amenities.",
           "FEATURES": [
-            "Unlimited drinks included on the boat",
-            "Vip meal: 4 tacos and 2 drinks (during lunch)",
-            "Fresh ceviche served on board",
-            "Welcome drink upon arrival",
-            "Tequila Tasting",
-            "Priority check-in",
-            "Private boat"
+           "Private group",
+          "Private transportation",
+          "Round-trip transportation from your hotel",
+          "Cenote (with waterfall, zipline and cavern)",
+          "Lifejacket",
+          "Specialized and bilingual guides",
+          "Tequila tasting(in the cenote)",
+          "Mayan Snack",
+          "Mayan performance",
+          "Round trip transportation from cancún",
+          "Conservation Fee (include)"
           ]
         },
         "CENOTE": {
           "TITLE": "Cenote adventuring",
           "DESCRIPTION": "3 cenote boutique Experience, Mayan Show with Snack",
           "FEATURES": [
-            "Round-trip transportation from your hotel",
-            "3 Cenotes (with Waterfall, Zipline and Cavern)",
-            "Lifejacket",
-            "Specialized and bilingual guides",
-            "Tequila Tasting (in the Cenote)",
-            "Mayan Snack",
-            "Mayan Performance",
-            "Round trip transportation from Cancun",
-            "Conservation Fee (Included)"
+            "Conservation Fee(Included)",
+          "Round-trip transportation from your hotel",
+          "3 Cenotes(with waterfall, zipline and cavern)",
+          "Lifejacket",
+          "Specialized and bilingual guides",
+          "Tequila tasting(in the cenote)",
+          "Mayan performance"
           ]
         }
       }
@@ -304,7 +307,7 @@
     }
   },
   "ABOUT_US_PAGE": {
-   "HERO": {
+    "HERO": {
       "H1": "Cenote Adventuring: Our story",
       "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle.",
       "ORIGIN_STORY": "Our founders grew up exploring the Ruta de los Cenotes, discovering hidden treasures and learning about their ecological and cultural importance. Over time, they realized that many visitors were missing the true essence of these natural wonders due to crowded group tours.",
@@ -397,7 +400,31 @@
       "OFFERED_IN": "Offered in",
       "OFFERED_LANG": "English & Spanish",
       "AGE_REQUIREMENT": "Minimum Age",
-      "YEARS_AND_OLDER": "years and older"
+      "YEARS_AND_OLDER": "years and older",
+      "BTNGENERAL": "Discovery more"
+    },
+    "FORM_RESERVATION": {
+      "TITLE": "Make your reservation",
+      "EARLY_BIRD": {
+        "TITLE": "Discount for Early Deal",
+        "BOOKING_15_DAYS": "Booking 15 days before.",
+        "BOOKING_30_DAYS": "Booking 30 days before."
+      },
+      "AGE_REQUIREMENT": "Age Requirement",
+      "YEARS_AND_OLDER": "years and older",
+      "OFFERED_IN": "Offered in",
+      "OFFERED_LANG": "English & Spanish",
+      "DURATION": "Duration",
+      "CHOOSE_ATV": "Choose ATV mode",
+      "SHARED": "Shared",
+      "SINGLE": "Single",
+      "REGULAR_PRICE": "Regular Price",
+      "PRICE_FROM": "Price from",
+      "PER_PERSON": "per person",
+      "PER_GROUP": "per group",
+      "BUTTON": "Check Availability",
+      "NOT_AVAILABLE": "Not Available",
+      "CLOSE": "Close Modal"
     },
     "REGULAR_CENOTE": {
       "HERO": {
@@ -475,7 +502,7 @@
         ]
       },
       "WHAT_TO_BRING": {
-        "TITLE": "What to bring for your cenote adventure",
+        "TITLE": "What to bring for your cenote adventure?",
         "SUNSCREEN": {
           "TITLE": "Biodegradable Sunscreen",
           "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
@@ -510,14 +537,11 @@
         "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
       },
       "SCHEDULES": {
-                "TITLE": "Available Schedules for Your Private Snorkeling Tour",
-                "DESCRIPTION": "Choose the perfect time for your exclusive snorkeling adventure in Puerto Morelos. Our private tours are available at the following times:",
-                "SCHEDULE_LIST": [
-                    "09:30 AM",
-                    "13:30 PM"
-                ],
-                "DURATION": "4 hours (approx.)"
-            },
+        "TITLE": "Available Schedules for Your Private Snorkeling Tour",
+        "DESCRIPTION": "Choose the perfect time for your exclusive snorkeling adventure in Puerto Morelos. Our private tours are available at the following times:",
+        "SCHEDULE_LIST": ["09:30 AM", "13:30 PM"],
+        "DURATION": "4 hours (approx.)"
+      },
       "FAQS": {
         "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
         "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
@@ -584,41 +608,41 @@
         "TITLE": "A True Private Group Tour, Not a Shared Experience.",
         "DESCRIPTION": "This is not a modified group excursion; it is a dedicated private tour where your group is the only one on-site. No waiting times, no fixed schedules, and no mixed groups.",
         "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
-         "TITLE": "The unique features of our cenote tour",
-         "DESCRIPTION": "Our Private Cenote Rental stands out by offering a 100% exclusive experience, tailored entirely to your group's pace and preferences:",
-        "THE_UNIQUE_FEATURES_LIST": [
-          {
-            "TITLE": "Waterfalls and Jumping Platforms",
-            "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
-          },
-          {
-            "TITLE": "Zip Line and Rustic Swings",
-            "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
-          },
-          {
-            "TITLE": "Exclusive Access",
-            "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+          "TITLE": "The unique features of our cenote tour",
+          "DESCRIPTION": "Our Private Cenote Rental stands out by offering a 100% exclusive experience, tailored entirely to your group's pace and preferences:",
+          "THE_UNIQUE_FEATURES_LIST": [
+            {
+              "TITLE": "Waterfalls and Jumping Platforms",
+              "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+            },
+            {
+              "TITLE": "Zip Line and Rustic Swings",
+              "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+            },
+            {
+              "TITLE": "Exclusive Access",
+              "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+            }
+          ],
+          "BOOK_CENOTE": {
+            "TITLE": "Rent Your Private Cenote Today",
+            "DESCRIPTION": "Don’t settle for crowded tours. Book your Cancun private cenote experience today and enjoy the luxury of having a natural wonder all to yourself."
           }
-        ],
-        "BOOK_CENOTE": {
-          "TITLE": "Rent Your Private Cenote Today",
-          "DESCRIPTION": "Don’t settle for crowded tours. Book your Cancun private cenote experience today and enjoy the luxury of having a natural wonder all to yourself."
         }
-      }
-    },
-    "WHAT_YOU_SHOULD_KNOW": {
-      "TITLE": "What you should know?",
-      "LIST": [
-        "This is a 100% private activity; only your group will participate.",
-        "Private transportation is included (direct from your hotel/Airbnb).",
-        "Not wheelchair accessible.",
-        "Not recommended for people with severe back problems.",
-        "Not suitable for pets.",
-        "Infants must not sit on laps (please request special seating if needed).",
-        "Please contact us in advance to coordinate your specific pickup time."
-      ]
-    },
-   "WHAT_TO_BRING": {
+      },
+      "WHAT_YOU_SHOULD_KNOW": {
+        "TITLE": "What you should know?",
+        "LIST": [
+          "This is a 100% private activity; only your group will participate.",
+          "Private transportation is included (direct from your hotel/Airbnb).",
+          "Not wheelchair accessible.",
+          "Not recommended for people with severe back problems.",
+          "Not suitable for pets.",
+          "Infants must not sit on laps (please request special seating if needed).",
+          "Please contact us in advance to coordinate your specific pickup time."
+        ]
+      },
+      "WHAT_TO_BRING": {
         "TITLE": "What to bring for your cenote adventure",
         "SUNSCREEN": {
           "TITLE": "Biodegradable Sunscreen",
@@ -649,37 +673,37 @@
           "DESCRIPTION": "Useful for purchasing unique souvenirs, professional photos, or providing tips."
         }
       },
-    "GALLERY": {
-      "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
-      "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
-    },
-    "SCHEDULES": {
-      "TITLE": "Available Schedules for the Snorkeling Adventure",
-      "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
-      "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
-      "DURATION": "4 hours (approx.)"
-    },
-    "FAQS": {
-      "TITLE": "Frequently Asked Questions",
-      "FAQS": [
-        {
-          "question": "What makes this a private cenote tour in Cancun?",
-          "answer": "This experience offers exclusive cenote access for your group only, along with private transportation and a dedicated guide. No other visitors or shared groups are included."
-        },
-        {
-          "question": "How many people can join the private group tour?",
-          "answer": "Private group tours are flexible and can accommodate small families or larger private groups. Group size can be adjusted based on your needs."
-        },
-        {
-          "question": "Is this tour suitable for families and special events?",
-          "answer": "Yes. This Cancun private cenote tour is ideal for families, couples, birthdays, proposals, corporate groups, and travelers seeking privacy and comfort."
-        },
-        {
-          "question": "Do I need prior swimming experience to enjoy the cenote?",
-          "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
-        }
-      ]
+      "GALLERY": {
+        "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+      },
+      "SCHEDULES": {
+        "TITLE": "Available Schedules for the Snorkeling Adventure",
+        "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
+        "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
+        "DURATION": "4 hours (approx.)"
+      },
+      "FAQS": {
+        "TITLE": "Frequently Asked Questions",
+        "FAQS": [
+          {
+            "question": "What makes this a private cenote tour in Cancun?",
+            "answer": "This experience offers exclusive cenote access for your group only, along with private transportation and a dedicated guide. No other visitors or shared groups are included."
+          },
+          {
+            "question": "How many people can join the private group tour?",
+            "answer": "Private group tours are flexible and can accommodate small families or larger private groups. Group size can be adjusted based on your needs."
+          },
+          {
+            "question": "Is this tour suitable for families and special events?",
+            "answer": "Yes. This Cancun private cenote tour is ideal for families, couples, birthdays, proposals, corporate groups, and travelers seeking privacy and comfort."
+          },
+          {
+            "question": "Do I need prior swimming experience to enjoy the cenote?",
+            "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
+          }
+        ]
+      }
     }
-  }
   }
 }

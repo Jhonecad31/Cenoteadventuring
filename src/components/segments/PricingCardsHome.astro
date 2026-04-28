@@ -2,10 +2,44 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getI18N } from "@/i18n";
-
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+import TagH1 from "@/components/global/TagH1.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+// cdn para imagenes del proyecto
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
+const getUrl = (id: string, w = 800) =>
+  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
+
+
+const plans = [
+  {
+    id: "CENOTE",
+    title: i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.TITLE,
+    description: i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.DESCRIPTION,
+    features: i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.FEATURES,
+    image: "/Cenote-Adventuring/CenoteA.7.webp",
+    logo: "/Cenote-Adventuring/Logo-cenote.svg",
+    price: 70,
+    oldPrice: 80,
+    href: translatePath("/pricing-regular-page"),
+  },
+  {
+    id: "PRIVATE",
+    title: i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE,
+    description: i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.DESCRIPTION,
+    features: i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.FEATURES,
+    image: "/Cenote-Adventuring/CenoteA.4.webp",
+    logo: "/Cenote-Adventuring/Logo-cenote.svg",
+    price: 70, 
+    oldPrice: 80,
+    href: translatePath("/pricing-private-page"),
+    priority: true,
+  },
+];
 
 const images = {
   cenoteAdventuring: "/Cenote-Adventuring/CenoteA.7.webp",
@@ -13,163 +47,87 @@ const images = {
   logoCenote: "/Cenote-Adventuring/Logo-cenote.svg",
   logoPrivate: "/Cenote-Adventuring/Logo-cenote.svg",
 };
-
-
-const getUrl = (id: string, w = 800) =>
-  `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
-
-const features = [
-  "Cenote with Waterfall",
-  "Cenote with Cavern",
-  "Cenote with Zipline",
-  "Tequila tasting",
-  "Mayan performance",
-];
-
-const img = {};
-
 ---
 
-<!-- se añade modificacion para textos de cards -->
- <section id="cards" class="bg-[#F8FAFC] py-12 lg:py-24 px-6 -mt-20">
+<section class="bg-[#F8FAFC] py-12 lg:py-24 px-6 -mt-20">
   <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 justify-items-center">
-      
-      {/* TARJETA 1: CENOTE ADVENTURING */}
-      <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[550px]">
-        <div class="relative h-60 md:h-72">
-          <img
-            src={getUrl(images.cenoteAdventuring)}
-            alt="Cenote Adventuring"
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute bottom-4 left-4 p-2">
+    <div class="text-center mb-12 lg:mb-16">
+      <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
+        {i18n.HOME_PAGE.CHOOSE_PLAN.TITLE}
+      </TagH1>
+      <p class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 lg:text-lg md:text-2xl">
+        {i18n.HOME_PAGE.CHOOSE_PLAN.DESCRIPTION}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 justify-items-center" id="plans">
+      {plans.map((plan) => (
+        <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[550px] transition-transform hover:scale-[1.02] duration-300">
+          <div class="relative h-60 md:h-72">
             <img
-              src={getUrl(images.logoCenote)}
-              alt="Logo"
-              class="h-12 w-auto"
+              src={getUrl(plan.image)}
+              alt={plan.title}
+              class="w-full h-full object-cover"
             />
-          </div>
-        </div>
-
-        <div class="p-6 lg:p-8 flex flex-col gap-5 justify-between flex-grow">
-          <div class="flex-1">
-            <h3 class="font-serif text-2xl lg:text-3xl text-[#001524] mb-2">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.TITLE}
-            </h3>
-            <p class="text-gray-600 mb-4 font-medium text-base lg:text-lg">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.DESCRIPTION}
-            </p>
-            <ul class="hidden md:block space-y-3">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.FEATURES.map((item) => (
-                <li class="flex items-center gap-2 text-sm lg:text-base text-gray-700">
-                  <Check size={16} className="text-gray-400 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div class="absolute bottom-4 left-4 p-2 rounded-lg backdrop-blur-sm">
+              <img
+                src={getUrl(plan.logo)}
+                alt="Logo"
+                class="h-12 w-auto"
+              />
+            </div>
           </div>
 
-          <div class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center">
-            <div class="mb-4">
-              <p class="text-xs lg:text-sm text-gray-400 line-through">
-                Price from $80 USD
+          <div class="p-6 lg:p-8 flex flex-col gap-5 justify-between flex-grow">
+            <div class="flex-1">
+              <h3 class="font-serif text-2xl lg:text-3xl text-[#001524] mb-2">
+                {plan.title}
+              </h3>
+              <p class="text-gray-600 mb-4 font-medium text-base lg:text-lg">
+                {plan.description}
               </p>
-              <div class="text-3xl lg:text-4xl font-bold text-[#001524]">$70 USD</div>
-              <p class="text-xs lg:text-sm text-gray-500">per person</p>
+              
+              <ul class="hidden md:block space-y-3">
+                {plan.features.map((feature: string) => (
+                  <li class="flex items-center gap-2 text-sm lg:text-base text-gray-700">
+                    <Check size={16} className="text-gray-400 shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div class="grid grid-cols-2 gap-3 mb-6">
-              <div class="bg-white p-3 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">10%</span>
-                <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
-                  Booking 15 days before
+            <div class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center">
+              <div class="mb-4">
+                <p class="text-xs lg:text-sm text-gray-400 line-through">
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} ${plan.oldPrice} USD
                 </p>
-                <p class="text-sm lg:text-base font-bold">$77 USD</p>
+                <div class="text-3xl lg:text-4xl font-bold text-[#001524]">
+                  ${plan.price} USD
+                </div>
+                <p class="text-xs lg:text-sm text-gray-500">{i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}</p>
               </div>
-              <div class="bg-white p-3 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">20%</span>
-                <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
-                  Booking 30 days before
-                </p>
-                <p class="text-sm lg:text-base font-bold">$60 USD</p>
-              </div>
-            </div>
 
-            <Button className="w-full bg-[#006083] hover:bg-[#006083]/90 text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto">
-              <a href="/pricing-regular-page" class="w-full block"> Check Availability </a>
-            </Button>
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-white p-3 rounded-lg border border-gray-100">
+                  <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">10%</span>
+                  <p class="text-[10px] lg:text-xs leading-tight text-gray-600">{i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_15_DAYS}</p>
+                  <p class="text-sm lg:text-base font-bold">${Math.round(plan.price * 1.1)} USD</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-gray-100">
+                  <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">20%</span>
+                  <p class="text-[10px] lg:text-xs leading-tight text-gray-600">{i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_30_DAYS}</p>
+                  <p class="text-sm lg:text-base font-bold">${Math.round(plan.price * 0.85)} USD</p>
+                </div>
+              </div>
+
+              <Button className="w-full bg-[#006083] hover:bg-[#006083]/90 text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto">
+                <a href={plan.href} class="w-full block">{i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON}</a>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* TARJETA 2: CENOTE PRIVATE (Aplicando mismos cambios) */}
-      <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[550px]">
-        <div class="relative h-60 md:h-72">
-          <img
-            src={getUrl(images.privateRental)}
-            alt="Private Rental"
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute bottom-4 left-4  p-2 rounded-lg backdrop-blur-sm">
-            <img
-              src={getUrl(images.logoPrivate)}
-              alt="Logo"
-              class="h-12 w-auto"
-            />
-          </div>
-        </div>
-
-        <div class="p-6 lg:p-8 flex flex-col gap-5 justify-between flex-grow">
-          <div class="flex-1">
-            <h3 class="font-serif text-2xl lg:text-3xl text-[#001524] mb-2">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
-            </h3>
-            <p class="text-gray-600 mb-4 font-medium text-base lg:text-lg">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.DESCRIPTION}
-            </p>
-            <ul class="hidden md:block space-y-3">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.FEATURES.map((item) => (
-                <li class="flex items-center gap-2 text-sm lg:text-base text-gray-700">
-                  <Check size={16} className="text-gray-400 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div class="w-full bg-gray-50/50 p-5 rounded-xl border border-gray-100 text-center">
-            <div class="mb-4">
-              <p class="text-xs lg:text-sm text-gray-400 line-through">
-                Price from $80 USD
-              </p>
-              <div class="text-3xl lg:text-4xl font-bold text-[#001524]">$70 USD</div>
-              <p class="text-xs lg:text-sm text-gray-500">per person</p>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3 mb-6">
-              <div class="bg-white p-3 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">10%</span>
-                <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
-                  Booking 15 days before
-                </p>
-                <p class="text-sm lg:text-base font-bold">$77 USD</p>
-              </div>
-              <div class="bg-white p-3 rounded-lg border border-gray-100">
-                <span class="inline-block text-[10px] lg:text-xs font-bold text-white bg-[#006083] rounded-full px-2 mb-1">20%</span>
-                <p class="text-[10px] lg:text-xs leading-tight text-gray-600">
-                  Booking 30 days before
-                </p>
-                <p class="text-sm lg:text-base font-bold">$60 USD</p>
-              </div>
-            </div>
-
-            <Button className="w-full bg-[#006083] hover:bg-[#006083]/90 text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto">
-              <a href="/pricing-private-page" class="w-full block"> Check Availability </a>
-            </Button>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>

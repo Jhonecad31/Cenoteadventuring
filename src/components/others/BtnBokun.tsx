@@ -21,7 +21,6 @@ export default function BtnAccordionBokun({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  //VARIANTE STICKY MÓVIL (MODAL)
   if (variant === "sticky") {
     return (
       <>

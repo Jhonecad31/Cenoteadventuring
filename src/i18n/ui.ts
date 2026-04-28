@@ -27,9 +27,9 @@ export const ui = {
     },
     es: {
         'nav.home': 'Inicio',
-        'nav.rutaDeLosCenotes': 'Ruta de los Cenotes',
-        'nav.about': 'About us',
-        'nav.contacto': 'Contacto',
+        'nav.cenoteTrail': 'Ruta de los Cenotes',
+        'nav.about': 'Sobre nosotros',
+        'nav.contact': 'Contacto',
         'nav.blog': 'Blog',
     }
 } as const;
