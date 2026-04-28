@@ -93,7 +93,8 @@ const plans = [
     priority: true,
   },
 ];
-
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const duration = 4;
 const minimumAge = 5;
@@ -107,15 +108,13 @@ const dataForm = {
   bookingChannel: "1e6b5f4a-008a-4afb-879f-7a26209e23e6",
   idCalendar: "898507",
   title: "Book your Experience",
-  btnBook: "Check Availability",
+  btnBook: i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON,
   btnCloseText: "Close",
 };
 
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
 const Mux_playback_Id = "JBYfgKj5kFEGmOreVx8w6X4LhrMlcOZsCoxU33rmm5c";
 
 const seoMetaData = {
@@ -513,12 +512,10 @@ const seoMetaData = {
             >
               <div class="mb-4">
                 <p class="text-xs lg:text-sm text-gray-400 line-through">
-                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} ${
-                    plans.oldPrice
-                  } USD
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} $80 USD
                 </p>
                 <div class="text-3xl lg:text-4xl font-bold text-[#001524]">
-                  ${plans.price} USD
+                  $70 USD
                 </div>
                 <p class="text-xs lg:text-sm text-gray-500">
                   {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
@@ -538,7 +535,7 @@ const seoMetaData = {
                     }
                   </p>
                   <p class="text-sm lg:text-base font-bold">
-                    ${Math.round(plans.price * 0.9)} USD
+                    $66 USD
                   </p>
                 </div>
                 <div class="bg-white p-3 rounded-lg border border-gray-100">
@@ -553,7 +550,7 @@ const seoMetaData = {
                     }
                   </p>
                   <p class="text-sm lg:text-base font-bold">
-                    ${Math.round(plans.price * 0.85)} USD
+                    $70 USD
                   </p>
                 </div>
               </div>
@@ -581,7 +578,7 @@ const seoMetaData = {
         </p>
         <div class="flex items-baseline gap-1 mb-1">
           <span class="text-black font-bold text-2xl tracking-tight">
-            ${Math.round(plans.price * 1.1)} USD
+            $70 USD
           </span>
           <span class="text-black/65 text-[10px] font-light">
             {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}

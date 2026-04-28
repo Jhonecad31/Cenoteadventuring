@@ -93,7 +93,8 @@ const plans = [
     priority: true,
   },
 ];
-
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const duration = 4;
 const minimumAge = 5;
@@ -107,15 +108,12 @@ const dataForm = {
   bookingChannel: "1e6b5f4a-008a-4afb-879f-7a26209e23e6",
   idCalendar: "898507",
   title: "Book your Experience",
-  btnBook: "Check Availability",
+  btnBook: i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON,
   btnCloseText: "Close",
 };
 
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
-
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
 const Mux_playback_Id = "RWAFlC2xn1Bq9u4jHm01W8s1uPMjB3yZo4is7j023L6gM";
 
 const seoMetaData = {
@@ -123,7 +121,6 @@ const seoMetaData = {
   description: i18n.SEO.PRIVATE_CENOTE.DESCRIPTION,
   metaTitle: i18n.SEO.PRIVATE_CENOTE.META_TITLE,
 };
-
 ---
 
 <Layout seo={seoMetaData}>
