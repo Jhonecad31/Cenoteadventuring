@@ -18,7 +18,6 @@ export const server = {
         }),
         handler: async (input) => {
             try {
-                // 1. Renderizar el componente de Astro a String
                 const container = await experimental_AstroContainer.create();
                 const emailAdminHtml = await container.renderToString(AdminMailContact, {
                     props: {
@@ -30,7 +29,7 @@ export const server = {
                     },
                 });
 
-                const subjectAdmin = "Mensaje de contacto - Snorkeling Adventure";
+                const subjectAdmin = "Mensaje de contacto - Cenote Adventuring";
                 const [res1] = await Promise.all([
                     resend.emails.send({
                         from: 'Cenote Adventuring <onboarding@resend.dev>',

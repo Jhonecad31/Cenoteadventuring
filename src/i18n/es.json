@@ -160,6 +160,12 @@
           "answer": "Trae traje de baño, bloqueador biodegradable, toalla y ropa cómoda."
         }
       ]
+    },
+    "FOOTER": {
+      "TITLE": "Contáctanos",
+      "DIRECT_LINE": "Línea directa",
+      "RESERVATIONS": "Reservaciones",
+      "CORPORATE": "Corporativo"
     }
   },
   "CONTACT_PAGE": {
@@ -303,7 +309,7 @@
     }
   },
   "ABOUT_US_PAGE": {
-      "HERO": {
+    "HERO": {
       "H1": "CENOTE ADVENTURING: NUESTRA HISTORIA",
       "DESCRIPTION": "Cenote Adventuring nació de la pasión por compartir la belleza natural de Puerto Morelos y la selva que lo rodea. Lo que comenzó como una iniciativa local ha evolucionado hasta convertirse en una experiencia privada de primer nivel, diseñada para viajeros que buscan algo más que los tours tradicionales en Cancún.",
       "ORIGIN_STORY": "Nuestros fundadores crecieron explorando la Ruta de los Cenotes, descubriendo tesoros escondidos y aprendiendo sobre su importancia ecológica y cultural. Con el tiempo, se dieron cuenta de que muchos visitantes se perdían la verdadera esencia de estas maravillas naturales debido a los tours grupales masivos.",
@@ -355,7 +361,7 @@
       ],
       "SUMMARY": "Estos elementos nos convierten en la mejor opción para quienes buscan tours únicos en Cancún con un toque mucho más exclusivo."
     }
-    },
+  },
   "MAILING": {
     "CONTACT_US": {
       "SUBJECT": "Gracias por contactarnos",
@@ -390,28 +396,28 @@
       "BTNGENERAL": "Descubre más"
     },
     "FORM_RESERVATION": {
-            "TITLE": "Haz tu reserva",
-            "EARLY_BIRD": {
-                "TITLE": "Descuento por reserva anticipada",
-                "BOOKING_15_DAYS": "Al reservar 15 días antes.",
-                "BOOKING_30_DAYS": "Al reservar 30 días antes."
-            },
-            "AGE_REQUIREMENT": "Requisito de edad",
-            "YEARS_AND_OLDER": "años o más",
-            "OFFERED_IN": "Ofrecido en",
-            "OFFERED_LANG": "Inglés y Español",
-            "DURATION": "Duración",
-            "CHOOSE_ATV": "Elige modo de ATV",
-            "SHARED": "Compartido",
-            "SINGLE": "Individual",
-            "REGULAR_PRICE": "Precio Regular",
-            "PRICE_FROM": "Precio desde",
-            "PER_PERSON": "por persona",
-            "PER_GROUP": "por grupo",
-            "BUTTON": "Ver Disponibilidad",
-            "NOT_AVAILABLE": "No Disponible",
-            "CLOSE": "Cerrar Modal",
-            "BOKUN": "Reserva tu experiencia"
+      "TITLE": "Haz tu reserva",
+      "EARLY_BIRD": {
+        "TITLE": "Descuento por reserva anticipada",
+        "BOOKING_15_DAYS": "Al reservar 15 días antes.",
+        "BOOKING_30_DAYS": "Al reservar 30 días antes."
+      },
+      "AGE_REQUIREMENT": "Requisito de edad",
+      "YEARS_AND_OLDER": "años o más",
+      "OFFERED_IN": "Ofrecido en",
+      "OFFERED_LANG": "Inglés y Español",
+      "DURATION": "Duración",
+      "CHOOSE_ATV": "Elige modo de ATV",
+      "SHARED": "Compartido",
+      "SINGLE": "Individual",
+      "REGULAR_PRICE": "Precio Regular",
+      "PRICE_FROM": "Precio desde",
+      "PER_PERSON": "por persona",
+      "PER_GROUP": "por grupo",
+      "BUTTON": "Ver Disponibilidad",
+      "NOT_AVAILABLE": "No Disponible",
+      "CLOSE": "Cerrar Modal",
+      "BOKUN": "Reserva tu experiencia"
     },
     "REGULAR_CENOTE": {
       "HERO": {
@@ -449,31 +455,31 @@
         }
       },
       "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
-  "TITLE": "¿Por qué elegir nuestro tour de cenotes en Cancún?",
-  "DESCRIPTION": "Nuestro tour Cenote Adventuring ofrece la mezcla perfecta de aventura, relajación e inmersión cultural. Con grupos pequeños y acceso exclusivo a cenotes privados, disfrutarás de una experiencia personalizada que los tours grandes no pueden ofrecer. Ya sea que busques nadar en aguas cristalinas, explorar cuevas milenarias o simplemente relajarte en un entorno natural impresionante, nuestro tour tiene algo para todos.",
-  "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
-    "TITLE": "Características únicas de nuestro tour de cenotes",
-    "DESCRIPTION": "Nuestro tour de cenotes en Cancún destaca al ofrecer acceso a tres cenotes privados, cada uno con su propia personalidad:",
-    "THE_UNIQUE_FEATURES_LIST": [
-      {
-        "TITLE": "Cascadas y plataformas de salto",
-        "DESCRIPTION": "Los tres cenotes cuentan con hermosas cascadas y plataformas de salto, ideales para quienes buscan añadir un toque de emoción a su nado."
+        "TITLE": "¿Por qué elegir nuestro tour de cenotes en Cancún?",
+        "DESCRIPTION": "Nuestro tour Cenote Adventuring ofrece la mezcla perfecta de aventura, relajación e inmersión cultural. Con grupos pequeños y acceso exclusivo a cenotes privados, disfrutarás de una experiencia personalizada que los tours grandes no pueden ofrecer. Ya sea que busques nadar en aguas cristalinas, explorar cuevas milenarias o simplemente relajarte en un entorno natural impresionante, nuestro tour tiene algo para todos.",
+        "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
+          "TITLE": "Características únicas de nuestro tour de cenotes",
+          "DESCRIPTION": "Nuestro tour de cenotes en Cancún destaca al ofrecer acceso a tres cenotes privados, cada uno con su propia personalidad:",
+          "THE_UNIQUE_FEATURES_LIST": [
+            {
+              "TITLE": "Cascadas y plataformas de salto",
+              "DESCRIPTION": "Los tres cenotes cuentan con hermosas cascadas y plataformas de salto, ideales para quienes buscan añadir un toque de emoción a su nado."
+            },
+            {
+              "TITLE": "Tirolesa y columpios rústicos",
+              "DESCRIPTION": "Uno de los cenotes cuenta con una emocionante tirolesa para sobrevolar el agua, mientras que otro ofrece columpios rústicos para una experiencia más relajada."
+            },
+            {
+              "TITLE": "Acceso exclusivo",
+              "DESCRIPTION": "Nuestros cenotes son privados y exclusivos para nuestros visitantes, garantizando una experiencia pacífica e íntima."
+            }
+          ],
+          "BOOK_CENOTE": {
+            "TITLE": "Reserva hoy tu aventura en los cenotes",
+            "DESCRIPTION": "No pierdas la oportunidad de explorar los mejores cenotes cerca de Cancún. Reserva hoy tu tour y sumérgete en la belleza natural y la rica historia de la Riviera Maya."
+          }
+        }
       },
-      {
-        "TITLE": "Tirolesa y columpios rústicos",
-        "DESCRIPTION": "Uno de los cenotes cuenta con una emocionante tirolesa para sobrevolar el agua, mientras que otro ofrece columpios rústicos para una experiencia más relajada."
-      },
-      {
-        "TITLE": "Acceso exclusivo",
-        "DESCRIPTION": "Nuestros cenotes son privados y exclusivos para nuestros visitantes, garantizando una experiencia pacífica e íntima."
-      }
-    ],
-    "BOOK_CENOTE": {
-      "TITLE": "Reserva hoy tu aventura en los cenotes",
-      "DESCRIPTION": "No pierdas la oportunidad de explorar los mejores cenotes cerca de Cancún. Reserva hoy tu tour y sumérgete en la belleza natural y la rica historia de la Riviera Maya."
-    }
-  }
-},
       "WHAT_YOU_SHOULD_KNOW": {
         "TITLE": "¿Qué debes saber?",
         "LIST": [
@@ -489,36 +495,36 @@
         ]
       },
       "WHAT_TO_BRING": {
-  "TITLE": "¿Qué traer para tu aventura en el cenote?",
-  "SUNSCREEN": {
-    "TITLE": "Bloqueador Biodegradable",
-    "DESCRIPTION": "Para proteger tu piel y el delicado ecosistema de los cenotes."
-  },
-  "SHOES": {
-    "TITLE": "Calzado Cómodo",
-    "DESCRIPTION": "Se recomiendan sandalias ajustadas o zapatos cerrados para caminar en terreno irregular (evitar chanclas/flip flops)."
-  },
-  "TOWEL": {
-    "TITLE": "Toalla",
-    "DESCRIPTION": "Esencial para secarte y mantenerte cómodo después de tu refrescante nado."
-  },
-  "SWIMSUIT": {
-    "TITLE": "Traje de Baño",
-    "DESCRIPTION": "Tráelo puesto desde el inicio para saltar directamente a las aguas cristalinas."
-  },
-  "REPELLENT": {
-    "TITLE": "Repelente Biodegradable",
-    "DESCRIPTION": "Todo repelente de insectos utilizado en el parque debe ser ecológico para proteger el medio ambiente."
-  },
-  "CLOTHES": {
-    "TITLE": "Muda de Ropa",
-    "DESCRIPTION": "Para asegurar que te mantengas seco y cómodo durante el viaje de regreso a tu hotel."
-  },
-  "CASH": {
-    "TITLE": "Efectivo Extra",
-    "DESCRIPTION": "Útil para comprar souvenirs únicos, fotos profesionales o para propinas."
-  }
-},
+        "TITLE": "¿Qué traer para tu aventura en el cenote?",
+        "SUNSCREEN": {
+          "TITLE": "Bloqueador Biodegradable",
+          "DESCRIPTION": "Para proteger tu piel y el delicado ecosistema de los cenotes."
+        },
+        "SHOES": {
+          "TITLE": "Calzado Cómodo",
+          "DESCRIPTION": "Se recomiendan sandalias ajustadas o zapatos cerrados para caminar en terreno irregular (evitar chanclas/flip flops)."
+        },
+        "TOWEL": {
+          "TITLE": "Toalla",
+          "DESCRIPTION": "Esencial para secarte y mantenerte cómodo después de tu refrescante nado."
+        },
+        "SWIMSUIT": {
+          "TITLE": "Traje de Baño",
+          "DESCRIPTION": "Tráelo puesto desde el inicio para saltar directamente a las aguas cristalinas."
+        },
+        "REPELLENT": {
+          "TITLE": "Repelente Biodegradable",
+          "DESCRIPTION": "Todo repelente de insectos utilizado en el parque debe ser ecológico para proteger el medio ambiente."
+        },
+        "CLOTHES": {
+          "TITLE": "Muda de Ropa",
+          "DESCRIPTION": "Para asegurar que te mantengas seco y cómodo durante el viaje de regreso a tu hotel."
+        },
+        "CASH": {
+          "TITLE": "Efectivo Extra",
+          "DESCRIPTION": "Útil para comprar souvenirs únicos, fotos profesionales o para propinas."
+        }
+      },
       "GALLERY": {
         "TITLE": "Entra en la magia de la selva maya y los cenotes ocultos",
         "DESCRIPTION": "Explora nuestra galería para presenciar la impresionante belleza de los cenotes más exclusivos de Puerto Morelos. Desde aguas cristalinas y formaciones rocosas antiguas hasta vibrantes paisajes selváticos."
@@ -597,31 +603,31 @@
         }
       },
       "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
-  "TITLE": "¿Por qué elegir nuestro tour de cenotes en Cancún?",
-  "DESCRIPTION": "Nuestro tour Cenote Adventuring ofrece la mezcla perfecta de aventura, relajación e inmersión cultural. Con grupos pequeños y acceso exclusivo a cenotes privados, disfrutarás de una experiencia personalizada que los tours grandes no pueden ofrecer. Ya sea que busques nadar en aguas cristalinas, explorar cuevas milenarias o simplemente relajarte en un entorno natural impresionante, nuestro tour tiene algo para todos.",
-  "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
-    "TITLE": "Características únicas de nuestro tour de cenotes",
-    "DESCRIPTION": "Nuestro tour de cenotes en Cancún destaca al ofrecer acceso a tres cenotes privados, cada uno con su propia personalidad:",
-    "THE_UNIQUE_FEATURES_LIST": [
-      {
-        "TITLE": "Cascadas y plataformas de salto",
-        "DESCRIPTION": "Los tres cenotes cuentan con hermosas cascadas y plataformas de salto, ideales para quienes buscan añadir un toque de emoción a su nado."
+        "TITLE": "¿Por qué elegir nuestro tour de cenotes en Cancún?",
+        "DESCRIPTION": "Nuestro tour Cenote Adventuring ofrece la mezcla perfecta de aventura, relajación e inmersión cultural. Con grupos pequeños y acceso exclusivo a cenotes privados, disfrutarás de una experiencia personalizada que los tours grandes no pueden ofrecer. Ya sea que busques nadar en aguas cristalinas, explorar cuevas milenarias o simplemente relajarte en un entorno natural impresionante, nuestro tour tiene algo para todos.",
+        "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
+          "TITLE": "Características únicas de nuestro tour de cenotes",
+          "DESCRIPTION": "Nuestro tour de cenotes en Cancún destaca al ofrecer acceso a tres cenotes privados, cada uno con su propia personalidad:",
+          "THE_UNIQUE_FEATURES_LIST": [
+            {
+              "TITLE": "Cascadas y plataformas de salto",
+              "DESCRIPTION": "Los tres cenotes cuentan con hermosas cascadas y plataformas de salto, ideales para quienes buscan añadir un toque de emoción a su nado."
+            },
+            {
+              "TITLE": "Tirolesa y columpios rústicos",
+              "DESCRIPTION": "Uno de los cenotes cuenta con una emocionante tirolesa para sobrevolar el agua, mientras que otro ofrece columpios rústicos para una experiencia más relajada."
+            },
+            {
+              "TITLE": "Acceso exclusivo",
+              "DESCRIPTION": "Nuestros cenotes son privados y exclusivos para nuestros visitantes, garantizando una experiencia pacífica e íntima."
+            }
+          ],
+          "BOOK_CENOTE": {
+            "TITLE": "Reserva hoy tu aventura en los cenotes",
+            "DESCRIPTION": "No pierdas la oportunidad de explorar los mejores cenotes cerca de Cancún. Reserva hoy tu tour y sumérgete en la belleza natural y la rica historia de la Riviera Maya."
+          }
+        }
       },
-      {
-        "TITLE": "Tirolesa y columpios rústicos",
-        "DESCRIPTION": "Uno de los cenotes cuenta con una emocionante tirolesa para sobrevolar el agua, mientras que otro ofrece columpios rústicos para una experiencia más relajada."
-      },
-      {
-        "TITLE": "Acceso exclusivo",
-        "DESCRIPTION": "Nuestros cenotes son privados y exclusivos para nuestros visitantes, garantizando una experiencia pacífica e íntima."
-      }
-    ],
-    "BOOK_CENOTE": {
-      "TITLE": "Reserva hoy tu aventura en los cenotes",
-      "DESCRIPTION": "No pierdas la oportunidad de explorar los mejores cenotes cerca de Cancún. Reserva hoy tu tour y sumérgete en la belleza natural y la rica historia de la Riviera Maya."
-    }
-  }
-},
       "WHAT_YOU_SHOULD_KNOW": {
         "TITLE": "¿Qué debes saber?",
         "LIST": [
@@ -634,37 +640,37 @@
           "Por favor, contáctanos con anticipación para coordinar tu horario de pick-up."
         ]
       },
-     "WHAT_TO_BRING": {
-  "TITLE": "¿Qué traer para tu aventura en el cenote?",
-  "SUNSCREEN": {
-    "TITLE": "Bloqueador Biodegradable",
-    "DESCRIPTION": "Para proteger tu piel y el delicado ecosistema de los cenotes."
-  },
-  "SHOES": {
-    "TITLE": "Calzado Cómodo",
-    "DESCRIPTION": "Se recomiendan sandalias ajustadas o zapatos cerrados para caminar en terreno irregular (evitar chanclas/flip flops)."
-  },
-  "TOWEL": {
-    "TITLE": "Toalla",
-    "DESCRIPTION": "Esencial para secarte y mantenerte cómodo después de tu refrescante nado."
-  },
-  "SWIMSUIT": {
-    "TITLE": "Traje de Baño",
-    "DESCRIPTION": "Tráelo puesto desde el inicio para saltar directamente a las aguas cristalinas."
-  },
-  "REPELLENT": {
-    "TITLE": "Repelente Biodegradable",
-    "DESCRIPTION": "Todo repelente de insectos utilizado en el parque debe ser ecológico para proteger el medio ambiente."
-  },
-  "CLOTHES": {
-    "TITLE": "Muda de Ropa",
-    "DESCRIPTION": "Para asegurar que te mantengas seco y cómodo durante el viaje de regreso a tu hotel."
-  },
-  "CASH": {
-    "TITLE": "Efectivo Extra",
-    "DESCRIPTION": "Útil para comprar souvenirs únicos, fotos profesionales o para propinas."
-  }
-},
+      "WHAT_TO_BRING": {
+        "TITLE": "¿Qué traer para tu aventura en el cenote?",
+        "SUNSCREEN": {
+          "TITLE": "Bloqueador Biodegradable",
+          "DESCRIPTION": "Para proteger tu piel y el delicado ecosistema de los cenotes."
+        },
+        "SHOES": {
+          "TITLE": "Calzado Cómodo",
+          "DESCRIPTION": "Se recomiendan sandalias ajustadas o zapatos cerrados para caminar en terreno irregular (evitar chanclas/flip flops)."
+        },
+        "TOWEL": {
+          "TITLE": "Toalla",
+          "DESCRIPTION": "Esencial para secarte y mantenerte cómodo después de tu refrescante nado."
+        },
+        "SWIMSUIT": {
+          "TITLE": "Traje de Baño",
+          "DESCRIPTION": "Tráelo puesto desde el inicio para saltar directamente a las aguas cristalinas."
+        },
+        "REPELLENT": {
+          "TITLE": "Repelente Biodegradable",
+          "DESCRIPTION": "Todo repelente de insectos utilizado en el parque debe ser ecológico para proteger el medio ambiente."
+        },
+        "CLOTHES": {
+          "TITLE": "Muda de Ropa",
+          "DESCRIPTION": "Para asegurar que te mantengas seco y cómodo durante el viaje de regreso a tu hotel."
+        },
+        "CASH": {
+          "TITLE": "Efectivo Extra",
+          "DESCRIPTION": "Útil para comprar souvenirs únicos, fotos profesionales o para propinas."
+        }
+      },
       "GALLERY": {
         "TITLE": "Entra en la magia de la selva maya y los cenotes ocultos",
         "DESCRIPTION": "Explora nuestra galería para ver la belleza de los cenotes más exclusivos de Puerto Morelos."

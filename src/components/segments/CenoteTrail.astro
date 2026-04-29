@@ -289,13 +289,11 @@ const seoMetaData = {
 </BaseLayout>
 
 <script>
-  // Parallax optimizado
   import "@mux/mux-player";
   const heroImg = document.getElementById("hero-img");
   if (heroImg) {
     window.addEventListener("scroll", () => {
       const scrollValue = window.scrollY;
-      // Solo aplicar si está en el viewport para rendimiento
       if (scrollValue < window.innerHeight) {
         heroImg.style.transform = `translateY(${scrollValue * 0.35}px) scale(1.05)`;
       }

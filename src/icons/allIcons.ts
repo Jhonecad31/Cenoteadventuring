@@ -19,6 +19,7 @@ import Beach_taco from "@/icons/logos/beach-taco-tour-puerto-morelos.svg"
 import Cancun_horse from "@/icons/logos/cancun-horse-ride-extrem-adventuring.svg"
 import Extreme_adventuring from "@/icons/logos/extreme-adventuring-cancun.svg"
 import Snorkeling from "@/icons/logos/snorkeling-adventure.svg"
+import Trip from "@/icons/logos/trip.png"
 
 export {
     IconFlagMEX,
@@ -38,6 +39,7 @@ export {
     Beach_taco,
     Cancun_horse,
     Extreme_adventuring,
-    Snorkeling
+    Snorkeling,
+    Trip
     
 }

@@ -10,7 +10,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const images = {
-  imgCenote: "/Cenote-Adventuring/CenoteA.6.webp", // Asegúrate de que este ID sea correcto en Cloudinary
+  imgCenote: "/Cenote-Adventuring/CenoteA.6.webp", 
 };
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;

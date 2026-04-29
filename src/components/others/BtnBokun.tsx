@@ -17,7 +17,7 @@ export default function BtnAccordionBokun({
   variant = "accordion" 
 }: { 
   data: BtnModalBokunProps, 
-  variant?: "accordion" | "sticky" // variante 'sticky'
+  variant?: "accordion" | "sticky" 
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
