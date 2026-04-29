@@ -122,9 +122,9 @@ const seoMetaData = {
   description: i18n.SEO.REGULAR_CENOTE.INTRO.DESCRIPTION,
 };
 ---
-
 <Layout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
+    <!-- sección de hero video -->
     <section
       class="relative h-[80vh] flex items-center justify-center overflow-hidden"
     >
@@ -155,7 +155,8 @@ const seoMetaData = {
         </div>
       </div>
     </section>
-
+    <!-- termina sección hero video -->
+    <!-- seccion img detail -->
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       <div
         class="grid grid-cols-1 lg:grid-cols-12 lg:gap-24 items-center justify-center"
@@ -198,9 +199,9 @@ const seoMetaData = {
         </div>
       </div>
     </section>
+    <!-- termina sección img details -->
     <section class="mx-auto max-w-screen-2xl px-6 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-        
         <div class="lg:col-span-8 space-y-6">
           {/* GRID DE INFORMACIÓN RÁPIDA */}
           <div
@@ -551,7 +552,7 @@ const seoMetaData = {
                         .BOOKING_30_DAYS
                     }
                   </p>
-                  <p class="text-sm lg:text-base font-bold">$70 USD</p>
+                  <p class="text-sm lg:text-base font-bold">$60 USD</p>
                 </div>
               </div>
 
@@ -561,99 +562,104 @@ const seoMetaData = {
         </aside>
       </div>
     </section>
-
-    <div
-  id="sticky-product-card"
-  class="fixed bottom-6 left-4 right-4 lg:hidden z-40"
->
-      <div
-        class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/5"
-      >
-        <div class="flex items-start gap-4 mb-1">
-          <div class="flex-shrink-0 w-20">
-            <img
-              src={getUrl(images.logoCenote)}
-              alt="Logo"
-              class="w-full h-auto object-contain"
-            />
+      <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
+            <p class="text-gray-500 max-w-2xl mx-auto"></p>
           </div>
-          <div class="flex flex-col flex-grow pt-1">
-            <p class="text-black font-normal text-xs mb-1">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
-            </p>
-            <div class="flex items-baseline gap-1 mb-1">
-              <span class="text-black font-bold text-2xl tracking-tight">
-                $70 USD
-              </span>
-              <span class="text-black/65 text-[10px] font-light">
-                {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
-              </span>
+
+          <div class="swiper mySwiper pb-12">
+            <div class="swiper-wrapper">
+              {
+                relatedActivities.map((activity) => {
+                  const IconComponent = iconMap[(activity as any).iconKey];
+                  return (
+                    <div class="swiper-slide">
+                      <a href={activity.link} class="group block">
+                        <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                          <img
+                            src={getUrl(activity.image, 600)}
+                            alt={activity.name}
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          {IconComponent && (
+                            <div class="absolute top-4 right-4 p-2.5 rounded-lg flex items-center justify-center z-10">
+                              <div class="w-20 h-20 lg:w-15 lg:h-15 flex items-center justify-center">
+                                <IconComponent className="w-full h-full object-contain" />
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div class="text-left">
+                          <h3 class="font-serif text-xl text-[#001524] mb-2">
+                            {activity.name}
+                          </h3>
+                          <a href={activity.link} target="_blank">
+                            <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
+                              {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
+                              {""}
+                              <ChevronRight
+                                size={14}
+                                className="group-hover:translate-x-1 transition-transform"
+                              />
+                            </div>
+                          </a>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })
+              }
             </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
-       <div slot="sticky-button">
-    <BtnModalBokun client:load data={dataForm} variant="sticky" />
-  </div>
-      </div>
-    </div>
-  </main>
-  <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
-      <p class="text-gray-500 max-w-2xl mx-auto"></p>
-    </div>
-
-    <div class="swiper mySwiper pb-12">
-      <div class="swiper-wrapper">
-        {
-          relatedActivities.map((activity) => {
-            const IconComponent = iconMap[(activity as any).iconKey];
-            return (
-              <div class="swiper-slide">
-                <a href={activity.link} class="group block">
-                  <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                    <img
-                      src={getUrl(activity.image, 600)}
-                      alt={activity.name}
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    {IconComponent && (
-                      <div class="absolute top-4 right-4 p-2.5 rounded-lg flex items-center justify-center z-10">
-                        <div class="w-20 h-20 lg:w-15 lg:h-15 flex items-center justify-center">
-                          <IconComponent className="w-full h-full object-contain" />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                  <div class="text-left">
-                    <h3 class="font-serif text-xl text-[#001524] mb-2">
-                      {activity.name}
-                    </h3>
-                    <a href={activity.link} target="_blank">
-                      <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
-                        {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
-                        {""}
-                        <ChevronRight
-                          size={14}
-                          className="group-hover:translate-x-1 transition-transform"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                </a>
+      </section>
+      <div id="sticky-anchor" class="h-px w-full"></div>
+      <!-- sticky para mobile -->
+      <div
+        id="sticky-product-card"
+        class="fixed bottom-6 left-4 right-4 lg:hidden z-40 transition-all duration-500 ease-in-out"
+      >
+        <div
+          class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 backdrop-blur-sm"
+        >
+          <div class="flex items-center gap-4 mb-3">
+            {/* Cambié start por center para mejor alineación en mobile */}
+            <div
+              class="flex-shrink-0 w-16 h-16 bg-white/50 rounded-xl overflow-hidden"
+            >
+              <img
+                src={getUrl(images.logoCenote)}
+                alt="Logo"
+                width="64"
+                height="64"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div class="flex flex-col flex-grow">
+              <p class="text-black font-medium text-xs">
+                {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.TITLE}
+              </p>
+              <div class="flex items-baseline gap-1">
+                <span class="text-black font-bold text-xl tracking-tight">
+                  $70 USD
+                </span>
+                <span class="text-black/60 text-[10px] font-medium uppercase">
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+                </span>
               </div>
-            );
-          })
-        }
+            </div>
+          </div>
+          <div slot="sticky-button">
+            <BtnModalBokun client:load data={dataForm} variant="sticky" />
+          </div>
+        </div>
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
+      <!-- termina seccion sticky para mobile -->
+  </main>
 </Layout>
-
-
 <style>
   @import "swiper/css";
   @import "swiper/css/pagination";
@@ -679,13 +685,13 @@ const seoMetaData = {
 
   .bokun-calendar-container {
     overflow: visible !important;
-    z-index: 40 !important; 
+    z-index: 40 !important;
   }
 
   mux-player {
     position: absolute;
     inset: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     z-index: 0;
     --controls: none;
@@ -699,8 +705,14 @@ const seoMetaData = {
   }
 
   @keyframes fade-in-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .animate-fade-in-up {
@@ -714,6 +726,9 @@ const seoMetaData = {
   import "@mux/mux-player";
 
   function initSwiper() {
+    const swiperEl = document.querySelector(".mySwiper");
+    if (!swiperEl) return;
+
     new Swiper(".mySwiper", {
       modules: [Pagination, Autoplay],
       slidesPerView: 1.2,
@@ -728,6 +743,63 @@ const seoMetaData = {
     });
   }
 
+  function initStickyAnchor() {
+    const stickyCard = document.getElementById("sticky-product-card");
+    const anchor = document.getElementById("sticky-anchor");
+
+    if (!stickyCard || !anchor) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Buscamos el div interno para la sombra
+          const innerCard = stickyCard.querySelector('div');
+
+          if (entry.isIntersecting) {
+            // ESTADO: Anclado arriba del footer (estático)
+            stickyCard.classList.remove("fixed", "bottom-6", "left-4", "right-4", "z-40");
+            stickyCard.classList.add("relative", "mx-4", "mb-12");
+            
+            if (innerCard) {
+              innerCard.classList.remove("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
+            }
+          } else {
+            // ESTADO: Flotando (fixed)
+            // Solo vuelve a fixed si el ancla está por debajo del viewport
+            if (entry.boundingClientRect.top > 0) {
+              stickyCard.classList.remove("relative", "mx-4", "mb-12");
+              stickyCard.classList.add("fixed", "bottom-6", "left-4", "right-4", "z-40");
+              
+              if (innerCard) {
+                innerCard.classList.add("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
+              }
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(anchor);
+  }
+
+  // Ejecución inicial
   initSwiper();
-  document.addEventListener("astro:page-load", initSwiper);
+  initStickyAnchor();
+
+  // Soporte para Astro View Transitions
+  document.addEventListener("astro:page-load", () => {
+    initSwiper();
+    initStickyAnchor();
+  });
 </script>
+
+
+
+
+
+
+

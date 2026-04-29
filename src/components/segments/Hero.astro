@@ -10,8 +10,6 @@ const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
 const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
-const videoUrl = `https://stream.mux.com/{TU_PLAYBACK_ID}/high.mp4`;
-const posterUrl = `https://image.mux.com/${Mux_playback_Id}/thumbnail.jpg?time=1&width=1920`;
 ---
 
 <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
@@ -24,7 +22,6 @@ const posterUrl = `https://image.mux.com/${Mux_playback_Id}/thumbnail.jpg?time=1
     no-controls
     preload="auto"
     class="hero-video brightness-[0.4]"></mux-player>
-
   <div
     class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center gap-8 sm:gap-10"
   >

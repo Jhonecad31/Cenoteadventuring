@@ -7,7 +7,7 @@ import {
 } from "@/i18n/utils";
 import { Menu, X } from "lucide-react";
 import LanguageSelector from "./LanguageSelector.astro";
-import { Logo_icono_cenote, LogoContainer, Trip} from "@/icons/allIcons";
+import { Logo_icono_cenote, LogoContainer, Trip } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -18,12 +18,11 @@ const translatePath = useTranslatedPath(lang);
 
 const navigation = [
   { title: k("nav.home"), link: translatePath("/") },
-  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail/") }, 
+  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail/") },
   { title: k("nav.blog"), link: translatePath("/404/") },
   { title: k("nav.about"), link: translatePath("/about/") },
-  { title: k("nav.contact"), link: translatePath("/contact/") }, 
+  { title: k("nav.contact"), link: translatePath("/contact/") },
 ];
-
 ---
 
 <header
@@ -91,51 +90,107 @@ const navigation = [
   </div>
 
   <div
-  id="mobile-drawer"
-  class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 justify-between"
->
-  <div>
-    <div class="flex justify-between items-center">
-      <LogoContainer class="h-15 text-white" />
-      
-      <button id="close-menu" class="text-white p-2">
-        <X size={35} strokeWidth={1} />
-      </button>
+    id="mobile-drawer"
+    class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 justify-between"
+  >
+    <div>
+      <div class="flex justify-between items-center">
+        <LogoContainer class="h-15 text-white" />
+
+        <button id="close-menu" class="text-white p-2">
+          <X size={35} strokeWidth={1} />
+        </button>
+      </div>
+
+      <nav class="mt-20 text-center">
+        <ul class="flex flex-col gap-10">
+          {
+            navigation.map((item) => (
+              <li>
+                <a
+                  href={item.link}
+                  class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity"
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
     </div>
 
-    <nav class="mt-20 text-center">
-      <ul class="flex flex-col gap-10">
-        {
-          navigation.map((item) => (
-            <li>
-              <a
-                href={item.link}
-                class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity"
-              >
-                {item.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
+    <div class="flex flex-col items-center gap-6 mb-15">
+  <div class="h-[1px] w-20 bg-white/30"></div>
+  
+  <!-- Añadimos 'items-center' para que la alineación vertical sea perfecta entre SVGs e Imagen -->
+  <div class="flex gap-8 text-white items-center">
+    
+    <!-- Instagram -->
+    <a
+      href="https://www.instagram.com/cenoteadventuring/"
+      class="hover:scale-110 transition-transform"
+      aria-label="Instagram"
+    >
+      <!-- clases w-6 h-6 al SVG -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-6 h-6" 
+        ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
+          d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+          x1="17.5"
+          x2="17.51"
+          y1="6.5"
+          y2="6.5"></line></svg
+      >
+    </a>
 
-  <div class="flex flex-col items-center gap-6 mb-15">
-    <div class="h-[1px] w-20 bg-white/30"></div>
-    <div class="flex gap-8 text-white">
-      <a href="https://www.instagram.com/cenoteadventuring/" class="hover:scale-110 transition-transform" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-      </a>
-      <a href="https://www.facebook.com/cenoteadventuring/" class="hover:scale-110 transition-transform" aria-label="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-     <a href="https://www.tripadvisor.com.mx/..." class="hover:scale-110 transition-transform">
-  <img src={Trip.src} alt="TripAdvisor" width="24" height="24" class="w-6 h-6 invert" />
-</a>
-    </div>
+    <!-- Facebook -->
+    <a
+      href="https://www.facebook.com/cenoteadventuring/"
+      class="hover:scale-110 transition-transform"
+      aria-label="Facebook"
+    >
+      <!-- clases w-6 h-6 al SVG -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-6 h-6"
+        ><path
+          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+        ></path></svg
+      >
+    </a>
+
+    <!-- TripAdvisor -->
+    <a
+      href="https://www.tripadvisor.com.mx/..."
+      class="hover:scale-110 transition-transform"
+      aria-label="TripAdvisor"
+    >
+      <!-- Mantenemos la imagen exactamente igual -->
+      <img
+        src={Trip.src}
+        alt="TripAdvisor"
+        width="24"
+        height="24"
+        class="w-6 h-6 invert"
+      />
+    </a>
   </div>
 </div>
+  </div>
 </header>
 
 <script>
@@ -151,11 +206,11 @@ const navigation = [
 
   const updateStyles = () => {
     const isScrolled = window.scrollY > 50;
-    
-    const isSpecialPage = ['/contact', '/404'].some(path => 
-      window.location.pathname.includes(path)
+
+    const isSpecialPage = ["/contact", "/404"].some((path) =>
+      window.location.pathname.includes(path),
     );
-    
+
     const useDarkTheme = isScrolled || isSpecialPage;
 
     header?.classList.toggle("bg-[#EDF4FC]", useDarkTheme);
@@ -191,19 +246,19 @@ const navigation = [
   window.addEventListener("scroll", updateStyles);
   document.addEventListener("DOMContentLoaded", updateStyles);
   document.addEventListener("astro:after-swap", updateStyles);
-  
+
   openBtn?.addEventListener("click", () => {
     drawer?.classList.remove("-translate-x-full");
     document.body.style.overflow = "hidden";
     // Añadimos la clase para ocultar el sticky
-    document.body.classList.add('menu-is-open');
+    document.body.classList.add("menu-is-open");
   });
 
   closeBtn?.addEventListener("click", () => {
     drawer?.classList.add("-translate-x-full");
     document.body.style.overflow = "";
     // Quitamos la clase para que el sticky vuelva a aparecer
-    document.body.classList.remove('menu-is-open');
+    document.body.classList.remove("menu-is-open");
   });
 </script>
 
@@ -214,17 +269,17 @@ const navigation = [
   .font-serif {
     font-family: "Playfair Display", serif;
   }
- /* se agrega para sticky de movil */
- :global(body.is-nav-open) #sticky-product-card {
+  /* se agrega para sticky de movil */
+  :global(body.is-nav-open) #sticky-product-card {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(20px); 
+    transform: translateY(20px);
     transition: all 0.3s ease-in-out;
-}
-#sticky-product-card {
+  }
+  #sticky-product-card {
     transition: all 0.3s ease-in-out;
     will-change: transform, opacity;
-}
+  }
   #mobile-drawer {
     z-index: 100;
   }
