@@ -7,7 +7,7 @@ import {
 } from "@/i18n/utils";
 import { Menu, X } from "lucide-react";
 import LanguageSelector from "./LanguageSelector.astro";
-import { Logo_icono_cenote, LogoContainer, Trip } from "@/icons/allIcons";
+import { Logo_icono_cenote, LogoContainer, Trip, Logo_blanco } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -50,7 +50,7 @@ const navigation = [
           id="logo-completo"
           class="transition-all duration-500 opacity-100 block"
         >
-          <LogoContainer class="h-12 lg:h-16 p-1" />
+          <LogoContainer class="h-20 p-1" />
         </div>
 
         <div
@@ -59,6 +59,13 @@ const navigation = [
         >
           <Logo_icono_cenote class="h-12 lg:h-16 p-1" />
         </div>
+
+        <div
+      id="logo-movil"
+      class="transition-all duration-500 opacity-100 block"
+    >
+      <Logo_blanco class="h-15 p-1" />
+    </div>
       </a>
     </div>
 
@@ -95,7 +102,7 @@ const navigation = [
   >
     <div>
       <div class="flex justify-between items-center">
-        <LogoContainer class="h-15 text-white" />
+        <Logo_blanco class="h-15 text-white" />
 
         <button id="close-menu" class="text-white p-2">
           <X size={35} strokeWidth={1} />
@@ -194,71 +201,94 @@ const navigation = [
 </header>
 
 <script>
-  const header = document.getElementById("main-header");
-  const logoCompleto = document.getElementById("logo-completo");
-  const logoReducido = document.getElementById("logo-reducido");
-  const logoContainer = document.getElementById("logo-container");
-  const iconGroup = document.getElementById("icon-group");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const openBtn = document.getElementById("open-menu");
-  const drawer = document.getElementById("mobile-drawer");
-  const closeBtn = document.getElementById("close-menu");
-
   const updateStyles = () => {
     const isScrolled = window.scrollY > 50;
+    const isMobile = window.innerWidth < 768;
 
+    const header = document.getElementById("main-header");
+    const logoCompleto = document.getElementById("logo-completo");
+    const logoReducido = document.getElementById("logo-reducido");
+    const logoMovil = document.getElementById("logo-movil");
+    const openBtn = document.getElementById("open-menu"); // Lo necesitamos aquí también para el color
+    
     const isSpecialPage = ["/contact", "/404"].some((path) =>
-      window.location.pathname.includes(path),
+      window.location.pathname.includes(path)
     );
 
     const useDarkTheme = isScrolled || isSpecialPage;
 
+    // --- Estilos del Header ---
     header?.classList.toggle("bg-[#EDF4FC]", useDarkTheme);
-    header?.classList.toggle("shadow-sm", useDarkTheme);
     header?.classList.toggle("h-20", useDarkTheme);
     header?.classList.toggle("h-24", !useDarkTheme);
-    header?.classList.toggle("border-slate-200", useDarkTheme);
 
-    if (useDarkTheme) {
-      logoCompleto?.classList.add("hidden", "opacity-0");
-      logoReducido?.classList.remove("hidden");
-      setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
+    // --- LÓGICA DE LOGOS ---
+    if (isMobile) {
+      logoCompleto?.classList.add("hidden");
+      if (useDarkTheme) {
+        logoMovil?.classList.add("hidden", "opacity-0");
+        logoReducido?.classList.remove("hidden");
+        setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
+      } else {
+        logoReducido?.classList.add("hidden", "opacity-0");
+        logoMovil?.classList.remove("hidden");
+        setTimeout(() => logoMovil?.classList.remove("opacity-0"), 10);
+      }
     } else {
-      logoReducido?.classList.add("hidden", "opacity-0");
-      logoCompleto?.classList.remove("hidden");
-      setTimeout(() => logoCompleto?.classList.remove("opacity-0"), 10);
+      logoMovil?.classList.add("hidden");
+      if (useDarkTheme) {
+        logoCompleto?.classList.add("hidden", "opacity-0");
+        logoReducido?.classList.remove("hidden");
+        setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
+      } else {
+        logoReducido?.classList.add("hidden", "opacity-0");
+        logoCompleto?.classList.remove("hidden");
+        setTimeout(() => logoCompleto?.classList.remove("opacity-0"), 10);
+      }
     }
 
+    // --- Colores de texto ---
     const textColor = useDarkTheme ? "text-[#002B49]" : "text-white";
     const oldColor = useDarkTheme ? "text-white" : "text-[#002B49]";
-
-    [logoContainer, iconGroup, openBtn].forEach((el) => {
-      el?.classList.add(textColor);
-      el?.classList.remove(oldColor);
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.add(textColor);
-      link.classList.remove(oldColor);
+    
+    const elementsToTint = document.querySelectorAll("#logo-container, #icon-group, #open-menu, .nav-link");
+    elementsToTint.forEach(el => {
+      el.classList.add(textColor);
+      el.classList.remove(oldColor);
     });
   };
 
+  // --- LÓGICA DEL MENU DRAWER (Lo que faltaba) ---
+  const initMenu = () => {
+    const openBtn = document.getElementById("open-menu");
+    const closeBtn = document.getElementById("close-menu");
+    const drawer = document.getElementById("mobile-drawer");
+
+    openBtn?.addEventListener("click", () => {
+      drawer?.classList.remove("-translate-x-full");
+      document.body.style.overflow = "hidden"; // Evita scroll al estar abierto
+      document.body.classList.add("is-nav-open"); // Para ocultar el sticky card si existe
+    });
+
+    closeBtn?.addEventListener("click", () => {
+      drawer?.classList.add("-translate-x-full");
+      document.body.style.overflow = "";
+      document.body.classList.remove("is-nav-open");
+    });
+  };
+
+  // Inicializar eventos
   window.addEventListener("scroll", updateStyles);
-  document.addEventListener("DOMContentLoaded", updateStyles);
-  document.addEventListener("astro:after-swap", updateStyles);
-
-  openBtn?.addEventListener("click", () => {
-    drawer?.classList.remove("-translate-x-full");
-    document.body.style.overflow = "hidden";
-    // Añadimos la clase para ocultar el sticky
-    document.body.classList.add("menu-is-open");
+  window.addEventListener("resize", updateStyles);
+  document.addEventListener("DOMContentLoaded", () => {
+    updateStyles();
+    initMenu();
   });
-
-  closeBtn?.addEventListener("click", () => {
-    drawer?.classList.add("-translate-x-full");
-    document.body.style.overflow = "";
-    // Quitamos la clase para que el sticky vuelva a aparecer
-    document.body.classList.remove("menu-is-open");
+  
+  // Para que funcione al navegar entre páginas con ViewTransitions
+  document.addEventListener("astro:after-swap", () => {
+    updateStyles();
+    initMenu();
   });
 </script>
 

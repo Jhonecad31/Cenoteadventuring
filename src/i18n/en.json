@@ -1,13 +1,13 @@
 {
   "SEO": {
     "HOME_PAGE": {
-      "TITLE": "Cenote Adventuring in puerto morelos: Private Tour Through the Best Hidden Cenotes",
+      "TITLE": "The cenote route in puerto morelos: Private Tour Through the Best Hidden Cenotes",
       "DESCRIPTION": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
       "META_TITLE": "Cenote Adventures: Private and Exclusive Tours in Puerto Morelos"
     },
     "CENOTE_TRAIL_PAGE": {
-      "TITLE": "Ruta de los Cenotes in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
-      "DESCRIPTION": "Hidden just a short drive from Cancun, the Ruta de los Cenotes in Puerto Morelos is one of the most authentic experiences in the Mexican Caribbean.",
+      "TITLE": "The cenote route in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
+      "DESCRIPTION": "Hidden just a short drive from Cancun, the cenote route in Puerto Morelos is one of the most authentic experiences in the Mexican Caribbean.",
       "META_TITLE": "Cenote Adventure: Private Hidden Cenote Tour in Puerto Morelos"
     },
     "CENOTE_ADVENTURING_PAGE": {
@@ -73,7 +73,7 @@
       "TITLE": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
       "TITLE2": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
       "DESCRIPTION1": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
-      "DES": "View packages"
+      "DES": "Check Availability"
     },
     "AWARDS": {
       "TITLE": "Awards & Recognitions",
@@ -96,7 +96,7 @@
       }
     },
     "GALLERY": {
-      "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+      "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
       "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
     },
     "CHOOSE_PLAN": {
@@ -223,18 +223,18 @@
   },
   "RUTA_CENOTES_PAGE": {
     "HERO": {
-      "TITLE": "Ruta de los Cenotes in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
-      "TITLE2": "Ruta de los Cenotes in Puerto Morelos",
+      "TITLE": "The cenote trail in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
+      "TITLE2": "The cenote trail in Puerto Morelos",
       "SUBTITLE": "A visual journey into the unknown",
-      "DESCRIPTION": "Hidden just a short drive from Cancun, the Ruta de los Cenotes in Puerto Morelos is one of the most authentic natural experiences in the Mexican Caribbean. Surrounded by lush jungle, this scenic route is home to some of the most beautiful cenotes near Puerto Morelos, offering a unique connection with nature, culture, and adventure."
+      "DESCRIPTION": "Hidden just a short drive from Cancun, the cenote trail in Puerto Morelos is one of the most authentic natural experiences in the Mexican Caribbean. Surrounded by lush jungle, this scenic route is home to some of the most beautiful cenotes near Puerto Morelos, offering a unique connection with nature, culture, and adventure."
     },
     "INTRO": {
       "TITLE": "A Must-Visit Destination from Cancun",
-      "DESCRIPTION": "If you're exploring things to do in Puerto Morelos or planning a day trip from Cancun, the ruta de los cenotes is a must-visit destination where crystal-clear freshwater pools, underground caves, and eco-adventures come together in one unforgettable experience."
+      "DESCRIPTION": "If you're exploring things to do in Puerto Morelos or planning a day trip from Cancun, the cenote route is a must-visit destination where crystal-clear freshwater pools, underground caves, and eco-adventures come together in one unforgettable experience."
     },
     "WHAT_TO_EXPECT": {
       "TITLE": "What to Expect?",
-      "DESCRIPTION": "Visiting the ruta de los cenotes is unlike any other activity in the region. Instead of crowded beaches, you’ll find a peaceful jungle road filled with hidden natural treasures.",
+      "DESCRIPTION": "Visiting the cenote route is unlike any other activity in the region. Instead of crowded beaches, you’ll find a peaceful jungle road filled with hidden natural treasures.",
       "LIST": [
         {
           "TITLE": "Natural Diversity",
@@ -252,15 +252,15 @@
     },
     "GRID_TEXTS": {
       "EXPLORING_ROUTE": {
-        "TITLE": "Exploring the Ruta de los Cenotes – Nature, Adventure and Culture",
-        "DESCRIPTION": "The ruta de los cenotes stretches along a jungle road just outside Puerto Morelos, offering access to dozens of cenotes and eco-parks. This area is part of one of the largest underground river systems in the world, making it a unique destination for those interested in nature and geology. Unlike traditional tourist attractions in Cancun, this region provides a more immersive experience."
+        "TITLE": "Exploring the cenote route – Nature, Adventure and Culture",
+        "DESCRIPTION": "The cenote route stretches along a jungle road just outside Puerto Morelos, offering access to dozens of cenotes and eco-parks. This area is part of one of the largest underground river systems in the world, making it a unique destination for those interested in nature and geology. Unlike traditional tourist attractions in Cancun, this region provides a more immersive experience."
       },
       "UNIQUE_CENOTES": {
         "TITLE": "Why Cenotes in Puerto Morelos Are Unique",
         "DESCRIPTION": "The Puerto Morelos cenotes stand out for their accessibility and diversity. Within a short distance, you can visit multiple cenotes with completely different environments. Because they are located slightly away from the main tourist zones, they tend to be less crowded, offering a more intimate and peaceful experience."
       },
       "THINGS_TO_DO": {
-        "TITLE": "Things to Do in la Ruta de los Cenotes",
+        "TITLE": "Things to Do in the cenote route",
         "LIST": [
           {
             "TITLE": "Water Activities",
@@ -278,7 +278,7 @@
       },
       "LOCATION_INFO": {
         "TITLE": "Location and Access",
-        "DESCRIPTION": "The ruta de los cenotes is located just off the main highway between Cancun and Playa del Carmen, near Puerto Morelos.",
+        "DESCRIPTION": "The cenote route is located just off the main highway between Cancun and Playa del Carmen, near Puerto Morelos.",
         "DETAILS": [
           "Approx. 20–30 minutes from Cancun",
           "Easy access from hotel zones and downtown areas",
@@ -540,7 +540,7 @@
         }
       },
       "GALLERY": {
-        "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+        "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
         "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
       },
       "SCHEDULES": {
@@ -681,7 +681,7 @@
         }
       },
       "GALLERY": {
-        "TITLE": "Step Into the Magic of the Maya Jungle and Hidden Cenotes",
+        "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
         "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
       },
       "SCHEDULES": {

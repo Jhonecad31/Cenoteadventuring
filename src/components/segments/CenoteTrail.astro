@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getI18N } from "@/i18n";
-import TagH2 from "@/components/global/TagH2.astro";
+import TagH1 from "@/components/global/TagH1.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
+import Maps from "./Maps.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
@@ -16,8 +17,10 @@ const images = {
   imgCenote: "/Cenote-Adventuring/Card.Cenote.webp",
   imgDetails1: "/Cenote-Adventuring/CenoteA.4.webp",
   imgDetails2: "/Cenote-Adventuring/CenoteA.5.webp",
+  img1: "/Cenote-Adventuring/CenoteA.8.webp",
+  img2: "/Cenote-Adventuring/CenoteA.3.webp",
+  img3: "/Cenote-Adventuring/CenoteA.6.webp",
 };
-
 
 const descriptions = [i18n.RUTA_CENOTES_PAGE.HERO.DESCRIPTION];
 const seoMetaData = {
@@ -28,128 +31,116 @@ const seoMetaData = {
 
 <BaseLayout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] overflow-x-hidden">
-    <section
-      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
-    >
+    <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
       <img
         src={getUrl(images.imgCenote)}
-        class="absolute z-0 w-full h-full rounded-md object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.2]"
+        class="absolute z-0 w-full h-full rounded-md object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
         id="hero-video-payer"
         alt=""
         loading="lazy"
       />
-
       <div class="relative z-10 text-center text-white px-6">
-        <p
-          class="uppercase tracking-[0.6em] font-light text-xs md:text-sm animate-fade-in opacity-90 mt-100 mx-auto max-w-4xl"
+        <h1
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg mt-100"
         >
+          {i18n.RUTA_CENOTES_PAGE.HERO.TITLE2}
+        </h1>
+        <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
           {i18n.RUTA_CENOTES_PAGE.HERO.TITLE}
         </p>
+        <div
+          class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
+        >
+        </div>
       </div>
     </section>
 
-    <section class="py-24 md:py-32 -mt-20">
-      <BContainer>
-        <div class="max-w-7xl mx-auto">
-          <header class="text-center mb-20">
-            <TagH2
-              class="font-serif regular text-5xl md:text-7xl text-[#006083] mb-6"
-            >
-              {i18n.RUTA_CENOTES_PAGE.HERO.TITLE2}
-            </TagH2>
+    <section class="max-w-7xl mx-auto px-6 py-16 md:py-28">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
+      >
+        <div class="lg:col-span-6 relative group">
+          <div
+            class="aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-sm shadow-2xl"
+          >
+            <img
+              src={getUrl(images.img3, 1000)}
+              class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+              alt="Experiencia Exclusiva en Cenote"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="absolute -bottom-4 -right-4 w-full h-full border border-slate-100 -z-10 hidden md:block"
+          >
+          </div>
+        </div>
 
-            <div class="flex items-center justify-center gap-4 mb-6">
-              <div class="h-[1px] w-8 bg-[#006083]/30"></div>
-              <p
-                class="uppercase tracking-[0.4em] text-[11px] text-slate-400 font-semibold"
-              >
-                {i18n.RUTA_CENOTES_PAGE.HERO.SUBTITLE}
-              </p>
-              <div class="h-[1px] w-8 bg-[#006083]/30"></div>
+        <div class="lg:col-span-6 flex flex-col justify-center lg:pl-4">
+          <div class="w-12 h-[1px] bg-[#006083] mb-8"></div>
+          <h2
+            class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 leading-tight"
+          >
+            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INTRO.TITLE}
+          </h2>
+
+          <div class="space-y-6">
+            <p
+              class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 px-5 lg:text-lg md:text-2xl"
+            >
+              {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INTRO.DESCRIPTION}
+            </p>
+            <div class="pt-6">
+              <div class="w-full h-[1px] bg-black/5"></div>
             </div>
-          </header>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <article class="space-y-8 mx-auto max-w-7xl">
-            {
-              descriptions.map((text) => (
-                <TagP class="text-center text-slate-700 text-lg leading-relaxed font-light mx-full max-w-screen-2xl ">
-                  {text}
-                </TagP>
-              ))
-            }
-          </article>
-
-          <section class="mx-auto px-6 py-12 md:py-24 space-y-16 -mt-15">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 items-start justify-center"
-            >
-              <div
-                class="lg:col-span-12 flex flex-col lg:flex-row gap-8 items-center border-y border-black/20 py-8"
-              >
-                <div class="w-full lg:w-1/2 overflow-hidden">
+    <section class="py-24 md:py-32 -mt-50">
+      <BContainer>
+        <section class="py-24 bg-[#F8FAFC] -mt-25">
+          <BContainer>
+            <div class="flex flex-col lg:flex-row-reverse gap-16 items-start">
+              <div class="w-full lg:w-5/12 lg:sticky lg:top-24">
+                <div class="relative group">
                   <img
-                    src={getUrl(images.imgDetails1, 800)}
-                    class="w-full h-auto object-cover rounded-md transition-transform duration-700 hover:scale-110"
-                    alt="Adventure 1"
+                    src={getUrl(images.imgDetails2)}
+                    class="w-full aspect-[3/4] object-cover rounded-md shadow-2xl transition-transform duration-700"
+                    alt="Cenote Experience"
                   />
                 </div>
+              </div>
 
-                <div class="w-full lg:w-1/2">
-                  <div class="bg-[#EDF4FC] rounded-lg p-8 md:p-10">
-                    <h3 class="font-serif text-2xl text-[#006083] mb-4">
-                      {i18n.RUTA_CENOTES_PAGE.INTRO.TITLE}
-                    </h3>
-                    <p class="text-slate-700 leading-relaxed font-light">
-                      {i18n.RUTA_CENOTES_PAGE.INTRO.DESCRIPTION}
-                    </p>
-                  </div>
+              <div class="w-full lg:w-7/12">
+                <header class="mb-16">
+                  <TagH1
+                    class="font-serif md:text-4xl text-black leading-[1.2] tracking-tight -mb-10"
+                  >
+                    {i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.TITLE}
+                  </TagH1>
+                  <div class="h-[1px] w-12 bg-[#006083]/30 mt-8"></div>
+                </header>
+
+                <div class="space-y-12">
+                  {
+                    i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.LIST.map((item) => (
+                      <div class="group border-l-2 border-[#006083]/10 pl-8 hover:border-[#006083] transition-colors duration-700">
+                        <h3 class="text-2xl font-serif text-black mb-3">
+                          {item.TITLE}
+                        </h3>
+                        <p class="text-slate-600 font-light leading-relaxed max-w-xl">
+                          {item.DESCRIPTION}
+                        </p>
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
-          </section>
-
-          <section class="py-24 bg-[#F8FAFC] -mt-25">
-            <BContainer>
-              <div class="flex flex-col lg:flex-row-reverse gap-16 items-start">
-                <div class="w-full lg:w-5/12 lg:sticky lg:top-24">
-                  <div class="relative group">
-                    <img
-                      src={getUrl(images.imgDetails2)}
-                      class="w-full aspect-[3/4] object-cover rounded-md shadow-2xl transition-transform duration-700"
-                      alt="Cenote Experience"
-                    />
-                  </div>
-                </div>
-
-                <div class="w-full lg:w-7/12">
-                  <header class="mb-16">
-                    <h2
-                      class="text-3xl font-serif text-[#006083] leading-tight mt-10"
-                    >
-                      {i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.TITLE}
-                    </h2>
-                    <div class="h-[1px] w-12 bg-[#006083]/30 mt-8"></div>
-                  </header>
-
-                  <div class="space-y-12">
-                    {
-                      i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.LIST.map((item) => (
-                        <div class="group border-l-2 border-[#006083]/10 pl-8 hover:border-[#006083] transition-colors duration-700">
-                          <h3 class="text-2xl font-serif text-[#006083] mb-3">
-                            {item.TITLE}
-                          </h3>
-                          <p class="text-slate-600 font-light leading-relaxed max-w-xl">
-                            {item.DESCRIPTION}
-                          </p>
-                        </div>
-                      ))
-                    }
-                  </div>
-                </div>
-              </div>
-            </BContainer>
-          </section>
-        </div>
+          </BContainer>
+        </section>
 
         <section class="py-24 bg-[#F8FAFC] -mt-45">
           <BContainer>
@@ -235,9 +226,10 @@ const seoMetaData = {
               </div>
             </div>
           </BContainer>
+          <Maps/>
         </section>
         <!-- QUESTIONS THE RUTA CENOTE -->
-        <section class="py-24 -mt-60">
+        <section class="py-24 -mt-66">
           <BContainer>
             <div class="group py-8">
               <div class="flex justify-between items-center list-none">

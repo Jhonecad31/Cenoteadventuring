@@ -74,7 +74,7 @@
     "HERO": {
       "TITLE": "Aventura en Cenotes en Puerto Morelos: Una Experiencia Privada a través de los Mejores Cenotes Secretos",
       "DESCRIPTION 1": "Descubre la magia de los cenotes de Puerto Morelos en un viaje exclusivo diseñado para viajeros que desean más que una excursión típica.",
-      "DES": "Ver paquetes"
+      "DES": "Ver disponibilidad"
     },
     "AWARDS": {
       "TITLE": "Premios y Reconocimientos",
@@ -97,7 +97,7 @@
       }
     },
     "GALLERY": {
-      "TITLE": "Entra en la Magia de la Selva Maya y los Cenotes Ocultos",
+      "TITLE": "Sumérgete en la magia de la selva maya y sus cenotes ocultos.",
       "DESCRIPTION": "Explora nuestra galería para ser testigo de la impresionante belleza de los cenotes más exclusivos de Puerto Morelos. Desde aguas cristalinas hasta paisajes vibrantes."
     },
     "CHOOSE_PLAN": {
@@ -672,7 +672,7 @@
         }
       },
       "GALLERY": {
-        "TITLE": "Entra en la magia de la selva maya y los cenotes ocultos",
+        "TITLE": "Sumérgete en la magia de la selva maya y sus cenotes ocultos.",
         "DESCRIPTION": "Explora nuestra galería para ver la belleza de los cenotes más exclusivos de Puerto Morelos."
       },
       "SCHEDULES": {

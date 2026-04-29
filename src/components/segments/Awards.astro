@@ -13,7 +13,7 @@ const seoMetaData = {
   description: i18n?.SEO?.ABOUT_US_PAGE?.DESCRIPTION || "Default description",
 };
 
-const relatedActivities = [
+const related_awards = [
   {
     name: "National Geography",
     image: Natgeo,
@@ -64,27 +64,28 @@ const relatedActivities = [
         </div>
       </div>
     </div>
-   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 mx-auto max-w-5xl">
+   <!-- Cambiamos grid-cols-1 por grid-cols-3 directamente para que sea compacto siempre -->
+<div class="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-8 mt-12 md:mt-20 mx-auto max-w-5xl px-4">
   {
-    relatedActivities.map((activity) => (
-      <div
-        class="flex flex-col items-center text-center p-6"
-      >
-        {/* Contenedor con altura controlada */}
-        <div class="h-16 md:h-20 w-full flex items-center justify-center mb-6">
+    related_awards.map((activity) => (
+      <div class="flex flex-col items-center text-center p-2 md:p-6">
+        {/* Reducimos la altura del contenedor en móvil (h-12) */}
+        <div class="h-12 md:h-20 w-full flex items-center justify-center mb-3 md:mb-6">
           <img
             src={activity.image.src}
             alt={activity.name}
-            class="h-full max-w-[150px] md:max-w-[180px] object-contain opacity-80"
+            class="h-full w-auto max-w-[80px] md:max-w-[180px] object-contain opacity-80  transition-all"
           />
         </div>
 
-        <h4 class="text-[#001524] text-xs md:text-sm tracking-[0.1em] uppercase font-semibold">
+        {/* Texto más pequeño en móvil para que quepa en una línea o dos */}
+        <h4 class="text-[#001524] text-[8px] md:text-sm tracking-[0.1em] uppercase font-semibold leading-tight">
           {activity.name}
         </h4>
       </div>
     ))
   }
+</div>
 </div>
 </div>
   </div>
