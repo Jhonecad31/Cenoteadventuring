@@ -660,6 +660,7 @@ const seoMetaData = {
       <!-- termina seccion sticky para mobile -->
   </main>
 </Layout>
+
 <style>
   @import "swiper/css";
   @import "swiper/css/pagination";
@@ -718,6 +719,18 @@ const seoMetaData = {
   .animate-fade-in-up {
     animation: fade-in-up 0.4s ease-out forwards;
   }
+  [slot="sticky-button"] {
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Forzar que el widget de Bokun tenga un z-index superior a todo el footer */
+.bokun-calendar-container, 
+.bokun-modal-overlay,
+#bokun-widget-container {
+  z-index: 9999 !important;
+  position: fixed !important; /* El calendario siempre debe ser relativo a la pantalla */
+}
 </style>
 
 <script>
@@ -744,58 +757,53 @@ const seoMetaData = {
   }
 
   function initStickyAnchor() {
-    const stickyCard = document.getElementById("sticky-product-card");
-    const anchor = document.getElementById("sticky-anchor");
+  const stickyCard = document.getElementById("sticky-product-card");
+  const anchor = document.getElementById("sticky-anchor");
 
-    if (!stickyCard || !anchor) return;
+  if (!stickyCard || !anchor) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Buscamos el div interno para la sombra
-          const innerCard = stickyCard.querySelector('div');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const innerCard = stickyCard.querySelector('div');
 
-          if (entry.isIntersecting) {
-            // ESTADO: Anclado arriba del footer (estático)
-            stickyCard.classList.remove("fixed", "bottom-6", "left-4", "right-4", "z-40");
-            stickyCard.classList.add("relative", "mx-4", "mb-12");
+        if (entry.isIntersecting) {
+          // MODO ESTÁTICO (Encima del footer)
+          stickyCard.classList.remove("fixed", "bottom-6", "left-4", "right-4", "z-40");
+          // Añadimos z-[50] para que sea superior al footer y overflow-visible
+          stickyCard.classList.add("relative", "mx-4", "mb-12", "z-[50]", "overflow-visible");
+          
+          if (innerCard) {
+            innerCard.classList.remove("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
+            innerCard.classList.add("overflow-visible"); // Crucial para el calendario
+          }
+        } else {
+          if (entry.boundingClientRect.top > 0) {
+            // MODO FLOTANTE
+            stickyCard.classList.remove("relative", "mx-4", "mb-12", "overflow-visible");
+            stickyCard.classList.add("fixed", "bottom-6", "left-4", "right-4", "z-40");
             
             if (innerCard) {
-              innerCard.classList.remove("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
-            }
-          } else {
-            // ESTADO: Flotando (fixed)
-            // Solo vuelve a fixed si el ancla está por debajo del viewport
-            if (entry.boundingClientRect.top > 0) {
-              stickyCard.classList.remove("relative", "mx-4", "mb-12");
-              stickyCard.classList.add("fixed", "bottom-6", "left-4", "right-4", "z-40");
-              
-              if (innerCard) {
-                innerCard.classList.add("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
-              }
+              innerCard.classList.add("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
             }
           }
-        });
-      },
-      {
-        rootMargin: "0px",
-        threshold: 0.1,
-      }
-    );
+        }
+      });
+    },
+    { rootMargin: "0px", threshold: 0.1 }
+  );
 
-    observer.observe(anchor);
-  }
+  observer.observe(anchor);
+}
 
-  // Ejecución inicial
   initSwiper();
   initStickyAnchor();
-
-  // Soporte para Astro View Transitions
   document.addEventListener("astro:page-load", () => {
     initSwiper();
     initStickyAnchor();
   });
 </script>
+
 
 
 
