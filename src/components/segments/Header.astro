@@ -7,7 +7,12 @@ import {
 } from "@/i18n/utils";
 import { Menu, X } from "lucide-react";
 import LanguageSelector from "./LanguageSelector.astro";
-import { Logo_icono_cenote, LogoContainer, Trip, Logo_blanco } from "@/icons/allIcons";
+import {
+  Logo_icono_cenote,
+  LogoContainer,
+  Trip,
+  Logo_blanco,
+} from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -61,11 +66,11 @@ const navigation = [
         </div>
 
         <div
-      id="logo-movil"
-      class="transition-all duration-500 opacity-100 block"
-    >
-      <Logo_blanco class="h-15 p-1" />
-    </div>
+          id="logo-movil"
+          class="transition-all duration-500 opacity-100 block"
+        >
+          <Logo_blanco class="h-15 p-1" />
+        </div>
       </a>
     </div>
 
@@ -128,75 +133,80 @@ const navigation = [
     </div>
 
     <div class="flex flex-col items-center gap-6 mb-15">
-  <div class="h-[1px] w-20 bg-white/30"></div>
-  
-  <!-- Añadimos 'items-center' para que la alineación vertical sea perfecta entre SVGs e Imagen -->
-  <div class="flex gap-8 text-white items-center">
-    
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/cenoteadventuring/"
-      class="hover:scale-110 transition-transform"
-      aria-label="Instagram"
-    >
-      <!-- clases w-6 h-6 al SVG -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="w-6 h-6" 
-        ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
-          d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
-          x1="17.5"
-          x2="17.51"
-          y1="6.5"
-          y2="6.5"></line></svg
-      >
-    </a>
+      <div class="h-[1px] w-20 bg-white/30"></div>
 
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/cenoteadventuring/"
-      class="hover:scale-110 transition-transform"
-      aria-label="Facebook"
-    >
-      <!-- clases w-6 h-6 al SVG -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="w-6 h-6"
-        ><path
-          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-        ></path></svg>
-      
-    </a>
+      <!-- Añadimos 'items-center' para que la alineación vertical sea perfecta entre SVGs e Imagen -->
+      <div class="flex gap-8 text-white items-center">
+        <!-- Instagram -->
+        <a
+          href="https://www.instagram.com/cenoteadventuring/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-110 transition-transform"
+          aria-label="Instagram"
+        >
+          <!-- clases w-6 h-6 al SVG -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6"
+            ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
+              d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+              x1="17.5"
+              x2="17.51"
+              y1="6.5"
+              y2="6.5"></line></svg
+          >
+        </a>
 
-    <!-- TripAdvisor -->
-    <a
-      href="https://www.tripadvisor.com.mx/24252542"
-      class="hover:scale-110 transition-transform"
-      aria-label="TripAdvisor"
-    >
-      <!-- Mantenemos la imagen exactamente igual -->
-      <img
-        src={Trip.src}
-        alt="TripAdvisor"
-        width="24"
-        height="24"
-        class="w-6 h-6 invert"
-      />
-    </a>
-  </div>
-</div>
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/cenoteadventuring/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-110 transition-transform"
+          aria-label="Facebook"
+        >
+          <!-- clases w-6 h-6 al SVG -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6"
+            ><path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            ></path></svg
+          >
+        </a>
+
+        <!-- TripAdvisor -->
+        <a
+          href="https://www.tripadvisor.com.mx/24252542"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-110 transition-transform"
+          aria-label="TripAdvisor"
+        >
+          <!-- Mantenemos la imagen exactamente igual -->
+          <img
+            src={Trip.src}
+            alt="TripAdvisor"
+            width="24"
+            height="24"
+            class="w-6 h-6 invert"
+          />
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -210,9 +220,9 @@ const navigation = [
     const logoReducido = document.getElementById("logo-reducido");
     const logoMovil = document.getElementById("logo-movil");
     const openBtn = document.getElementById("open-menu"); // Lo necesitamos aquí también para el color
-    
+
     const isSpecialPage = ["/contact", "/404"].some((path) =>
-      window.location.pathname.includes(path)
+      window.location.pathname.includes(path),
     );
 
     const useDarkTheme = isScrolled || isSpecialPage;
@@ -250,9 +260,11 @@ const navigation = [
     // --- Colores de texto ---
     const textColor = useDarkTheme ? "text-[#002B49]" : "text-white";
     const oldColor = useDarkTheme ? "text-white" : "text-[#002B49]";
-    
-    const elementsToTint = document.querySelectorAll("#logo-container, #icon-group, #open-menu, .nav-link");
-    elementsToTint.forEach(el => {
+
+    const elementsToTint = document.querySelectorAll(
+      "#logo-container, #icon-group, #open-menu, .nav-link",
+    );
+    elementsToTint.forEach((el) => {
       el.classList.add(textColor);
       el.classList.remove(oldColor);
     });
@@ -284,7 +296,7 @@ const navigation = [
     updateStyles();
     initMenu();
   });
-  
+
   // Para que funcione al navegar entre páginas con ViewTransitions
   document.addEventListener("astro:after-swap", () => {
     updateStyles();
