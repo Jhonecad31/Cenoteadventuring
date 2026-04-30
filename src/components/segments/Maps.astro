@@ -9,6 +9,7 @@
   </div>
 </section>
 
+<!-- Librería MapLibre -->
 <link
   href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css"
   rel="stylesheet"
@@ -19,26 +20,52 @@
 
   function initMap() {
     const container = document.getElementById("map");
+    // Prevenir inicializaciones duplicadas
     if (!container || container.children.length > 0) return;
 
     const API_KEY = "f7d260a6-b7fc-4b60-84ee-e5dc4d2a2965";
 
+    // Lista de ubicaciones: Principal en azul, vecinos en gris
     const locations = [
       {
         name: "Extreme adventuring Cancún",
-        coords: [-87.07884217116445, 20.87510691491851],
+        coords: [-87.0788529, 20.8748563],
         address: "Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R.",
-        googleMapsUrl: "https://maps.app.goo.gl/3jQ1H9oXXwuXwxcv6",
+        googleMapsUrl: "https://www.google.com/maps/d/u/0/edit?mid=1J6rQdsBdjvDH7shoK2n1yEDWIkxLiUc&usp=sharing",
+        color: "#006083", // Azul
+        isMain: true
       },
+      {
+        name: "Cenote La Noria",
+        coords: [-87.1245, 20.8642],
+        address: "Cenote Vecino",
+        color: "#94a3b8", // Gris
+        isMain: false
+      },
+      {
+        name: "Cenote Zapote",
+        coords: [-87.1118, 20.8525],
+        address: "Cenote Vecino",
+        color: "#94a3b8", // Gris
+        isMain: false
+      },
+      {
+        name: "Cenote Kin-Ha",
+        coords: [-87.1135, 20.8578],
+        address: "Cenote Vecino",
+        color: "#94a3b8", // Gris
+        isMain: false
+      }
     ];
 
     const map = new maplibregl.Map({
       container: "map",
       style: `https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=${API_KEY}`,
-      center: [-87.07884217116445, 20.87510691491851],
-      zoom: 10
+      center: [-87.1000, 20.8650], // Centrado para abarcar todos los puntos
+      zoom: 12
     });
 
+    // Tu lógica original para el fondo transparente
     map.on("load", () => {
       if (map.getLayer("background")) {
         map.setPaintProperty("background", "background-opacity", 0);
@@ -46,38 +73,38 @@
     });
 
     map.addControl(new maplibregl.NavigationControl(), "top-right");
-    map.on("load", () => {
-      if (map.getLayer("background")) {
-        map.setPaintProperty("background", "background-opacity", 0);
-      }
-    });
 
+    // Renderizado de marcadores
     locations.forEach((loc) => {
       const popup = new maplibregl.Popup({ offset: 35, closeButton: false })
         .setHTML(`
             <div class="p-3 text-center min-w-[150px]">
               <h4 class="font-serif font-bold text-[#006083] text-lg mb-1">${loc.name}</h4>
               <p class="text-[11px] text-gray-500 leading-tight mb-3 italic">${loc.address}</p>
+              ${loc.isMain ? `
               <a href="${loc.googleMapsUrl}" 
                  target="_blank" 
                  class="inline-block bg-[#006083] text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all">
                  Cómo llegar →
-              </a>
+              </a>` : ''}
             </div>
           `);
 
-      const marker = new maplibregl.Marker({ color: "#006083" })
+      new maplibregl.Marker({ color: loc.color })
         .setLngLat(loc.coords)
         .setPopup(popup)
         .addTo(map);
     });
   }
+
+  // Inicialización respetando el ciclo de vida de Astro
   initMap();
   document.addEventListener("astro:page-load", initMap);
   document.addEventListener("astro:after-swap", initMap);
 </script>
 
 <style is:global>
+  /* Mantenemos tus estilos de integración visual exactamente igual */
   #map canvas {
     mix-blend-mode: multiply; 
     background-color: transparent !important;

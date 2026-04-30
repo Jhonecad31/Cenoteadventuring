@@ -5,6 +5,7 @@ import TagH1 from "@/components/global/TagH1.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
 import Maps from "./Maps.astro";
+import { Laurel1, Laurel2, Laurel3 } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
@@ -21,6 +22,20 @@ const images = {
   img2: "/Cenote-Adventuring/CenoteA.3.webp",
   img3: "/Cenote-Adventuring/CenoteA.6.webp",
 };
+const related_awards = [
+  {
+    name: "National Geography",
+    image: Laurel1,
+  },
+  {
+    name: "World Travel Awards",
+    image: Laurel2,
+  },
+  {
+    name: "Trip Advisor",
+    image: Laurel3,
+  },
+];
 
 const descriptions = [i18n.RUTA_CENOTES_PAGE.HERO.DESCRIPTION];
 const seoMetaData = {
@@ -226,10 +241,10 @@ const seoMetaData = {
               </div>
             </div>
           </BContainer>
-          <Maps/>
+          <Maps />
         </section>
         <!-- QUESTIONS THE RUTA CENOTE -->
-        <section class="py-24 -mt-66">
+        <section class="py-24 -mt-50">
           <BContainer>
             <div class="group py-8">
               <div class="flex justify-between items-center list-none">
@@ -275,6 +290,26 @@ const seoMetaData = {
           </BContainer>
         </section>
         <!-- TERMINA QUESTION THE RUTA CENOTE -->
+        <!-- se agrega seccion para awards -->
+        <div
+  class="grid grid-cols-3 gap-2 md:gap-4 mx-auto max-w-4xl px-4"
+>
+  {
+    related_awards.map((activity) => (
+      <div class="flex flex-col items-center justify-center p-0 md:p-2">
+        {/* Aumentamos la altura del contenedor h-24 -> h-32 */}
+        <div class="h-24 md:h-40 w-full flex items-center justify-center">
+          <img
+            src={activity.image.src}
+            alt={activity.name}
+            /* Aumentamos max-w a 120px en móvil y 280px en desktop */
+            class="h-full w-auto max-w-[120px] md:max-w-[280px] object-contain opacity-90 transition-all hover:scale-105"
+          />
+        </div>
+      </div>
+    ))
+  }
+</div>
       </BContainer>
     </section>
   </main>

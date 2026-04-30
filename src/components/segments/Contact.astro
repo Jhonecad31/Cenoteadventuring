@@ -14,6 +14,7 @@ import TagH1 from "../global/TagH1.astro";
 import { getI18N } from "@/i18n";
 import TagP from "../global/TagP.astro";
 import FormContact from "../others/FromContact";
+import { Trip } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -58,11 +59,12 @@ const seoMetaData = {
 
 <BaseLayout {...seoMetaData}>
   <main class="bg-[#EDF4FC] pt-32 pb-20">
-    <div class="max-w-6xl mx-auto px-6">
-      
+    <div class="max-w-6xl mx-auto px-6">      
       <!-- HERO SECTION -->
       <div class="text-center mb-16">
-        <TagH1>{HERO.TITLE}</TagH1>
+        <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
+        {HERO.TITLE}
+      </TagH1>
         <TagP class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 !text-center px-5 lg:text-lg md:text-2xl">
           {HERO.DESCRIPTION}
         </TagP>
@@ -70,7 +72,6 @@ const seoMetaData = {
 
       <!-- CONTACT GRID -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
-        
         <!-- LEFT COLUMN: INFO & SOCIAL -->
         <div class="lg:col-span-5 space-y-8">
           <div class="bg-[#006083] text-white p-6 md:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">

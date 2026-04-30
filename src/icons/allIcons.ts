@@ -20,6 +20,9 @@ import Cancun_horse from "@/icons/logos/cancun-horse-ride-extrem-adventuring.svg
 import Extreme_adventuring from "@/icons/logos/extreme-adventuring-cancun.svg"
 import Snorkeling from "@/icons/logos/snorkeling-adventure.svg"
 import Trip from "@/icons/logos/trip.png"
+import Laurel1 from "@/icons/awards/Premios-laureles-01-01 (1).svg"
+import Laurel2 from "@/icons/awards/Premios-laureles-01-02 (1).svg"
+import Laurel3 from "@/icons/awards/Premios-laureles-01-03 (1).svg"
 
 export {
     IconFlagMEX,
@@ -40,6 +43,8 @@ export {
     Cancun_horse,
     Extreme_adventuring,
     Snorkeling,
-    Trip
-    
+    Trip,
+    Laurel1,
+    Laurel2,
+    Laurel3
 }

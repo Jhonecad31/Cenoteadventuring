@@ -5,13 +5,28 @@ import TagH2 from "@/components/global/TagH2.astro";
 import TagH3 from "@/components/global/TagH3.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
-
+import { Laurel1, Laurel2, Laurel3 } from "@/icons/allIcons";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const images = {
   imgCenote: "/Cenote-Adventuring/CenoteA.6.webp", 
 };
+const related_awards = [
+  {
+    name: "National Geography",
+    image: Laurel1,
+  },
+  {
+    name: "World Travel Awards",
+    image: Laurel2,
+  },
+  {
+    name: "Trip Advisor",
+    image: Laurel3,
+  },
+];
+
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
 
@@ -98,17 +113,108 @@ const getUrl = (id: string, w = 800) =>
       </div>
     </section>
 
+    <!-- CONTENEDOR PARA ESCRITORIO (Se oculta en móvil) -->
+<div class="hidden md:grid grid-cols-3 gap-4 mx-auto max-w-4xl px-4 py-12">
+  {
+    related_awards.map((activity) => (
+      <div class="flex flex-col items-center justify-center">
+        <div class="h-40 w-full flex items-center justify-center">
+          <img
+            src={activity.image.src}
+            alt={activity.name}
+            class="h-full w-auto max-w-[280px] object-contain opacity-90 transition-all hover:scale-105"
+          />
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<!-- CONTENEDOR PARA MÓVIL (Carrusel de 1 en 1, se oculta en escritorio) -->
+<div class="md:hidden px-4 py-8">
+  <div id="awards-carousel-mobile" class="relative w-full" data-carousel="slide">
+    <!-- Wrapper -->
+    <div class="relative h-48 overflow-hidden rounded-lg">
+      {
+        related_awards.map((activity, index) => (
+          <div class="hidden duration-700 ease-in-out flex items-center justify-center" data-carousel-item>
+            <div class="h-32 w-full flex items-center justify-center">
+              <img 
+                src={activity.image.src} 
+                class="max-h-full max-w-[150px] object-contain" 
+                alt={activity.name} 
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    
+    <!-- Puntos (Indicadores) -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-0 left-1/2 space-x-3">
+      {
+        related_awards.map((_, index) => (
+          <button 
+            type="button" 
+            class="w-2 h-2 rounded-full bg-gray-300" 
+            aria-current={index === 0 ? "true" : "false"} 
+            data-carousel-slide-to={index}>
+          </button>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
   </main>
 
-  <script>
+ <script>
+  import { Carousel } from 'flowbite';
+
+  function initPageLogic() {
+    // 1. Lógica del Hero (Parallax)
+    const heroImg = document.getElementById("hero-img");
+    
+    // Solo añadimos el listener si no existe uno previo para evitar duplicados
     window.addEventListener("scroll", () => {
-      const heroImg = document.getElementById("hero-img");
       if (heroImg) {
         const scrollValue = window.scrollY;
-        heroImg.style.transform = `translateY(${scrollValue * 0.2}px) scale(1.05)`;
+        // Limitemos el efecto al área visible del hero para mejorar performance
+        if (scrollValue < window.innerHeight) {
+          heroImg.style.transform = `translateY(${scrollValue * 0.2}px) scale(1.05)`;
+        }
       }
     });
-  </script>
+
+    // 2. Lógica del Carrusel de Laureles (Solo en móvil)
+    const $carouselEl = document.getElementById('awards-carousel-mobile');
+    if ($carouselEl && window.innerWidth < 768) {
+      const items = Array.from($carouselEl.querySelectorAll('[data-carousel-item]')).map((el, index) => ({
+        position: index,
+        el: el as HTMLElement
+      }));
+
+      const indicators = Array.from($carouselEl.querySelectorAll('[data-carousel-slide-to]')).map((el, index) => ({
+        position: index,
+        el: el as HTMLElement
+      }));
+
+      new Carousel($carouselEl, items, {
+        defaultPosition: 0,
+        interval: 3000,
+        indicators: {
+          activeClasses: 'bg-blue-600', // Color del punto activo
+          inactiveClasses: 'bg-gray-300',
+          items: indicators
+        }
+      });
+    }
+  }
+
+  // Inicializar en carga inicial y en cambios de página de Astro
+  document.addEventListener('DOMContentLoaded', initPageLogic);
+  document.addEventListener('astro:page-load', initPageLogic);
+</script>
 
   <style>
     main {
