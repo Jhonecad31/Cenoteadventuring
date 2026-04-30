@@ -46,29 +46,26 @@ const seoMetaData = {
 
 <BaseLayout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] overflow-x-hidden">
-    <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
+   <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
       <img
         src={getUrl(images.imgCenote)}
-        class="absolute z-0 w-full h-full rounded-md object-cover transition-opacity duration-1000 scale-[1.01] opacity-100 brightness-[0.4]"
-        id="hero-video-payer"
-        alt=""
-        loading="lazy"
+        class="absolute z-0 w-full h-full object-cover scale-[1.05] brightness-[0.4]"
+        id="hero-img"
+        alt="Cenote Background"
+        loading="eager"
       />
       <div class="relative z-10 text-center text-white px-6">
         <h1
-          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg mt-100"
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
-          {i18n.RUTA_CENOTES_PAGE.HERO.TITLE2}
+          {i18n.ABOUT_US_PAGE.HERO.H1}
         </h1>
-        <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
-          {i18n.RUTA_CENOTES_PAGE.HERO.TITLE}
+        <p class="tracking-[0.5em] text-sm font-light opacity-90">
+          {i18n.ABOUT_US_PAGE.HERO.SUBTITLE}
         </p>
-        <div
-          class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
-        >
-        </div>
       </div>
     </section>
+
 
     <section class="max-w-7xl mx-auto px-6 py-16 md:py-28">
       <div
@@ -244,7 +241,7 @@ const seoMetaData = {
           <Maps />
         </section>
         <!-- QUESTIONS THE RUTA CENOTE -->
-        <section class="py-24 -mt-50">
+        <section class="py-24 -mt-66">
           <BContainer>
             <div class="group py-8">
               <div class="flex justify-between items-center list-none">
@@ -292,7 +289,7 @@ const seoMetaData = {
         <!-- TERMINA QUESTION THE RUTA CENOTE -->
         <!-- se agrega seccion para awards -->
         <div
-  class="grid grid-cols-3 gap-2 md:gap-4 mx-auto max-w-4xl px-4"
+  class="grid grid-cols-3 gap-2 md:gap-4 mt-8 md:mt-12 mx-auto max-w-4xl px-4"
 >
   {
     related_awards.map((activity) => (

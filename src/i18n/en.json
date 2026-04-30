@@ -35,9 +35,9 @@
       }
     },
     "PRIVATE_CENOTE": {
-        "TITLE": "Renta de Cenote Privado",
-        "DESCRIPTION": "Renta de cenote privado en Cancún: Una experiencia 100% exclusiva para grupos.",
-        "META_TITLE": "Renta de Cenote Privado en Cancún | Experiencia 100% Exclusiva"
+      "TITLE": "Renta de Cenote Privado",
+      "DESCRIPTION": "Renta de cenote privado en Cancún: Una experiencia 100% exclusiva para grupos.",
+      "META_TITLE": "Renta de Cenote Privado en Cancún | Experiencia 100% Exclusiva"
     }
   },
   "NOT_FOUND_PAGE": {
@@ -108,17 +108,17 @@
           "TITLE": "Private Cenote Experience",
           "DESCRIPTION": "Experience an exclusive cenote adventure with a private boat, personalized service, and more amenities.",
           "FEATURES": [
-           "Private group",
-          "Private transportation",
-          "Round-trip transportation from your hotel",
-          "Cenote (with waterfall, zipline and cavern)",
-          "Lifejacket",
-          "Specialized and bilingual guides",
-          "Tequila tasting(in the cenote)",
-          "Mayan Snack",
-          "Mayan performance",
-          "Round trip transportation from cancún",
-          "Conservation Fee (include)"
+            "Private group",
+            "Private transportation",
+            "Round-trip transportation from your hotel",
+            "Cenote (with waterfall, zipline and cavern)",
+            "Lifejacket",
+            "Specialized and bilingual guides",
+            "Tequila tasting(in the cenote)",
+            "Mayan Snack",
+            "Mayan performance",
+            "Round trip transportation from cancún",
+            "Conservation Fee (include)"
           ]
         },
         "CENOTE": {
@@ -126,12 +126,12 @@
           "DESCRIPTION": "3 cenote boutique Experience, Mayan Show with Snack",
           "FEATURES": [
             "Conservation Fee(Included)",
-          "Round-trip transportation from your hotel",
-          "3 Cenotes(with waterfall, zipline and cavern)",
-          "Lifejacket",
-          "Specialized and bilingual guides",
-          "Tequila tasting(in the cenote)",
-          "Mayan performance"
+            "Round-trip transportation from your hotel",
+            "3 Cenotes(with waterfall, zipline and cavern)",
+            "Lifejacket",
+            "Specialized and bilingual guides",
+            "Tequila tasting(in the cenote)",
+            "Mayan performance"
           ]
         }
       }
@@ -173,7 +173,8 @@
   "CONTACT_PAGE": {
     "HERO": {
       "TITLE": "Get in touch with us",
-      "DESCRIPTION": "We’d love to hear from you! If you have any questions about our cenote tours or need assistance planning your visit, just reach out. Your next great adventure is only a message away."
+      "DESCRIPTION": "We’d love to hear from you! If you have any questions about our cenote tours or need assistance planning your visit, just reach out. Your next great adventure is only a message away.",
+      "FOLLOW": "Follow our adventures:"
     },
     "INFO": {
       "TITLE": "Contact Us",
@@ -315,12 +316,13 @@
   "ABOUT_US_PAGE": {
     "HERO": {
       "H1": "Cenote Adventuring: Our story",
+      "SUBTITLE": "Transforming our passion for nature into a journey shared with you.",
       "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle.",
       "ORIGIN_STORY": "Our founders grew up exploring the Ruta de los Cenotes, discovering hidden treasures and learning about their ecological and cultural importance. Over time, they realized that many visitors were missing the true essence of these natural wonders due to crowded group tours.",
       "VALUE_PROPOSITION": "That’s why Cenote Adventuring focuses on offering private cenote tours in Puerto Morelos, where guests can connect with nature at their own pace while enjoying personalized attention and authentic experiences."
     },
     "MISSION": {
-      "TITLE": "OUR MISSION AND PURPOSE",
+      "TITLE": "Our mission and purpose",
       "STATEMENT": "Our mission is simple: to provide meaningful and sustainable experiences in nature. We aim to connect travelers with the beauty of the Ruta de los Cenotes while preserving the environment for future generations.",
       "PHILOSOPHY": "We believe that tourism should go beyond entertainment; it should educate, inspire, and create lasting memories. That’s why every tour we offer is designed with deep respect for nature and local culture."
     },
@@ -349,19 +351,19 @@
       "TEAM_VALUE": "Our team does not just guide you: they enhance your experience by sharing knowledge, stories, and fascinating local insights about the region."
     },
     "DESTINATION_INFO": {
-      "H2": "EXPLORE THE BEST CENOTES NEAR PUERTO MORELOS",
+      "H2": "Explore the best cenotes near puerto morelos",
       "CONTENT": "When travelers search for cenotes near Puerto Morelos, they are looking for something authentic, peaceful, and visually stunning. This region is home to some of the most beautiful cenotes in the Riviera Maya, each offering a unique atmosphere.",
       "DIFFERENTIATION": "Unlike many Cancun cenotes, those in Puerto Morelos remain less crowded and better preserved. This allows visitors to fully immerse themselves in nature without distractions.",
       "EXPERIENCE": "Whether swimming in an open cenote or exploring a semi-hidden cave, every corner of Puerto Morelos offers a different perspective of this natural ecosystem."
     },
     "HIGHLIGHTS": {
-      "H3": "WHAT MAKES PUERTO MORELOS CENOTES SPECIAL?",
+      "H3": "What makes puerto morelos cenotes special?",
       "LOCATION": "These cenotes stand out because of their privileged location. Hidden in the heart of the jungle, they provide a tranquil escape far from crowded tourist areas.",
       "KEY_POINTS": [
-        "PRISTINE FRESHWATER WITH EXCELLENT VISIBILITY",
-        "RICH BIODIVERSITY AND UNIQUE NATURAL FORMATIONS",
-        "QUIET ENVIRONMENTS WITHOUT THE CROWDS",
-        "EASY ACCESS ON THE CANCUN - PUERTO MORELOS ROUTE"
+        "Pristine freshwater with excellent visibility",
+        "Rich biodiversity and unique natural formations",
+        "Quiet environments without the crowds",
+        "Easy access on the Cancun - Puerto Morelos route"
       ],
       "SUMMARY": "These elements make us the best choice for those seeking unique tours in Cancun with a much more exclusive touch."
     }

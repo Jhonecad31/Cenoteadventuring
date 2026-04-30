@@ -171,7 +171,8 @@
   "CONTACT_PAGE": {
     "HERO": {
       "TITLE": "Ponte en contacto con nosotros",
-      "DESCRIPTION": "¡Nos encantaría saber de ti! Si tienes cualquier duda sobre nuestros tours de cenotes o necesitas ayuda planeando tu visita, solo contáctanos. Tu próxima gran aventura está a solo un mensaje de distancia."
+      "DESCRIPTION": "¡Nos encantaría saber de ti! Si tienes cualquier duda sobre nuestros tours de cenotes o necesitas ayuda planeando tu visita, solo contáctanos. Tu próxima gran aventura está a solo un mensaje de distancia.",
+      "FOLLOW": "Sigue nuestras aventuras:"
     },
     "INFO": {
       "TITLE": "Contáctanos",
@@ -310,13 +311,14 @@
   },
   "ABOUT_US_PAGE": {
     "HERO": {
-      "H1": "CENOTE ADVENTURING: NUESTRA HISTORIA",
+      "H1": "Cenote adventuring: nuestra historia",
+      "SUBTITLE":"Descubre cómo convertimos nuestra pasión por la naturaleza en una aventura compartida.",
       "DESCRIPTION": "Cenote Adventuring nació de la pasión por compartir la belleza natural de Puerto Morelos y la selva que lo rodea. Lo que comenzó como una iniciativa local ha evolucionado hasta convertirse en una experiencia privada de primer nivel, diseñada para viajeros que buscan algo más que los tours tradicionales en Cancún.",
       "ORIGIN_STORY": "Nuestros fundadores crecieron explorando la Ruta de los Cenotes, descubriendo tesoros escondidos y aprendiendo sobre su importancia ecológica y cultural. Con el tiempo, se dieron cuenta de que muchos visitantes se perdían la verdadera esencia de estas maravillas naturales debido a los tours grupales masivos.",
       "VALUE_PROPOSITION": "Es por eso que Cenote Adventuring se enfoca en ofrecer tours privados en Puerto Morelos, donde los huéspedes pueden conectar con la naturaleza a su propio ritmo, disfrutando de una atención personalizada y experiencias auténticas."
     },
     "MISSION": {
-      "TITLE": "NUESTRA MISIÓN Y PROPÓSITO",
+      "TITLE": "Nuestra misión y propósito",
       "STATEMENT": "Nuestra misión es sencilla: brindar experiencias significativas y sostenibles en la naturaleza. Buscamos conectar a los viajeros con la belleza de la Ruta de los Cenotes mientras preservamos el entorno para las futuras generaciones.",
       "PHILOSOPHY": "Creemos que el turismo debe ir más allá del entretenimiento; debe educar, inspirar y crear memorias duraderas. Por ello, cada tour que ofrecemos está diseñado con profundo respeto por la naturaleza y la cultura local."
     },
@@ -345,20 +347,20 @@
       "TEAM_VALUE": "Nuestro equipo no solo te guía: enriquecen tu experiencia compartiendo conocimientos, historias y datos locales fascinantes sobre la región."
     },
     "DESTINATION_INFO": {
-      "H2": "EXPLORA LOS MEJORES CENOTES CERCA DE PUERTO MORELOS",
+      "H2": "Explora los mejores cenotes cerca de puerto morelos",
       "CONTENT": "Cuando los viajeros buscan cenotes cerca de Puerto Morelos, buscan algo auténtico, pacífico y visualmente impactante. Esta región alberga algunos de los cenotes más bellos de la Riviera Maya, cada uno con una atmósfera única.",
       "DIFFERENTIATION": "A diferencia de muchos cenotes en Cancún, los de Puerto Morelos se mantienen menos concurridos y mejor preservados. Esto permite a los visitantes sumergirse por completo en la naturaleza sin distracciones.",
       "EXPERIENCE": "Ya sea nadando en un cenote abierto o explorando una cueva semi-oculta, cada rincón de Puerto Morelos ofrece una perspectiva diferente de este ecosistema natural."
     },
     "HIGHLIGHTS": {
-      "H3": "¿QUÉ HACE ESPECIALES A LOS CENOTES DE PUERTO MORELOS?",
+      "H3": "¿Que hace especiales a los cenotes de puerto morelos?",
       "LOCATION": "Estos cenotes destacan por su ubicación privilegiada. Escondidos en el corazón de la selva, ofrecen un escape tranquilo lejos de las zonas turísticas saturadas.",
       "KEY_POINTS": [
-        "AGUAS CRISTALINAS CON EXCELENTE VISIBILIDAD",
-        "RICA BIODIVERSIDAD Y FORMACIONES NATURALES ÚNICAS",
-        "AMBIENTES TRANQUILOS Y SIN MULTITUDES",
-        "FÁCIL ACCESO EN LA RUTA CANCÚN - PUERTO MORELOS"
-      ],
+  "Aguas cristalinas con excelente visibilidad",
+  "Rica biodiversidad y formaciones naturales únicas",
+  "Ambientes tranquilos y sin multitudes",
+  "Fácil acceso en la ruta Cancún - Puerto Morelos"
+],
       "SUMMARY": "Estos elementos nos convierten en la mejor opción para quienes buscan tours únicos en Cancún con un toque mucho más exclusivo."
     }
   },
