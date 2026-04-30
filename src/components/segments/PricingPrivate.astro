@@ -106,7 +106,7 @@ const images = {
 
 const dataForm = {
   bookingChannel: "1e6b5f4a-008a-4afb-879f-7a26209e23e6",
-  idCalendar: "898507",
+  idCalendar: "1162451",
   title: i18n.DETAIL_PAGE.FORM_RESERVATION.BOKUN,
   btnBook: i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON,
   btnCloseText: "Close",
@@ -528,7 +528,7 @@ const seoMetaData = {
                   $70 USD
                 </div>
                 <p class="text-xs lg:text-sm text-gray-500">
-                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_GROUP}
                 </p>
               </div>
 
@@ -567,102 +567,102 @@ const seoMetaData = {
         </aside>
       </div>
     </section>
-      <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-12">
-            <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
-            <p class="text-gray-500 max-w-2xl mx-auto"></p>
-          </div>
-
-          <div class="swiper mySwiper pb-12">
-            <div class="swiper-wrapper">
-              {
-                relatedActivities.map((activity) => {
-                  const IconComponent = iconMap[(activity as any).iconKey];
-                  return (
-                    <div class="swiper-slide">
-                      <a href={activity.link} class="group block">
-                        <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
-                          <img
-                            src={getUrl(activity.image, 600)}
-                            alt={activity.name}
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                          />
-                          {IconComponent && (
-                            <div class="absolute top-4 right-4 p-2.5 rounded-lg flex items-center justify-center z-10">
-                              <div class="w-20 h-20 lg:w-15 lg:h-15 flex items-center justify-center">
-                                <IconComponent className="w-full h-full object-contain" />
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                        <div class="text-left">
-                          <h3 class="font-serif text-xl text-[#001524] mb-2">
-                            {activity.name}
-                          </h3>
-                          <a href={activity.link} target="_blank">
-                            <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
-                              {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
-                              {""}
-                              <ChevronRight
-                                size={14}
-                                className="group-hover:translate-x-1 transition-transform"
-                              />
-                            </div>
-                          </a>
-                        </div>
-                      </a>
-                    </div>
-                  );
-                })
-              }
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
+    <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
+          <p class="text-gray-500 max-w-2xl mx-auto"></p>
         </div>
-      </section>
-      <div id="sticky-anchor" class="h-px w-full"></div>
-      <!-- sticky para mobile -->
-      <div
-        id="sticky-product-card"
-        class="fixed bottom-6 left-4 right-4 lg:hidden z-40 transition-all duration-500 ease-in-out"
-      >
-        <div
-          class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 backdrop-blur-sm"
-        >
-          <div class="flex items-center gap-4 mb-3">
-            {/* Cambié start por center para mejor alineación en mobile */}
-            <div
-              class="flex-shrink-0 w-16 h-16 bg-white/50 rounded-xl overflow-hidden"
-            >
-              <img
-                src={getUrl(images.logoCenote)}
-                alt="Logo"
-                width="64"
-                height="64"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <div class="flex flex-col flex-grow">
-              <p class="text-black font-medium text-xs">
-                {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
-              </p>
-              <div class="flex items-baseline gap-1">
-                <span class="text-black font-bold text-xl tracking-tight">
-                  $70 USD
-                </span>
-                <span class="text-black/60 text-[10px] font-medium uppercase">
-                  {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
-                </span>
-              </div>
-            </div>
+
+        <div class="swiper mySwiper pb-12">
+          <div class="swiper-wrapper">
+            {
+              relatedActivities.map((activity) => {
+                const IconComponent = iconMap[(activity as any).iconKey];
+                return (
+                  <div class="swiper-slide">
+                    <a href={activity.link} class="group block">
+                      <div class="relative aspect-[3/4] overflow-hidden mb-6 shadow-sm bg-gray-100">
+                        <img
+                          src={getUrl(activity.image, 600)}
+                          alt={activity.name}
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        {IconComponent && (
+                          <div class="absolute top-4 right-4 p-2.5 rounded-lg flex items-center justify-center z-10">
+                            <div class="w-20 h-20 lg:w-15 lg:h-15 flex items-center justify-center">
+                              <IconComponent className="w-full h-full object-contain" />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div class="text-left">
+                        <h3 class="font-serif text-xl text-[#001524] mb-2">
+                          {activity.name}
+                        </h3>
+                        <a href={activity.link} target="_blank">
+                          <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
+                            {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
+                            {""}
+                            <ChevronRight
+                              size={14}
+                              className="group-hover:translate-x-1 transition-transform"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                    </a>
+                  </div>
+                );
+              })
+            }
           </div>
-          <div slot="sticky-button">
-            <BtnModalBokun client:load data={dataForm} variant="sticky" />
-          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
-      <!-- termina seccion sticky para mobile -->
+    </section>
+    <div id="sticky-anchor" class="h-px w-full"></div>
+    <!-- sticky para mobile -->
+    <div
+      id="sticky-product-card"
+      class="fixed bottom-6 left-4 right-4 lg:hidden z-40 transition-all duration-500 ease-in-out"
+    >
+      <div
+        class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 backdrop-blur-sm"
+      >
+        <div class="flex items-center gap-4 mb-3">
+          {/* Cambié start por center para mejor alineación en mobile */}
+          <div
+            class="flex-shrink-0 w-16 h-16 bg-white/50 rounded-xl overflow-hidden"
+          >
+            <img
+              src={getUrl(images.logoCenote)}
+              alt="Logo"
+              width="64"
+              height="64"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="flex flex-col flex-grow">
+            <p class="text-black font-medium text-xs">
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.TITLE}
+            </p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-black font-bold text-xl tracking-tight">
+                $70 USD
+              </span>
+              <span class="text-black/60 text-[10px] font-medium uppercase">
+                {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div slot="sticky-button">
+          <BtnModalBokun client:load data={dataForm} variant="sticky" />
+        </div>
+      </div>
+    </div>
+    <!-- termina seccion sticky para mobile -->
   </main>
 </Layout>
 
@@ -672,6 +672,12 @@ const seoMetaData = {
 
   .swiper-pagination-bullet-active {
     background: #005b71 !important;
+  }
+  /* Ajusta el selector según el nombre de tu componente de navegación */
+  header,
+  nav {
+    z-index: 100 !important;
+    position: relative; /* O fixed/sticky según lo tengas */
   }
 
   .swiper-slide {
@@ -725,17 +731,17 @@ const seoMetaData = {
     animation: fade-in-up 0.4s ease-out forwards;
   }
   [slot="sticky-button"] {
-  position: relative;
-  overflow: visible !important;
-}
+    position: relative;
+    overflow: visible !important;
+  }
 
-/* Forzar que el widget de Bokun tenga un z-index superior a todo el footer */
-.bokun-calendar-container, 
-.bokun-modal-overlay,
-#bokun-widget-container {
-  z-index: 9999 !important;
-  position: fixed !important; /* El calendario siempre debe ser relativo a la pantalla */
-}
+  /* Forzar que el widget de Bokun tenga un z-index superior a todo el footer */
+  .bokun-calendar-container,
+  .bokun-modal-overlay,
+  #bokun-widget-container {
+    z-index: 9999 !important;
+    position: fixed !important; /* El calendario siempre debe ser relativo a la pantalla */
+  }
 </style>
 
 <script>
@@ -762,44 +768,93 @@ const seoMetaData = {
   }
 
   function initStickyAnchor() {
-  const stickyCard = document.getElementById("sticky-product-card");
-  const anchor = document.getElementById("sticky-anchor");
+    const stickyCard = document.getElementById("sticky-product-card");
+    const anchor = document.getElementById("sticky-anchor");
 
-  if (!stickyCard || !anchor) return;
+    if (!stickyCard || !anchor) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const innerCard = stickyCard.querySelector('div');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const innerCard = stickyCard.querySelector("div");
 
-        if (entry.isIntersecting) {
-          // MODO ESTÁTICO (Encima del footer)
-          stickyCard.classList.remove("fixed", "bottom-6", "left-4", "right-4", "z-40");
-          // Añadimos z-[50] para que sea superior al footer y overflow-visible
-          stickyCard.classList.add("relative", "mx-4", "mb-12", "z-[50]", "overflow-visible");
-          
-          if (innerCard) {
-            innerCard.classList.remove("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
-            innerCard.classList.add("overflow-visible"); // Crucial para el calendario
-          }
-        } else {
-          if (entry.boundingClientRect.top > 0) {
-            // MODO FLOTANTE
-            stickyCard.classList.remove("relative", "mx-4", "mb-12", "overflow-visible");
-            stickyCard.classList.add("fixed", "bottom-6", "left-4", "right-4", "z-40");
-            
+          if (entry.isIntersecting) {
+            // MODO ESTÁTICO (Encima del footer)
+            stickyCard.classList.remove(
+              "fixed",
+              "bottom-6",
+              "left-4",
+              "right-4",
+              "z-40",
+            );
+            // Añadimos z-[50] para que sea superior al footer y overflow-visible
+            stickyCard.classList.add(
+              "relative",
+              "mx-4",
+              "mb-12",
+              "z-[50]",
+              "overflow-visible",
+            );
+
             if (innerCard) {
-              innerCard.classList.add("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
+              innerCard.classList.remove(
+                "shadow-[0_20px_60px_rgba(0,0,0,0.3)]",
+              );
+              innerCard.classList.add("overflow-visible"); // Crucial para el calendario
+            }
+            // Dentro de tu función initStickyAnchor, modifica el else:
+          } else {
+            if (entry.boundingClientRect.top > 0) {
+              // MODO FLOTANTE
+              stickyCard.classList.remove(
+                "relative",
+                "mx-4",
+                "mb-12",
+                "overflow-visible",
+                "opacity-0",
+                "pointer-events-none",
+              );
+              stickyCard.classList.add(
+                "fixed",
+                "bottom-6",
+                "left-4",
+                "right-4",
+                "z-40",
+                "opacity-100",
+              );
+
+              // OPCIONAL: Si quieres que desaparezca al estar muy cerca del top (menú)
+              window.addEventListener(
+                "scroll",
+                () => {
+                  if (window.scrollY < 100) {
+                    // Si el scroll es menor a 100px
+                    stickyCard.classList.add(
+                      "opacity-0",
+                      "pointer-events-none",
+                    );
+                  } else {
+                    stickyCard.classList.remove(
+                      "opacity-0",
+                      "pointer-events-none",
+                    );
+                  }
+                },
+                { passive: true },
+              );
+
+              if (innerCard) {
+                innerCard.classList.add("shadow-[0_20px_60px_rgba(0,0,0,0.3)]");
+              }
             }
           }
-        }
-      });
-    },
-    { rootMargin: "0px", threshold: 0.1 }
-  );
+        });
+      },
+      { rootMargin: "0px", threshold: 0.1 },
+    );
 
-  observer.observe(anchor);
-}
+    observer.observe(anchor);
+  }
 
   initSwiper();
   initStickyAnchor();
