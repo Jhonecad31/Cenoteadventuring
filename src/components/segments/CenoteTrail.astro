@@ -6,6 +6,7 @@ import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
 import Maps from "./Maps.astro";
 import { Laurel1, Laurel2, Laurel3 } from "@/icons/allIcons";
+import { MapPin } from "lucide-react";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
@@ -238,7 +239,25 @@ const seoMetaData = {
               </div>
             </div>
           </BContainer>
-          <Maps />
+          <section class="relative">
+        <div class="relative group">
+          <!-- Efecto de borde brillante sutil al hacer hover -->
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-[#006083] to-cyan-500 rounded-[2.5rem] opacity-10 group-hover:opacity-20 blur transition duration-500"></div>
+          
+          <div class="relative bg-white p-3 rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden h-[500px] md:h-[600px]">
+            <div class="w-full h-full rounded-[1.8rem] overflow-hidden">
+               <Maps />
+            </div>
+          </div>
+        </div>
+
+        <!-- INDICACIÓN DE RUTA -->
+        <div class="mt-8 text-center md:text-left">
+           <p class="text-sm text-[#001524]/50 italic">
+             * Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R. — A 20 minutos de Cancún.
+           </p>
+        </div>
+      </section>
         </section>
         <!-- QUESTIONS THE RUTA CENOTE -->
         <section class="py-24 -mt-66">
