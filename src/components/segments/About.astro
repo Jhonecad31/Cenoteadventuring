@@ -116,26 +116,56 @@ const getUrl = (id: string, w = 800) =>
     </section>
 
     <!-- seccion para awards -->
-     <div
-  class="grid grid-cols-3 gap-2 md:gap-4 mx-auto max-w-4xl px-4"
->
-  {
-    related_awards.map((activity) => (
-      <div class="flex flex-col items-center justify-center p-0 md:p-2">
-        {/* Aumentamos la altura del contenedor h-24 -> h-32 */}
-        <div class="h-24 md:h-40 w-full flex items-center justify-center">
-          <img
-            src={activity.image.src}
-            alt={activity.name}
-            /* Aumentamos max-w a 120px en móvil y 280px en desktop */
-            class="h-full w-auto max-w-[120px] md:max-w-[280px] object-contain opacity-90 transition-all hover:scale-105"
-          />
+    <div id="awards-carousel" class="relative w-full md:block">
+  <!-- Wrapper del Carrusel -->
+  <div
+    class="relative h-48 overflow-hidden rounded-lg md:h-auto md:overflow-visible flex md:grid md:grid-cols-3 gap-4 px-4 items-center"
+    id="carousel-wrapper"
+  >
+    {
+      related_awards.map((activity, index) => (
+        <div 
+          class="duration-700 ease-in-out flex-none w-full md:w-auto md:relative md:block flex items-center justify-center transition-opacity"
+          data-carousel-item={index === 0 ? "active" : ""}
+        >
+          <div class="h-32 md:h-40 w-full flex items-center justify-center">
+            <img
+              src={activity.image.src}
+              alt={activity.name}
+              class="h-full w-auto max-w-[150px] md:max-w-[280px] object-contain opacity-90 transition-all hover:scale-105"
+            />
+          </div>
         </div>
-      </div>
-    ))
-  }
-</div>
+      ))
+    }
+  </div>
 
+  <!-- Controles (Solo visibles en Móvil) -->
+  <div class="flex md:hidden absolute z-30 -translate-x-1/2 bottom-2 left-1/2 space-x-3">
+    {
+      related_awards.map((_, index) => (
+        <button
+          type="button"
+          class="w-2 h-2 rounded-full bg-gray-400 focus:bg-white"
+          aria-label={`Slide ${index + 1}`}
+          data-carousel-slide-to={index}
+        ></button>
+      ))
+    }
+  </div>
+
+  <!-- Botones de Navegación (Opcional, ocultos en Desktop) -->
+  <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group md:hidden" id="prevBtn">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/20 group-hover:bg-black/40 text-white">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>
+    </span>
+  </button>
+  <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group md:hidden" id="nextBtn">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/20 group-hover:bg-black/40 text-white">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>
+    </span>
+  </button>
+</div>
   </main>
 
   <script>
@@ -146,6 +176,34 @@ const getUrl = (id: string, w = 800) =>
         heroImg.style.transform = `translateY(${scrollValue * 0.2}px) scale(1.05)`;
       }
     });
+    const wrapper = document.getElementById('carousel-wrapper');
+  const items = document.querySelectorAll('[data-carousel-item]');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let currentIndex = 0;
+
+  function showItem(index) {
+    if (window.innerWidth >= 768) return; // No hacer nada en desktop
+
+    items.forEach((item, i) => {
+      item.style.display = i === index ? 'flex' : 'none';
+    });
+  }
+
+  nextBtn?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showItem(currentIndex);
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showItem(currentIndex);
+  });
+
+  // Inicializar vista móvil
+  if (window.innerWidth < 768) {
+    showItem(0);
+  }
   </script>
 
   <style>
@@ -156,5 +214,14 @@ const getUrl = (id: string, w = 800) =>
     :global(p) {
       letter-spacing: 0.015em;
     }
+    /* Oculta la barra de desplazamiento en Chrome, Safari y Opera */
+  div::-webkit-scrollbar {
+    display: none;
+  }
+  /* Oculta la barra de desplazamiento en IE, Edge y Firefox */
+  div {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
   </style>
 </BaseLayout>
