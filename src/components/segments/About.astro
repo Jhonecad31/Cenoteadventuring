@@ -11,8 +11,14 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const images = {
-  imgCenote: "/Cenote-Adventuring/CenoteA.6.webp", 
+  imgCenote: "/Cenote-Adventuring/CenoteA.6.webp",
+  imgDetails1: "/Cenote-Adventuring/CenoteA.4.webp",
+  imgDetails2: "/Cenote-Adventuring/CenoteA.5.webp",
+  img1: "/Cenote-Adventuring/CenoteA.8.webp",
+  img2: "/Cenote-Adventuring/CenoteA.3.webp",
+  img3: "/Cenote-Adventuring/CenoteA.1.webp",
 };
+
 const related_awards = [
   {
     name: "National Geography",
@@ -30,13 +36,13 @@ const related_awards = [
 
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
-
 ---
 
 <BaseLayout>
   <main class="bg-[#F8FAFC] overflow-x-hidden">
-    
-    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
       <img
         src={getUrl(images.imgCenote)}
         class="absolute z-0 w-full h-full object-cover scale-[1.05] brightness-[0.4]"
@@ -56,146 +62,266 @@ const getUrl = (id: string, w = 800) =>
       </div>
     </section>
 
-    <section class="max-w-[1200px] mx-auto py-24 px-6">
+    <section class="bg-[#F8FAFC] py-16 md:py-24 border-y border-slate-100">
       <BContainer>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-      <div class="lg:max-w-md md:max-w-2xl px-4">
-        <div class="w-16 h-[1px] bg-[#006083] mb-12"></div>
-        <TagH1
-          class="font-serif md:text-4xl text-[#001524] leading-[1.2] tracking-tight -mb-10"
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start"
         >
-          {i18n.ABOUT_US_PAGE.MISSION.TITLE}
-        </TagH1>
-      </div>
-      <div class="flex flex-col">
-        <TagP
-          class="text-[#001524]/60 lg:text-lg md:text-2xl leading-[1.7]"
-        >
-           "{i18n.ABOUT_US_PAGE.MISSION.STATEMENT}"
-        </TagP>
-        <div class="text-[#001524]/60 lg:text-lg md:text-2xl leading-[1.7]">
-               <TagP>{i18n.ABOUT_US_PAGE.HERO.DESCRIPTION}</TagP>
-               <TagP>{i18n.ABOUT_US_PAGE.HERO.ORIGIN_STORY}</TagP>
-               <TagP>{i18n.ABOUT_US_PAGE.MISSION.PHILOSOPHY}</TagP>
+          <div class="lg:sticky lg:top-8">
+            <div class="w-16 h-[2px] bg-[#006083] mb-8"></div>
+
+            <h2
+              class="font-serif text-4xl md:text-5xl text-[#001524] leading-tight tracking-tight"
+            >
+              {i18n.ABOUT_US_PAGE.MISSION.TITLE}
+            </h2>
+          </div>
+
+          <div class="space-y-6 -mt-10">
+            <div class="text-[#001524]/70 text-lg md:text-xl leading-relaxed">
+              <TagP class="mb-4">{i18n.ABOUT_US_PAGE.MISSION.STATEMENT}</TagP>
+              <TagP class="mb-4">{i18n.ABOUT_US_PAGE.HERO.DESCRIPTION}</TagP>
+              <TagP class="mb-4">{i18n.ABOUT_US_PAGE.HERO.ORIGIN_STORY}</TagP>
+              <TagP>{i18n.ABOUT_US_PAGE.MISSION.PHILOSOPHY}</TagP>
             </div>
-      </div>
-    </div>
-      </BContainer>
-    </section>
-    <section class="bg-white py-24 border-y border-slate-100">
-      <div class="max-w-[800px] mx-auto px-6 text-center space-y-8">
-        <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
-    {i18n.ABOUT_US_PAGE.DESTINATION_INFO.H2}
-  </TagH1>
-        <TagP class="text-slate-600 leading-loose">
-          {i18n.ABOUT_US_PAGE.DESTINATION_INFO.CONTENT}
-        </TagP>
-        <TagP class="text-slate-600 leading-loose">
-          {i18n.ABOUT_US_PAGE.DESTINATION_INFO.DIFFERENTIATION}
-        </TagP>
-        <TagP class="text-slate-600 leading-loose">
-          {i18n.ABOUT_US_PAGE.DESTINATION_INFO.EXPERIENCE}
-        </TagP>
-
-        <TagH1 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
-    {i18n.ABOUT_US_PAGE.HIGHLIGHTS.H3}
-  </TagH1>
-  <TagP class="text-slate-600 leading-loose">
-          {i18n.ABOUT_US_PAGE.HIGHLIGHTS.LOCATION}
-        </TagP>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left pt-10">
-          
-           {i18n.ABOUT_US_PAGE.HIGHLIGHTS.KEY_POINTS.map((point: string) => (
-             <div class="border-l border-[#006083]/20 pl-4 py-2">
-                <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-[#006083] mb-1">Highlight</p>
-                <p class="text-sm text-slate-500">{point}</p>
-             </div>
-           ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- seccion para awards -->
-    <div id="awards-carousel" class="relative w-full md:block">
-  <!-- Wrapper del Carrusel -->
-  <div
-    class="relative h-48 overflow-hidden rounded-lg md:h-auto md:overflow-visible flex md:grid md:grid-cols-3 gap-4 px-4 items-center"
-    id="carousel-wrapper"
-  >
-    {
-      related_awards.map((activity, index) => (
-        <div 
-          class="duration-700 ease-in-out flex-none w-full md:w-auto md:relative md:block flex items-center justify-center transition-opacity"
-          data-carousel-item={index === 0 ? "active" : ""}
-        >
-          <div class="h-32 md:h-40 w-full flex items-center justify-center">
-            <img
-              src={activity.image.src}
-              alt={activity.name}
-              class="h-full w-auto max-w-[150px] md:max-w-[280px] object-contain opacity-90 transition-all hover:scale-105"
-            />
           </div>
         </div>
-      ))
-    }
-  </div>
+      </BContainer>
+    </section>
+    <section
+      class="bg-[#EDF4FC] py-20 md:py-32 border-y border-slate-100 relative z-10 -mt-24 md:-mt-40"
+    >
+      <BContainer>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center"
+        >
+          <div class="overflow-hidden rounded-lg shadow-2xl group">
+            <img
+              src={getUrl(images.img3)}
+              class="w-full aspect-[4/5] md:aspect-[5/4] object-cover transform transition-transform duration-1000 group-hover:scale-105"
+              alt="Cenote Experience"
+            />
+          </div>
 
-  <!-- Controles (Solo visibles en Móvil) -->
-  <div class="flex md:hidden absolute z-30 -translate-x-1/2 bottom-2 left-1/2 space-x-3">
-    {
-      related_awards.map((_, index) => (
-        <button
-          type="button"
-          class="w-2 h-2 rounded-full bg-gray-400 focus:bg-white"
-          aria-label={`Slide ${index + 1}`}
-          data-carousel-slide-to={index}
-        ></button>
-      ))
-    }
-  </div>
+          <div class="flex flex-col justify-center">
+            <div class="w-16 h-[2px] bg-[#006083] mb-8 md:mb-12"></div>
 
-  <!-- Botones de Navegación (Opcional, ocultos en Desktop) -->
-  <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group md:hidden" id="prevBtn">
-    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/20 group-hover:bg-black/40 text-white">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>
-    </span>
-  </button>
-  <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group md:hidden" id="nextBtn">
-    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/20 group-hover:bg-black/40 text-white">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>
-    </span>
-  </button>
+            <h2
+              class="font-serif text-3xl md:text-5xl text-[#001524] mb-8 leading-tight"
+            >
+              {i18n.ABOUT_US_PAGE.DESTINATION_INFO.H2}
+            </h2>
+
+            <div class="space-y-6 text-[#001524]/75 text-lg leading-relaxed">
+              <TagP>{i18n.ABOUT_US_PAGE.DESTINATION_INFO.CONTENT}</TagP>
+              <TagP>{i18n.ABOUT_US_PAGE.DESTINATION_INFO.DIFFERENTIATION}</TagP>
+              <TagP>{i18n.ABOUT_US_PAGE.DESTINATION_INFO.EXPERIENCE}</TagP>
+            </div>
+          </div>
+        </div>
+      </BContainer>
+    </section>
+    <section class="bg-[#F8FAFC] py-24 border-b border-slate-100">
+      <BContainer>
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <div class="w-16 h-[2px] bg-[#006083] mx-auto mb-8"></div>
+          <h2
+            class="font-serif text-3xl md:text-5xl text-[#001524] mb-8 leading-tight"
+          >
+            {i18n.ABOUT_US_PAGE.FEATURES.H2}
+          </h2>
+          <div
+            class="text-[#001524]/70 text-lg md:text-xl leading-relaxed tracking-wide"
+          >
+            <TagP>{i18n.ABOUT_US_PAGE.FEATURES.INTRO}</TagP>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {
+    i18n.ABOUT_US_PAGE.FEATURES.ITEMS.map((item) => (
+      <div class="p-8 border border-slate-100 rounded-lg hover:shadow-xl transition-all duration-500 bg-[#EDF4FC] flex items-center justify-center text-center">
+        <p class="text-[#001524] text-lg leading-snug tracking-tight font-medium">
+          {item}
+        </p>
+      </div>
+    ))
+  }
 </div>
+
+        <div class="mt-16 px-4">
+          <div
+            class="max-w-6xl mx-auto p-10 md:p-3 bg-[#EDF4FC]/40 border border-slate-100 rounded-md shadow-sm"
+          >
+            <div
+              class="text-[#001524]/70 italic text-center! text-lg md:text-xl leading-relaxed tracking-wide"
+            >
+              <TagP>{i18n.ABOUT_US_PAGE.HIGHLIGHTS.SUMMARY}</TagP>
+            </div>
+          </div>
+        </div>
+      </BContainer>
+    </section>
   </main>
 
-  <script>
-    window.addEventListener("scroll", () => {
-      const heroImg = document.getElementById("hero-img");
-      if (heroImg) {
-        const scrollValue = window.scrollY;
-        heroImg.style.transform = `translateY(${scrollValue * 0.2}px) scale(1.05)`;
+  <section class="bg-[#EDF4FC] py-24 text-black overflow-hidden -mt-25">
+    <BContainer>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="w-16 h-[2px] bg-[#006083] mb-8"></div>
+          <h2
+            class="font-serif text-3xl md:text-5xl text-[#001524] mb-8 leading-tight"
+          >
+            {i18n.ABOUT_US_PAGE.SAFETY.H2}
+          </h2>
+          <div class="text-xl text-black/80 mb-10 leading-relaxed font-light">
+            <TagP>{i18n.ABOUT_US_PAGE.SAFETY.DESCRIPTION}</TagP>
+          </div>
+          <ul
+            class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xl text-black/80 mb-10 leading-relaxed font-light"
+          >
+            {
+              i18n.ABOUT_US_PAGE.SAFETY.INCLUDES.map((point) => (
+                <li class="flex items-start space-x-3">
+                  <span class="mt-1.5 w-1.5 h-1.5 bg-[#006083] rounded-full flex-shrink-0" />
+                  <span class="text-sm tracking-widest leading-tight text-black/90">
+                    {point}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="relative group">
+          <div
+            class="absolute -inset-4 bg-[#006083]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          >
+          </div>
+          <div
+            class="relative bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-sm"
+          >
+            <div class="text-xl text-black/80 mb-10 leading-relaxed font-light">
+              <TagP>"{i18n.ABOUT_US_PAGE.SAFETY.TEAM_VALUE}"</TagP>
+            </div>
+            <div class="pt-8 border-t border-white/10">
+              <p class="text- font-bold tracking-[0.2em] text-xs mb-2">
+                Eco Commitment
+              </p>
+              <div
+                class="text-xl text-black/80 mb-10 leading-relaxed font-light"
+              >
+                <TagP>{i18n.ABOUT_US_PAGE.SAFETY.ECO_COMMITMENT}</TagP>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </BContainer>
+  </section>
+
+  <section class="bg-[#F8FAFC] pt-24 pb-12 border-y border-slate-100 -mt-25">
+  <BContainer>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-4">
+        <div class="w-16 h-[2px] bg-[#006083] mb-8"></div>
+        <h2 class="font-serif text-3xl md:text-5xl text-[#001524] mb-8 leading-tight">
+          {i18n.ABOUT_US_PAGE.HIGHLIGHTS.H3}
+        </h2>
+      </div>
+      
+      <div class="lg:col-span-8">
+        <div class="text-xl text-black/80 mb-10 leading-relaxed font-light">
+          <TagP>{i18n.ABOUT_US_PAGE.HIGHLIGHTS.LOCATION}</TagP>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+          {
+            i18n.ABOUT_US_PAGE.HIGHLIGHTS.KEY_POINTS.map((point) => (
+              <div class="border-l-2 border-[#006083] pl-6 py-2">
+                <p class="text-base text-black/80 mb-10 leading-relaxed font-medium">
+                  {point}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        {/* Bloque de Summary corregido para centrado y tamaño */}
+        <div class="mt-16 p-8 bg-[#EDF4FC]/40 border border-slate-100 rounded-md max-w-3xl mx-auto">
+          <div class="text-[#001524]/70 italic text-center">
+            <TagP>{i18n.ABOUT_US_PAGE.HIGHLIGHTS.SUMMARY}</TagP>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Sección de premios con margen superior controlado */}
+    <div
+      id="carousel-wrapper"
+      class="mt-16 flex md:grid md:grid-cols-3 items-center
+             overflow-x-auto md:overflow-visible
+             snap-x snap-mandatory scrollbar-hide
+             px-[10%] md:px-0
+             gap-6 md:gap-20 lg:gap-32
+             max-w-6xl mx-auto"
+    >
+      {
+        related_awards.map((activity) => (
+          <div class="flex-none w-full md:w-auto snap-center flex items-center justify-center">
+            <div class="h-24 md:h-32 w-full flex items-center justify-center transition-transform duration-500 hover:scale-105">
+              <img
+                src={activity.image.src}
+                alt={activity.name}
+                class="h-full w-auto max-w-[200px] md:max-w-full object-contain mx-auto"
+              />
+            </div>
+          </div>
+        ))
       }
-    });
-    const wrapper = document.getElementById('carousel-wrapper');
-  const items = document.querySelectorAll('[data-carousel-item]');
-  const nextBtn = document.getElementById('nextBtn');
-  const prevBtn = document.getElementById('prevBtn');
+    </div>
+
+    {/* Puntos para móvil con margen inferior mínimo */}
+    <div class="flex md:hidden justify-center space-x-2 mt-6" id="carousel-dots">
+      {
+        related_awards.map((_, index) => (
+          <div
+            class={`h-1 w-1 rounded-full transition-all duration-300 ${index === 0 ? "bg-[#006083] w-4" : "bg-slate-300"}`}
+            data-dot={index}
+          />
+        ))
+      }
+    </div>
+  </BContainer>
+</section>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const heroImg = document.getElementById("hero-img");
+    if (heroImg) {
+      const scrollValue = window.scrollY;
+      heroImg.style.transform = `translateY(${scrollValue * 0.2}px) scale(1.05)`;
+    }
+  });
+  const wrapper = document.getElementById("carousel-wrapper");
+  const items = document.querySelectorAll("[data-carousel-item]");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
   let currentIndex = 0;
 
   function showItem(index) {
     if (window.innerWidth >= 768) return; // No hacer nada en desktop
 
     items.forEach((item, i) => {
-      item.style.display = i === index ? 'flex' : 'none';
+      item.style.display = i === index ? "flex" : "none";
     });
   }
 
-  nextBtn?.addEventListener('click', () => {
+  nextBtn?.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % items.length;
     showItem(currentIndex);
   });
 
-  prevBtn?.addEventListener('click', () => {
+  prevBtn?.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     showItem(currentIndex);
   });
@@ -204,24 +330,30 @@ const getUrl = (id: string, w = 800) =>
   if (window.innerWidth < 768) {
     showItem(0);
   }
-  </script>
+</script>
 
-  <style>
-    main {
-      scroll-behavior: smooth;
-    }
-    /* Estilo para que el texto sea muy legible y elegante */
-    :global(p) {
-      letter-spacing: 0.015em;
-    }
-    /* Oculta la barra de desplazamiento en Chrome, Safari y Opera */
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  main {
+    scroll-behavior: smooth;
+  }
+  /* Estilo para que el texto sea muy legible y elegante */
+  :global(p) {
+    letter-spacing: 0.015em;
+  }
+  /* Oculta la barra de desplazamiento en Chrome, Safari y Opera */
   div::-webkit-scrollbar {
     display: none;
   }
   /* Oculta la barra de desplazamiento en IE, Edge y Firefox */
   div {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
-  </style>
-</BaseLayout>
+</style>

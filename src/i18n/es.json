@@ -323,7 +323,7 @@
       "PHILOSOPHY": "Creemos que el turismo debe ir más allá del entretenimiento; debe educar, inspirar y crear memorias duraderas. Por ello, cada tour que ofrecemos está diseñado con profundo respeto por la naturaleza y la cultura local."
     },
     "FEATURES": {
-      "H2": "¿POR QUÉ ELEGIRNOS?",
+      "H2": "¿Por qué elegirnos?",
       "INTRO": "Elegir Cenote Adventuring significa elegir calidad, autenticidad y exclusividad. Estas son las razones por las que los viajeros nos prefieren:",
       "ITEMS": [
         "EXPERIENCIAS PRIVADAS Y PERSONALIZADAS",
@@ -335,13 +335,13 @@
       "CLOSING": "No solo ofrecemos tours; creamos experiencias que permanecen contigo mucho después de que tu viaje termina."
     },
     "SAFETY": {
-      "H2": "SEGURIDAD Y NUESTRO EQUIPO",
+      "H2": "Seguridad y nuestro equipo",
       "DESCRIPTION": "Tu seguridad es nuestra máxima prioridad. Nuestro equipo está formado por profesionales capacitados, apasionados por la naturaleza y dedicados a brindar una experiencia segura.",
       "INCLUDES": [
-        "GUÍAS CERTIFICADOS Y EXPERIMENTADOS",
-        "EQUIPO DE SEGURIDAD DE ALTA CALIDAD",
-        "INSTRUCCIONES CLARAS Y ASISTENCIA PERSONALIZADA",
-        "MONITOREO CONTINUO DURANTE TODO EL RECORRIDO"
+        "Guías certificados y experimentados",
+        "Equipo de seguridad de alta calidad",
+        "Instrucciones claras y asistencia perzonalizadas",
+        "Monitoreo continuo durante todo el recorrido"
       ],
       "ECO_COMMITMENT": "Además, seguimos prácticas ecológicas rigurosas para proteger los cenotes y el medio ambiente que los rodea.",
       "TEAM_VALUE": "Nuestro equipo no solo te guía: enriquecen tu experiencia compartiendo conocimientos, historias y datos locales fascinantes sobre la región."
