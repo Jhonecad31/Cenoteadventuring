@@ -1,0 +1,135 @@
+---
+import "@/styles/global.css";
+import { getI18N } from "@/i18n";
+import { languages, defaultLang } from "@/i18n/ui";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import { getLangFromUrl } from "@/i18n/utils";
+import { siteName } from "@/utils/dataSchema";
+const languageList = Object.values(languages);
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+const lang = getLangFromUrl(Astro.url);
+// Se Elimina el prefijo del idioma de la ruta actual si existe
+const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
+
+interface Props {
+    offI18n?: boolean;
+    title?: string;
+    metaTitle?: string;
+    description?: string;
+    metaDescription?: string;
+    keywords?: string;
+    image?: string;
+    metaType?: string;
+    robots?: string;
+}
+
+const { offI18n } = Astro.props;
+
+const title = Astro.props.title || i18n.SEO.HOME_PAGE.TITLE;
+const description = Astro.props.description || i18n.SEO.HOME_PAGE.DESCRIPTION;
+const metaTitle = Astro.props.metaTitle || title;
+const metaDescription = Astro.props.metaDescription || description;
+const keywords = Astro.props.keywords || "";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const image = new URL(Astro.props.image || "/assets/favicons/apple-touch-icon.png", Astro.site);
+const metaType = Astro.props.metaType || "website";
+const robots = Astro.props.robots || "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+const ogLocale = currentLocale === "en" ? "en_US" : "es_ES";
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="author" content={siteName}>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KVN1ZL6NV2"></script>
+<script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KVN1ZL6NV2');
+</script>
+<!-- Google Tag Manager -->
+<script is:inline>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-NV35K8DZ");
+</script>
+<!-- Meta Pixel Code -->
+<script type="text/partytown">
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '804562681635258');
+    fbq('track', 'PageView');
+    fbq('track', 'Purchase',{
+        value:0.00,
+        currency:'USD'
+        });
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=804562681635258&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="apple-mobile-web-app-title" content={siteName} />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<link rel="canonical" href={canonicalURL} />
+<meta name="robots" content={robots} />
+<!-- Generator Astro -->
+<meta name="generator" content={Astro.generator} />
+<!-- Hreflang -->
+{!offI18n && languageList.map((locale) => (
+    <link 
+        rel="alternate" 
+        hreflang={locale.code} 
+        href={getAbsoluteLocaleUrl(locale.code, currentPath)} 
+    />
+))}
+<link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl(defaultLang, currentPath)} />
+<!-- Open Graph / Facebook -->
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:type" content={metaType} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={metaTitle} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content={metaTitle} />
+<meta property="og:site_name" content={siteName} />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={metaTitle} />
+<meta name="twitter:description" content={metaDescription} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:image:alt" content={metaTitle} />
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<script type="text/partytown">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v8lj5iq5tn");
+</script>
