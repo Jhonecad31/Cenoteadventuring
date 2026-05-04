@@ -270,11 +270,11 @@ const getUrl = (id: string, w = 800) =>
         {
           related_awards.map((activity) => (
             <div class="flex-none w-full md:w-auto snap-center flex items-center justify-center">
-              <div class="h-24 md:h-32 w-full flex items-center justify-center transition-transform duration-500 hover:scale-105">
+              <div class="h-40 md:h-32 w-full flex items-center justify-center transition-transform duration-500 hover:scale-105">
                 <img
                   src={activity.image.src}
                   alt={activity.name}
-                  class="h-full w-auto max-w-[200px] md:max-w-full object-contain mx-auto"
+                  class="h-full w-auto max-w-[280px] md:max-w-full object-contain mx-auto scale-[1.15] md:scale-100"
                 />
               </div>
             </div>

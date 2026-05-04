@@ -38,6 +38,7 @@ const plans = [
     oldPrice: 80,
     href: translatePath("/pricing-private-page"),
     priority: true,
+    hide: true,
   },
 ];
 
@@ -60,8 +61,8 @@ const images = {
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 justify-items-center" id="plans">
-      {plans.map((plan) => (
+    <div class={`grid grid-cols-1 ${plans.filter(p => !p.hide).length > 1 ? 'lg:grid-cols-2' : ''} gap-10 lg:gap-16 justify-items-center`} id="plans">
+      {plans.filter(plan => !plan.hide).map((plan) => (
         <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[550px] transition-transform hover:scale-[1.02] duration-300">
           <div class="relative h-60 md:h-72">
             <img
