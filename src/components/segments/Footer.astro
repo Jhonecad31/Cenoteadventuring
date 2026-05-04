@@ -10,7 +10,7 @@ import {
   Instagram as IGIcon,
   Logo_blanco,
 } from "@/icons/allIcons";
-import { Phone, Mail, MessageSquare } from "lucide-react";
+import { Phone, Mail, MessageSquare, MapPin } from "lucide-react";
 import TagH1 from "@/components/global/TagH1.astro";
 
 const { currentLocale } = Astro;
@@ -100,10 +100,10 @@ const socialMedia = [
               {i18n.HOME_PAGE.FOOTER.RESERVATIONS}
             </span>
             <a
-              href="mailto: reservas@grupo-extreme.com"
+              href="mailto:info@cenoteadventuring.com"
               class="text-sm md:text-base hover:underline break-all md:break-normal font-medium"
             >
-              reservas@grupo-extreme.com
+              info@cenoteadventuring.com
             </a>
           </div>
         </div>
@@ -113,20 +113,17 @@ const socialMedia = [
           <div
             class="bg-white text-[#006083] p-2 md:p-2.5 rounded-full shadow-lg shrink-0 group-hover:scale-110 transition-transform"
           >
-            <MessageSquare size={18} strokeWidth={2.5} />
+            <MapPin size={18} strokeWidth={2.5} />
           </div>
           <div class="flex flex-col min-w-0">
             <span
               class="text-[11px] md:text-xs uppercase opacity-60 tracking-[0.15em] leading-tight"
             >
-              {i18n.HOME_PAGE.FOOTER.CORPORATE}
+              {i18n.CONTACT_PAGE.INFO.OPTIONS.LOCATION}
             </span>
-            <a
-              href="mailto:info@cenoteadventuring.com"
-              class="text-sm md:text-base hover:underline break-all md:break-normal font-medium"
-            >
-              info@cenoteadventuring.com
-            </a>
+            <span class="text-[11px] md:text-sm font-medium leading-relaxed opacity-90">
+              Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R.
+            </span>
           </div>
         </div>
       </div>
