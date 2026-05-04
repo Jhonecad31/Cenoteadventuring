@@ -1,3 +1,4 @@
+
 {
   "SEO": {
     "HOME_PAGE": {
@@ -572,7 +573,12 @@
             "answer": "Yes, cenote adventures are family-friendly and suitable for children, teens, and adults. With guided tours, safe swimming areas, and kid-sized life jackets, families can explore these natural wonders together while enjoying a fun and educational experience. "
           }
         ]
+      },
+      "MORE_ACTIVITIES": {
+        "TITLE": "More Activities for you to enjoy",
+        "DESCRIPTION": "Discover more exciting activities and tours to enhance your experience in Puerto Morelos and the Riviera Maya."
       }
+      
     },
     "PRIVATE_CENOTE": {
       "HERO": {
@@ -712,6 +718,10 @@
             "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
           }
         ]
+      },
+      "MORE_ACTIVITIES": {
+        "TITLE": "More Activities for you to enjoy",
+        "DESCRIPTION": "Discover more exciting activities and tours to enhance your experience in Puerto Morelos and the Riviera Maya."
       }
     }
   }

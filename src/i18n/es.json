@@ -1,3 +1,4 @@
+
 {
   "SEO": {
     "HOME_PAGE": {
@@ -223,6 +224,8 @@
   "RUTA_CENOTES_PAGE": {
     "HERO": {
       "TITLE": "Ruta de los Cenotes en Puerto Morelos – Una Guía Completa de Naturaleza, Aventura y Cenotes Ocultos",
+      "TITLE2": "La ruta de los cenotes en Puerto Morelos",
+      "SUBTITLE": "Un viaje visual hacia lo desconocido",
       "DESCRIPTION": "Escondida a poca distancia de Cancún, la Ruta de los Cenotes en Puerto Morelos es una de las experiencias naturales más auténticas del Caribe Mexicano. Rodeada de una selva exuberante, esta ruta escénica alberga algunos de los cenotes más bellos cerca de Puerto Morelos, ofreciendo una conexión única con la naturaleza, la cultura y la aventura."
     },
     "INTRO": {
@@ -563,7 +566,11 @@
             "answer": "Traer traje de baño, bloqueador biodegradable, una toalla y ropa cómoda. Todo lo demás será proporcionado para tu experiencia en los cenotes de Puerto Morelos."
           }
         ]
-      }
+      },
+      "MORE_ACTIVITIES": {
+  "TITLE": "Más actividades para disfrutar",
+  "DESCRIPTION": "Descubre más actividades y tours emocionantes para mejorar tu experiencia en Puerto Morelos y la Riviera Maya."
+}
     },
     "PRIVATE_CENOTE": {
       "HERO": {
@@ -703,7 +710,11 @@
             "answer": "No. Se proporcionan chalecos salvavidas y el guía garantizará la seguridad en todo momento."
           }
         ]
-      }
+      },
+      "MORE_ACTIVITIES": {
+  "TITLE": "Más actividades para disfrutar",
+  "DESCRIPTION": "Descubre más actividades y tours emocionantes para mejorar tu experiencia en Puerto Morelos y la Riviera Maya."
+}
     }
   }
 }

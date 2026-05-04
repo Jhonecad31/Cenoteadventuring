@@ -30,6 +30,8 @@ import {
   Cancun_horse,
   CenoteAdventure02,
 } from "@/icons/allIcons";
+import TagH1 from "../global/TagH1.astro";
+import TagP from "../global/TagP.astro";
 
 const iconMap: Record<string, any> = {
   Beach_taco: Beach_taco,
@@ -77,16 +79,12 @@ const relatedActivities = [
 const plans = [
   {
     id: "CENOTE",
-    image: "/Cenote-Adventuring/CenoteA.7.webp",
-    logo: "/Cenote-Adventuring/Logo-cenote.svg",
     price: 70,
     oldPrice: 80,
     href: translatePath("/pricing-regular-page"),
   },
   {
     id: "PRIVATE",
-    image: "/Cenote-Adventuring/CenoteA.4.webp",
-    logo: "/Cenote-Adventuring/Logo-cenote.svg",
     price: 70,
     oldPrice: 80,
     href: translatePath("/pricing-private-page"),
@@ -99,8 +97,8 @@ const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const duration = 4;
 const minimumAge = 5;
 const images = {
-  card1: "Cenote-Adventuring/CenoteA.1.webp",
-  card2: "Cenote-Adventuring/Card.2.webp",
+  card1: "/Cenote-Adventuring/CenoteA.3.webp",
+  card2: "/Cenote-Adventuring/Card.1.webp",
   logoCenote: "/Cenote-Adventuring/Logo-cenote.svg",
 };
 
@@ -126,7 +124,10 @@ const seoMetaData = {
 <Layout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
     <!-- sección de hero video -->
-    <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
+    <section
+      id="hero-section"
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
       <mux-player
         playback-id={Mux_playback_Id}
         autoplay
@@ -139,15 +140,17 @@ const seoMetaData = {
 
       <div class="relative z-10 text-center text-white px-6">
         <h1
-          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg mt-100"
+          class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
           {i18n.DETAIL_PAGE.PRIVATE_CENOTE.HERO.TITLE}
         </h1>
-        <p class="uppercase tracking-[0.5em] text-sm font-light opacity-90">
+        <p
+          class="lowercase first-letter:uppercase tracking-[0.5em] text-sm font-light opacity-90"
+        >
           {i18n.DETAIL_PAGE.PRIVATE_CENOTE.HERO.DESCRIPTION}
         </p>
         <div
-          class="flex items-center justify-center tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
+          class="flex items-center justify-center gap-2 tracking-[0.5em] text-xs lg:text-sm relative h-[5vh] mt-3"
         >
           <Star className="text-yellow-400 fill-yellow-300" size={15} />
           <span class="font-bold text-[#ffffff]"> {tour.rating}</span>
@@ -323,15 +326,7 @@ const seoMetaData = {
                             className="text-[#006083] mt-1 shrink-0"
                             size={20}
                           />
-                          <span
-                            class={
-                              text.includes("Conservation Fee")
-                                ? "font-bold text-gray-900"
-                                : ""
-                            }
-                          >
-                            {text}
-                          </span>
+                          <span>{text}</span>
                         </li>
                       ),
                     )
@@ -493,7 +488,8 @@ const seoMetaData = {
                 i18n.DETAIL_PAGE.PRIVATE_CENOTE.FAQS.FAQS.map((faq, index) => (
                   <details
                     key={index}
-                    name="faq-group"
+                    name="faq-accordion"
+                    open={index === 0}
                     class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
                   >
                     <summary class="flex justify-between items-center cursor-pointer list-none p-8 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
@@ -525,7 +521,7 @@ const seoMetaData = {
                   {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM} $80 USD
                 </p>
                 <div class="text-3xl lg:text-4xl font-bold text-[#001524]">
-                  $70 USD
+                  $2,089 USD
                 </div>
                 <p class="text-xs lg:text-sm text-gray-500">
                   {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_GROUP}
@@ -567,11 +563,21 @@ const seoMetaData = {
         </aside>
       </div>
     </section>
-    <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden -mt-20">
+    <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="font-serif text-3xl text-[#001524] mb-4"></h2>
-          <p class="text-gray-500 max-w-2xl mx-auto"></p>
+          {/* Título dinámico desde tu i18n */}
+          <TagH1
+            class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl"
+          >
+            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.MORE_ACTIVITIES.TITLE}
+          </TagH1>
+          {/* Descripción dinámica */}
+          <TagP
+            class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 lg:text-lg md:text-2xl"
+          >
+            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.MORE_ACTIVITIES.DESCRIPTION}
+          </TagP>
         </div>
 
         <div class="swiper mySwiper pb-12">
@@ -600,16 +606,13 @@ const seoMetaData = {
                         <h3 class="font-serif text-xl text-[#001524] mb-2">
                           {activity.name}
                         </h3>
-                        <a href={activity.link} target="_blank">
-                          <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
-                            {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
-                            {""}
-                            <ChevronRight
-                              size={14}
-                              className="group-hover:translate-x-1 transition-transform"
-                            />
-                          </div>
-                        </a>
+                        <div class="text-[11px] font-bold tracking-widest text-[#001524] lg:text-gray-400 flex items-center gap-2 group-hover:text-[#006083] transition-colors">
+                          {i18n.DETAIL_PAGE.GENERAL.BTNGENERAL}
+                          <ChevronRight
+                            size={14}
+                            className="group-hover:translate-x-1 transition-transform"
+                          />
+                        </div>
                       </div>
                     </a>
                   </div>
@@ -625,7 +628,7 @@ const seoMetaData = {
     <!-- sticky para mobile -->
     <div
       id="sticky-product-card"
-      class="fixed bottom-6 left-4 right-4 lg:hidden z-40 transition-all duration-500 ease-in-out"
+      class="fixed bottom-6 left-4 right-4 lg:hidden z-40 transition-all duration-500 ease-in-out translate-y-[150%] opacity-0 pointer-events-none"
     >
       <div
         class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 backdrop-blur-sm"
@@ -649,10 +652,10 @@ const seoMetaData = {
             </p>
             <div class="flex items-baseline gap-1">
               <span class="text-black font-bold text-xl tracking-tight">
-                $70 USD
+                $2,089 USD
               </span>
-              <span class="text-black/60 text-[10px] font-medium uppercase">
-                {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}
+              <span class="text-black/60 text-[10px] font-medium">
+                {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_GROUP}
               </span>
             </div>
           </div>
@@ -770,13 +773,16 @@ const seoMetaData = {
   function initStickyAnchor() {
     const stickyCard = document.getElementById("sticky-product-card");
     const anchor = document.getElementById("sticky-anchor");
+    const heroSection = document.getElementById("hero-section");
 
     if (!stickyCard || !anchor) return;
 
-    const observer = new IntersectionObserver(
+    const anchorObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const innerCard = stickyCard.querySelector("div");
+
+          if (document.body.classList.contains("is-nav-open")) return;
 
           if (entry.isIntersecting) {
             // MODO ESTÁTICO (Encima del footer)
@@ -802,7 +808,6 @@ const seoMetaData = {
               );
               innerCard.classList.add("overflow-visible"); // Crucial para el calendario
             }
-            // Dentro de tu función initStickyAnchor, modifica el else:
           } else {
             if (entry.boundingClientRect.top > 0) {
               // MODO FLOTANTE
@@ -811,8 +816,6 @@ const seoMetaData = {
                 "mx-4",
                 "mb-12",
                 "overflow-visible",
-                "opacity-0",
-                "pointer-events-none",
               );
               stickyCard.classList.add(
                 "fixed",
@@ -820,27 +823,6 @@ const seoMetaData = {
                 "left-4",
                 "right-4",
                 "z-40",
-                "opacity-100",
-              );
-
-              // OPCIONAL: Si quieres que desaparezca al estar muy cerca del top (menú)
-              window.addEventListener(
-                "scroll",
-                () => {
-                  if (window.scrollY < 100) {
-                    // Si el scroll es menor a 100px
-                    stickyCard.classList.add(
-                      "opacity-0",
-                      "pointer-events-none",
-                    );
-                  } else {
-                    stickyCard.classList.remove(
-                      "opacity-0",
-                      "pointer-events-none",
-                    );
-                  }
-                },
-                { passive: true },
               );
 
               if (innerCard) {
@@ -853,7 +835,42 @@ const seoMetaData = {
       { rootMargin: "0px", threshold: 0.1 },
     );
 
-    observer.observe(anchor);
+    anchorObserver.observe(anchor);
+
+    if (heroSection) {
+      const checkHeroVisibility = () => {
+        if (document.body.classList.contains("is-nav-open")) return;
+        const bottom = heroSection.getBoundingClientRect().bottom;
+        if (bottom > 100) {
+          stickyCard.classList.add(
+            "translate-y-[150%]",
+            "opacity-0",
+            "pointer-events-none",
+          );
+        } else {
+          stickyCard.classList.remove(
+            "translate-y-[150%]",
+            "opacity-0",
+            "pointer-events-none",
+          );
+        }
+      };
+
+      window.addEventListener("scroll", checkHeroVisibility, { passive: true });
+      window.addEventListener("resize", checkHeroVisibility, { passive: true });
+
+      const observer = new MutationObserver(() => {
+        if (!document.body.classList.contains("is-nav-open")) {
+          setTimeout(checkHeroVisibility, 50);
+        }
+      });
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+
+      checkHeroVisibility();
+    }
   }
 
   initSwiper();

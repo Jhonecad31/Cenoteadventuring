@@ -1,18 +1,19 @@
+
 ---
-import { getI18N } from "@/i18n";
+import { getI18N } from '@/i18n';
 import {
-  getLangFromUrl,
-  useTranslations,
-  useTranslatedPath,
-} from "@/i18n/utils";
-import { Menu, X } from "lucide-react";
-import LanguageSelector from "./LanguageSelector.astro";
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from '@/i18n/utils';
+import { Menu, X } from 'lucide-react';
+import LanguageSelector from './LanguageSelector.astro';
 import {
-  Logo_icono_cenote,
-  LogoContainer,
-  Trip,
-  Logo_blanco,
-} from "@/icons/allIcons";
+	Logo_icono_cenote,
+	LogoContainer,
+	Trip,
+	Logo_blanco,
+} from '@/icons/allIcons';
 
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
@@ -22,307 +23,309 @@ const k = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const navigation = [
-  { title: k("nav.home"), link: translatePath("/") },
-  { title: k("nav.cenoteTrail"), link: translatePath("/cenote-trail/") },
-  { title: k("nav.blog"), link: translatePath("/404/") },
-  { title: k("nav.about"), link: translatePath("/about/") },
-  { title: k("nav.contact"), link: translatePath("/contact/") },
+	{ title: k('nav.home'), link: translatePath('/') },
+	{ title: k('nav.cenoteTrail'), link: translatePath('/cenote-trail/') },
+	{ title: k('nav.blog'), link: translatePath('/404/') },
+	{ title: k('nav.about'), link: translatePath('/about/') },
+	{ title: k('nav.contact'), link: translatePath('/contact/') },
 ];
 ---
 
 <header
-  class="fixed top-0 w-full z-50 transition-all duration-500 flex items-center border-b border-transparent h-24"
-  id="main-header"
->
-  <div
-    class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full"
-  >
-    <div class="flex-none w-14 lg:hidden">
-      <button
-        class="text-white p-2 transition-colors duration-500"
-        id="open-menu"
-      >
-        <Menu size={30} strokeWidth={1.5} />
-      </button>
-    </div>
+	class="fixed top-0 w-full z-50 transition-all duration-500 flex items-center border-b border-transparent h-24"
+	id="main-header">
+	<div
+		class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full">
+		<div class="flex-none w-14 lg:hidden">
+			<button
+				class="text-white p-2 transition-colors duration-500"
+				id="open-menu">
+				<Menu
+					size={30}
+					strokeWidth={1.5}
+				/>
+			</button>
+		</div>
 
-    <div id="logo-container" class="text-white transition-colors duration-500">
-      <a
-        href={translatePath("/")}
-        class="block hover:opacity-90 transition-opacity"
-      >
-        <div
-          id="logo-completo"
-          class="transition-all duration-500 opacity-100 block"
-        >
-          <LogoContainer class="h-20 p-1" />
-        </div>
+		<div
+			id="logo-container"
+			class="text-white transition-colors duration-500">
+			<a
+				href={translatePath('/')}
+				class="block hover:opacity-90 transition-opacity">
+				<div
+					id="logo-completo"
+					class="transition-all duration-500 opacity-100 hidden lg:block">
+					<LogoContainer class="h-20 p-1" />
+				</div>
 
-        <div
-          id="logo-reducido"
-          class="transition-all duration-500 opacity-0 hidden"
-        >
-          <Logo_icono_cenote class="h-12 lg:h-16 p-1" />
-        </div>
+				<div
+					id="logo-reducido"
+					class="transition-all duration-500 opacity-0 hidden">
+					<Logo_icono_cenote class="h-12 lg:h-16 p-1" />
+				</div>
 
-        <div
-          id="logo-movil"
-          class="transition-all duration-500 opacity-100 block"
-        >
-          <Logo_blanco class="h-15 p-1" />
-        </div>
-      </a>
-    </div>
+				<div
+					id="logo-movil"
+					class="transition-all duration-500 opacity-100 block lg:hidden">
+					<Logo_blanco class="h-14 p-1" />
+				</div>
+			</a>
+		</div>
 
-    <nav class="hidden lg:flex flex-1 justify-center">
-      <ul class="flex gap-10">
-        {
-          navigation.map((item) => (
-            <li>
-              <a
-                href={item.link}
-                class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium"
-              >
-                {item.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+		<nav class="hidden lg:flex flex-1 justify-center">
+			<ul class="flex gap-10">
+				{
+					navigation.map((item) => (
+						<li>
+							<a
+								href={item.link}
+								class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium">
+								{item.title}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
 
-    <div class="flex-none w-14 lg:w-auto flex justify-end">
-      <div
-        class="flex items-center gap-5 text-white transition-colors duration-500"
-        id="icon-group"
-      >
-        {!offI18n && <LanguageSelector />}
-      </div>
-    </div>
-  </div>
+		<div class="flex-none w-14 lg:w-auto flex justify-end">
+			<div
+				class="flex items-center gap-5 text-white transition-colors duration-500"
+				id="icon-group">
+				{!offI18n && <LanguageSelector />}
+			</div>
+		</div>
+	</div>
 
-  <div
-    id="mobile-drawer"
-    class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 justify-between"
-  >
-    <div>
-      <div class="flex justify-between items-center">
-        <Logo_blanco class="h-15 text-white" />
+	<div
+		id="mobile-drawer"
+		class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 justify-between">
+		<div>
+			<div class="flex justify-between items-center">
+				<Logo_blanco class="h-15 text-white" />
 
-        <button id="close-menu" class="text-white p-2">
-          <X size={35} strokeWidth={1} />
-        </button>
-      </div>
+				<button
+					id="close-menu"
+					class="text-white p-2">
+					<X
+						size={35}
+						strokeWidth={1}
+					/>
+				</button>
+			</div>
 
-      <nav class="mt-20 text-center">
-        <ul class="flex flex-col gap-10">
-          {
-            navigation.map((item) => (
-              <li>
-                <a
-                  href={item.link}
-                  class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity"
-                >
-                  {item.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-    </div>
+			<nav class="mt-20 text-center">
+				<ul class="flex flex-col gap-10">
+					{
+						navigation.map((item) => (
+							<li>
+								<a
+									href={item.link}
+									class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity">
+									{item.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</div>
 
-    <div class="flex flex-col items-center gap-6 mb-15">
-      <div class="h-[1px] w-20 bg-white/30"></div>
+		<div class="flex flex-col items-center gap-6 mb-15">
+			<div class="h-[1px] w-20 bg-white/30"></div>
 
-      <!-- Añadimos 'items-center' para que la alineación vertical sea perfecta entre SVGs e Imagen -->
-      <div class="flex gap-8 text-white items-center">
-        <!-- Instagram -->
-        <a
-          href="https://www.instagram.com/cenoteadventuring/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:scale-110 transition-transform"
-          aria-label="Instagram"
-        >
-          <!-- clases w-6 h-6 al SVG -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-6 h-6"
-            ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
-              d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
-              x1="17.5"
-              x2="17.51"
-              y1="6.5"
-              y2="6.5"></line></svg
-          >
-        </a>
+			<!-- Añadimos 'items-center' para que la alineación vertical sea perfecta entre SVGs e Imagen -->
+			<div class="flex gap-8 text-white items-center">
+				<!-- Instagram -->
+				<a
+					href="https://www.instagram.com/cenoteadventuring/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:scale-110 transition-transform"
+					aria-label="Instagram">
+					<!-- clases w-6 h-6 al SVG -->
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-6 h-6"
+						><rect
+							width="20"
+							height="20"
+							x="2"
+							y="2"
+							rx="5"
+							ry="5"
+						></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+						></path><line
+							x1="17.5"
+							x2="17.51"
+							y1="6.5"
+							y2="6.5"
+						></line></svg
+					>
+				</a>
 
-        <!-- Facebook -->
-        <a
-          href="https://www.facebook.com/cenoteadventuring/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:scale-110 transition-transform"
-          aria-label="Facebook"
-        >
-          <!-- clases w-6 h-6 al SVG -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-6 h-6"
-            ><path
-              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-            ></path></svg
-          >
-        </a>
+				<!-- Facebook -->
+				<a
+					href="https://www.facebook.com/cenoteadventuring/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:scale-110 transition-transform"
+					aria-label="Facebook">
+					<!-- clases w-6 h-6 al SVG -->
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-6 h-6"
+						><path
+							d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+						></path></svg
+					>
+				</a>
 
-        <!-- TripAdvisor -->
-        <a
-          href="https://www.tripadvisor.com.mx/24252542"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:scale-110 transition-transform"
-          aria-label="TripAdvisor"
-        >
-          <!-- Mantenemos la imagen exactamente igual -->
-          <img
-            src={Trip.src}
-            alt="TripAdvisor"
-            width="24"
-            height="24"
-            class="w-6 h-6 invert"
-          />
-        </a>
-      </div>
-    </div>
-  </div>
+				<!-- TripAdvisor -->
+				<a
+					href="https://www.tripadvisor.com.mx/24252542"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:scale-110 transition-transform"
+					aria-label="TripAdvisor">
+					<!-- Mantenemos la imagen exactamente igual -->
+					<img
+						src={Trip.src}
+						alt="TripAdvisor"
+						width="24"
+						height="24"
+						class="w-6 h-6 invert"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
 </header>
 
 <script>
-  const updateStyles = () => {
-    const isScrolled = window.scrollY > 50;
-    const isMobile = window.innerWidth < 768;
+	const updateStyles = () => {
+		const isScrolled = window.scrollY > 50;
+		const isMobile = window.innerWidth < 768;
+		const header = document.getElementById('main-header');
+		const logoCompleto = document.getElementById('logo-completo');
+		const logoReducido = document.getElementById('logo-reducido');
+		const logoMovil = document.getElementById('logo-movil');
 
-    const header = document.getElementById("main-header");
-    const logoCompleto = document.getElementById("logo-completo");
-    const logoReducido = document.getElementById("logo-reducido");
-    const logoMovil = document.getElementById("logo-movil");
-    const openBtn = document.getElementById("open-menu"); // Lo necesitamos aquí también para el color
+		const isSpecialPage = ['/contact', '/404'].some((path) =>
+			window.location.pathname.includes(path),
+		);
 
-    const isSpecialPage = ["/contact", "/404"].some((path) =>
-      window.location.pathname.includes(path),
-    );
+		const useDarkTheme = isScrolled || isSpecialPage;
 
-    const useDarkTheme = isScrolled || isSpecialPage;
+		header?.classList.toggle('bg-[#EDF4FC]', useDarkTheme);
+		header?.classList.toggle('is-scrolled', useDarkTheme);
+		header?.classList.toggle('h-20', useDarkTheme);
+		header?.classList.toggle('h-24', !useDarkTheme);
 
-    // --- Estilos del Header ---
-    header?.classList.toggle("bg-[#EDF4FC]", useDarkTheme);
-    header?.classList.toggle("h-20", useDarkTheme);
-    header?.classList.toggle("h-24", !useDarkTheme);
+		const textColor = useDarkTheme ? 'text-[#002B49]' : 'text-white';
+		const oldColor = useDarkTheme ? 'text-white' : 'text-[#002B49]';
+		const elementsToTint = document.querySelectorAll(
+			'#logo-container, #icon-group, #open-menu, .nav-link',
+		);
 
-    // --- LÓGICA DE LOGOS ---
-    if (isMobile) {
-      logoCompleto?.classList.add("hidden");
-      if (useDarkTheme) {
-        logoMovil?.classList.add("hidden", "opacity-0");
-        logoReducido?.classList.remove("hidden");
-        setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
-      } else {
-        logoReducido?.classList.add("hidden", "opacity-0");
-        logoMovil?.classList.remove("hidden");
-        setTimeout(() => logoMovil?.classList.remove("opacity-0"), 10);
-      }
-    } else {
-      logoMovil?.classList.add("hidden");
-      if (useDarkTheme) {
-        logoCompleto?.classList.add("hidden", "opacity-0");
-        logoReducido?.classList.remove("hidden");
-        setTimeout(() => logoReducido?.classList.remove("opacity-0"), 10);
-      } else {
-        logoReducido?.classList.add("hidden", "opacity-0");
-        logoCompleto?.classList.remove("hidden");
-        setTimeout(() => logoCompleto?.classList.remove("opacity-0"), 10);
-      }
-    }
+		elementsToTint.forEach((el) => {
+			el.classList.add(textColor);
+			el.classList.remove(oldColor);
+		});
+	};
 
-    // --- Colores de texto ---
-    const textColor = useDarkTheme ? "text-[#002B49]" : "text-white";
-    const oldColor = useDarkTheme ? "text-white" : "text-[#002B49]";
+	const initMenu = () => {
+		const openBtn = document.getElementById('open-menu');
+		const closeBtn = document.getElementById('close-menu');
+		const drawer = document.getElementById('mobile-drawer');
+		const html = document.documentElement;
+		let scrollPosition = 0;
 
-    const elementsToTint = document.querySelectorAll(
-      "#logo-container, #icon-group, #open-menu, .nav-link",
-    );
-    elementsToTint.forEach((el) => {
-      el.classList.add(textColor);
-      el.classList.remove(oldColor);
-    });
-  };
+		const openMenu = () => {
+			scrollPosition = window.scrollY;
+			drawer?.classList.remove('-translate-x-full');
+			html.style.overflow = 'hidden';
+			document.body.style.overflow = 'hidden';
+			document.body.style.top = `-${scrollPosition}px`;
+			document.body.classList.add('is-nav-open');
+		};
 
-  // --- LÓGICA DEL MENU DRAWER (Lo que faltaba) ---
-  const initMenu = () => {
-    const openBtn = document.getElementById("open-menu");
-    const closeBtn = document.getElementById("close-menu");
-    const drawer = document.getElementById("mobile-drawer");
+		const closeMenu = () => {
+			drawer?.classList.add('-translate-x-full');
+			html.style.overflow = '';
+			document.body.style.overflow = '';
+			document.body.classList.remove('is-nav-open');
+			document.body.style.top = '';
+			window.scrollTo({ top: scrollPosition, behavior: 'instant' });
+		};
 
-    openBtn?.addEventListener("click", () => {
-      drawer?.classList.remove("-translate-x-full");
-      document.body.style.overflow = "hidden"; // Evita scroll al estar abierto
-      document.body.classList.add("is-nav-open"); // Para ocultar el sticky card si existe
-    });
+		openBtn?.addEventListener('click', openMenu);
+		closeBtn?.addEventListener('click', closeMenu);
+		drawer
+			?.querySelectorAll('nav a')
+			.forEach((link) => link.addEventListener('click', closeMenu));
+	};
 
-    closeBtn?.addEventListener("click", () => {
-      drawer?.classList.add("-translate-x-full");
-      document.body.style.overflow = "";
-      document.body.classList.remove("is-nav-open");
-    });
-  };
-
-  // Inicializar eventos
-  window.addEventListener("scroll", updateStyles);
-  window.addEventListener("resize", updateStyles);
-  document.addEventListener("DOMContentLoaded", () => {
-    updateStyles();
-    initMenu();
-  });
-
-  // Para que funcione al navegar entre páginas con ViewTransitions
-  document.addEventListener("astro:after-swap", () => {
-    updateStyles();
-    initMenu();
-  });
+	window.addEventListener('scroll', updateStyles);
+	window.addEventListener('resize', updateStyles);
+	document.addEventListener('DOMContentLoaded', () => {
+		updateStyles();
+		initMenu();
+	});
+	document.addEventListener('astro:after-swap', () => {
+		updateStyles();
+		initMenu();
+	});
 </script>
 
 <style>
-  /* Tipografía Serif para el Menú Móvil */
-  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap");
+	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap');
+	.font-serif {
+		font-family: 'Playfair Display', serif;
+	}
 
-  .font-serif {
-    font-family: "Playfair Display", serif;
-  }
-  /* se agrega para sticky de movil */
-  :global(body.is-nav-open) #sticky-product-card {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
-    transition: all 0.3s ease-in-out;
-  }
-  #sticky-product-card {
-    transition: all 0.3s ease-in-out;
-    will-change: transform, opacity;
-  }
-  #mobile-drawer {
-    z-index: 100;
-  }
+	/* BLOQUEO DE SCROLL Y OCULTAR STICKY */
+	:global(body.is-nav-open) {
+		touch-action: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		overflow: hidden !important;
+	}
+
+	/* Forzamos que desaparezca el sticky cuando el menú está abierto */
+	:global(body.is-nav-open #sticky-product-card) {
+		display: none !important;
+	}
+
+	#mobile-drawer {
+		z-index: 100;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	/* Lógica de visibilidad de logos basada en el estado del scroll */
+	.is-scrolled #logo-completo,
+	.is-scrolled #logo-movil {
+		display: none !important;
+		opacity: 0 !important;
+	}
+
+	.is-scrolled #logo-reducido {
+		display: block !important;
+		opacity: 1 !important;
+	}
 </style>

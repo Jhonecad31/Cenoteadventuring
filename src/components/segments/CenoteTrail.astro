@@ -1,3 +1,4 @@
+
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getI18N } from "@/i18n";
@@ -47,7 +48,9 @@ const seoMetaData = {
 
 <BaseLayout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] overflow-x-hidden">
-   <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
       <img
         src={getUrl(images.imgCenote)}
         class="absolute z-0 w-full h-full object-cover scale-[1.05] brightness-[0.4]"
@@ -61,14 +64,13 @@ const seoMetaData = {
         >
           {i18n.RUTA_CENOTES_PAGE.HERO.TITLE2}
         </h1>
-        <p class="tracking-[0.5em] text-sm font-light opacity-90">
+        <p class="!tracking-[0.5em] text-sm font-light opacity-90">
           {i18n.RUTA_CENOTES_PAGE.HERO.SUBTITLE}
         </p>
       </div>
     </section>
 
-
-    <section class="max-w-7xl mx-auto px-6 py-16 md:py-28">
+    <section class="max-w-7xl mx-auto px-6 py-8 md:py-16">
       <div
         class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
       >
@@ -79,7 +81,7 @@ const seoMetaData = {
             <img
               src={getUrl(images.img3, 1000)}
               class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
-              alt="Experiencia Exclusiva en Cenote"
+              alt="Cenote Trail Experience"
               loading="lazy"
             />
           </div>
@@ -94,14 +96,14 @@ const seoMetaData = {
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] mb-6 leading-tight"
           >
-            {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INTRO.TITLE}
+            {i18n.RUTA_CENOTES_PAGE.INTRO.TITLE}
           </h2>
 
           <div class="space-y-6">
             <p
-              class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 px-5 lg:text-lg md:text-2xl"
+              class="text-gray-600 leading-relaxed text-base md:text-lg font-light mb-10 md:mb-20"
             >
-              {i18n.DETAIL_PAGE.PRIVATE_CENOTE.INTRO.DESCRIPTION}
+              {i18n.RUTA_CENOTES_PAGE.INTRO.DESCRIPTION}
             </p>
             <div class="pt-6">
               <div class="w-full h-[1px] bg-black/5"></div>
@@ -111,9 +113,9 @@ const seoMetaData = {
       </div>
     </section>
 
-    <section class="py-24 md:py-32 -mt-50">
+    <div class="w-full">
       <BContainer>
-        <section class="py-24 bg-[#F8FAFC] -mt-25">
+        <section class="py-8 md:py-12 bg-[#F8FAFC]">
           <BContainer>
             <div class="flex flex-col lg:flex-row-reverse gap-16 items-start">
               <div class="w-full lg:w-5/12 lg:sticky lg:top-24">
@@ -155,7 +157,7 @@ const seoMetaData = {
           </BContainer>
         </section>
 
-        <section class="py-24 bg-[#F8FAFC] -mt-45">
+        <section class="py-8 md:py-12 bg-[#F8FAFC]">
           <BContainer>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div
@@ -239,33 +241,29 @@ const seoMetaData = {
               </div>
             </div>
           </BContainer>
-          <section class="relative">
-        <div class="relative group">
-          <!-- Efecto de borde brillante sutil al hacer hover -->
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-[#006083] to-cyan-500 rounded-[2.5rem] opacity-10 group-hover:opacity-20 blur transition duration-500"></div>
-          
-          <div class="relative bg-white p-3 rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden h-[500px] md:h-[600px]">
-            <div class="w-full h-full rounded-[1.8rem] overflow-hidden">
-               <Maps />
+          <section class="relative mt-8 md:mt-12">
+            <div class="relative bg-white p-3 rounded-lg border border-slate-200 shadow-sm overflow-hidden h-[500px] md:h-[600px]">
+              <div class="w-full h-full rounded-md overflow-hidden relative z-10">
+                <Maps />
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- INDICACIÓN DE RUTA -->
-        <div class="mt-8 text-center md:text-left">
-           <p class="text-sm text-[#001524]/50 italic">
-             * Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R. — A 20 minutos de Cancún.
-           </p>
-        </div>
-      </section>
+            <!-- INDICACIÓN DE RUTA -->
+            <div class="mt-6 text-center md:text-left">
+              <p class="text-sm text-[#001524]/50 italic">
+                * Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R. — A 20
+                minutos de Cancún.
+              </p>
+            </div>
+          </section>
         </section>
         <!-- QUESTIONS THE RUTA CENOTE -->
-        <section class="py-24 -mt-66">
+        <section class="py-8 md:py-12">
           <BContainer>
-            <div class="group py-8">
+            <div class="group">
               <div class="flex justify-between items-center list-none">
                 <span
-                  class="text-2xl md:text-3xl font-serif text-[#001524] mt-10 mb-8"
+                  class="text-2xl md:text-3xl font-serif text-[#001524] mb-8"
                 >
                   {i18n.RUTA_CENOTES_PAGE.FAQS.TITLE}
                 </span>
@@ -307,58 +305,44 @@ const seoMetaData = {
         </section>
         <!-- TERMINA QUESTION THE RUTA CENOTE -->
         <!-- se agrega seccion para awards -->
-        <div id="awards-carousel" class="relative w-full md:block">
-  <!-- Wrapper del Carrusel -->
-  <div
-    class="relative h-48 overflow-hidden rounded-lg md:h-auto md:overflow-visible flex md:grid md:grid-cols-3 gap-4 px-4 items-center"
-    id="carousel-wrapper"
-  >
-    {
-      related_awards.map((activity, index) => (
-        <div 
-          class="duration-700 ease-in-out flex-none w-full md:w-auto md:relative md:block flex items-center justify-center transition-opacity"
-          data-carousel-item={index === 0 ? "active" : ""}
+        <!-- se agrega seccion para awards -->
+        <div
+          id="carousel-wrapper"
+          class="mt-8 md:mt-12 flex md:grid md:grid-cols-3 items-center
+                 overflow-x-auto md:overflow-visible
+                 snap-x snap-mandatory scrollbar-hide
+                 px-[10%] md:px-0
+                 gap-6 md:gap-20 lg:gap-32
+                 max-w-6xl mx-auto"
         >
-          <div class="h-32 md:h-40 w-full flex items-center justify-center">
-            <img
-              src={activity.image.src}
-              alt={activity.name}
-              class="h-full w-auto max-w-[150px] md:max-w-[280px] object-contain opacity-90 transition-all hover:scale-105"
-            />
-          </div>
+          {
+            related_awards.map((activity) => (
+              <div class="flex-none w-full md:w-auto snap-center flex items-center justify-center">
+                <div class="h-24 md:h-32 w-full flex items-center justify-center transition-transform duration-500 hover:scale-105">
+                  <img
+                    src={activity.image.src}
+                    alt={activity.name}
+                    class="h-full w-auto max-w-[200px] md:max-w-full object-contain mx-auto"
+                  />
+                </div>
+              </div>
+            ))
+          }
         </div>
-      ))
-    }
-  </div>
 
-  <!-- Controles (Solo visibles en Móvil) -->
-  <div class="flex md:hidden absolute z-30 -translate-x-1/2 bottom-2 left-1/2 space-x-3">
-    {
-      related_awards.map((_, index) => (
-        <button
-          type="button"
-          class="w-2 h-2 rounded-full bg-gray-400 focus:bg-white"
-          aria-label={`Slide ${index + 1}`}
-          data-carousel-slide-to={index}
-        ></button>
-      ))
-    }
-  </div>
-
-  <!-- Botones de Navegación (Opcional, ocultos en Desktop) -->
-  <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group md:hidden" id="prevBtn">
-    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/20 group-hover:bg-black/40 text-white">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>
-    </span>
-  </button>
-  <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group md:hidden" id="nextBtn">
-    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/20 group-hover:bg-black/40 text-white">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>
-    </span>
-  </button>
-</div>
+        {/* Puntos para móvil con margen inferior mínimo */}
+        <div class="flex md:hidden justify-center space-x-2 mt-6 mb-16" id="carousel-dots">
+          {
+            related_awards.map((_, index) => (
+              <div
+                class={`h-1 w-1 rounded-full transition-all duration-300 ${index === 0 ? "bg-[#006083] w-4" : "bg-slate-300"}`}
+                data-dot={index}
+              />
+            ))
+          }
+        </div>
       </BContainer>
-    </section>
+    </div>
   </main>
 </BaseLayout>
 
@@ -373,33 +357,36 @@ const seoMetaData = {
       }
     });
   }
-   const wrapper = document.getElementById('carousel-wrapper');
-  const items = document.querySelectorAll('[data-carousel-item]');
-  const nextBtn = document.getElementById('nextBtn');
-  const prevBtn = document.getElementById('prevBtn');
-  let currentIndex = 0;
-
-  function showItem(index) {
-    if (window.innerWidth >= 768) return; // No hacer nada en desktop
-
-    items.forEach((item, i) => {
-      item.style.display = i === index ? 'flex' : 'none';
+  // Simple IntersectionObserver to update dots on scroll
+  const scrollWrapper = document.getElementById("carousel-wrapper");
+  const dots = document.querySelectorAll("[data-dot]");
+  
+  if (scrollWrapper && dots.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Find which index this is
+          const itemsArray = Array.from(scrollWrapper.children);
+          const index = itemsArray.indexOf(entry.target);
+          
+          if (index !== -1 && dots[index]) {
+            // Reset all dots
+            dots.forEach(dot => {
+              dot.className = "h-1 w-1 rounded-full transition-all duration-300 bg-slate-300";
+            });
+            // Highlight active dot
+            dots[index].className = "h-1 rounded-full transition-all duration-300 bg-[#006083] w-4";
+          }
+        }
+      });
+    }, {
+      root: scrollWrapper,
+      threshold: 0.5
     });
-  }
 
-  nextBtn?.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    showItem(currentIndex);
-  });
-
-  prevBtn?.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    showItem(currentIndex);
-  });
-
-  // Inicializar vista móvil
-  if (window.innerWidth < 768) {
-    showItem(0);
+    Array.from(scrollWrapper.children).forEach(child => {
+      observer.observe(child);
+    });
   }
 </script>
 
@@ -427,5 +414,13 @@ const seoMetaData = {
 
   main {
     scroll-behavior: smooth;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 </style>
