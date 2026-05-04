@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getBlogs } from "@/lib/blog";
+import BlogCard from "@/components/segments/BlogCard.astro";
+import TagH1 from "@/components/global/TagH1.astro";
+import TagP from "@/components/global/TagP.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+// Fetch posts
+let posts = [];
+let error = null;
+try {
+  posts = await getBlogs();
+} catch (e) {
+  error = e.message;
+}
+
+const seoMetaData = {
+  title: currentLocale === 'es' ? 'Blog - Aventura en Cenotes' : 'Blog - Cenote Adventure',
+  description: currentLocale === 'es' ? 'Descubre las mejores historias y consejos sobre los cenotes de Puerto Morelos.' : 'Discover the best stories and tips about Puerto Morelos cenotes.',
+};
+---
+
+<BaseLayout {...seoMetaData}>
+  <main class="bg-[#EDF4FC] pt-32 pb-20 min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <TagH1 class="pt-20 max-w-3xl mx-auto font-serif md:text-5xl mb-6">
+          {currentLocale === 'es' ? 'Nuestro Blog' : 'Our Blog'}
+        </TagH1>
+        <TagP class="text-[#001524]/60 max-w-2xl mx-auto mb-10 !text-center lg:text-lg">
+          {currentLocale === 'es' 
+            ? 'Historias, guías y consejos para que tu aventura en los cenotes sea inolvidable.' 
+            : 'Stories, guides, and tips to make your cenote adventure unforgettable.'}
+        </TagP>
+      </div>
+
+      {error && (
+        <div class="bg-red-50 border border-red-100 text-red-600 p-4 rounded-2xl mb-8 text-sm">
+          <strong>Debug Error:</strong> {error}
+        </div>
+      )}
+
+      <div class="mb-4 text-xs text-slate-400">
+        Debug: Found {posts.length} posts
+      </div>
+
+      {posts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <BlogCard post={post} />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-20 bg-white rounded-[2.5rem] shadow-sm border border-slate-100">
+          <p class="text-slate-400 font-medium">
+            {currentLocale === 'es' ? 'Próximamente nuevas historias...' : 'New stories coming soon...'}
+          </p>
+        </div>
+      )}
+    </div>
+  </main>
+</BaseLayout>

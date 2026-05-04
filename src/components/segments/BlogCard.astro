@@ -1,0 +1,66 @@
+---
+import type { BlogPost } from "@/lib/blog";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const formattedDate = new Date(post.postDate).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col h-full">
+  <div class="relative aspect-[16/10] overflow-hidden">
+    {post.seoData?.ogImage ? (
+      <img 
+        src={post.seoData.ogImage} 
+        alt={post.postTitle} 
+        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+      />
+    ) : (
+      <div class="w-full h-full bg-[#006083]/10 flex items-center justify-center">
+        <span class="text-[#006083] font-serif text-4xl opacity-20">CA</span>
+      </div>
+    )}
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  </div>
+
+  <div class="p-6 md:p-8 flex flex-col flex-grow">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#006083] bg-[#006083]/5 px-3 py-1 rounded-full">
+        {post.tableName?.replace(/_/g, ' ') || 'Blog'}
+      </span>
+      <span class="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest">
+        {formattedDate}
+      </span>
+    </div>
+
+    <h3 class="font-serif text-xl md:text-2xl text-[#001524] mb-4 group-hover:text-[#006083] transition-colors line-clamp-2">
+      {post.postTitle}
+    </h3>
+
+    <p class="text-slate-600 text-sm md:text-base mb-6 line-clamp-3 leading-relaxed">
+      {post.postExcerpt || post.postContent.replace(/<[^>]*>/g, '').substring(0, 150) + '...'}
+    </p>
+
+    <div class="mt-auto pt-6 border-t border-slate-50">
+      <a 
+        href={translatePath(`/blog/${post.postName}`)}
+        class="inline-flex items-center text-[#006083] font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all"
+      >
+        {lang === 'es' ? 'Leer más' : 'Read more'}
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
