@@ -33,7 +33,7 @@ export const server = {
                 const [res1] = await Promise.all([
                     resend.emails.send({
                         from: 'Cenote Adventuring <onboarding@resend.dev>',
-                        to: "backend.extreme@gmail.com",
+                        to: "info@cenoteadventuring.com",
                         subject: subjectAdmin,
                         replyTo: input.email,
                         html: emailAdminHtml,
