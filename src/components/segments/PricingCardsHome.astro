@@ -9,11 +9,9 @@ const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
-// cdn para imagenes del proyecto
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
-
 
 const plans = [
   {

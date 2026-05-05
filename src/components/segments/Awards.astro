@@ -64,12 +64,12 @@ const related_awards = [
         </div>
       </div>
     </div>
-   <!-- Cambiamos grid-cols-1 por grid-cols-3 directamente para que sea compacto siempre -->
+   
 <div class="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-8 mt-12 md:mt-20 mx-auto max-w-5xl px-4">
   {
     related_awards.map((activity) => (
       <div class="flex flex-col items-center text-center p-2 md:p-6">
-        {/* Reducimos la altura del contenedor en móvil (h-12) */}
+        {}
         <div class="h-12 md:h-20 w-full flex items-center justify-center mb-3 md:mb-6">
           <img
             src={activity.image.src}
@@ -78,7 +78,7 @@ const related_awards = [
           />
         </div>
 
-        {/* Texto más pequeño en móvil para que quepa en una línea o dos */}
+        {}
         <h4 class="text-[#001524] text-[8px] md:text-sm tracking-[0.1em] uppercase font-semibold leading-tight">
           {activity.name}
         </h4>
@@ -102,7 +102,7 @@ const related_awards = [
 </script>
 
 <style>
-  /* Personalización extra para el scroll de la página */
+  
   main {
     scroll-behavior: smooth;
   }

@@ -246,7 +246,7 @@ const getUrl = (id: string, w = 800) =>
             }
           </div>
 
-          {/* Bloque de Summary corregido para centrado y tamaño */}
+          {}
           <div
             class="mt-16 p-8 bg-[#EDF4FC]/40 border border-slate-100 rounded-md max-w-3xl mx-auto"
           >
@@ -257,7 +257,7 @@ const getUrl = (id: string, w = 800) =>
         </div>
       </div>
 
-      {/* Sección de premios con margen superior controlado */}
+      {}
       <div
         id="carousel-wrapper"
         class="mt-16 flex md:grid md:grid-cols-3 items-center
@@ -282,7 +282,7 @@ const getUrl = (id: string, w = 800) =>
         }
       </div>
 
-      {/* Puntos para móvil con margen inferior mínimo */}
+      {}
       <div
         class="flex md:hidden justify-center space-x-2 mt-6"
         id="carousel-dots"
@@ -314,7 +314,7 @@ const getUrl = (id: string, w = 800) =>
     let currentIndex = 0;
 
     function showItem(index) {
-      if (window.innerWidth >= 768) return; // No hacer nada en desktop
+      if (window.innerWidth >= 768) return; 
 
       items.forEach((item, i) => {
         item.style.display = i === index ? "flex" : "none";
@@ -331,7 +331,6 @@ const getUrl = (id: string, w = 800) =>
       showItem(currentIndex);
     });
 
-    // Inicializar vista móvil
     if (window.innerWidth < 768) {
       showItem(0);
     }
@@ -354,18 +353,18 @@ const getUrl = (id: string, w = 800) =>
     main {
       scroll-behavior: smooth;
     }
-    /* Estilo para que el texto sea muy legible y elegante */
+    
     :global(p) {
       letter-spacing: 0.015em;
     }
-    /* Oculta la barra de desplazamiento en Chrome, Safari y Opera */
+    
     div::-webkit-scrollbar {
       display: none;
     }
-    /* Oculta la barra de desplazamiento en IE, Edge y Firefox */
+    
     div {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; 
+      scrollbar-width: none; 
     }
   </style>
 </BaseLayout>

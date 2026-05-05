@@ -19,12 +19,6 @@ const {
 
 const CDN_URL = "https://ik.imagekit.io/tu_usuario_identificador";
 
-/**
- * Configuración de transformaciones:
- * f-auto: Elige el mejor formato (AVIF o WebP) según el navegador.
- * q-80: Comprime sin perder calidad visual.
- * pr-true: Carga progresiva (se ve borroso antes de verse nítido).
- */
 const transformations = `tr:w-${width}${height ? `,h-${height}` : ""},f-auto,q-80,pr-true`;
 
 const finalUrl = `${CDN_URL}${path}?${transformations}`;

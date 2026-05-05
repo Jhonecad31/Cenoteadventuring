@@ -1,9 +1,9 @@
-//History
+
 import CenoteAdventure from "@/icons/brands/cenoteadventuring_2.svg";
-//flags 
+
 import IconFlagUSA from "@/icons/flags/usa.svg";
 import IconFlagMEX from "@/icons/flags/mex.svg";
- //Awards
+ 
 import Tipadvisor from "@/icons/awards/tripadvisor-tbotb.svg"
 import Natgeo from "@/icons/awards/natgeo-traveller-black.svg"
 import Wordl from "@/icons/awards/world-travel-awards.svg"

@@ -135,16 +135,15 @@ const navigation = [
 		<div class="flex flex-col items-center gap-6 mb-15">
 			<div class="h-[1px] w-20 bg-white/30"></div>
 
-			<!-- Añadimos 'items-center' para que la alineación vertical sea perfecta entre SVGs e Imagen -->
 			<div class="flex gap-8 text-white items-center">
-				<!-- Instagram -->
+				
 				<a
 					href="https://www.instagram.com/cenoteadventuring/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="hover:scale-110 transition-transform"
 					aria-label="Instagram">
-					<!-- clases w-6 h-6 al SVG -->
+					
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -171,14 +170,13 @@ const navigation = [
 					>
 				</a>
 
-				<!-- Facebook -->
 				<a
 					href="https://www.facebook.com/cenoteadventuring/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="hover:scale-110 transition-transform"
 					aria-label="Facebook">
-					<!-- clases w-6 h-6 al SVG -->
+					
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -194,14 +192,13 @@ const navigation = [
 					>
 				</a>
 
-				<!-- TripAdvisor -->
 				<a
 					href="https://www.tripadvisor.com.mx/24252542"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="hover:scale-110 transition-transform"
 					aria-label="TripAdvisor">
-					<!-- Mantenemos la imagen exactamente igual -->
+					
 					<img
 						src={Trip.src}
 						alt="TripAdvisor"
@@ -297,7 +294,6 @@ const navigation = [
 		font-family: 'Playfair Display', serif;
 	}
 
-	/* BLOQUEO DE SCROLL Y OCULTAR STICKY */
 	:global(body.is-nav-open) {
 		touch-action: none;
 		position: fixed;
@@ -306,7 +302,6 @@ const navigation = [
 		overflow: hidden !important;
 	}
 
-	/* Forzamos que desaparezca el sticky cuando el menú está abierto */
 	:global(body.is-nav-open #sticky-product-card) {
 		display: none !important;
 	}
@@ -317,7 +312,6 @@ const navigation = [
 		-webkit-overflow-scrolling: touch;
 	}
 
-	/* Lógica de visibilidad de logos basada en el estado del scroll */
 	.is-scrolled #logo-completo,
 	.is-scrolled #logo-movil {
 		display: none !important;

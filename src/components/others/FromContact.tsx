@@ -73,7 +73,7 @@ export default function FormContact({ i18n, TITLE_FORM }: FormContactProps) {
                 </button>
             </form>
 
-            {/* Modal Nativo con Tailwind */}
+            {}
             {showModal && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 text-[#006083] backdrop-blur-md transition-opacity">
                     <div className="bg-white rounded-[2rem] p-10 max-w-md w-full shadow-2xl text-center scale-up-center">

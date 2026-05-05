@@ -32,7 +32,7 @@ export default function BtnAccordionBokun({
           {data.btnBook}
         </button>
 
-        {/*Vista Emergente (Drawer) */}
+        {}
         {isOpen && (
           <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
             <div
@@ -40,9 +40,9 @@ export default function BtnAccordionBokun({
               onClick={() => setIsOpen(false)}
             ></div>
 
-            {/* Contenido del Calendario (Hojal que sube) */}
+            {}
             <div className="relative bg-[#EDF4FC] w-full h-[90vh] rounded-t-3xl p-6 shadow-2xl overflow-y-auto animate-in slide-in-from-bottom duration-300">
-              {/* Cabecera del Modal */}
+              {}
               <div className="flex justify-between items-center mb-6 border-b pb-4">
                 <h3 className="font-serif text-xl text-[#001524]">{data.title}</h3>
                 <button
@@ -53,7 +53,7 @@ export default function BtnAccordionBokun({
                 </button>
               </div>
 
-              {/* Contenedor del Widget de Bokun */}
+              {}
               <Suspense fallback={
                 <div className="flex justify-center py-20">
                   <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#006083]"></div>

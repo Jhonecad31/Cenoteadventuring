@@ -58,7 +58,6 @@ const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
   const btn = document.getElementById("lang-button");
   const menu = document.getElementById("lang-menu");
 
-  // Función para alternar el menú en móviles
   btn?.addEventListener("click", (e) => {
     e.stopPropagation();
     const isVisible = menu?.classList.contains("visible");
@@ -74,7 +73,6 @@ const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
     }
   });
 
-  // Cerrar el menú si se hace clic fuera de él
   document.addEventListener("click", () => {
     menu?.classList.add("invisible", "opacity-0");
     menu?.classList.remove("visible", "opacity-100");
@@ -83,7 +81,7 @@ const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
 </script>
 
 <style>
-  /* Evita que el menú se cierre accidentalmente en móviles al intentar tocar una opción */
+  
   #lang-menu.visible {
     visibility: visible;
     opacity: 1;

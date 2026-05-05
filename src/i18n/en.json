@@ -168,7 +168,12 @@
       "TITLE": "Contac us",
       "DIRECT_LINE": "Direct line",
       "RESERVATIONS": "Reservations",
-      "CORPORATE": "Corporate"
+      "CORPORATE": "Corporate",
+      "TRADUCTION":{
+        "ABOUT": "About",
+        "FOLLOW": "Follow"
+      }
+      
     }
   },
   "CONTACT_PAGE": {

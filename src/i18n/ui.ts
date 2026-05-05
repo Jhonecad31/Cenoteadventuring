@@ -13,7 +13,6 @@ export const languages: Record<string, { code: string; name: string; flag: typeo
     }
 };
 
-
 export const defaultLang = 'en';
 export const showDefaultLang = false;
 

@@ -17,7 +17,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const response = await resend.emails.send({
-      from: "Cenote Adventuring <onboarding@resend.dev>", // luego cambias a tu dominio
+      from: "Cenote Adventuring <onboarding@resend.dev>", 
       to: ["info@cenoteadventuring.com"],
       subject: `Nuevo mensaje de ${name}`,
       reply_to: email,

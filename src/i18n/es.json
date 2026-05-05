@@ -166,7 +166,11 @@
       "TITLE": "Contáctanos",
       "DIRECT_LINE": "Línea directa",
       "RESERVATIONS": "Reservaciones",
-      "CORPORATE": "Corporativo"
+      "CORPORATE": "Corporativo",
+      "TRADUCTION": {
+  "ABOUT": "Sobre nosotros",
+  "FOLLOW": "Seguir"
+}
     }
   },
   "CONTACT_PAGE": {
@@ -329,11 +333,11 @@
       "H2": "¿Por qué elegirnos?",
       "INTRO": "Elegir Cenote Adventuring significa elegir calidad, autenticidad y exclusividad. Estas son las razones por las que los viajeros nos prefieren:",
       "ITEMS": [
-        "EXPERIENCIAS PRIVADAS Y PERSONALIZADAS",
-        "ACCESO A CENOTES CUIDADOSAMENTE SELECCIONADOS",
-        "GUÍAS EXPERTOS LOCALES",
-        "TRANSPORTE SIN COMPLICACIONES DESDE PUERTO MORELOS HASTA CANCÚN",
-        "ENFOQUE TOTAL EN LA SOSTENIBILIDAD Y SEGURIDAD"
+        "Experiencias privadas y perzonalizadas",
+        "Acceso a cenotes cuidadosamente seleccionados",
+        "Guías expertos locales",
+        "Transporte sin complicaciones desde puerto morelos hasta cancún",
+        "Enfoque total en la sostenibilidad y seguridad"
       ],
       "CLOSING": "No solo ofrecemos tours; creamos experiencias que permanecen contigo mucho después de que tu viaje termina."
     },

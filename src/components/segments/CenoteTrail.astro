@@ -248,7 +248,6 @@ const seoMetaData = {
               </div>
             </div>
 
-            <!-- INDICACIÓN DE RUTA -->
             <div class="mt-6 text-center md:text-left">
               <p class="text-sm text-[#001524]/50 italic">
                 * Leona Vicario KM 19.1, 77580 Puerto Morelos, Q.R. — A 20
@@ -257,7 +256,7 @@ const seoMetaData = {
             </div>
           </section>
         </section>
-        <!-- QUESTIONS THE RUTA CENOTE -->
+        
         <section class="py-8 md:py-12">
           <BContainer>
             <div class="group">
@@ -303,9 +302,7 @@ const seoMetaData = {
             </div>
           </BContainer>
         </section>
-        <!-- TERMINA QUESTION THE RUTA CENOTE -->
-        <!-- se agrega seccion para awards -->
-        <!-- se agrega seccion para awards -->
+
         <div
           id="carousel-wrapper"
           class="mt-8 md:mt-12 flex md:grid md:grid-cols-3 items-center
@@ -330,7 +327,7 @@ const seoMetaData = {
           }
         </div>
 
-        {/* Puntos para móvil con margen inferior mínimo */}
+        {}
         <div class="flex md:hidden justify-center space-x-2 mt-6 mb-16" id="carousel-dots">
           {
             related_awards.map((_, index) => (
@@ -357,7 +354,7 @@ const seoMetaData = {
       }
     });
   }
-  // Simple IntersectionObserver to update dots on scroll
+  
   const scrollWrapper = document.getElementById("carousel-wrapper");
   const dots = document.querySelectorAll("[data-dot]");
   
@@ -365,16 +362,16 @@ const seoMetaData = {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Find which index this is
+          
           const itemsArray = Array.from(scrollWrapper.children);
           const index = itemsArray.indexOf(entry.target);
           
           if (index !== -1 && dots[index]) {
-            // Reset all dots
+            
             dots.forEach(dot => {
               dot.className = "h-1 w-1 rounded-full transition-all duration-300 bg-slate-300";
             });
-            // Highlight active dot
+            
             dots[index].className = "h-1 rounded-full transition-all duration-300 bg-[#006083] w-4";
           }
         }

@@ -108,8 +108,7 @@ const mobileSections = [
 <style>
   .hide-scrollbar::-webkit-scrollbar { display: none; }
   .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  
-  /* Cursor para indicar que se puede arrastrar en desktop si se desea */
+
   .md:hidden #grid-gallery-scroll {
     cursor: grab;
   }
@@ -122,12 +121,11 @@ const mobileSections = [
   import { Fancybox } from "@fancyapps/ui";
   import "@mux/mux-player";
   const initGallery = () => {
-    // Inicializar Fancybox
+    
     Fancybox.bind("[data-fancybox]", {
       Hash: false,
     });
 
-    // Lógica de arrastre para la versión móvil (cuando se ve en desktop/simulador)
     const slider = document.getElementById("grid-gallery-scroll");
     if (!slider) return;
 
@@ -139,7 +137,7 @@ const mobileSections = [
       isDown = true;
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
-      slider.style.scrollSnapType = "none"; // Desactivar snap durante el arrastre
+      slider.style.scrollSnapType = "none"; 
     });
 
     slider.addEventListener("mouseleave", () => (isDown = false));
@@ -157,7 +155,6 @@ const mobileSections = [
     });
   };
 
-  // Ejecutar al cargar y tras cambios en Astro (ViewTransitions)
   initGallery();
   document.addEventListener("astro:after-swap", initGallery);
 </script>

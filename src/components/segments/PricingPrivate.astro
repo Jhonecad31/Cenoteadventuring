@@ -123,7 +123,7 @@ const seoMetaData = {
 
 <Layout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
-    <!-- sección de hero video -->
+    
     <section
       id="hero-section"
       class="relative h-[80vh] flex items-center justify-center overflow-hidden"
@@ -158,8 +158,7 @@ const seoMetaData = {
         </div>
       </div>
     </section>
-    <!-- termina sección hero video -->
-    <!-- seccion img detail -->
+
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       <div
         class="grid grid-cols-1 lg:grid-cols-12 lg:gap-24 items-center justify-center"
@@ -207,15 +206,15 @@ const seoMetaData = {
         </div>
       </div>
     </section>
-    <!-- termina sección img details -->
+    
     <section class="mx-auto max-w-screen-2xl px-6 mt-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
         <div class="lg:col-span-8 space-y-6">
-          {/* GRID DE INFORMACIÓN RÁPIDA */}
+          {}
           <div
             class="bg-[#EDF4FC] rounded-md p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-9 mb-16"
           >
-            {/* DURACIÓN */}
+            {}
             <div
               class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
             >
@@ -235,7 +234,7 @@ const seoMetaData = {
               </div>
             </div>
 
-            {/* EDAD */}
+            {}
             <div
               class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 last:border-none px-2"
             >
@@ -253,7 +252,7 @@ const seoMetaData = {
               </div>
             </div>
 
-            {/* HORARIO */}
+            {}
             <div
               class="flex flex-col items-center text-center gap-3 md:border-r border-gray-100 px-2"
             >
@@ -270,7 +269,7 @@ const seoMetaData = {
               </div>
             </div>
 
-            {/* TRANSPORTE */}
+            {}
             <div class="flex flex-col items-center text-center gap-3 px-2">
               <Truck size={30} className="text-gray-400" />
               <div class="flex flex-col">
@@ -285,7 +284,7 @@ const seoMetaData = {
             </div>
           </div>
 
-          {/* TÍTULO Y DESCRIPCIÓN */}
+          {}
           <h2
             class="font-serif text-3xl md:text-5xl text-[#001524] leading-tight"
           >
@@ -300,9 +299,9 @@ const seoMetaData = {
 
           <hr class="border-black/50 w-full" />
 
-          {/* SECCIÓN DE ACORDEONES EXCLUSIVOS (Solo uno abierto a la vez) */}
+          {}
           <div class="divide-y divide-gray-200">
-            {/* 1. INCLUSIONES (Abierto por defecto) */}
+            {}
             <details class="group py-6" name="tour-info" open>
               <summary
                 class="flex justify-between items-center cursor-pointer list-none"
@@ -345,7 +344,7 @@ const seoMetaData = {
               </div>
             </details>
 
-            {/* 2. POR QUÉ ELEGIRNOS */}
+            {}
             <details class="group py-6" name="tour-info">
               <summary
                 class="flex justify-between items-center cursor-pointer list-none"
@@ -401,7 +400,7 @@ const seoMetaData = {
               </div>
             </details>
 
-            {/* 3. QUÉ DEBERÍAS SABER */}
+            {}
             <details class="group py-6" name="tour-info">
               <summary
                 class="flex justify-between items-center cursor-pointer list-none"
@@ -437,7 +436,7 @@ const seoMetaData = {
             </details>
           </div>
 
-          {/* QUÉ TRAER (Sección estática fuera de los acordeones) */}
+          {}
           <div class="py-12">
             <h2 class="text-2xl md:text-3xl font-serif mb-8 text-[#001524]">
               {i18n.DETAIL_PAGE.REGULAR_CENOTE.WHAT_TO_BRING.TITLE}
@@ -478,7 +477,7 @@ const seoMetaData = {
             </div>
           </div>
 
-          {/* SECCIÓN FAQS */}
+          {}
           <div class="mt-20">
             <h2 class="text-2xl md:text-3xl font-serif mb-8 text-[#001524]">
               FAQs
@@ -566,13 +565,13 @@ const seoMetaData = {
     <section class="bg-[#F8FAFC] py-20 px-6 overflow-hidden">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
-          {/* Título dinámico desde tu i18n */}
+          {}
           <TagH1
             class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl"
           >
             {i18n.DETAIL_PAGE.PRIVATE_CENOTE.MORE_ACTIVITIES.TITLE}
           </TagH1>
-          {/* Descripción dinámica */}
+          {}
           <TagP
             class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 lg:text-lg md:text-2xl"
           >
@@ -625,7 +624,7 @@ const seoMetaData = {
       </div>
     </section>
     <div id="sticky-anchor" class="h-px w-full"></div>
-    <!-- sticky para mobile -->
+    
     <div
       id="sticky-product-card"
       class="fixed bottom-6 left-4 right-4 lg:hidden z-40 transition-all duration-500 ease-in-out translate-y-[150%] opacity-0 pointer-events-none"
@@ -633,31 +632,36 @@ const seoMetaData = {
       <div
         class="bg-[#EDF4FC] rounded-[24px] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 backdrop-blur-sm"
       >
-        <div class="flex items-center gap-4 mb-3">
-          {/* Cambié start por center para mejor alineación en mobile */}
+        <div class="flex items-start gap-4 mb-4">
           <div
-            class="flex-shrink-0 w-16 h-16 bg-white/50 rounded-xl overflow-hidden"
+            class="flex-shrink-0 w-20 h-20 bg-white/50 rounded-2xl overflow-hidden p-2"
           >
             <img
               src={getUrl(images.logoCenote)}
               alt="Logo"
-              width="64"
-              height="64"
+              width="80"
+              height="80"
               class="w-full h-full object-contain"
             />
           </div>
-          <div class="flex flex-col flex-grow">
-            <p class="text-black font-medium text-xs">
-              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.CENOTE.TITLE}
+          <div class="flex flex-col flex-grow py-0.5">
+            <p class="text-[#006083] font-bold text-xs uppercase tracking-wider">
+              {i18n.HOME_PAGE.CHOOSE_PLAN.PLANS.PRIVATE.TITLE}
+            </p>
+            <p class="text-black/60 text-[10px] mt-1 uppercase">
+              {i18n.DETAIL_PAGE.FORM_RESERVATION.PRICE_FROM}
             </p>
             <div class="flex items-baseline gap-1">
-              <span class="text-black font-bold text-xl tracking-tight">
+              <span class="text-black font-bold text-2xl tracking-tighter">
                 $2,089 USD
               </span>
               <span class="text-black/60 text-[10px] font-medium">
                 {i18n.DETAIL_PAGE.FORM_RESERVATION.PER_GROUP}
               </span>
             </div>
+            <p class="text-black/50 text-[10px] mt-1 italic">
+              {i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_30_DAYS}
+            </p>
           </div>
         </div>
         <div slot="sticky-button">
@@ -665,7 +669,7 @@ const seoMetaData = {
         </div>
       </div>
     </div>
-    <!-- termina seccion sticky para mobile -->
+    
   </main>
 </Layout>
 
@@ -676,11 +680,11 @@ const seoMetaData = {
   .swiper-pagination-bullet-active {
     background: #005b71 !important;
   }
-  /* Ajusta el selector según el nombre de tu componente de navegación */
+  
   header,
   nav {
     z-index: 100 !important;
-    position: relative; /* O fixed/sticky según lo tengas */
+    position: relative; 
   }
 
   .swiper-slide {
@@ -738,12 +742,11 @@ const seoMetaData = {
     overflow: visible !important;
   }
 
-  /* Forzar que el widget de Bokun tenga un z-index superior a todo el footer */
   .bokun-calendar-container,
   .bokun-modal-overlay,
   #bokun-widget-container {
     z-index: 9999 !important;
-    position: fixed !important; /* El calendario siempre debe ser relativo a la pantalla */
+    position: fixed !important; 
   }
 </style>
 
@@ -785,7 +788,7 @@ const seoMetaData = {
           if (document.body.classList.contains("is-nav-open")) return;
 
           if (entry.isIntersecting) {
-            // MODO ESTÁTICO (Encima del footer)
+            
             stickyCard.classList.remove(
               "fixed",
               "bottom-6",
@@ -793,7 +796,7 @@ const seoMetaData = {
               "right-4",
               "z-40",
             );
-            // Añadimos z-[50] para que sea superior al footer y overflow-visible
+            
             stickyCard.classList.add(
               "relative",
               "mx-4",
@@ -806,11 +809,11 @@ const seoMetaData = {
               innerCard.classList.remove(
                 "shadow-[0_20px_60px_rgba(0,0,0,0.3)]",
               );
-              innerCard.classList.add("overflow-visible"); // Crucial para el calendario
+              innerCard.classList.add("overflow-visible"); 
             }
           } else {
             if (entry.boundingClientRect.top > 0) {
-              // MODO FLOTANTE
+              
               stickyCard.classList.remove(
                 "relative",
                 "mx-4",

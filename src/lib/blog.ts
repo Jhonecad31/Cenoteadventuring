@@ -1,4 +1,4 @@
-// Solo para desarrollo local
+
 if (import.meta.env.DEV) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 }
@@ -28,7 +28,6 @@ export interface BlogPost {
   seoData: SeoMetadata; 
 }
 
-// Configuración de la API (Ajustar según sea necesario)
 const BASE_URL = import.meta.env.PUBLIC_CMS_API_URL || "https://localhost:44351/api/Content";
 const SITE_ID = import.meta.env.PUBLIC_SITE_ID || "5c88eee8-450d-4154-9c25-310217861130";
 const TABLE_NAME = import.meta.env.PUBLIC_TABLE_NAME || "snorkell";
@@ -55,8 +54,7 @@ export const getBlogs = async (siteId = SITE_ID, tableName = TABLE_NAME): Promis
       console.log("First post status:", data[0].postStatus);
       console.log("First post title:", data[0].postTitle);
     }
-    
-    // Filtramos solo los que están publicados
+
     const publishedPosts = (data as BlogPost[]).filter(post => 
       post.postStatus === 'publish' || post.postStatus === 'published'
     );
