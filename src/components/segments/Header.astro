@@ -22,6 +22,11 @@ const lang = getLangFromUrl(Astro.url);
 const k = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
+const { pathname } = Astro.url;
+const isBlogOrContact = ['/blog', '/contact'].some((path) =>
+	pathname.includes(path)
+);
+
 const navigation = [
 	{ title: k('nav.home'), link: translatePath('/') },
 	{ title: k('nav.cenoteTrail'), link: translatePath('/cenote-trail/') },
@@ -56,7 +61,13 @@ const navigation = [
 				<div
 					id="logo-completo"
 					class="transition-all duration-500 opacity-100 hidden lg:block">
-					<LogoContainer class="h-20 p-1" />
+					{
+						isBlogOrContact ? (
+							<LogoContainer class="h-20 p-1" />
+						) : (
+							<Logo_blanco class="h-20 p-1" />
+						)
+					}
 				</div>
 
 				<div
@@ -68,7 +79,13 @@ const navigation = [
 				<div
 					id="logo-movil"
 					class="transition-all duration-500 opacity-100 block lg:hidden">
-					<Logo_blanco class="h-14 p-1" />
+					{
+						isBlogOrContact ? (
+							<LogoContainer class="h-14 p-1" />
+						) : (
+							<Logo_blanco class="h-14 p-1" />
+						)
+					}
 				</div>
 			</a>
 		</div>
@@ -226,9 +243,10 @@ const navigation = [
 		);
 
 		const useDarkTheme = isScrolled || isSpecialPage;
+		const isMini = isScrolled; // Solo reducimos el tamaño al hacer scroll real
 
 		header?.classList.toggle('bg-[#F8FAFC]', useDarkTheme);
-		header?.classList.toggle('is-scrolled', useDarkTheme);
+		header?.classList.toggle('is-scrolled', isMini);
 		header?.classList.toggle('h-20', useDarkTheme);
 		header?.classList.toggle('h-24', !useDarkTheme);
 
