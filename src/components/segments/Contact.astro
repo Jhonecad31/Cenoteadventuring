@@ -14,7 +14,6 @@ import TagH1 from "../global/TagH1.astro";
 import { getI18N } from "@/i18n";
 import TagP from "../global/TagP.astro";
 import FormContact from "../others/FromContact";
-import { Trip } from "@/icons/allIcons";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -62,7 +61,6 @@ const seoMetaData = {
 <BaseLayout {...seoMetaData}>
   <main class="bg-[#EDF4FC] pt-32 pb-20">
     <div class="max-w-6xl mx-auto px-6">
-      
       <div class="text-center mb-16">
         <TagH1
           class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl"
@@ -77,7 +75,6 @@ const seoMetaData = {
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
-        
         <div class="lg:col-span-5 space-y-8">
           <div
             class="bg-[#006083] text-white p-6 md:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
@@ -161,7 +158,6 @@ const seoMetaData = {
         </div>
 
         <div class="relative group">
-          
           <div
             class="absolute -inset-0.5 bg-gradient-to-r from-[#006083] to-cyan-500 rounded-[2.5rem] opacity-10 group-hover:opacity-20 blur transition duration-500"
           >
@@ -179,7 +175,7 @@ const seoMetaData = {
         <div class="mt-8 text-center md:text-left">
           <p class="text-sm text-[#001524]/50 italic">
             * Ruta de los Cenotes, Quintana Roo Puerto Morelos - Leona Vicario
-            KM 19.1, 77580 Puerto Morelos, Q.R. — A 20 minutos de Cancún.
+            KM 19.1, 77580 Puerto Morelos, Q.R.
           </p>
         </div>
       </section>

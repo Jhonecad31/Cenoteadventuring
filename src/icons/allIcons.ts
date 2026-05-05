@@ -1,10 +1,8 @@
 
-import CenoteAdventure from "@/icons/brands/cenoteadventuring_2.svg";
 
 import IconFlagUSA from "@/icons/flags/usa.svg";
 import IconFlagMEX from "@/icons/flags/mex.svg";
  
-import Tipadvisor from "@/icons/awards/tripadvisor-tbotb.svg"
 import Natgeo from "@/icons/awards/natgeo-traveller-black.svg"
 import Wordl from "@/icons/awards/world-travel-awards.svg"
 import Facebook from "@/icons/social-media/facebook.svg"
@@ -27,10 +25,8 @@ import Laurel3 from "@/icons/awards/Premios-laureles-01-03 (1).svg"
 export {
     IconFlagMEX,
     IconFlagUSA,
-    Tipadvisor,
     Natgeo,
     Wordl,
-    CenoteAdventure,
     Facebook,
     Instagram,
     Tripadvaisor,

@@ -1,9 +1,6 @@
 ---
 import { getI18N } from "@/i18n";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import TagH1 from "@/components/global/TagH1.astro";
-import TagH2 from "@/components/global/TagH2.astro";
-import TagH3 from "@/components/global/TagH3.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
 import { Laurel1, Laurel2, Laurel3 } from "@/icons/allIcons";
@@ -12,10 +9,6 @@ const i18n = getI18N({ currentLocale }) as any;
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const images = {
   imgCenote: "/Cenote-Adventuring/CenoteA.6.webp",
-  imgDetails1: "/Cenote-Adventuring/CenoteA.4.webp",
-  imgDetails2: "/Cenote-Adventuring/CenoteA.5.webp",
-  img1: "/Cenote-Adventuring/CenoteA.8.webp",
-  img2: "/Cenote-Adventuring/CenoteA.3.webp",
   img3: "/Cenote-Adventuring/CenoteA.1.webp",
 };
 
@@ -307,33 +300,6 @@ const getUrl = (id: string, w = 800) =>
         heroImg.style.transform = `translateY(${scrollValue * 0.2}px) scale(1.05)`;
       }
     });
-    const wrapper = document.getElementById("carousel-wrapper");
-    const items = document.querySelectorAll("[data-carousel-item]");
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
-    let currentIndex = 0;
-
-    function showItem(index) {
-      if (window.innerWidth >= 768) return; 
-
-      items.forEach((item, i) => {
-        item.style.display = i === index ? "flex" : "none";
-      });
-    }
-
-    nextBtn?.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      showItem(currentIndex);
-    });
-
-    prevBtn?.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      showItem(currentIndex);
-    });
-
-    if (window.innerWidth < 768) {
-      showItem(0);
-    }
   </script>
 
   <style>

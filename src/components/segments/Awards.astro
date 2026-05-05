@@ -2,16 +2,9 @@
 import { getI18N } from "@/i18n";
 import TagH1 from "@/components/global/TagH1.astro";
 import TagP from "@/components/global/TagP.astro";
-import { ChevronRight } from "lucide-react";
 import { Natgeo, Tripadvaisor, Wordl } from "@/icons/allIcons";
-
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
-
-const seoMetaData = {
-  title: i18n?.Selection?.ABOUT_US_PAGE?.TITLE || "Cenote Adventure",
-  description: i18n?.SEO?.ABOUT_US_PAGE?.DESCRIPTION || "Default description",
-};
 
 const related_awards = [
   {
@@ -91,15 +84,7 @@ const related_awards = [
   </div>
 </section>
 
-<script>
-  window.addEventListener("scroll", () => {
-    const heroImg = document.getElementById("hero-img");
-    if (heroImg) {
-      const scrollValue = window.scrollY;
-      heroImg.style.transform = `translateY(${scrollValue * 0.3}px) scale(1.05)`;
-    }
-  });
-</script>
+
 
 <style>
   
