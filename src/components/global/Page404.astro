@@ -16,8 +16,8 @@ const seoMetaDatos = {
 };
 ---
 
-<BaseLayout seo={seoMetaDatos}>
-  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#F8FAFC]">
+<BaseLayout seo={seoMetaDatos} showFooter={false} bodyClass="bg-[#F8FAFC]">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F8FAFC]">
     
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
         <span class="text-[30rem] font-bold">404</span>
@@ -41,15 +41,13 @@ const seoMetaDatos = {
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href={translatePath("/")} class="group relative inline-flex items-center justify-center">
-    <button
-      class="bg-[#006083] text-white rounded-full px-10 h-14 uppercase tracking-[0.3em] text-[11px] font-bold transition-all duration-500 hover:bg-[#006083] hover:shadow-[0_10px_20px_rgba(0,96,131,0.2)] hover:-translate-y-1 active:scale-95"
-    >
-      {i18n.ACCESSIBILITY?.GO_TO_HOME || "Back to Home"}
-    </button>
-    
-    <div class="absolute -inset-1 bg-gradient-to-r from-[#006083] to-[#00A3C4] rounded-full blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-  </a>
+          <a
+            href={translatePath("/")}
+            class="group relative inline-flex items-center justify-center bg-[#006083] text-white rounded-full px-10 h-14 uppercase tracking-[0.3em] text-[11px] font-bold transition-all duration-500 hover:shadow-[0_10px_20px_rgba(0,96,131,0.2)] hover:-translate-y-1 active:scale-95 z-20"
+          >
+            {i18n.ACCESSIBILITY?.GO_TO_HOME || "Back to Home"}
+            <div class="absolute -inset-1 bg-gradient-to-r from-[#006083] to-[#00A3C4] rounded-full blur opacity-0 group-hover:opacity-20 transition duration-500 -z-10"></div>
+          </a>
           
           <a 
             href={translatePath("/contact")} 

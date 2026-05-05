@@ -51,6 +51,7 @@ const socialMedia = [
   <div
     class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8"
   >
+    {/* SECCIÓN DE CONTACTO: Se mantiene primero en el DOM (arriba en móvil) */}
     <div
       class="flex flex-col gap-6 lg:col-span-4 space-y-3 w-full max-w-md mx-auto"
     >
@@ -132,6 +133,7 @@ const socialMedia = [
       </div>
     </div>
 
+    {/* SECCIÓN DE LOGO Y NAVEGACIÓN */}
     <div
       class="lg:col-span-8 flex flex-row flex-wrap items-start gap-y-10 lg:pl-12"
     >
@@ -140,62 +142,64 @@ const socialMedia = [
       </div>
 
       <div
-        class="flex flex-col gap-4 w-1/2 lg:w-auto lg:w-full lg:max-w-md lg:mx-auto"
+        class="flex flex-col gap-4 w-1/2 lg:w-auto lg:w-full lg:max-w-md lg:mx-auto items-center lg:items-start text-center lg:text-left"
       >
-        <h3
-          class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
-        >
-          {i18n.HOME_PAGE.FOOTER.TRADUCTION.ABOUT}
-        </h3>
-        <nav class="mt-4">
-          <ul
-            class="flex flex-col gap-3 text-[11px] md:text-sm uppercase tracking-[0.15em] font-light"
+          <h3
+            class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
           >
+            {i18n.HOME_PAGE.FOOTER.TRADUCTION.ABOUT}
+          </h3>
+          <nav class="mt-2">
+            <ul
+              class="flex flex-col gap-3 text-[11px] md:text-sm uppercase tracking-[0.15em] font-light items-center lg:items-start"
+            >
+              {
+                navFooter.map((item) => (
+                  <li>
+                    <a
+                      href={item.link}
+                      class="hover:text-cyan-300 transition-colors"
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
+
+      <div
+        class="flex flex-col gap-4 items-center lg:items-end space-y-2 w-1/2 lg:w-5xl lg:-mt-80 text-center lg:text-right"
+      >
+          <h3
+            class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
+          >
+            {i18n.HOME_PAGE.FOOTER.TRADUCTION.FOLLOW}
+          </h3>
+          <ul class="flex flex-col gap-4 mt-2 items-center lg:items-start">
             {
-              navFooter.map((item) => (
+              socialMedia.map(({ title, icon: Icon, link }) => (
                 <li>
                   <a
-                    href={item.link}
-                    class="hover:text-cyan-300 transition-colors"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-3 group"
                   >
-                    {item.title}
+                    <Icon
+                      size={20}
+                      className="group-hover:scale-110 transition-transform"
+                    />
+                    <span class="text-[11px] md:text-sm uppercase tracking-[0.1em] group-hover:opacity-70 transition-opacity">
+                      {title}
+                    </span>
                   </a>
                 </li>
               ))
             }
           </ul>
-        </nav>
-      </div>
-
-      <div class="flex flex-col gap-4 items-end space-y-2 lg:w-5xl lg:-mt-80">
-        <h3
-          class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
-        >
-          {i18n.HOME_PAGE.FOOTER.TRADUCTION.FOLLOW}
-        </h3>
-        <ul class="flex flex-col gap-4 mt-4 items-end lg:items-start">
-          {
-            socialMedia.map(({ title, icon: Icon, link }) => (
-              <li>
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center gap-3 group"
-                >
-                  <Icon
-                    size={20}
-                    className="group-hover:scale-110 transition-transform lg:order-none order-2"
-                  />
-                  <span class="text-[11px] md:text-sm uppercase tracking-[0.1em] order-1 lg:order-none group-hover:opacity-70 transition-opacity">
-                    {title}
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+        </div>
     </div>
 
     <div class="lg:col-span-12 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -216,13 +220,13 @@ const socialMedia = [
         <div
           class="flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium h-full"
         >
-          <a href="#" class="hover:text-white transition-colors"
+          <a href={translatePath("/")} class="hover:text-white transition-colors"
             >Privacy Policy</a
           >
-          <a href="#" class="hover:text-white transition-colors"
+          <a href={translatePath("/")} class="hover:text-white transition-colors"
             >Terms of Service</a
           >
-          <a href="#" class="hover:text-white transition-colors"
+          <a href={translatePath("/")} class="hover:text-white transition-colors"
             >Cookies Settings</a
           >
         </div>

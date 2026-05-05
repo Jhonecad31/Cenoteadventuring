@@ -221,13 +221,13 @@ const navigation = [
 		const logoReducido = document.getElementById('logo-reducido');
 		const logoMovil = document.getElementById('logo-movil');
 
-		const isSpecialPage = ['/contact', '/404'].some((path) =>
+		const isSpecialPage = ['/contact', '/404', '/blog'].some((path) =>
 			window.location.pathname.includes(path),
 		);
 
 		const useDarkTheme = isScrolled || isSpecialPage;
 
-		header?.classList.toggle('bg-[#EDF4FC]', useDarkTheme);
+		header?.classList.toggle('bg-[#F8FAFC]', useDarkTheme);
 		header?.classList.toggle('is-scrolled', useDarkTheme);
 		header?.classList.toggle('h-20', useDarkTheme);
 		header?.classList.toggle('h-24', !useDarkTheme);

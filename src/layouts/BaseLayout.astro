@@ -7,7 +7,7 @@ import { getLangFromUrl } from "@/i18n/utils";
 import '@/styles/global.css';
 
 const lang = getLangFromUrl(Astro.url);
-const { seo, offI18n, showFooter = true} = Astro.props;
+const { seo, offI18n, showFooter = true, bodyClass = "bg-[#EDF4FC]"} = Astro.props;
 ---
 
 <!doctype html>
@@ -21,7 +21,7 @@ const { seo, offI18n, showFooter = true} = Astro.props;
         <slot name="schema-jsonld" />
     </head>
     
-    <body id="body" class="bg-[#EDF4FC] font-sans antialiased text-[#001524] overflow-x-hidden w-full">
+    <body id="body" class={`${bodyClass} font-sans antialiased text-[#001524] overflow-x-hidden w-full`}>
         
         <noscript>
             <iframe 

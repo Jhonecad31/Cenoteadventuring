@@ -99,7 +99,8 @@
     },
     "GALLERY": {
       "TITLE": "Sumérgete en la magia de la selva maya y sus cenotes ocultos.",
-      "DESCRIPTION": "Explora nuestra galería para ser testigo de la impresionante belleza de los cenotes más exclusivos de Puerto Morelos. Desde aguas cristalinas hasta paisajes vibrantes."
+      "DESCRIPTION": "Explora nuestra galería para ser testigo de la impresionante belleza de los cenotes más exclusivos de Puerto Morelos. Desde aguas cristalinas hasta paisajes vibrantes.",
+      "MOVIL": "Desliza para explorar →"
     },
     "CHOOSE_PLAN": {
       "TITLE": "Elige el Plan Perfecto para tu Aventura",
@@ -536,7 +537,8 @@
       },
       "GALLERY": {
         "TITLE": "Entra en la magia de la selva maya y los cenotes ocultos",
-        "DESCRIPTION": "Explora nuestra galería para presenciar la impresionante belleza de los cenotes más exclusivos de Puerto Morelos. Desde aguas cristalinas y formaciones rocosas antiguas hasta vibrantes paisajes selváticos."
+        "DESCRIPTION": "Explora nuestra galería para presenciar la impresionante belleza de los cenotes más exclusivos de Puerto Morelos. Desde aguas cristalinas y formaciones rocosas antiguas hasta vibrantes paisajes selváticos.",
+        "MOVIL": "Desliza para explorar →"
       },
       "SCHEDULES": {
         "TITLE": "Horarios disponibles para la aventura",
@@ -686,7 +688,8 @@
       },
       "GALLERY": {
         "TITLE": "Sumérgete en la magia de la selva maya y sus cenotes ocultos.",
-        "DESCRIPTION": "Explora nuestra galería para ver la belleza de los cenotes más exclusivos de Puerto Morelos."
+        "DESCRIPTION": "Explora nuestra galería para ver la belleza de los cenotes más exclusivos de Puerto Morelos.",
+        "MOVIL": "Desliza para explorar →"
       },
       "SCHEDULES": {
         "TITLE": "Horarios disponibles",

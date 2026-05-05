@@ -98,7 +98,8 @@
     },
     "GALLERY": {
       "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
-      "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+      "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
+      "MOVIL": "Swipe to explore →"
     },
     "CHOOSE_PLAN": {
       "TITLE": "Find Your Ultimate Cenote Adventure",
@@ -549,7 +550,8 @@
       },
       "GALLERY": {
         "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
-        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
+        "MOVIL": "Swipe to explore →"
       },
       "SCHEDULES": {
         "TITLE": "Available Schedules for Your Private Snorkeling Tour",
@@ -695,7 +697,8 @@
       },
       "GALLERY": {
         "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
-        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures."
+        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
+        "MOVIL": "Swipe to explore →"
       },
       "SCHEDULES": {
         "TITLE": "Available Schedules for the Snorkeling Adventure",
