@@ -28,9 +28,9 @@ const seoMetaData = {
   <article class="bg-white pt-32 pb-20 min-h-screen">
     <header class="max-w-4xl mx-auto px-6 mb-12">
       <div class="flex items-center gap-3 mb-6">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#006083] bg-[#006083]/5 px-3 py-1 rounded-full">
+        <!-- <span class="text-xs font-bold uppercase tracking-widest text-[#006083] bg-[#006083]/5 px-3 py-1 rounded-full">
           {post.tableName.replace(/_/g, ' ')}
-        </span>
+        </span> -->
         <span class="text-xs text-slate-400 uppercase tracking-widest">
           {formattedDate}
         </span>
@@ -40,7 +40,7 @@ const seoMetaData = {
         {post.postTitle}
       </TagH1>
 
-      {post.seoData?.ogImage && (
+      <!-- {post.seoData?.ogImage && (
         <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mb-12 aspect-video">
           <img 
             src={post.seoData.ogImage} 
@@ -48,7 +48,7 @@ const seoMetaData = {
             class="w-full h-full object-cover"
           />
         </div>
-      )}
+      )} -->
     </header>
 
     <div class="max-w-3xl mx-auto px-6">

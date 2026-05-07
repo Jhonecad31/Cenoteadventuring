@@ -23,7 +23,7 @@ const k = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const { pathname } = Astro.url;
-const isBlogOrContact = ['/blog', '/contact'].some((path) =>
+const isBlogOrContact = ['/blog', '/contact', '/about'].some((path) =>
 	pathname.includes(path)
 );
 
