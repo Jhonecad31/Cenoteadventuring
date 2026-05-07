@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: "https://cenoteadventuring.vercel.app/",
+  site: "https://cenoteadventuring.com/",
   adapter: vercel(),
   output: 'server',
   trailingSlash: 'ignore',
