@@ -30,9 +30,13 @@ export interface BlogPost {
 
 const BASE_URL = import.meta.env.PUBLIC_CMS_API_URL || "https://localhost:44351/api/Content";
 const SITE_ID = import.meta.env.PUBLIC_SITE_ID || "5c88eee8-450d-4154-9c25-310217861130";
-const TABLE_NAME = import.meta.env.PUBLIC_TABLE_NAME || "snorkell";
+const TABLE_NAME = import.meta.env.PUBLIC_TABLE_NAME || "cenote";
 
-export const getBlogs = async (siteId = SITE_ID, tableName = TABLE_NAME): Promise<BlogPost[]> => {
+export const getBlogs = async (
+  siteId = SITE_ID,
+  tableName = TABLE_NAME,
+  preview = false
+): Promise<BlogPost[]> => {
   try {
     const url = new URL(`${BASE_URL}/getPosts`);
     url.searchParams.append("siteId", siteId);
@@ -49,10 +53,11 @@ export const getBlogs = async (siteId = SITE_ID, tableName = TABLE_NAME): Promis
     }
     const data = await res.json();
     console.log(`Successfully fetched ${data.length} posts from CMS`);
-    
-    if (data.length > 0) {
-      console.log("First post status:", data[0].postStatus);
-      console.log("First post title:", data[0].postTitle);
+
+    // En modo preview se incluyen también los borradores
+    if (preview) {
+      console.log(`Preview mode: returning all ${data.length} posts (including drafts)`);
+      return data as BlogPost[];
     }
 
     const publishedPosts = (data as BlogPost[]).filter(post => 
@@ -67,7 +72,14 @@ export const getBlogs = async (siteId = SITE_ID, tableName = TABLE_NAME): Promis
   }
 };
 
-export const getPostBySlug = async (slug: string, siteId = SITE_ID, tableName = TABLE_NAME): Promise<BlogPost | null> => {
-  const blogs = await getBlogs(siteId, tableName);
-  return blogs.find(post => post.postName === slug) || null;
+export const getPostBySlug = async (
+  slug: string,
+  siteId = SITE_ID,
+  tableName = TABLE_NAME,
+  preview = false
+): Promise<BlogPost | null> => {
+  const blogs = await getBlogs(siteId, tableName, preview);
+  const normalizedSlug = slug.toLowerCase().trim();
+  return blogs.find(post => post.postName?.toLowerCase().trim() === normalizedSlug) || null;
 };
+

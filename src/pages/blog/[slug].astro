@@ -8,7 +8,10 @@ if (!slug) {
   return Astro.redirect('/404');
 }
 
-const post = await getPostBySlug(slug);
+// Modo preview: permite ver borradores cuando se pasa ?preview=true desde el CMS
+const isPreview = Astro.url.searchParams.get('preview') === 'true';
+
+const post = await getPostBySlug(slug, undefined, undefined, isPreview);
 
 if (!post) {
   return Astro.redirect('/404');
