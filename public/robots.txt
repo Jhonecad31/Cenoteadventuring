@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /thanks
 
 Sitemap: https://cenoteadventuring.com/sitemap-index.xml

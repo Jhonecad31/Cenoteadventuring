@@ -1,9 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import partytown from '@astrojs/partytown';
 
 import vercel from '@astrojs/vercel';
 
@@ -12,10 +12,29 @@ export default defineConfig({
   adapter: vercel(),
   output: 'server',
   trailingSlash: 'ignore',
-  integrations: [react(), sitemap()],
-  vite: {
-    plugins: [tailwindcss()]
-  },
+  integrations: [react(), sitemap({
+    i18n: {
+      defaultLocale: 'en',
+      locales: {
+        en: 'en-US',
+        es: 'es-ES',
+      }
+    },
+    filter: (page) =>
+      !page.includes('/thanks')
+  }),
+  partytown({
+    config: {
+      forward: ['fbq'],
+      resolveUrl: (url, location) => {
+        if (url.hostname === 'connect.facebook.net') {
+          return new URL(`/api/proxy-facebook-pixel?url=${encodeURIComponent(url.href)}`, location.origin);
+        }
+        return url;
+      },
+    },
+  }),
+  ],
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
@@ -23,4 +42,7 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });

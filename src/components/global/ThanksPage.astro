@@ -1,0 +1,60 @@
+---
+import { getI18N } from "@/i18n";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TagH1 from "@/components/global/TagH1.astro";
+import TagP from "@/components/global/TagP.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const seoMetaDatos = {
+    title: i18n.THANKS_PAGE.TITLE,
+    robots: "noindex, nofollow",
+};
+---
+
+<BaseLayout seo={seoMetaDatos}>
+    <section
+        class="container mx-auto flex justify-center text-center my-10 lg:mb-32 lg:mt-20"
+    >
+        <div class="w-full md:w-3/5 px-6 py-12">
+            <div class="flex justify-center mb-8">
+                <div class="bg-[#006083] rounded-full p-6 shadow-xl shadow-[#006083]/20">
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        class="size-20 text-white" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        stroke-width="3" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+
+            <TagH1>
+                {i18n.THANKS_PAGE.TITLE}
+            </TagH1>
+            
+            <TagP class="!text-center mt-4">
+                {i18n.THANKS_PAGE.DESCRIPTION.TEXT_2}
+            </TagP>
+
+            <div class="mt-12">
+                <a
+                    href={translatePath("/")}
+                    class="inline-block bg-[#006083] hover:opacity-90 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 uppercase tracking-wider text-sm shadow-md"
+                >
+                    {i18n.ACCESSIBILITY.GO_TO_HOME}
+                </a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
