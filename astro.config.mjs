@@ -11,7 +11,7 @@ export default defineConfig({
   site: "https://cenoteadventuring.com/",
   adapter: vercel(),
   output: 'server',
-  trailingSlash: 'ignore',
+  trailingSlash: 'always',
   integrations: [react(), sitemap({
     i18n: {
       defaultLocale: 'en',
