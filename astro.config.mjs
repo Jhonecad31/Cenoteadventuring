@@ -8,7 +8,7 @@ import partytown from '@astrojs/partytown';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: "https://cenoteadventuring.com/",
+  site: "https://cenoteadventuring.com",
   adapter: vercel(),
   output: 'server',
   trailingSlash: 'always',
@@ -16,8 +16,8 @@ export default defineConfig({
     i18n: {
       defaultLocale: 'en',
       locales: {
-        en: 'en-US',
-        es: 'es-ES',
+        en: 'en',
+        es: 'es',
       }
     },
     filter: (page) =>
