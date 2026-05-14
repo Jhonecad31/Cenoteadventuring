@@ -1,6 +1,6 @@
 ---
 import { getI18N } from "@/i18n";
-import Layout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import BtnModalBokun from "@/components/others/BtnBokun";
 import TagH3 from "@/components/global/TagH3.astro";
 import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
@@ -121,7 +121,7 @@ const seoMetaData = {
 };
 ---
 
-<Layout seo={seoMetaData}>
+<BaseLayout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] pb-20 overflow-x-hidden">
     
     <section

@@ -22,8 +22,20 @@
       "META_TITLE": "The Best Cenotes in Puerto Morelos: Contac Us"
     },
     "ABOUT_US_PAGE": {
-      "TITLE": "Cenote Adventuring: Our Story ",
-      "DESCRIPTION": "Cenote Adventuring was created מתוך a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle."
+      "TITLE": "Cenote Adventuring: Our Story",
+      "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle."
+    },
+    "ACTIVITIES_PAGE": {
+      "TITLE": "Exciting Activities in Puerto Morelos: Cenote Tours and More",
+      "DESCRIPTION": "Discover the best things to do in Puerto Morelos. From snorkeling in cenotes to jungle adventures, we have the perfect experience for you."
+    },
+    "AWARDS_PAGE": {
+      "TITLE": "Cenote Adventuring: Awards and International Recognitions",
+      "DESCRIPTION": "Check out our awards and recognitions as one of the best adventure tour operators in the Mexican Caribbean."
+    },
+    "THANKS_PAGE": {
+      "TITLE": "Thank You for Your Reservation - Cenote Adventuring",
+      "DESCRIPTION": "We have received your reservation request. We will contact you shortly to confirm your adventure."
     },
     "REGULAR_CENOTE": {
       "HERO": {

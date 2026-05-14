@@ -29,9 +29,13 @@ const related_awards = [
 
 const getUrl = (id: string, w = 800) =>
   `${cloudEndpoint}/tr:w-${w},q-80,f-auto/${id}`;
+const seoMetaData = {
+  title: i18n.SEO.ABOUT_US_PAGE.TITLE,
+  description: i18n.SEO.ABOUT_US_PAGE.DESCRIPTION,
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seoMetaData}>
   <main class="bg-[#F8FAFC] overflow-x-hidden">
     <section
       class="relative h-[80vh] flex items-center justify-center overflow-hidden"

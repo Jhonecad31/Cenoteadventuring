@@ -1,5 +1,17 @@
 ---
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import ActivitiesPage from "@/components/segments/Activities.astro"
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale }) as any;
+
+const seoMetaData = {
+    title: i18n.SEO.ACTIVITIES_PAGE.TITLE,
+    description: i18n.SEO.ACTIVITIES_PAGE.DESCRIPTION,
+};
 ---
 
-<ActivitiesPage/>
+<BaseLayout seo={seoMetaData}>
+    <ActivitiesPage/>
+</BaseLayout>

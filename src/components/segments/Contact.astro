@@ -52,13 +52,12 @@ const socialMedia = [
 ];
 
 const seoMetaData = {
-  title: i18n.SEO.CONTACT_PAGE.TITLE,
-  description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
-  metaTitle: i18n.SEO.CONTACT_PAGE.META_TITLE,
+    title: i18n.SEO.CONTACT_PAGE.TITLE,
+    description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
 };
 ---
 
-<BaseLayout {...seoMetaData}>
+<BaseLayout seo={seoMetaData}>
   <main class="bg-[#EDF4FC] pt-32 pb-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">

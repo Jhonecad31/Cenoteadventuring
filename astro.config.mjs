@@ -8,7 +8,7 @@ import partytown from '@astrojs/partytown';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: "https://cenoteadventuring.com",
+  site: "https://cenoteadventuring.com/",
   adapter: vercel(),
   output: 'server',
   trailingSlash: 'always',

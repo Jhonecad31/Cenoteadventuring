@@ -25,6 +25,18 @@
       "TITLE": "Cenote Adventuring: Nuestra Historia",
       "DESCRIPTION": "Cenote Adventuring fue creado a partir de la pasión por compartir la belleza natural de Puerto Morelos y la selva que lo rodea."
     },
+    "ACTIVITIES_PAGE": {
+      "TITLE": "Actividades en Puerto Morelos: Tours de Cenotes y más",
+      "DESCRIPTION": "Descubre las mejores cosas que hacer en Puerto Morelos. Desde snorkel en cenotes hasta aventuras en la selva, tenemos la experiencia perfecta para ti."
+    },
+    "AWARDS_PAGE": {
+      "TITLE": "Cenote Adventuring: Premios y Reconocimientos Internacionales",
+      "DESCRIPTION": "Conoce nuestros premios y reconocimientos como uno de los mejores operadores de tours de aventura en el Caribe Mexicano."
+    },
+    "THANKS_PAGE": {
+      "TITLE": "Gracias por tu Reserva - Cenote Adventuring",
+      "DESCRIPTION": "Hemos recibido tu solicitud de reserva. Nos pondremos en contacto contigo pronto para confirmar tu aventura."
+    },
     "REGULAR_CENOTE": {
       "HERO": {
         "TITLE": "Aventura en Cenotes",
