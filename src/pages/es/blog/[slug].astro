@@ -8,7 +8,8 @@ if (!slug) {
   return Astro.redirect('/es/404');
 }
 
-const post = await getPostBySlug(slug);
+const { currentLocale } = Astro;
+const post = await getPostBySlug(slug, undefined, undefined, false, currentLocale);
 
 if (!post) {
   return Astro.redirect('/es/404');

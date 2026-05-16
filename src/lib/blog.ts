@@ -35,12 +35,14 @@ const TABLE_NAME = import.meta.env.PUBLIC_TABLE_NAME || "snorkell";
 export const getBlogs = async (
   siteId = SITE_ID,
   tableName = TABLE_NAME,
-  preview = false
+  preview = false,
+  locale = 'en'
 ): Promise<BlogPost[]> => {
   try {
     const url = new URL(`${BASE_URL}/getPosts`);
     url.searchParams.append("siteId", siteId);
     url.searchParams.append("TableName", tableName);
+    url.searchParams.append("lang", locale);
     
     console.log("Fetching blogs from:", url.toString());
     
@@ -76,9 +78,10 @@ export const getPostBySlug = async (
   slug: string,
   siteId = SITE_ID,
   tableName = TABLE_NAME,
-  preview = false
+  preview = false,
+  locale = 'en'
 ): Promise<BlogPost | null> => {
-  const blogs = await getBlogs(siteId, tableName, preview);
+  const blogs = await getBlogs(siteId, tableName, preview, locale);
   const normalizedSlug = slug.toLowerCase().trim();
   return blogs.find(post => post.postName?.toLowerCase().trim() === normalizedSlug) || null;
 };

@@ -37,6 +37,11 @@
       "TITLE": "Thank You for Your Reservation - Cenote Adventuring",
       "DESCRIPTION": "We have received your reservation request. We will contact you shortly to confirm your adventure."
     },
+    "BLOG_PAGE": {
+      "TITLE": "Blog - Cenote Adventure",
+      "DESCRIPTION": "Discover the best stories and tips about Puerto Morelos cenotes.",
+      "META_TITLE": "Cenote Adventuring Blog: Tips and Stories"
+    },
     "REGULAR_CENOTE": {
       "HERO": {
         "TITLE": "Cenote adventuring",
@@ -742,7 +747,16 @@
       "MORE_ACTIVITIES": {
         "TITLE": "More Activities for you to enjoy",
         "DESCRIPTION": "Discover more exciting activities and tours to enhance your experience in Puerto Morelos and the Riviera Maya."
-      }
     }
+  }
+},
+"BLOG": {
+    "TITLE": "Our Blog",
+    "DESCRIPTION": "Stories, guides, and tips to make your cenote adventure unforgettable.",
+    "READ_MORE": "Read more",
+    "NO_POSTS": "New stories coming soon...",
+    "BACK": "Back to Blog",
+    "BY": "By",
+    "DEBUG_FOUND": "Debug: Found {count} posts"
   }
 }

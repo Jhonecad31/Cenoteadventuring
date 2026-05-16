@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { BlogPost } from "@/lib/blog";
-import { getLangFromUrl } from "@/i18n/utils";
+import { getI18N } from "@/i18n";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
 import TagH1 from "@/components/global/TagH1.astro";
 
 interface Props {
@@ -9,7 +10,9 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
+const { currentLocale: lang } = Astro;
+const i18n = getI18N({ currentLocale: lang }) as any;
+const translatePath = useTranslatedPath(lang);
 
 const formattedDate = new Date(post.postDate).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
   year: 'numeric',
@@ -27,6 +30,16 @@ const seoMetaData = {
 <BaseLayout {...seoMetaData}>
   <article class="bg-white pt-32 pb-20 min-h-screen">
     <header class="max-w-4xl mx-auto px-6 mb-12">
+      <a 
+        href={translatePath('/blog')}
+        class="inline-flex items-center text-[#006083] font-bold text-xs uppercase tracking-widest mb-10 hover:gap-3 transition-all"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        {i18n.BLOG?.BACK || (lang === 'es' ? 'Volver' : 'Back')}
+      </a>
+
       <div class="flex items-center gap-3 mb-6">
         <span class="text-xs text-slate-400 uppercase tracking-widest">
           {formattedDate}
