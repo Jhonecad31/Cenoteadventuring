@@ -44,28 +44,31 @@ export const getBlogs = async (
     url.searchParams.append("TableName", tableName);
     url.searchParams.append("lang", locale);
     
-    console.log("Fetching blogs from:", url.toString());
+    console.log(`Fetching blogs for locale: ${locale} from:`, url.toString());
     
     const res = await fetch(url.toString());
     if (!res.ok) {
       console.error(`Error fetching blogs: ${res.status} ${res.statusText}`);
-      const text = await res.text();
-      console.error("Response body:", text);
       return [];
     }
     const data = await res.json();
-    console.log(`Successfully fetched ${data.length} posts from CMS`);
+    console.log(`Successfully fetched ${data.length} posts from CMS for locale: ${locale}`);
+
+    if (data.length > 0) {
+      console.log("Sample post status:", data[0].postStatus);
+      console.log("Sample post title:", data[0].postTitle);
+    }
 
     // En modo preview se incluyen también los borradores
     if (preview) {
-      console.log(`Preview mode: returning all ${data.length} posts (including drafts)`);
       return data as BlogPost[];
     }
 
-    const publishedPosts = (data as BlogPost[]).filter(post => 
-      post.postStatus === 'publish' || post.postStatus === 'published'
-    );
-    console.log(`Found ${publishedPosts.length} published posts`);
+    const publishedPosts = (data as BlogPost[]).filter(post => {
+      const status = post.postStatus?.toLowerCase();
+      return status === 'publish' || status === 'published';
+    });
+    console.log(`Found ${publishedPosts.length} published posts for locale: ${locale}`);
     
     return publishedPosts;
   } catch (error) {
