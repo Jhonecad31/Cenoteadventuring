@@ -104,9 +104,8 @@ const mobileSections = [
 </style>
 
 <script>
-  import { Fancybox } from "@fancyapps/ui";
-  const initGallery = () => {
-    
+  const initGallery = async () => {
+    const { Fancybox } = await import("@fancyapps/ui");
     Fancybox.bind("[data-fancybox]", {
       Hash: false,
     });
