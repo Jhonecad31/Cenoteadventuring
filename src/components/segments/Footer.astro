@@ -137,11 +137,13 @@ const socialMedia = [
       class="lg:col-span-8 flex flex-row flex-wrap items-start gap-y-10 lg:pl-12"
     >
       <div class="w-full lg:w-auto flex justify-center lg:block lg:mt-35">
-        <Logo_blanco class="h-20 lg:h-28 w-auto opacity-90" />
+        <a href={translatePath("/")} class="block hover:scale-105 transition-transform duration-300">
+          <Logo_blanco class="h-20 lg:h-28 w-auto opacity-90" />
+        </a>
       </div>
 
       <div
-        class="flex flex-col gap-4 w-1/2 lg:w-auto lg:w-full lg:max-w-md lg:mx-auto items-center lg:items-start text-center lg:text-left"
+        class="flex flex-col gap-4 w-1/2 lg:w-auto lg:w-full lg:max-w-md lg:mx-auto items-center lg:items-start text-center lg:text-left relative z-10"
       >
           <h3
             class="font-serif text-sm md:text-lg tracking-[0.1em] uppercase border-b border-white/10 pb-2 w-fit"
@@ -219,14 +221,11 @@ const socialMedia = [
         <div
           class="flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium h-full"
         >
-          <a href={translatePath("/")} class="hover:text-white transition-colors"
+          <a href={translatePath("/privacy-policy/")} class="hover:text-white transition-colors"
             >Privacy Policy</a
           >
-          <a href={translatePath("/")} class="hover:text-white transition-colors"
-            >Terms of Service</a
-          >
-          <a href={translatePath("/")} class="hover:text-white transition-colors"
-            >Cookies Settings</a
+          <a href={translatePath("/terms-conditions/")} class="hover:text-white transition-colors"
+            >Terms & Conditions</a
           >
         </div>
       </div>

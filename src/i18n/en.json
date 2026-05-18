@@ -756,7 +756,92 @@
     "READ_MORE": "Read more",
     "NO_POSTS": "New stories coming soon...",
     "BACK": "Back to Blog",
-    "BY": "By",
-    "DEBUG_FOUND": "Debug: Found {count} posts"
+    "BY": "By"
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacy Notice",
+    "P1": "Pursuant to the Federal Law of Protection of Personal Data Held in Private Possession (Ley Federal de Protección de Datos Personales en Posesión de Particulares), we hereby inform you our Privacy Notice (“Privacy Notice”) (Aviso de Privacidad).",
+    "P2": "At OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV we are concerned about your privacy. We will use your personal data in a responsible and confidential manner. OPERADORA DE EXCURSIONES NAUTICAS SA DE CV is the responsible party of processing and using your personal data, located in Calle Nogal, sm 313, Alamos II, Cancun, Quintana Roo, cp 77533.",
+    "WHAT_COLLECT": {
+      "TITLE": "What information do we collect?",
+      "P1": "DE EXCURSIONES NÁUTICAS SA DE CV collects your personal data by means of our website www.extreme-adventure.us (hereinafter, the “Website”) and other different means and forms. We collect the following personal data: name, address, phone number(s), email, photography, nationality, occupation and name of employer, country of residence, alias in social networks (Twitter), hired services and credit card number(s). Such personal data will be collectively referred to as “Personal Data” (Datos Personales). [Likewise, when you visit our Website we collect your IP address, Internet browser, browsing preferences in our Website and browsing history].",
+      "P2": "www.extremeadventurecancun.com does not collect or process sensitive personal data.",
+      "P3": "The OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV Website uses cookies and web beacons. Cookies are automatically downloaded files, stored in your computer equipment when you browse an Internet website. Cookies allow the Internet server to recall data about the user and his/her browsing preferences. [Web beacons are images inserted within an Internet website or email message, which can be used to collect data or monitor user’s behavior in the website, or storing its IP address]. The Personal Data that we collect by these means is used exclusively for improving your browsing and use experience in our Website and electronic services."
+    },
+    "WHAT_USE": {
+      "TITLE": "What do we use your information for?",
+      "P1": "Your Personal Data will be used for the following purposes:",
+      "ESSENTIAL_TITLE": "Essential purposes:",
+      "ESSENTIAL_LIST": [
+        "Identification in order to access to our events and Website;",
+        "Reservations, purchases or acquisition of services;",
+        "Invoicing and billing products or services;",
+        "Updating and storage in customer database;",
+        "Contacting for any of these purposes;",
+        "Participate in raffles, competitions and contests, and in general, fulfilling our obligations with our clients."
+      ],
+      "NON_ESSENTIAL_TITLE": "Non-essential purposes:",
+      "NON_ESSENTIAL_P": "In addition to the above mentioned purposes, we may use your Personal Data for the following non-essential purposes:",
+      "NON_ESSENTIAL_LIST": [
+        "Informing about changes, products, services, gifts and/or special offers;",
+        "Using your image in OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV advertising;",
+        "Evaluating the quality of Company’s services, and improving your browsing experience in our Website."
+      ]
+    },
+    "WHO_SHARE": {
+      "TITLE": "Who do we share your Personal Data with?",
+      "P1": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV does not transfer your Personal Data to third parties without your previous consent, unless is otherwise provided by the applicable legal framework. If you decide to make an online purchase or reservation at the Website, you will be linked to a reservation interface and a third party booking engine provided by “Payworks online & PAY PAL\". While it appears to be part of our Website such booking engine is a service actually provided by a third party and governed by its own privacy policy and practices. Your privacy is our concern, so we have chosen the booking engine carefully.",
+      "P2": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV may reveal your Personal Data in order to comply with the applicable law or any mandate from a competent authority. OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV will not commercialize, sell or lease your Personal Data without your previous consent."
+    },
+    "LIMIT_USE": {
+      "TITLE": "How can you limit the use or exposure of your information?",
+      "P1": "You can disable the use of cookies and web beacons by accessing the browsing options configuration of most of web browsers.",
+      "P2": "Furthermore, you can exercise your right to revoke and oppose the processing of your Personal Data, or refuse its use for non-essential purposes, through the procedure described in this Privacy Notice."
+    },
+    "REVOKE_CONSENT": {
+      "TITLE": "How to revoke the consent to use your Personal Data or exercise your ARCO rights?",
+      "P1": "You have the right to access your Personal Data in our possession; rectify it if it is incorrect or incomplete; cancel your Personal Data when you consider it is no longer required for the established purposes, it is not being used for the purposes that you have consented to, or if the legal relationship is over; and to oppose to processing of your Personal Data for specific purposes (access, rectification, cancellation and opposition, hereinafter referred as “ARCO” rights). You also have the right to revoke the consent that you have granted us for processing your Personal Data, so we stop using it.",
+      "P2": "You can exercise your ARCO and revocation rights at any moment, for which purpose you must send an email directly to Email webmaster Extreme Adventuring. Said message shall include, at least the following information:",
+      "LIST": [
+        "Name, signature and address or any other contact information in order to notify you the response to your request.",
+        "Documents proving your identity or legal representation, if applicable.",
+        "Clear and precise description of the Personal Data for which you wish to exercise any of your ARCO rights, and any other information tending to facilitate the identification of your Personal Data."
+      ],
+      "P3": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV may reply to your application by email. OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV has the obligation to respond to your request within the following 20 (twenty) business days after receiving your request. Once such period has elapsed and in the case OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV has not replied your request, then you may file for the right’s protection procedure before the Federal Institute for Access to Public Information and Data Protection (Instituto Federal de Acceso a la información y Protección de Datos) (IFAI)."
+    },
+    "AMENDMENTS": {
+      "TITLE": "Amendments to the Privacy Notice",
+      "P1": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV may amend this Privacy Notice from time to time. Any amendment to this Privacy Notice will be informed to you by means of our Website or email. We will not be responsible if you do not learn of any amendment to this Privacy Notice or in case you do not receive that certain communication distributed by OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV. You may review the content of this Privacy Notice at any time in our Website or by sending a request to our email address info@extremeadventurecancun.com."
+    },
+    "LAW": {
+      "TITLE": "Applicable law",
+      "P1": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV is located in Mexico and Mexican law regulates all the matters related to the Personal Data. By providing your information to OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV, accessing or using our Website, you consent us to use your Personal Data as mentioned above, and accept this Privacy Notice."
+    },
+    "FOOTER": {
+      "DATE": "Last update of this Privacy Notice: January 2022.",
+      "EMAIL": "Email: "
+    }
+  },
+  "TERMS_CONDITIONS": {
+    "TITLE": "Terms and Conditions",
+    "CAMERAS": {
+      "TITLE": "Use of cameras policy",
+      "P1": "Based on international safety standards and ensuring the physical safety of visitors, cameras are not permitted during our adventure activities. Our activities require that your hands are free at all times. This includes cameras such as “point and shoot”, DSLR and SLR cameras, disposable cameras and cell phones.",
+      "EXCEPTIONS_TITLE": "Exceptions:",
+      "EXCEPTIONS_P": "Go Pro Cameras and its alike are only permited if they are mounted on the helmet with a head mount during activities. The use of action selfie sticks, chest mounts, hand or any other body part other than head ( helmet)is prohibited."
+    },
+    "CANCELLATION": {
+      "TITLE": "Cancellation Policy",
+      "P1": "100% refund if cancelacion is made 72 hours prior to activity date. 50% refund if cancelation is made 48 hours prior to activity date. 0% refund if cancelation is made 24hours or less prior to activity date.",
+      "NO_SHOW_TITLE": "No Show:",
+      "NO_SHOW_P": "Please be at least 5 min. before confirmed pickup time , transportación will have a 5 mins. Max of waiting torlerance. In case of no show amount charged is in no case refundable."
+    },
+    "CLIMATE": {
+      "TITLE": "Climate Guarantee",
+      "P1": "Sometimes activties have to be canceled due to extreme weather conditions, your activity will be rescheduled for a different day , if thats not possible due to your vacation plan, you will recibe a 100% refund. Extreme Adventuring is the only one that can cancel because of weather conditions! Clients canceling because of climate generates a 100% cancelation fee."
+    },
+    "FEES": {
+      "P1": "The value of the transaction may be subject to taxes, duties, foreign transaction, currency exchange or other fees. Your bank or credit or debit card company may convert the payment into the local currency and charge fees, resulting in differences between the amount displayed on www.extreme-adventure.us and Extreme-adventure-affiliated websites, and the final amount charged to your bank account or credit or debit card statement. Please contact your bank or card company if you have any questions concerning any applicable conversion or fees. Please note for bookings made in Brazil, the tax IOF (Tax Upon Financial Operations, 6.38%) is not included in the final booking value and will be charged to the credit or debit card used to make the purchase."
+    }
   }
 }

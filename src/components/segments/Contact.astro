@@ -52,8 +52,8 @@ const socialMedia = [
 ];
 
 const seoMetaData = {
-    title: i18n.SEO.CONTACT_PAGE.TITLE,
-    description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
+  title: i18n.SEO.CONTACT_PAGE.TITLE,
+  description: i18n.SEO.CONTACT_PAGE.DESCRIPTION,
 };
 ---
 
@@ -150,24 +150,15 @@ const seoMetaData = {
 
       <section class="relative">
         <div class="flex items-center gap-4 mb-8">
-          <div class="p-2 bg-[#006083] rounded-lg">
+          <div class="p-2 bg-[#006083] rounded-md">
             <MapPin size={20} className="text-white" />
           </div>
           <h3 class="font-serif text-2xl text-[#001524]">Nuestra Ubicación</h3>
         </div>
 
-        <div class="relative group">
-          <div
-            class="absolute -inset-0.5 bg-gradient-to-r from-[#006083] to-cyan-500 rounded-[2.5rem] opacity-10 group-hover:opacity-20 blur transition duration-500"
-          >
-          </div>
-
-          <div
-            class="relative bg-white p-3 rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden h-[500px] md:h-[600px]"
-          >
-            <div class="w-full h-full rounded-[1.8rem] overflow-hidden">
-              <Maps />
-            </div>
+        <div class="relative bg-white p-3 rounded-md border border-slate-200 shadow-sm overflow-hidden h-[500px] md:h-[600px]">
+          <div class="w-full h-full rounded-md overflow-hidden relative z-10">
+            <Maps />
           </div>
         </div>
 

@@ -23,7 +23,7 @@ const k = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const { pathname } = Astro.url;
-const isBlogOrContact = ['/blog', '/contact', '/about'].some((path) =>
+const isBlogOrContact = ['/blog/', '/contact/', '/about/', '/privacy-policy/', '/terms-conditions/'].some((path) =>
 	pathname.includes(path)
 );
 
@@ -232,7 +232,7 @@ const navigation = [
 		const logoReducido = document.getElementById('logo-reducido');
 		const logoMovil = document.getElementById('logo-movil');
 
-		const isSpecialPage = ['/contact', '/404', '/blog', '/thanks'].some((path) =>
+		const isSpecialPage = ['/contact', '/404', '/blog', '/thanks', '/privacy-policy', '/terms-conditions'].some((path) =>
 			window.location.pathname.includes(path),
 		);
 
