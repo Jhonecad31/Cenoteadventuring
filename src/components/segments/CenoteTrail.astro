@@ -2,7 +2,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getI18N } from "@/i18n";
-import TagH1 from "@/components/global/TagH1.astro";
+import TagH2 from "@/components/global/TagH2.astro";
 import TagP from "@/components/global/TagP.astro";
 import BContainer from "@/components/global/BContainer.astro";
 import Maps from "./Maps.astro";
@@ -130,11 +130,11 @@ const seoMetaData = {
 
               <div class="w-full lg:w-7/12">
                 <header class="mb-16">
-                  <TagH1
+                  <TagH2
                     class="font-serif md:text-4xl text-black leading-[1.2] tracking-tight -mb-10"
                   >
                     {i18n.RUTA_CENOTES_PAGE.WHAT_TO_EXPECT.TITLE}
-                  </TagH1>
+                  </TagH2>
                   <div class="h-[1px] w-12 bg-[#006083]/30 mt-8"></div>
                 </header>
 
