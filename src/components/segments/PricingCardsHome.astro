@@ -113,9 +113,12 @@ const plans = [
                 </div>
               </div>
 
-              <Button className="w-full bg-[#006083] hover:bg-[#006083]/90 text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto">
-                <a href={plan.href} class="w-full block">{i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON}</a>
-              </Button>
+              <a 
+                href={plan.href} 
+                class="w-full block text-center bg-[#006083] hover:bg-[#006083]/90 text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto font-medium transition-all duration-300 shadow-sm"
+              >
+                {i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON}
+              </a>
             </div>
           </div>
         </div>
