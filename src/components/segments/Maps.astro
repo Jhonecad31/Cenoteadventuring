@@ -93,18 +93,9 @@
     });
   }
 
-  const startMap = () => {
-    initMap();
-  };
-
-  if (document.readyState === "complete") {
-    startMap();
-  } else {
-    window.addEventListener("load", startMap);
-  }
-
-  document.addEventListener("astro:page-load", startMap);
-  document.addEventListener("astro:after-swap", startMap);
+  initMap();
+  document.addEventListener("astro:page-load", initMap);
+  document.addEventListener("astro:after-swap", initMap);
 </script>
 
 <style is:global>
