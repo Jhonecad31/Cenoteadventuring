@@ -50,7 +50,15 @@ const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
 </section>
 
 <script>
-  import("@mux/mux-player");
+  // Defer loading Mux Player to avoid blocking page load
+  const loadMux = () => {
+    import("@mux/mux-player");
+  };
+  if (document.readyState === "complete") {
+    loadMux();
+  } else {
+    window.addEventListener("load", loadMux);
+  }
 </script>
 
 <style>
