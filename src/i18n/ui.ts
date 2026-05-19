@@ -23,6 +23,8 @@ export const ui = {
         'nav.about': 'About us',
         'nav.contact': 'Contact',
         'nav.blog': 'Blog',
+        'aria.openMenu': 'Open main menu',
+        'aria.closeMenu': 'Close main menu',
     },
     es: {
         'nav.home': 'Inicio',
@@ -30,5 +32,7 @@ export const ui = {
         'nav.about': 'Sobre nosotros',
         'nav.contact': 'Contacto',
         'nav.blog': 'Blog',
+        'aria.openMenu': 'Abrir menú principal',
+        'aria.closeMenu': 'Cerrar menú principal',
     }
 } as const;

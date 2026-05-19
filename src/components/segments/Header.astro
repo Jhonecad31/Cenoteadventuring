@@ -44,7 +44,8 @@ const navigation = [
 		<div class="flex-none w-14 lg:hidden">
 			<button
 				class="text-white p-2 transition-colors duration-500"
-				id="open-menu">
+				id="open-menu"
+				aria-label={k('aria.openMenu')}>
 				<Menu
 					size={30}
 					strokeWidth={1.5}
@@ -118,7 +119,8 @@ const navigation = [
 
 				<button
 					id="close-menu"
-					class="text-white p-2">
+					class="text-white p-2"
+					aria-label={k('aria.closeMenu')}>
 					<X
 						size={35}
 						strokeWidth={1}
