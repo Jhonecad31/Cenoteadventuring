@@ -25,7 +25,7 @@ export default defineConfig({
   }),
   partytown({
     config: {
-      forward: ['fbq'],
+      forward: ['fbq', 'gtag', 'dataLayer.push'],
       resolveUrl: (url, location) => {
         if (url.hostname === 'connect.facebook.net') {
           return new URL(`/api/proxy-facebook-pixel?url=${encodeURIComponent(url.href)}`, location.origin);
