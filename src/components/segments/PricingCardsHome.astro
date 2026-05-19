@@ -57,13 +57,13 @@ const plans = [
         <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[550px] transition-transform hover:scale-[1.02] duration-300">
           <div class="relative h-60 md:h-72">
             <img
-              src={getUrl(plan.image)}
+              src={getUrl(plan.image, 600)}
               alt={plan.title}
               class="w-full h-full object-cover"
             />
             <div class="absolute bottom-4 left-4 p-2 rounded-lg backdrop-blur-sm">
               <img
-                src={getUrl(plan.logo)}
+                src={`${cloudEndpoint}${plan.logo}`}
                 alt="Logo"
                 class="h-12 w-auto"
               />
