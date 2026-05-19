@@ -15,12 +15,13 @@
 />
 
 <script>
-  async function initMap() {
+  import maplibregl from "maplibre-gl";
+
+  function initMap() {
     const container = document.getElementById("map");
     
     if (!container || container.children.length > 0) return;
 
-    const maplibregl = (await import("maplibre-gl")).default;
     const API_KEY = "f7d260a6-b7fc-4b60-84ee-e5dc4d2a2965";
 
     const locations = [
