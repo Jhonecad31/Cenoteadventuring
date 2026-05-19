@@ -93,9 +93,32 @@
     });
   }
 
-  initMap();
-  document.addEventListener("astro:page-load", initMap);
-  document.addEventListener("astro:after-swap", initMap);
+  const startMapObserver = () => {
+    const container = document.getElementById("map");
+    if (!container) return;
+
+    if (!("IntersectionObserver" in window)) {
+      initMap();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          initMap();
+          observer.disconnect();
+        }
+      });
+    }, {
+      rootMargin: "300px"
+    });
+
+    observer.observe(container);
+  };
+
+  startMapObserver();
+  document.addEventListener("astro:page-load", startMapObserver);
+  document.addEventListener("astro:after-swap", startMapObserver);
 </script>
 
 <style is:global>
