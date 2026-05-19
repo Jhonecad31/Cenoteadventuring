@@ -30,41 +30,66 @@ const mobileSections = [
 ];
 ---
 
-<section class="py-12 bg-[#F8FAFC] w-full overflow-hidden">
-  <TagH2 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
+<section class="py-16 md:py-24 bg-white w-full overflow-hidden">
+  <TagH2 class="max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
     {i18n.HOME_PAGE.GALLERY.TITLE}
   </TagH2>
-  <TagP class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 lg:text-lg md:text-2xl">
+  <TagP class="text-[#001524]/60 max-w-4xl mx-auto mb-8 md:mb-12 text-center! px-5 lg:text-lg md:text-2xl mt-4">
     {i18n.HOME_PAGE.GALLERY.DESCRIPTION}
   </TagP>
 
   <div class="hidden md:flex flex-row items-center justify-center gap-4 lg:gap-6 w-full px-4 min-h-[750px] py-10">
     
     <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0 translate-y-10">
-      <div class="aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farLeft, 2000)}>
-        <img src={getUrl(images.farLeft)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+      <div class="group relative aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farLeft, 2000)}>
+        <img src={getUrl(images.farLeft)} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
+        <div class="absolute inset-0 bg-[#006083]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <svg class="w-8 h-8 text-white scale-75 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
       </div>
     </div>
 
     <div class="flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0 -translate-y-6">
-      <div class="aspect-[4/6] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.left, 2000)}>
-        <img src={getUrl(images.left)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+      <div class="group relative aspect-[4/6] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.left, 2000)}>
+        <img src={getUrl(images.left)} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
+        <div class="absolute inset-0 bg-[#006083]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <svg class="w-8 h-8 text-white scale-75 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
       </div>
     </div>
 
-    <div class="w-[350px] lg:w-[500px] aspect-[4/5] rounded-md overflow-hidden shadow-2xl z-10 shrink-0 cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
-      <img src={getUrl(images.center)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Main View" />
+    <div class="group relative w-[350px] lg:w-[500px] aspect-[4/5] rounded-md overflow-hidden shadow-2xl z-10 shrink-0 cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.center, 2000)}>
+      <img src={getUrl(images.center)} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Main View" />
+      <div class="absolute inset-0 bg-[#006083]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <svg class="w-12 h-12 text-white scale-75 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
     </div>
 
     <div class="flex flex-col gap-3 w-[200px] lg:w-[240px] shrink-0 -translate-y-6">
-      <div class="aspect-[4/6] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.right, 2000)}>
-        <img src={getUrl(images.right)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+      <div class="group relative aspect-[4/6] rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.right, 2000)}>
+        <img src={getUrl(images.right)} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
+        <div class="absolute inset-0 bg-[#006083]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <svg class="w-8 h-8 text-white scale-75 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
       </div>
     </div>
 
     <div class="hidden xl:flex flex-col gap-3 w-[150px] lg:w-[180px] shrink-0 translate-y-10">
-      <div class="aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farRightBottom, 2000)}>
-        <img src={getUrl(images.farRightBottom)} class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+      <div class="group relative aspect-square rounded-md overflow-hidden shadow-sm cursor-zoom-in" data-fancybox="gallery" data-src={getUrl(images.farRightBottom, 2000)}>
+        <img src={getUrl(images.farRightBottom)} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
+        <div class="absolute inset-0 bg-[#006083]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <svg class="w-8 h-8 text-white scale-75 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
       </div>
     </div>
   </div>

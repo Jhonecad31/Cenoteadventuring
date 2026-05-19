@@ -278,19 +278,19 @@ const seoMetaData = {
                       <details
                         name="faq-accordion"
                         open={index === 0}
-                        class="group bg-[#EDF4FC] rounded-lg border border-white/50 shadow-sm overflow-hidden transition-all duration-300"
+                        class="group bg-white rounded-lg border border-slate-200/60 open:border-[#006083]/30 open:bg-sky-50/20 shadow-sm overflow-hidden transition-all duration-300"
                       >
                         <summary class="flex justify-between items-center cursor-pointer list-none p-10 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
                           <span class="pr-4">{faq.question}</span>
                           <div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                            <span class="text-3xl font-light text-gray-400 transition-transform duration-300 group-open:rotate-45 block leading-none">
+                            <span class="text-3xl font-light text-gray-400 group-hover:text-[#005B71] group-open:text-[#006083] transition-all duration-300 group-open:rotate-45 block leading-none">
                               +
                             </span>
                           </div>
                         </summary>
 
                         <div class="px-6 pb-6 animate-fade-in">
-                          <p class="text-gray-600 leading-relaxed font-light border-t border-blue-100 pt-4">
+                          <p class="text-gray-600 leading-relaxed font-light border-t border-slate-100 pt-4">
                             {faq.answer}
                           </p>
                         </div>

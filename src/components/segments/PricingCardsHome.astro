@@ -41,25 +41,25 @@ const plans = [
 ];
 ---
 
-<section class="bg-[#EDF4FC] py-12 lg:py-24 px-6 -mt-20">
+<section class="bg-[#F8FAFC] py-16 md:py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 lg:mb-16">
-      <TagH2 class="pt-20 max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
+      <TagH2 class="max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
         {i18n.HOME_PAGE.CHOOSE_PLAN.TITLE}
       </TagH2>
-      <p class="text-[#001524]/60 max-w-4xl mx-auto mb-10 md:mb-20 text-center! px-5 lg:text-lg md:text-2xl">
+      <p class="text-[#001524]/60 max-w-4xl mx-auto text-center! px-5 lg:text-lg md:text-2xl mt-4">
         {i18n.HOME_PAGE.CHOOSE_PLAN.DESCRIPTION}
       </p>
     </div>
 
     <div class={`grid grid-cols-1 ${plans.filter(p => !p.hide).length > 1 ? 'lg:grid-cols-2' : ''} gap-10 lg:gap-16 justify-items-center`} id="plans">
       {plans.filter(plan => !plan.hide).map((plan) => (
-        <div class="bg-white rounded-md overflow-hidden shadow-sm border border-gray-100 flex flex-col w-full max-w-[550px] transition-transform hover:scale-[1.02] duration-300">
-          <div class="relative h-60 md:h-72">
+        <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-100 flex flex-col w-full max-w-[550px] transition-all duration-300 hover:-translate-y-2 hover:border-[#006083]/15">
+          <div class="relative h-60 md:h-72 overflow-hidden">
             <img
               src={getUrl(plan.image, 600)}
               alt={plan.title}
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div class="absolute bottom-4 left-4 p-2 rounded-lg backdrop-blur-sm">
               <img
@@ -115,7 +115,7 @@ const plans = [
 
               <a 
                 href={plan.href} 
-                class="w-full block text-center bg-[#006083] hover:bg-[#006083]/90 text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto font-medium transition-all duration-300 shadow-sm"
+                class="w-full block text-center bg-gradient-to-r from-[#006083] to-[#007EA8] hover:from-[#007EA8] hover:to-[#006083] text-white rounded-full text-sm lg:text-base py-3 lg:py-4 h-auto font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.01]"
               >
                 {i18n.DETAIL_PAGE.FORM_RESERVATION.BUTTON}
               </a>

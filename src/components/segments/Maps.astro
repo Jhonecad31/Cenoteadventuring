@@ -1,10 +1,11 @@
 ---
 ---
 
-<section class="bg-[#F8FAFC]">
+<!-- 1. Cambiado a w-full, h-screen (100vh) y removido el max-w-6xl -->
+<section class="w-full h-screen relative bg-[#F8FAFC]">
   <div
     id="map"
-    class="max-w-6xl mx-auto h-[600px] rounded-2xl"
+    class="w-full h-full"
   >
   </div>
 </section>
@@ -60,7 +61,9 @@
       container: "map",
       style: `https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=${API_KEY}`,
       center: [-87.1000, 20.8650], 
-      zoom: 12
+      zoom: 12,
+      // 3. Recomendado: Redimensionar el mapa automáticamente si cambia el tamaño de la pantalla
+      trackResize: true 
     });
 
     map.on("load", () => {
@@ -122,6 +125,10 @@
 </script>
 
 <style is:global>
+  .maplibregl-map {
+    width: 100%;
+    height: 100%;
+  }
   
   #map canvas {
     mix-blend-mode: multiply; 
