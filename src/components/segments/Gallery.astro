@@ -104,12 +104,7 @@ const mobileSections = [
 </style>
 
 <script>
-  const initGallery = async () => {
-    const { Fancybox } = await import("@fancyapps/ui");
-    Fancybox.bind("[data-fancybox]", {
-      Hash: false,
-    });
-
+  const setupSlider = () => {
     const slider = document.getElementById("grid-gallery-scroll");
     if (!slider) return;
 
@@ -137,6 +132,32 @@ const mobileSections = [
       const walk = (x - startX) * 2;
       slider.scrollLeft = scrollLeft - walk;
     });
+  };
+
+  let fancyboxLoaded = false;
+  const loadFancybox = async () => {
+    if (fancyboxLoaded) return;
+    fancyboxLoaded = true;
+    const { Fancybox } = await import("@fancyapps/ui");
+    Fancybox.bind("[data-fancybox]", {
+      Hash: false,
+    });
+  };
+
+  const initGallery = () => {
+    setupSlider();
+
+    // Defer Fancybox binding until user scroll, touch, or pointer movement
+    const triggerInit = () => {
+      loadFancybox();
+      document.removeEventListener("pointerdown", triggerInit);
+      document.removeEventListener("touchstart", triggerInit);
+      window.removeEventListener("scroll", triggerInit);
+    };
+
+    document.addEventListener("pointerdown", triggerInit, { passive: true });
+    document.addEventListener("touchstart", triggerInit, { passive: true });
+    window.addEventListener("scroll", triggerInit, { passive: true });
   };
 
   initGallery();
