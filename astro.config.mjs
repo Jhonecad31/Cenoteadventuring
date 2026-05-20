@@ -10,7 +10,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: "https://cenoteadventuring.com/",
   adapter: vercel(),
-  output: 'server',
+  output: 'static',
   trailingSlash: 'always',
   integrations: [react(), sitemap({
     i18n: {
