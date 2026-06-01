@@ -12,18 +12,17 @@ const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
 ---
 
 <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
-  <!-- Video HTML5 nativo: sin JavaScript pesado, máximo rendimiento -->
-  <video
+  <mux-player
+    playback-id={Mux_playback_Id}
     autoplay
     muted
     loop
     playsinline
-    preload="none"
-    poster={`https://image.mux.com/${Mux_playback_Id}/thumbnail.webp?time=0&width=1280`}
+    no-controls
+    preload="auto"
     class="absolute inset-0 w-screen h-screen object-cover brightness-[0.4] z-0"
-  >
-    <source src={`https://stream.mux.com/${Mux_playback_Id}/high.mp4`} type="video/mp4" />
-  </video>
+    poster={`https://image.mux.com/${Mux_playback_Id}/thumbnail.webp?time=0&width=1280`}
+  ></mux-player>
 
   <div
     class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center justify-center h-full gap-8 sm:gap-10 pt-24"
@@ -51,9 +50,20 @@ const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
   </div>
 </section>
 
+<script>
+  import("@mux/mux-player");
+</script>
+
 <style>
-  video {
+  mux-player {
     width: 100vw;
     height: 100vh;
+    --controls: none;
+    --media-object-fit: cover;
+  }
+  mux-player::part(video) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
 </style>

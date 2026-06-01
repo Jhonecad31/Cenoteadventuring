@@ -4,13 +4,17 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import partytown from '@astrojs/partytown';
-
+import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
+
+// En producción (Vercel) usamos el adaptador de Vercel.
+// En desarrollo local usamos el adaptador de Node para poder hacer SSR.
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   site: "https://cenoteadventuring.com/",
-  adapter: vercel(),
-  output: 'static',
+  adapter: isProduction ? vercel() : node({ mode: 'standalone' }),
+  output: 'server',
   trailingSlash: 'always',
   integrations: [react(), sitemap({
     i18n: {

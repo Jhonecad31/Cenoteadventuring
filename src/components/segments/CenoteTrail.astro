@@ -8,9 +8,22 @@ import BContainer from "@/components/global/BContainer.astro";
 import Maps from "./Maps.astro";
 import { Laurel1, Laurel2, Laurel3 } from "@/icons/allIcons";
 import { MapPin } from "lucide-react";
+import { getPublicPage, parseBlocksJson } from "@/services/cms";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
+
+// --- Integración CMS ---
+// Obtiene el contenido de la página "cenote-trail" desde el CMS.
+// Si el CMS tiene contenido, sobreescribe el texto del i18n.
+// Si no, se usa el i18n como fallback.
+const lang = currentLocale === "es" ? "es" : "en";
+const cmsPage = await getPublicPage("localhost:4321", "cenote-trail");
+const cmsTrans = cmsPage?.translations?.find(
+  (t) => t.language.toLowerCase() === lang
+);
+const cmsHeroTitle   = cmsTrans?.title || null;
+const cmsIntroHtml   = cmsTrans?.blocksJson ? parseBlocksJson(cmsTrans.blocksJson) : null;
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 
 const getUrl = (id: string, w = 800) =>
@@ -44,6 +57,9 @@ const seoMetaData = {
   title: i18n.SEO.CENOTE_TRAIL_PAGE.TITLE,
   description: i18n.SEO.CENOTE_TRAIL_PAGE.DESCRIPTION,
 };
+// Texto final: usa CMS si existe, si no usa i18n
+const heroTitle   = cmsHeroTitle  ?? i18n.RUTA_CENOTES_PAGE.HERO.TITLE2;
+const introDesc   = cmsIntroHtml  ?? i18n.RUTA_CENOTES_PAGE.INTRO.DESCRIPTION;
 ---
 
 <BaseLayout seo={seoMetaData}>
@@ -62,7 +78,7 @@ const seoMetaData = {
         <h1
           class="font-serif italic text-4xl md:text-4xl mb-6 tracking-tight drop-shadow-lg"
         >
-          {i18n.RUTA_CENOTES_PAGE.HERO.TITLE2}
+          {heroTitle}
         </h1>
         <p class="!tracking-[0.5em] text-sm font-light opacity-90">
           {i18n.RUTA_CENOTES_PAGE.HERO.SUBTITLE}
@@ -100,11 +116,18 @@ const seoMetaData = {
           </h2>
 
           <div class="space-y-6">
-            <p
-              class="text-gray-600 leading-relaxed text-base md:text-lg font-light mb-10 md:mb-20"
-            >
-              {i18n.RUTA_CENOTES_PAGE.INTRO.DESCRIPTION}
-            </p>
+            {
+              cmsIntroHtml
+                ? <article
+                    class="text-gray-600 leading-relaxed text-base md:text-lg font-light mb-10 md:mb-20 cms-content"
+                    set:html={cmsIntroHtml}
+                  />
+                : <p
+                    class="text-gray-600 leading-relaxed text-base md:text-lg font-light mb-10 md:mb-20"
+                  >
+                    {i18n.RUTA_CENOTES_PAGE.INTRO.DESCRIPTION}
+                  </p>
+            }
             <div class="pt-6">
               <div class="w-full h-[1px] bg-black/5"></div>
             </div>

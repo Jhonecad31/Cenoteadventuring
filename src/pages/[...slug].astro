@@ -1,0 +1,164 @@
+---
+export const prerender = false; // SSR: consulta el CMS en cada petición
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPublicPage, parseBlocksJson } from "@/services/cms";
+
+const { slug } = Astro.params;
+
+// Determinar idioma y slug limpio a partir de la URL
+// Ejemplos: "es/quienes-somos" → lang=es, cleanSlug="quienes-somos"
+//           "our-story"         → lang=en, cleanSlug="our-story"
+let lang = "en";
+let cleanSlug = slug || "";
+
+if (cleanSlug.startsWith("es/")) {
+  lang = "es";
+  cleanSlug = cleanSlug.slice(3); // quitar el prefijo "es/"
+} else if (cleanSlug.startsWith("en/")) {
+  lang = "en";
+  cleanSlug = cleanSlug.slice(3);
+}
+
+// Quitar barras finales por si acaso
+cleanSlug = cleanSlug.replace(/\/+$/, "");
+
+const domain = "localhost:4321";
+const page = await getPublicPage(domain, cleanSlug);
+
+// Si no existe la página en el CMS, devolver 404
+if (!page) {
+  return Astro.redirect("/404", 404);
+}
+
+// Obtener la traducción según el idioma
+const translation = page.translations.find(
+  (t) => t.language.toLowerCase() === lang
+) || page.translations[0];
+
+const title = translation?.title || "Página sin título";
+const htmlContent = parseBlocksJson(translation?.blocksJson || "");
+
+const seoMetaData = {
+  title: `${title} - Cenote Adventure`,
+  description: `${title} - Cenote Adventuring`,
+};
+---
+
+<BaseLayout seo={seoMetaData}>
+  <main class="bg-[#EDF4FC] min-h-[90vh] overflow-x-hidden pt-24">
+    <!-- Hero Header -->
+    <section class="relative h-[35vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#003B5C] to-[#006083] text-white">
+      <div class="absolute inset-0 bg-black/20 z-0"></div>
+      <div class="relative z-10 text-center px-6 max-w-4xl">
+        <h1 class="font-serif italic text-4xl md:text-6xl mb-4 tracking-tight drop-shadow-lg">
+          {title}
+        </h1>
+        <p class="uppercase tracking-[0.4em] text-[10px] md:text-xs font-light opacity-80">
+          Cenote Adventuring / {cleanSlug}
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="max-w-[900px] mx-auto py-12 px-6">
+      <div class="bg-white rounded-2xl shadow-md border border-slate-100 p-8 md:p-12">
+        {htmlContent
+          ? <article class="prose max-w-none text-slate-800 leading-relaxed font-sans cms-content" set:html={htmlContent} />
+          : <p class="text-slate-400 italic text-center py-8">Esta página aún no tiene contenido. Añádelo desde el CMS.</p>
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Estilizado premium para el contenido HTML del CMS */
+  .cms-content h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #003B5C;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  .cms-content h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #006083;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .cms-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0F2942;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .cms-content p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #334155;
+  }
+  .cms-content ul, .cms-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    list-style-type: disc;
+  }
+  .cms-content li {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    color: #334155;
+  }
+  .cms-content blockquote {
+    border-left: 4px solid #006083;
+    padding-left: 1.25rem;
+    font-style: italic;
+    color: #475569;
+    margin: 1.5rem 0;
+    background-color: #f8fafc;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .cms-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin: 2rem auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    display: block;
+  }
+  .cms-content pre {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+  }
+  .cms-content code {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+  }
+  .cms-content pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+  .cms-content a {
+    color: #006083;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .cms-content a:hover {
+    color: #003B5C;
+  }
+</style>
