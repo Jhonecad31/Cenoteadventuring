@@ -28,7 +28,7 @@ export interface BlogPost {
   seoData: SeoMetadata; 
 }
 
-const BASE_URL = import.meta.env.PUBLIC_CMS_API_URL || "https://localhost:44351/api/Content";
+const BASE_URL = import.meta.env.PUBLIC_CMS_API_URL || "https://romantic-spence.74-208-70-235.plesk.page/api/Content";
 const SITE_ID = import.meta.env.PUBLIC_SITE_ID || "5c88eee8-450d-4154-9c25-310217861130";
 const TABLE_NAME = import.meta.env.PUBLIC_TABLE_NAME || "cenote";
 
