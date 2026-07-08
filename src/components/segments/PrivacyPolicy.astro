@@ -1,99 +1,80 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import TagH1 from "@/components/global/TagH1.astro";
-import BContainer from "@/components/global/BContainer.astro";
 import { getI18N } from "@/i18n";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BContainer from "@/components/global/BContainer.astro";
+import TagH1 from "@/components/global/TagH1.astro";
+import TagH2 from "@/components/global/TagH2.astro";
+import TagH3 from "@/components/global/TagH3.astro";
+import TagP from "@/components/global/TagP.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 
 const seoMetaData = {
-  title: `${i18n.PRIVACY_POLICY.TITLE} - Cenote Adventuring`,
-  description: i18n.PRIVACY_POLICY.P1,
+    title: i18n.SEO.POLICY_PAGE.TITLE,
+    description: i18n.SEO.POLICY_PAGE.DESCRIPTION,
 };
 ---
 
 <BaseLayout seo={seoMetaData}>
-  <main class="bg-[#F8FAFC] py-24 md:py-32">
-    <BContainer>
-      <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-md shadow-sm border border-slate-200">
-        <TagH1 class="font-serif text-3xl md:text-5xl text-[#001524] mb-8 border-b border-slate-100 pb-8">
-          {i18n.PRIVACY_POLICY.TITLE}
-        </TagH1>
-        
-        <div class="space-y-8 text-slate-600 font-light leading-relaxed">
-          <section class="space-y-4">
-            <p>{i18n.PRIVACY_POLICY.P1}</p>
-            <p>{i18n.PRIVACY_POLICY.P2}</p>
-          </section>
+    <main class="bg-[#F8FAFC] py-24 md:py-32">
+        <BContainer>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-md shadow-sm border border-slate-200">
+            <TagH1>{i18n.POLICY_PAGE.PRIVACY_NOTICE.TITLE}</TagH1>
+            <TagP>{i18n.POLICY_PAGE.PRIVACY_NOTICE.DESCRIPTION.TEXT_1}</TagP>
+            <TagP>{i18n.POLICY_PAGE.PRIVACY_NOTICE.DESCRIPTION.TEXT_2}</TagP>
 
-          <section class="space-y-4">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.WHAT_COLLECT.TITLE}</h2>
-            <p>{i18n.PRIVACY_POLICY.WHAT_COLLECT.P1}</p>
-            <p>{i18n.PRIVACY_POLICY.WHAT_COLLECT.P2}</p>
-            <p>{i18n.PRIVACY_POLICY.WHAT_COLLECT.P3}</p>
-          </section>
+            <TagH2 class="text-[#006083]">{i18n.POLICY_PAGE.INFORMATION_COLLECTED.TITLE}</TagH2>
+            <TagP>{i18n.POLICY_PAGE.INFORMATION_COLLECTED.DESCRIPTION.TEXT_1}</TagP>
+            <TagP>{i18n.POLICY_PAGE.INFORMATION_COLLECTED.DESCRIPTION.TEXT_2}</TagP>
+            <TagP>{i18n.POLICY_PAGE.INFORMATION_COLLECTED.DESCRIPTION.TEXT_3}</TagP>
 
-          <section class="space-y-4">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.WHAT_USE.TITLE}</h2>
-            <p>{i18n.PRIVACY_POLICY.WHAT_USE.P1}</p>
-            
-            <h3 class="font-medium text-[#001524]">{i18n.PRIVACY_POLICY.WHAT_USE.ESSENTIAL_TITLE}</h3>
-            <ul class="list-disc pl-6 space-y-2">
-              {i18n.PRIVACY_POLICY.WHAT_USE.ESSENTIAL_LIST.map((item: string) => (
-                <li>{item}</li>
-              ))}
+            <TagH3 class="text-[#006083]">{i18n.POLICY_PAGE.WHAT_DO_WE_USE.TITLE}</TagH3>
+            <TagP>{i18n.POLICY_PAGE.WHAT_DO_WE_USE.DESCRIPTION.TEXT_1}</TagP>
+            <ul class="list-disc ml-5 my-4 space-y-3 text-sm/loose md:text-lg/loose">
+                {i18n.POLICY_PAGE.WHAT_DO_WE_USE.DESCRIPTION.LIST_1.map((list : any) => (
+                    <li>{list}</li>
+                ))}
+            </ul>
+            <TagP>{i18n.POLICY_PAGE.WHAT_DO_WE_USE.DESCRIPTION.TEXT_2}</TagP>
+            <ul class="list-disc ml-5 my-4 space-y-3 text-sm/loose md:text-lg/loose">
+                {i18n.POLICY_PAGE.WHAT_DO_WE_USE.DESCRIPTION.LIST_2.map((list : any) => (
+                    <li>{list}</li>
+                ))}
             </ul>
 
-            <h3 class="font-medium text-[#001524] pt-4">{i18n.PRIVACY_POLICY.WHAT_USE.NON_ESSENTIAL_TITLE}</h3>
-            <p>{i18n.PRIVACY_POLICY.WHAT_USE.NON_ESSENTIAL_P}</p>
-            <ul class="list-disc pl-6 space-y-2">
-              {i18n.PRIVACY_POLICY.WHAT_USE.NON_ESSENTIAL_LIST.map((item: string) => (
-                <li>{item}</li>
-              ))}
+            <TagH3 class="text-[#006083]">{i18n.POLICY_PAGE.WHO_DO_WE_SHARE.TITLE}</TagH3>
+            <TagP>{i18n.POLICY_PAGE.WHO_DO_WE_SHARE.DESCRIPTION.TEXT_1}</TagP>
+            <TagP>{i18n.POLICY_PAGE.WHO_DO_WE_SHARE.DESCRIPTION.TEXT_2}</TagP>
+
+            <TagH3 class="text-[#006083]">{i18n.POLICY_PAGE.EXPOSURE_TO_INFORMATION.TITLE}</TagH3>
+            <TagP>{i18n.POLICY_PAGE.EXPOSURE_TO_INFORMATION.DESCRIPTION.TEXT_1}</TagP>
+            <TagP>{i18n.POLICY_PAGE.EXPOSURE_TO_INFORMATION.DESCRIPTION.TEXT_2}</TagP>
+
+            <TagH3 class="text-[#006083]">{i18n.POLICY_PAGE.REVOKE_CONSENT.TITLE}</TagH3>
+            <TagP>{i18n.POLICY_PAGE.REVOKE_CONSENT.DESCRIPTION.TEXT_1}</TagP>
+            <ul class="list-disc ml-5 my-4 space-y-3 text-sm/loose md:text-lg/loose">
+                {i18n.POLICY_PAGE.REVOKE_CONSENT.DESCRIPTION.LIST_1.map((list : any) => (
+                    <li>{list}</li>
+                ))}
             </ul>
-          </section>
+            <TagP>{i18n.POLICY_PAGE.REVOKE_CONSENT.DESCRIPTION.TEXT_2}</TagP>
+            <TagP>{i18n.POLICY_PAGE.REVOKE_CONSENT.DESCRIPTION.TEXT_3}</TagP>
 
-          <section class="space-y-4">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.WHO_SHARE.TITLE}</h2>
-            <p>{i18n.PRIVACY_POLICY.WHO_SHARE.P1}</p>
-            <p>{i18n.PRIVACY_POLICY.WHO_SHARE.P2}</p>
-          </section>
+            <TagH3 class="text-[#006083]">{i18n.POLICY_PAGE.LAW.TITLE}</TagH3>
+            <TagP>{i18n.POLICY_PAGE.LAW.DESCRIPTION.TEXT_1}</TagP>
 
-          <section class="space-y-4">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.LIMIT_USE.TITLE}</h2>
-            <p>{i18n.PRIVACY_POLICY.LIMIT_USE.P1}</p>
-            <p>{i18n.PRIVACY_POLICY.LIMIT_USE.P2}</p>
-          </section>
-
-          <section class="space-y-4">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.REVOKE_CONSENT.TITLE}</h2>
-            <p>{i18n.PRIVACY_POLICY.REVOKE_CONSENT.P1}</p>
-            <p>{i18n.PRIVACY_POLICY.REVOKE_CONSENT.P2}</p>
-            <ul class="list-disc pl-6 space-y-2">
-              {i18n.PRIVACY_POLICY.REVOKE_CONSENT.LIST.map((item: string) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-            <p>{i18n.PRIVACY_POLICY.REVOKE_CONSENT.P3}</p>
-          </section>
-
-          <section class="space-y-4">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.AMENDMENTS.TITLE}</h2>
-            <p dangerouslySetInnerHTML={{ __html: i18n.PRIVACY_POLICY.AMENDMENTS.P1.replace('info@extremeadventurecancun.com', '<a href="mailto:info@extremeadventurecancun.com" class="text-[#006083] hover:underline">info@extremeadventurecancun.com</a>') }}></p>
-          </section>
-
-          <section class="space-y-4 border-b border-slate-100 pb-8">
-            <h2 class="text-xl font-serif text-[#006083] mb-4">{i18n.PRIVACY_POLICY.LAW.TITLE}</h2>
-            <p>{i18n.PRIVACY_POLICY.LAW.P1}</p>
-          </section>
-          
-          <div class="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center text-sm text-slate-400 mt-8 pt-4 gap-4">
-            <p class="italic">{i18n.PRIVACY_POLICY.FOOTER.DATE}</p>
-            <p>{i18n.PRIVACY_POLICY.FOOTER.EMAIL}<a href="mailto:info@extremeadventurecancun.com" class="text-[#006083] hover:underline">info@extremeadventurecancun.com</a></p>
-          </div>
-        </div>
-      </div>
-    </BContainer>
-  </main>
+            <TagH3 class="text-[#006083]">{i18n.POLICY_PAGE.LAST_UPDATE.TITLE}</TagH3>
+            <TagP>
+                {i18n.POLICY_PAGE.LAST_UPDATE.MAIL} 
+                <a 
+                    class="font-medium hover:underline text-[#006083] transition-colors duration-300"
+                    href={`mailto:${i18n.POLICY_PAGE.LAST_UPDATE.EMAIL}`}
+                >
+                    {i18n.POLICY_PAGE.LAST_UPDATE.EMAIL}
+                </a> 
+            </TagP>
+            </div>
+        </BContainer>
+    </main>
 </BaseLayout>
