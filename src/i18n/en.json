@@ -1,37 +1,414 @@
-
 {
-  "SEO": {
+    "SEO": {
+        "HOME_PAGE": {
+            "TITLE": "The cenote route in puerto morelos: Private Tour Through the Best Hidden Cenotes",
+            "DESCRIPTION": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
+            "META_TITLE": "Cenote Adventures: Private and Exclusive Tours in Puerto Morelos"
+        },
+        "CENOTE_TRAIL_PAGE": {
+            "TITLE": "The cenote route in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
+            "DESCRIPTION": "Hidden just a short drive from Cancun, the cenote route in Puerto Morelos is one of the most authentic experiences in the Mexican Caribbean.",
+            "META_TITLE": "Cenote Adventure: Private Hidden Cenote Tour in Puerto Morelos"
+        },
+        "CENOTE_ADVENTURING_PAGE": {
+            "TITLE": "Cenote Adventuring: Our Storys",
+            "DESCRIPTION": "Cenote Adventuring was created a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle.",
+            "META_TITLE": "Cenote Adventuring: Passion for the Maya Jungle"
+        },
+        "CONTACT_PAGE": {
+            "TITLE": "Contact Us for Your Cenote Adventure",
+            "DESCRIPTION": "Contact us to book your unforgettable Cenote Adventuring tour along the Cenote Trail and discover the wonders of the Mexican Caribbean.",
+            "META_TITLE": "The Best Cenotes in Puerto Morelos: Contac Us"
+        },
+        "ABOUT_US_PAGE": {
+            "TITLE": "Cenote Adventuring: Our Story",
+            "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle."
+        },
+        "ACTIVITIES_PAGE": {
+            "TITLE": "Exciting Activities in Puerto Morelos: Cenote Tours and More",
+            "DESCRIPTION": "Discover the best things to do in Puerto Morelos. From snorkeling in cenotes to jungle adventures, we have the perfect experience for you."
+        },
+        "AWARDS_PAGE": {
+            "TITLE": "Cenote Adventuring: Awards and International Recognitions",
+            "DESCRIPTION": "Check out our awards and recognitions as one of the best adventure tour operators in the Mexican Caribbean."
+        },
+        "THANKS_PAGE": {
+            "TITLE": "Thank You for Your Reservation - Cenote Adventuring",
+            "DESCRIPTION": "We have received your reservation request. We will contact you shortly to confirm your adventure."
+        },
+        "BLOG_PAGE": {
+            "TITLE": "Blog - Cenote Adventure",
+            "DESCRIPTION": "Discover the best stories and tips about Puerto Morelos cenotes.",
+            "META_TITLE": "Cenote Adventuring Blog: Tips and Stories"
+        },
+        "REGULAR_CENOTE": {
+            "HERO": {
+                "TITLE": "Cenote adventuring",
+                "DESCRIPTION": "3 cenote boutique experience, mayan Show with Snack"
+            },
+            "INTRO": {
+                "TITLE": "Uncover the Natural Wonders of Cancun",
+                "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
+            }
+        },
+        "PRIVATE_CENOTE": {
+            "TITLE": "Renta de Cenote Privado",
+            "DESCRIPTION": "Renta de cenote privado en Cancún: Una experiencia 100% exclusiva para grupos.",
+            "META_TITLE": "Renta de Cenote Privado en Cancún | Experiencia 100% Exclusiva"
+        },
+        "TERMS_PAGE": {
+            "TITLE": "Terms and Conditions - Cenote Adventuring",
+            "DESCRIPTION": "Read the terms and conditions for our cenote tours in Puerto Morelos. Ensure a safe and enjoyable experience."
+        },
+        "POLICY_PAGE": {
+            "TITLE": "Privacy Policy - Cenote Adventuring",
+            "DESCRIPTION": "Read our privacy policy to understand how we handle your personal information during your cenote adventure booking."
+        }
+    },
+    "NOT_FOUND_PAGE": {
+        "TITLE": "Page Not Found",
+        "DESCRIPTION": "The page you are looking for does not exist. Please return to the home page."
+    },
+    "ERROR_SERVER_PAGE": {
+        "TITLE": "Error 500 - Server Error",
+        "DESCRIPTION": "An error occurred on the server. Please try again later."
+    },
+    "ACCESSIBILITY": {
+        "LOGO": "Logo of The Best Cenote In Puerto Morelos",
+        "CHANGE_LANGUAGE": "Change language",
+        "GO_TO_HOME": "Go to Home",
+        "COPYRIGHT": "All rights reserved to Cenote Adventuring",
+        "REVIEWS": "reviews",
+        "PRICE_FROM": "From",
+        "PEOPLE_ENJOYED": "people enjoyed this experience",
+        "PLAY_PAUSE": "Play/Pause video",
+        "MENU": {
+            "OPEN_MENU": "Open menu",
+            "CLOSE_MENU": "Close menu"
+        },
+        "SOCIAL_MEDIA": {
+            "FOLLOW": "Follow us",
+            "GO_TO_FACEBOOK": "Follow us on Facebook",
+            "GO_TO_INSTAGRAM": "Follow us on Instagram",
+            "GO_TO_TRIPADVISOR": "Check our reviews on TripAdvisor"
+        }
+    },
     "HOME_PAGE": {
-      "TITLE": "The cenote route in puerto morelos: Private Tour Through the Best Hidden Cenotes",
-      "DESCRIPTION": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
-      "META_TITLE": "Cenote Adventures: Private and Exclusive Tours in Puerto Morelos"
-    },
-    "CENOTE_TRAIL_PAGE": {
-      "TITLE": "The cenote route in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
-      "DESCRIPTION": "Hidden just a short drive from Cancun, the cenote route in Puerto Morelos is one of the most authentic experiences in the Mexican Caribbean.",
-      "META_TITLE": "Cenote Adventure: Private Hidden Cenote Tour in Puerto Morelos"
-    },
-    "CENOTE_ADVENTURING_PAGE": {
-      "TITLE": "Cenote Adventuring: Our Storys",
-      "DESCRIPTION": "Cenote Adventuring was created a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle.",
-      "META_TITLE": "Cenote Adventuring: Passion for the Maya Jungle"
+        "HERO": {
+            "TITLE": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
+            "TITLE2": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
+            "DESCRIPTION1": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
+            "DES": "Check Availability"
+        },
+        "AWARDS": {
+            "TITLE": "Awards & Recognitions",
+            "DESCRIPTION1": "We take pride in our dedication to offering meaningful and sustainable adventures, connecting travelers with the authentic essence of the Puerto Morelos cenotes.",
+            "DESCRIPTION2": "Each award celebrates our meticulous curation of experiences in Puerto Morelos, where luxury meets the preservation of the region’s most pristine natural sanctuaries.",
+            "DESCRIP_LINK": "View our recognitions",
+            "TITLE_SECOND": "International accolades celebrate our team's dedication and shine a light on our regeneration efforts within the Mayan ecosystem, inspiring travelers from around the globe to discover the magic of our cenotes.",
+            "SUBTITLE": "Over time, we have been honored to receive prestigious awards that reflect our deep-rooted commitment. It is through the continued support of our explorers and partners that we fulfill our core purpose: to protect and preserve the purity of ancestral waters and the Puerto Morelos jungle for generations to come.",
+            "TRIPADVISOR": {
+                "TITLE": "Travelers’ Choice Best of the Best",
+                "DESCRIPTION": "Proudly ranked among the top 1% of attractions worldwide, recognized for our exceptional private cenote experiences and commitment to excellence."
+            },
+            "WORLD_TRAVEL_AWARDS": {
+                "TITLE": "World Travel Awards",
+                "DESCRIPTION": "Recognized as Mexico's Leading Adventure Tour Operator, celebrating our multi-year excellence and leadership in the global travel industry."
+            },
+            "NATIONAL_GEOGRAPHIC": {
+                "TITLE": "National Geographic Traveller",
+                "DESCRIPTION": "Mentioned as one of the top experiences in the Riviera Maya."
+            }
+        },
+        "GALLERY": {
+            "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
+            "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
+            "MOVIL": "Swipe to explore →"
+        },
+        "CHOOSE_PLAN": {
+            "TITLE": "Find Your Ultimate Cenote Adventure",
+            "DESCRIPTION": "Tailored experiences for every journey. Whether you seek the exclusivity of a private tour or the quality of a premium small-group expedition, we ensure an authentic encounter with the region's most breathtaking landscapes.",
+            "BTNBOOK": "Check Availability",
+            "PLANS": {
+                "PRIVATE": {
+                    "TITLE": "Private Cenote Experience",
+                    "DESCRIPTION": "Experience an exclusive cenote adventure with a private boat, personalized service, and more amenities.",
+                    "FEATURES": [
+                        "Private group",
+                        "Private transportation",
+                        "Round-trip transportation from your hotel",
+                        "Cenote (with waterfall, zipline and cavern)",
+                        "Lifejacket",
+                        "Specialized and bilingual guides",
+                        "Tequila tasting(in the cenote)",
+                        "Mayan Snack",
+                        "Mayan performance",
+                        "Round trip transportation from cancún",
+                        "Conservation Fee (include)"
+                    ]
+                },
+                "CENOTE": {
+                    "TITLE": "Cenote adventuring",
+                    "DESCRIPTION": "3 cenote boutique Experience, Mayan Show with Snack",
+                    "FEATURES": [
+                        "Conservation Fee(Included)",
+                        "Round-trip transportation from your hotel",
+                        "3 Cenotes(with waterfall, zipline and cavern)",
+                        "Lifejacket",
+                        "Specialized and bilingual guides",
+                        "Tequila tasting(in the cenote)",
+                        "Mayan performance"
+                    ]
+                }
+            }
+        },
+        "FAQS": {
+            "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
+            "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
+            "CARD_CONTACT": {
+                "TITLE": "Need More Information?",
+                "DESCRIPTION": "Whether it's a special request or a custom private itinerary, our team of experts is ready to help you plan the perfect experience.",
+                "BUTTON": "Contact us"
+            },
+            "FAQS": [
+                {
+                    "question": "How many cenotes are included in the tour?",
+                    "answer": "The experience typically includes visits to multiple cenotes along the Ruta de los Cenotes, depending on your selected package and preferences."
+                },
+                {
+                    "question": "Is this tour suitable for beginners?",
+                    "answer": "Yes! No prior experience is needed. The tour is designed for all levels, making it one of the best things to do in Puerto Morelos for beginners."
+                },
+                {
+                    "question": "How far is Puerto Morelos from Cancun?",
+                    "answer": "Puerto Morelos is located about 20–30 minutes from Cancun, making it an easy and convenient destination for a cenote tour Cancun."
+                },
+                {
+                    "question": "What should I bring for the cenote tour?",
+                    "answer": "Bring swimwear, biodegradable sunscreen, a towel, and comfortable clothing. Everything else will be provided for your cenote Puerto Morelos experience. "
+                }
+            ]
+        },
+        "FOOTER": {
+            "TITLE": "Contac us",
+            "DIRECT_LINE": "Direct line",
+            "RESERVATIONS": "Reservations",
+            "CORPORATE": "Corporate",
+            "TRADUCTION": {
+                "ABOUT": "About",
+                "FOLLOW": "Follow"
+            }
+        }
     },
     "CONTACT_PAGE": {
-      "TITLE": "Contact Us for Your Cenote Adventure",
-      "DESCRIPTION": "Contact us to book your unforgettable Cenote Adventuring tour along the Cenote Trail and discover the wonders of the Mexican Caribbean.",
-      "META_TITLE": "The Best Cenotes in Puerto Morelos: Contac Us"
+        "HERO": {
+            "TITLE": "Get in touch with us",
+            "DESCRIPTION": "We’d love to hear from you! If you have any questions about our cenote tours or need assistance planning your visit, just reach out. Your next great adventure is only a message away.",
+            "FOLLOW": "Follow our adventures:"
+        },
+        "INFO": {
+            "TITLE": "Contact Us",
+            "DESCRIPTION": "Feel free to reach out to us through any of the following methods. We look forward to assisting you and ensuring you have an unforgettable snorkeling adventure in Puerto Morelos!",
+            "OPTIONS": {
+                "PHONE": "Phone",
+                "EMAIL": "Email",
+                "LOCATION": "Visit Us"
+            }
+        },
+        "FORM": {
+            "CLOSE_MODAL": "Close",
+            "LABELS": {
+                "FULLNAME": "Full Name",
+                "EMAIL": "Email",
+                "PHONE": "Phone",
+                "SUBJECT": "Subject",
+                "MESSAGE": "Message"
+            },
+            "PLACEHOLDERS": {
+                "FULLNAME": "Enter your full name",
+                "EMAIL": "Enter your email",
+                "PHONE": "Enter your phone",
+                "SUBJECT": "Enter the subject",
+                "MESSAGE": "Leave your message here..."
+            },
+            "ERRORS": {
+                "FULLNAME": "Please enter your full name",
+                "EMAIL": "Please enter your email",
+                "PHONE": "Please enter your phone",
+                "SUBJECT": "Subject is required",
+                "MESSAGE": "Message is required"
+            },
+            "SUCCESS_FORM": {
+                "TITLE": "Thank you for contacting us",
+                "DESCRIPTION": "Your message has been sent and we will get back to you shortly. If you have any questions or need immediate assistance, please call us at +52 998 249 0003 or email us at info@snorkeladventuring.com."
+            },
+            "ERROR_FORM": {
+                "TITLE": "Oops! Something went wrong",
+                "DESCRIPTION": "We are sorry, but it seems there was a problem making your email. Please try again later or contact us directly at +52 998 249 0003. Thank you for your understanding!"
+            },
+            "BUTTONS": {
+                "SEND_MESSAGE": "Send Message",
+                "SENDING": "Sending..."
+            }
+        }
+    },
+    "RUTA_CENOTES_PAGE": {
+        "HERO": {
+            "TITLE": "The cenote trail in Puerto Morelos – A Complete Guide to Nature, Adventure & Hidden Cenotes",
+            "TITLE2": "The cenote trail in Puerto Morelos",
+            "SUBTITLE": "A visual journey into the unknown",
+            "DESCRIPTION": "Hidden just a short drive from Cancun, the cenote trail in Puerto Morelos is one of the most authentic natural experiences in the Mexican Caribbean. Surrounded by lush jungle, this scenic route is home to some of the most beautiful cenotes near Puerto Morelos, offering a unique connection with nature, culture, and adventure."
+        },
+        "INTRO": {
+            "TITLE": "A Must-Visit Destination from Cancun",
+            "DESCRIPTION": "If you're exploring things to do in Puerto Morelos or planning a day trip from Cancun, the cenote route is a must-visit destination where crystal-clear freshwater pools, underground caves, and eco-adventures come together in one unforgettable experience."
+        },
+        "WHAT_TO_EXPECT": {
+            "TITLE": "What to Expect?",
+            "DESCRIPTION": "Visiting the cenote route is unlike any other activity in the region. Instead of crowded beaches, you’ll find a peaceful jungle road filled with hidden natural treasures.",
+            "LIST": [
+                {
+                    "TITLE": "Natural Diversity",
+                    "DESCRIPTION": "Expect to discover a variety of cenotes Puerto Morelos, from open-air pools to dramatic cave formations."
+                },
+                {
+                    "TITLE": "Guided Tours",
+                    "DESCRIPTION": "Most cenote tours Puerto Morelos include access to multiple cenotes, allowing you to swim, snorkel, or relax."
+                },
+                {
+                    "TITLE": "Tranquil Environment",
+                    "DESCRIPTION": "The environment is calm, refreshing, and deeply connected to the natural ecosystem."
+                }
+            ]
+        },
+        "GRID_TEXTS": {
+            "EXPLORING_ROUTE": {
+                "TITLE": "Exploring the cenote route – Nature, Adventure and Culture",
+                "DESCRIPTION": "The cenote route stretches along a jungle road just outside Puerto Morelos, offering access to dozens of cenotes and eco-parks. This area is part of one of the largest underground river systems in the world, making it a unique destination for those interested in nature and geology. Unlike traditional tourist attractions in Cancun, this region provides a more immersive experience."
+            },
+            "UNIQUE_CENOTES": {
+                "TITLE": "Why Cenotes in Puerto Morelos Are Unique",
+                "DESCRIPTION": "The Puerto Morelos cenotes stand out for their accessibility and diversity. Within a short distance, you can visit multiple cenotes with completely different environments. Because they are located slightly away from the main tourist zones, they tend to be less crowded, offering a more intimate and peaceful experience."
+            },
+            "THINGS_TO_DO": {
+                "TITLE": "Things to Do in the cenote route",
+                "LIST": [
+                    {
+                        "TITLE": "Water Activities",
+                        "DESCRIPTION": "Swimming in natural freshwater cenotes and snorkeling in underground waters."
+                    },
+                    {
+                        "TITLE": "Adventure",
+                        "DESCRIPTION": "Zip-lining through the jungle canopy and ATV rides along jungle trails."
+                    },
+                    {
+                        "TITLE": "Exploration",
+                        "DESCRIPTION": "Discovering cave cenotes with unique rock formations and relaxing in eco-parks."
+                    }
+                ]
+            },
+            "LOCATION_INFO": {
+                "TITLE": "Location and Access",
+                "DESCRIPTION": "The cenote route is located just off the main highway between Cancun and Playa del Carmen, near Puerto Morelos.",
+                "DETAILS": [
+                    "Approx. 20–30 minutes from Cancun",
+                    "Easy access from hotel zones and downtown areas",
+                    "Well-connected for day trips"
+                ]
+            }
+        },
+        "FAQS": {
+            "TITLE": "Frequently Asked Questions",
+            "LIST": [
+                {
+                    "question": "What is the Ruta de los Cenotes?",
+                    "answer": "It is a scenic jungle route near Puerto Morelos that connects multiple cenotes and eco-parks, offering nature-based experiences and outdoor activities."
+                },
+                {
+                    "question": "How far is the Ruta de los Cenotes from Cancun?",
+                    "answer": "It is located about 20 to 30 minutes from Cancun, making it an easy and popular day trip for those exploring what to do in Cancun."
+                },
+                {
+                    "question": "Are there different types of cenotes in Puerto Morelos?",
+                    "answer": "Yes, you can find open cenotes, semi-open cenotes, and cave cenotes, each offering a different experience."
+                },
+                {
+                    "question": "Is it worth visiting cenotes near Puerto Morelos instead of Cancun?",
+                    "answer": "Absolutely. Puerto Morelos cenotes tend to be less crowded and provide a more natural and relaxed environment compared to more tourist-heavy areas."
+                },
+                {
+                    "question": "What activities can I do there?",
+                    "answer": "You can swim, snorkel, explore caves, zip-line, ride ATVs, and enjoy eco-adventure experiences depending on the location."
+                }
+            ]
+        }
     },
     "ABOUT_US_PAGE": {
-      "TITLE": "Cenote Adventuring: Our Story",
-      "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle."
+        "HERO": {
+            "H1": "Cenote Adventuring: Our story",
+            "SUBTITLE": "Transforming our passion for nature into a journey shared with you.",
+            "DESCRIPTION": "Cenote Adventuring was created from a passion for sharing the natural beauty of Puerto Morelos and its surrounding jungle.",
+            "ORIGIN_STORY": "Our founders grew up exploring the Ruta de los Cenotes, discovering hidden treasures and learning about their ecological and cultural importance. Over time, they realized that many visitors were missing the true essence of these natural wonders due to crowded group tours.",
+            "VALUE_PROPOSITION": "That’s why Cenote Adventuring focuses on offering private cenote tours in Puerto Morelos, where guests can connect with nature at their own pace while enjoying personalized attention and authentic experiences."
+        },
+        "MISSION": {
+            "TITLE": "Our mission and purpose",
+            "STATEMENT": "Our mission is simple: to provide meaningful and sustainable experiences in nature. We aim to connect travelers with the beauty of the Ruta de los Cenotes while preserving the environment for future generations.",
+            "PHILOSOPHY": "We believe that tourism should go beyond entertainment; it should educate, inspire, and create lasting memories. That’s why every tour we offer is designed with deep respect for nature and local culture."
+        },
+        "FEATURES": {
+            "H2": "Why choose us?",
+            "INTRO": "Choosing Cenote Adventuring means choosing quality, authenticity, and exclusivity. Here is why travelers prefer us:",
+            "ITEMS": [
+                "Private and personalized experiences",
+                "Access to carefully selected cenotes",
+                "Local expert guides",
+                "Seamless transportation from Puerto Morelos to Cancun",
+                "Total focus on sustainability and safety"
+            ],
+            "CLOSING": "We don’t just offer tours; we create experiences that stay with you long after your trip ends."
+        },
+        "SAFETY": {
+            "H2": "Safety and our team",
+            "DESCRIPTION": "Your safety is our top priority. Our team is made up of trained professionals who are passionate about nature and dedicated to providing a secure experience.",
+            "INCLUDES": [
+                "Certified and experienced guides",
+                "High-quality safety equipment",
+                "Clear instructions and personalized assistance",
+                "Continuos monitoring throughout the tour"
+            ],
+            "ECO_COMMITMENT": "In addition, we follow strict eco-friendly practices to protect the cenotes and the surrounding environment.",
+            "TEAM_VALUE": "Our team does not just guide you: they enhance your experience by sharing knowledge, stories, and fascinating local insights about the region."
+        },
+        "DESTINATION_INFO": {
+            "H2": "Explore the best cenotes near puerto morelos",
+            "CONTENT": "When travelers search for cenotes near Puerto Morelos, they are looking for something authentic, peaceful, and visually stunning. This region is home to some of the most beautiful cenotes in the Riviera Maya, each offering a unique atmosphere.",
+            "DIFFERENTIATION": "Unlike many Cancun cenotes, those in Puerto Morelos remain less crowded and better preserved. This allows visitors to fully immerse themselves in nature without distractions.",
+            "EXPERIENCE": "Whether swimming in an open cenote or exploring a semi-hidden cave, every corner of Puerto Morelos offers a different perspective of this natural ecosystem."
+        },
+        "HIGHLIGHTS": {
+            "H3": "What makes puerto morelos cenotes special?",
+            "LOCATION": "These cenotes stand out because of their privileged location. Hidden in the heart of the jungle, they provide a tranquil escape far from crowded tourist areas.",
+            "KEY_POINTS": [
+                "Pristine freshwater with excellent visibility",
+                "Rich biodiversity and unique natural formations",
+                "Quiet environments without the crowds",
+                "Easy access on the Cancun - Puerto Morelos route"
+            ],
+            "SUMMARY": "These elements make us the best choice for those seeking unique tours in Cancun with a much more exclusive touch."
+        }
     },
-    "ACTIVITIES_PAGE": {
-      "TITLE": "Exciting Activities in Puerto Morelos: Cenote Tours and More",
-      "DESCRIPTION": "Discover the best things to do in Puerto Morelos. From snorkeling in cenotes to jungle adventures, we have the perfect experience for you."
-    },
-    "AWARDS_PAGE": {
-      "TITLE": "Cenote Adventuring: Awards and International Recognitions",
-      "DESCRIPTION": "Check out our awards and recognitions as one of the best adventure tour operators in the Mexican Caribbean."
+    "MAILING": {
+        "CONTACT_US": {
+            "SUBJECT": "Thank you for contacting us",
+            "BODY": {
+                "HELLO": "Hello",
+                "THANK_YOU": "Thank you for contacting us!",
+                "WE_WILL_GET_BACK": "We have received your message and will get back to you as soon as possible. If you have any urgent questions or need immediate assistance, please don't hesitate to call us at +52 998 249 0003.",
+                "INFORMATION": "*This email is for informational purposes only, and you do not need to reply to this message.*",
+                "COPYRIGHT": "All rights reserved."
+            }
+        }
     },
     "THANKS_PAGE": {
       "TITLE": "Thank You for Your Reservation - Cenote Adventuring",
@@ -153,21 +530,27 @@
             "Tequila tasting(in the cenote)",
             "Regional show"
           ]
+=======
+        "TITLE": "Thanks for your reservation",
+        "DESCRIPTION": {
+            "TEXT_1": "We have received your message and will contact you shortly.",
+            "TEXT_2": "If you have any questions or need immediate assistance, please call us at +52 998 249 0003 or send us an email at    ."
+>>>>>>> 77702b30c07e0f62ebe544355e25120d543ec3b6
         }
-      }
     },
-    "FAQS": {
-      "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
-      "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
-      "CARD_CONTACT": {
-        "TITLE": "Need More Information?",
-        "DESCRIPTION": "Whether it's a special request or a custom private itinerary, our team of experts is ready to help you plan the perfect experience.",
-        "BUTTON": "Contact us"
-      },
-      "FAQS": [
-        {
-          "question": "How many cenotes are included in the tour?",
-          "answer": "The experience typically includes visits to multiple cenotes along the Ruta de los Cenotes, depending on your selected package and preferences."
+    "DETAIL_PAGE": {
+        "GENERAL": {
+            "DURATION": "Duration",
+            "APPROX": "approx.",
+            "SCHEDULE": "Schedules",
+            "HOURS": "hours",
+            "TRANSPORTATION": "Transportation",
+            "ROUNDTRIP_TRANSPORTATION": "Round trip transportation",
+            "OFFERED_IN": "Offered in",
+            "OFFERED_LANG": "English & Spanish",
+            "AGE_REQUIREMENT": "Minimum Age",
+            "YEARS_AND_OLDER": "years and older",
+            "BTNGENERAL": "Discovery more"
         },
         {
           "question": "Is this tour suitable for beginners?",
@@ -506,41 +889,178 @@
             {
               "TITLE": "Waterfalls and Jumping Platforms",
               "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+=======
+        "FORM_RESERVATION": {
+            "TITLE": "Make your reservation",
+            "EARLY_BIRD": {
+                "TITLE": "Discount for Early Deal",
+                "BOOKING_15_DAYS": "Booking 15 days before.",
+                "BOOKING_30_DAYS": "Booking 30 days before."
+>>>>>>> 77702b30c07e0f62ebe544355e25120d543ec3b6
             },
-            {
-              "TITLE": "Zip Line and Rustic Swings",
-              "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+            "AGE_REQUIREMENT": "Age Requirement",
+            "YEARS_AND_OLDER": "years and older",
+            "OFFERED_IN": "Offered in",
+            "OFFERED_LANG": "English & Spanish",
+            "DURATION": "Duration",
+            "CHOOSE_ATV": "Choose ATV mode",
+            "SHARED": "Shared",
+            "SINGLE": "Single",
+            "REGULAR_PRICE": "Regular Price",
+            "PRICE_FROM": "Price from",
+            "PER_PERSON": "per person",
+            "PER_GROUP": "per group",
+            "BUTTON": "Check Availability",
+            "NOT_AVAILABLE": "Not Available",
+            "CLOSE": "Close Modal",
+            "BOKUN": "Book your experience"
+        },
+        "REGULAR_CENOTE": {
+            "HERO": {
+                "TITLE": "Cenote Adventuring",
+                "DESCRIPTION": "3 cenote boutique experience mayan show with snack"
             },
-            {
-              "TITLE": "Exclusive Access",
-              "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+            "INTRO": {
+                "TITLE": "Uncover the natural wonders of Cancún",
+                "DESCRIPTION": "Discover the beauty of the jungle in a hidden, unique, and unforgettable experience during your Cancun vacation, then exploring Cenotes Cancun Adventure is an absolute must."
+            },
+            "INCLUSIONS": {
+                "TITLE": "Inclusions & Exclusions",
+                "INCLUDES": [
+                    "Conservation Fee(Included)",
+                    "Round-trip transportation from your hotel",
+                    "3 Cenotes(with waterfall, zipline and cavern)",
+                    "Lifejacket",
+                    "Specialized and bilingual guides",
+                    "Tequila tasting(in the cenote)",
+                    "Mayan performance"
+                ],
+                "NOT_INCLUDES": [
+                    "Professional photographs(available for purchase)",
+                    "Tips or gratuites",
+                    "Souvenirs"
+                ]
+            },
+            "OVERVIEW": {
+                "TITLE": "Overview",
+                "DESCRIPTION1": "Cenote Adventuring Cancun offers a unique opportunity to explore the breathtaking natural beauty hidden in the heart of the Mexican Caribbean. Our guided tour take you on a journey through the lush Mayan jungle, revealing three exclusive cenotes, each with its own unique features. Dive into crystal-clear waters, zip line over the cenote, and immerse yourself in the rich history and culture of the region.",
+                "DESCRIPTION2": "Furthermore, these natural sinkholes are scattered throughout the Mayan jungle and are truly one of nature’s hidden wonders. In brief, join us on our Cenotes tour in Cancun to discover the beauty of these crystal clear waters and the adventure that awaits you.",
+                "WHY_EXPLORE_CENOTES_CANCUN": {
+                    "TITLE": "Why explore cenotes cancún",
+                    "DESCRIPTION": "Exploring the cenotes in Cancun is a must for any nature lover or adventure enthusiast visiting the area. These natural sinkholes, formed over thousands of years, are filled with fresh, clear water and are surrounded by lush jungle vegetation. The cenotes are sacred to the ancient Mayans, who believed they were gateways to the underworld. Today, they offer a serene and mystical escape from the bustling beaches and resorts of Cancun."
+                }
+            },
+            "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
+                "TITLE": "Why choose our cenotes cancun tour?",
+                "DESCRIPTION": "Our Cenote Adventuring Tour offers a perfect blend of adventure, relaxation, and cultural immersion. With small groups and exclusive access to private cenotes, you’ll enjoy a personalized experience that larger tours can’t offer. Whether you’re looking to swim in crystal-clear waters, explore ancient caves, or simply relax in a stunning natural setting, our tour has something for everyone.",
+                "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
+                    "TITLE": "The unique features of our cenote tour",
+                    "DESCRIPTION": "Our Cenotes Cancun tour stands out by offering access to three private cenotes, each with its own unique characteristics:",
+                    "THE_UNIQUE_FEATURES_LIST": [
+                        {
+                            "TITLE": "Waterfalls and Jumping Platforms",
+                            "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+                        },
+                        {
+                            "TITLE": "Zip Line and Rustic Swings",
+                            "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+                        },
+                        {
+                            "TITLE": "Exclusive Access",
+                            "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+                        }
+                    ],
+                    "BOOK_CENOTE": {
+                        "TITLE": "Book cenote adventuring today",
+                        "DESCRIPTION": "Don’t miss out on exploring the best cenotes near Cancun. Book your Cenotes Cancun Tour today and immerse yourself in the natural beauty and rich history of the Riviera Maya."
+                    }
+                }
+            },
+            "WHAT_YOU_SHOULD_KNOW": {
+                "TITLE": "What you should know?",
+                "LIST": [
+                    "Not wheelchair accessible",
+                    "Not stroller accessible",
+                    "Not suitable for pets",
+                    "No public transportation nearby",
+                    "Infants must not sit on laps",
+                    "Infant seats unavailable",
+                    "Not recommended for people with back problems",
+                    "Please contact us in advance to confirm your exact pickup time and location.",
+                    "We will reach out to you to confirm the exact pickup time shortly after receiving your booking."
+                ]
+            },
+            "WHAT_TO_BRING": {
+                "TITLE": "What to bring for your cenote adventure?",
+                "SUNSCREEN": {
+                    "TITLE": "Biodegradable Sunscreen",
+                    "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
+                },
+                "SHOES": {
+                    "TITLE": "Comfortable Shoes",
+                    "DESCRIPTION": "Sandals or closed shoes are recommended for walking on uneven terrain (No flip flops)."
+                },
+                "TOWEL": {
+                    "TITLE": "Towel",
+                    "DESCRIPTION": "Essential to dry off and stay comfortable after your refreshing swim."
+                },
+                "SWIMSUIT": {
+                    "TITLE": "Bathing Suit",
+                    "DESCRIPTION": "Wear it from the start to jump straight into the crystal clear waters."
+                },
+                "REPELLENT": {
+                    "TITLE": "Biodegradable Repellent",
+                    "DESCRIPTION": "All insect repellent used in the park must be eco-friendly to protect the environment."
+                },
+                "CLOTHES": {
+                    "TITLE": "Change of clothes",
+                    "DESCRIPTION": "To ensure you stay dry and comfortable for the return trip to your hotel."
+                },
+                "CASH": {
+                    "TITLE": "Extra Cash",
+                    "DESCRIPTION": "Useful for purchasing unique souvenirs, professional photos, or providing tips."
+                }
+            },
+            "GALLERY": {
+                "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
+                "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
+                "MOVIL": "Swipe to explore →"
+            },
+            "SCHEDULES": {
+                "TITLE": "Available Schedules for Your Private Snorkeling Tour",
+                "DESCRIPTION": "Choose the perfect time for your exclusive snorkeling adventure in Puerto Morelos. Our private tours are available at the following times:",
+                "SCHEDULE_LIST": [
+                    "09:30 AM",
+                    "13:30 PM"
+                ],
+                "DURATION": "4 hours (approx.)"
+            },
+            "FAQS": {
+                "TITLE": "Prepare for Your Jungle Journey: Frequently Asked Questions",
+                "DESCRIPTION": "Everything you need to know before diving into the Maya jungle. We’ve gathered the most common questions to ensure your cenote adventure is seamless and unforgettable.",
+                "FAQS": [
+                    {
+                        "question": "What is a cenote and why is it special to explore in Cancun?",
+                        "answer": "A cenote is a natural sinkhole filled with freshwater, formed by the collapse of limestone bedrock. In Cancun and the Riviera Maya, cenotes are unique because they connect to underground rivers and offer crystal-clear waters perfect for swimming, snorkeling, and diving. They also hold cultural significance in the ancient Mayan civilization."
+                    },
+                    {
+                        "question": "Do I need to be an experienced swimmer to enjoy a cenote adventure?",
+                        "answer": "No, you don’t need advanced swimming skills. Cenote adventures are suitable for all levels. Life jackets are provided, and shallow areas are available for beginners. Guides are always present to ensure safety and comfort for every visitor."
+                    },
+                    {
+                        "question": "What should I bring for a cenote adventure in Cancun?",
+                        "answer": "We recommend bringing a swimsuit, biodegradable sunscreen, a towel, and water shoes for comfort. Since most tours provide helmets, life jackets, and snorkeling gear, you only need to pack essentials to enjoy your cenote experience."
+                    },
+                    {
+                        "question": "Are cenote tours in Cancun family-friendly?",
+                        "answer": "Yes, cenote adventures are family-friendly and suitable for children, teens, and adults. With guided tours, safe swimming areas, and kid-sized life jackets, families can explore these natural wonders together while enjoying a fun and educational experience. "
+                    }
+                ]
+            },
+            "MORE_ACTIVITIES": {
+                "TITLE": "More Activities for you to enjoy",
+                "DESCRIPTION": "Discover more exciting activities and tours to enhance your experience in Puerto Morelos and the Riviera Maya."
             }
-          ],
-          "BOOK_CENOTE": {
-            "TITLE": "Book cenote adventuring today",
-            "DESCRIPTION": "Don’t miss out on exploring the best cenotes near Cancun. Book your Cenotes Cancun Tour today and immerse yourself in the natural beauty and rich history of the Riviera Maya."
-          }
-        }
-      },
-      "WHAT_YOU_SHOULD_KNOW": {
-        "TITLE": "What you should know?",
-        "LIST": [
-          "Not wheelchair accessible",
-          "Not stroller accessible",
-          "Not suitable for pets",
-          "No public transportation nearby",
-          "Infants must not sit on laps",
-          "Infant seats unavailable",
-          "Not recommended for people with back problems",
-          "Please contact us in advance to confirm your exact pickup time and location.",
-          "We will reach out to you to confirm the exact pickup time shortly after receiving your booking."
-        ]
-      },
-      "WHAT_TO_BRING": {
-        "TITLE": "What to bring for your cenote adventure?",
-        "SUNSCREEN": {
-          "TITLE": "Biodegradable Sunscreen",
-          "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
         },
         "SHOES": {
           "TITLE": "Comfortable Shoes",
@@ -655,195 +1175,275 @@
             {
               "TITLE": "Waterfalls and Jumping Platforms",
               "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+=======
+        "PRIVATE_CENOTE": {
+            "HERO": {
+                "TITLE": "Private cenote rental",
+                "DESCRIPTION": "Private cenote rental in cancun: A 100% exclusive group experience."
+>>>>>>> 77702b30c07e0f62ebe544355e25120d543ec3b6
             },
-            {
-              "TITLE": "Zip Line and Rustic Swings",
-              "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+            "INTRO": {
+                "TITLE": "Experience the Ultimate Private Cenote Tour in Cancún",
+                "DESCRIPTION": "Designed for travelers seeking privacy, comfort, and a fully personalized adventure. Enjoy a 100% private group tour in one of the Riviera Maya’s most stunning natural cenotes, free from crowds and shared schedules."
             },
-            {
-              "TITLE": "Exclusive Access",
-              "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+            "INCLUSIONS": {
+                "TITLE": "Inclusions & Exclusions",
+                "INCLUDES": [
+                    "Private group",
+                    "Private transportation",
+                    "Round-trip transportation from your hotel",
+                    "Cenote (with waterfall, zipline and cavern)",
+                    "Lifejacket",
+                    "Specialized and bilingual guides",
+                    "Tequila tasting(in the cenote)",
+                    "Mayan Snack",
+                    "Mayan performance",
+                    "Round trip transportation from cancún",
+                    "Conservation Fee (include)"
+                ],
+                "NOT_INCLUDES": [
+                    "Professional Photographs (available for purchase)",
+                    "Tips or Gratuities",
+                    "Souvenirs"
+                ]
+            },
+            "OVERVIEW": {
+                "TITLE": "Overview",
+                "DESCRIPTION1": "Our Private Cenote Rental offers an exclusive opportunity to explore the breathtaking beauty of the Mexican Caribbean at your own pace. Ideal for families, couples, corporate groups, or special celebrations, this experience combines nature, comfort, and authenticity in a journey through the lush Mayan jungle.",
+                "DESCRIPTION2": "Your experience begins with private transportation from Cancun or the Riviera Maya, ensuring a direct transfer without unnecessary stops. Upon arrival, your group gains exclusive access to the site—meaning no shared facilities and no external visitors.",
+                "WHY_EXPLORE_PRIVATE_CENOTES": {
+                    "TITLE": "Why Choose a Private Cenote Tour in cancún?",
+                    "DESCRIPTION": "Unlike standard excursions, our private tours are tailored entirely to your group’s pace. It’s the perfect choice for those asking if it's possible to rent a cenote privately or seeking the best exclusive experiences in the Riviera Maya. Connect with nature in a calm, intimate, and safe environment."
+                }
+            },
+            "WHY_CHOOSE_OUR_CENOTES_CANCUN_TOUR": {
+                "TITLE": "A True Private Group Tour, Not a Shared Experience.",
+                "DESCRIPTION": "This is not a modified group excursion; it is a dedicated private tour where your group is the only one on-site. No waiting times, no fixed schedules, and no mixed groups.",
+                "THE_UNIQUE_FEATURES_OF_OUR_CENOTE_TOUR": {
+                    "TITLE": "The unique features of our cenote tour",
+                    "DESCRIPTION": "Our Private Cenote Rental stands out by offering a 100% exclusive experience, tailored entirely to your group's pace and preferences:",
+                    "THE_UNIQUE_FEATURES_LIST": [
+                        {
+                            "TITLE": "Waterfalls and Jumping Platforms",
+                            "DESCRIPTION": "All three cenotes feature beautiful waterfalls and jumping platforms, perfect for those looking to add some excitement to their swim."
+                        },
+                        {
+                            "TITLE": "Zip Line and Rustic Swings",
+                            "DESCRIPTION": "One of the cenotes boasts a thrilling zip line that allows you to soar over the water, while another offers rustic swings for a more relaxed experience."
+                        },
+                        {
+                            "TITLE": "Exclusive Access",
+                            "DESCRIPTION": "Our cenotes are private and exclusive to our visitors, ensuring a peaceful and intimate experience."
+                        }
+                    ],
+                    "BOOK_CENOTE": {
+                        "TITLE": "Rent Your Private Cenote Today",
+                        "DESCRIPTION": "Don’t settle for crowded tours. Book your Cancun private cenote experience today and enjoy the luxury of having a natural wonder all to yourself."
+                    }
+                }
+            },
+            "WHAT_YOU_SHOULD_KNOW": {
+                "TITLE": "What you should know?",
+                "LIST": [
+                    "This is a 100% private activity; only your group will participate.",
+                    "Private transportation is included (direct from your hotel/Airbnb).",
+                    "Not wheelchair accessible.",
+                    "Not recommended for people with severe back problems.",
+                    "Not suitable for pets.",
+                    "Infants must not sit on laps (please request special seating if needed).",
+                    "Please contact us in advance to coordinate your specific pickup time."
+                ]
+            },
+            "WHAT_TO_BRING": {
+                "TITLE": "What to bring for your cenote adventure",
+                "SUNSCREEN": {
+                    "TITLE": "Biodegradable Sunscreen",
+                    "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
+                },
+                "SHOES": {
+                    "TITLE": "Comfortable Shoes",
+                    "DESCRIPTION": "Sandals or closed shoes are recommended for walking on uneven terrain (No flip flops)."
+                },
+                "TOWEL": {
+                    "TITLE": "Towel",
+                    "DESCRIPTION": "Essential to dry off and stay comfortable after your refreshing swim."
+                },
+                "SWIMSUIT": {
+                    "TITLE": "Bathing Suit",
+                    "DESCRIPTION": "Wear it from the start to jump straight into the crystal clear waters."
+                },
+                "REPELLENT": {
+                    "TITLE": "Biodegradable Repellent",
+                    "DESCRIPTION": "All insect repellent used in the park must be eco-friendly to protect the environment."
+                },
+                "CLOTHES": {
+                    "TITLE": "Change of clothes",
+                    "DESCRIPTION": "To ensure you stay dry and comfortable for the return trip to your hotel."
+                },
+                "CASH": {
+                    "TITLE": "Extra Cash",
+                    "DESCRIPTION": "Useful for purchasing unique souvenirs, professional photos, or providing tips."
+                }
+            },
+            "GALLERY": {
+                "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
+                "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
+                "MOVIL": "Swipe to explore →"
+            },
+            "SCHEDULES": {
+                "TITLE": "Available Schedules for the Snorkeling Adventure",
+                "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
+                "SCHEDULE_LIST": [
+                    "9:30 AM",
+                    "1:30 PM"
+                ],
+                "DURATION": "4 hours (approx.)"
+            },
+            "FAQS": {
+                "TITLE": "Frequently Asked Questions",
+                "FAQS": [
+                    {
+                        "question": "What makes this a private cenote tour in Cancun?",
+                        "answer": "This experience offers exclusive cenote access for your group only, along with private transportation and a dedicated guide. No other visitors or shared groups are included."
+                    },
+                    {
+                        "question": "How many people can join the private group tour?",
+                        "answer": "Private group tours are flexible and can accommodate small families or larger private groups. Group size can be adjusted based on your needs."
+                    },
+                    {
+                        "question": "Is this tour suitable for families and special events?",
+                        "answer": "Yes. This Cancun private cenote tour is ideal for families, couples, birthdays, proposals, corporate groups, and travelers seeking privacy and comfort."
+                    },
+                    {
+                        "question": "Do I need prior swimming experience to enjoy the cenote?",
+                        "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
+                    }
+                ]
+            },
+            "MORE_ACTIVITIES": {
+                "TITLE": "More Activities for you to enjoy",
+                "DESCRIPTION": "Discover more exciting activities and tours to enhance your experience in Puerto Morelos and the Riviera Maya."
             }
-          ],
-          "BOOK_CENOTE": {
-            "TITLE": "Rent Your Private Cenote Today",
-            "DESCRIPTION": "Don’t settle for crowded tours. Book your Cancun private cenote experience today and enjoy the luxury of having a natural wonder all to yourself."
-          }
         }
-      },
-      "WHAT_YOU_SHOULD_KNOW": {
-        "TITLE": "What you should know?",
-        "LIST": [
-          "This is a 100% private activity; only your group will participate.",
-          "Private transportation is included (direct from your hotel/Airbnb).",
-          "Not wheelchair accessible.",
-          "Not recommended for people with severe back problems.",
-          "Not suitable for pets.",
-          "Infants must not sit on laps (please request special seating if needed).",
-          "Please contact us in advance to coordinate your specific pickup time."
-        ]
-      },
-      "WHAT_TO_BRING": {
-        "TITLE": "What to bring for your cenote adventure",
-        "SUNSCREEN": {
-          "TITLE": "Biodegradable Sunscreen",
-          "DESCRIPTION": "To protect your skin and the delicate ecosystem of the cenotes."
+    },
+    "BLOG": {
+        "TITLE": "Our Blog",
+        "DESCRIPTION": "Stories, guides, and tips to make your cenote adventure unforgettable.",
+        "READ_MORE": "Read more",
+        "NO_POSTS": "New stories coming soon...",
+        "BACK": "Back to Blog",
+        "BY": "By"
+    },
+    "TERMS_PAGE": {
+        "TITLE": "Terms and Conditions",
+        "USE_CAMERAS": {
+            "TITLE": "Camera Policy",
+            "DESCRIPTION": {
+                "TEXT_1": "To comply with international safety standards and ensure the safety of all participants, cameras are not permitted during adventure activities that require both hands to remain free at all times. This restriction includes compact digital cameras, DSLR and SLR cameras, disposable cameras, and mobile phones.",
+                "TEXT_2": "Exceptions:",
+                "TEXT_3": "GoPro® cameras and similar action cameras are permitted only when securely mounted to the participant's helmet using an approved head mount. Selfie sticks, chest mounts, handheld devices, wrist mounts, or any mounting method other than a helmet-mounted head strap are strictly prohibited during activities."
+            }
         },
-        "SHOES": {
-          "TITLE": "Comfortable Shoes",
-          "DESCRIPTION": "Sandals or closed shoes are recommended for walking on uneven terrain (No flip flops)."
+        "TRANSPORTATION_POLICY": {
+            "TITLE": "Transportation Policy",
+            "DESCRIPTION": {
+                "TEXT_1": "Our Reservations Department will contact you by phone call or WhatsApp message to confirm your pickup time and pickup location prior to your activity.",
+                "TEXT_2": "Transportation is shared and not private. Guests must be ready at the confirmed pickup location before the scheduled pickup time. Vehicles will wait a maximum of 5 minutes after the confirmed pickup time before continuing their route.",
+                "TEXT_3": "If your hotel, Airbnb, vacation rental, or accommodation is outside our transportation service area, our Reservations Department will assign the nearest available meeting point.",
+                "TEXT_4": "Transportation vehicles and seating have standard dimensions and specifications and are not specially adapted to accommodate specific accessibility needs."
+            }
         },
-        "TOWEL": {
-          "TITLE": "Towel",
-          "DESCRIPTION": "Essential to dry off and stay comfortable after your refreshing swim."
+        "CANCELLATION_POLICY": {
+            "TITLE": "Cancellation Policy",
+            "DESCRIPTION": {
+                "TEXT_1": "Guests are eligible for a 100% refund if the cancellation is made at least 72 hours before the scheduled activity. A 50% refund applies to cancellations made at least 48 hours before the activity. Cancellations made within 24 hours of the scheduled activity, or later, are non-refundable.",
+                "TEXT_2": "No Show: Guests must arrive at least 5 minutes before their confirmed pickup time. Transportation vehicles will wait a maximum of 5 minutes after the scheduled pickup time. Failure to appear within this waiting period will be considered a No Show and the reservation will be non-refundable.",
+                "TEXT_3": "Guests who miss their transportation due to a No Show may request to reschedule their activity, subject to availability, by paying a USD $15 transportation rescheduling fee."
+            }
         },
-        "SWIMSUIT": {
-          "TITLE": "Bathing Suit",
-          "DESCRIPTION": "Wear it from the start to jump straight into the crystal clear waters."
-        },
-        "REPELLENT": {
-          "TITLE": "Biodegradable Repellent",
-          "DESCRIPTION": "All insect repellent used in the park must be eco-friendly to protect the environment."
-        },
-        "CLOTHES": {
-          "TITLE": "Change of clothes",
-          "DESCRIPTION": "To ensure you stay dry and comfortable for the return trip to your hotel."
-        },
-        "CASH": {
-          "TITLE": "Extra Cash",
-          "DESCRIPTION": "Useful for purchasing unique souvenirs, professional photos, or providing tips."
+        "CLIMATE_GUARANTEE": {
+            "TITLE": "Climate Guarantee",
+            "DESCRIPTION": {
+                "TEXT_1": "Activities may occasionally be postponed or canceled due to extreme weather or environmental conditions. If this occurs, your activity will be rescheduled for another available date. If rescheduling is not possible due to your travel itinerary, you will receive a full refund. Only Cenote Adventuring has the authority to determine whether weather or environmental conditions require the cancellation or postponement of an activity. Guests who choose to cancel due to weather conditions without an official cancellation by Cenote Adventuring will be subject to a 100% cancellation fee.",
+                "TEXT_2": "If an activity is canceled due to weather or environmental conditions, guests must contact either their travel agency or our Reservations Department to process the corresponding rescheduling or refund request.",
+                "TEXT_3": "The total transaction amount may be subject to taxes, foreign transaction fees, currency conversion charges, or other fees imposed by your bank or credit/debit card issuer. Your financial institution may convert the payment into your local currency, resulting in a difference between the amount displayed on our website and the final amount charged to your account. Please contact your bank or card issuer if you have questions regarding applicable fees or exchange rates. For bookings made in Brazil, the IOF (Tax on Financial Operations) is not included in the final booking price and will be charged separately to the credit or debit card used for the purchase."
+            }
         }
-      },
-      "GALLERY": {
-        "TITLE": "Step into the magic of the Mayan jungle and hidden cenotes.",
-        "DESCRIPTION": "Explore our gallery to witness the breathtaking beauty of Puerto Morelos' most exclusive cenotes. From crystal-clear waters and ancient rock formations to vibrant jungle landscapes, see the unforgettable moments that await you on our private adventures.",
-        "MOVIL": "Swipe to explore →"
-      },
-      "SCHEDULES": {
-        "TITLE": "Available Schedules for the Snorkeling Adventure",
-        "DESCRIPTION": "Choose the time that best fits your plans and get ready for an unforgettable snorkeling experience in Puerto Morelos.",
-        "SCHEDULE_LIST": ["9:30 AM", "1:30 PM"],
-        "DURATION": "4 hours (approx.)"
-      },
-      "FAQS": {
-        "TITLE": "Frequently Asked Questions",
-        "FAQS": [
-          {
-            "question": "What makes this a private cenote tour in Cancun?",
-            "answer": "This experience offers exclusive cenote access for your group only, along with private transportation and a dedicated guide. No other visitors or shared groups are included."
-          },
-          {
-            "question": "How many people can join the private group tour?",
-            "answer": "Private group tours are flexible and can accommodate small families or larger private groups. Group size can be adjusted based on your needs."
-          },
-          {
-            "question": "Is this tour suitable for families and special events?",
-            "answer": "Yes. This Cancun private cenote tour is ideal for families, couples, birthdays, proposals, corporate groups, and travelers seeking privacy and comfort."
-          },
-          {
-            "question": "Do I need prior swimming experience to enjoy the cenote?",
-            "answer": "No. Life jackets are provided, and the guide will ensure safety at all times. The experience is designed for all comfort levels."
-          }
-        ]
-      },
-      "MORE_ACTIVITIES": {
-        "TITLE": "More Activities for you to enjoy",
-        "DESCRIPTION": "Discover more exciting activities and tours to enhance your experience in Puerto Morelos and the Riviera Maya."
+    },
+    "POLICY_PAGE": {
+        "PRIVACY_NOTICE": {
+            "TITLE": "Privacy Notice",
+            "DESCRIPTION": {
+                "TEXT_1": "In accordance with the Federal Law on the Protection of Personal Data Held by Private Parties (Ley Federal de Protección de Datos Personales en Posesión de los Particulares), we hereby provide you with our Privacy Notice.",
+                "TEXT_2": "At OPERADORA DE EXCURSIONES NÁUTICAS S.A. de C.V., we are committed to protecting your privacy and handling your personal data responsibly, securely, and confidentially. OPERADORA DE EXCURSIONES NÁUTICAS S.A. de C.V. is the entity responsible for collecting, processing, and safeguarding your personal data. Our registered address is Calle Nogal, Supermanzana 313, Álamos II, Cancún, Quintana Roo, C.P. 77533, Mexico."
+            }
+        },
+        "INFORMATION_COLLECTED": {
+            "TITLE": "What Information Do We Collect?",
+            "DESCRIPTION": {
+                "TEXT_1": "OPERADORA DE EXCURSIONES NÁUTICAS S.A. de C.V. collects personal information through our website (www.cenoteadventuring.com), reservation platforms, customer service channels, and other authorized means. The personal information we may collect includes your name, address, telephone number, email address, photographs, nationality, occupation, employer's name, country of residence, social media username (where applicable), booked services, and payment information necessary to process your reservation. For the purposes of this Privacy Notice, this information is collectively referred to as 'Personal Data'. When you visit our website, we may also automatically collect technical information such as your IP address, browser type, device information, browsing behavior, and website usage data.",
+                "TEXT_2": "www.cenoteadventuring.com does not intentionally collect or process sensitive personal data as defined by applicable Mexican privacy legislation.",
+                "TEXT_3": "Our website uses cookies and similar technologies, including web beacons, to improve your browsing experience and enhance the functionality of our online services. Cookies are small files stored on your device that allow our website to recognize your preferences and improve future visits. Web beacons are small graphic elements that help us understand website usage, measure the effectiveness of communications, and analyze visitor behavior. The information collected through these technologies is used exclusively to improve our website, customer experience, and digital services."
+            }
+        },
+        "WHAT_DO_WE_USE": {
+            "TITLE": "How Do We Use Your Information?",
+            "DESCRIPTION": {
+                "TEXT_1": "Your Personal Data is processed for the following essential purposes:",
+                "LIST_1": [
+                    "To identify you and provide access to our services and website;",
+                    "To process reservations, purchases, and service requests;",
+                    "To issue invoices and process payments;",
+                    "To maintain and update our customer database;",
+                    "To contact you regarding your reservation, purchased services, or customer support inquiries;",
+                    "To fulfill our contractual obligations and provide the services you have requested."
+                ],
+                "TEXT_2": "With your consent, we may also use your Personal Data for the following non-essential purposes:",
+                "LIST_2": [
+                    "To inform you about new products, services, promotions, discounts, and special offers;",
+                    "To use photographs or audiovisual material for advertising and promotional purposes, where authorized;",
+                    "To evaluate, improve, and personalize the quality of our services and your browsing experience on our website."
+                ]
+            }
+        },
+        "WHO_DO_WE_SHARE": {
+            "TITLE": "Who Do We Share Your Personal Data With?",
+            "DESCRIPTION": {
+                "TEXT_1": "OPERADORA DE EXCURSIONES NÁUTICAS S.A. de C.V. does not sell, rent, or disclose your Personal Data to third parties without your prior consent, except where required or permitted by applicable law. When you make an online reservation through our website, you may be redirected to secure third-party booking or payment platforms, such as PayPal or other authorized payment providers. These providers operate under their own privacy policies and are independently responsible for processing your information.",
+                "TEXT_2": "We may disclose your Personal Data when required to comply with legal obligations, judicial orders, or requests from competent governmental authorities. Any disclosure will be made only to the extent permitted or required by applicable law."
+            }
+        },
+        "EXPOSURE_TO_INFORMATION": {
+            "TITLE": "How Can You Limit the Use or Disclosure of Your Information?",
+            "DESCRIPTION": {
+                "TEXT_1": "You may configure your web browser to reject or disable cookies and similar technologies. Please note that some website features may not function properly if cookies are disabled.",
+                "TEXT_2": "You may also exercise your right to object to or restrict the processing of your Personal Data for non-essential purposes by following the procedure described in the section below regarding your ARCO Rights."
+            }
+        },
+        "REVOKE_CONSENT": {
+            "TITLE": "How Can You Revoke Your Consent or Exercise Your ARCO Rights?",
+            "DESCRIPTION": {
+                "TEXT_1": "You have the right to access the Personal Data we hold about you, request corrections if your information is inaccurate or incomplete, request deletion when your data is no longer necessary for the purposes described in this Privacy Notice, object to the processing of your Personal Data for specific purposes, and revoke the consent previously granted for its processing, whenever legally applicable. To exercise any of these rights (commonly known in Mexico as ARCO Rights), please send your request by email to info@cenoteadventuring.com. Your request should include the following information:",
+                "LIST_1": [
+                    "Your full name and preferred contact information;",
+                    "Documentation proving your identity or legal representation, when applicable;",
+                    "A clear description of the Personal Data and the specific ARCO Right you wish to exercise, along with any additional information that may help us locate your records."
+                ],
+                "TEXT_2": "We will acknowledge receipt of your request and respond within the period established by applicable Mexican law. If additional information is required to process your request, we will contact you using the information provided. Requests will be handled in accordance with the Federal Law on the Protection of Personal Data Held by Private Parties and its applicable regulations.",
+                "TEXT_3": "OPERADORA DE EXCURSIONES NÁUTICAS S.A. de C.V. reserves the right to modify or update this Privacy Notice at any time to reflect changes in legal requirements, business practices, or our services. Any updates will be published on our website. We encourage you to review this Privacy Notice periodically to stay informed of any changes."
+            }
+        },
+        "LAW": {
+            "TITLE": "Applicable Law",
+            "DESCRIPTION": {
+                "TEXT_1": "This Privacy Notice is governed by the laws of the United Mexican States. By providing your Personal Data, accessing our website, or using our services, you acknowledge that you have read and understood this Privacy Notice and consent to the processing of your Personal Data in accordance with its terms and applicable Mexican law."
+            }
+        },
+        "LAST_UPDATE": {
+            "TITLE": "Last Updated",
+            "DATE": "July 2026",
+            "MAIL": "Email:",
+            "EMAIL": "info@cenoteadventuring.com"
+        }
     }
-  }
-},
-"BLOG": {
-    "TITLE": "Our Blog",
-    "DESCRIPTION": "Stories, guides, and tips to make your cenote adventure unforgettable.",
-    "READ_MORE": "Read more",
-    "NO_POSTS": "New stories coming soon...",
-    "BACK": "Back to Blog",
-    "BY": "By"
-  },
-  "PRIVACY_POLICY": {
-    "TITLE": "Privacy Notice",
-    "P1": "Pursuant to the Federal Law of Protection of Personal Data Held in Private Possession (Ley Federal de Protección de Datos Personales en Posesión de Particulares), we hereby inform you our Privacy Notice (“Privacy Notice”) (Aviso de Privacidad).",
-    "P2": "At OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV we are concerned about your privacy. We will use your personal data in a responsible and confidential manner. OPERADORA DE EXCURSIONES NAUTICAS SA DE CV is the responsible party of processing and using your personal data, located in Calle Nogal, sm 313, Alamos II, Cancun, Quintana Roo, cp 77533.",
-    "WHAT_COLLECT": {
-      "TITLE": "What information do we collect?",
-      "P1": "DE EXCURSIONES NÁUTICAS SA DE CV collects your personal data by means of our website www.extreme-adventure.us (hereinafter, the “Website”) and other different means and forms. We collect the following personal data: name, address, phone number(s), email, photography, nationality, occupation and name of employer, country of residence, alias in social networks (Twitter), hired services and credit card number(s). Such personal data will be collectively referred to as “Personal Data” (Datos Personales). [Likewise, when you visit our Website we collect your IP address, Internet browser, browsing preferences in our Website and browsing history].",
-      "P2": "www.extremeadventurecancun.com does not collect or process sensitive personal data.",
-      "P3": "The OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV Website uses cookies and web beacons. Cookies are automatically downloaded files, stored in your computer equipment when you browse an Internet website. Cookies allow the Internet server to recall data about the user and his/her browsing preferences. [Web beacons are images inserted within an Internet website or email message, which can be used to collect data or monitor user’s behavior in the website, or storing its IP address]. The Personal Data that we collect by these means is used exclusively for improving your browsing and use experience in our Website and electronic services."
-    },
-    "WHAT_USE": {
-      "TITLE": "What do we use your information for?",
-      "P1": "Your Personal Data will be used for the following purposes:",
-      "ESSENTIAL_TITLE": "Essential purposes:",
-      "ESSENTIAL_LIST": [
-        "Identification in order to access to our events and Website;",
-        "Reservations, purchases or acquisition of services;",
-        "Invoicing and billing products or services;",
-        "Updating and storage in customer database;",
-        "Contacting for any of these purposes;",
-        "Participate in raffles, competitions and contests, and in general, fulfilling our obligations with our clients."
-      ],
-      "NON_ESSENTIAL_TITLE": "Non-essential purposes:",
-      "NON_ESSENTIAL_P": "In addition to the above mentioned purposes, we may use your Personal Data for the following non-essential purposes:",
-      "NON_ESSENTIAL_LIST": [
-        "Informing about changes, products, services, gifts and/or special offers;",
-        "Using your image in OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV advertising;",
-        "Evaluating the quality of Company’s services, and improving your browsing experience in our Website."
-      ]
-    },
-    "WHO_SHARE": {
-      "TITLE": "Who do we share your Personal Data with?",
-      "P1": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV does not transfer your Personal Data to third parties without your previous consent, unless is otherwise provided by the applicable legal framework. If you decide to make an online purchase or reservation at the Website, you will be linked to a reservation interface and a third party booking engine provided by “Payworks online & PAY PAL\". While it appears to be part of our Website such booking engine is a service actually provided by a third party and governed by its own privacy policy and practices. Your privacy is our concern, so we have chosen the booking engine carefully.",
-      "P2": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV may reveal your Personal Data in order to comply with the applicable law or any mandate from a competent authority. OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV will not commercialize, sell or lease your Personal Data without your previous consent."
-    },
-    "LIMIT_USE": {
-      "TITLE": "How can you limit the use or exposure of your information?",
-      "P1": "You can disable the use of cookies and web beacons by accessing the browsing options configuration of most of web browsers.",
-      "P2": "Furthermore, you can exercise your right to revoke and oppose the processing of your Personal Data, or refuse its use for non-essential purposes, through the procedure described in this Privacy Notice."
-    },
-    "REVOKE_CONSENT": {
-      "TITLE": "How to revoke the consent to use your Personal Data or exercise your ARCO rights?",
-      "P1": "You have the right to access your Personal Data in our possession; rectify it if it is incorrect or incomplete; cancel your Personal Data when you consider it is no longer required for the established purposes, it is not being used for the purposes that you have consented to, or if the legal relationship is over; and to oppose to processing of your Personal Data for specific purposes (access, rectification, cancellation and opposition, hereinafter referred as “ARCO” rights). You also have the right to revoke the consent that you have granted us for processing your Personal Data, so we stop using it.",
-      "P2": "You can exercise your ARCO and revocation rights at any moment, for which purpose you must send an email directly to Email webmaster Extreme Adventuring. Said message shall include, at least the following information:",
-      "LIST": [
-        "Name, signature and address or any other contact information in order to notify you the response to your request.",
-        "Documents proving your identity or legal representation, if applicable.",
-        "Clear and precise description of the Personal Data for which you wish to exercise any of your ARCO rights, and any other information tending to facilitate the identification of your Personal Data."
-      ],
-      "P3": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV may reply to your application by email. OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV has the obligation to respond to your request within the following 20 (twenty) business days after receiving your request. Once such period has elapsed and in the case OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV has not replied your request, then you may file for the right’s protection procedure before the Federal Institute for Access to Public Information and Data Protection (Instituto Federal de Acceso a la información y Protección de Datos) (IFAI)."
-    },
-    "AMENDMENTS": {
-      "TITLE": "Amendments to the Privacy Notice",
-      "P1": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV may amend this Privacy Notice from time to time. Any amendment to this Privacy Notice will be informed to you by means of our Website or email. We will not be responsible if you do not learn of any amendment to this Privacy Notice or in case you do not receive that certain communication distributed by OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV. You may review the content of this Privacy Notice at any time in our Website or by sending a request to our email address info@extremeadventurecancun.com."
-    },
-    "LAW": {
-      "TITLE": "Applicable law",
-      "P1": "OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV is located in Mexico and Mexican law regulates all the matters related to the Personal Data. By providing your information to OPERADORA DE EXCURSIONES NÁUTICAS SA DE CV, accessing or using our Website, you consent us to use your Personal Data as mentioned above, and accept this Privacy Notice."
-    },
-    "FOOTER": {
-      "DATE": "Last update of this Privacy Notice: January 2022.",
-      "EMAIL": "Email: "
-    }
-  },
-  "TERMS_CONDITIONS": {
-    "TITLE": "Terms and Conditions",
-    "CAMERAS": {
-      "TITLE": "Use of cameras policy",
-      "P1": "Based on international safety standards and ensuring the physical safety of visitors, cameras are not permitted during our adventure activities. Our activities require that your hands are free at all times. This includes cameras such as “point and shoot”, DSLR and SLR cameras, disposable cameras and cell phones.",
-      "EXCEPTIONS_TITLE": "Exceptions:",
-      "EXCEPTIONS_P": "Go Pro Cameras and its alike are only permited if they are mounted on the helmet with a head mount during activities. The use of action selfie sticks, chest mounts, hand or any other body part other than head ( helmet)is prohibited."
-    },
-    "CANCELLATION": {
-      "TITLE": "Cancellation Policy",
-      "P1": "100% refund if cancelacion is made 72 hours prior to activity date. 50% refund if cancelation is made 48 hours prior to activity date. 0% refund if cancelation is made 24hours or less prior to activity date.",
-      "NO_SHOW_TITLE": "No Show:",
-      "NO_SHOW_P": "Please be at least 5 min. before confirmed pickup time , transportación will have a 5 mins. Max of waiting torlerance. In case of no show amount charged is in no case refundable."
-    },
-    "CLIMATE": {
-      "TITLE": "Climate Guarantee",
-      "P1": "Sometimes activties have to be canceled due to extreme weather conditions, your activity will be rescheduled for a different day , if thats not possible due to your vacation plan, you will recibe a 100% refund. Extreme Adventuring is the only one that can cancel because of weather conditions! Clients canceling because of climate generates a 100% cancelation fee."
-    },
-    "FEES": {
-      "P1": "The value of the transaction may be subject to taxes, duties, foreign transaction, currency exchange or other fees. Your bank or credit or debit card company may convert the payment into the local currency and charge fees, resulting in differences between the amount displayed on www.extreme-adventure.us and Extreme-adventure-affiliated websites, and the final amount charged to your bank account or credit or debit card statement. Please contact your bank or card company if you have any questions concerning any applicable conversion or fees. Please note for bookings made in Brazil, the tax IOF (Tax Upon Financial Operations, 6.38%) is not included in the final booking value and will be charged to the credit or debit card used to make the purchase."
-    }
-  }
 }

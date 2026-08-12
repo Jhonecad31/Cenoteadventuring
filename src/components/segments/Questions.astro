@@ -1,21 +1,10 @@
 ---
 import { getI18N } from "@/i18n";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import TagH2 from "@/components/global/TagH2.astro";
 import TagP from "@/components/global/TagP.astro";
 
-import BContainer from "@/components/global/BContainer.astro";
-
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
-const seoMetaData = {
-  title: i18n.HOME_PAGE.TITLE,
-  description: i18n.HOME_PAGE.DESCRIPTION,
-  metatitle: i18n.HOME_PAGE.META_TITLE,
-};
 ---
 
 <section class="py-16 md:py-24 bg-[#F8FAFC]">
@@ -37,7 +26,7 @@ const seoMetaData = {
               >
                 <summary class="flex justify-between items-center cursor-pointer list-none p-6 md:p-8 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
                   <span class="pr-4">{faq.question}</span>
-                  <div class="flex-shrink-0 w-7 h-7 flex items-center justify-center">
+                  <div class="shrink-0 w-7 h-7 flex items-center justify-center">
                     <span class="text-3xl font-light text-gray-400 group-hover:text-[#005B71] group-open:text-[#006083] transition-all duration-300 group-open:rotate-45 block leading-none">
                       +
                     </span>

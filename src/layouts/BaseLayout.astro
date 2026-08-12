@@ -13,11 +13,8 @@ const { seo, offI18n, showFooter = true, bodyClass = "bg-[#EDF4FC]"} = Astro.pro
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-        <meta name="theme-color" content="#006083" /> <Head offI18n={offI18n} {...seo} />
+        <Head offI18n={offI18n} {...seo} />
         <SchemasSERP />
-        
         <slot name="schema-jsonld" />
     </head>
     
