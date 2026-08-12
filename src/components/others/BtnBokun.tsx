@@ -13,13 +13,7 @@ interface BtnModalBokunProps {
 
 const LazyLoadBokunScript = lazy(() => import("@/utils/LoadBokun"));
 
-export default function BtnAccordionBokun({
-  data,
-  variant = "accordion"
-}: {
-  data: BtnModalBokunProps,
-  variant?: "accordion" | "sticky"
-}) {
+export default function BtnAccordionBokun({ data, variant = "accordion" }: { data: BtnModalBokunProps, variant?: "accordion" | "sticky" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (variant === "sticky") {
