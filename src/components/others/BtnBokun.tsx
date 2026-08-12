@@ -1,5 +1,5 @@
 "use client";
-import { useState, lazy, Suspense, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 
 interface BtnModalBokunProps {
@@ -9,8 +9,6 @@ interface BtnModalBokunProps {
   btnBook: string;
   btnCloseText?: string;
 }
-
-const LazyLoadBokunScript = lazy(() => import("@/utils/LoadBokun"));
 
 declare global {
   interface Window {
@@ -22,35 +20,65 @@ declare global {
 
 export default function BtnAccordionBokun({
   data,
-  variant = "accordion"
+  variant = "accordion",
+  plan = { price: 79 }
 }: {
   data: BtnModalBokunProps;
   variant?: "accordion" | "sticky";
+  plan?: { price: number };
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [isScriptReady, setIsScriptReady] = useState(false);
+  const renderCount = useRef(0);
 
   // Escucha el evento global desde Astro para abrir la vista emergente
   useEffect(() => {
-    const handleOpenModal = () => setIsOpen(true);
-    window.addEventListener("open-bokun-modal", handleOpenModal);
-    return () => {
-      window.removeEventListener("open-bokun-modal", handleOpenModal);
+    const handleOpenModal = () => {
+      setIsOpen(true);
+      renderCount.current += 1; // Forzamos un cambio de ID para el contenedor de Bokun
     };
+    window.addEventListener("open-bokun-modal", handleOpenModal);
+    return () => window.removeEventListener("open-bokun-modal", handleOpenModal);
   }, []);
 
-  // Forzar la reinicialización de las instancias de Bokun si el script ya existe en memoria
+  // Forzar la inicialización nativa del script de Bokun
   useEffect(() => {
-    if ((isOpen || showCalendar) && window.BokunWidget) {
-      setTimeout(() => {
-        try {
-          window.BokunWidget?.render();
-        } catch (error) {
-          console.warn("Bokun Re-render failed:", error);
+    if (isOpen || showCalendar) {
+      const scriptId = `bokun-script-embedder`;
+      let script = document.getElementById(scriptId) as HTMLScriptElement;
+
+      if (!script) {
+        script = document.createElement("script");
+        script.id = scriptId;
+        script.src = `https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetEmbedder.js?bookingChannelUuid=${data.bookingChannel}`;
+        script.async = true;
+        document.head.appendChild(script);
+      }
+
+      // Re-intentos controlados para asegurar que el script de Bokun tome el control del nuevo DIV pintado
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        if (window.BokunWidget) {
+          try {
+            window.BokunWidget.render();
+            setIsScriptReady(true);
+            clearInterval(interval);
+          } catch (e) {
+            console.warn("Intentando inicializar Bokun...", e);
+          }
         }
-      }, 50);
+        if (attempts > 30) { // Parar después de 3 segundos si falla
+          clearInterval(interval);
+        }
+      }, 100);
+
+      return () => clearInterval(interval);
+    } else {
+      setIsScriptReady(false);
     }
-  }, [isOpen, showCalendar]);
+  }, [isOpen, showCalendar, data.bookingChannel]);
 
   // Bloquear el scroll del body principal cuando el modal flotante esté abierto
   useEffect(() => {
@@ -59,64 +87,78 @@ export default function BtnAccordionBokun({
     } else {
       document.body.style.overflow = "";
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [isOpen, variant]);
 
-  // VISTA EMERGENTE / MODAL (Variante "sticky" para usar como Popup Global)
   if (variant === "sticky") {
-    // Si no está abierto, no renderizamos absolutamente NADA en el DOM del Header
     if (!isOpen) return null;
 
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 pointer-events-auto">
-        {/* Fondo oscurecido con Blur */}
-        <div
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"
-          onClick={() => setIsOpen(false)}
-        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer" onClick={() => setIsOpen(false)} />
 
-        {/* Ventana del Modal centrada estilo Lightbox */}
-        <div className="relative bg-white w-full sm:max-w-2xl rounded-2xl p-8 md:p-10 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 min-h-[400px]">
+        <div className="relative bg-white w-full sm:max-w-2xl rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh]">
           
-          {/* Botón X superior derecho */}
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors"
-            aria-label="Cerrar modal"
-          >
-            <X size={20} strokeWidth={2} />
+          <button onClick={() => setIsOpen(false)} className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors z-20">
+            <X size={22} strokeWidth={2} />
           </button>
 
-          {/* Contenido Superior: Título */}
-          <div className="mb-6">
-            <h3 className="font-sans text-xl md:text-2xl font-bold text-[#001524] pr-6">
+          <div className="mb-4">
+            <h3 className="font-sans text-xl md:text-2xl font-bold text-[#001524] pr-8">
               {data.title}
             </h3>
           </div>
 
-          {/* Contenido Central: Contenedor del Widget */}
-          <div className="flex-1 overflow-y-auto pr-1 my-2 min-h-[250px]">
-            <Suspense fallback={
-              <div className="flex justify-center py-20">
-                <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#006083]"></div>
+          <div className="flex-1 overflow-y-auto pr-1 my-2 relative min-h-[380px]">
+            
+            {/* Tarjetas de Descuento */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 mt-1">
+              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-sm flex flex-col justify-between min-h-[90px]">
+                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-sm">-15%</span>
+                <p className="text-[11px] leading-tight text-gray-500 font-medium pr-2">Book 15 days in advance</p>
+                <div className="mt-1">
+                  <p className="text-[11px] text-gray-400 line-through leading-none">${Math.round(plan.price * 1.1)} USD</p>
+                  <p className="text-sm font-bold text-[#006083] mt-0.5">${Math.round(plan.price * 0.85)} <span className="text-[9px] text-gray-400 font-semibold">USD</span></p>
+                </div>
               </div>
-            }>
-              <LazyLoadBokunScript BookingChannel={data.bookingChannel} />
-              <div
-                className="bokunWidget min-h-[250px]"
-                data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
-              ></div>
-            </Suspense>
+
+              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-sm flex flex-col justify-between min-h-[90px]">
+                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-sm">-20%</span>
+                <p className="text-[11px] leading-tight text-gray-500 font-medium pr-2">Book 30 days in advance</p>
+                <div className="mt-1">
+                  <p className="text-[11px] text-gray-400 line-through leading-none">${Math.round(plan.price * 1.1)} USD</p>
+                  <p className="text-sm font-bold text-[#006083] mt-0.5">${Math.round(plan.price * 0.80)} <span className="text-[9px] text-gray-400 font-semibold">USD</span></p>
+                </div>
+              </div>
+
+              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-sm flex flex-col justify-between min-h-[90px]">
+                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-sm">-40%</span>
+                <p className="text-[11px] leading-tight text-gray-500 font-medium pr-2">Book 60 days in advance</p>
+                <div className="mt-1">
+                  <p className="text-[11px] text-gray-400 line-through leading-none">${Math.round(plan.price * 1.1)} USD</p>
+                  <p className="text-sm font-bold text-[#006083] mt-0.5">${Math.round(plan.price * 0.60)} <span className="text-[9px] text-gray-400 font-semibold">USD</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Spinner */}
+            {!isScriptReady && (
+              <div className="absolute inset-x-0 bottom-0 top-[110px] flex justify-center items-center bg-white z-10 min-h-[250px]">
+                <div className="animate-spin rounded-full h-9 w-9 border-b-2 border-[#006083]"></div>
+              </div>
+            )}
+
+            {/* DIV de Bokun con KEY dinámica para forzar re-render limpio */}
+            <div
+              key={`bokun-modal-${renderCount.current}`}
+              className="bokunWidget min-h-[320px] transition-opacity duration-300"
+              style={{ opacity: isScriptReady ? 1 : 0 }}
+              data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
+            ></div>
           </div>
 
-          {/* Footer: Botón "Close" de texto abajo a la derecha */}
-          <div className="flex justify-end pt-4 mt-2 border-t border-gray-100">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-[#e14d76] hover:opacity-80 font-medium text-base transition-opacity px-2 py-1"
-            >
+          <div className="flex justify-end pt-3 mt-2 border-t border-gray-100">
+            <button onClick={() => setIsOpen(false)} className="text-[#e14d76] hover:opacity-80 font-medium text-sm transition-opacity px-2 py-1">
               {data.btnCloseText || "Close"}
             </button>
           </div>
@@ -125,39 +167,26 @@ export default function BtnAccordionBokun({
       </div>
     );
   }
-  // ACORDEÓN DESPLEGABLE (Variante "accordion" para las páginas de producto)
+
+  // ACORDEÓN DESPLEGABLE (Páginas de Producto)
   return (
     <div className="w-full">
       <button
         onClick={() => setShowCalendar(!showCalendar)}
         className={`w-full mt-6 py-3 rounded-lg font-semibold border-2 transition-all cursor-pointer ${
-          showCalendar
-            ? "bg-white border-[#006083] text-[#006083]"
-            : "bg-[#006083] border-[#006083] text-white hover:bg-[#004d6a]"
+          showCalendar ? "bg-white border-[#006083] text-[#006083]" : "bg-[#006083] border-[#006083] text-white hover:bg-[#004d6a]"
         }`}
       >
         {showCalendar ? "Cerrar Calendario" : data.btnBook}
       </button>
-      <div 
-        className={`grid transition-all duration-500 ease-in-out ${
-          showCalendar ? "grid-rows-[1fr] mt-4 opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
+      <div className={`grid transition-all duration-500 ease-in-out ${showCalendar ? "grid-rows-[1fr] mt-4 opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden min-h-0">
           <div className="bg-white border border-gray-100 rounded-xl p-4">
-            {showCalendar && (
-              <Suspense fallback={
-                <div className="flex justify-center py-6">
-                  <div className="animate-spin h-6 w-6 border-b-2 border-[#006083]"></div>
-                </div>
-              }>
-                <LazyLoadBokunScript BookingChannel={data.bookingChannel} />
-                <div 
-                  className="bokunWidget min-h-[450px]" 
-                  data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
-                ></div>
-              </Suspense>
-            )}
+            <div
+              key={showCalendar ? "bokun-acc-open" : "bokun-acc-closed"}
+              className="bokunWidget min-h-[450px]"
+              data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
+            ></div>
           </div>
         </div>
       </div>
