@@ -81,13 +81,13 @@ const plans = [
     id: "CENOTE",
     price: 70,
     oldPrice: 80,
-    href: translatePath("/pricing-regular-page/"),
+    href: translatePath("/cenotes-cancun/"),
   },
   {
     id: "PRIVATE",
     price: 70,
     oldPrice: 80,
-    href: translatePath("/pricing-private-page/"),
+    href: translatePath("/cenote-cancun-private/"),
     priority: true,
   },
 ];
@@ -95,7 +95,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const cloudEndpoint = "https://ik.imagekit.io/pos7v26vx";
 const duration = 4;
-const minimumAge = 5;
+const minimumAge = 4;
 const images = {
   card1: "/Cenote-Adventuring/CenoteA.3.webp",
   card2: "/Cenote-Adventuring/Card.1.webp",
@@ -264,7 +264,7 @@ const seoMetaData = {
                   {i18n.DETAIL_PAGE.GENERAL.SCHEDULE}
                 </span>
                 <span class="text-xs md:text-sm font-semibold text-gray-800"
-                  >09:00 | 13:00</span
+                  >09:30 | 13:30</span
                 >
               </div>
             </div>

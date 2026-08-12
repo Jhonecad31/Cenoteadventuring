@@ -91,7 +91,8 @@
       "TITLE": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
       "TITLE2": "Cenote Adventuring in Puerto Morelos: Private Tour Through the Best Hidden Cenotes ",
       "DESCRIPTION1": "Discover the magic of cenotes Puerto Morelos on an exclusive journey designed for travelers who want more than just a typical excursion.",
-      "DES": "Check Availability"
+      "DES": "See Tour Details",
+      "BOOK_NOW": "Book Now"
     },
     "AWARDS": {
       "TITLE": "Awards & Recognitions",
@@ -135,7 +136,7 @@
             "Specialized and bilingual guides",
             "Tequila tasting(in the cenote)",
             "Mayan Snack",
-            "Mayan performance",
+            "Regional show",
             "Round trip transportation from cancún",
             "Conservation Fee (include)"
           ]
@@ -150,7 +151,7 @@
             "Lifejacket",
             "Specialized and bilingual guides",
             "Tequila tasting(in the cenote)",
-            "Mayan performance"
+            "Regional show"
           ]
         }
       }
@@ -471,16 +472,16 @@
       "INCLUSIONS": {
         "TITLE": "Inclusions & Exclusions",
         "INCLUDES": [
-          "Conservation Fee(Included)",
+          "Conservation Fee (Included)",
           "Round-trip transportation from your hotel",
-          "3 Cenotes(with waterfall, zipline and cavern)",
+          "3 Cenotes (with waterfall, zipline and cavern)",
           "Lifejacket",
           "Specialized and bilingual guides",
-          "Tequila tasting(in the cenote)",
-          "Mayan performance"
+          "Tequila tasting (in the cenote)",
+          "Regional show"
         ],
         "NOT_INCLUDES": [
-          "Professional photographs(available for purchase)",
+          "Professional photographs (available for purchase)",
           "Tips or gratuites",
           "Souvenirs"
         ]
@@ -622,9 +623,9 @@
           "Cenote (with waterfall, zipline and cavern)",
           "Lifejacket",
           "Specialized and bilingual guides",
-          "Tequila tasting(in the cenote)",
+          "Tequila tasting (in the cenote)",
           "Mayan Snack",
-          "Mayan performance",
+          "Regional show",
           "Round trip transportation from cancún",
           "Conservation Fee (include)"
         ],

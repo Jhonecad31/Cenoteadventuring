@@ -14,11 +14,11 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale }) as any;
 
 // --- Integración CMS ---
-// Obtiene el contenido de la página "cenote-trail" desde el CMS.
+// Obtiene el contenido de la página "cenote-route" desde el CMS.
 // Si el CMS tiene contenido, sobreescribe el texto del i18n.
 // Si no, se usa el i18n como fallback.
 const lang = currentLocale === "es" ? "es" : "en";
-const cmsPage = await getPublicPage("localhost:4321", "cenote-trail");
+const cmsPage = await getPublicPage("localhost:4321", "cenote-route");
 const cmsTrans = cmsPage?.translations?.find(
   (t) => t.language.toLowerCase() === lang
 );

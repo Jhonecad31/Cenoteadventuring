@@ -1,338 +1,340 @@
-
 ---
 import { getI18N } from '@/i18n';
 import {
-	getLangFromUrl,
-	useTranslations,
-	useTranslatedPath,
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
 } from '@/i18n/utils';
 import { Menu, X } from 'lucide-react';
 import LanguageSelector from './LanguageSelector.astro';
 import {
-	Logo_icono_cenote,
-	LogoContainer,
-	Trip,
-	Logo_blanco,
+    Logo_icono_cenote,
+    LogoContainer,
+    Trip,
+    Logo_blanco,
 } from '@/icons/allIcons';
-
 const { currentLocale } = Astro;
 const { offI18n } = Astro.props;
 const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 const k = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
-
 const { pathname } = Astro.url;
 const isBlogOrContact = ['/blog/', '/contact/', '/about/', '/privacy-policy/', '/terms-conditions/'].some((path) =>
-	pathname.includes(path)
+    pathname.includes(path)
 );
-
 const navigation = [
-	{ title: k('nav.home'), link: translatePath('/') },
-	{ title: k('nav.cenoteTrail'), link: translatePath('/cenote-trail/') },
-	{ title: k('nav.blog'), link: translatePath('/blog/') },
-	{ title: k('nav.about'), link: translatePath('/about/') },
-	{ title: k('nav.contact'), link: translatePath('/contact/') },
+    { title: k('nav.home'), link: translatePath('/') },
+    { title: k('nav.cenoteTrail'), link: translatePath('/cenote-route/') },
+    { title: k('nav.blog'), link: translatePath('/blog/') },
+    { title: k('nav.about'), link: translatePath('/about/') },
+    { title: k('nav.contact'), link: translatePath('/contact/') },
 ];
 ---
-
 <header
-	class="fixed top-0 w-full z-50 transition-all duration-500 flex items-center border-b border-transparent h-24"
-	id="main-header">
-	<div
-		class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full">
-		<div class="flex-none w-14 lg:hidden">
-			<button
-				class="text-white p-2 transition-colors duration-500"
-				id="open-menu"
-				aria-label={k('aria.openMenu')}>
-				<Menu
-					size={30}
-					strokeWidth={1.5}
-				/>
-			</button>
-		</div>
+    class="fixed top-0 w-full z-50 transition-all duration-500 flex items-center border-b border-transparent h-24"
+    id="main-header">
+    <div
+        class="max-w-[1800px] mx-auto px-4 md:px-20 w-full flex items-center justify-between h-full gap-4">
+        
+        {/* Mobile Menu Trigger */}
+        <div class="flex-none w-14 lg:hidden">
+            <button
+                class="text-white p-2 transition-colors duration-500"
+                id="open-menu"
+                aria-label={k('aria.openMenu')}>
+                <Menu
+                    size={30}
+                    strokeWidth={1.5}
+                />
+            </button>
+        </div>
 
-		<div
-			id="logo-container"
-			class="text-white transition-colors duration-500">
-			<a
-				href={translatePath('/')}
-				class="block hover:opacity-90 transition-opacity">
-				<div
-					id="logo-completo"
-					class="transition-all duration-500 opacity-100 hidden lg:block">
-					<LogoContainer class="h-20 p-1" />
-				</div>
+        {/* Logos */}
+        <div
+            id="logo-container"
+            class="text-white transition-colors duration-500">
+            <a
+                href={translatePath('/')}
+                class="block hover:opacity-90 transition-opacity">
+                <div
+                    id="logo-completo"
+                    class="transition-all duration-500 opacity-100 hidden lg:block">
+                    <LogoContainer class="h-20 p-1" />
+                </div>
 
-				<div
-					id="logo-reducido"
-					class="transition-all duration-500 opacity-0 hidden">
-					<Logo_icono_cenote class="h-12 lg:h-16 p-1" />
-				</div>
+                <div
+                    id="logo-reducido"
+                    class="transition-all duration-500 opacity-0 hidden">
+                    <Logo_icono_cenote class="h-12 lg:h-16 p-1" />
+                </div>
 
-				<div
-					id="logo-movil"
-					class="transition-all duration-500 opacity-100 block lg:hidden">
-					{
-						isBlogOrContact ? (
-							<LogoContainer class="h-14 p-1" />
-						) : (
-							<Logo_blanco class="h-14 p-1" />
-						)
-					}
-				</div>
-			</a>
-		</div>
+                <div
+                    id="logo-movil"
+                    class="transition-all duration-500 opacity-100 block lg:hidden">
+                    {
+                        isBlogOrContact ? (
+                            <LogoContainer class="h-14 p-1" />
+                        ) : (
+                            <Logo_blanco class="h-14 p-1" />
+                        )
+                    }
+                </div>
+            </a>
+        </div>
 
-		<nav class="hidden lg:flex flex-1 justify-center">
-			<ul class="flex gap-10">
-				{
-					navigation.map((item) => (
-						<li>
-							<a
-								href={item.link}
-								class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium">
-								{item.title}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</nav>
+        {/* Desktop Navigation */}
+        <nav class="hidden lg:flex flex-1 justify-center">
+            <ul class="flex gap-10 items-center">
+                {
+                    navigation.map((item) => (
+                        <li>
+                            <a
+                                href={item.link}
+                                class="nav-link text-[12px] uppercase tracking-[0.3em] text-white hover:opacity-60 transition-all font-medium">
+                                {item.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
 
-		<div class="flex-none w-14 lg:w-auto flex justify-end">
-			<div
-				class="flex items-center gap-5 text-white transition-colors duration-500"
-				id="icon-group">
-				{!offI18n && <LanguageSelector />}
-			</div>
-		</div>
-	</div>
+        {/* Action Group: Book Now primero, luego Idiomas */}
+        <div class="flex-none flex items-center gap-4 md:gap-6 justify-end">
+            {/* Botón Book Now */}
+            <a
+                href={translatePath('/booking/')}
+                id="nav-book-btn"
+                class="bg-[#006083] text-white hover:bg-[#006083]/90 border border-transparent px-5 py-2.5 rounded-md text-[11px] font-medium uppercase tracking-[0.2em] transition-all duration-500 whitespace-nowrap shadow-sm">
+                {i18n.HOME_PAGE.HERO.BOOK_NOW}
+            </a>
 
-	<div
-		id="mobile-drawer"
-		class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 justify-between">
-		<div>
-			<div class="flex justify-between items-center">
-				<Logo_blanco class="h-15 text-white" />
+            {/* Selector de idiomas con el ícono del mundito */}
+            <div
+                class="flex items-center gap-5 text-white transition-colors duration-500"
+                id="icon-group">
+                {!offI18n && <LanguageSelector />}
+            </div>
+        </div>
+    </div>
 
-				<button
-					id="close-menu"
-					class="text-white p-2"
-					aria-label={k('aria.closeMenu')}>
-					<X
-						size={35}
-						strokeWidth={1}
-					/>
-				</button>
-			</div>
+    {/* Mobile Drawer */}
+    <div
+        id="mobile-drawer"
+        class="fixed inset-0 bg-[#006083] z-[60] -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 justify-between">
+        <div>
+            <div class="flex justify-between items-center">
+                <Logo_blanco class="h-15 text-white" />
 
-			<nav class="mt-20 text-center">
-				<ul class="flex flex-col gap-10">
-					{
-						navigation.map((item) => (
-							<li>
-								<a
-									href={item.link}
-									class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity">
-									{item.title}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</nav>
-		</div>
+                <button
+                    id="close-menu"
+                    class="text-white p-2"
+                    aria-label={k('aria.closeMenu')}>
+                    <X
+                        size={35}
+                        strokeWidth={1}
+                    />
+                </button>
+            </div>
 
-		<div class="flex flex-col items-center gap-6 mb-15">
-			<div class="h-[1px] w-20 bg-white/30"></div>
-
-			<div class="flex gap-8 text-white items-center">
-				
-				<a
-					href="https://www.instagram.com/cenoteadventuring/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="hover:scale-110 transition-transform"
-					aria-label="Instagram">
-					
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="w-6 h-6"
-						><rect
-							width="20"
-							height="20"
-							x="2"
-							y="2"
-							rx="5"
-							ry="5"
-						></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-						></path><line
-							x1="17.5"
-							x2="17.51"
-							y1="6.5"
-							y2="6.5"
-						></line></svg
-					>
-				</a>
-
-				<a
-					href="https://www.facebook.com/cenoteadventuring/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="hover:scale-110 transition-transform"
-					aria-label="Facebook">
-					
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="w-6 h-6"
-						><path
-							d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-						></path></svg
-					>
-				</a>
-
-				<a
-					href="https://www.tripadvisor.com.mx/24252542"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="hover:scale-110 transition-transform"
-					aria-label="TripAdvisor">
-					
-					<img
-						src={Trip.src}
-						alt="TripAdvisor"
-						width="24"
-						height="24"
-						class="w-6 h-6 invert"
-					/>
-				</a>
-			</div>
-		</div>
-	</div>
+            <nav class="mt-16 text-center">
+                <ul class="flex flex-col gap-8">
+                    {
+                        navigation.map((item) => (
+                            <li>
+                                <a
+                                    href={item.link}
+                                    class="font-serif text-4xl italic text-white block hover:opacity-70 transition-opacity">
+                                    {item.title}
+                                </a>
+                            </li>
+                        ))
+                    }
+                    {/* Botón Book Now en menú móvil */}
+                    <li class="mt-4">
+                        <a
+                            href={translatePath('/booking/')}
+                            class="inline-block w-full max-w-xs bg-[#006083] text-white hover:bg-[#006083]/90 rounded-md px-6 py-4 text-[13px] font-medium uppercase tracking-[0.2em] transition-opacity hover:opacity-90">
+                            {i18n.HOME_PAGE.HERO.BOOK_NOW}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex flex-col items-center gap-6 mb-15">
+            <div class="h-[1px] w-20 bg-white/30"></div>
+            <div class="flex gap-8 text-white items-center">
+                <a
+                    href="https://www.instagram.com/cenoteadventuring/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:scale-110 transition-transform"
+                    aria-label="Instagram">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-6 h-6"
+                        ><rect
+                            width="20"
+                            height="20"
+                            x="2"
+                            y="2"
+                            rx="5"
+                            ry="5"
+                        ></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                        ></path><line
+                            x1="17.5"
+                            x2="17.51"
+                            y1="6.5"
+                            y2="6.5"
+                        ></line></svg>
+                </a>
+                <a
+                    href="https://www.facebook.com/cenoteadventuring/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:scale-110 transition-transform"
+                    aria-label="Facebook">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-6 h-6"
+                        ><path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                        ></path></svg>
+                </a>
+                <a
+                    href="https://www.tripadvisor.com.mx/24252542"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:scale-110 transition-transform"
+                    aria-label="TripAdvisor">
+                    <img
+                        src={Trip.src}
+                        alt="TripAdvisor"
+                        width="24"
+                        height="24"
+                        class="w-6 h-6 invert"
+                    />
+                </a>
+            </div>
+        </div>
+    </div>
 </header>
-
 <script>
-	const updateStyles = () => {
-		const isScrolled = window.scrollY > 50;
-		const isMobile = window.innerWidth < 768;
-		const header = document.getElementById('main-header');
-		const logoCompleto = document.getElementById('logo-completo');
-		const logoReducido = document.getElementById('logo-reducido');
-		const logoMovil = document.getElementById('logo-movil');
+    const updateStyles = () => {
+        const isScrolled = window.scrollY > 50;
+        const header = document.getElementById('main-header');
 
-		const isSpecialPage = ['/contact', '/404', '/blog/', '/thanks', '/privacy-policy', '/terms-conditions'].some((path) =>
-			window.location.pathname.includes(path),
-		);
+        const isSpecialPage = ['/contact', '/404', '/blog/', '/thanks', '/privacy-policy', '/terms-conditions'].some((path) =>
+            window.location.pathname.includes(path),
+        );
 
-		const useDarkTheme = isScrolled || isSpecialPage;
-		const isMini = isScrolled; // Solo reducimos el tamaño al hacer scroll real
+        const useDarkTheme = isScrolled || isSpecialPage;
+        const isMini = isScrolled;
 
-		header?.classList.toggle('bg-[#F8FAFC]', useDarkTheme);
-		header?.classList.toggle('is-scrolled', isMini);
-		header?.classList.toggle('h-20', useDarkTheme);
-		header?.classList.toggle('h-24', !useDarkTheme);
+        header?.classList.toggle('bg-[#F8FAFC]', useDarkTheme);
+        header?.classList.toggle('is-scrolled', isMini);
+        header?.classList.toggle('h-20', useDarkTheme);
+        header?.classList.toggle('h-24', !useDarkTheme);
 
-		const textColor = useDarkTheme ? 'text-[#002B49]' : 'text-white';
-		const oldColor = useDarkTheme ? 'text-white' : 'text-[#002B49]';
-		const elementsToTint = document.querySelectorAll(
-			'#logo-container, #icon-group, #open-menu, .nav-link',
-		);
+        const textColor = useDarkTheme ? 'text-[#002B49]' : 'text-white';
+        const oldColor = useDarkTheme ? 'text-white' : 'text-[#002B49]';
+        const elementsToTint = document.querySelectorAll(
+            '#logo-container, #icon-group, #open-menu, .nav-link',
+        );
 
-		elementsToTint.forEach((el) => {
-			el.classList.add(textColor);
-			el.classList.remove(oldColor);
-		});
-	};
+        elementsToTint.forEach((el) => {
+            el.classList.add(textColor);
+            el.classList.remove(oldColor);
+        });
+    };
 
-	const initMenu = () => {
-		const openBtn = document.getElementById('open-menu');
-		const closeBtn = document.getElementById('close-menu');
-		const drawer = document.getElementById('mobile-drawer');
-		const html = document.documentElement;
-		let scrollPosition = 0;
+    const initMenu = () => {
+        const openBtn = document.getElementById('open-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const drawer = document.getElementById('mobile-drawer');
+        const html = document.documentElement;
+        let scrollPosition = 0;
 
-		const openMenu = () => {
-			scrollPosition = window.scrollY;
-			drawer?.classList.remove('-translate-x-full');
-			html.style.overflow = 'hidden';
-			document.body.style.overflow = 'hidden';
-			document.body.style.top = `-${scrollPosition}px`;
-			document.body.classList.add('is-nav-open');
-		};
+        const openMenu = () => {
+            scrollPosition = window.scrollY;
+            drawer?.classList.remove('-translate-x-full');
+            html.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.classList.add('is-nav-open');
+        };
 
-		const closeMenu = () => {
-			drawer?.classList.add('-translate-x-full');
-			html.style.overflow = '';
-			document.body.style.overflow = '';
-			document.body.classList.remove('is-nav-open');
-			document.body.style.top = '';
-			window.scrollTo({ top: scrollPosition, behavior: 'instant' });
-		};
+        const closeMenu = () => {
+            drawer?.classList.add('-translate-x-full');
+            html.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.classList.remove('is-nav-open');
+            document.body.style.top = '';
+            window.scrollTo({ top: scrollPosition, behavior: 'instant' });
+        };
 
-		openBtn?.addEventListener('click', openMenu);
-		closeBtn?.addEventListener('click', closeMenu);
-		drawer
-			?.querySelectorAll('nav a')
-			.forEach((link) => link.addEventListener('click', closeMenu));
-	};
+        openBtn?.addEventListener('click', openMenu);
+        closeBtn?.addEventListener('click', closeMenu);
+        drawer
+            ?.querySelectorAll('nav a')
+            .forEach((link) => link.addEventListener('click', closeMenu));
+    };
 
-	window.addEventListener('scroll', updateStyles);
-	window.addEventListener('resize', updateStyles);
-	document.addEventListener('DOMContentLoaded', () => {
-		updateStyles();
-		initMenu();
-	});
-	document.addEventListener('astro:after-swap', () => {
-		updateStyles();
-		initMenu();
-	});
+    window.addEventListener('scroll', updateStyles);
+    window.addEventListener('resize', updateStyles);
+    document.addEventListener('DOMContentLoaded', () => {
+        updateStyles();
+        initMenu();
+    });
+    document.addEventListener('astro:after-swap', () => {
+        updateStyles();
+        initMenu();
+    });
 </script>
-
 <style>
-	.font-serif {
-		font-family: 'Playfair Display', serif;
-	}
+    .font-serif {
+        font-family: 'Playfair Display', serif;
+    }
 
-	:global(body.is-nav-open) {
-		touch-action: none;
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		overflow: hidden !important;
-	}
+    :global(body.is-nav-open) {
+        touch-action: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+    }
 
-	:global(body.is-nav-open #sticky-product-card) {
-		display: none !important;
-	}
+    :global(body.is-nav-open #sticky-product-card) {
+        display: none !important;
+    }
 
-	#mobile-drawer {
-		z-index: 100;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
-	}
+    #mobile-drawer {
+        z-index: 100;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 
-	.is-scrolled #logo-completo,
-	.is-scrolled #logo-movil {
-		display: none !important;
-		opacity: 0 !important;
-	}
+    .is-scrolled #logo-completo,
+    .is-scrolled #logo-movil {
+        display: none !important;
+        opacity: 0 !important;
+    }
 
-	.is-scrolled #logo-reducido {
-		display: block !important;
-		opacity: 1 !important;
-	}
+    .is-scrolled #logo-reducido {
+        display: block !important;
+        opacity: 1 !important;
+    }
 </style>
