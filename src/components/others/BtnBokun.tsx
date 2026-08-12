@@ -36,45 +36,51 @@ export default function BtnAccordionBokun({
   useEffect(() => {
     const handleOpenModal = () => {
       setIsOpen(true);
-      renderCount.current += 1; // Forzamos un cambio de ID para el contenedor de Bokun
+      renderCount.current += 1;
     };
     window.addEventListener("open-bokun-modal", handleOpenModal);
     return () => window.removeEventListener("open-bokun-modal", handleOpenModal);
   }, []);
 
-  // Forzar la inicialización nativa del script de Bokun
+  // Control estricto e inyección limpia de scripts para Bokun
   useEffect(() => {
     if (isOpen || showCalendar) {
       const scriptId = `bokun-script-embedder`;
-      let script = document.getElementById(scriptId) as HTMLScriptElement;
-
-      if (!script) {
-        script = document.createElement("script");
-        script.id = scriptId;
-        script.src = `https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetEmbedder.js?bookingChannelUuid=${data.bookingChannel}`;
-        script.async = true;
-        document.head.appendChild(script);
+      
+      // Eliminamos cualquier script previo para forzar una lectura limpia del DOM nuevo
+      const oldScript = document.getElementById(scriptId);
+      if (oldScript) {
+        oldScript.remove();
       }
 
-      // Re-intentos controlados para asegurar que el script de Bokun tome el control del nuevo DIV pintado
-      let attempts = 0;
-      const interval = setInterval(() => {
-        attempts++;
-        if (window.BokunWidget) {
-          try {
-            window.BokunWidget.render();
-            setIsScriptReady(true);
-            clearInterval(interval);
-          } catch (e) {
-            console.warn("Intentando inicializar Bokun...", e);
+      // Creamos la instancia fresca del script oficial de Bokun
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = `https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetEmbedder.js?bookingChannelUuid=${data.bookingChannel}`;
+      script.async = true;
+      
+      script.onload = () => {
+        let attempts = 0;
+        const interval = setInterval(() => {
+          attempts++;
+          if (window.BokunWidget) {
+            try {
+              window.BokunWidget.render();
+              setIsScriptReady(true);
+              clearInterval(interval);
+            } catch (e) {
+              console.warn("Inicializando render de Bokun...", e);
+            }
           }
-        }
-        if (attempts > 30) { // Parar después de 3 segundos si falla
-          clearInterval(interval);
-        }
-      }, 100);
+          if (attempts > 30) clearInterval(interval);
+        }, 50);
+      };
 
-      return () => clearInterval(interval);
+      document.head.appendChild(script);
+
+      return () => {
+        clearInterval(script.onload as unknown as number);
+      };
     } else {
       setIsScriptReady(false);
     }
@@ -90,16 +96,15 @@ export default function BtnAccordionBokun({
     return () => { document.body.style.overflow = ""; };
   }, [isOpen, variant]);
 
+  // VARIANT: STICKY (Modal global/emergente)
   if (variant === "sticky") {
     if (!isOpen) return null;
 
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 pointer-events-auto">
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer" onClick={() => setIsOpen(false)} />
-
         <div className="relative bg-white w-full sm:max-w-2xl rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh]">
-          
-          <button onClick={() => setIsOpen(false)} className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors z-20">
+          <button onClick={() => setIsOpen(false)} className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors z-20 cursor-pointer">
             <X size={22} strokeWidth={2} />
           </button>
 
@@ -108,13 +113,11 @@ export default function BtnAccordionBokun({
               {data.title}
             </h3>
           </div>
-
           <div className="flex-1 overflow-y-auto pr-1 my-2 relative min-h-[380px]">
-            
             {/* Tarjetas de Descuento */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 mt-1">
-              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-sm flex flex-col justify-between min-h-[90px]">
-                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-sm">-15%</span>
+              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-xs flex flex-col justify-between min-h-[90px]">
+                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-xs">-15%</span>
                 <p className="text-[11px] leading-tight text-gray-500 font-medium pr-2">Book 15 days in advance</p>
                 <div className="mt-1">
                   <p className="text-[11px] text-gray-400 line-through leading-none">${Math.round(plan.price * 1.1)} USD</p>
@@ -122,8 +125,8 @@ export default function BtnAccordionBokun({
                 </div>
               </div>
 
-              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-sm flex flex-col justify-between min-h-[90px]">
-                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-sm">-20%</span>
+              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-xs flex flex-col justify-between min-h-[90px]">
+                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-xs">-20%</span>
                 <p className="text-[11px] leading-tight text-gray-500 font-medium pr-2">Book 30 days in advance</p>
                 <div className="mt-1">
                   <p className="text-[11px] text-gray-400 line-through leading-none">${Math.round(plan.price * 1.1)} USD</p>
@@ -131,8 +134,8 @@ export default function BtnAccordionBokun({
                 </div>
               </div>
 
-              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-sm flex flex-col justify-between min-h-[90px]">
-                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-sm">-40%</span>
+              <div className="relative bg-white p-3 pt-4 rounded-xl border border-gray-200/80 shadow-xs flex flex-col justify-between min-h-[90px]">
+                <span className="absolute -top-2 -right-2 flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-[#FF991C] rounded-full shadow-xs">-40%</span>
                 <p className="text-[11px] leading-tight text-gray-500 font-medium pr-2">Book 60 days in advance</p>
                 <div className="mt-1">
                   <p className="text-[11px] text-gray-400 line-through leading-none">${Math.round(plan.price * 1.1)} USD</p>
@@ -143,7 +146,7 @@ export default function BtnAccordionBokun({
 
             {/* Spinner */}
             {!isScriptReady && (
-              <div className="absolute inset-x-0 bottom-0 top-[110px] flex justify-center items-center bg-white z-10 min-h-[250px]">
+              <div className="absolute inset-x-0 bottom-0 top-[110px] flex justify-center items-center bg-white z-50 min-h-[250px]">
                 <div className="animate-spin rounded-full h-9 w-9 border-b-2 border-[#006083]"></div>
               </div>
             )}
@@ -151,14 +154,13 @@ export default function BtnAccordionBokun({
             {/* DIV de Bokun con KEY dinámica para forzar re-render limpio */}
             <div
               key={`bokun-modal-${renderCount.current}`}
-              className="bokunWidget min-h-[320px] transition-opacity duration-300"
-              style={{ opacity: isScriptReady ? 1 : 0 }}
+              className="bokunWidget min-h-[320px]"
               data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
             ></div>
           </div>
 
           <div className="flex justify-end pt-3 mt-2 border-t border-gray-100">
-            <button onClick={() => setIsOpen(false)} className="text-[#e14d76] hover:opacity-80 font-medium text-sm transition-opacity px-2 py-1">
+            <button onClick={() => setIsOpen(false)} className="text-[#e14d76] hover:opacity-80 font-medium text-sm transition-opacity px-2 py-1 cursor-pointer">
               {data.btnCloseText || "Close"}
             </button>
           </div>
@@ -167,8 +169,7 @@ export default function BtnAccordionBokun({
       </div>
     );
   }
-
-  // ACORDEÓN DESPLEGABLE (Páginas de Producto)
+  // VARIANT: ACCORDION (Desplegable en página de producto)
   return (
     <div className="w-full">
       <button
@@ -182,11 +183,13 @@ export default function BtnAccordionBokun({
       <div className={`grid transition-all duration-500 ease-in-out ${showCalendar ? "grid-rows-[1fr] mt-4 opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden min-h-0">
           <div className="bg-white border border-gray-100 rounded-xl p-4">
-            <div
-              key={showCalendar ? "bokun-acc-open" : "bokun-acc-closed"}
-              className="bokunWidget min-h-[450px]"
-              data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
-            ></div>
+            {showCalendar && (
+              <div
+                key="bokun-accordion-widget"
+                className="bokunWidget min-h-[450px]"
+                data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
+              ></div>
+            )}
           </div>
         </div>
       </div>
