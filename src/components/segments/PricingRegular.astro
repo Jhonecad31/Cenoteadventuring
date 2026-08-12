@@ -450,7 +450,6 @@ const seoMetaData = {
                     if (key === "CASH") Icon = Wallet;
                     if (key === "REPELLENT") Icon = Bug;
 
-<<<<<<< HEAD
                     return (
                       <div class="flex items-start gap-5 group transition-all">
                         <div class="flex-shrink-0 w-12 h-12 bg-[#EDF4FC] rounded-lg flex items-center justify-center group-hover:bg-[#006083] transition-colors duration-300">
@@ -473,75 +472,6 @@ const seoMetaData = {
               }
             </div>
           </div>
-=======
-					{}
-					<div class="mt-20">
-						<h2
-							class="text-2xl md:text-3xl font-serif mb-8 text-[#001524]"
-						>
-							FAQs
-						</h2>
-						<div class="flex flex-col gap-4">
-							{
-								i18n.DETAIL_PAGE.REGULAR_CENOTE.FAQS.FAQS.map(
-									(faq, index) => (
-										<details
-											name="faq-accordion"
-											open={index === 0}
-											class="group bg-white rounded-lg border border-slate-200/60 open:border-[#006083]/30 open:bg-sky-50/20 shadow-sm overflow-hidden transition-all duration-300"
-										>
-											<summary class="flex justify-between items-center cursor-pointer list-none p-8 text-left font-medium text-[#001524] hover:text-[#005B71] transition-colors">
-												<span class="pr-4">
-													{faq.question}
-												</span>
-												<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-													<span class="text-3xl font-light text-gray-400 group-hover:text-[#005B71] group-open:text-[#006083] transition-all duration-300 group-open:rotate-45 block leading-none">
-														+
-													</span>
-												</div>
-											</summary>
-											<div class="px-8 pb-8 animate-fade-in border-t border-slate-100 pt-4">
-												<p class="text-gray-600 leading-relaxed font-light">
-													{faq.answer}
-												</p>
-											</div>
-										</details>
-									),
-								)
-							}
-						</div>
-					</div>
-				</div>
-				<aside class="hidden lg:block lg:col-span-4 lg:mt-0">
-					<div
-						class="w-full border-2 border-gray-200 p-2 rounded-[22px]"
-					>
-						<div
-							class="w-full bg-gray-50/50 p-6 rounded-xl text-center border border-gray-100"
-						>
-							<div class="mb-4">
-								<p
-									class="text-xs lg:text-sm text-gray-400 line-through"
-								>
-									{
-										i18n.DETAIL_PAGE.FORM_RESERVATION
-											.PRICE_FROM
-									} $80 USD
-								</p>
-								<div
-									class="text-3xl lg:text-4xl font-bold text-[#001524]"
-								>
-									$70 USD
-								</div>
-								<p class="text-xs lg:text-sm text-gray-500">
-									{
-										i18n.DETAIL_PAGE.FORM_RESERVATION
-											.PER_PERSON
-									}
-								</p>
-							</div>
->>>>>>> 78cfea93b46e577c3f170b3d4842109e0ee139d4
-
           {}
           <div class="mt-20">
             <h2 class="text-2xl md:text-3xl font-serif mb-8 text-[#001524]">
