@@ -441,7 +441,8 @@
       "EARLY_BIRD": {
         "TITLE": "Discount for Early Deal",
         "BOOKING_15_DAYS": "Booking 15 days before.",
-        "BOOKING_30_DAYS": "Booking 30 days before."
+        "BOOKING_30_DAYS": "Booking 30 days before.",
+        "BOOKING_60_DAYS": "Booking 60 days before."
       },
       "AGE_REQUIREMENT": "Age Requirement",
       "YEARS_AND_OLDER": "years and older",

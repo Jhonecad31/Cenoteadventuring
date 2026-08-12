@@ -15,7 +15,6 @@ export default function BtnLinkCustom({ text, url, color}: ButtonProps) {
         secondary: "bg-white text-black font-semibold text-base",
         tertiary: "bg-amber-500 text-black text-base",
     }
-
     return (
         <Button
             as={Link}
