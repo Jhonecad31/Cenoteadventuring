@@ -78,42 +78,42 @@ export default function BtnAccordionBokun({
     if (!isOpen) return null;
 
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 pointer-events-auto">
+      <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 pointer-events-auto">
         {/* Fondo oscurecido con Blur */}
         <div
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer transition-opacity"
           onClick={() => setIsOpen(false)}
         />
         
-        {/* Ventana del Modal centrada estilo Lightbox */}
-        <div className="relative bg-white w-full max-w-3xl rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh]">
+        {/* Ventana del Modal: Fullscreen en móvil (rounded-t-2xl) y Centrada en sm+ */}
+        <div className="relative bg-white w-full sm:max-w-3xl rounded-t-3xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 h-[92vh] sm:h-auto sm:max-h-[90vh]">
           
           {/* Botón X superior derecho */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full transition-colors z-30 cursor-pointer shadow-sm"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors z-30 cursor-pointer shadow-xs"
             aria-label="Cerrar modal"
           >
             <X size={20} strokeWidth={2.5} />
           </button>
 
           {/* Contenido Superior: Título con espacio extra a la derecha para la X */}
-          <div className="mb-3 pr-10">
-            <h3 className="font-sans text-lg sm:text-xl md:text-2xl font-bold text-[#001524]">
+          <div className="mb-2 pr-12 pt-1 sm:pt-0 shrink-0">
+            <h3 className="font-sans text-base sm:text-xl md:text-2xl font-bold text-[#001524] line-clamp-2">
               {data.title}
             </h3>
           </div>
 
-          {/* Contenido Central con Scroll */}
-          <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-4">
+          {/* Contenido Central con Scroll Fluido para Móvil */}
+          <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-4 overscroll-contain">
             
             {/* Sección de Promociones Optimizada para Móvil */}
             {data.promotions && data.promotions.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2 px-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2 px-0.5">
                 {data.promotions.map((promo, index) => (
                   <div 
                     key={index} 
-                    className="relative overflow-visible bg-white border border-gray-200/90 rounded-xl p-4 text-center shadow-xs flex flex-col justify-between items-center"
+                    className="relative overflow-visible bg-white border border-gray-200/95 rounded-xl p-3.5 text-center shadow-2xs flex flex-col justify-between items-center"
                   >
                     {/* Badge Circular de Descuento */}
                     <div className="absolute -top-3 -right-2 sm:-top-3.5 sm:-right-3.5 bg-orange-500 text-white text-[11px] sm:text-xs font-bold w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-md z-20">
@@ -146,17 +146,17 @@ export default function BtnAccordionBokun({
             }>
               <LazyLoadBokunScript BookingChannel={data.bookingChannel} />
               <div
-                className="bokunWidget min-h-[250px]"
+                className="bokunWidget min-h-[300px]"
                 data-src={`https://widgets.bokun.io/online-sales/${data.bookingChannel}/experience-calendar/${data.idCalendar}`}
               ></div>
             </Suspense>
           </div>
 
           {/* Footer: Botón "Close" de texto abajo a la derecha */}
-          <div className="flex justify-end pt-3 mt-1 border-t border-gray-100">
+          <div className="flex justify-end pt-3 mt-1 border-t border-gray-100 shrink-0">
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#e14d76] hover:opacity-80 font-medium text-sm sm:text-base transition-opacity px-2 py-1 cursor-pointer"
+              className="text-[#e14d76] hover:opacity-80 font-semibold text-sm sm:text-base transition-opacity px-3 py-1.5 cursor-pointer"
             >
               {data.btnCloseText || "Close"}
             </button>
@@ -166,6 +166,7 @@ export default function BtnAccordionBokun({
       </div>
     );
   }
+
   // VISTA ACORDEÓN (Variante por defecto)
   return (
     <div className="w-full">

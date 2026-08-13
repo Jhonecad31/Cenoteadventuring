@@ -742,9 +742,15 @@ const seoMetaData = {
             </p>
           </div>
         </div>
-        <div slot="sticky-button">
-          <BtnModalBokun client:visible data={dataForm} isSticky={false} />
-        </div>
+
+        {/* Botón que dispara el evento global para abrir el modal correctamente */}
+        <button
+          type="button"
+          onclick="window.dispatchEvent(new CustomEvent('open-bokun-modal'))"
+          class="w-full py-3 rounded-xl font-semibold bg-[#006083] text-white hover:bg-[#004d6a] transition-all cursor-pointer shadow-md text-sm sm:text-base flex items-center justify-center gap-2"
+        >
+          {dataForm.btnBook}
+        </button>
       </div>
     </div>
   </main>
