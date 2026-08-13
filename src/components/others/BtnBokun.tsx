@@ -2,12 +2,21 @@
 import { useState, lazy, Suspense, useEffect } from "react";
 import { X } from "lucide-react";
 
+interface Promotion {
+  discount: string;      // Ej: "-15%"
+  title: string;         // Ej: "Book 15 days in advance"
+  originalPrice?: string;// Ej: "$69.99 USD"
+  price: string;         // Ej: "$59"
+  currency?: string;     // Ej: "USD"
+}
+
 interface BtnModalBokunProps {
   bookingChannel: string;
   idCalendar: string;
   title: string;
   btnBook: string;
   btnCloseText?: string;
+  promotions?: Promotion[]; // Lista opcional de promociones
 }
 
 const LazyLoadBokunScript = lazy(() => import("@/utils/LoadBokun"));
@@ -75,27 +84,61 @@ export default function BtnAccordionBokun({
           className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"
           onClick={() => setIsOpen(false)}
         />
+        
         {/* Ventana del Modal centrada estilo Lightbox */}
-        <div className="relative bg-white w-full sm:max-w-2xl rounded-2xl p-8 md:p-10 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 min-h-[400px]">
+        <div className="relative bg-white w-full sm:max-w-3xl rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh]">
           
           {/* Botón X superior derecho */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors"
+            className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors z-10 cursor-pointer"
             aria-label="Cerrar modal"
           >
             <X size={20} strokeWidth={2} />
           </button>
 
           {/* Contenido Superior: Título */}
-          <div className="mb-6">
-            <h3 className="font-sans text-xl md:text-2xl font-bold text-[#001524] pr-6">
+          <div className="mb-4 pr-6">
+            <h3 className="font-sans text-xl md:text-2xl font-bold text-[#001524]">
               {data.title}
             </h3>
           </div>
 
-          {/* Contenido Central: Contenedor del Widget */}
-          <div className="flex-1 overflow-y-auto pr-1 my-2 min-h-[250px]">
+          {/* Contenido Central con Scroll */}
+          <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-6">
+            
+            {/* Sección de Promociones (Con overflow visible para que el badge naranja no se corte) */}
+            {data.promotions && data.promotions.length > 0 && (
+              <div className={`grid grid-cols-1 ${data.promotions.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1 max-w-md mx-auto'} gap-4 pt-4 px-2`}>
+                {data.promotions.map((promo, index) => (
+                  <div 
+                    key={index} 
+                    className="relative overflow-visible bg-white border border-gray-200/90 rounded-2xl p-5 text-center shadow-xs flex flex-col justify-between items-center"
+                  >
+                    {/* Badge Circular Naranja posicionado exactamente en la esquina superior derecha */}
+                    <div className="absolute -top-3.5 -right-3.5 bg-orange-500 text-white text-xs font-bold w-9 h-9 rounded-full flex items-center justify-center shadow-md z-20">
+                      {promo.discount}
+                    </div>
+                    
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-tight mt-1">
+                      {promo.title}
+                    </p>
+                    
+                    {promo.originalPrice && (
+                      <span className="text-xs sm:text-sm text-gray-400 line-through mt-1">
+                        {promo.originalPrice}
+                      </span>
+                    )}
+                    
+                    <div className="text-xl sm:text-2xl font-bold text-[#006083] mt-1">
+                      {promo.price} <span className="text-xs font-semibold text-gray-500">{promo.currency || "USD"}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Contenedor del Widget de Calendario */}
             <Suspense fallback={
               <div className="flex justify-center py-20">
                 <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#006083]"></div>
@@ -113,7 +156,7 @@ export default function BtnAccordionBokun({
           <div className="flex justify-end pt-4 mt-2 border-t border-gray-100">
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#e14d76] hover:opacity-80 font-medium text-base transition-opacity px-2 py-1"
+              className="text-[#e14d76] hover:opacity-80 font-medium text-base transition-opacity px-2 py-1 cursor-pointer"
             >
               {data.btnCloseText || "Close"}
             </button>
