@@ -85,7 +85,7 @@ export default function BtnAccordionBokun({
           onClick={() => setIsOpen(false)}
         />
         
-        {/* Ventana del Modal: Fullscreen en móvil (rounded-t-2xl) y Centrada en sm+ */}
+        {/* Ventana del Modal: Fullscreen en móvil (rounded-t-3xl) y Centrada en sm+ */}
         <div className="relative bg-white w-full sm:max-w-3xl rounded-t-3xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 h-[92vh] sm:h-auto sm:max-h-[90vh]">
           
           {/* Botón X superior derecho */}
@@ -107,7 +107,7 @@ export default function BtnAccordionBokun({
           {/* Contenido Central con Scroll Fluido para Móvil */}
           <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-4 overscroll-contain">
             
-            {/* Sección de Promociones Adaptada: 2 arriba y la última a ancho completo abajo en móvil */}
+            {/* Sección de Promociones Optimizada */}
             {data.promotions && data.promotions.length > 0 && (
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 pt-4 pb-2 px-0.5">
                 {data.promotions.map((promo, index) => {
@@ -120,24 +120,56 @@ export default function BtnAccordionBokun({
                         isLastAndOdd ? "col-span-2 lg:col-span-1" : "col-span-1"
                       }`}
                     >
-                      {/* Badge Circular de Descuento */}
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-sm whitespace-nowrap z-20">
-                        {promo.discount}
-                      </div>
-                      
-                      <p className="text-xs text-gray-600 font-medium leading-snug mt-3">
-                        {promo.title}
-                      </p>
-                      
-                      {promo.originalPrice && (
-                        <span className="text-xs text-gray-400 line-through mt-1">
-                          {promo.originalPrice}
-                        </span>
+                      {/* Badge Circular de Descuento (Solo para tarjetas normales 1 y 2) */}
+                      {!isLastAndOdd && (
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-sm whitespace-nowrap z-20">
+                          {promo.discount}
+                        </div>
                       )}
-                      
-                      <div className="text-lg sm:text-xl font-bold text-black mt-1">
-                        {promo.price} <span className="text-xs font-semibold text-gray-400">{promo.currency || "USD"}</span>
-                      </div>
+
+                      {/* Si es la última tarjeta e impar, dividimos su contenido en dos lados en móvil */}
+                      {isLastAndOdd ? (
+                        <div className="grid grid-cols-2 w-full items-center gap-2">
+                          {/* Lado Izquierdo: El Badge / Descuento grande y más vistoso */}
+                          <div className="flex flex-col items-center justify-center border-r border-gray-100 pr-2">
+                            <span className="bg-orange-500 text-white text-base sm:text-lg font-extrabold px-4 py-2 rounded-2xl shadow-sm whitespace-nowrap">
+                              {promo.discount}
+                            </span>
+                          </div>
+
+                          {/* Lado Derecho: Título, precio original y precio actual */}
+                          <div className="flex flex-col items-center justify-center pl-2 text-center">
+                            <p className="text-[11px] sm:text-xs text-gray-600 font-medium leading-snug">
+                              {promo.title}
+                            </p>
+                            {promo.originalPrice && (
+                              <span className="text-[10px] sm:text-xs text-gray-400 line-through mt-0.5">
+                                {promo.originalPrice}
+                              </span>
+                            )}
+                            <div className="text-base sm:text-lg font-bold text-black mt-0.5">
+                              {promo.price} <span className="text-[10px] font-semibold text-gray-400">{promo.currency || "USD"}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        /* Contenido normal para las primeras tarjetas */
+                        <>
+                          <p className="text-xs text-gray-600 font-medium leading-snug mt-3">
+                            {promo.title}
+                          </p>
+                          
+                          {promo.originalPrice && (
+                            <span className="text-xs text-gray-400 line-through mt-1">
+                              {promo.originalPrice}
+                            </span>
+                          )}
+                          
+                          <div className="text-lg sm:text-xl font-bold text-black mt-1">
+                            {promo.price} <span className="text-xs font-semibold text-gray-400">{promo.currency || "USD"}</span>
+                          </div>
+                        </>
+                      )}
                     </div>
                   );
                 })}
