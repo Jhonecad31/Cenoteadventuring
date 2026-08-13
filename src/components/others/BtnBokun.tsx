@@ -3,11 +3,11 @@ import { useState, lazy, Suspense, useEffect } from "react";
 import { X } from "lucide-react";
 
 interface Promotion {
-  discount: string;      // Ej: "-15%"
-  title: string;         // Ej: "Book 15 days in advance"
-  originalPrice?: string;// Ej: "$69.99 USD"
-  price: string;         // Ej: "$59"
-  currency?: string;     // Ej: "USD"
+  discount: string;        // Ej: "-15%"
+  title: string;           // Ej: "Book 15 days in advance"
+  originalPrice?: string;  // Ej: "$69.99 USD"
+  price: string;           // Ej: "$59"
+  currency?: string;       // Ej: "USD"
 }
 
 interface BtnModalBokunProps {
@@ -78,7 +78,7 @@ export default function BtnAccordionBokun({
     if (!isOpen) return null;
 
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 pointer-events-auto">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 pointer-events-auto">
         {/* Fondo oscurecido con Blur */}
         <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"
@@ -86,37 +86,37 @@ export default function BtnAccordionBokun({
         />
         
         {/* Ventana del Modal centrada estilo Lightbox */}
-        <div className="relative bg-white w-full sm:max-w-3xl rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh]">
+        <div className="relative bg-white w-full max-w-3xl rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh]">
           
           {/* Botón X superior derecho */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-5 right-5 p-1 text-gray-400 hover:text-gray-600 transition-colors z-10 cursor-pointer"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full transition-colors z-30 cursor-pointer shadow-sm"
             aria-label="Cerrar modal"
           >
-            <X size={20} strokeWidth={2} />
+            <X size={20} strokeWidth={2.5} />
           </button>
 
-          {/* Contenido Superior: Título */}
-          <div className="mb-4 pr-6">
-            <h3 className="font-sans text-xl md:text-2xl font-bold text-[#001524]">
+          {/* Contenido Superior: Título con espacio extra a la derecha para la X */}
+          <div className="mb-3 pr-10">
+            <h3 className="font-sans text-lg sm:text-xl md:text-2xl font-bold text-[#001524]">
               {data.title}
             </h3>
           </div>
 
           {/* Contenido Central con Scroll */}
-          <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-6">
+          <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-4">
             
-            {/* Sección de Promociones (Con overflow visible para que el badge naranja no se corte) */}
+            {/* Sección de Promociones Optimizada para Móvil */}
             {data.promotions && data.promotions.length > 0 && (
-              <div className={`grid grid-cols-1 ${data.promotions.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1 max-w-md mx-auto'} gap-4 pt-4 px-2`}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2 px-1">
                 {data.promotions.map((promo, index) => (
                   <div 
                     key={index} 
-                    className="relative overflow-visible bg-white border border-gray-200/90 rounded-2xl p-5 text-center shadow-xs flex flex-col justify-between items-center"
+                    className="relative overflow-visible bg-white border border-gray-200/90 rounded-xl p-4 text-center shadow-xs flex flex-col justify-between items-center"
                   >
-                    {/* Badge Circular Naranja posicionado exactamente en la esquina superior derecha */}
-                    <div className="absolute -top-3.5 -right-3.5 bg-orange-500 text-white text-xs font-bold w-9 h-9 rounded-full flex items-center justify-center shadow-md z-20">
+                    {/* Badge Circular de Descuento */}
+                    <div className="absolute -top-3 -right-2 sm:-top-3.5 sm:-right-3.5 bg-orange-500 text-white text-[11px] sm:text-xs font-bold w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-md z-20">
                       {promo.discount}
                     </div>
                     
@@ -125,12 +125,12 @@ export default function BtnAccordionBokun({
                     </p>
                     
                     {promo.originalPrice && (
-                      <span className="text-xs sm:text-sm text-gray-400 line-through mt-1">
+                      <span className="text-xs text-gray-400 line-through mt-1">
                         {promo.originalPrice}
                       </span>
                     )}
                     
-                    <div className="text-xl sm:text-2xl font-bold text-[#006083] mt-1">
+                    <div className="text-lg sm:text-xl font-bold text-[#006083] mt-1">
                       {promo.price} <span className="text-xs font-semibold text-gray-500">{promo.currency || "USD"}</span>
                     </div>
                   </div>
@@ -153,10 +153,10 @@ export default function BtnAccordionBokun({
           </div>
 
           {/* Footer: Botón "Close" de texto abajo a la derecha */}
-          <div className="flex justify-end pt-4 mt-2 border-t border-gray-100">
+          <div className="flex justify-end pt-3 mt-1 border-t border-gray-100">
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#e14d76] hover:opacity-80 font-medium text-base transition-opacity px-2 py-1 cursor-pointer"
+              className="text-[#e14d76] hover:opacity-80 font-medium text-sm sm:text-base transition-opacity px-2 py-1 cursor-pointer"
             >
               {data.btnCloseText || "Close"}
             </button>
