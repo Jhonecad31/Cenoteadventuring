@@ -107,34 +107,40 @@ export default function BtnAccordionBokun({
           {/* Contenido Central con Scroll Fluido para Móvil */}
           <div className="flex-1 overflow-y-auto pr-1 my-2 space-y-4 overscroll-contain">
             
-            {/* Sección de Promociones Optimizada para Móvil */}
+            {/* Sección de Promociones Adaptada: 2 arriba y la última a ancho completo abajo en móvil */}
             {data.promotions && data.promotions.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2 px-0.5">
-                {data.promotions.map((promo, index) => (
-                  <div 
-                    key={index} 
-                    className="relative overflow-visible bg-white border border-gray-200/95 rounded-xl p-3.5 text-center shadow-2xs flex flex-col justify-between items-center"
-                  >
-                    {/* Badge Circular de Descuento */}
-                    <div className="absolute -top-3 -right-2 sm:-top-3.5 sm:-right-3.5 bg-orange-500 text-white text-[11px] sm:text-xs font-bold w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-md z-20">
-                      {promo.discount}
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 pt-4 pb-2 px-0.5">
+                {data.promotions.map((promo, index) => {
+                  const isLastAndOdd = data.promotions && data.promotions.length % 2 !== 0 && index === data.promotions.length - 1;
+                  
+                  return (
+                    <div 
+                      key={index} 
+                      className={`relative overflow-visible bg-white border border-gray-200/95 rounded-2xl p-4 text-center shadow-xs flex flex-col justify-between items-center ${
+                        isLastAndOdd ? "col-span-2 lg:col-span-1" : "col-span-1"
+                      }`}
+                    >
+                      {/* Badge Circular de Descuento */}
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-sm whitespace-nowrap z-20">
+                        {promo.discount}
+                      </div>
+                      
+                      <p className="text-xs text-gray-600 font-medium leading-snug mt-3">
+                        {promo.title}
+                      </p>
+                      
+                      {promo.originalPrice && (
+                        <span className="text-xs text-gray-400 line-through mt-1">
+                          {promo.originalPrice}
+                        </span>
+                      )}
+                      
+                      <div className="text-lg sm:text-xl font-bold text-black mt-1">
+                        {promo.price} <span className="text-xs font-semibold text-gray-400">{promo.currency || "USD"}</span>
+                      </div>
                     </div>
-                    
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-tight mt-1">
-                      {promo.title}
-                    </p>
-                    
-                    {promo.originalPrice && (
-                      <span className="text-xs text-gray-400 line-through mt-1">
-                        {promo.originalPrice}
-                      </span>
-                    )}
-                    
-                    <div className="text-lg sm:text-xl font-bold text-[#006083] mt-1">
-                      {promo.price} <span className="text-xs font-semibold text-gray-500">{promo.currency || "USD"}</span>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
@@ -166,7 +172,6 @@ export default function BtnAccordionBokun({
       </div>
     );
   }
-
   // VISTA ACORDEÓN (Variante por defecto)
   return (
     <div className="w-full">
