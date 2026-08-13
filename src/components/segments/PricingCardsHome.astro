@@ -41,7 +41,7 @@ const plans = [
 ];
 ---
 
-<section class="bg-[#F8FAFC] py-16 md:py-24 px-6">
+<section class="bg-[#F8FAFC] py-16 md:py-24 px-4 sm:px-6">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 lg:mb-16">
       <TagH2 class="max-w-3xl mx-auto px-5 font-serif text-center! md:text-4xl">
@@ -100,54 +100,55 @@ const plans = [
                 <p class="text-xs lg:text-sm text-gray-500">{i18n.DETAIL_PAGE.FORM_RESERVATION.PER_PERSON}</p>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+              <!-- GRID DE PROMOCIONES DE 3 COLUMNAS -->
+              <div class="grid grid-cols-3 gap-2 mb-6">
   
-  <!-- Tarjeta 1: 15% OFF -->
-  <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[100px]">
-    <div>
-      <span class="inline-block text-[10px] font-bold text-white bg-orange-500 rounded-full px-2 py-0.5 mb-1.5">
-        -15%
-      </span>
-      <p class="text-[11px] leading-tight text-gray-500 font-medium">
-        {i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_15_DAYS}
-      </p>
-    </div>
-    <p class="text-base font-bold text-[#001524] mt-2">
-      ${Math.round(plan.price * 0.85)} <span class="text-[10px] font-semibold text-gray-400">USD</span>
-    </p>
-  </div>
+                <!-- Tarjeta 1: 15% OFF -->
+                <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-gray-100 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between items-center text-center">
+                  <div>
+                    <span class="inline-block text-[10px] font-bold text-white bg-orange-500 rounded-full px-2 py-0.5 mb-1">
+                      -15%
+                    </span>
+                    <p class="text-[10px] sm:text-[11px] leading-tight text-gray-500 font-medium">
+                      {i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_15_DAYS}
+                    </p>
+                  </div>
+                  <p class="text-xs sm:text-base font-bold text-[#001524] mt-2">
+                    ${Math.round(plan.price * 0.85)} <span class="text-[9px] sm:text-[10px] font-semibold text-gray-400">USD</span>
+                  </p>
+                </div>
 
-  <!-- Tarjeta 2: 20% OFF -->
-  <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[100px]">
-    <div>
-      <span class="inline-block text-[10px] font-bold text-white bg-orange-500 rounded-full px-2 py-0.5 mb-1.5">
-        -20%
-      </span>
-      <p class="text-[11px] leading-tight text-gray-500 font-medium">
-        {i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_30_DAYS}
-      </p>
-    </div>
-    <p class="text-base font-bold text-[#001524] mt-2">
-      ${Math.round(plan.price * 0.80)} <span class="text-[10px] font-semibold text-gray-400">USD</span>
-    </p>
-  </div>
+                <!-- Tarjeta 2: 20% OFF -->
+                <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-gray-100 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between items-center text-center">
+                  <div>
+                    <span class="inline-block text-[10px] font-bold text-white bg-orange-500 rounded-full px-2 py-0.5 mb-1">
+                      -20%
+                    </span>
+                    <p class="text-[10px] sm:text-[11px] leading-tight text-gray-500 font-medium">
+                      {i18n.DETAIL_PAGE.FORM_RESERVATION.BOOKING_30_DAYS || i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD?.BOOKING_30_DAYS}
+                    </p>
+                  </div>
+                  <p class="text-xs sm:text-base font-bold text-[#001524] mt-2">
+                    ${Math.round(plan.price * 0.80)} <span class="text-[9px] sm:text-[10px] font-semibold text-gray-400">USD</span>
+                  </p>
+                </div>
 
-  <!-- Tarjeta 3: 40% OFF -->
-  <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[100px]">
-    <div>
-      <span class="inline-block text-[10px] font-bold text-white bg-orange-500 rounded-full px-2 py-0.5 mb-1.5">
-        -40%
-      </span>
-      <p class="text-[11px] leading-tight text-gray-500 font-medium">
-        {i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_60_DAYS}
-      </p>
-    </div>
-    <p class="text-base font-bold text-[#001524] mt-2">
-      ${Math.round(plan.price * 0.60)} <span class="text-[10px] font-semibold text-gray-400">USD</span>
-    </p>
-  </div>
+                <!-- Tarjeta 3: 40% OFF -->
+                <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-gray-100 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between items-center text-center">
+                  <div>
+                    <span class="inline-block text-[10px] font-bold text-white bg-orange-500 rounded-full px-2 py-0.5 mb-1">
+                      -40%
+                    </span>
+                    <p class="text-[10px] sm:text-[11px] leading-tight text-gray-500 font-medium">
+                      {i18n.DETAIL_PAGE.FORM_RESERVATION.EARLY_BIRD.BOOKING_60_DAYS}
+                    </p>
+                  </div>
+                  <p class="text-xs sm:text-base font-bold text-[#001524] mt-2">
+                    ${Math.round(plan.price * 0.60)} <span class="text-[9px] sm:text-[10px] font-semibold text-gray-400">USD</span>
+                  </p>
+                </div>
 
-</div>
+              </div>
 
               <a 
                 href={plan.href} 
