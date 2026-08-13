@@ -166,7 +166,6 @@ export default function BtnAccordionBokun({
       </div>
     );
   }
-
   // VISTA ACORDEÓN (Variante por defecto)
   return (
     <div className="w-full">
