@@ -12,6 +12,7 @@ const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 
 const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
+const enableTrackingScripts = import.meta.env.ENABLE_TRACKING_SCRIPTS === 1;
 
 interface Props {
     offI18n?: boolean;
@@ -48,17 +49,20 @@ const ogLocale = currentLocale === "en" ? "en_US" : "es_ES";
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="author" content={siteName} />
 <meta name="theme-color" content="#006083" /> 
-<!-- Google tag (gtag.js) -->
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-79QKX306QY"></script>
-<script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "G-79QKX306QY");
-</script>
+{enableTrackingScripts && (
+    <>
+        <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-79QKX306QY"></script>
+        <script type="text/partytown" is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-79QKX306QY");
+        </script>
+    </>
+)}
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.svg" />
@@ -108,27 +112,29 @@ const ogLocale = currentLocale === "en" ? "en_US" : "es_ES";
 <meta name="twitter:image:alt" content={metaTitle} />
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
-<script type="text/javascript">
-    // Defer Clarity loading to idle time to minimize main thread blocking
-    window.addEventListener('load', () => {
-        const loadClarity = () => {
-            (function (c, l, a, r, i, t, y) {
-                c[a] =
-                    c[a] ||
-                    function () {
-                        (c[a].q = c[a].q || []).push(arguments);
-                    };
-                t = l.createElement(r);
-                t.async = 1;
-                t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0];
-                y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "wnhvl97qag");
-        };
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadClarity);
-        } else {
-            setTimeout(loadClarity, 2000);
-        }
-    });
-</script>
+{enableTrackingScripts && (
+    <script is:inline>
+        // Defer Clarity loading to idle time to minimize main thread blocking
+        window.addEventListener('load', () => {
+            const loadClarity = () => {
+                (function (c, l, a, r, i, t, y) {
+                    c[a] =
+                        c[a] ||
+                        function () {
+                            (c[a].q = c[a].q || []).push(arguments);
+                        };
+                    t = l.createElement(r);
+                    t.async = 1;
+                    t.src = "https://www.clarity.ms/tag/" + i;
+                    y = l.getElementsByTagName(r)[0];
+                    y.parentNode.insertBefore(t, y);
+                })(window, document, "clarity", "script", "wnhvl97qag");
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadClarity);
+            } else {
+                setTimeout(loadClarity, 2000);
+            }
+        });
+    </script>
+)}

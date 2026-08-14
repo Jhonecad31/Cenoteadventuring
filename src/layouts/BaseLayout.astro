@@ -8,6 +8,8 @@ import '@/styles/global.css';
 
 const lang = getLangFromUrl(Astro.url);
 const { seo, offI18n, showFooter = true, bodyClass = "bg-[#EDF4FC]"} = Astro.props;
+const enableTrackingScripts =
+    import.meta.env.ENABLE_TRACKING_SCRIPTS === "true";
 ---
 
 <!doctype html>
@@ -20,14 +22,18 @@ const { seo, offI18n, showFooter = true, bodyClass = "bg-[#EDF4FC]"} = Astro.pro
     
     <body id="body" class={`${bodyClass} font-sans antialiased text-[#001524] overflow-x-hidden w-full`}>
         
-        <noscript>
-            <iframe 
-                src="https://www.googletagmanager.com/ns.html?id=GTM-NV35K8DZ" 
-                height="0" 
-                width="0" 
-                style="display:none;visibility:hidden">
-            </iframe>
-        </noscript>
+        {
+            enableTrackingScripts && (
+                <noscript>
+                    <iframe 
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-NV35K8DZ" 
+                        height="0" 
+                        width="0" 
+                        style="display:none;visibility:hidden">
+                    </iframe>
+                </noscript>
+            )
+        }
 
         <Header offI18n={offI18n} />
 
