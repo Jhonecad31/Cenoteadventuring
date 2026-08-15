@@ -8,7 +8,7 @@ import '@/styles/global.css';
 
 const lang = getLangFromUrl(Astro.url);
 const { seo, offI18n, showFooter = true, bodyClass = "bg-[#EDF4FC]"} = Astro.props;
-const enableTrackingScripts = import.meta.env.ENABLE_TRACKING_SCRIPTS === 1;
+const enableTrackingScripts = import.meta.env.ENABLE_TRACKING_SCRIPTS === "true";
 ---
 
 <!doctype html>
