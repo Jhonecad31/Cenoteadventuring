@@ -12,7 +12,6 @@ const i18n = getI18N({ currentLocale }) as any;
 const lang = getLangFromUrl(Astro.url);
 
 const currentPath = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
-const enableTrackingScripts = import.meta.env.ENABLE_TRACKING_SCRIPTS === 1;
 
 interface Props {
     offI18n?: boolean;
@@ -43,6 +42,8 @@ const robots =
     Astro.props.robots ||
     "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 const ogLocale = currentLocale === "en" ? "en_US" : "es_ES";
+
+const enableTrackingScripts = import.meta.env.ENABLE_TRACKING_SCRIPTS === 1;
 ---
 
 <meta charset="utf-8" />
