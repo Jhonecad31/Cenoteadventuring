@@ -10,13 +10,12 @@ const translatePath = useTranslatedPath(lang);
 
 const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
 
-// Definimos los recursos o imágenes del icono según el idioma
+// Definimos las imágenes del icono según el idioma
 const birdIcon =
   lang === "en"
-    ? "/assets/img/bird-icon-en.webp" // Icono para inglés
-    : "/assets/img/bird-icon-es.webp"; // Icono para español
+    ? "/assets/img/bird-icon-en.webp" 
+    : "/assets/img/bird-icon-es.webp"; 
 ---
-
 <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
   <mux-player
     playback-id={Mux_playback_Id}
@@ -29,11 +28,9 @@ const birdIcon =
     class="absolute inset-0 w-screen h-screen object-cover brightness-[0.4] z-0"
     poster={`https://image.mux.com/${Mux_playback_Id}/thumbnail.webp?time=0&width=1280`}
   ></mux-player>
-
   <div
     class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center justify-center h-full gap-5 sm:gap-6 pt-20"
   >
-    <!-- Icono de aves con tamaño maximizado para que luzca imponente y con gran protagonismo -->
     <div class="w-56 sm:w-72 md:w-80 lg:w-96 drop-shadow-2xl animate-fade-in -mb-2 sm:-mb-3">
       <img
         src={birdIcon}
@@ -41,7 +38,6 @@ const birdIcon =
         class="w-full h-auto object-contain"
       />
     </div>
-
     <div class="flex flex-col gap-4">
       <TagH1
         class="font-serif regular text-3xl sm:text-7xl md:text-7xl lg:text-6xl leading-tight"
@@ -54,7 +50,6 @@ const birdIcon =
         </span>
       </TagH1>
     </div>
-
     <div class="flex flex-col items-center gap-8">
       <a
         href={translatePath("/cenotes-cancun/")}
@@ -65,11 +60,9 @@ const birdIcon =
     </div>
   </div>
 </section>
-
 <script>
   import("@mux/mux-player");
 </script>
-
 <style>
   mux-player {
     width: 100vw;
