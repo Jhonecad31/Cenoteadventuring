@@ -9,6 +9,12 @@ const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
 const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
+
+// Definimos los recursos o imágenes del icono según el idioma
+const birdIcon =
+  lang === "en"
+    ? "/assets/img/bird-icon-en.webp" // Icono para inglés
+    : "/assets/img/bird-icon-es.webp"; // Icono para español
 ---
 
 <section class="bg-[#F8FAFC] relative w-full h-screen overflow-hidden">
@@ -25,13 +31,13 @@ const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
   ></mux-player>
 
   <div
-    class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center justify-center h-full gap-6 sm:gap-8 pt-24"
+    class="max-w-7xl mx-auto relative z-20 text-center text-white px-4 lg:px-6 flex flex-col items-center justify-center h-full gap-5 sm:gap-6 pt-20"
   >
-    <!-- Insignia de descuento -->
-    <div class="w-48 sm:w-60 md:w-72 drop-shadow-2xl animate-fade-in">
-      <img 
-        src="/assets/img/early-40.webp"
-        alt="Up to 40% OFF"
+    <!-- Icono de aves con tamaño maximizado para que luzca imponente y con gran protagonismo -->
+    <div class="w-56 sm:w-72 md:w-80 lg:w-96 drop-shadow-2xl animate-fade-in -mb-2 sm:-mb-3">
+      <img
+        src={birdIcon}
+        alt={lang === "en" ? "Bird icon" : "Icono de ave"}
         class="w-full h-auto object-contain"
       />
     </div>
@@ -48,6 +54,7 @@ const Mux_playback_Id = "02O1Y01f9gynt28Ukp95X7DFLyGBQILjyyk8xtjNO0298I";
         </span>
       </TagH1>
     </div>
+
     <div class="flex flex-col items-center gap-8">
       <a
         href={translatePath("/cenotes-cancun/")}
